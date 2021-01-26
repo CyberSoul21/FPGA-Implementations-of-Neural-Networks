@@ -69,9 +69,12 @@ print(data_embedding.ndim)
 
 
 model = tf.keras.Sequential([
-    tf.keras.layers.InputLayer(input_shape=(64,3)),
-    tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(64, return_sequences=True )),
-    tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(32)),
+    tf.keras.layers.Embedding(vocab_size, embedding_dim, input_length=max_length),
+#    tf.keras.layers.InputLayer(input_shape=(64,3)),
+    tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(64)),# return_sequences=True )),
+    tf.keras.layers.Dropout(0.5),
+    #tf.keras.layers.Bidirectional(tf.keras.layers.LSTM(32)),
+    #tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Dense(64, activation='relu'),
     tf.keras.layers.Dropout(0.5),
     tf.keras.layers.Dense(1)    
@@ -86,7 +89,7 @@ model.summary()
 
 num_epochs = 10
 
-history = model.fit(data_embedding, training_labels_final, epochs=num_epochs, validation_data=(testing_data_embedding, testing_labels_final))
+history = model.fit(padded, training_labels_final, epochs=num_epochs, validation_data=(testing_padded, testing_labels_final))
 
 pyplot.subplot(211)
 pyplot.title('Loss / Binary cross entropy')
@@ -102,4 +105,7 @@ pyplot.plot(history.history['accuracy'], label='train')
 pyplot.plot(history.history['val_accuracy'], label='test')
 pyplot.legend()
 pyplot.show()
+
+
+model.save("models/02_app_v1.h5"); 
 

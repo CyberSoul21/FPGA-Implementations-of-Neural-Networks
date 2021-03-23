@@ -67,12 +67,12 @@ std::int32_t SaturatingRoundingDoublingHighMul(std::int32_t a, std::int32_t b) {
   std::int64_t ab_64 = a_64 * b_64;
   std::int32_t nudge = ab_64 >= 0 ? (1 << 30) : (1 - (1 << 30));
   std::int32_t ab_x2_high32 =  static_cast<std::int32_t>((ab_64 + nudge) / (1ll << 31));
-  /*std::cout << "overflow = " << overflow  << std::endl;
+  std::cout << "overflow = " << overflow  << std::endl;
   std::cout << "a_64(a)= "   << a_64  << std::endl;
   std::cout << "b_64(b)= "   << b_64  << std::endl;
   std::cout << "ab_64 = "    << ab_64 << std::endl;
   std::cout << "nudge = "    << nudge << std::endl;
-  std::cout << "ab_x2_high32 = " << ab_x2_high32 << std::endl; */
+  std::cout << "ab_x2_high32 = " << ab_x2_high32 << std::endl; 
   return overflow ? std::numeric_limits<std::int32_t>::max() : ab_x2_high32;
 }
 
@@ -84,7 +84,7 @@ std::int32_t RoundingDivideByPOT(std::int32_t x, std::int8_t exponent) {
   const std::int32_t one  = Dup(1);
   const std::int32_t remainder = BitAnd(x, mask);
   const std::int32_t threshold = Add(ShiftRight(mask, 1), BitAnd(MaskIfLessThan(x, zero), one));
-  /*std::cout << "Mask = "      << mask << std::endl;
+  std::cout << "Mask = "      << mask << std::endl;
   std::cout << "zero = "      << zero << std::endl;
   std::cout << "one  = "      << one  << std::endl;
   std::cout << "Remainder = " << remainder << std::endl;
@@ -92,7 +92,7 @@ std::int32_t RoundingDivideByPOT(std::int32_t x, std::int8_t exponent) {
   std::cout << "ShiftRigh = " << ShiftRight(x, exponent) << std::endl;
   std::cout << "MaskIfGre = " << MaskIfGreaterThan(remainder, threshold) << std::endl;
   std::cout << "Add int32_t= " <<  Add(ShiftRight(x, exponent), 
-             BitAnd( MaskIfGreaterThan(remainder, threshold), one ) ) << std::endl; */
+             BitAnd( MaskIfGreaterThan(remainder, threshold), one ) ) << std::endl;
   return Add( ShiftRight(x, exponent), 
               BitAnd( MaskIfGreaterThan(remainder, threshold), one ) ); 
 }
@@ -100,10 +100,10 @@ std::int32_t RoundingDivideByPOT(std::int32_t x, std::int8_t exponent) {
 std::int32_t MultiplyByQuantizedMultiplier(std::int32_t x, std::int32_t quantized_multiplier, int shift){
   std::int8_t left_shift  = shift > 0 ? shift :      0;
   std::int8_t right_shift = shift > 0 ? 0     : -shift;
-  /*std::cout << "x = "                    << x                    << std::endl; 
+  std::cout << "x = "                    << x                    << std::endl; 
   std::cout << "quantized_multiplier = " << quantized_multiplier  << std::endl; 
   std::cout << "shift = "                << shift                 << std::endl; 
-  std::cout << "x * (1 << left_shift)= " << x * (1 << left_shift) << std::endl;  */
+  std::cout << "x * (1 << left_shift)= " << x * (1 << left_shift) << std::endl; 
   return RoundingDivideByPOT(SaturatingRoundingDoublingHighMul(x * (1 << left_shift), quantized_multiplier), right_shift); 
 }
 
@@ -122,10 +122,10 @@ void QuantizeMultiplier(double double_multiplier, std::int32_t* quantized_multip
 
   *quantized_multiplier = static_cast<std::int32_t>(q_fixed);
 
-  /*std::cout << "--- Résultats en CPP ---" << std::endl;
+  std::cout << "--- Résultats en CPP ---" << std::endl;
   std::cout << "double multiplier = "     << double_multiplier     << std::endl; 
   std::cout << "q = "                     << q                     << std::endl; 
   std::cout << "q_fixed = "               << q_fixed               << std::endl; 
   std::cout << "*shift  = "               << *shift                << std::endl; 
-  std::cout << "quantized_multiplier = "  << *quantized_multiplier << std::endl;  */
+  std::cout << "quantized_multiplier = "  << *quantized_multiplier << std::endl; 
 }

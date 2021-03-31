@@ -23,9 +23,9 @@ int main (int argc, char *argv[])
   double M = 0.0001722/scale;
   double q = 0.0;
   double q_fixed = 0.0;
-  float a = 5, b = 2;
-  float c = 936.0;//a*b;
-  float d = c >> 8.0; 
+  int64_t a = 5, b = 2;
+  int64_t c = 936;//a*b;
+  int64_t d = c >> 8; 
   //param = 8.0;
   //result = frexp (param , &n);
   //printf ("%f = %f * 2^%d\n", param, result, n);
@@ -62,8 +62,6 @@ int main (int argc, char *argv[])
   cout << "nudge = "    << nudge << endl;
   cout << "ab_x2_high32 = " << ab_x2_high32 << std::endl; */
   //return overflow ? std::numeric_limits<std::int32_t>::max() : ab_x2_high32;
-
-
  
 
 }

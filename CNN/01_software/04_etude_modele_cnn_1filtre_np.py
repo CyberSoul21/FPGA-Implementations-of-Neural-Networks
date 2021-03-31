@@ -104,6 +104,11 @@ scale = 0.04896376;  zero_point = -6;
 img_test = quant_np(img_test, scale, zero_point, verbose=1);
 print(img_test);
 #sys.exit(0);                                               # Terminer l'execution
+count = 0
+for i in range(0,28):
+  for j in range(0,28):
+    print("data["+str(count)+"] = "+"8'd"+str(img_test[i][j])+";")
+    count +=1 
 
 print(" \n ");
 print("************************************** ");

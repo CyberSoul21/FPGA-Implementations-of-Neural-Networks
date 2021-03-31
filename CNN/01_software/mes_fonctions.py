@@ -76,15 +76,24 @@ def conv_np(entree, filtre, bias, output_multiplier, output_shift, offset_ent, o
       print("Quantized_conv_tab[i][j] = ")
       print(conv_tab[i][j])
       input("Press Enter to continue...")
+
+      print("# Cast à uint8 [0, 255]")
       # Cast à uint8 [0, 255]
       #----------------------------------
       conv_tab[i][j] = min( max(conv_tab[i][j], 0), 255 ); # Cast à uint8
       conv_tab[i][j] = conv_tab[i][j] +  offset_sor;       # de tflite: acc + output_offset
-
+      print("conv_tab[i][j] = ")
+      print(conv_tab[i][j])
+      input("Press Enter to continue...")
+      print("# Faire le clamp entre [-128, 127]")
       # Faire le clamp entre [-128, 127]
       #----------------------------------
       conv_tab[i][j] = max( conv_tab[i][j], min_val );     # Clamp 
       conv_tab[i][j] = min( conv_tab[i][j], max_val );     # Clamp
+      print("conv_tab[i][j] = ")
+      print(conv_tab[i][j])
+      input("Press Enter to continue...")
+            
   return conv_tab;
 
 

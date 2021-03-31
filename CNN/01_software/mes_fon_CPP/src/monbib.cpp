@@ -12,6 +12,9 @@ std::int32_t Dup(typename FixedPointRawTypeTraits::ScalarRawType x) {
   return x; }
 
 std::int32_t BitAnd(std::int32_t a, std::int32_t b) {
+  std::int32_t c;
+  c = a & b;
+  std::cout << "c = "      << c << std::endl;
   return a & b; }
 
 std::int32_t BitNot(std::int32_t a) {
@@ -84,6 +87,8 @@ std::int32_t RoundingDivideByPOT(std::int32_t x, std::int8_t exponent) {
   const std::int32_t one  = Dup(1);
   const std::int32_t remainder = BitAnd(x, mask);
   const std::int32_t threshold = Add(ShiftRight(mask, 1), BitAnd(MaskIfLessThan(x, zero), one));
+  std::cout << "x = "      << x << std::endl;
+  std::cout << "exponent = "      << exponent << std::endl;  
   std::cout << "Mask = "      << mask << std::endl;
   std::cout << "zero = "      << zero << std::endl;
   std::cout << "one  = "      << one  << std::endl;
@@ -102,7 +107,9 @@ std::int32_t MultiplyByQuantizedMultiplier(std::int32_t x, std::int32_t quantize
   std::int8_t right_shift = shift > 0 ? 0     : -shift;
   std::cout << "x = "                    << x                    << std::endl; 
   std::cout << "quantized_multiplier = " << quantized_multiplier  << std::endl; 
-  std::cout << "shift = "                << shift                 << std::endl; 
+  std::cout << "shift = "                << shift                 << std::endl;
+  std::cout << "left_shift = "                << left_shift                 << std::endl;
+  std::cout << "right_shift = "                << right_shift                 << std::endl; 
   std::cout << "x * (1 << left_shift)= " << x * (1 << left_shift) << std::endl; 
   return RoundingDivideByPOT(SaturatingRoundingDoublingHighMul(x * (1 << left_shift), quantized_multiplier), right_shift); 
 }

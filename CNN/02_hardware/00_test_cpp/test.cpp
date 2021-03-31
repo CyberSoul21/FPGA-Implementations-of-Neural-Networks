@@ -23,6 +23,9 @@ int main (int argc, char *argv[])
   double M = 0.0001722/scale;
   double q = 0.0;
   double q_fixed = 0.0;
+  float a = 5, b = 2;
+  float c = 936.0;//a*b;
+  float d = c >> 8.0; 
   //param = 8.0;
   //result = frexp (param , &n);
   //printf ("%f = %f * 2^%d\n", param, result, n);
@@ -30,7 +33,7 @@ int main (int argc, char *argv[])
   //QuantizeMultiplier(M,M0,shift);
   shift = &n;
   q = frexp(M, &n);
-  //n = -2;
+  //n = 30;
   int test = (1 << n);
   q_fixed = static_cast<int64_t>(round(q*(1ll << 31)));
   *M0 = static_cast<std::int32_t>(q_fixed);
@@ -42,6 +45,7 @@ int main (int argc, char *argv[])
   cout << "M0 = " << M0 << endl;
   cout << "shift = " << shift << endl;
   cout << "n = " << n << endl;
+  cout << "c >> 31 = " << d << endl;
 
 
 

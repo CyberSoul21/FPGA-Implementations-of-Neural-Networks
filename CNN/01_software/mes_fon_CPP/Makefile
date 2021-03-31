@@ -19,8 +19,8 @@ ${OBJ}: ${SRC}
 	@echo "                               " 	
 
 bib_par: ${OBJ}
-	@echo "Création de la bibliothèque ..." 
-	${C++} -shared ${OBJ} -o ${LIB} 	
+	@echo "Création de la bibliothèque ..."
+	${C++} -shared ${OBJ} -o ${LIB} 	  #g++ -o test test.cpp -lm
 	@echo "                               " 	
 
 clean: 

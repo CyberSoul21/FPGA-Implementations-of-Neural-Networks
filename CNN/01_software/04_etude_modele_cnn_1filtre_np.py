@@ -107,7 +107,7 @@ print(img_test);
 count = 0
 for i in range(0,28):
   for j in range(0,28):
-    print("data["+str(count)+"] = "+"8'd"+str(img_test[i][j])+";")
+    print("data["+str(count)+"] = "+"7'd"+str(img_test[i][j])+";")
     count +=1 
 
 print(" \n ");

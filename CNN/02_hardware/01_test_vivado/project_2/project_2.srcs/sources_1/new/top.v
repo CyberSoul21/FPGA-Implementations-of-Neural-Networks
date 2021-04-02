@@ -19,28 +19,39 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module top(
+module top
+#(
+  parameter data_width = 7,  //# of bits data
+            addr_width = 4,  // # of address bits, 4 because is the minimun number of bit for 784
+            elemnt_matrix = 784,  //number of elements in matrix 28x28
+            row = 28, //row 28
+            col = 28 //columns 28, from matrix 28x28
+  )
+(
             input         clk,
             input         rstn,
-            input [4:0]   addr1,
-            input [4:0]   addr2,
+            input [addr_width:0]   addr1,
+            input [addr_width:0]   addr2,
             input         wr,
             input         sel,    
-            input  [7:0] wdata,
-            output [7:0] rdata     
+            input  [data_width:0] wdata,
+            output [data_width:0] rdata     
     );
 
-//Converting for into FSM
-reg  [7:0] data[0:783];
-reg [7:0] register[0:27][0:27];
+//Converting for-loop into FSM
+reg  [data_width:0] data[0:(elemnt_matrix-1)];
+reg  [data_width:0] register[0:(row-1)][0:(col-1)];
 reg flag = 1;
-reg [4:0] i;
+reg [4:0] i; //size 4 because is used for binary counter until 783
 reg [4:0] j;
 reg [9:0] k;
-reg [3:0] present_state, next_state;
 reg f1;
 reg f2;
 reg endf = 0;
+reg n_cols = 5'd28;
+reg n_rows = 5'd28; //from matrix 28x28
+reg n_elements = 10'd784; //total elements in matrix 28x28
+
 
 initial //Image
 begin
@@ -870,7 +881,7 @@ begin
      end
      else
      begin
-        if(i < 5'd28 && f1 == 1) 
+        if(i < n_rows && f1 == 1) 
         begin
             i <= i + 1;
             f1 <= 0;
@@ -881,20 +892,20 @@ end
 
 always @(clk) //Present estate 
 begin
-    if(j < 5'd28 && f2 == 1) 
+    if(j < n_cols && f2 == 1) 
     begin
         j <= j + 1;
         k <= k + 1;
         register[i][j] <= data[k];
         //register[i][j] <= wdata;
     end
-    if(j == (5'd28 - 1))
+    if(j == (n_cols - 1))
     begin
         f1 <= 1;
         f2 <= 0;
         j  <= 0;
     end
-    if(k == (10'd784 - 1)) //28x28 = 784 size of image
+    if(k == (n_elements - 1)) //28x28 = 784 size of image
     begin
         f1 <= 0;
         f2 <= 0;

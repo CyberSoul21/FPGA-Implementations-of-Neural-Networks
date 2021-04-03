@@ -1,13 +1,13 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: Universidad Nacional de Colombia
-// Engineer: Wilson Javier Almario R.
+// Company: 
+// Engineer: 
 // 
-// Create Date: 01/03/2021
-// Design Name: memory for image quantized
-// Module Name: top
-// Project Name: Quantized CNN implementation on FPGA 
-// Target Devices: Zybo Z7010
+// Create Date: 04/02/2021 04:31:51 PM
+// Design Name: 
+// Module Name: memory_filter1
+// Project Name: 
+// Target Devices: 
 // Tool Versions: 
 // Description: 
 // 
@@ -18,6 +18,7 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
+
 
 module memory_filter1
 #(
@@ -36,14 +37,17 @@ module memory_filter1
             input [addr_width:0]   addr1,
             input [addr_width:0]   addr2,
             input         wr,
-            input         sel,    
+            input         sel,
+            input         get_b, //get bias    
             input  [data_width:0] wdata,
-            output [data_width:0] rdata     
+            output [data_width:0] rdata,
+            output [32:0] rbias,
+            output reg full     
     );
 
 //Converting for-loop into FSM
 reg  [data_width:0] filter1[0:(elemnt_matrix-1)];
-reg bias;
+reg [32:0] bias;
 reg  [data_width:0] register[0:(row-1)][0:(col-1)];
 reg flag = 1;
 reg [4:0] i; //size 4 because is used for binary counter until 28
@@ -66,16 +70,16 @@ reg endf = 0;
 
 initial
 begin
-filter1[0] = -7'd127;
-filter1[1] = -7'd7;
-filter1[2] = -7'd64;
-filter1[3] = -7'd82;
-filter1[4] = 7'd34;
-filter1[5] = -7'd60;
-filter1[6] = -7'd43;
-filter1[7] = 7'd64;
-filter1[8] = 7'd48;
-bias = -9'd998;
+filter1[0] = -8'd127;
+filter1[1] = -8'd7;
+filter1[2] = -8'd64;
+filter1[3] = -8'd82;
+filter1[4] = 8'd34;
+filter1[5] = -8'd60;
+filter1[6] = -8'd43;
+filter1[7] = 8'd64;
+filter1[8] = 8'd48;
+bias = -32'd998;
 end
 
 
@@ -90,7 +94,8 @@ begin
         k <= 0;
         flag <= 0;
         f1 <= 0;
-        f2 <= 1;    
+        f2 <= 1;
+        full <= 0;    
      end
      else
      begin
@@ -126,20 +131,27 @@ begin
         j  <= 0;
         k  <= 0;
         flag  <= 0;
+        full  <= 1;
     end    
   
 end 
 
 
 always @ (posedge clk) begin
-    if (sel & wr)
+    if (sel & wr & full)
         register[addr1][addr2] <= wdata; // write data 
-    else
+    else if(full)
         register[addr1][addr2] <= register[addr1][addr2]; //default    
     
 end
 
-assign rdata = (sel & ~wr) ? register[addr1][addr2]:0; //Read data memory, default
+assign rdata = (sel & ~wr & !get_b) ? register[addr1][addr2]:0; //Read data memory, default
+assign rbias = (sel & ~wr & get_b) ? bias:0; //Read data memory
+
+//assign rdata  = (sel & ~wr & !get_b) ? register[addr1][addr2]: 
+//                (sel & ~wr & get_b) ? bias:0;
+             
+
 
 
 //*********************************************************

@@ -1,0 +1,526 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Apr  3 03:44:36 2021
+# Process ID: 28075
+# Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.runs/synth_1
+# Command line: vivado -log conv.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source conv.tcl
+# Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.runs/synth_1/conv.vds
+# Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source conv.tcl -notrace
+Command: synth_design -top conv -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 28138 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1965.570 ; gain = 201.715 ; free physical = 169 ; free virtual = 3478
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'conv' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:23]
+	Parameter data_width bound to: 7 - type: integer 
+	Parameter addr_width bound to: 4 - type: integer 
+	Parameter row bound to: 3 - type: integer 
+	Parameter col bound to: 3 - type: integer 
+	Parameter n_cols bound to: 5'b00011 
+	Parameter n_rows bound to: 5'b00011 
+	Parameter n_elements bound to: 10'b0000001001 
+INFO: [Synth 8-6157] synthesizing module 'memory_image' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:22]
+	Parameter data_width bound to: 7 - type: integer 
+	Parameter addr_width bound to: 4 - type: integer 
+	Parameter elemnt_matrix bound to: 784 - type: integer 
+	Parameter row bound to: 28 - type: integer 
+	Parameter col bound to: 28 - type: integer 
+	Parameter n_cols bound to: 5'b11100 
+	Parameter n_rows bound to: 5'b11100 
+	Parameter n_elements bound to: 10'b1100010000 
+WARNING: [Synth 8-567] referenced signal 'rstn' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:876]
+WARNING: [Synth 8-567] referenced signal 'flag' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:876]
+WARNING: [Synth 8-567] referenced signal 'i' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:876]
+WARNING: [Synth 8-567] referenced signal 'f1' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:876]
+WARNING: [Synth 8-567] referenced signal 'j' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:899]
+WARNING: [Synth 8-567] referenced signal 'f2' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:899]
+WARNING: [Synth 8-567] referenced signal 'k' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:899]
+WARNING: [Synth 8-567] referenced signal 'i' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:899]
+WARNING: [Synth 8-5856] 3D RAM register_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-6155] done synthesizing module 'memory_image' (1#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:22]
+WARNING: [Synth 8-689] width (32) of port connection 'addr1' does not match port width (5) of module 'memory_image' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:56]
+WARNING: [Synth 8-689] width (32) of port connection 'addr2' does not match port width (5) of module 'memory_image' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:57]
+WARNING: [Synth 8-567] referenced signal 'full' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:66]
+WARNING: [Synth 8-567] referenced signal 'flag' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:66]
+WARNING: [Synth 8-567] referenced signal 'i' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:66]
+WARNING: [Synth 8-567] referenced signal 'f1' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:66]
+WARNING: [Synth 8-567] referenced signal 'j' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:97]
+WARNING: [Synth 8-567] referenced signal 'f2' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:97]
+WARNING: [Synth 8-567] referenced signal 'flag' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:97]
+WARNING: [Synth 8-567] referenced signal 'rdata' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:97]
+WARNING: [Synth 8-567] referenced signal 'i' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:97]
+WARNING: [Synth 8-5856] 3D RAM register_reg  for this pattern/configuration is not supported. This will most likely be implemented in registers
+INFO: [Synth 8-6155] done synthesizing module 'conv' (2#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2373.031 ; gain = 609.176 ; free physical = 279 ; free virtual = 3219
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2390.844 ; gain = 626.988 ; free physical = 347 ; free virtual = 3288
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2390.844 ; gain = 626.988 ; free physical = 347 ; free virtual = 3288
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 2390.844 ; gain = 0.000 ; free physical = 274 ; free virtual = 3228
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/constrs_1/imports/01_memory_image/Zybo-Z7-Master.xdc]
+Finished Parsing XDC File [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/constrs_1/imports/01_memory_image/Zybo-Z7-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/constrs_1/imports/01_memory_image/Zybo-Z7-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/conv_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/conv_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2553.656 ; gain = 0.000 ; free physical = 127 ; free virtual = 3099
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.06 . Memory (MB): peak = 2553.656 ; gain = 0.000 ; free physical = 142 ; free virtual = 3098
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 301 ; free virtual = 3263
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 301 ; free virtual = 3263
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:31 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 301 ; free virtual = 3263
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[0][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[1][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[2][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[3][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[4][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[5][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[6][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[7][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[8][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[9][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[10][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[11][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[12][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[13][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[14][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[15][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[16][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[17][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[18][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[19][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[20][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[21][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[22][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[23][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[24][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[25][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[26][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[27][0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[0][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[1][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[2][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[3][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[4][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[5][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[6][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[7][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[8][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[9][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[10][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[11][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[12][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[13][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[14][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[15][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[16][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[17][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[18][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[19][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[20][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[21][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[22][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[23][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[24][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[25][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[26][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[27][1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[0][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[1][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[2][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[3][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[4][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[5][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[6][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[7][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[8][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[9][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[10][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[11][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[12][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[13][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[14][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[15][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[16][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[17][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[18][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[19][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[20][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[21][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[22][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[23][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[24][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[25][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[26][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[27][2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[0][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[1][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[2][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[3][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[4][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[5][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[6][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[7][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[8][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[9][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[10][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[11][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[12][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[13][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[14][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+WARNING: [Synth 8-327] inferring latch for variable 'register_reg[15][3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v:903]
+INFO: [Common 17-14] Message 'Synth 8-327' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:37 ; elapsed = 00:00:43 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 395 ; free virtual = 3357
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 4     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3138  
+	 785 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 2387  
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module conv 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 2     
+	   2 Input      5 Bit       Adders := 2     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 4     
+Module memory_image 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3138  
+	 785 Input      8 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 2383  
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (ok_reg)
+WARNING: [Synth 8-3332] Sequential element (register_reg[0][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[0][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[0][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[0][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[0][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[0][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[0][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[0][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[1][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[1][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[1][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[1][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[1][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[1][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[1][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[1][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[2][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[2][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[2][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[2][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[2][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[2][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[2][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[2][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[3][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[3][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[3][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[3][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[3][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[3][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[3][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[3][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[4][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[4][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[4][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[4][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[4][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[4][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[4][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[4][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[5][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[5][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[5][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[5][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[5][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[5][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[5][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[5][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[6][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[6][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[6][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[6][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[6][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[6][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[6][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[6][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[7][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[7][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[7][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[7][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[7][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[7][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[7][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[7][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[8][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[8][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[8][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[8][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[8][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[8][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[8][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[8][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[9][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[9][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[9][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[9][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[9][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[9][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[9][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[9][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[10][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[10][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[10][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[10][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[10][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[10][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[10][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[10][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[11][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[11][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[11][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[11][0][4]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[11][0][3]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[11][0][2]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[11][0][1]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[11][0][0]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[12][0][7]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[12][0][6]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[12][0][5]__0) is unused and will be removed from module memory_image.
+WARNING: [Synth 8-3332] Sequential element (register_reg[12][0][4]__0) is unused and will be removed from module memory_image.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:53 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 388 ; free virtual = 3367
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:51 ; elapsed = 00:00:59 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 284 ; free virtual = 3270
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:51 ; elapsed = 00:00:59 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 284 ; free virtual = 3270
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:51 ; elapsed = 00:00:59 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 283 ; free virtual = 3269
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:01:01 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 281 ; free virtual = 3268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:01:01 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 281 ; free virtual = 3268
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:01:01 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 281 ; free virtual = 3268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:01:01 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 281 ; free virtual = 3268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:01:01 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 281 ; free virtual = 3268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:01:01 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 281 ; free virtual = 3268
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |     1|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     1|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:01:01 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 281 ; free virtual = 3268
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 7159 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:47 ; elapsed = 00:00:53 . Memory (MB): peak = 2553.656 ; gain = 626.988 ; free physical = 329 ; free virtual = 3315
+Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:01:01 . Memory (MB): peak = 2553.656 ; gain = 789.801 ; free physical = 329 ; free virtual = 3315
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2553.656 ; gain = 0.000 ; free physical = 321 ; free virtual = 3309
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2553.656 ; gain = 0.000 ; free physical = 265 ; free virtual = 3260
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+17 Infos, 221 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:10 . Memory (MB): peak = 2553.656 ; gain = 1040.953 ; free physical = 472 ; free virtual = 3467
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2553.656 ; gain = 0.000 ; free physical = 472 ; free virtual = 3467
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.runs/synth_1/conv.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file conv_utilization_synth.rpt -pb conv_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Apr  3 03:45:55 2021...

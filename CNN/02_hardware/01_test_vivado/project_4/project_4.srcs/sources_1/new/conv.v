@@ -31,7 +31,8 @@ module conv
             n_elements = 10'd9 //total elements in matrix 3x3           
  )
 (
-    input wire clk
+    input wire clk,
+    output reg ok
 );
 
 reg [addr_width:0] i;
@@ -41,7 +42,7 @@ reg rstn = 0;
 reg sel;
 reg  [data_width:0] wdata;
 wire [data_width:0] rdata;
-wire full;
+//wire full;
 
 reg flag = 0;
 reg  [data_width:0] register[0:(row-1)][0:(col-1)];
@@ -52,7 +53,7 @@ memory_image image(
 
 .clk(clk),
 .rstn(rstn),
-.addr1(i+1),
+.addr1(i+1),//slice
 .addr2(j+2),
 .wr(wr),
 .sel(sel),
@@ -73,7 +74,8 @@ begin
         i <= 0;
         j <= 0;        
         f1 <= 0;
-        f2 <= 1;             
+        f2 <= 1;
+        wdata <= 0;             
     end
     if(i < n_rows && f1 == 1 && flag == 1)  //outer for
     begin
@@ -105,6 +107,7 @@ begin
         f1 <= 1;
         f2 <= 0;
         j  <= 0;
+        ok <= 1;
     end
 
 end 

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="7549167fs"></ZoomStartTime>
+      <ZoomEndTime time="10914168fs"></ZoomEndTime>
+      <Cursor1Time time="8110000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="196"></NameColumnWidth>
+      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="12" />
+   <wvobject type="logic" fp_name="/testbench/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/rstn">
+      <obj_property name="ElementShortName">rstn</obj_property>
+      <obj_property name="ObjectShortName">rstn</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/addr1">
+      <obj_property name="ElementShortName">addr1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">addr1[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/addr2">
+      <obj_property name="ElementShortName">addr2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">addr2[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/wr">
+      <obj_property name="ElementShortName">wr</obj_property>
+      <obj_property name="ObjectShortName">wr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/testbench/sel">
+      <obj_property name="ElementShortName">sel</obj_property>
+      <obj_property name="ObjectShortName">sel</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/wdata">
+      <obj_property name="ElementShortName">wdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/rdata">
+      <obj_property name="ElementShortName">rdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata[7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/UUT/register">
+      <obj_property name="ElementShortName">register[0:27][0:27][7:0]</obj_property>
+      <obj_property name="ObjectShortName">register[0:27][0:27][7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <wvobject type="array" fp_name="/testbench/UUT/register[0]">
+         <obj_property name="ElementShortName">[0][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[1]">
+         <obj_property name="ElementShortName">[1][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[2]">
+         <obj_property name="ElementShortName">[2][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[3]">
+         <obj_property name="ElementShortName">[3][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[4]">
+         <obj_property name="ElementShortName">[4][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[5]">
+         <obj_property name="ElementShortName">[5][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[6]">
+         <obj_property name="ElementShortName">[6][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[7]">
+         <obj_property name="ElementShortName">[7][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[8]">
+         <obj_property name="ElementShortName">[8][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[9]">
+         <obj_property name="ElementShortName">[9][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[10]">
+         <obj_property name="ElementShortName">[10][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[11]">
+         <obj_property name="ElementShortName">[11][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[12]">
+         <obj_property name="ElementShortName">[12][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[12][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[13]">
+         <obj_property name="ElementShortName">[13][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[13][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[14]">
+         <obj_property name="ElementShortName">[14][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[14][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[15]">
+         <obj_property name="ElementShortName">[15][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[15][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[16]">
+         <obj_property name="ElementShortName">[16][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[16][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[17]">
+         <obj_property name="ElementShortName">[17][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[17][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[18]">
+         <obj_property name="ElementShortName">[18][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[18][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[19]">
+         <obj_property name="ElementShortName">[19][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[19][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[20]">
+         <obj_property name="ElementShortName">[20][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[20][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[21]">
+         <obj_property name="ElementShortName">[21][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[21][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[22]">
+         <obj_property name="ElementShortName">[22][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[22][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[23]">
+         <obj_property name="ElementShortName">[23][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[23][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[24]">
+         <obj_property name="ElementShortName">[24][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[24][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[25]">
+         <obj_property name="ElementShortName">[25][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[25][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[26]">
+         <obj_property name="ElementShortName">[26][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[26][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/testbench/UUT/register[27]">
+         <obj_property name="ElementShortName">[27][0:27][7:0]</obj_property>
+         <obj_property name="ObjectShortName">[27][0:27][7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/UUT/i">
+      <obj_property name="ElementShortName">i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">i[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/UUT/j">
+      <obj_property name="ElementShortName">j[4:0]</obj_property>
+      <obj_property name="ObjectShortName">j[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/testbench/UUT/k">
+      <obj_property name="ElementShortName">k[9:0]</obj_property>
+      <obj_property name="ObjectShortName">k[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

@@ -129,6 +129,16 @@ filtre = \
  [ -43,  64,  48]]; filtre = np.asarray(filtre);
 bias = -998;
 
+count = 0
+for i in range(0,3):
+  for j in range(0,3):
+    if filtre[i][j] < 0:
+      print("filter1["+str(count)+"] = "+"-7'd"+str(-1*int(filtre[i][j]))+";")
+    else:
+      print("filter1["+str(count)+"] = "+"7'd"+str(int(filtre[i][j]))+";")  
+    count +=1 
+
+
 # Répresenter M comme 2^(-n)* M0
 scale = 0.04698891192674637;                               # quant_conv2d/Relu
 M = 0.0001722 / scale;                                     # (quant_conv2d/BiasAdd/ReadVariableOp)/(quant_conv2d/BiasAdd)--> S1*S2/ S3 --> Sbias/SBiasAdd

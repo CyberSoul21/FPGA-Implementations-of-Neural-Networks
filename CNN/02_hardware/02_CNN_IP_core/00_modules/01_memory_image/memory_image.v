@@ -19,13 +19,16 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module memory_filter
+module memory_image
 #(
   parameter data_width = 7,  //# of bits data
             addr_width = 4,  // # of address bits, 4 because is the minimun number of bit for 784
             elemnt_matrix = 784,  //number of elements in matrix 28x28
             row = 28, //row 28
-            col = 28 //columns 28, from matrix 28x28
+            col = 28, //columns 28, from matrix 28x28
+            n_cols = 5'd28,
+            n_rows = 5'd28,       //from matrix 28x28
+            n_elements = 10'd784 //total elements in matrix 28x28
   )
 (
             input         clk,
@@ -35,7 +38,8 @@ module memory_filter
             input         wr,
             input         sel,    
             input  [data_width:0] wdata,
-            output [data_width:0] rdata     
+            output [data_width:0] rdata,
+            output reg full     
     );
 
 //Converting for-loop into FSM
@@ -48,18 +52,165 @@ reg [9:0] k; //size 9 because is used for binary counter until 784
 reg f1;
 reg f2;
 reg endf = 0;
-reg n_cols = 5'd28;
-reg n_rows = 5'd28; //from matrix 28x28
-reg n_elements = 10'd784; //total elements in matrix 28x28
+//reg n_cols = 5'd28;
+//reg n_rows = 5'd28; //from matrix 28x28
+//reg n_elements = 10'd784; //total elements in matrix 28x28
 
 
 initial //Image
 begin
-data[0] = -7'd6;data[1] = -7'd6;data[2] = -7'd6;data[3] = -7'd6;data[4] = -7'd6;data[5] = -7'd6;data[6] = -7'd6;data[7] = -7'd6;data[8] = -7'd6;data[9] = -7'd6;data[10] = -7'd6;data[11] = -7'd6;data[12] = -7'd6;data[13] = -7'd6;data[14] = -7'd6;data[15] = -7'd6;data[16] = -7'd6;data[17] = -7'd6;data[18] = -7'd6;data[19] = -7'd6;data[20] = -7'd6;data[21] = -7'd6;data[22] = -7'd6;data[23] = -7'd6;data[24] = -7'd6;data[25] = -7'd6;data[26] = -7'd6;data[27] = -7'd6;
-data[28] = -7'd6;data[29] = -7'd6;data[30] = -7'd6;data[31] = -7'd6;data[32] = -7'd6;data[33] = -7'd6;data[34] = -7'd6;data[35] = -7'd6;data[36] = -7'd6;data[37] = -7'd6;data[38] = -7'd6;data[39] = -7'd6;data[40] = -7'd6;data[41] = -7'd6;data[42] = -7'd6;data[43] = -7'd6;data[44] = -7'd6;data[45] = -7'd6;data[46] = -7'd6;data[47] = -7'd6;data[48] = -7'd6;data[49] = -7'd6;data[50] = -7'd6;data[51] = -7'd6;data[52] = -7'd6;data[53] = -7'd6;data[54] = -7'd6;
-data[55] = -7'd6;data[56] = -7'd6;data[57] = -7'd6;data[58] = -7'd6;data[59] = -7'd6;data[60] = -7'd6;data[61] = -7'd6;data[62] = -7'd6;data[63] = -7'd6;data[64] = -7'd6;data[65] = -7'd6;data[66] = -7'd6;data[67] = -7'd6;data[68] = -7'd6;data[69] = -7'd6;data[70] = -7'd6;data[71] = -7'd6;data[72] = -7'd6;data[73] = -7'd6;data[74] = -7'd6;data[75] = -7'd6;data[76] = -7'd6;data[77] = -7'd6;data[78] = -7'd6;data[79] = -7'd6;data[80] = -7'd6;data[81] = -7'd6;
-data[82] = -7'd6;data[83] = -7'd6;data[84] = -7'd6;data[85] = -7'd6;data[86] = -7'd6;data[87] = -7'd6;data[88] = -7'd6;data[89] = -7'd6;data[90] = -7'd6;data[91] = -7'd6;data[92] = -7'd6;data[93] = -7'd6;data[94] = -7'd6;data[95] = -7'd6;data[96] = -7'd6;data[97] = -7'd6;data[98] = -7'd6;data[99] = -7'd6;data[100] = -7'd6;data[101] = -7'd6;data[102] = -7'd6;data[103] = -7'd6;data[104] = -7'd6;data[105] = -7'd6;data[106] = -7'd6;data[107] = -7'd6;data[108] = -7'd6;data[109] = -7'd6;data[110] = -7'd6;data[111] = -7'd6;data[112] = -7'd6;data[113] = -7'd6;data[114] = -7'd6;data[115] = -7'd6;data[116] = -7'd6;data[117] = -7'd6;data[118] = -7'd6;data[119] = -7'd6;data[120] = -7'd6;data[121] = -7'd6;data[122] = -7'd6;data[123] = -7'd6;data[124] = -7'd6;data[125] = -7'd6;data[126] = -7'd6;data[127] = -7'd6;data[128] = -7'd6;data[129] = -7'd6;data[130] = -7'd6;data[131] = -7'd6;data[132] = -7'd6;data[133] = -7'd6;data[134] = -7'd6;data[135] = -7'd6;
-data[136] = -7'd6;data[137] = -7'd6;data[138] = -7'd6;data[139] = -7'd6;data[140] = -7'd6;data[141] = -7'd6;data[142] = -7'd6;data[143] = -7'd6;data[144] = -7'd6;data[145] = -7'd6;data[146] = -7'd6;data[147] = -7'd6;data[148] = -7'd6;data[149] = -7'd6;data[150] = -7'd6;data[151] = -7'd6;
+data[0] = -7'd6;
+data[1] = -7'd6;
+data[2] = -7'd6;
+data[3] = -7'd6;
+data[4] = -7'd6;
+data[5] = -7'd6;
+data[6] = -7'd6;
+data[7] = -7'd6;
+data[8] = -7'd6;
+data[9] = -7'd6;
+data[10] = -7'd6;
+data[11] = -7'd6;
+data[12] = -7'd6;
+data[13] = -7'd6;
+data[14] = -7'd6;
+data[15] = -7'd6;
+data[16] = -7'd6;
+data[17] = -7'd6;
+data[18] = -7'd6;
+data[19] = -7'd6;
+data[20] = -7'd6;
+data[21] = -7'd6;
+data[22] = -7'd6;
+data[23] = -7'd6;
+data[24] = -7'd6;
+data[25] = -7'd6;
+data[26] = -7'd6;
+data[27] = -7'd6;
+data[28] = -7'd6;
+data[29] = -7'd6;
+data[30] = -7'd6;
+data[31] = -7'd6;
+data[32] = -7'd6;
+data[33] = -7'd6;
+data[34] = -7'd6;
+data[35] = -7'd6;
+data[36] = -7'd6;
+data[37] = -7'd6;
+data[38] = -7'd6;
+data[39] = -7'd6;
+data[40] = -7'd6;
+data[41] = -7'd6;
+data[42] = -7'd6;
+data[43] = -7'd6;
+data[44] = -7'd6;
+data[45] = -7'd6;
+data[46] = -7'd6;
+data[47] = -7'd6;
+data[48] = -7'd6;
+data[49] = -7'd6;
+data[50] = -7'd6;
+data[51] = -7'd6;
+data[52] = -7'd6;
+data[53] = -7'd6;
+data[54] = -7'd6;
+data[55] = -7'd6;
+data[56] = -7'd6;
+data[57] = -7'd6;
+data[58] = -7'd6;
+data[59] = -7'd6;
+data[60] = -7'd6;
+data[61] = -7'd6;
+data[62] = -7'd6;
+data[63] = -7'd6;
+data[64] = -7'd6;
+data[65] = -7'd6;
+data[66] = -7'd6;
+data[67] = -7'd6;
+data[68] = -7'd6;
+data[69] = -7'd6;
+data[70] = -7'd6;
+data[71] = -7'd6;
+data[72] = -7'd6;
+data[73] = -7'd6;
+data[74] = -7'd6;
+data[75] = -7'd6;
+data[76] = -7'd6;
+data[77] = -7'd6;
+data[78] = -7'd6;
+data[79] = -7'd6;
+data[80] = -7'd6;
+data[81] = -7'd6;
+data[82] = -7'd6;
+data[83] = -7'd6;
+data[84] = -7'd6;
+data[85] = -7'd6;
+data[86] = -7'd6;
+data[87] = -7'd6;
+data[88] = -7'd6;
+data[89] = -7'd6;
+data[90] = -7'd6;
+data[91] = -7'd6;
+data[92] = -7'd6;
+data[93] = -7'd6;
+data[94] = -7'd6;
+data[95] = -7'd6;
+data[96] = -7'd6;
+data[97] = -7'd6;
+data[98] = -7'd6;
+data[99] = -7'd6;
+data[100] = -7'd6;
+data[101] = -7'd6;
+data[102] = -7'd6;
+data[103] = -7'd6;
+data[104] = -7'd6;
+data[105] = -7'd6;
+data[106] = -7'd6;
+data[107] = -7'd6;
+data[108] = -7'd6;
+data[109] = -7'd6;
+data[110] = -7'd6;
+data[111] = -7'd6;
+data[112] = -7'd6;
+data[113] = -7'd6;
+data[114] = -7'd6;
+data[115] = -7'd6;
+data[116] = -7'd6;
+data[117] = -7'd6;
+data[118] = -7'd6;
+data[119] = -7'd6;
+data[120] = -7'd6;
+data[121] = -7'd6;
+data[122] = -7'd6;
+data[123] = -7'd6;
+data[124] = -7'd6;
+data[125] = -7'd6;
+data[126] = -7'd6;
+data[127] = -7'd6;
+data[128] = -7'd6;
+data[129] = -7'd6;
+data[130] = -7'd6;
+data[131] = -7'd6;
+data[132] = -7'd6;
+data[133] = -7'd6;
+data[134] = -7'd6;
+data[135] = -7'd6;
+data[136] = -7'd6;
+data[137] = -7'd6;
+data[138] = -7'd6;
+data[139] = -7'd6;
+data[140] = -7'd6;
+data[141] = -7'd6;
+data[142] = -7'd6;
+data[143] = -7'd6;
+data[144] = -7'd6;
+data[145] = -7'd6;
+data[146] = -7'd6;
+data[147] = -7'd6;
+data[148] = -7'd6;
+data[149] = -7'd6;
+data[150] = -7'd6;
+data[151] = -7'd6;
 data[152] = 7'd55;
 data[153] = 7'd127;
 data[154] = 7'd127;
@@ -732,6 +883,7 @@ begin
         flag <= 0;
         f1 <= 0;
         f2 <= 1;    
+        full <= 0;
      end
      else
      begin
@@ -746,7 +898,7 @@ end
 
 always @(clk) //Present estate 
 begin
-    if(j < n_cols && f2 == 1) 
+    if((j < n_cols) && (f2 == 1)) 
     begin
         j <= j + 1;
         k <= k + 1;
@@ -767,6 +919,7 @@ begin
         j  <= 0;
         k  <= 0;
         flag  <= 0;
+        full <= 1;
     end    
   
 end 
@@ -784,7 +937,6 @@ assign rdata = (sel & ~wr) ? register[addr1][addr2]:0; //Read data memory, defau
 
 
 //*********************************************************
-
 
       
 

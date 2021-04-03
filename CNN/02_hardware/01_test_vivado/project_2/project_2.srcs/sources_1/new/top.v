@@ -25,7 +25,10 @@ module top
             addr_width = 4,  // # of address bits, 4 because is the minimun number of bit for 784
             elemnt_matrix = 784,  //number of elements in matrix 28x28
             row = 28, //row 28
-            col = 28 //columns 28, from matrix 28x28
+            col = 28, //columns 28, from matrix 28x28
+            n_cols = 5'd28,
+            n_rows = 5'd28,       //from matrix 28x28
+            n_elements = 10'd784 //total elements in matrix 28x28
   )
 (
             input         clk,
@@ -48,9 +51,9 @@ reg [9:0] k; //size 9 because is used for binary counter until 784
 reg f1;
 reg f2;
 reg endf = 0;
-reg n_cols = 5'd28;
-reg n_rows = 5'd28; //from matrix 28x28
-reg n_elements = 10'd784; //total elements in matrix 28x28
+//reg n_cols = 5'd28;
+//reg n_rows = 5'd28; //from matrix 28x28
+//reg n_elements = 10'd784; //total elements in matrix 28x28
 
 
 initial //Image
@@ -893,7 +896,7 @@ end
 
 always @(clk) //Present estate 
 begin
-    if(j < n_cols && f2 == 1) 
+    if((j < n_cols) && (f2 == 1)) 
     begin
         j <= j + 1;
         k <= k + 1;

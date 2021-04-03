@@ -34,7 +34,7 @@ module testbench;
     wire [7:0] rdata; 
     
     //unit under test (UUT)
-    top UUT(
+    memory_image UUT(
         .clk(clk),
         .rstn(rstn),
         .addr1(addr1),

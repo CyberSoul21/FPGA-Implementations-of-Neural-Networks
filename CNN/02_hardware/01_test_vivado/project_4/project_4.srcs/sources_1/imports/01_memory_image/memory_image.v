@@ -59,15 +59,15 @@ reg endf = 0;
 
 initial //Image
 begin
-data[0] = -7'd6;
-data[1] = -7'd6;
-data[2] = -7'd6;
-data[3] = -7'd6;
-data[4] = -7'd6;
+data[0] = -7'd1;
+data[1] = -7'd2;
+data[2] = -7'd3;
+data[3] = -7'd4;
+data[4] = -7'd5;
 data[5] = -7'd6;
-data[6] = -7'd6;
-data[7] = -7'd6;
-data[8] = -7'd6;
+data[6] = -7'd7;
+data[7] = -7'd8;
+data[8] = -7'd9;
 data[9] = -7'd6;
 data[10] = -7'd6;
 data[11] = -7'd6;
@@ -900,10 +900,10 @@ always @(clk) //Present estate
 begin
     if((j < n_cols) && (f2 == 1)) 
     begin
-        j <= j + 1;
-        k <= k + 1;
         register[i][j] <= data[k];
         //register[i][j] <= wdata;
+        j <= j + 1;
+        k <= k + 1;        
     end
     if(j == (n_cols - 1))
     begin

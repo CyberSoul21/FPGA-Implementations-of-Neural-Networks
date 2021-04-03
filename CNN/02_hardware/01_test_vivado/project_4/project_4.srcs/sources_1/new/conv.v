@@ -23,7 +23,12 @@
 module conv
 #(
   parameter data_width = 7,  //# of bits data
-            addr_width = 4
+            addr_width = 4,
+            row = 3, //row 3
+            col = 3, //columns 3, from matrix 3x3
+            n_cols = 5'd3,
+            n_rows = 5'd3,       //from matrix 3x3
+            n_elements = 10'd9 //total elements in matrix 3x3           
  )
 (
     input wire clk
@@ -39,14 +44,16 @@ wire [data_width:0] rdata;
 wire full;
 
 reg flag = 0;
-
+reg  [data_width:0] register[0:(row-1)][0:(col-1)];
+reg f1;
+reg f2;
 
 memory_image image(
 
 .clk(clk),
 .rstn(rstn),
-.addr1(i),
-.addr2(j),
+.addr1(i+0),
+.addr2(j+1),
 .wr(wr),
 .sel(sel),
 .wdata(wdata),
@@ -60,16 +67,64 @@ begin
     if(full==1 && flag==0) //flag is for ensure this make once
     begin
         rstn <= 1;
-        flag <= 1;    
-    end
-    if(flag == 1)
-    begin
+        flag <= 1;
         sel <= 1;
-        wr <= 0;
-        i <= 5'd12;
-        j <= 5'd13;
+        wr <= 0;        
+        i <= 0;
+        j <= 0;        
+        f1 <= 0;
+        f2 <= 1;             
+    end
+    if(i < n_rows && f1 == 1 && flag == 1)  //outer for
+    begin
+        i <= i + 1;
+        f1 <= 0;
+        f2 <= 1;
+    end
+    if(i == (n_rows - 1) && f1 == 1 )
+    begin
+        f1 <= 0;
+        f2 <= 0;
+        i  <= 0;
+        j  <= 0;
     end
 end
+
+
+
+always @(clk) //Present estate //inner for
+begin
+    if((j < n_cols) && (f2 == 1) && flag ==1) 
+    begin
+        j <= j + 1;
+        register[i][j] <= rdata;
+        
+    end
+    if(j == (n_cols - 1))
+    begin
+        f1 <= 1;
+        f2 <= 0;
+        j  <= 0;
+    end
+
+end 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

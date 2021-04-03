@@ -52,8 +52,8 @@ memory_image image(
 
 .clk(clk),
 .rstn(rstn),
-.addr1(i+0),
-.addr2(j+1),
+.addr1(i+1),
+.addr2(j+2),
 .wr(wr),
 .sel(sel),
 .wdata(wdata),

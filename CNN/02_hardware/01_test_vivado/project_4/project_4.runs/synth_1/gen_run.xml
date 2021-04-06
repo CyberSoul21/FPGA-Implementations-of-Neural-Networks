@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1617439474">
-  <File Type="VDS-TIMINGSUMMARY" Name="conv_timing_summary_synth.rpt"/>
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1617690144">
+  <File Type="PA-TCL" Name="conv.tcl"/>
+  <File Type="REPORTS-TCL" Name="conv_reports.tcl"/>
+  <File Type="RDS-RDS" Name="conv.vds"/>
+  <File Type="RDS-UTIL" Name="conv_utilization_synth.rpt"/>
   <File Type="RDS-DCP" Name="conv.dcp"/>
   <File Type="RDS-UTIL-PB" Name="conv_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="conv_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="conv_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="conv.vds"/>
-  <File Type="REPORTS-TCL" Name="conv_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="conv_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="conv.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/01_memory_image/memory_image.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../02_CNN_IP_core/00_modules/01_memory_image/memory_image.v"/>
         <Attr Name="ImportTime" Val="1617412509"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/wrapper_memory.v">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -54,9 +58,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

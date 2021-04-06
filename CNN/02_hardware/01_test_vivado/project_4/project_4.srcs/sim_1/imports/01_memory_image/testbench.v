@@ -24,22 +24,33 @@ module testbench;
 
     //inputs
     reg clk;
+    reg fill;
+    reg clear;    
 
     
     //unit under test (UUT)
     conv UUT(
-        .clk(clk) 
+        .clk(clk), 
+        .fill(fill),
+        .clear(clear)            
     );
     
     
     always
     begin
     clk = 1;
-
+    fill = 0;
+    clear = 0;
     forever 
     begin
         #10 clk = ~clk;
     end    
+    end
+    
+    initial
+    begin
+        #10 fill = 1;
+        #15 fill = 0;
     end
 
 

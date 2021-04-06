@@ -31,6 +31,7 @@ set_property ip_output_repo /home/javier/Documents/fpga_implementations_of_neura
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
   /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/imports/01_memory_image/memory_image.v
+  /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/wrapper_memory.v
   /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_4/project_4.srcs/sources_1/new/conv.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being

@@ -108,9 +108,11 @@ count = 0
 for i in range(0,28):
   for j in range(0,28):
     if img_test[i][j] < 0:
-      print("data["+str(count)+"] = "+"-7'd"+str(-1*int(img_test[i][j]))+";")
+      print("-7'd"+str(-1*int(img_test[i][j])))
+      #print("data["+str(count)+"] = "+"-7'd"+str(-1*int(img_test[i][j]))+";")
     else:
-      print("data["+str(count)+"] = "+"7'd"+str(int(img_test[i][j]))+";")  
+      print("7'd"+str(int(img_test[i][j])))  
+      #print("data["+str(count)+"] = "+"7'd"+str(int(img_test[i][j]))+";")  
     count +=1 
 
 print(" \n ");
@@ -133,9 +135,11 @@ count = 0
 for i in range(0,3):
   for j in range(0,3):
     if filtre[i][j] < 0:
-      print("filter1["+str(count)+"] = "+"-7'd"+str(-1*int(filtre[i][j]))+";")
+      #print("filter1["+str(count)+"] = "+"-7'd"+str(-1*int(filtre[i][j]))+";")
+      print("-7'd"+str(-1*int(filtre[i][j])))
     else:
-      print("filter1["+str(count)+"] = "+"7'd"+str(int(filtre[i][j]))+";")  
+      #print("filter1["+str(count)+"] = "+"7'd"+str(int(filtre[i][j]))+";")
+      print("7'd"+str(int(filtre[i][j])))  
     count +=1 
 
 

@@ -881,8 +881,10 @@ begin
      begin
         i <= i + 1;
         wdata <= data[i];
+        $display("%b",wdata);
         if(i == (elemnts - 1)) 
         begin
+        full <= 1;
         f1 <= 0;
         i <= 0;  
         end           

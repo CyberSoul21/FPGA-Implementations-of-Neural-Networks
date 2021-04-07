@@ -11,51 +11,76 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="15166666fs"></ZoomStartTime>
-      <ZoomEndTime time="16166667fs"></ZoomEndTime>
-      <Cursor1Time time="15720000fs"></Cursor1Time>
+      <ZoomStartTime time="2583634fs"></ZoomStartTime>
+      <ZoomEndTime time="2741835fs"></ZoomEndTime>
+      <Cursor1Time time="2610000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="142"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="9" />
+   <WVObjectSize size="15" />
    <wvobject type="logic" fp_name="/test/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test/rst">
-      <obj_property name="ElementShortName">rst</obj_property>
-      <obj_property name="ObjectShortName">rst</obj_property>
+   <wvobject type="logic" fp_name="/test/fill">
+      <obj_property name="ElementShortName">fill</obj_property>
+      <obj_property name="ObjectShortName">fill</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/test/addr">
-      <obj_property name="ElementShortName">addr[4:0]</obj_property>
-      <obj_property name="ObjectShortName">addr[4:0]</obj_property>
+   <wvobject type="logic" fp_name="/test/clear">
+      <obj_property name="ElementShortName">clear</obj_property>
+      <obj_property name="ObjectShortName">clear</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test/wr">
+   <wvobject type="logic" fp_name="/test/full">
+      <obj_property name="ElementShortName">full</obj_property>
+      <obj_property name="ObjectShortName">full</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/UUT/flag">
+      <obj_property name="ElementShortName">flag</obj_property>
+      <obj_property name="ObjectShortName">flag</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/UUT/wr">
       <obj_property name="ElementShortName">wr</obj_property>
       <obj_property name="ObjectShortName">wr</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test/sel">
+   <wvobject type="logic" fp_name="/test/UUT/sel">
       <obj_property name="ElementShortName">sel</obj_property>
       <obj_property name="ObjectShortName">sel</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/test/wdata">
-      <obj_property name="ElementShortName">wdata[7:0]</obj_property>
-      <obj_property name="ObjectShortName">wdata[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/test/rdata">
-      <obj_property name="ElementShortName">rdata[7:0]</obj_property>
-      <obj_property name="ObjectShortName">rdata[7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/test/UUT/register">
-      <obj_property name="ElementShortName">register[0:783][7:0]</obj_property>
-      <obj_property name="ObjectShortName">register[0:783][7:0]</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+   <wvobject type="logic" fp_name="/test/UUT/f1">
+      <obj_property name="ElementShortName">f1</obj_property>
+      <obj_property name="ObjectShortName">f1</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/test/UUT/i">
       <obj_property name="ElementShortName">i[9:0]</obj_property>
       <obj_property name="ObjectShortName">i[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/wdata">
+      <obj_property name="ElementShortName">wdata[7:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata[7:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/UUT/image/wr">
+      <obj_property name="ElementShortName">wr</obj_property>
+      <obj_property name="ObjectShortName">wr</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/UUT/image/sel">
+      <obj_property name="ElementShortName">sel</obj_property>
+      <obj_property name="ObjectShortName">sel</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/image/register">
+      <obj_property name="ElementShortName">register[0:783][7:0]</obj_property>
+      <obj_property name="ObjectShortName">register[0:783][7:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/image/i">
+      <obj_property name="ElementShortName">i[9:0]</obj_property>
+      <obj_property name="ObjectShortName">i[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/image/addr">
+      <obj_property name="ElementShortName">addr[9:0]</obj_property>
+      <obj_property name="ObjectShortName">addr[9:0]</obj_property>
    </wvobject>
 </wave_config>

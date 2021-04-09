@@ -25,8 +25,11 @@ module conv
                         parameter numWeight = 784, 
                         addressWidth=10,
                         dataWidth=16,
-                        parameter n_c = 5'd4//5'd27  //number of column matrix image
-                       
+                        parameter n_c = 5'd5,//5'd27,  //number of column matrix image 
+                        parameter n_r = 5'd5,//5'd27,  //number of rows matrix image 
+                        //parameter n_cf = 5'd2,//5'd27,  //number of column matrix image
+                        parameter col_fil = 5'd2,//3, //number of columns of filter
+                        parameter row_fil = 5'd2//3 //number of rows of filter
 ) 
 (
     input wire clk,
@@ -53,14 +56,17 @@ reg [4:0] p;
 reg f1;
 reg f2;
 
+reg f3;
+reg f4;
+
 initial
 begin
 col_j=0; //size 4 because is used for binary counter until 28
 row_i=0;
-s_j=1; //size 4 because is used for binary counter until 28
-s_i=1;
-f1=0;
-f2=0;
+s_j=0; //size 4 because is used for binary counter until 28
+s_i=0;
+f1=0; //Activate inner for loop
+f2=0; //Activate outer for loop
 end
 
 
@@ -135,32 +141,47 @@ begin
         f1 <= 0;
         f2 <= 1;    
      end
-     if((col_j) < (2) && f2 == 1) 
+     if((col_j) < (col_fil) && f2 == 1) 
      begin
-        //p <= (row_i+s_i)*(n_c + 1) + (col_j+s_j);
-        //p <= row_i*(5'd4 + 1) + col_j;
         col_j <= col_j + 1;
      end        
-     if((col_j) == ((2) - 1)) 
+     if((col_j) == ((col_fil) - 1)) 
      begin
         f1 <= 1;
         f2 <= 0;
         col_j <= 0;                
-     end                 
+     end
+     
+//     if((s_j) < (n_col +1 - col_fil) && f4 == 1) 
+//     begin
+//        s_j <= s_j + 1;
+//        f4 <= 0;
+//     end        
+//     if((s_j) == ((n_col +1 - col_fil) - 1)) 
+//     begin
+//        f3 <= 1;
+//        f4 <= 0;
+//        s_j <= 0;                
+//     end         
+     
+     
+     
+                      
 
 end
 
 always @(posedge f1)
 begin
-     if((row_i) < (2) && f1 == 1) 
+     if((row_i) < (row_fil) && f1 == 1) 
      begin
         row_i <= row_i + 1;
         f1 <= 0;
         f2 <= 1;
-        if((row_i) == ((2) - 1)) 
+        if((row_i) == ((row_fil) - 1)) 
         begin
         f1 <= 0;
         f2 <= 0;
+//        f4 <= 1;
         row_i <= 0;
         s_j<=0;
         s_i<=0;
@@ -170,7 +191,7 @@ end
 
 always @(*)
 begin
-    p <= (row_i+s_i)*(n_c + 1) + (col_j+s_j);
+    p <= (row_i+s_i)*(n_c) + (col_j+s_j);
 
 end
 

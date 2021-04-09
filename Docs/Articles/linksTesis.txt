@@ -1,0 +1,21 @@
+Verilog:
+
+https://www.chipverify.com/verilog/verilog-generate-block
+
+https://link.springer.com/content/pdf/bbm%3A978-3-642-45309-0%2F1.pdf
+
+Ejemplo whisbone
+
+https://www.isy.liu.se/edu/kurs/TSEA44/coursemtrl16/labkomp.pdf
+
+
+Foros
+
+https://www.reddit.com/r/FPGA/comments/mjikg9/fpga_neural_network/
+
+https://www.youtube.com/user/TheVipinkmenon/videos
+https://www.youtube.com/watch?v=Tsu3q2iyab4
+
+
+https://github.com/vipinkmenon/neuralNetwork/blob/master/Tut-2/Sig_ROM.v
+

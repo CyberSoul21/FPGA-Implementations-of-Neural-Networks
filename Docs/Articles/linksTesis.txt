@@ -19,3 +19,32 @@ https://www.youtube.com/watch?v=Tsu3q2iyab4
 
 https://github.com/vipinkmenon/neuralNetwork/blob/master/Tut-2/Sig_ROM.v
 
+
+
+\begin{table}[]
+\begin{tabular}{|l|c|c|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Objetivo}}                                        & \multicolumn{1}{l|}{\textbf{Completado}} & \multicolumn{1}{l|}{\textbf{\% avance}} \\ \hline
+\textbf{Evaluar CNN en software}                                               & \textbf{Si}                              & \textbf{25}                             \\ \hline
+-Evaluar diferentes modelos y determinar uno                                   & si                                       & 8.3                                     \\ \hline
+-Modelo basado en cuantización                                                 & si                                       & 8.3                                     \\ \hline
+-Determinar operaciones a implementar en Hardware                              & si                                       & 8.3                                     \\ \hline
+\textbf{Implementar un acelerador CNN en FPGA}                                 & \textbf{NO}                              & \textbf{25}                             \\ \hline
+-Implementar módulo para cuantización (FSM)                                    & si                                       & 3.125                                   \\ \hline
+-Almacenar pesos (creación de memorias ROM)                                    & si                                       & 3.125                                   \\ \hline
+-ALU para multiplicación matricial                                             & si                                       & 3.125                                   \\ \hline
+-Operación de convolución                                                      &                                          & 3.125                                   \\ \hline
+-Operación Max-Pooling                                                         & si                                       & 3.125                                   \\ \hline
+-Función de activación ReLU/Sigmoid                                            & si                                       & 3.125                                   \\ \hline
+-Operación full-connected                                                      & no                                       & 3.125                                   \\ \hline
+-Evaluar el modelo (con imagen prueba en la ROM)                               & no                                       & 3.125                                   \\ \hline
+\textbf{Desarrollo wrapper}                                                    & \textbf{NO}                              & \textbf{25}                             \\ \hline
+-Evaluar procesadores para pruebas                                             & no                                       & 6.25                                    \\ \hline
+-Evaluar protocolos a usar Axi/Whisbone                                        & no                                       & 6.25                                    \\ \hline
+-Realizar modulo para conectar con el bus                                      & no                                       & 6.25                                    \\ \hline
+-Unir con el acelerador y el Procesador                                        & no                                       & 6.25                                    \\ \hline
+\multicolumn{1}{|c|}{\textbf{Obtener metricas para comparación con CPU y GPU}} & \textbf{NO}                              & \textbf{25}                             \\ \hline
+\multicolumn{2}{|c|}{\textbf{Total de avance:}}                                                                           & \multicolumn{1}{l|}{40.625\%}           \\ \hline
+\end{tabular}
+\end{table}
+

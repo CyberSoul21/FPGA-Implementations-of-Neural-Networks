@@ -23,7 +23,7 @@
 module memory_image #(
                         parameter numWeight = 784, 
                         addressWidth=10,
-                        dataWidth= 8,
+                        dataWidth= 16,
                         weightFile="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.txt"
                           
                         ) 
@@ -45,7 +45,7 @@ module memory_image #(
     
     always @(posedge clk)
     begin
-        if (!en)
+        if (en)
         begin
             rdata <= register[addr];
         end

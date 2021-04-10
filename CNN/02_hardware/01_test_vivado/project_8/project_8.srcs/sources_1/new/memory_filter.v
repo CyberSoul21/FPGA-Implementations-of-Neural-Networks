@@ -56,7 +56,7 @@ module memory_filter #(
     
     always @(posedge clk)
     begin
-        if (!en)
+        if (en)
         begin
             rdata <= register[addr];
         end

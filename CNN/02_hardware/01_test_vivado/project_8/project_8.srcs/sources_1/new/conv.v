@@ -53,7 +53,8 @@ reg [4:0] col_j; //size 4 because is used for binary counter until 28
 reg [4:0] row_i;
 reg [4:0] s_j; //slice
 reg [4:0] s_i;
-reg [4:0] p;
+reg [4:0] pos_img;
+reg [4:0] pos_filt;
 reg f1;
 reg f2;
 
@@ -74,6 +75,9 @@ f2=0; //Activate outer for loop
 
 matrix_ok = 0;
 out <= 0;
+
+load_image=0;
+load_filter=0;
 end
 
 
@@ -148,7 +152,9 @@ begin
         f1 <= 0;
         f2 <= 1;
         f3 <= 0;
-        f4 <= 1;             
+        f4 <= 1;
+        load_image<=1;
+        load_filter<=1;                     
      end
      if((col_j) < (col_fil) && f2 == 1) 
      begin
@@ -185,7 +191,10 @@ end
 
 always @(*)
 begin
-    p <= (row_i+s_i)*(n_c) + (col_j+s_j);
+    pos_img <= (row_i+s_i)*(n_c) + (col_j+s_j);
+    pos_filt <= (row_i)*(n_c) + (col_j);
+    addr_img <= pos_img;
+    addr_filt <= pos_filt; 
 
 end
 
@@ -230,7 +239,10 @@ begin
         f1 <= 0;
         f2 <= 0;
         matrix_ok <= 0;
-        out <= 1;         
+        out <= 1;
+        
+        load_image<=0;
+        load_filter<=0;                 
      end 
      
 end

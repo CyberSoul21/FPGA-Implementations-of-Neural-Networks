@@ -27,12 +27,13 @@ module test;
     reg en;
 
     //outputs    
- 
+    wire out;
     
     //unit under test (UUT)
     conv UUT(
         .clk(clk),
-        .en(en)
+        .en(en),
+        .out(out)
     );
     
     //initial clk = 0, rst = 1;

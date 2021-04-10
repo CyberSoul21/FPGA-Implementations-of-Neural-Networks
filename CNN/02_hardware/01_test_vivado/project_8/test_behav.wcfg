@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="182801fs"></ZoomEndTime>
-      <Cursor1Time time="1000000fs"></Cursor1Time>
+      <ZoomStartTime time="449139fs"></ZoomStartTime>
+      <ZoomEndTime time="690173fs"></ZoomEndTime>
+      <Cursor1Time time="650000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="134"></NameColumnWidth>
+      <NameColumnWidth column_width="130"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="7" />
+   <WVObjectSize size="11" />
    <wvobject type="logic" fp_name="/test/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -50,5 +50,23 @@
       <obj_property name="ElementShortName">p[4:0]</obj_property>
       <obj_property name="ObjectShortName">p[4:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/s_i">
+      <obj_property name="ElementShortName">s_i[4:0]</obj_property>
+      <obj_property name="ObjectShortName">s_i[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/s_j">
+      <obj_property name="ElementShortName">s_j[4:0]</obj_property>
+      <obj_property name="ObjectShortName">s_j[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/UUT/matrix_ok">
+      <obj_property name="ElementShortName">matrix_ok</obj_property>
+      <obj_property name="ObjectShortName">matrix_ok</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/UUT/out">
+      <obj_property name="ElementShortName">out</obj_property>
+      <obj_property name="ObjectShortName">out</obj_property>
    </wvobject>
 </wave_config>

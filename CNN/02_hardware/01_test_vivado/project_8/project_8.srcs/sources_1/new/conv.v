@@ -25,15 +25,16 @@ module conv
                         parameter numWeight = 784, 
                         addressWidth=10,
                         dataWidth=16,
-                        parameter n_c = 5'd5,//5'd27,  //number of column matrix image 
-                        parameter n_r = 5'd5,//5'd27,  //number of rows matrix image 
+                        parameter n_c = 5'd3,//5'd27,  //number of column matrix image 
+                        parameter n_r = 5'd3,//5'd27,  //number of rows matrix image 
                         //parameter n_cf = 5'd2,//5'd27,  //number of column matrix image
                         parameter col_fil = 5'd2,//3, //number of columns of filter
                         parameter row_fil = 5'd2//3 //number of rows of filter
 ) 
 (
     input wire clk,
-    input wire en
+    input wire en,
+    output reg out
 );
 
 reg [addressWidth-1:0] addr_img;
@@ -59,6 +60,9 @@ reg f2;
 reg f3;
 reg f4;
 
+reg matrix_ok = 0;
+
+
 initial
 begin
 col_j=0; //size 4 because is used for binary counter until 28
@@ -67,6 +71,9 @@ s_j=0; //size 4 because is used for binary counter until 28
 s_i=0;
 f1=0; //Activate inner for loop
 f2=0; //Activate outer for loop
+
+matrix_ok = 0;
+out <= 0;
 end
 
 
@@ -139,7 +146,9 @@ begin
         col_j <= 0;
         row_i <= 0;
         f1 <= 0;
-        f2 <= 1;    
+        f2 <= 1;
+        f3 <= 0;
+        f4 <= 1;             
      end
      if((col_j) < (col_fil) && f2 == 1) 
      begin
@@ -149,25 +158,10 @@ begin
      begin
         f1 <= 1;
         f2 <= 0;
-        col_j <= 0;                
+        col_j <= 0;
+                        
      end
      
-//     if((s_j) < (n_col +1 - col_fil) && f4 == 1) 
-//     begin
-//        s_j <= s_j + 1;
-//        f4 <= 0;
-//     end        
-//     if((s_j) == ((n_col +1 - col_fil) - 1)) 
-//     begin
-//        f3 <= 1;
-//        f4 <= 0;
-//        s_j <= 0;                
-//     end         
-     
-     
-     
-                      
-
 end
 
 always @(posedge f1)
@@ -181,10 +175,10 @@ begin
         begin
         f1 <= 0;
         f2 <= 0;
-//        f4 <= 1;
         row_i <= 0;
-        s_j<=0;
-        s_i<=0;
+        //s_j<=0;
+        //s_i<=0;
+        matrix_ok <= 1;
         end
      end
 end
@@ -195,6 +189,51 @@ begin
 
 end
 
+
+always @(posedge matrix_ok) //Present estate 
+begin
+
+     if((s_j) < (n_c + 1 - col_fil) && f4 == 1 && matrix_ok ==1) 
+     begin
+        s_j <= s_j + 1;
+        col_j <= 0;
+        row_i <= 0;
+        f1 <= 0;
+        f2 <= 1;
+        matrix_ok <= 0;
+     end        
+     if((s_j) == ((n_c + 1 - col_fil) - 1)) 
+     begin
+        f3 <= 1;
+        f4 <= 0;
+        s_j <= 0;
+//        f1 <= 0;
+//        f2 <= 0;             
+     end  
+
+end
+
+always @(posedge f3)
+begin
+     if((s_i) < (n_r + 1 - col_fil) && f3 == 1) 
+     begin
+        s_i <= s_i + 1;
+        f3 <= 0;
+        f4 <= 1;
+     end   
+     if((s_i) == (n_r + 1 - col_fil -1)) 
+     begin
+        f3 <= 0;
+        f4 <= 0;
+        s_i <= 0;
+        s_j<=0;
+        f1 <= 0;
+        f2 <= 0;
+        matrix_ok <= 0;
+        out <= 1;         
+     end 
+     
+end
 
 
 

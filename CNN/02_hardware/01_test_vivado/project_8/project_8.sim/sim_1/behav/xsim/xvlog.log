@@ -1,0 +1,8 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conv
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/memory_filter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory_filter
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/memory_image.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory_image
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sim_1/new/test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test

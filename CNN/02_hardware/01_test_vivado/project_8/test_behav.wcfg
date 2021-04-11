@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="317316fs"></ZoomEndTime>
-      <Cursor1Time time="170650fs"></Cursor1Time>
+      <ZoomEndTime time="409501fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="126"></NameColumnWidth>
+      <NameColumnWidth column_width="114"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="10" />
    <wvobject type="logic" fp_name="/test/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -28,29 +28,9 @@
       <obj_property name="ElementShortName">en</obj_property>
       <obj_property name="ObjectShortName">en</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/test/UUT/image/register">
-      <obj_property name="ElementShortName">register[783:0][7:0]</obj_property>
-      <obj_property name="ObjectShortName">register[783:0][7:0]</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/test/UUT/filter/register">
-      <obj_property name="ElementShortName">register[9:0][15:0]</obj_property>
-      <obj_property name="ObjectShortName">register[9:0][15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/test/UUT/row_i">
-      <obj_property name="ElementShortName">row_i[4:0]</obj_property>
-      <obj_property name="ObjectShortName">row_i[4:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/test/UUT/col_j">
-      <obj_property name="ElementShortName">col_j[4:0]</obj_property>
-      <obj_property name="ObjectShortName">col_j[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/test/UUT/pos_img">
-      <obj_property name="ElementShortName">pos_img[4:0]</obj_property>
-      <obj_property name="ObjectShortName">pos_img[4:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject type="logic" fp_name="/test/UUT/clk_div">
+      <obj_property name="ElementShortName">clk_div</obj_property>
+      <obj_property name="ObjectShortName">clk_div</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/test/UUT/s_i">
       <obj_property name="ElementShortName">s_i[4:0]</obj_property>
@@ -62,22 +42,68 @@
       <obj_property name="ObjectShortName">s_j[4:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test/UUT/matrix_ok">
-      <obj_property name="ElementShortName">matrix_ok</obj_property>
-      <obj_property name="ObjectShortName">matrix_ok</obj_property>
+   <wvobject type="array" fp_name="/test/UUT/rdata_img0">
+      <obj_property name="ElementShortName">rdata_img0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_img0[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/test/UUT/out">
-      <obj_property name="ElementShortName">out</obj_property>
-      <obj_property name="ObjectShortName">out</obj_property>
+   <wvobject type="array" fp_name="/test/UUT/rdata_img1">
+      <obj_property name="ElementShortName">rdata_img1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_img1[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/test/UUT/rdata_img">
-      <obj_property name="ElementShortName">rdata_img[15:0]</obj_property>
-      <obj_property name="ObjectShortName">rdata_img[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   <wvobject type="array" fp_name="/test/UUT/rdata_filt0">
+      <obj_property name="ElementShortName">rdata_filt0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_filt0[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject type="array" fp_name="/test/UUT/rdata_filt">
-      <obj_property name="ElementShortName">rdata_filt[15:0]</obj_property>
-      <obj_property name="ObjectShortName">rdata_filt[15:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
+   <wvobject type="array" fp_name="/test/UUT/rdata_filt1">
+      <obj_property name="ElementShortName">rdata_filt1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_filt1[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/rstl_mult">
+      <obj_property name="ElementShortName">rstl_mult[8:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">rstl_mult[8:0][15:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/test/UUT/rstl_mult[8]">
+         <obj_property name="ElementShortName">[8][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/test/UUT/rstl_mult[7]">
+         <obj_property name="ElementShortName">[7][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/test/UUT/rstl_mult[6]">
+         <obj_property name="ElementShortName">[6][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/test/UUT/rstl_mult[5]">
+         <obj_property name="ElementShortName">[5][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/test/UUT/rstl_mult[4]">
+         <obj_property name="ElementShortName">[4][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/test/UUT/rstl_mult[3]">
+         <obj_property name="ElementShortName">[3][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][15:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/test/UUT/rstl_mult[2]">
+         <obj_property name="ElementShortName">[2][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][15:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/test/UUT/rstl_mult[1]">
+         <obj_property name="ElementShortName">[1][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][15:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/test/UUT/rstl_mult[0]">
+         <obj_property name="ElementShortName">[0][15:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][15:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

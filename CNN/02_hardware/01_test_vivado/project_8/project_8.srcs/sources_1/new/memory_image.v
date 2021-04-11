@@ -36,18 +36,40 @@ module memory_image #(
     );
     
     reg [dataWidth-1:0] register[numWeight-1:0];
+    reg [dataWidth-1:0] data[numWeight-1:0];
 
+//        initial
+//		begin
+//	        $readmemb(weightFile, register);
+//	    end
+    
+initial //Image
+begin
+data[0] = -16'd0;
+data[1] = -16'd1;
+data[2] = -16'd2;
+data[3] = -16'd3;
+data[4] = -16'd4;
+data[5] = -16'd5;
+data[6] = -16'd6;
+data[7] = -16'd7;
+data[8] = -16'd8;
+data[9] = -16'd9;
+data[10] = -16'd10;
+data[11] = -16'd11;
+data[12] = -16'd12;
+data[13] = -16'd13;
+data[14] = -16'd14;
 
-        initial
-		begin
-	        $readmemb(weightFile, register);
-	    end
+end    
+    
     
     always @(posedge clk)
     begin
         if (en)
         begin
-            rdata <= register[addr];
+            //rdata <= register[addr];
+            rdata <= data[addr];
         end
     end 
 endmodule

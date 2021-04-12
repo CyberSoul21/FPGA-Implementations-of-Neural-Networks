@@ -1,0 +1,337 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun Apr 11 16:23:22 2021
+# Process ID: 27876
+# Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.runs/synth_1
+# Command line: vivado -log conv.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source conv.tcl
+# Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.runs/synth_1/conv.vds
+# Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source conv.tcl -notrace
+Command: synth_design -top conv -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 27946 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1965.621 ; gain = 201.684 ; free physical = 160 ; free virtual = 4090
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'conv' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:23]
+	Parameter numWeight bound to: 784 - type: integer 
+	Parameter addressWidth bound to: 10 - type: integer 
+	Parameter dataWidth bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b00101 
+	Parameter n_r bound to: 5'b00011 
+	Parameter col_fil bound to: 5'b00010 
+	Parameter row_fil bound to: 5'b00010 
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/clock_divider.v:27]
+	Parameter DIVISOR bound to: 28'b0000000000000000000000001010 
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (1#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/clock_divider.v:27]
+INFO: [Synth 8-6157] synthesizing module 'memory_image' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/memory_image.v:23]
+	Parameter numWeight bound to: 784 - type: integer 
+	Parameter addressWidth bound to: 10 - type: integer 
+	Parameter dataWidth bound to: 16 - type: integer 
+	Parameter weightFile bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.txt - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'memory_image' (2#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/memory_image.v:23]
+INFO: [Synth 8-6157] synthesizing module 'memory_filter' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/memory_filter.v:29]
+	Parameter numWeight bound to: 10 - type: integer 
+	Parameter addressWidth bound to: 4 - type: integer 
+	Parameter dataWidth bound to: 16 - type: integer 
+	Parameter weightFile bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+INFO: [Synth 8-3876] $readmem data file '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt' is read successfully [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/memory_filter.v:54]
+INFO: [Synth 8-6155] done synthesizing module 'memory_filter' (3#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/memory_filter.v:29]
+WARNING: [Synth 8-689] width (10) of port connection 'addr' does not match port width (4) of module 'memory_filter' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:199]
+WARNING: [Synth 8-689] width (10) of port connection 'addr' does not match port width (4) of module 'memory_filter' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:200]
+WARNING: [Synth 8-689] width (10) of port connection 'addr' does not match port width (4) of module 'memory_filter' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:201]
+WARNING: [Synth 8-689] width (10) of port connection 'addr' does not match port width (4) of module 'memory_filter' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:202]
+WARNING: [Synth 8-567] referenced signal 'clk_div' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:276]
+WARNING: [Synth 8-567] referenced signal 'flag' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:276]
+WARNING: [Synth 8-567] referenced signal 'rdata_img0' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:276]
+WARNING: [Synth 8-567] referenced signal 'rdata_filt0' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:276]
+WARNING: [Synth 8-567] referenced signal 'rdata_img1' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:276]
+WARNING: [Synth 8-567] referenced signal 'rdata_filt1' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:276]
+WARNING: [Synth 8-567] referenced signal 'flag2' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:276]
+WARNING: [Synth 8-567] referenced signal 'rstl_mult' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:276]
+INFO: [Synth 8-6155] done synthesizing module 'conv' (4#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/sources_1/new/conv.v:23]
+WARNING: [Synth 8-3917] design conv has port out driven by constant 0
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2027.371 ; gain = 263.434 ; free physical = 282 ; free virtual = 4124
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2027.371 ; gain = 263.434 ; free physical = 278 ; free virtual = 4120
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2027.371 ; gain = 263.434 ; free physical = 278 ; free virtual = 4120
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2027.371 ; gain = 0.000 ; free physical = 270 ; free virtual = 4113
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/constrs_1/new/ports.xdc]
+Finished Parsing XDC File [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/constrs_1/new/ports.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.srcs/constrs_1/new/ports.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/conv_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/conv_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2190.184 ; gain = 0.000 ; free physical = 165 ; free virtual = 4025
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2190.184 ; gain = 0.000 ; free physical = 165 ; free virtual = 4025
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 233 ; free virtual = 4093
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 233 ; free virtual = 4093
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 236 ; free virtual = 4096
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 219 ; free virtual = 4086
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 6     
++---Registers : 
+	               16 Bit    Registers := 8     
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Multipliers : 
+	                  5x5  Multipliers := 2     
++---Muxes : 
+	  16 Input     16 Bit        Muxes := 4     
+	  11 Input     16 Bit        Muxes := 4     
+	   2 Input      5 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module conv 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 6     
++---Registers : 
+	                5 Bit    Registers := 1     
++---Multipliers : 
+	                  5x5  Multipliers := 2     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 5     
+Module clock_divider 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module memory_image 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	  16 Input     16 Bit        Muxes := 1     
+Module memory_filter 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	  11 Input     16 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3917] design conv has port out driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 208 ; free virtual = 4086
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 127 ; free virtual = 3959
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 127 ; free virtual = 3959
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:20 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 127 ; free virtual = 3958
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 138 ; free virtual = 3956
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 138 ; free virtual = 3956
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 138 ; free virtual = 3956
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 138 ; free virtual = 3956
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 138 ; free virtual = 3956
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 138 ; free virtual = 3956
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |OBUF |     1|
++------+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     1|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 138 ; free virtual = 3956
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:20 . Memory (MB): peak = 2190.184 ; gain = 263.434 ; free physical = 196 ; free virtual = 4014
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 2190.184 ; gain = 426.246 ; free physical = 196 ; free virtual = 4014
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2190.184 ; gain = 0.000 ; free physical = 187 ; free virtual = 4006
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2190.184 ; gain = 0.000 ; free physical = 199 ; free virtual = 4022
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+21 Infos, 14 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:33 . Memory (MB): peak = 2190.184 ; gain = 663.523 ; free physical = 331 ; free virtual = 4154
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2190.184 ; gain = 0.000 ; free physical = 331 ; free virtual = 4154
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.runs/synth_1/conv.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file conv_utilization_synth.rpt -pb conv_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 11 16:24:04 2021...

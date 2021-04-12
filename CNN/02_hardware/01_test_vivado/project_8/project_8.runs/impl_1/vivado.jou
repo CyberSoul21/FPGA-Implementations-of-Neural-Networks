@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun Apr 11 16:24:09 2021
+# Process ID: 28171
+# Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.runs/impl_1
+# Command line: vivado -log conv.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source conv.tcl -notrace
+# Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.runs/impl_1/conv.vdi
+# Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_8/project_8.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source conv.tcl -notrace

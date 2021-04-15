@@ -1,0 +1,17 @@
+#
+# An unexpected error has occurred (6)
+#
+Stack:
+/lib/x86_64-linux-gnu/libc.so.6(+0x3efd0) [0x7fd3dae7afd0]
+/lib/x86_64-linux-gnu/libc.so.6(gsignal+0xc7) [0x7fd3dae7af47]
+/lib/x86_64-linux-gnu/libc.so.6(abort+0x141) [0x7fd3dae7c8b1]
+/tools/Xilinx/Vivado/2019.2/lib/lnx64.o/Ubuntu/18/libstdc++.so.6(+0x8c8fb) [0x7fd3db4cf8fb]
+/tools/Xilinx/Vivado/2019.2/lib/lnx64.o/Ubuntu/18/libstdc++.so.6(+0x92d3a) [0x7fd3db4d5d3a]
+/tools/Xilinx/Vivado/2019.2/lib/lnx64.o/Ubuntu/18/libstdc++.so.6(+0x92d95) [0x7fd3db4d5d95]
+/tools/Xilinx/Vivado/2019.2/lib/lnx64.o/Ubuntu/18/libstdc++.so.6(+0x93bd3) [0x7fd3db4d6bd3]
+/tools/Xilinx/Vivado/2019.2/lib/lnx64.o/librdi_wavedata.so(WaveViewer::WVNameValueTreeModel::traverseYRange(SG_Model::WVDataObject const*, WaveViewer::WVNameValueTreeModel::ITraverseHandler&, int, int, int&, int&) const+0x369) [0x7fd39da2f489]
+/tools/Xilinx/Vivado/2019.2/lib/lnx64.o/librdi_wavedata.so(WaveViewer::WVNameValueTreeModel::traverseYRange(SG_Model::WVDataObject const*, WaveViewer::WVNameValueTreeModel::ITraverseHandler&, int, int, int&, int&) const+0x336) [0x7fd39da2f456]
+/tools/Xilinx/Vivado/2019.2/lib/lnx64.o/librdi_wavedata.so(WaveViewer::WVNameValueTreeModel::traverseYRange(WaveViewer::WVNameValueTreeModel::ITraverseHandler&, int, int) const+0x57) [0x7fd39da30467]
+/tools/Xilinx/Vivado/2019.2/lib/lnx64.o/librdi_wavedata.so(WVExecutiveImp::getValueDataSize()+0xb6) [0x7fd39da25746]
+/tools/Xilinx/Vivado/2019.2/lib/lnx64.o/librdi_wavedata.so(Java_ui_views_waveform_waveformi_WVExecutive_1getValueDataSize+0x17) [0x7fd39da66877]
+[0x7fd38016ca91]

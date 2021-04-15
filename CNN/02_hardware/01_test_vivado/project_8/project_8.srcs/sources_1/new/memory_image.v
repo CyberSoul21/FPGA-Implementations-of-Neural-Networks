@@ -45,7 +45,7 @@ module memory_image #(
     
 initial //Image
 begin
-data[0] = -16'd0;
+data[0] = -16'd5;
 data[1] = -16'd1;
 data[2] = -16'd2;
 data[3] = -16'd3;

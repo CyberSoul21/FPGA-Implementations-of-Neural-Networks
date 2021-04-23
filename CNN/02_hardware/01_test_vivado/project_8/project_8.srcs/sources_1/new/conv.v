@@ -28,13 +28,19 @@ module conv
                         parameter n_c = 5'd5,//5'd27,  //number of column matrix image 
                         parameter n_r = 5'd3,//5'd27,  //number of rows matrix image 
                         parameter col_fil = 5'd2,//3, //number of columns of filter
-                        parameter row_fil = 5'd2//3 //number of rows of filter
+                        parameter row_fil = 5'd2,//3 //number of rows of filter
+                        
+                        parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100,
+                        parameter s5 = 4'b0101, s6 = 4'b0110, s7 = 4'b0111, s8 = 4'b1000, s9 = 4'b1001
 ) 
 (
     input wire clk,
     input wire en,
     output reg out
 );
+
+reg [3:0] present_state, next_state;
+
 
 reg [addressWidth-1:0] addr_img;
 reg [addressWidth-1:0] addr_img0;
@@ -84,6 +90,9 @@ reg [dataWidth-1:0] rstl_sum;
 reg [dataWidth-1:0] rstl_mult [8:0];
 //////////////////////////////////////
 
+reg [dataWidth-1:0] rstl_conv[8-1:0]; //test
+
+
 //convert matrix into vector
 //row_i = row, col_j = column, n_c = number of columns, p = position into vector
 //p = r*(n_c + 1) + c
@@ -102,6 +111,8 @@ reg f3;
 reg f4;
 reg flag;
 reg flag2;
+reg flag3;
+reg act_dot;
 reg sum;
 reg mul;
 reg [4:0] count_sum;
@@ -137,10 +148,12 @@ load_filter=1;
 
 flag = 0;
 flag2 = 0;
+flag3 = 0;
 rstl_sum=0;
 sum=0;
 mul=0;
 count_sum=0;
+act_dot = 1;
 end
 
 
@@ -150,7 +163,7 @@ end
 
 
 ////**********************************************************************
-//clock_divider clk_10(.clock_in(clk),.clock_out(clk_div));
+//clock_divider2 clk_2(.clock_in(clk),.clock_out(clk_div));
 //memory_image image(
 //   .clk(clk),
 //   .en(load_image),
@@ -170,7 +183,7 @@ end
 //////////////////////////////////////////////////////////////////////////////////////////
 clock_divider clk_10(.clock_in(clk),.clock_out(clk_div));
 
-memory_image image_p0(.clk(clk),.en(1),.addr(addr_img0),.rdata(rdata_img0));
+memory_image image_p0(.clk(clk),.en(load_image),.addr(addr_img0),.rdata(rdata_img0));
 memory_image image_p1(.clk(clk),.en(load_image),.addr(addr_img1),.rdata(rdata_img1));
 memory_image image_p2(.clk(clk),.en(load_image),.addr(addr_img2),.rdata(rdata_img2));
 memory_image image_p3(.clk(clk),.en(load_image),.addr(addr_img3),.rdata(rdata_img3));
@@ -230,6 +243,7 @@ begin
      if((s_j) < (n_c - col_fil) && f2 == 1) 
      begin
         s_j <= s_j + 1;
+        act_dot <= 1;
      end        
      if((s_j) == (n_c - col_fil)) 
      begin
@@ -257,33 +271,54 @@ begin
 end
 
 
-always @(clk)
-begin
-    if(clk_div == 0)
+
+
+    always @(posedge clk) //Present estate 
     begin
-        flag <= 1;
-    end
-    if(flag)
+        if(act_dot == 1)
+        begin
+            present_state <= s0;    
+            act_dot <= 0;
+        end
+        else
+        begin
+            present_state <= next_state;
+        end    
+    end    
+
+    always @(*)
     begin
-        rstl_mult[0] = $signed(rdata_img0*rdata_filt0);
-        rstl_mult[1] = $signed(rdata_img1*rdata_filt1);
-        rstl_mult[2] = $signed(rdata_img2*rdata_filt2);
-        rstl_mult[3] = $signed(rdata_img3*rdata_filt3);
-        flag2 <= 1;
-        flag <= 0;
+        case(present_state)
+            s0:
+                next_state <= s1;
+                
+            s1:
+                next_state <= s2;
+            s2:
+                next_state <= s3;                
+                                                      
+        endcase                
     end
-    if(flag2)
-    begin
-        rstl_mult[4] = $signed(rstl_mult[0] + rstl_mult[1] + rstl_mult[2] + rstl_mult[3]);
-        flag2 <= 0;
-        flag <= 0;
-    end
-end
-///////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
+    always @ (*) begin
+      case (present_state)
+        s0: begin
+//            
+            rstl_mult[0] = $signed(rdata_img0*rdata_filt0);
+            rstl_mult[1] = $signed(rdata_img1*rdata_filt1);
+            rstl_mult[2] = $signed(rdata_img2*rdata_filt2);
+            rstl_mult[3] = $signed(rdata_img3*rdata_filt3);
+            end          
+        s1: begin
+            pos_rstl = pos_rstl + 1;
+            rstl_sum = $signed(rstl_mult[0] + rstl_mult[1] + rstl_mult[2] + rstl_mult[3]);
+            end
+        s2: begin
+            rstl_conv[pos_rstl] = rstl_sum; //Create module memory for storage convolution operation result, NOT use this way (only test porpus)
+            end            
+      endcase 
+    end 
 
 
 
@@ -487,9 +522,8 @@ end
 
 
 
-
-
-
 endmodule
+
+
 
 

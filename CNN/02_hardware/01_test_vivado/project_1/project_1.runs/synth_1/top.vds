@@ -1,0 +1,342 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Apr 23 17:52:30 2021
+# Process ID: 18204
+# Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_1/project_1.runs/synth_1
+# Command line: vivado -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_1/project_1.runs/synth_1/top.vds
+# Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_1/project_1.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: synth_design -top top -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 18252 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1750.289 ; gain = 214.473 ; free physical = 1627 ; free virtual = 4739
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_1/project_1.srcs/sources_1/new/top.v:22]
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_1/project_1.srcs/sources_1/new/top.v:84]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_1/project_1.srcs/sources_1/new/top.v:113]
+WARNING: [Synth 8-3848] Net result in module/entity top does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_1/project_1.srcs/sources_1/new/top.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'top' (1#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_1/project_1.srcs/sources_1/new/top.v:22]
+WARNING: [Synth 8-3330] design top has an empty top module
+WARNING: [Synth 8-3331] design top has unconnected port result[3]
+WARNING: [Synth 8-3331] design top has unconnected port result[2]
+WARNING: [Synth 8-3331] design top has unconnected port result[1]
+WARNING: [Synth 8-3331] design top has unconnected port result[0]
+WARNING: [Synth 8-3331] design top has unconnected port clk
+WARNING: [Synth 8-3331] design top has unconnected port en
+WARNING: [Synth 8-3331] design top has unconnected port a[64]
+WARNING: [Synth 8-3331] design top has unconnected port a[63]
+WARNING: [Synth 8-3331] design top has unconnected port a[62]
+WARNING: [Synth 8-3331] design top has unconnected port a[61]
+WARNING: [Synth 8-3331] design top has unconnected port a[60]
+WARNING: [Synth 8-3331] design top has unconnected port a[59]
+WARNING: [Synth 8-3331] design top has unconnected port a[58]
+WARNING: [Synth 8-3331] design top has unconnected port a[57]
+WARNING: [Synth 8-3331] design top has unconnected port a[56]
+WARNING: [Synth 8-3331] design top has unconnected port a[55]
+WARNING: [Synth 8-3331] design top has unconnected port a[54]
+WARNING: [Synth 8-3331] design top has unconnected port a[53]
+WARNING: [Synth 8-3331] design top has unconnected port a[52]
+WARNING: [Synth 8-3331] design top has unconnected port a[51]
+WARNING: [Synth 8-3331] design top has unconnected port a[50]
+WARNING: [Synth 8-3331] design top has unconnected port a[49]
+WARNING: [Synth 8-3331] design top has unconnected port a[48]
+WARNING: [Synth 8-3331] design top has unconnected port a[47]
+WARNING: [Synth 8-3331] design top has unconnected port a[46]
+WARNING: [Synth 8-3331] design top has unconnected port a[45]
+WARNING: [Synth 8-3331] design top has unconnected port a[44]
+WARNING: [Synth 8-3331] design top has unconnected port a[43]
+WARNING: [Synth 8-3331] design top has unconnected port a[42]
+WARNING: [Synth 8-3331] design top has unconnected port a[41]
+WARNING: [Synth 8-3331] design top has unconnected port a[40]
+WARNING: [Synth 8-3331] design top has unconnected port a[39]
+WARNING: [Synth 8-3331] design top has unconnected port a[38]
+WARNING: [Synth 8-3331] design top has unconnected port a[37]
+WARNING: [Synth 8-3331] design top has unconnected port a[36]
+WARNING: [Synth 8-3331] design top has unconnected port a[35]
+WARNING: [Synth 8-3331] design top has unconnected port a[34]
+WARNING: [Synth 8-3331] design top has unconnected port a[33]
+WARNING: [Synth 8-3331] design top has unconnected port a[32]
+WARNING: [Synth 8-3331] design top has unconnected port a[31]
+WARNING: [Synth 8-3331] design top has unconnected port a[30]
+WARNING: [Synth 8-3331] design top has unconnected port a[29]
+WARNING: [Synth 8-3331] design top has unconnected port a[28]
+WARNING: [Synth 8-3331] design top has unconnected port a[27]
+WARNING: [Synth 8-3331] design top has unconnected port a[26]
+WARNING: [Synth 8-3331] design top has unconnected port a[25]
+WARNING: [Synth 8-3331] design top has unconnected port a[24]
+WARNING: [Synth 8-3331] design top has unconnected port a[23]
+WARNING: [Synth 8-3331] design top has unconnected port a[22]
+WARNING: [Synth 8-3331] design top has unconnected port a[21]
+WARNING: [Synth 8-3331] design top has unconnected port a[20]
+WARNING: [Synth 8-3331] design top has unconnected port a[19]
+WARNING: [Synth 8-3331] design top has unconnected port a[18]
+WARNING: [Synth 8-3331] design top has unconnected port a[17]
+WARNING: [Synth 8-3331] design top has unconnected port a[16]
+WARNING: [Synth 8-3331] design top has unconnected port a[15]
+WARNING: [Synth 8-3331] design top has unconnected port a[14]
+WARNING: [Synth 8-3331] design top has unconnected port a[13]
+WARNING: [Synth 8-3331] design top has unconnected port a[12]
+WARNING: [Synth 8-3331] design top has unconnected port a[11]
+WARNING: [Synth 8-3331] design top has unconnected port a[10]
+WARNING: [Synth 8-3331] design top has unconnected port a[9]
+WARNING: [Synth 8-3331] design top has unconnected port a[8]
+WARNING: [Synth 8-3331] design top has unconnected port a[7]
+WARNING: [Synth 8-3331] design top has unconnected port a[6]
+WARNING: [Synth 8-3331] design top has unconnected port a[5]
+WARNING: [Synth 8-3331] design top has unconnected port a[4]
+WARNING: [Synth 8-3331] design top has unconnected port a[3]
+WARNING: [Synth 8-3331] design top has unconnected port a[2]
+WARNING: [Synth 8-3331] design top has unconnected port a[1]
+WARNING: [Synth 8-3331] design top has unconnected port a[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1812.039 ; gain = 276.223 ; free physical = 1660 ; free virtual = 4775
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1812.039 ; gain = 276.223 ; free physical = 1649 ; free virtual = 4769
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1820.043 ; gain = 284.227 ; free physical = 1649 ; free virtual = 4769
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1828.949 ; gain = 293.133 ; free physical = 1647 ; free virtual = 4768
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3330] design top has an empty top module
+WARNING: [Synth 8-3331] design top has unconnected port result[3]
+WARNING: [Synth 8-3331] design top has unconnected port result[2]
+WARNING: [Synth 8-3331] design top has unconnected port result[1]
+WARNING: [Synth 8-3331] design top has unconnected port result[0]
+WARNING: [Synth 8-3331] design top has unconnected port clk
+WARNING: [Synth 8-3331] design top has unconnected port en
+WARNING: [Synth 8-3331] design top has unconnected port a[64]
+WARNING: [Synth 8-3331] design top has unconnected port a[63]
+WARNING: [Synth 8-3331] design top has unconnected port a[62]
+WARNING: [Synth 8-3331] design top has unconnected port a[61]
+WARNING: [Synth 8-3331] design top has unconnected port a[60]
+WARNING: [Synth 8-3331] design top has unconnected port a[59]
+WARNING: [Synth 8-3331] design top has unconnected port a[58]
+WARNING: [Synth 8-3331] design top has unconnected port a[57]
+WARNING: [Synth 8-3331] design top has unconnected port a[56]
+WARNING: [Synth 8-3331] design top has unconnected port a[55]
+WARNING: [Synth 8-3331] design top has unconnected port a[54]
+WARNING: [Synth 8-3331] design top has unconnected port a[53]
+WARNING: [Synth 8-3331] design top has unconnected port a[52]
+WARNING: [Synth 8-3331] design top has unconnected port a[51]
+WARNING: [Synth 8-3331] design top has unconnected port a[50]
+WARNING: [Synth 8-3331] design top has unconnected port a[49]
+WARNING: [Synth 8-3331] design top has unconnected port a[48]
+WARNING: [Synth 8-3331] design top has unconnected port a[47]
+WARNING: [Synth 8-3331] design top has unconnected port a[46]
+WARNING: [Synth 8-3331] design top has unconnected port a[45]
+WARNING: [Synth 8-3331] design top has unconnected port a[44]
+WARNING: [Synth 8-3331] design top has unconnected port a[43]
+WARNING: [Synth 8-3331] design top has unconnected port a[42]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:11 . Memory (MB): peak = 1939.387 ; gain = 403.570 ; free physical = 1459 ; free virtual = 4579
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1939.387 ; gain = 403.570 ; free physical = 1457 ; free virtual = 4577
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:08 ; elapsed = 00:00:12 . Memory (MB): peak = 1939.387 ; gain = 403.570 ; free physical = 1457 ; free virtual = 4577
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1939.387 ; gain = 403.570 ; free physical = 1455 ; free virtual = 4575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1939.387 ; gain = 403.570 ; free physical = 1455 ; free virtual = 4575
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1939.387 ; gain = 403.570 ; free physical = 1455 ; free virtual = 4575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1939.387 ; gain = 403.570 ; free physical = 1455 ; free virtual = 4575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1939.387 ; gain = 403.570 ; free physical = 1455 ; free virtual = 4575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1939.387 ; gain = 403.570 ; free physical = 1455 ; free virtual = 4575
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |OBUFT |     4|
++------+------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     4|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1939.387 ; gain = 403.570 ; free physical = 1455 ; free virtual = 4575
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 145 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1939.387 ; gain = 403.570 ; free physical = 1456 ; free virtual = 4576
+Synthesis Optimization Complete : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 1939.395 ; gain = 403.570 ; free physical = 1456 ; free virtual = 4576
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1942.355 ; gain = 0.000 ; free physical = 1523 ; free virtual = 4643
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2022.012 ; gain = 0.000 ; free physical = 1425 ; free virtual = 4556
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+12 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:19 . Memory (MB): peak = 2022.012 ; gain = 508.223 ; free physical = 1552 ; free virtual = 4683
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2022.012 ; gain = 0.000 ; free physical = 1552 ; free virtual = 4683
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_1/project_1.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Apr 23 17:53:04 2021...

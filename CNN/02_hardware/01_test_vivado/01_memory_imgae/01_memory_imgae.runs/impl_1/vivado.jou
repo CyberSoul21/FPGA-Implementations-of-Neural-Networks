@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Apr 24 01:13:38 2021
+# Process ID: 18994
+# Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/01_memory_imgae/01_memory_imgae.runs/impl_1
+# Command line: vivado -log memory_image.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source memory_image.tcl -notrace
+# Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/01_memory_imgae/01_memory_imgae.runs/impl_1/memory_image.vdi
+# Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/01_memory_imgae/01_memory_imgae.runs/impl_1/vivado.jou
+#-----------------------------------------------------------
+source memory_image.tcl -notrace

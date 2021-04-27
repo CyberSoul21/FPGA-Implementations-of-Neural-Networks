@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="test_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="test" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="622916fs"></ZoomStartTime>
+      <ZoomEndTime time="1075417fs"></ZoomEndTime>
+      <Cursor1Time time="910000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="143"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="25" />
+   <wvobject type="logic" fp_name="/test/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/UUT/clk_div">
+      <obj_property name="ElementShortName">clk_div</obj_property>
+      <obj_property name="ObjectShortName">clk_div</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/en">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/out">
+      <obj_property name="ElementShortName">out</obj_property>
+      <obj_property name="ObjectShortName">out</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/row_i">
+      <obj_property name="ElementShortName">row_i[3:0]</obj_property>
+      <obj_property name="ObjectShortName">row_i[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/col_j">
+      <obj_property name="ElementShortName">col_j[3:0]</obj_property>
+      <obj_property name="ObjectShortName">col_j[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group55">
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/image/rdata0">
+      <obj_property name="ElementShortName">rdata0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata0[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/image/rdata1">
+      <obj_property name="ElementShortName">rdata1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata1[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/image/rdata2">
+      <obj_property name="ElementShortName">rdata2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata2[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/image/rdata3">
+      <obj_property name="ElementShortName">rdata3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata3[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group54">
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/image/p_img_0">
+      <obj_property name="ElementShortName">p_img_0[4:0]</obj_property>
+      <obj_property name="ObjectShortName">p_img_0[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/image/p_img_1">
+      <obj_property name="ElementShortName">p_img_1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">p_img_1[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/image/p_img_2">
+      <obj_property name="ElementShortName">p_img_2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">p_img_2[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/image/p_img_3">
+      <obj_property name="ElementShortName">p_img_3[4:0]</obj_property>
+      <obj_property name="ObjectShortName">p_img_3[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/filter/rdata0">
+      <obj_property name="ElementShortName">rdata0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata0[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/filter/rdata1">
+      <obj_property name="ElementShortName">rdata1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata1[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/filter/rdata2">
+      <obj_property name="ElementShortName">rdata2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata2[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/filter/rdata3">
+      <obj_property name="ElementShortName">rdata3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata3[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/UUT/counter/counter_j/sig_ok">
+      <obj_property name="ElementShortName">sig_ok</obj_property>
+      <obj_property name="ObjectShortName">sig_ok</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/UUT/counter/counter_i/ok">
+      <obj_property name="ElementShortName">ok</obj_property>
+      <obj_property name="ObjectShortName">ok</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/present_state">
+      <obj_property name="ElementShortName">present_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">present_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/test/UUT/pos_rstl">
+      <obj_property name="ElementShortName">pos_rstl[3:0]</obj_property>
+      <obj_property name="ObjectShortName">pos_rstl[3:0]</obj_property>
+   </wvobject>
+</wave_config>

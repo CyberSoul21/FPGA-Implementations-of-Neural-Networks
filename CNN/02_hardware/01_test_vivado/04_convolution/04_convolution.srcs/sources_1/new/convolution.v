@@ -21,6 +21,18 @@
 
 
 module convolution
+#(
+                        parameter numWeight = 784, 
+                        addressWidth=10,
+                        dataWidth=16,
+                        parameter n_c = 5'd5,//5'd27,  //number of column matrix image 
+                        parameter n_r = 5'd3,//5'd27,  //number of rows matrix image 
+                        parameter col_fil = 5'd2,//3, //number of columns of filter
+                        parameter row_fil = 5'd2,//3 //number of rows of filter
+                        
+                        parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100,
+                        parameter s5 = 4'b0101, s6 = 4'b0110, s7 = 4'b0111, s8 = 4'b1000, s9 = 4'b1001
+) 
 (
     input clk,
     input en,
@@ -29,10 +41,12 @@ module convolution
 );
 
 
-parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100;
-parameter s5 = 4'b0101, s6 = 4'b0110, s7 = 4'b0111, s8 = 4'b1000, s9 = 4'b1001;
 
 reg [3:0] present_state, next_state;
+
+
+reg [dataWidth-1:0] rstl_mult [8:0];
+reg [dataWidth-1:0] rstl_sum;
 
 
 wire [3:0] col_j; //size 4 because is used for binary counter until 28
@@ -40,14 +54,51 @@ wire [3:0] row_i;
 wire clk_div;
 wire [3:0] pos_rstl;
 
+
+wire [dataWidth-1:0] rdata_img0;
+wire [dataWidth-1:0] rdata_img1;
+wire [dataWidth-1:0] rdata_img2;
+wire [dataWidth-1:0] rdata_img3;
+//wire [dataWidth-1:0] rdata_img4;
+//wire [dataWidth-1:0] rdata_img5;
+//wire [dataWidth-1:0] rdata_img6;
+//wire [dataWidth-1:0] rdata_img7;
+//wire [dataWidth-1:0] rdata_img8;
+
+wire [dataWidth-1:0] rdata_filt0;
+wire [dataWidth-1:0] rdata_filt1;
+wire [dataWidth-1:0] rdata_filt2;
+wire [dataWidth-1:0] rdata_filt3;
+//wire [dataWidth-1:0] rdata_filt4;
+//wire [dataWidth-1:0] rdata_filt5;
+//wire [dataWidth-1:0] rdata_filt6;
+//wire [dataWidth-1:0] rdata_filt7;
+//wire [dataWidth-1:0] rdata_filt8;
+
+
+
+reg rst_quant;
+wire [15:0] bias_filt;
+reg [16:0] num;
+wire [8:0] num_quant;
+wire quant_ok;
+
+
 clock_divider clk_5(.clock_in(clk),.clock_out(clk_div));
+
 control_counter counter(.clk(clk_div),.en(en),.rst(rst),.i(row_i),.j(col_j));
-memory_image image(.clk(clk_div),.en(en),.addr1(row_i),.addr2(col_j));
-memory_filter filter(.clk(clk_div),.en(en));
+
+memory_image image(.clk(clk_div),.en(en),.addr1(row_i),.addr2(col_j),.rdata0(rdata_img0),.rdata1(rdata_img1),.rdata2(rdata_img2),.rdata3(rdata_img3));
+
+memory_filter filter(.clk(clk_div),.en(en),.rdata0(rdata_filt0),.rdata1(rdata_filt1),.rdata2(rdata_filt2),.rdata3(rdata_filt3),.bias(bias_filt));
 
 counter pos_memory_conv(.clk(clk_div),.reset(rst),.en(en),.counter(pos_rstl));
 
+quantization quant(.clk(clk),.rst(rst_quant),.a(num),.num_quant(num_quant),.sig_ok(quant_ok));
 
+
+    
+    
     always @(posedge clk) //Present estate 
     begin
         if(clk_div == 1)
@@ -68,14 +119,41 @@ counter pos_memory_conv(.clk(clk_div),.reset(rst),.en(en),.counter(pos_rstl));
             s1:
                 next_state <= s2;
             s2:
-                next_state <= s3;
-            s3:
-                next_state <= s0;                                
+                if(quant_ok)
+                begin
+                    next_state <= s3;
+                end
+                else
+                begin
+                    next_state <= s2;
+                end
+//            s3:
+//                next_state <= s0;                                
                                                       
         endcase                
     end
 
-
+    always @ (*) begin
+      case (present_state)
+        s0: begin
+//            
+            rstl_mult[0] <= $signed(rdata_img0*rdata_filt0);
+            rstl_mult[1] <= $signed(rdata_img1*rdata_filt1);
+            rstl_mult[2] <= $signed(rdata_img2*rdata_filt2);
+            rstl_mult[3] <= $signed(rdata_img3*rdata_filt3);
+            end          
+        s1: begin
+            rstl_sum <= $signed(rstl_mult[0] + rstl_mult[1] + rstl_mult[2] + rstl_mult[3]);
+            rst_quant <= 1;
+            end
+        s2: begin
+            num <= $signed(rstl_sum+bias_filt); //Create module memory for storage convolution operation result, NOT use this way (only test porpus)
+            rst_quant <= 0;
+            end  
+        s3: begin
+            end                        
+      endcase 
+    end 
 
 
 

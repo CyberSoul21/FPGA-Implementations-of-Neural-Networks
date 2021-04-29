@@ -39,7 +39,8 @@ module memory_filter #(
     output reg [dataWidth-1:0] rdata0,
     output reg [dataWidth-1:0] rdata1,
     output reg [dataWidth-1:0] rdata2,
-    output reg [dataWidth-1:0] rdata3
+    output reg [dataWidth-1:0] rdata3,
+    output reg [dataWidth-1:0] bias
     
     );
     
@@ -59,6 +60,7 @@ module memory_filter #(
             rdata1 <= register[1];
             rdata2 <= register[2];
             rdata3 <= register[3];
+            bias <= register[9];
         end
     end 
 endmodule

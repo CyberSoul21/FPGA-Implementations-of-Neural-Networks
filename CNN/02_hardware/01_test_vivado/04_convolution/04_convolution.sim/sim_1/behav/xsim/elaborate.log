@@ -15,6 +15,7 @@ Compiling module xil_defaultlib.control_counter
 Compiling module xil_defaultlib.memory_image
 Compiling module xil_defaultlib.memory_filter
 Compiling module xil_defaultlib.counter
+Compiling module xil_defaultlib.quantization
 Compiling module xil_defaultlib.convolution
 Compiling module xil_defaultlib.test
 Compiling module xil_defaultlib.glbl

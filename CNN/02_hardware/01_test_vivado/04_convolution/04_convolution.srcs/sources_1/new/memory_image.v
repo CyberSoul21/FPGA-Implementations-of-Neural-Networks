@@ -28,6 +28,7 @@ module memory_image #(
                         parameter numWeight = 784, 
                         addressWidth=4,//10,
                         dataWidth= 16,//16,
+                        parameter offset_ent = 6,
                         weightFile="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.txt"
                           
     ) 
@@ -105,10 +106,10 @@ end
         if (en)
         begin
             //rdata <= register[addr];
-            rdata0 <= data[p_img_0];
-            rdata1 <= data[p_img_1];
-            rdata2 <= data[p_img_2];
-            rdata3 <= data[p_img_3];
+            rdata0 <= data[p_img_0] + offset_ent;
+            rdata1 <= data[p_img_1] + offset_ent;
+            rdata2 <= data[p_img_2] + offset_ent;
+            rdata3 <= data[p_img_3] + offset_ent;
         end
     end 
 endmodule

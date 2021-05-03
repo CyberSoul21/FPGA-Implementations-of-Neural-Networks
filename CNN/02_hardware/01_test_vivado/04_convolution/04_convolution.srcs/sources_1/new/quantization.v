@@ -24,7 +24,7 @@
 module quantization(clk,rst,a,num_quant,sig_ok);
 
     input clk, rst;
-    input [16:0] a;
+    input [63:0] a;
     output [8:0] num_quant;
     output sig_ok;
     

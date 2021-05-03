@@ -52,47 +52,47 @@ def conv_np(entree, filtre, bias, output_multiplier, output_shift, offset_ent, o
   #----------------------------------
   min_val = -128; max_val = 127;                           # min/max pour int8
   rangs, colonnes = entree.shape;
-  conv_tab = np.zeros( (rangs-2, colonnes-2) );            # Map des caractéristiques
-  for i in range(0, rangs - 2):
-    for j in range(0, colonnes - 2):
+  conv_tab = np.zeros( (rangs-1, colonnes-1) );            # Map des caractéristiques
+  for i in range(0, rangs - 1):
+    for j in range(0, colonnes - 1):
 
       # Faire la convolution
       #----------------------------------
-      ent = entree[0+i:3+i, 0+j:3+j];                      # Desplacer l'entrée
+      ent = entree[0+i:2+i, 0+j:2+j];                      # Desplacer l'entrée
       ent = ent + offset_ent;                              # de tflite: input_val+input_offset
       conv_tab[i][j] = np.tensordot(ent, filtre) + bias;   # W*x + bias
       #print(conv_tab[i][j]);
-      print("ent = ")
-      print(ent)
-      print("filtre = ")
-      print(filtre)
-      print("conv_tab[i][j] = ")
-      print(conv_tab[i][j])
+      #print("ent = ")
+      #print(ent)
+      #print("filtre = ")
+      #print(filtre)
+      #print("conv_tab[i][j] = ")
+      #print(conv_tab[i][j])
       # À échelle réduite
       #----------------------------------
       nom_int = c_int( int(conv_tab[i][j]) );              # Ctype int32_t
       monbib.MultiplyByQuantizedMultiplier.restype = c_int;# Valeur à rendre
       conv_tab[i][j] = monbib.MultiplyByQuantizedMultiplier(nom_int, output_multiplier, output_shift);
-      print("Quantized_conv_tab[i][j] = ")
-      print(conv_tab[i][j])
-      input("Press Enter to continue...")
+      #print("Quantized_conv_tab[i][j] = ")
+      #print(conv_tab[i][j])
+      #input("Press Enter to continue...")
 
-      print("# Cast à uint8 [0, 255]")
+      #print("# Cast à uint8 [0, 255]")
       # Cast à uint8 [0, 255]
       #----------------------------------
       conv_tab[i][j] = min( max(conv_tab[i][j], 0), 255 ); # Cast à uint8
       conv_tab[i][j] = conv_tab[i][j] +  offset_sor;       # de tflite: acc + output_offset
-      print("conv_tab[i][j] = ")
-      print(conv_tab[i][j])
-      input("Press Enter to continue...")
-      print("# Faire le clamp entre [-128, 127]")
+      #print("conv_tab[i][j] = ")
+      #print(conv_tab[i][j])
+      #input("Press Enter to continue...")
+      #print("# Faire le clamp entre [-128, 127]")
       # Faire le clamp entre [-128, 127]
       #----------------------------------
       conv_tab[i][j] = max( conv_tab[i][j], min_val );     # Clamp 
       conv_tab[i][j] = min( conv_tab[i][j], max_val );     # Clamp
-      print("conv_tab[i][j] = ")
-      print(conv_tab[i][j])
-      input("Press Enter to continue...")
+      #print("conv_tab[i][j] = ")
+      #print(conv_tab[i][j])
+      #input("Press Enter to continue...")
             
   return conv_tab;
 

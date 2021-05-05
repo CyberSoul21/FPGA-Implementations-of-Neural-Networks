@@ -9,16 +9,15 @@
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 source convolution.tcl -notrace
-create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 1537.152 ; gain = 97.016 ; free physical = 127 ; free virtual = 3564
 Command: synth_design -top convolution -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13259 
+INFO: Helper process launched with PID 2472 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 1988.988 ; gain = 199.684 ; free physical = 128 ; free virtual = 3067
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1964.816 ; gain = 202.684 ; free physical = 156 ; free virtual = 5631
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'convolution' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:23]
 	Parameter numWeight bound to: 784 - type: integer 
@@ -38,8 +37,10 @@ INFO: [Synth 8-6157] synthesizing module 'convolution' [/home/javier/Documents/f
 	Parameter s7 bound to: 4'b0111 
 	Parameter s8 bound to: 4'b1000 
 	Parameter s9 bound to: 4'b1001 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
 INFO: [Synth 8-6157] synthesizing module 'clock_divider' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/clock_divider.v:22]
-	Parameter DIVISOR bound to: 28'b0000000000000000000000001001 
+	Parameter DIVISOR bound to: 28'b0000000000000000000000001111 
 INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (1#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/clock_divider.v:22]
 INFO: [Synth 8-6157] synthesizing module 'control_counter' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/control_counter.v:23]
 INFO: [Synth 8-6157] synthesizing module 'counter_col' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/control_counter.v:102]
@@ -76,8 +77,8 @@ WARNING: [Synth 8-3848] Net register[2] in module/entity memory_filter does not 
 WARNING: [Synth 8-3848] Net register[3] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/memory_filter.v:47]
 WARNING: [Synth 8-3848] Net register[9] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/memory_filter.v:47]
 INFO: [Synth 8-6155] done synthesizing module 'memory_filter' (6#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/memory_filter.v:23]
-INFO: [Synth 8-6157] synthesizing module 'counter' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:170]
-INFO: [Synth 8-6155] done synthesizing module 'counter' (7#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:170]
+INFO: [Synth 8-6157] synthesizing module 'counter' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:179]
+INFO: [Synth 8-6155] done synthesizing module 'counter' (7#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:179]
 INFO: [Synth 8-6157] synthesizing module 'quantization' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:24]
 	Parameter s0 bound to: 4'b0000 
 	Parameter s1 bound to: 4'b0001 
@@ -100,16 +101,36 @@ INFO: [Synth 8-6157] synthesizing module 'quantization' [/home/javier/Documents/
 	Parameter one bound to: 1'b1 
 WARNING: [Synth 8-567] referenced signal 'rst' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:61]
 WARNING: [Synth 8-567] referenced signal 'next_state' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:61]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:97]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:129]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:80]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:112]
 INFO: [Synth 8-6155] done synthesizing module 'quantization' (8#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:24]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:116]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:137]
-INFO: [Synth 8-6155] done synthesizing module 'convolution' (9#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ReLu' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:209]
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: 8'b11111111 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:240]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:255]
+INFO: [Synth 8-6155] done synthesizing module 'ReLu' (9#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:209]
+WARNING: [Synth 8-689] width (9) of port connection 'num_quant' does not match port width (8) of module 'ReLu' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:104]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:123]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:143]
+INFO: [Synth 8-6155] done synthesizing module 'convolution' (10#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:23]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[7]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[6]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[5]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[4]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[3]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[2]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[1]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[0]
 WARNING: [Synth 8-3331] design quantization has unconnected port clk
 WARNING: [Synth 8-3331] design control_counter has unconnected port en
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 2050.738 ; gain = 261.434 ; free physical = 208 ; free virtual = 3087
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2027.566 ; gain = 265.434 ; free physical = 244 ; free virtual = 5666
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -122,12 +143,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 2053.707 ; gain = 264.402 ; free physical = 178 ; free virtual = 3076
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2027.566 ; gain = 265.434 ; free physical = 238 ; free virtual = 5660
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 2053.707 ; gain = 264.402 ; free physical = 178 ; free virtual = 3076
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2027.566 ; gain = 265.434 ; free physical = 238 ; free virtual = 5660
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.03 . Memory (MB): peak = 2053.707 ; gain = 0.000 ; free physical = 152 ; free virtual = 3059
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2027.566 ; gain = 0.000 ; free physical = 230 ; free virtual = 5653
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -138,56 +159,76 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/convolution_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2219.488 ; gain = 0.000 ; free physical = 141 ; free virtual = 2888
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2197.316 ; gain = 0.000 ; free physical = 125 ; free virtual = 5571
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.71 . Memory (MB): peak = 2219.488 ; gain = 0.000 ; free physical = 115 ; free virtual = 2771
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2197.316 ; gain = 0.000 ; free physical = 125 ; free virtual = 5571
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:53 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 266 ; free virtual = 3050
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:13 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 192 ; free virtual = 5635
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:53 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 266 ; free virtual = 3050
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 192 ; free virtual = 5635
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:53 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 265 ; free virtual = 3050
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 192 ; free virtual = 5635
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "data" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-WARNING: [Synth 8-3936] Found unconnected internal register 'res2_reg' and it is trimmed from '9' to '1' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:180]
-WARNING: [Synth 8-327] inferring latch for variable 'result4_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:192]
-WARNING: [Synth 8-327] inferring latch for variable 'ok_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:193]
+WARNING: [Synth 8-3936] Found unconnected internal register 'res2_reg' and it is trimmed from '9' to '1' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:163]
+INFO: [Synth 8-802] inferred FSM for state register 'present_state_reg' in module 'ReLu'
+WARNING: [Synth 8-327] inferring latch for variable 'result4_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:175]
+WARNING: [Synth 8-327] inferring latch for variable 'ok_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:176]
 WARNING: [Synth 8-327] inferring latch for variable 'ok_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:66]
-WARNING: [Synth 8-327] inferring latch for variable 'res3_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:188]
-WARNING: [Synth 8-327] inferring latch for variable 'res1_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:173]
-WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:99]
-WARNING: [Synth 8-327] inferring latch for variable 'res2_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:180]
-WARNING: [Synth 8-327] inferring latch for variable 'result2_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:138]
-WARNING: [Synth 8-327] inferring latch for variable 'threshold_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:168]
-WARNING: [Synth 8-327] inferring latch for variable 'remainder_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:143]
-WARNING: [Synth 8-327] inferring latch for variable 'result1_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:133]
-WARNING: [Synth 8-327] inferring latch for variable 'thld2_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:158]
-WARNING: [Synth 8-327] inferring latch for variable 'thld1_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:153]
-WARNING: [Synth 8-327] inferring latch for variable 'result3_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:148]
-WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:118]
-WARNING: [Synth 8-327] inferring latch for variable 'rstl_sum_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:146]
-WARNING: [Synth 8-327] inferring latch for variable 'rst_quant_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:97]
-WARNING: [Synth 8-327] inferring latch for variable 'num_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:97]
-WARNING: [Synth 8-327] inferring latch for variable 'rstl_mult_reg[3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:140]
-WARNING: [Synth 8-327] inferring latch for variable 'rstl_mult_reg[2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:140]
-WARNING: [Synth 8-327] inferring latch for variable 'rstl_mult_reg[1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:140]
-WARNING: [Synth 8-327] inferring latch for variable 'rstl_mult_reg[0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:140]
+WARNING: [Synth 8-327] inferring latch for variable 'res3_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:171]
+WARNING: [Synth 8-327] inferring latch for variable 'res1_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:156]
+WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:82]
+WARNING: [Synth 8-327] inferring latch for variable 'res2_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:163]
+WARNING: [Synth 8-327] inferring latch for variable 'result2_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:121]
+WARNING: [Synth 8-327] inferring latch for variable 'threshold_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:151]
+WARNING: [Synth 8-327] inferring latch for variable 'remainder_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:126]
+WARNING: [Synth 8-327] inferring latch for variable 'result1_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:116]
+WARNING: [Synth 8-327] inferring latch for variable 'thld2_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:141]
+WARNING: [Synth 8-327] inferring latch for variable 'thld1_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:136]
+WARNING: [Synth 8-327] inferring latch for variable 'result3_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:131]
+WARNING: [Synth 8-327] inferring latch for variable 'aux_num4_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:277]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_sequential_next_state_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:242]
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:242]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      s0 |                            00001 |                             0000
+                      s1 |                            00010 |                             0001
+                      s2 |                            00100 |                             0010
+                      s3 |                            01000 |                             0011
+                  iSTATE |                            10000 |                             0100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'present_state_reg' using encoding 'one-hot' in module 'ReLu'
+WARNING: [Synth 8-327] inferring latch for variable 'FSM_onehot_next_state_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:242]
+WARNING: [Synth 8-327] inferring latch for variable 'aux_ok_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:280]
+WARNING: [Synth 8-327] inferring latch for variable 'aux_num3_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:271]
+WARNING: [Synth 8-327] inferring latch for variable 'aux_num_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:258]
+WARNING: [Synth 8-327] inferring latch for variable 'aux_num2_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:267]
+WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:125]
+WARNING: [Synth 8-327] inferring latch for variable 'rstl_sum_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:152]
+WARNING: [Synth 8-327] inferring latch for variable 'rst_quant_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:102]
+WARNING: [Synth 8-327] inferring latch for variable 'num_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:102]
+WARNING: [Synth 8-327] inferring latch for variable 'rst_relu_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:104]
+WARNING: [Synth 8-327] inferring latch for variable 'rstl_mult_reg[3]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:146]
+WARNING: [Synth 8-327] inferring latch for variable 'rstl_mult_reg[2]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:146]
+WARNING: [Synth 8-327] inferring latch for variable 'rstl_mult_reg[1]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:146]
+WARNING: [Synth 8-327] inferring latch for variable 'rstl_mult_reg[0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/convolution.v:146]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:54 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 237 ; free virtual = 3039
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 176 ; free virtual = 5628
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -202,22 +243,27 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input     16 Bit       Adders := 4     
 	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 1     
 	   2 Input      4 Bit       Adders := 3     
 +---Registers : 
 	               16 Bit    Registers := 5     
 	                4 Bit    Registers := 8     
 	                1 Bit    Registers := 4     
 +---Multipliers : 
-	                17x31  Multipliers := 1     
+	                31x64  Multipliers := 1     
 	                16x16  Multipliers := 4     
 +---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+	   5 Input      8 Bit        Muxes := 1     
 	   2 Input      4 Bit        Muxes := 3     
 	  16 Input      4 Bit        Muxes := 4     
 	   5 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 9     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
 	  13 Input      1 Bit        Muxes := 11    
 	  12 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 6     
+	   5 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 8     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -235,9 +281,9 @@ Detailed RTL Component Info :
 	                16x16  Multipliers := 4     
 +---Muxes : 
 	   2 Input      4 Bit        Muxes := 1     
-	   5 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 6     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 8     
+	   4 Input      1 Bit        Muxes := 8     
 Module clock_divider 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -286,10 +332,19 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input      9 Bit       Adders := 2     
 +---Multipliers : 
-	                17x31  Multipliers := 1     
+	                31x64  Multipliers := 1     
 +---Muxes : 
 	  13 Input      1 Bit        Muxes := 11    
 	  12 Input      1 Bit        Muxes := 1     
+Module ReLu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 2     
+	   5 Input      8 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -306,11 +361,29 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 2 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:133]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/quantization.v:116]
+DSP Report: Generating DSP result10, operation Mode is: (A:0x1af30)*B.
+DSP Report: operator result10 is absorbed into DSP result10.
+DSP Report: operator result10 is absorbed into DSP result10.
+DSP Report: Generating DSP result10, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator result10 is absorbed into DSP result10.
+DSP Report: operator result10 is absorbed into DSP result10.
+DSP Report: Generating DSP result10, operation Mode is: A*B.
+DSP Report: operator result10 is absorbed into DSP result10.
+DSP Report: operator result10 is absorbed into DSP result10.
+DSP Report: Generating DSP result10, operation Mode is: PCIN+A*(B:0x1af30).
+DSP Report: operator result10 is absorbed into DSP result10.
+DSP Report: operator result10 is absorbed into DSP result10.
+DSP Report: Generating DSP result10, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator result10 is absorbed into DSP result10.
+DSP Report: operator result10 is absorbed into DSP result10.
 DSP Report: Generating DSP result10, operation Mode is: A*(B:0x1af30).
 DSP Report: operator result10 is absorbed into DSP result10.
 DSP Report: operator result10 is absorbed into DSP result10.
 DSP Report: Generating DSP result10, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator result10 is absorbed into DSP result10.
+DSP Report: operator result10 is absorbed into DSP result10.
+DSP Report: Generating DSP result10, operation Mode is: PCIN+A*(B:0x1af30).
 DSP Report: operator result10 is absorbed into DSP result10.
 DSP Report: operator result10 is absorbed into DSP result10.
 DSP Report: Generating DSP p_0_out, operation Mode is: A*B2.
@@ -325,6 +398,14 @@ DSP Report: operator p_0_out is absorbed into DSP p_0_out.
 DSP Report: Generating DSP p_0_out, operation Mode is: A*B2.
 DSP Report: register filter/rdata0_reg is absorbed into DSP p_0_out.
 DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[7]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[6]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[5]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[4]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[3]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[2]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[1]
+WARNING: [Synth 8-3331] design ReLu has unconnected port num_quant[0]
 WARNING: [Synth 8-3331] design quantization has unconnected port clk
 WARNING: [Synth 8-3331] design control_counter has unconnected port en
 WARNING: [Synth 8-3332] Sequential element (quant/result4_reg[8]) is unused and will be removed from module convolution.
@@ -426,26 +507,32 @@ WARNING: [Synth 8-3332] Sequential element (quant/remainder_reg[3]) is unused an
 WARNING: [Synth 8-3332] Sequential element (quant/remainder_reg[2]) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/remainder_reg[1]) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/remainder_reg[0]) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[47]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[63]) is unused and will be removed from module convolution.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:56 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 206 ; free virtual = 3021
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 160 ; free virtual = 5617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
 
 DSP: Preliminary Mapping	Report (see note below)
-+-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name  | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|quantization | A*(B:0x1af30)  | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|quantization | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|convolution  | A*B2           | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|convolution  | A*B2           | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|convolution  | A*B2           | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|convolution  | A*B2           | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-+-------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++-------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping        | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|quantization | (A:0x1af30)*B      | 18     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|quantization | (PCIN>>17)+A*B     | 15     | 14     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|quantization | A*B                | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|quantization | PCIN+A*(B:0x1af30) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|quantization | (PCIN>>17)+A*B     | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|quantization | A*(B:0x1af30)      | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|quantization | (PCIN>>17)+A*B     | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|quantization | PCIN+A*(B:0x1af30) | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2               | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2               | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2               | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2               | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
++-------------+--------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -461,13 +548,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:01:05 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 135 ; free virtual = 2891
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 138 ; free virtual = 5502
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:01:05 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 159 ; free virtual = 2890
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 135 ; free virtual = 5499
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -479,7 +566,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:01:05 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 159 ; free virtual = 2891
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 135 ; free virtual = 5499
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -503,13 +590,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 159 ; free virtual = 2892
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 133 ; free virtual = 5501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 159 ; free virtual = 2892
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 133 ; free virtual = 5501
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -528,25 +615,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 158 ; free virtual = 2892
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 133 ; free virtual = 5501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 159 ; free virtual = 2892
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 133 ; free virtual = 5501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 159 ; free virtual = 2892
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 133 ; free virtual = 5501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 159 ; free virtual = 2892
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 133 ; free virtual = 5501
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -566,8 +653,8 @@ Report Cell Usage:
 |2     |CARRY4 |     7|
 |3     |LUT1   |     1|
 |4     |LUT3   |     1|
-|5     |LUT5   |     1|
-|6     |LUT6   |     5|
+|5     |LUT4   |     4|
+|6     |LUT6   |     4|
 |7     |FDRE   |    29|
 |8     |IBUF   |     1|
 |9     |OBUF   |     1|
@@ -577,32 +664,32 @@ Report Instance Areas:
 +------+---------+--------------+------+
 |      |Instance |Module        |Cells |
 +------+---------+--------------+------+
-|1     |top      |              |    47|
-|2     |  clk_5  |clock_divider |    44|
+|1     |top      |              |    49|
+|2     |  clk_5  |clock_divider |    46|
 +------+---------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 159 ; free virtual = 2892
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 133 ; free virtual = 5501
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 293 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:42 . Memory (MB): peak = 2219.488 ; gain = 264.402 ; free physical = 214 ; free virtual = 2948
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:01:09 . Memory (MB): peak = 2219.488 ; gain = 430.184 ; free physical = 214 ; free virtual = 2949
+Synthesis finished with 0 errors, 0 critical warnings and 417 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:16 ; elapsed = 00:00:21 . Memory (MB): peak = 2197.316 ; gain = 265.434 ; free physical = 188 ; free virtual = 5556
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 2197.316 ; gain = 435.184 ; free physical = 188 ; free virtual = 5556
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2219.488 ; gain = 0.000 ; free physical = 196 ; free virtual = 2945
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2197.316 ; gain = 0.000 ; free physical = 179 ; free virtual = 5549
 INFO: [Netlist 29-17] Analyzing 7 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2219.488 ; gain = 0.000 ; free physical = 150 ; free virtual = 2891
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2197.316 ; gain = 0.000 ; free physical = 192 ; free virtual = 5566
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-40 Infos, 135 Warnings, 0 Critical Warnings and 0 Errors encountered.
+46 Infos, 161 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:01:26 . Memory (MB): peak = 2219.488 ; gain = 682.336 ; free physical = 277 ; free virtual = 3023
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2219.488 ; gain = 0.000 ; free physical = 277 ; free virtual = 3023
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:34 . Memory (MB): peak = 2197.316 ; gain = 683.367 ; free physical = 322 ; free virtual = 5697
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2197.316 ; gain = 0.000 ; free physical = 322 ; free virtual = 5697
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.runs/synth_1/convolution.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file convolution_utilization_synth.rpt -pb convolution_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Apr 29 22:30:59 2021...
+INFO: [Common 17-206] Exiting Vivado at Wed May  5 09:31:09 2021...

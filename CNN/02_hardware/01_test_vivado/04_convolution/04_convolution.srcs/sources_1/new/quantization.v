@@ -32,7 +32,7 @@ module quantization(clk,rst,a,num_quant,sig_ok);
     wire clk_1s;
     
     //reg [64:0] a;  
-    reg [64:0] result1;
+    reg [63:0] result1;
     reg [31:0] result2;
     reg [8:0]  result3;
     reg [8:0]  result4;
@@ -73,24 +73,7 @@ module quantization(clk,rst,a,num_quant,sig_ok);
 
 
 
-//    always @(clk) //Present estate 
-//    begin
-//        if(en && flag == 1)
-//        begin
-//            present_state <= s0;
-//            flag <= 0; 
-//            ok <=  0;   
-//        end
-//        else if(en && flag == 0)
-//        begin
-//            present_state <= next_state;
-//        end
-//        if(en == 0)
-//        begin
-//            flag = 1; 
-//            ok <=  0;   
-//        end    
-//    end  
+ 
 
     always @(*)
     begin

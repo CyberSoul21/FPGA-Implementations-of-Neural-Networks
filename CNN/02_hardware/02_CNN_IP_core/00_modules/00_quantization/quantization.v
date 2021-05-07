@@ -1,13 +1,13 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: Universidad Nacional de Colombia
-// Engineer: Wilson Javier Almario R.
+// Company: 
+// Engineer: 
 // 
-// Create Date: 31/03/2021
-// Design Name: quantization
-// Module Name: top
-// Project Name: Quantized CNN implementation on FPGA 
-// Target Devices: Zybo Z7010
+// Create Date: 04/28/2021 11:31:04 PM
+// Design Name: 
+// Module Name: quantization
+// Project Name: 
+// Target Devices: 
 // Tool Versions: 
 // Description: 
 // 
@@ -19,65 +19,61 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-module quantization
-#(
-	parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100,
-    parameter s5 = 4'b0101, s6 = 4'b0110, s7 = 4'b0111, s8 = 4'b1000, s9 = 4'b1001,
-    parameter s10 = 4'b1010, s11 = 4'b1011, s12 = 4'b1100, s13 = 4'b1101, s14 = 4'b1110,
-	
-	q = 64'd2014687024, //q = 31'b1111000000101011010111100110000
-	mask = 8'd255,
-	zero = 1'd0,
-	one = 1'd1
-)
-( input clk,
-  input en,
-  input [64:0] a,
-  output reg [3:0] result
-);
+
+
+module quantization(clk,rst,a,num_quant,sig_ok);
+
+    input clk, rst;
+    input [63:0] a;
+    output [8:0] num_quant;
+    output sig_ok;
     
-    reg flag = 1;
     reg [3:0] present_state, next_state;
     wire clk_1s;
     
-    reg [64:0] result1;
+    //reg [64:0] a;  
+    reg [63:0] result1;
     reg [31:0] result2;
     reg [8:0]  result3;
     reg [8:0]  result4;
     reg [31:0] remainder;
     reg [8:0] thld1;
     reg thld2;
-    reg thld3; 
+    reg thld3;
     reg [8:0] threshold;
     reg [8:0] res1;
     reg [8:0] res2;
     reg res3;
-    reg [8:0] res4;  
+    reg [8:0] res4;
+    reg ok = 0;                
+    
+    parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100;
+    parameter s5 = 4'b0101, s6 = 4'b0110, s7 = 4'b0111, s8 = 4'b1000, s9 = 4'b1001;
+    parameter s10 = 4'b1010, s11 = 4'b1011, s12 = 4'b1100, s13 = 4'b1101, s14 = 4'b1110;
+    parameter q = 64'd2014687024; //q = 31'b1111000000101011010111100110000
+    parameter mask = 8'd255;
+    parameter zero = 1'd0;
+  parameter one = 1'd1;
     
     
-//    clock_divider clock_1s(
-
-//        .clk(clk),
-//        .divided_clk(clk_1s)
-//    );
-    always @(posedge clk) //Present estate 
+    
+    
+     always @(clk) //Present estate 
     begin
-        if(en && flag == 1)
-        //if(en)
+        if(rst)
         begin
             present_state <= s0;
-            flag = 0;    
+            ok = 0;
         end
         else
         begin
             present_state <= next_state;
-        end
-        if(en == 0)
-        //if(en)
-        begin
-            flag = 1;    
-        end    
-    end    
+        end         
+    end  
+
+
+
+ 
 
     always @(*)
     begin
@@ -103,52 +99,87 @@ module quantization
             s9:
                 next_state <= s10;
             s10:
-                next_state <= s11;                                                                                         
+                next_state <= s11;                                                                                        
         endcase                
     end
+
+
+ 
     //===================    
     // Output logic
     //===================     
     always @ (*) begin
       case (present_state)
-        s0:
-          result1 <= a*q;
+        s0: 
+        begin
+            //led <= 4'b0000;
+            result1 <= a*q;  
+        end
         s1:
-          result2 <= result1 >>> 31;
+        begin    
+            //led <= 4'b0001;
+            result2 <= result1 >>> 31;
+        end
         s2:
-          remainder <= result2 & mask;
+        begin
+            //led <= 4'b0010;
+            remainder <= result2 & mask;
+        end
         s3:
-          result3 <= result2 >>> 8;          
+        begin
+            //led <= 4'b0011;
+            result3 <= result2 >>> 8;
+        end
         s4:
-          thld1 <= mask >>> 1;//ShiftRight(mask, 1)            
+        begin
+            //led <= 4'b0100;
+            thld1 <= mask >>> 1;//ShiftRight(mask, 1)
+        end
         s5:
-          thld2 <= ($signed(result3) < $signed(zero)); //MaskIfLessThan(x, zero)
+        begin
+            //led <= 4'b0101;
+            thld2 <= ($signed(result3) < $signed(zero)); //MaskIfLessThan(x, zero)
+        end
         s6:
-          thld3 <= thld2 & 1; //BitAnd(MaskIfLessThan(x, zero), one))
+        begin
+            //led <= 4'b0110;
+            thld3 <= thld2 & 1; //BitAnd(MaskIfLessThan(x, zero), one))
+        end
         s7:
-          threshold <= thld1 + thld2; //Add(ShiftRight(mask, 1), BitAnd(MaskIfLessThan(x, zero), one));
+        begin
+            //led <= 4'b0111;
+            threshold <= thld1 + thld2; //Add(ShiftRight(mask, 1), BitAnd(MaskIfLessThan(x, zero), one));
+        end    
         s8:
-          res1 <= result2 >>> 8; //ShiftRight(x, exponent)
+        begin
+            //led <= 4'b1000;
+            res1 <= result2 >>> 8; //ShiftRight(x, exponent)
+        end
         s9:
-          if($signed(remainder) > $signed(threshold))
-          begin
-            res2 <= -1'd1;
-          end
-          else begin
-            res2 <= -1'd0;
-          end   
-          //res2 <= ($signed(remainder) > $signed(threshold)); //MaskIfGreaterThan(remainder, threshold)
+        begin 
+            //led <= 4'b1001;
+            if($signed(remainder) > $signed(threshold))
+            begin
+                res2 <= -1'd1;
+            end
+            else begin
+                res2 <= -1'd0;
+            end              
+        end
         s10:
-          res3 <= res2 & one; //BitAnd( MaskIfGreaterThan(remainder, threshold), one ) 
+        begin
+            res3 <= res2 & one; //BitAnd( MaskIfGreaterThan(remainder, threshold), one ) 
+        end
         s11:
-          result4 <= res1 + res3; //Add( ShiftRight(x, exponent),BitAnd( MaskIfGreaterThan(remainder, threshold), one ) );                   
+        begin
+            result4 <= res1 + res3; //Add( ShiftRight(x, exponent),BitAnd( MaskIfGreaterThan(remainder, threshold), one ) ); 
+            ok <= 1;           
+        end
       endcase 
     end 
 
 
-
-
-
-
+    assign num_quant = result4;
+    assign sig_ok = ok;
 
 endmodule

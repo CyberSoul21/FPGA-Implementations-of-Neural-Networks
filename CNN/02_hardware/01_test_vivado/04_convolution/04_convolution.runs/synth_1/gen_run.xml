@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1620225002">
-  <File Type="VDS-TIMINGSUMMARY" Name="convolution_timing_summary_synth.rpt"/>
+  <File Type="PA-TCL" Name="convolution.tcl"/>
+  <File Type="REPORTS-TCL" Name="convolution_reports.tcl"/>
+  <File Type="RDS-RDS" Name="convolution.vds"/>
+  <File Type="RDS-UTIL" Name="convolution_utilization_synth.rpt"/>
   <File Type="RDS-DCP" Name="convolution.dcp"/>
   <File Type="RDS-UTIL-PB" Name="convolution_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="convolution_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="convolution_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="convolution.vds"/>
-  <File Type="REPORTS-TCL" Name="convolution_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="convolution_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="convolution.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/clock_divider.v">

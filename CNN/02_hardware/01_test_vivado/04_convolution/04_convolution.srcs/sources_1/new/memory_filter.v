@@ -81,7 +81,8 @@ parameter dataWidthRstlConv=8
     output reg [dataWidthFilter-1:0] rdata6,
     output reg [dataWidthFilter-1:0] rdata7,
     output reg [dataWidthFilter-1:0] rdata8,    
-    output reg [dataWidthFilter-1:0] bias
+    output reg [dataWidthFilter-1:0] bias,
+    output reg ok
 );
     
     reg [dataWidthFilter-1:0] register[numWeightFilter-1:0];

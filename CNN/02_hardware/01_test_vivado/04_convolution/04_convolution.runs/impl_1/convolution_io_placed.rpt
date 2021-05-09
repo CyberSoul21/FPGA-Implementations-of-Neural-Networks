@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date                      : Sat May  8 10:42:16 2021
+| Date                      : Sun May  9 04:00:09 2021
 | Host                      : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command                   : report_io -file convolution_io_placed.rpt
 | Design                    : convolution

@@ -452,7 +452,7 @@ parameter dataWidthRstlConv=8
         if(rst)
         begin
             present_state <= s0;
-            aux_ok <= 0;    
+    
         end
         else
         begin
@@ -483,6 +483,7 @@ parameter dataWidthRstlConv=8
                     aux_num <= 0;
                 else    
                     aux_num <= num_quant;
+                aux_ok <= 0;    
             end          
         s1: begin
                 if(aux_num >= 8'd255)

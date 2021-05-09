@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date             : Sat May  8 10:42:34 2021
+| Date             : Sun May  9 04:00:26 2021
 | Host             : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file convolution_power_routed.rpt -pb convolution_power_summary_routed.pb -rpx convolution_power_routed.rpx
 | Design           : convolution
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.120        |
+| Total On-Chip Power (W)  | 0.125        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.027        |
+| Dynamic (W)              | 0.032        |
 | Device Static (W)        | 0.093        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 83.6         |
@@ -52,19 +52,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.001 |        3 |       --- |             --- |
-| Slice Logic    |     0.008 |     1134 |       --- |             --- |
-|   LUT as Logic |     0.008 |      584 |     17600 |            3.32 |
+| Clocks         |    <0.001 |        3 |       --- |             --- |
+| Slice Logic    |     0.009 |     1175 |       --- |             --- |
+|   LUT as Logic |     0.009 |      600 |     17600 |            3.41 |
 |   F7/F8 Muxes  |    <0.001 |       36 |     17600 |            0.20 |
-|   CARRY4       |    <0.001 |       28 |      4400 |            0.64 |
-|   Register     |    <0.001 |      343 |     35200 |            0.97 |
-|   Others       |     0.000 |       18 |       --- |             --- |
-|   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.008 |     1519 |       --- |             --- |
-| DSPs           |     0.011 |       26 |        80 |           32.50 |
+|   CARRY4       |    <0.001 |       32 |      4400 |            0.73 |
+|   Register     |    <0.001 |      348 |     35200 |            0.99 |
+|   BUFG         |    <0.001 |        2 |        32 |            6.25 |
+|   Others       |     0.000 |       16 |       --- |             --- |
+| Signals        |     0.008 |     1557 |       --- |             --- |
+| DSPs           |     0.013 |       26 |        80 |           32.50 |
 | I/O            |    <0.001 |       28 |       100 |           28.00 |
 | Static Power   |     0.093 |          |           |                 |
-| Total          |     0.120 |          |           |                 |
+| Total          |     0.125 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.031 |       0.027 |      0.004 |
+| Vccint    |       1.000 |     0.035 |       0.032 |      0.004 |
 | Vccaux    |       1.800 |     0.005 |       0.000 |      0.005 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -150,9 +150,9 @@ Table of Contents
 +-------------+-----------+
 | Name        | Power (W) |
 +-------------+-----------+
-| convolution |     0.027 |
+| convolution |     0.032 |
 |   counter   |     0.001 |
-|   image     |     0.025 |
+|   image     |     0.029 |
 +-------------+-----------+
 
 

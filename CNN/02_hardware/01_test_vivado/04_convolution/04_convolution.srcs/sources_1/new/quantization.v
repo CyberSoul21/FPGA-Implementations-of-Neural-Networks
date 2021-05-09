@@ -26,8 +26,8 @@ module quantization
 //Convolution
 parameter addressWidthConv=10, dataWidthConv=16,
 
-parameter n_c = 5'd6,  //number of column matrix image 
-parameter n_r = 5'd5,  //number of rows matrix image 
+parameter n_c = 5'd28,  //number of column matrix image 
+parameter n_r = 5'd28,  //number of rows matrix image 
 parameter col_fil = 5'd3, //number of columns of filter
 parameter row_fil = 5'd3, //number of rows of filter
                        
@@ -48,7 +48,7 @@ parameter numWeightFilter = 10, addressWidthFilter=4, dataWidthFilter=16,
 parameter weightFileFilter="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt",
    
 //memory image
-parameter numWeightImg = 30,//784, 
+parameter numWeightImg = 784, 
 parameter addressWidthImg=10, dataWidthImg= 16,
 parameter weightFileImg="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem",
       
@@ -200,11 +200,12 @@ parameter dataWidthRstlConv=8
         s10:
         begin
             res3 <= res2 & one; //BitAnd( MaskIfGreaterThan(remainder, threshold), one ) 
+            
         end
         s11:
         begin
             result4 <= res1 + res3; //Add( ShiftRight(x, exponent),BitAnd( MaskIfGreaterThan(remainder, threshold), one ) ); 
-            ok <= 1;           
+          ok <= 1; 
         end
       endcase 
     end 

@@ -26,8 +26,8 @@ module memory_image
 //Convolution
 parameter addressWidthConv=10, dataWidthConv=16,
 
-parameter n_c = 5'd6,  //number of column matrix image 
-parameter n_r = 5'd5,  //number of rows matrix image 
+parameter n_c = 5'd28,  //number of column matrix image 
+parameter n_r = 5'd28,  //number of rows matrix image 
 parameter col_fil = 5'd3, //number of columns of filter
 parameter row_fil = 5'd3, //number of rows of filter
                        
@@ -48,7 +48,7 @@ parameter numWeightFilter = 10, addressWidthFilter=4, dataWidthFilter=16,
 parameter weightFileFilter="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt",
    
 //memory image
-parameter numWeightImg = 30,//784, 
+parameter numWeightImg = 784, 
 parameter addressWidthImg=10, dataWidthImg= 16,
 parameter weightFileImg="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem",
       
@@ -88,55 +88,64 @@ parameter dataWidthRstlConv=8
     reg [dataWidthImg-1:0] register[numWeightImg-1:0];
     reg [dataWidthImg-1:0] data[numWeightImg-1:0];
     
+    wire [11-1:0] p_img_0;
+    wire [11-1:0] p_img_1;
+    wire [11-1:0] p_img_2;
+    wire [11-1:0] p_img_3;
+    wire [11-1:0] p_img_4;
+    wire [11-1:0] p_img_5;
+    wire [11-1:0] p_img_6;
+    wire [11-1:0] p_img_7;
+    wire [11-1:0] p_img_8;
     
-    wire [addressWidthImg-1:0] p_img_0;
-    wire [addressWidthImg-1:0] p_img_1;
-    wire [addressWidthImg-1:0] p_img_2;
-    wire [addressWidthImg-1:0] p_img_3;
-    wire [addressWidthImg-1:0] p_img_4;
-    wire [addressWidthImg-1:0] p_img_5;
-    wire [addressWidthImg-1:0] p_img_6;
-    wire [addressWidthImg-1:0] p_img_7;
-    wire [addressWidthImg-1:0] p_img_8;
+//    wire [addressWidthImg-1:0] p_img_0;
+//    wire [addressWidthImg-1:0] p_img_1;
+//    wire [addressWidthImg-1:0] p_img_2;
+//    wire [addressWidthImg-1:0] p_img_3;
+//    wire [addressWidthImg-1:0] p_img_4;
+//    wire [addressWidthImg-1:0] p_img_5;
+//    wire [addressWidthImg-1:0] p_img_6;
+//    wire [addressWidthImg-1:0] p_img_7;
+//    wire [addressWidthImg-1:0] p_img_8;
 
-//    initial
-//	   begin
-//	        $readmemb(weightFileImg, register);
-//	    end
+    initial
+	   begin
+	        $readmemb(weightFileImg, register);
+	    end
     
-initial //Image
-begin
-register[0] = -16'd100;
-register[1] = -16'd101;
-register[2] = -16'd102;
-register[3] = -16'd103;
-register[4] = -16'd104;
-register[5] = -16'd105;
-register[6] = -16'd106;
-register[7] = -16'd107;
-register[8] = -16'd108;
-register[9] = -16'd109;
-register[10] = -16'd110;
-register[11] = -16'd111;
-register[12] = -16'd112;
-register[13] = -16'd113;
-register[14] = -16'd114;
-register[15] = -16'd115;
-register[16] = -16'd116;
-register[17] = -16'd117;
-register[18] = -16'd118;
-register[19] = -16'd119;
-register[20] = -16'd120;
-register[21] = -16'd121;
-register[22] = -16'd122;
-register[23] = -16'd123;
-register[24] = -16'd124;
-register[25] = -16'd125;
-register[26] = -16'd126;
-register[27] = -16'd127;
-register[28] = -16'd128;
-register[29] = -16'd129;
-end    
+//initial //Image
+//begin
+//register[0] = -16'd100;
+//register[1] = -16'd101;
+//register[2] = -16'd102;
+//register[3] = -16'd103;
+//register[4] = -16'd104;
+//register[5] = -16'd105;
+//register[6] = -16'd106;
+//register[7] = -16'd107;
+//register[8] = -16'd108;
+//register[9] = -16'd109;
+//register[10] = -16'd110;
+//register[11] = -16'd111;
+//register[12] = -16'd112;
+//register[13] = -16'd113;
+//register[14] = -16'd114;
+//register[15] = -16'd115;
+//register[16] = -16'd116;
+//register[17] = -16'd117;
+//register[18] = -16'd118;
+//register[19] = -16'd119;
+//register[20] = -16'd120;
+//register[21] = -16'd121;
+//register[22] = -16'd122;
+//register[23] = -16'd123;
+//register[24] = -16'd124;
+//register[25] = -16'd125;
+//register[26] = -16'd126;
+//register[27] = -16'd127;
+//register[28] = -16'd128;
+//register[29] = -16'd129;
+//end    
 
 
     assign p_img_0 = (0+addr1)*(n_c) + (0+addr2);

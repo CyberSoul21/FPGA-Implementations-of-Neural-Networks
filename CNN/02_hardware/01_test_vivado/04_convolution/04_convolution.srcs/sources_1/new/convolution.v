@@ -26,8 +26,8 @@ module convolution
 //Convolution
 parameter addressWidthConv=10, dataWidthConv=16,
 
-parameter n_c = 5'd6,  //number of column matrix image 
-parameter n_r = 5'd5,  //number of rows matrix image 
+parameter n_c = 5'd28,  //number of column matrix image 
+parameter n_r = 5'd28,  //number of rows matrix image 
 parameter col_fil = 5'd3, //number of columns of filter
 parameter row_fil = 5'd3, //number of rows of filter
                        
@@ -48,7 +48,7 @@ parameter numWeightFilter = 10, addressWidthFilter=4, dataWidthFilter=16,
 parameter weightFileFilter="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt",
    
 //memory image
-parameter numWeightImg = 30,//784, 
+parameter numWeightImg = 784, 
 parameter addressWidthImg=10, dataWidthImg= 16,
 parameter weightFileImg="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem",
       
@@ -92,8 +92,8 @@ end
 reg [3:0] present_state, next_state; //ok
 
 
-reg [dataWidthConv-1:0] rstl_mult [8:0];//ok
-reg [dataWidthConv-1:0] rstl_sum;
+reg [17-1:0] rstl_mult [8:0];//ok
+reg [17-1:0] rstl_sum;
 
 
 wire [addressWidthConv-1:0] col_j; //ok
@@ -139,7 +139,8 @@ reg rst_quant;
 reg rst_relu;
 reg save_rstl;
 
-reg [63:0] num;
+reg [17-1:0] aux_bias;
+reg  [63:0] num;
 wire [8:0] num_quant;
 wire signed [7:0] num_final;//ojo
 wire quant_ok;
@@ -214,7 +215,7 @@ memory_rstl_conv save_data(.clk(clk),.wen(save_rstl),.wadd(pos_rstl),.data_in(nu
 
     
     
-    always @(posedge clk) //Present estate 
+    always @(clk) //Present estate 
     begin
         if(clk_div == 1)
         begin
@@ -252,7 +253,8 @@ memory_rstl_conv save_data(.clk(clk),.wen(save_rstl),.wadd(pos_rstl),.data_in(nu
                     next_state <= s3;
                 end
             s4:
-                next_state <= s5;                                                                                    
+                next_state <= s5;
+                                                                                                  
         endcase                
     end
 
@@ -273,16 +275,19 @@ memory_rstl_conv save_data(.clk(clk),.wen(save_rstl),.wadd(pos_rstl),.data_in(nu
         s1: begin
             rstl_sum <= $signed(rstl_mult[0] + rstl_mult[1] + rstl_mult[2] + rstl_mult[3] + rstl_mult[4] + rstl_mult[5] + rstl_mult[6] + rstl_mult[7] + rstl_mult[8]);
             rst_quant <= 1;
+            aux_bias <= $signed(bias_filt);
             end
         s2: begin
-            num <= $signed(rstl_sum + bias_filt); //Create module memory for storage convolution operation result, NOT use this way (only test porpus)
+            num <= $signed(rstl_sum + aux_bias); //Create module memory for storage convolution operation result, NOT use this way (only test porpus)
             rst_quant <= 0;
             rst_relu <= 1;
             end  
         s3: begin
             rst_relu <= 0;
+            rst_quant <= 1;
             end    
         s4: begin
+            rst_relu <= 1;
             save_rstl <= 1;  
             end 
         s5: begin
@@ -307,8 +312,8 @@ module counter
 //Convolution
 parameter addressWidthConv=10, dataWidthConv=16,
 
-parameter n_c = 5'd6,  //number of column matrix image 
-parameter n_r = 5'd5,  //number of rows matrix image 
+parameter n_c = 5'd28,  //number of column matrix image 
+parameter n_r = 5'd28,  //number of rows matrix image 
 parameter col_fil = 5'd3, //number of columns of filter
 parameter row_fil = 5'd3, //number of rows of filter
                        
@@ -329,7 +334,7 @@ parameter numWeightFilter = 10, addressWidthFilter=4, dataWidthFilter=16,
 parameter weightFileFilter="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt",
    
 //memory image
-parameter numWeightImg = 30,//784, 
+parameter numWeightImg = 784, 
 parameter addressWidthImg=10, dataWidthImg= 16,
 parameter weightFileImg="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem",
       
@@ -387,8 +392,8 @@ module ReLu
 //Convolution
 parameter addressWidthConv=10, dataWidthConv=16,
 
-parameter n_c = 5'd6,  //number of column matrix image 
-parameter n_r = 5'd5,  //number of rows matrix image 
+parameter n_c = 5'd28,  //number of column matrix image 
+parameter n_r = 5'd28,  //number of rows matrix image 
 parameter col_fil = 5'd3, //number of columns of filter
 parameter row_fil = 5'd3, //number of rows of filter
                        
@@ -409,7 +414,7 @@ parameter numWeightFilter = 10, addressWidthFilter=4, dataWidthFilter=16,
 parameter weightFileFilter="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt",
    
 //memory image
-parameter numWeightImg = 30,//784, 
+parameter numWeightImg = 784, 
 parameter addressWidthImg=10, dataWidthImg= 16,
 parameter weightFileImg="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem",
       
@@ -430,19 +435,19 @@ parameter dataWidthRstlConv=8
 )
 (
     input clk, rst, 
-    input [7:0] num_quant, 
+    input [8:0] num_quant, 
     output [7:0] num, 
     output sig_ok
 );
 
-    reg [7:0] aux_num;
-    reg [7:0] aux_num2;
-    reg [7:0] aux_num3;
-    reg [7:0] aux_num4;
+    reg [8:0] aux_num;
+    reg [8:0] aux_num2;
+    reg [8:0] aux_num3;
+    reg [8:0] aux_num4;
     reg       aux_ok;
     reg [3:0] present_state, next_state;   
 
-    always @(posedge clk) //Present estate 
+    always @(clk) //Present estate 
     begin
         if(rst)
         begin

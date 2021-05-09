@@ -146,7 +146,7 @@ parameter addressWidthImg=10, dataWidthImg= 16
         begin
             counter_2 <= counter_2 + 4'd1;
             ok <= 0;
-            if(counter_2 == (n_r - 4'd2 - 1))
+            if(counter_2 == (n_r - 4'd2))
             begin
                 counter_2 <= 0;
                 ok <= 1; 
@@ -214,7 +214,7 @@ parameter addressWidthImg=10, dataWidthImg= 16
         begin
             counter_2 <= counter_2 + 4'd1;
             ok <= 0;
-            if(counter_2 == (n_c - 4'd2 -1))
+            if(counter_2 == (n_c - 4'd2))
             begin
                 counter_2 <= 0;
                 ok <= 1; 

@@ -1,0 +1,12 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/05_maxpooling/05_maxpooling.srcs/sources_1/new/MaxPooling.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MaxPooling
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/05_maxpooling/05_maxpooling.srcs/sources_1/new/clock_divider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_divider
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/05_maxpooling/05_maxpooling.srcs/sources_1/new/control_counter.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module control_counter
+INFO: [VRFC 10-311] analyzing module counter_row
+INFO: [VRFC 10-311] analyzing module counter_col
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/05_maxpooling/05_maxpooling.srcs/sources_1/new/memory_rstl_conv.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory_rstl_conv
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/05_maxpooling/05_maxpooling.srcs/sim_1/new/test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module test

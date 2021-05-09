@@ -76,25 +76,25 @@ parameter addressWidthImg=10, dataWidthImg= 16
     
 initial //Image
 begin
-register[0] =  16'd77;
-register[1] =  16'd77;
-register[2] =  16'd78;
-register[3] =  16'd79;
-register[4] =  16'd82;
-register[5] =  16'd83;
-register[6] =  16'd83;
-register[7] =  16'd84;
-register[8] =  16'd87;
-register[9] =  16'd88;
-register[10] = 16'd89;
-register[11] = 16'd90;
+register[0] =  -16'd77;
+register[1] =  -16'd77;
+register[2] =  -16'd78;
+register[3] =  -16'd79;
+register[4] =  -16'd82;
+register[5] =  -16'd83;
+register[6] =  -16'd83;
+register[7] =  -16'd84;
+register[8] =  -16'd87;
+register[9] =  -16'd88;
+register[10] = -16'd89;
+register[11] = -16'd90;
 end    
 
 
     assign p_img_0 = (0+addr1)*(n_c) + (0+addr2);
     assign p_img_1 = (0+addr1)*(n_c) + (1+addr2);
-    assign p_img_2 = (0+addr1)*(n_c) + (2+addr2);
-    assign p_img_3 = (1+addr1)*(n_c) + (0+addr2);    
+    assign p_img_2 = (1+addr1)*(n_c) + (0+addr2);
+    assign p_img_3 = (1+addr1)*(n_c) + (1+addr2);    
      
    
     always @(posedge clk)

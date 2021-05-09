@@ -28,6 +28,7 @@ module test;
     reg clk;
     reg en;
     reg rst;
+    reg [7:0] num;
     
     //outputs    
     wire out;

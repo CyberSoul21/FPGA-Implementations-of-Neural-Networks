@@ -20,17 +20,18 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module memory_rstl_conv#(parameter numWeight = 8,addressWidth=4,dataWidth=7) 
-    ( 
+module memory_rstl_conv
+( 
     input clk,
     input wen,
     input ren,
-    input [addressWidth-1:0] wadd,
-    input [addressWidth-1:0] radd,
-    input [dataWidth-1:0] data_in,
-    output reg [dataWidth-1:0] data_out);
+    input [addressWidthRstlConv-1:0] wadd,
+    input [addressWidthRstlConv-1:0] radd,
+    input signed [dataWidthRstlConv-1:0] data_in,
+    output reg [dataWidthRstlConv-1:0] data_out
+);
     
-    reg [dataWidth-1:0] mem [numWeight-1:0];
+    reg [dataWidthRstlConv-1:0] mem [numWeightRstlConv-1:0];
 
 
     always @(posedge clk)
@@ -38,6 +39,8 @@ module memory_rstl_conv#(parameter numWeight = 8,addressWidth=4,dataWidth=7)
 	   if (wen)
 	   begin
 	       mem[wadd] <= data_in;
+	       $display("wadd, %d",wadd,data_in); 
+
 	   end
 	end 
 

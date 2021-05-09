@@ -19,37 +19,30 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "param.v"
 
-module memory_filter #(
-//                        parameter numWeight = 784, 
-//                        addressWidth=4,
-//                        dataWidth=8,
-//                        weightFile="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.txt"
-
-                        parameter numWeight = 10, 
-                        addressWidth=4,
-                        dataWidth=16,//16,
-                        weightFile="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt"
-                             
-                       )
-    ( 
+module memory_filter
+( 
     input clk,
     input en,
-    //input [addressWidth-1:0] addr,
-    output reg [dataWidth-1:0] rdata0,
-    output reg [dataWidth-1:0] rdata1,
-    output reg [dataWidth-1:0] rdata2,
-    output reg [dataWidth-1:0] rdata3,
-    output reg [dataWidth-1:0] bias
+    output reg [dataWidthFilter-1:0] rdata0,
+    output reg [dataWidthFilter-1:0] rdata1,
+    output reg [dataWidthFilter-1:0] rdata2,
+    output reg [dataWidthFilter-1:0] rdata3,
+    output reg [dataWidthFilter-1:0] rdata4,
+    output reg [dataWidthFilter-1:0] rdata5,
+    output reg [dataWidthFilter-1:0] rdata6,
+    output reg [dataWidthFilter-1:0] rdata7,
+    output reg [dataWidthFilter-1:0] rdata8,    
+    output reg [dataWidthFilter-1:0] bias
+);
     
-    );
-    
-    reg [dataWidth-1:0] register[numWeight-1:0];
+    reg [dataWidthFilter-1:0] register[numWeightFilter-1:0];
 
 
         initial
 		begin
-	        $readmemb(weightFile, register);
+	        $readmemb(weightFileFilter, register);
 	    end
     
     always @(posedge clk)
@@ -60,6 +53,11 @@ module memory_filter #(
             rdata1 <= register[1];
             rdata2 <= register[2];
             rdata3 <= register[3];
+            rdata4 <= register[4];
+            rdata5 <= register[5];
+            rdata6 <= register[6];
+            rdata7 <= register[7];
+            rdata8 <= register[8];
             bias <= register[9];
         end
     end 

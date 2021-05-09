@@ -19,8 +19,17 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+//`include "param.v"
 
-module control_counter(input clk, en, rst, output[3:0] i,j);
+
+module control_counter#(
+                        parameter counterWidth=10                          
+                       )
+    (
+        input clk, en, rst, 
+        output[counterWidth-1:0] i,j
+    
+    );
 
 
     wire sig_ok_1;
@@ -59,14 +68,23 @@ endmodule
 
 
 
-module counter_row(input clk, reset, en2, output[3:0] counter, output sig_ok);
+module counter_row#(
+                        parameter counterWidth = 10,    
+                        parameter n_c = 5'd6,  //number of column matrix image 
+                        parameter n_r = 5'd5,  //number of rows matrix image 
+                        parameter col_fil = 5'd3, //number of columns of filter
+                        parameter row_fil = 5'd3 //number of rows of filter
 
-                        parameter n_c = 5'd5;//5'd27,  //number of column matrix image 
-                        parameter n_r = 5'd3;//5'd27,  //number of rows matrix image 
-                        parameter col_fil = 5'd2;//3, //number of columns of filter
-                        parameter row_fil = 5'd2;//3 //number of rows of filter
+)
+(
+    input clk, reset, en2, 
+    output[counterWidth-1:0] counter, 
+    output sig_ok
+);
+                        
+
     
-    reg [3:0] counter_2;
+    reg [counterWidth-1:0] counter_2;
     //reg en2;
     reg ok;
     
@@ -87,7 +105,7 @@ module counter_row(input clk, reset, en2, output[3:0] counter, output sig_ok);
         begin
             counter_2 <= counter_2 + 4'd1;
             ok <= 0;
-            if(counter_2 == (n_r - col_fil))//4'd2)
+            if(counter_2 == (n_r - 4'd2 - 1))
             begin
                 counter_2 <= 0;
                 ok <= 1; 
@@ -99,14 +117,23 @@ module counter_row(input clk, reset, en2, output[3:0] counter, output sig_ok);
 endmodule
 
 
-module counter_col(input clk, reset, en2, output[3:0] counter, output sig_ok);
+module counter_col#(
+                        parameter counterWidth = 10,    
+                        parameter n_c = 5'd6,  //number of column matrix image 
+                        parameter n_r = 5'd5,  //number of rows matrix image 
+                        parameter col_fil = 5'd3, //number of columns of filter
+                        parameter row_fil = 5'd3 //number of rows of filter
 
-                        parameter n_c = 5'd5;//5'd27,  //number of column matrix image 
-                        parameter n_r = 5'd3;//5'd27,  //number of rows matrix image 
-                        parameter col_fil = 5'd2;//3, //number of columns of filter
-                        parameter row_fil = 5'd2;//3 //number of rows of filter
+)
+(
+    input clk, reset, en2, 
+    output[counterWidth-1:0] counter, 
+    output sig_ok
     
-    reg [3:0] counter_2;
+);
+
+    
+    reg [counterWidth-1:0] counter_2;
     //reg en2;
     reg ok;
     
@@ -127,7 +154,7 @@ module counter_col(input clk, reset, en2, output[3:0] counter, output sig_ok);
         begin
             counter_2 <= counter_2 + 4'd1;
             ok <= 0;
-            if(counter_2 == (n_c - col_fil))//4'd2)
+            if(counter_2 == (n_c - 4'd2 -1))
             begin
                 counter_2 <= 0;
                 ok <= 1; 

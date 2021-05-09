@@ -108,11 +108,11 @@ count = 0
 for i in range(0,28):
   for j in range(0,28):
     if img_test[i][j] < 0:
-      print("-7'd"+str(-1*int(img_test[i][j])))
-      #print("data["+str(count)+"] = "+"-7'd"+str(-1*int(img_test[i][j]))+";")
+      #print("-16'd"+str(-1*int(img_test[i][j])))
+      print("data["+str(count)+"] = "+"-16'd"+str(-1*int(img_test[i][j]))+";")
     else:
-      print("7'd"+str(int(img_test[i][j])))  
-      #print("data["+str(count)+"] = "+"7'd"+str(int(img_test[i][j]))+";")  
+      #print("16'd"+str(int(img_test[i][j])))  
+      print("data["+str(count)+"] = "+"16'd"+str(int(img_test[i][j]))+";")  
     count +=1 
 
 print(" \n ");

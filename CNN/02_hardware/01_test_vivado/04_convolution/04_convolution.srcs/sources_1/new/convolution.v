@@ -19,88 +19,147 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "param.v"
 
 module convolution
-#(
-                        parameter numWeight = 784, 
-                        addressWidth=10,
-                        dataWidth=16,
-                        parameter n_c = 5'd5,//5'd27,  //number of column matrix image 
-                        parameter n_r = 5'd3,//5'd27,  //number of rows matrix image 
-                        parameter col_fil = 5'd2,//3, //number of columns of filter
-                        parameter row_fil = 5'd2,//3 //number of rows of filter
-                        
-                        parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100,
-                        parameter s5 = 4'b0101, s6 = 4'b0110, s7 = 4'b0111, s8 = 4'b1000, s9 = 4'b1001,
-                        
-                        parameter offset_ent = 6,
-                        parameter offset_sor = -1
-) 
 (
     input clk,
     input en,
     input rst,
-    output out
+    output out,
+    output [dataWidthConv-1:0] out_dot,
+    output [7:0] out_quant
 );
 
+integer fd;
+
+initial
+begin
+//fd = $fopen("/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt");
+$display("***********************************************************************");
+end
 
 
-reg [3:0] present_state, next_state;
+
+//FSM
+reg [3:0] present_state, next_state; //ok
 
 
-reg [dataWidth-1:0] rstl_mult [8:0];
-reg [dataWidth-1:0] rstl_sum;
+reg [dataWidthConv-1:0] rstl_mult [8:0];//ok
+reg [dataWidthConv-1:0] rstl_sum;
 
 
-wire [3:0] col_j; //size 4 because is used for binary counter until 28
-wire [3:0] row_i;
-wire clk_div;
-wire [3:0] pos_rstl;
+wire [addressWidthConv-1:0] col_j; //ok
+wire [addressWidthConv-1:0] row_i;
 
 
-wire [dataWidth-1:0] rdata_img0;
-wire [dataWidth-1:0] rdata_img1;
-wire [dataWidth-1:0] rdata_img2;
-wire [dataWidth-1:0] rdata_img3;
-//wire [dataWidth-1:0] rdata_img4;
-//wire [dataWidth-1:0] rdata_img5;
-//wire [dataWidth-1:0] rdata_img6;
-//wire [dataWidth-1:0] rdata_img7;
-//wire [dataWidth-1:0] rdata_img8;
+wire clk_div;//ok
+wire [addressWidthConv-1:0] pos_rstl;
 
-wire [dataWidth-1:0] rdata_filt0;
-wire [dataWidth-1:0] rdata_filt1;
-wire [dataWidth-1:0] rdata_filt2;
-wire [dataWidth-1:0] rdata_filt3;
-//wire [dataWidth-1:0] rdata_filt4;
-//wire [dataWidth-1:0] rdata_filt5;
-//wire [dataWidth-1:0] rdata_filt6;
-//wire [dataWidth-1:0] rdata_filt7;
-//wire [dataWidth-1:0] rdata_filt8;
 
+
+//********************************************//ok
+//Wire to extract data that composed the image
+//********************************************
+wire [dataWidthConv-1:0] rdata_img0;
+wire [dataWidthConv-1:0] rdata_img1;
+wire [dataWidthConv-1:0] rdata_img2;
+wire [dataWidthConv-1:0] rdata_img3;
+wire [dataWidthConv-1:0] rdata_img4;
+wire [dataWidthConv-1:0] rdata_img5;
+wire [dataWidthConv-1:0] rdata_img6;
+wire [dataWidthConv-1:0] rdata_img7;
+wire [dataWidthConv-1:0] rdata_img8;
+//********************************************
+
+//********************************************//ok
+//Wire to extract weights of filter
+//********************************************
+wire [dataWidthConv-1:0] rdata_filt0;
+wire [dataWidthConv-1:0] rdata_filt1;
+wire [dataWidthConv-1:0] rdata_filt2;
+wire [dataWidthConv-1:0] rdata_filt3;
+wire [dataWidthConv-1:0] rdata_filt4;
+wire [dataWidthConv-1:0] rdata_filt5;
+wire [dataWidthConv-1:0] rdata_filt6;
+wire [dataWidthConv-1:0] rdata_filt7;
+wire [dataWidthConv-1:0] rdata_filt8;
+wire [dataWidthConv-1:0] bias_filt;
+//*********************************************
 
 
 reg rst_quant;
 reg rst_relu;
 reg save_rstl;
-wire [15:0] bias_filt;
+
 reg [63:0] num;
 wire [8:0] num_quant;
-wire [7:0] num_final;
+wire signed [7:0] num_final;//ojo
 wire quant_ok;
+wire relu_ok;
 
 
-clock_divider clk_5(.clock_in(clk),.clock_out(clk_div));
 
-control_counter counter(.clk(clk_div),.en(en),.rst(rst),.i(row_i),.j(col_j));
+clock_divider clk_5(
+    .clock_in(clk),
+    .clock_out(clk_div)
+    ); //ok
 
-memory_image image(.clk(clk_div),.en(en),.addr1(row_i),.addr2(col_j),.rdata0(rdata_img0),.rdata1(rdata_img1),.rdata2(rdata_img2),.rdata3(rdata_img3));
+control_counter counter(
+    .clk(clk_div),
+    .en(en),
+    .rst(rst),
+    .i(row_i),
+    .j(col_j)
+    );//ok
+    
+memory_filter filter(
+    .clk(clk_div),
+    .en(en),
+    .rdata0(rdata_filt0),
+    .rdata1(rdata_filt1),
+    .rdata2(rdata_filt2),
+    .rdata3(rdata_filt3),
+    .rdata4(rdata_filt4),
+    .rdata5(rdata_filt5),
+    .rdata6(rdata_filt6),
+    .rdata7(rdata_filt7),
+    .rdata8(rdata_filt8),
+    .bias(bias_filt)
+    ); //ok 
+    
 
-memory_filter filter(.clk(clk_div),.en(en),.rdata0(rdata_filt0),.rdata1(rdata_filt1),.rdata2(rdata_filt2),.rdata3(rdata_filt3),.bias(bias_filt));
+memory_image image(
+    .clk(clk_div),
+    .en(en),
+    .addr1(row_i),
+    .addr2(col_j),
+    .rdata0(rdata_img0),
+    .rdata1(rdata_img1),
+    .rdata2(rdata_img2),
+    .rdata3(rdata_img3),
+    .rdata4(rdata_img4),
+    .rdata5(rdata_img5),
+    .rdata6(rdata_img6),
+    .rdata7(rdata_img7),
+    .rdata8(rdata_img8)
+    );//ok
 
-counter pos_memory_conv(.clk(clk_div),.reset(rst),.en(en),.counter(pos_rstl));
 
-quantization quant(.clk(clk),.rst(rst_quant),.a(num),.num_quant(num_quant),.sig_ok(quant_ok));
+counter pos_memory_conv(
+    .clk(clk_div),
+    .reset(rst),
+    .en(en),
+    .counter(pos_rstl)
+    ); //ok
+
+quantization quant(
+    .clk(clk),
+    .rst(rst_quant),
+    .a(num),
+    .num_quant(num_quant),
+    .sig_ok(quant_ok)
+    );
 
 ReLu activation(.clk(clk),.rst(rst_relu),.num_quant(num_quant),.num(num_final),.sig_ok(relu_ok));
 
@@ -144,7 +203,9 @@ memory_rstl_conv save_data(.clk(clk),.wen(save_rstl),.wadd(pos_rstl),.data_in(nu
                 else
                 begin
                     next_state <= s3;
-                end                                                                    
+                end
+            s4:
+                next_state <= s5;                                                                                    
         endcase                
     end
 
@@ -155,10 +216,15 @@ memory_rstl_conv save_data(.clk(clk),.wen(save_rstl),.wadd(pos_rstl),.data_in(nu
             rstl_mult[1] <= $signed(rdata_img1*rdata_filt1);
             rstl_mult[2] <= $signed(rdata_img2*rdata_filt2);
             rstl_mult[3] <= $signed(rdata_img3*rdata_filt3);
+            rstl_mult[4] <= $signed(rdata_img4*rdata_filt4);
+            rstl_mult[5] <= $signed(rdata_img5*rdata_filt5);
+            rstl_mult[6] <= $signed(rdata_img6*rdata_filt6);
+            rstl_mult[7] <= $signed(rdata_img7*rdata_filt7);
+            rstl_mult[8] <= $signed(rdata_img8*rdata_filt8);
             save_rstl <= 0;
             end          
         s1: begin
-            rstl_sum <= $signed(rstl_mult[0] + rstl_mult[1] + rstl_mult[2] + rstl_mult[3]);
+            rstl_sum <= $signed(rstl_mult[0] + rstl_mult[1] + rstl_mult[2] + rstl_mult[3] + rstl_mult[4] + rstl_mult[5] + rstl_mult[6] + rstl_mult[7] + rstl_mult[8]);
             rst_quant <= 1;
             end
         s2: begin
@@ -171,19 +237,31 @@ memory_rstl_conv save_data(.clk(clk),.wen(save_rstl),.wadd(pos_rstl),.data_in(nu
             end    
         s4: begin
             save_rstl <= 1;  
-            end                                    
+            end 
+        s5: begin
+            save_rstl <= 0; 
+//            $display("%d",num_final); 
+            //$fwrite(fd,"hola");
+            end                                                
       endcase 
     end 
 
 assign out = clk_div;
+assign out_dot = rstl_sum;
+assign out_quant = num_final;
 
 endmodule
 
 
 
 
-module counter(input clk, reset, en, output[3:0] counter);
-    reg [3:0] count;
+module counter
+(
+    input clk, reset, en, 
+    output[counterWidth-1:0] counter
+);
+
+    reg [counterWidth-1:0] count;
     reg once;
     
     initial
@@ -212,21 +290,20 @@ endmodule
 
 
 
-module ReLu(input clk, rst, input [7:0] num_quant, output [7:0] num, output sig_ok);
-
-   parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100;
-   parameter offset_ent = 6;
-   parameter offset_sor = -8'd1;
+module ReLu
+(
+    input clk, rst, 
+    input [7:0] num_quant, 
+    output [7:0] num, 
+    output sig_ok
+);
 
     reg [7:0] aux_num;
     reg [7:0] aux_num2;
     reg [7:0] aux_num3;
     reg [7:0] aux_num4;
     reg       aux_ok;
-    reg [3:0] present_state, next_state;
-    
-    
-    
+    reg [3:0] present_state, next_state;   
 
     always @(posedge clk) //Present estate 
     begin
@@ -260,7 +337,7 @@ module ReLu(input clk, rst, input [7:0] num_quant, output [7:0] num, output sig_
     always @ (*) begin
       case (present_state)
         s0: begin
-                if(num_quant <= -8'd1)
+                if($signed(num_quant) <= $signed(-8'd1))
                     aux_num <= 0;
                 else    
                     aux_num <= num_quant;
@@ -289,7 +366,7 @@ module ReLu(input clk, rst, input [7:0] num_quant, output [7:0] num, output sig_
     end 
 
     assign num = aux_num4;
-    assign sig_ok = aux_ok;
+    assign sig_ok = aux_ok;  
 
 
 endmodule

@@ -46,34 +46,19 @@ module quantization(clk,rst,a,num_quant,sig_ok);
     reg res3;
     reg [8:0] res4;
     reg ok = 0;                
-    
-    parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100;
-    parameter s5 = 4'b0101, s6 = 4'b0110, s7 = 4'b0111, s8 = 4'b1000, s9 = 4'b1001;
-    parameter s10 = 4'b1010, s11 = 4'b1011, s12 = 4'b1100, s13 = 4'b1101, s14 = 4'b1110;
-    parameter q = 64'd2014687024; //q = 31'b1111000000101011010111100110000
-    parameter mask = 8'd255;
-    parameter zero = 1'd0;
-	parameter one = 1'd1;
-    
-    
-    
-    
-     always @(clk) //Present estate 
+
+    always @(clk) //Present estate 
     begin
         if(rst)
         begin
             present_state <= s0;
-            ok = 0;
+            
         end
         else
         begin
             present_state <= next_state;
         end         
     end  
-
-
-
- 
 
     always @(*)
     begin
@@ -103,8 +88,6 @@ module quantization(clk,rst,a,num_quant,sig_ok);
         endcase                
     end
 
-
- 
     //===================    
     // Output logic
     //===================     
@@ -113,7 +96,8 @@ module quantization(clk,rst,a,num_quant,sig_ok);
         s0: 
         begin
             //led <= 4'b0000;
-            result1 <= a*q;  
+            result1 <= a*q;
+            ok <= 0;  
         end
         s1:
         begin    
@@ -177,7 +161,6 @@ module quantization(clk,rst,a,num_quant,sig_ok);
         end
       endcase 
     end 
-
 
     assign num_quant = result4;
     assign sig_ok = ok;

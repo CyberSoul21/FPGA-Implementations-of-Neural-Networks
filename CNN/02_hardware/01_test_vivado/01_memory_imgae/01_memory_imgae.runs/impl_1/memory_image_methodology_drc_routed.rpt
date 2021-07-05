@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Sat Apr 24 01:15:09 2021
+| Date         : Fri May 28 16:29:15 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_methodology -file memory_image_methodology_drc_routed.rpt -pb memory_image_methodology_drc_routed.pb -rpx memory_image_methodology_drc_routed.rpx
 | Design       : memory_image
@@ -23,138 +23,73 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 25
+             Violations found: 12
 +-----------+----------+-------------------------------+------------+
 | Rule      | Severity | Description                   | Violations |
 +-----------+----------+-------------------------------+------------+
-| TIMING-18 | Warning  | Missing input or output delay | 25         |
+| TIMING-18 | Warning  | Missing input or output delay | 12         |
 +-----------+----------+-------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
 TIMING-18#1 Warning
 Missing input or output delay  
-An input delay is missing on addr1[0] relative to clock(s) sys_clk_pin
+An input delay is missing on addr[0] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An input delay is missing on addr1[1] relative to clock(s) sys_clk_pin
+An input delay is missing on addr[1] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An input delay is missing on addr1[2] relative to clock(s) sys_clk_pin
+An input delay is missing on addr[2] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An input delay is missing on addr1[3] relative to clock(s) sys_clk_pin
+An input delay is missing on addr[3] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#5 Warning
 Missing input or output delay  
-An input delay is missing on addr2[0] relative to clock(s) sys_clk_pin
+An output delay is missing on rdata[0] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
-An input delay is missing on addr2[1] relative to clock(s) sys_clk_pin
+An output delay is missing on rdata[1] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#7 Warning
 Missing input or output delay  
-An input delay is missing on addr2[2] relative to clock(s) sys_clk_pin
+An output delay is missing on rdata[2] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#8 Warning
 Missing input or output delay  
-An input delay is missing on addr2[3] relative to clock(s) sys_clk_pin
+An output delay is missing on rdata[3] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#9 Warning
 Missing input or output delay  
-An input delay is missing on en relative to clock(s) sys_clk_pin
+An output delay is missing on rdata[4] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#10 Warning
 Missing input or output delay  
-An output delay is missing on rdata0[0] relative to clock(s) sys_clk_pin
+An output delay is missing on rdata[5] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#11 Warning
 Missing input or output delay  
-An output delay is missing on rdata0[1] relative to clock(s) sys_clk_pin
+An output delay is missing on rdata[6] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#12 Warning
 Missing input or output delay  
-An output delay is missing on rdata0[2] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#13 Warning
-Missing input or output delay  
-An output delay is missing on rdata0[3] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#14 Warning
-Missing input or output delay  
-An output delay is missing on rdata1[0] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#15 Warning
-Missing input or output delay  
-An output delay is missing on rdata1[1] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#16 Warning
-Missing input or output delay  
-An output delay is missing on rdata1[2] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#17 Warning
-Missing input or output delay  
-An output delay is missing on rdata1[3] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#18 Warning
-Missing input or output delay  
-An output delay is missing on rdata2[0] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#19 Warning
-Missing input or output delay  
-An output delay is missing on rdata2[1] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#20 Warning
-Missing input or output delay  
-An output delay is missing on rdata2[2] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#21 Warning
-Missing input or output delay  
-An output delay is missing on rdata2[3] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#22 Warning
-Missing input or output delay  
-An output delay is missing on rdata3[0] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#23 Warning
-Missing input or output delay  
-An output delay is missing on rdata3[1] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#24 Warning
-Missing input or output delay  
-An output delay is missing on rdata3[2] relative to clock(s) sys_clk_pin
-Related violations: <none>
-
-TIMING-18#25 Warning
-Missing input or output delay  
-An output delay is missing on rdata3[3] relative to clock(s) sys_clk_pin
+An output delay is missing on rdata[7] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 

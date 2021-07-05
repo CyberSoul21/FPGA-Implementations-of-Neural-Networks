@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1619244738">
+<GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1622237274">
   <File Type="VDS-TIMINGSUMMARY" Name="memory_image_timing_summary_synth.rpt"/>
   <File Type="RDS-DCP" Name="memory_image.dcp"/>
   <File Type="RDS-UTIL-PB" Name="memory_image_utilization_synth.pb"/>
@@ -43,9 +43,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

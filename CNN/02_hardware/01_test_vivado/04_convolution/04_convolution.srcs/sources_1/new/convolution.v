@@ -145,6 +145,7 @@ wire [8:0] num_quant;
 wire signed [7:0] num_final;//ojo
 wire quant_ok;
 wire relu_ok;
+wire en_count;
 
 
 
@@ -157,13 +158,15 @@ control_counter counter(
     .clk(clk_div),
     .en(en),
     .rst(rst),
+    .stop_count(en_count),
     .i(row_i),
     .j(col_j)
     );//ok
     
 memory_filter filter(
     .clk(clk_div),
-    .en(en),
+    //.en(en),
+    .en(en_count),
     .rdata0(rdata_filt0),
     .rdata1(rdata_filt1),
     .rdata2(rdata_filt2),
@@ -179,7 +182,8 @@ memory_filter filter(
 
 memory_image image(
     .clk(clk_div),
-    .en(en),
+    //.en(en),
+    .en(en_count),
     .addr1(row_i),
     .addr2(col_j),
     .rdata0(rdata_img0),
@@ -197,7 +201,8 @@ memory_image image(
 counter pos_memory_conv(
     .clk(clk_div),
     .reset(rst),
-    .en(en),
+    //.en(en),
+    .en(en_count),
     .counter(pos_rstl)
     ); //ok
 

@@ -70,6 +70,7 @@ parameter dataWidthRstlConv=8
 )
 (
         input clk, en, rst, 
+        output stop_count,
         output[counterWidth-1:0] i,j
     
 );
@@ -106,7 +107,7 @@ parameter dataWidthRstlConv=8
         
         end
     end
-
+    assign stop_count = sig_en;
 endmodule
 
 

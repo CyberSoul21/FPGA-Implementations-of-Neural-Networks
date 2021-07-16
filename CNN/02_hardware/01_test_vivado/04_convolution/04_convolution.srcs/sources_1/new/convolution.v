@@ -78,7 +78,7 @@ parameter dataWidthRstlConv=8
     output [7:0] out_quant
 );
 
-integer fd;
+//integer fd;
 
 initial
 begin

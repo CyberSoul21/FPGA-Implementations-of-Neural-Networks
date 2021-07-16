@@ -37,7 +37,8 @@ module test;
     ip_core UUT(
         .clk(clk),
         .rst(rst),
-        .en(en)
+        .en(en),
+        .out(out)
     );
     
    
@@ -57,7 +58,7 @@ module test;
     initial begin
       #0 rst = 1;
       #5 en = 1;
-      #5 rst = 0;
+      //#5 rst = 0;
 //      #200 rst = 1;
 //      #10 rst = 0;
          

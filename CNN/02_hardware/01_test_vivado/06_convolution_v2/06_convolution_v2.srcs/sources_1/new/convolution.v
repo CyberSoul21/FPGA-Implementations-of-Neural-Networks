@@ -105,7 +105,7 @@ parameter dataWidthRstlConv=8
     input en_count,
     output save,
     //*********************************************    
-    
+    output ok,
     output [7:0] out_quant
 );
 
@@ -132,7 +132,7 @@ wire relu_ok;
 wire [8:0] num_quant;
 wire signed [7:0] num_final;//ojo
     
-
+reg conv_ok;
 
 
 quantization quant(
@@ -156,7 +156,7 @@ ReLu activation(
     
     always @(clk) //Present estate 
     begin
-        if(clk_div == 1)
+        if(clk_div == 1 & en)
         begin
             present_state <= s0;    
         end
@@ -231,6 +231,7 @@ ReLu activation(
             end 
         s5: begin
             save_rstl <= 0; 
+            conv_ok <= 1; 
 //            $display("%d",num_final); 
             //$fwrite(fd,"hola");
             end                                                
@@ -239,6 +240,7 @@ ReLu activation(
 
 assign save = save_rstl;
 assign out_quant = num_final;
+assign ok = conv_ok; 
 
 endmodule
 

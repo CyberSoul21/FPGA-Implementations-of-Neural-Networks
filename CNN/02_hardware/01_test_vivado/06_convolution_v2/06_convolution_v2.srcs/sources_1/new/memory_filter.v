@@ -44,7 +44,7 @@ parameter counterWidth= 10,
 
 //memory filter
 parameter numWeightFilter = 10, addressWidthFilter=4, dataWidthFilter=16,
-parameter weightFileFilter="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt",
+parameter weightFileFilter="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.mem",
    
 //memory image
 parameter numWeightImg = 784, 
@@ -71,6 +71,16 @@ parameter dataWidthRstlConv=8
 ( 
     input clk,
     input en,
+    input [addressWidthFilter-1:0] addr0,
+    input [addressWidthFilter-1:0] addr1,
+    input [addressWidthFilter-1:0] addr2,
+    input [addressWidthFilter-1:0] addr3,
+    input [addressWidthFilter-1:0] addr4,
+    input [addressWidthFilter-1:0] addr5,
+    input [addressWidthFilter-1:0] addr6,
+    input [addressWidthFilter-1:0] addr7,
+    input [addressWidthFilter-1:0] addr8,
+    input [addressWidthFilter-1:0] addr9,
     output reg [dataWidthFilter-1:0] rdata0,
     output reg [dataWidthFilter-1:0] rdata1,
     output reg [dataWidthFilter-1:0] rdata2,
@@ -80,32 +90,33 @@ parameter dataWidthRstlConv=8
     output reg [dataWidthFilter-1:0] rdata6,
     output reg [dataWidthFilter-1:0] rdata7,
     output reg [dataWidthFilter-1:0] rdata8,    
-    output reg [dataWidthFilter-1:0] bias,
-    output reg ok
+    output reg [dataWidthFilter-1:0] bias
+   //output reg ok
 );
     
     reg [dataWidthFilter-1:0] register[numWeightFilter-1:0];
 
 
+
         initial
 		begin
-	        $readmemb(weightFileFilter, register);
+	        $readmemb(weightFileFilter, register,0);
 	    end
     
     always @(posedge clk)
     begin
         if (en)
         begin
-            rdata0 <= register[0];
-            rdata1 <= register[1];
-            rdata2 <= register[2];
-            rdata3 <= register[3];
-            rdata4 <= register[4];
-            rdata5 <= register[5];
-            rdata6 <= register[6];
-            rdata7 <= register[7];
-            rdata8 <= register[8];
-            bias <= register[9];
+            rdata0 <= register[addr0];
+            rdata1 <= register[addr1];
+            rdata2 <= register[addr2];
+            rdata3 <= register[addr3];
+            rdata4 <= register[addr4];
+            rdata5 <= register[addr5];
+            rdata6 <= register[addr6];
+            rdata7 <= register[addr7];
+            rdata8 <= register[addr8];
+            bias <= register[addr9];
         end
     end 
 endmodule

@@ -72,7 +72,8 @@ parameter dataWidthRstlConv=8
     input clk,
     input en,
     input rst,
-    output out
+    output out,
+    output [7:0] out_quant
 );
 
 //integer fd;
@@ -88,7 +89,7 @@ end
 
 
 
-
+wire conv_ok;
 
 wire [addressWidthConv-1:0] col_j; //ok
 wire [addressWidthConv-1:0] row_i;
@@ -154,6 +155,16 @@ memory_filter filter(
     .clk(clk_div),
     //.en(en),
     .en(en_count),
+    .addr0(4'd0),
+    .addr1(4'd1),
+    .addr2(4'd2),
+    .addr3(4'd3),
+    .addr4(4'd4),
+    .addr5(4'd5),
+    .addr6(4'd6),
+    .addr7(4'd7),
+    .addr8(4'd8),
+    .addr9(4'd9),    
     .rdata0(rdata_filt0),
     .rdata1(rdata_filt1),
     .rdata2(rdata_filt2),
@@ -233,15 +244,17 @@ convolution conv1(
 
     //*********************************************    
     .save(save_rstl),
-    .out_quant(num_final)
+    .out_quant(num_final),
+    .ok(conv_ok)
 
 
 );    
     
 
-memory_rstl_conv save_data(.clk(clk),.wen(save_rstl),.wadd(pos_rstl),.data_in(num_final));
+memory_rstl_conv save_data(.clk(clk),.wen(save_rstl),.ren(0),.wadd(pos_rstl),.radd(0),.data_in(num_final),.data_out());
 
-    
+assign out = conv_ok;  
+assign out_quant = num_final;
     
 
 

@@ -93,7 +93,7 @@ parameter dataWidthRstlConv=8
     reg [8:0] res4;
     reg ok = 0;                
 
-    always @(clk) //Present estate 
+    always @(clk,rst) //Present estate 
     begin
         if(rst)
         begin

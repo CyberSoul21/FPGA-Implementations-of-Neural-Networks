@@ -1,0 +1,6 @@
+0.6
+2019.2
+Nov  6 2019
+21:42:20
+/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.sim/sim_1/synth/func/xsim/test_func_synth.v,1626425319,verilog,,/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sim_1/new/test.v,,ReLu;clock_divider;control_counter;convolution;counter_col;counter_row;glbl;ip_core;memory_image;quantization,,,,,,,,
+/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sim_1/new/test.v,1626418816,verilog,,,,test,,,,,,,,

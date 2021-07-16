@@ -15,9 +15,9 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 1625 
+INFO: Helper process launched with PID 11505 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1965.062 ; gain = 199.715 ; free physical = 153 ; free virtual = 3479
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1965.570 ; gain = 201.715 ; free physical = 183 ; free virtual = 5311
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'ip_core' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ip_core.v:23]
 	Parameter addressWidthConv bound to: 10 - type: integer 
@@ -60,7 +60,7 @@ INFO: [Synth 8-6157] synthesizing module 'ip_core' [/home/javier/Documents/fpga_
 	Parameter numWeightRstlConv bound to: 676 - type: integer 
 	Parameter addressWidthRstlConv bound to: 10 - type: integer 
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
-INFO: [Synth 8-251] *********************************************************************** [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ip_core.v:83]
+INFO: [Synth 8-251] *********************************************************************** [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ip_core.v:84]
 INFO: [Synth 8-6157] synthesizing module 'clock_divider' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/clock_divider.v:24]
 	Parameter DIVISOR bound to: 28'b0000000000000000000000001100 
 INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (1#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/clock_divider.v:24]
@@ -217,7 +217,7 @@ INFO: [Synth 8-6157] synthesizing module 'memory_filter' [/home/javier/Documents
 	Parameter numWeightFilter bound to: 10 - type: integer 
 	Parameter addressWidthFilter bound to: 4 - type: integer 
 	Parameter dataWidthFilter bound to: 16 - type: integer 
-	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.mem - type: string 
 	Parameter numWeightImg bound to: 784 - type: integer 
 	Parameter addressWidthImg bound to: 10 - type: integer 
 	Parameter dataWidthImg bound to: 16 - type: integer 
@@ -231,20 +231,8 @@ INFO: [Synth 8-6157] synthesizing module 'memory_filter' [/home/javier/Documents
 	Parameter numWeightRstlConv bound to: 676 - type: integer 
 	Parameter addressWidthRstlConv bound to: 10 - type: integer 
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
-WARNING: [Synth 8-2898] ignoring malformed $readmem task: invalid memory name [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:92]
-WARNING: [Synth 8-3848] Net register[0] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:87]
-WARNING: [Synth 8-3848] Net register[1] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:87]
-WARNING: [Synth 8-3848] Net register[2] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:87]
-WARNING: [Synth 8-3848] Net register[3] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:87]
-WARNING: [Synth 8-3848] Net register[4] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:87]
-WARNING: [Synth 8-3848] Net register[5] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:87]
-WARNING: [Synth 8-3848] Net register[6] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:87]
-WARNING: [Synth 8-3848] Net register[7] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:87]
-WARNING: [Synth 8-3848] Net register[8] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:87]
-WARNING: [Synth 8-3848] Net register[9] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:87]
-WARNING: [Synth 8-3848] Net ok in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:84]
+INFO: [Synth 8-3876] $readmem data file '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.mem' is read successfully [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:103]
 INFO: [Synth 8-6155] done synthesizing module 'memory_filter' (5#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_filter.v:23]
-WARNING: [Synth 8-7023] instance 'filter' of module 'memory_filter' has 13 connections declared, but only 12 given [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ip_core.v:153]
 INFO: [Synth 8-6157] synthesizing module 'memory_image' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_image.v:23]
 	Parameter addressWidthConv bound to: 10 - type: integer 
 	Parameter dataWidthConv bound to: 16 - type: integer 
@@ -412,7 +400,6 @@ INFO: [Synth 8-6157] synthesizing module 'quantization' [/home/javier/Documents/
 	Parameter numWeightRstlConv bound to: 676 - type: integer 
 	Parameter addressWidthRstlConv bound to: 10 - type: integer 
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
-WARNING: [Synth 8-567] referenced signal 'rst' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/quantization.v:96]
 WARNING: [Synth 8-567] referenced signal 'next_state' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/quantization.v:96]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/quantization.v:111]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/quantization.v:141]
@@ -458,17 +445,17 @@ INFO: [Synth 8-6157] synthesizing module 'ReLu' [/home/javier/Documents/fpga_imp
 	Parameter numWeightRstlConv bound to: 676 - type: integer 
 	Parameter addressWidthRstlConv bound to: 10 - type: integer 
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
-WARNING: [Synth 8-567] referenced signal 'rst' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ReLu.v:83]
 WARNING: [Synth 8-567] referenced signal 'next_state' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ReLu.v:83]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ReLu.v:98]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ReLu.v:113]
 INFO: [Synth 8-6155] done synthesizing module 'ReLu' (9#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ReLu.v:23]
 WARNING: [Synth 8-567] referenced signal 'clk_div' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:157]
+WARNING: [Synth 8-567] referenced signal 'en' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:157]
 WARNING: [Synth 8-567] referenced signal 'next_state' should be on the sensitivity list [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:157]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:171]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:201]
 INFO: [Synth 8-6155] done synthesizing module 'convolution' (10#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:23]
-WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ip_core.v:242]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ip_core.v:254]
 INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_rstl_conv.v:23]
 	Parameter addressWidthConv bound to: 10 - type: integer 
 	Parameter dataWidthConv bound to: 16 - type: integer 
@@ -512,12 +499,9 @@ INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv' [/home/javier/Docume
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
 INFO: [Synth 8-251] wadd, x [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_rstl_conv.v:87]
 INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv' (11#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/memory_rstl_conv.v:23]
-WARNING: [Synth 8-7023] instance 'save_data' of module 'memory_rstl_conv' has 7 connections declared, but only 4 given [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ip_core.v:242]
-WARNING: [Synth 8-3848] Net out in module/entity ip_core does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ip_core.v:75]
 INFO: [Synth 8-6155] done synthesizing module 'ip_core' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ip_core.v:23]
 WARNING: [Synth 8-3331] design ReLu has unconnected port clk
 WARNING: [Synth 8-3331] design quantization has unconnected port clk
-WARNING: [Synth 8-3331] design convolution has unconnected port en
 WARNING: [Synth 8-3331] design convolution has unconnected port rst
 WARNING: [Synth 8-3331] design convolution has unconnected port col_j[9]
 WARNING: [Synth 8-3331] design convolution has unconnected port col_j[8]
@@ -540,11 +524,9 @@ WARNING: [Synth 8-3331] design convolution has unconnected port row_i[2]
 WARNING: [Synth 8-3331] design convolution has unconnected port row_i[1]
 WARNING: [Synth 8-3331] design convolution has unconnected port row_i[0]
 WARNING: [Synth 8-3331] design convolution has unconnected port en_count
-WARNING: [Synth 8-3331] design memory_filter has unconnected port ok
 WARNING: [Synth 8-3331] design control_counter has unconnected port en
-WARNING: [Synth 8-3331] design ip_core has unconnected port out
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 2027.812 ; gain = 262.465 ; free physical = 226 ; free virtual = 3509
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2027.320 ; gain = 263.465 ; free physical = 232 ; free virtual = 5344
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -557,12 +539,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2030.781 ; gain = 265.434 ; free physical = 231 ; free virtual = 3514
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2030.289 ; gain = 266.434 ; free physical = 217 ; free virtual = 5337
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2030.781 ; gain = 265.434 ; free physical = 231 ; free virtual = 3514
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2030.289 ; gain = 266.434 ; free physical = 217 ; free virtual = 5337
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2030.781 ; gain = 0.000 ; free physical = 223 ; free virtual = 3507
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2030.289 ; gain = 0.000 ; free physical = 210 ; free virtual = 5330
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -573,27 +555,37 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/ip_core_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2201.500 ; gain = 0.000 ; free physical = 126 ; free virtual = 3418
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2195.070 ; gain = 0.000 ; free physical = 135 ; free virtual = 5239
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2201.500 ; gain = 0.000 ; free physical = 126 ; free virtual = 3418
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2195.070 ; gain = 0.000 ; free physical = 135 ; free virtual = 5239
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 198 ; free virtual = 3492
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2195.070 ; gain = 431.215 ; free physical = 213 ; free virtual = 5319
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 195 ; free virtual = 3489
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2195.070 ; gain = 431.215 ; free physical = 213 ; free virtual = 5319
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 192 ; free virtual = 3486
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:11 . Memory (MB): peak = 2195.070 ; gain = 431.215 ; free physical = 213 ; free virtual = 5319
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
@@ -624,6 +616,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [/home/javi
 WARNING: [Synth 8-327] inferring latch for variable 'aux_num2_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ReLu.v:126]
 WARNING: [Synth 8-327] inferring latch for variable 'aux_num_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/ReLu.v:116]
 WARNING: [Synth 8-327] inferring latch for variable 'save_rstl_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:212]
+WARNING: [Synth 8-327] inferring latch for variable 'conv_ok_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:234]
 WARNING: [Synth 8-327] inferring latch for variable 'next_state_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:173]
 WARNING: [Synth 8-327] inferring latch for variable 'rst_relu_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:148]
 WARNING: [Synth 8-327] inferring latch for variable 'rst_quant_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:140]
@@ -640,7 +633,7 @@ WARNING: [Synth 8-327] inferring latch for variable 'rstl_mult_reg[7]' [/home/ja
 WARNING: [Synth 8-327] inferring latch for variable 'rstl_mult_reg[8]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:203]
 WARNING: [Synth 8-327] inferring latch for variable 'rstl_mult_reg[0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/convolution.v:203]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 178 ; free virtual = 3475
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:12 . Memory (MB): peak = 2195.070 ; gain = 431.215 ; free physical = 196 ; free virtual = 5310
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -667,6 +660,7 @@ Detailed RTL Component Info :
 +---RAMs : 
 	               5K Bit         RAMs := 1     
 +---Muxes : 
+	  11 Input     16 Bit        Muxes := 10    
 	 785 Input     16 Bit        Muxes := 9     
 	   2 Input      9 Bit        Muxes := 4     
 	   6 Input      9 Bit        Muxes := 1     
@@ -675,12 +669,12 @@ Detailed RTL Component Info :
 	   6 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 16    
+	   2 Input      1 Bit        Muxes := 17    
 	  13 Input      1 Bit        Muxes := 12    
 	  12 Input      1 Bit        Muxes := 1     
 	   6 Input      1 Bit        Muxes := 6     
 	   4 Input      1 Bit        Muxes := 1     
-	   7 Input      1 Bit        Muxes := 8     
+	   7 Input      1 Bit        Muxes := 9     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -710,6 +704,8 @@ Module memory_filter
 Detailed RTL Component Info : 
 +---Registers : 
 	               16 Bit    Registers := 10    
++---Muxes : 
+	  11 Input     16 Bit        Muxes := 10    
 Module memory_image 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -756,8 +752,8 @@ Detailed RTL Component Info :
 	   6 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 9     
-	   7 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 10    
+	   7 Input      1 Bit        Muxes := 9     
 	   6 Input      1 Bit        Muxes := 1     
 Module memory_rstl_conv 
 Detailed RTL Component Info : 
@@ -864,33 +860,120 @@ DSP Report: operator conv1/p_16_in is absorbed into DSP conv1/p_16_in.
 DSP Report: Generating DSP conv1/p_0_in, operation Mode is: A*B2.
 DSP Report: register filter/rdata0_reg is absorbed into DSP conv1/p_0_in.
 DSP Report: operator conv1/p_0_in is absorbed into DSP conv1/p_0_in.
-WARNING: [Synth 8-3331] design ip_core has unconnected port out
-WARNING: [Synth 8-3331] design ip_core has unconnected port en
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result4_reg[8]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result4_reg[7]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result4_reg[6]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result4_reg[5]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result4_reg[4]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result4_reg[3]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result4_reg[2]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result4_reg[1]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result4_reg[0]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/ok_reg) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/res3_reg) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/res1_reg[8]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/res1_reg[7]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/res1_reg[6]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/res1_reg[5]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/res1_reg[4]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/res1_reg[3]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/res1_reg[2]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/res1_reg[1]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/res1_reg[0]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/next_state_reg[3]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/next_state_reg[2]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/next_state_reg[1]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/next_state_reg[0]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/res2_reg[0]) is unused and will be removed from module ip_core.
+INFO: [Synth 8-3886] merging instance 'image/rdata0_reg[1]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata0_reg[3]' (FDE) to 'image/rdata0_reg[5]'
+INFO: [Synth 8-3886] merging instance 'image/rdata0_reg[6]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata0_reg[8]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata0_reg[9]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata0_reg[10]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata0_reg[11]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata0_reg[12]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata0_reg[13]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata0_reg[14]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata0_reg[15]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[1]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[3]' (FDE) to 'image/rdata8_reg[5]'
+INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[6]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[8]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[9]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[10]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[11]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[12]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[13]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[14]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[15]' (FDE) to 'image/rdata7_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[1]' (FDE) to 'image/rdata7_reg[6]'
+INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[3]' (FDE) to 'image/rdata7_reg[5]'
+INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[6]' (FDE) to 'image/rdata7_reg[8]'
+INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[8]' (FDE) to 'image/rdata7_reg[9]'
+INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[9]' (FDE) to 'image/rdata7_reg[10]'
+INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[10]' (FDE) to 'image/rdata7_reg[11]'
+INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[11]' (FDE) to 'image/rdata7_reg[12]'
+INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[12]' (FDE) to 'image/rdata7_reg[13]'
+INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[13]' (FDE) to 'image/rdata7_reg[14]'
+INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[14]' (FDE) to 'image/rdata7_reg[15]'
+INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[15]' (FDE) to 'image/rdata5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[1]' (FDE) to 'image/rdata5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[3]' (FDE) to 'image/rdata6_reg[5]'
+INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[6]' (FDE) to 'image/rdata5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[8]' (FDE) to 'image/rdata5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[9]' (FDE) to 'image/rdata5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[10]' (FDE) to 'image/rdata5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[11]' (FDE) to 'image/rdata5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[12]' (FDE) to 'image/rdata5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[13]' (FDE) to 'image/rdata5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[14]' (FDE) to 'image/rdata5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[15]' (FDE) to 'image/rdata5_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[1]' (FDE) to 'image/rdata5_reg[6]'
+INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[3]' (FDE) to 'image/rdata5_reg[5]'
+INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[6]' (FDE) to 'image/rdata5_reg[8]'
+INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[8]' (FDE) to 'image/rdata5_reg[9]'
+INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[9]' (FDE) to 'image/rdata5_reg[10]'
+INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[10]' (FDE) to 'image/rdata5_reg[11]'
+INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[11]' (FDE) to 'image/rdata5_reg[12]'
+INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[12]' (FDE) to 'image/rdata5_reg[13]'
+INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[13]' (FDE) to 'image/rdata5_reg[14]'
+INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[14]' (FDE) to 'image/rdata5_reg[15]'
+INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[15]' (FDE) to 'image/rdata3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[1]' (FDE) to 'image/rdata3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[3]' (FDE) to 'image/rdata4_reg[5]'
+INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[6]' (FDE) to 'image/rdata3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[8]' (FDE) to 'image/rdata3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[9]' (FDE) to 'image/rdata3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[10]' (FDE) to 'image/rdata3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[11]' (FDE) to 'image/rdata3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[12]' (FDE) to 'image/rdata3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[13]' (FDE) to 'image/rdata3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[14]' (FDE) to 'image/rdata3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[15]' (FDE) to 'image/rdata3_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[1]' (FDE) to 'image/rdata3_reg[6]'
+INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[3]' (FDE) to 'image/rdata3_reg[5]'
+INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[6]' (FDE) to 'image/rdata3_reg[8]'
+INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[8]' (FDE) to 'image/rdata3_reg[9]'
+INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[9]' (FDE) to 'image/rdata3_reg[10]'
+INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[10]' (FDE) to 'image/rdata3_reg[11]'
+INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[11]' (FDE) to 'image/rdata3_reg[12]'
+INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[12]' (FDE) to 'image/rdata3_reg[13]'
+INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[13]' (FDE) to 'image/rdata3_reg[14]'
+INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[14]' (FDE) to 'image/rdata3_reg[15]'
+INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[15]' (FDE) to 'image/rdata1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[1]' (FDE) to 'image/rdata1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[3]' (FDE) to 'image/rdata2_reg[5]'
+INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[6]' (FDE) to 'image/rdata1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[8]' (FDE) to 'image/rdata1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[9]' (FDE) to 'image/rdata1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[10]' (FDE) to 'image/rdata1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[11]' (FDE) to 'image/rdata1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[12]' (FDE) to 'image/rdata1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[13]' (FDE) to 'image/rdata1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[14]' (FDE) to 'image/rdata1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[15]' (FDE) to 'image/rdata1_reg[1]'
+INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[1]' (FDE) to 'image/rdata1_reg[6]'
+INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[3]' (FDE) to 'image/rdata1_reg[5]'
+INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[6]' (FDE) to 'image/rdata1_reg[8]'
+INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[8]' (FDE) to 'image/rdata1_reg[9]'
+INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[9]' (FDE) to 'image/rdata1_reg[10]'
+INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[10]' (FDE) to 'image/rdata1_reg[11]'
+INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[11]' (FDE) to 'image/rdata1_reg[12]'
+INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[12]' (FDE) to 'image/rdata1_reg[13]'
+INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[13]' (FDE) to 'image/rdata1_reg[14]'
+INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[14]' (FDE) to 'image/rdata1_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (image/\rdata1_reg[15] )
+INFO: [Synth 8-3886] merging instance 'filter/bias_reg[0]' (FDE) to 'filter/bias_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter/bias_reg[1]' (FDE) to 'filter/bias_reg[3]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter/bias_reg[9] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\filter/bias_reg[15] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\conv1/quant/thld1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv1/quant/thld1_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv1/quant/remainder_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv1/activation/aux_num_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv1/activation/next_state_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv1/next_state_reg[3] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\conv1/conv_ok_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv1/aux_bias_reg[9] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\conv1/aux_bias_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\conv1/quant/threshold_reg[8] )
 WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[31]) is unused and will be removed from module ip_core.
 WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[30]) is unused and will be removed from module ip_core.
 WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[29]) is unused and will be removed from module ip_core.
@@ -906,69 +989,75 @@ WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[20]) is unus
 WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[19]) is unused and will be removed from module ip_core.
 WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[18]) is unused and will be removed from module ip_core.
 WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[17]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[16]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[15]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[14]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[13]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[12]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[11]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[10]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[9]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[8]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[7]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[6]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[5]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[4]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[3]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[2]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[1]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/result2_reg[0]) is unused and will be removed from module ip_core.
 WARNING: [Synth 8-3332] Sequential element (conv1/quant/threshold_reg[8]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/threshold_reg[7]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/threshold_reg[6]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/threshold_reg[5]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/threshold_reg[4]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/threshold_reg[3]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/threshold_reg[2]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/threshold_reg[1]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/threshold_reg[0]) is unused and will be removed from module ip_core.
 WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[31]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[30]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[29]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[28]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[27]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[26]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[25]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[24]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[23]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[22]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[21]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[20]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[19]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[18]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[17]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[16]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[15]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[14]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[13]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[12]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[11]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[10]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[9]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[8]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[7]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[6]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[5]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[4]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[3]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[2]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[1]) is unused and will be removed from module ip_core.
-WARNING: [Synth 8-3332] Sequential element (conv1/quant/remainder_reg[0]) is unused and will be removed from module ip_core.
 WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[63]) is unused and will be removed from module ip_core.
 WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[62]) is unused and will be removed from module ip_core.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[61]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[60]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[59]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[58]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[57]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[56]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[55]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[54]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[53]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[52]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[51]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[50]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[49]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[48]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[30]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[29]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[28]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[27]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[26]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[25]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[24]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[23]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[22]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[21]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[20]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[19]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[18]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[17]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[16]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[15]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[14]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[13]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[12]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[11]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[10]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[9]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[8]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[7]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[6]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[5]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[4]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[3]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[2]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[1]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[0]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/thld1_reg[8]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/thld1_reg[0]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result3_reg[7]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result3_reg[6]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result3_reg[5]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result3_reg[4]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result3_reg[3]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result3_reg[2]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result3_reg[1]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result3_reg[0]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/aux_num4_reg[8]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/next_state_reg[3]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/aux_num_reg[8]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/save_rstl_reg) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/conv_ok_reg) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/next_state_reg[3]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/aux_bias_reg[16]) is unused and will be removed from module ip_core.
+WARNING: [Synth 8-3332] Sequential element (conv1/aux_bias_reg[9]) is unused and will be removed from module ip_core.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:16 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 172 ; free virtual = 3474
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2195.070 ; gain = 431.215 ; free physical = 171 ; free virtual = 5298
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1023,13 +1112,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 123 ; free virtual = 3362
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2195.070 ; gain = 431.215 ; free physical = 178 ; free virtual = 5133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 123 ; free virtual = 3362
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 2195.070 ; gain = 431.215 ; free physical = 173 ; free virtual = 5128
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1040,8 +1129,23 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:182]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:269]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:182]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:269]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:182]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:269]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:269]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:269]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:269]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:182]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:269]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:182]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:269]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:182]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sources_1/new/control_counter.v:269]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 125 ; free virtual = 3359
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 2195.070 ; gain = 431.215 ; free physical = 163 ; free virtual = 5118
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1061,17 +1165,20 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5365] Flop counter/counter_i/ok_reg is being inverted and renamed to counter/counter_i/ok_reg_inv.
+INFO: [Synth 8-6064] Net \conv1/num [50] is driving 53 big block pins (URAM, BRAM and DSP loads). Created 6 replicas of its driver. 
+WARNING: [Synth 8-3332] Sequential element (conv1/num_reg[50]) is unused and will be removed from module ip_core.
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 122 ; free virtual = 3358
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 2201.961 ; gain = 438.105 ; free physical = 154 ; free virtual = 5116
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 122 ; free virtual = 3358
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 2201.961 ; gain = 438.105 ; free physical = 154 ; free virtual = 5116
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1090,25 +1197,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 122 ; free virtual = 3358
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2201.961 ; gain = 438.105 ; free physical = 153 ; free virtual = 5115
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 122 ; free virtual = 3358
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2201.961 ; gain = 438.105 ; free physical = 153 ; free virtual = 5115
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 122 ; free virtual = 3358
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2201.961 ; gain = 438.105 ; free physical = 153 ; free virtual = 5115
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 122 ; free virtual = 3358
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2201.961 ; gain = 438.105 ; free physical = 153 ; free virtual = 5115
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1121,39 +1228,69 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+------+------+
-|      |Cell  |Count |
-+------+------+------+
-|1     |OBUFT |     1|
-+------+------+------+
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |BUFG      |     2|
+|2     |CARRY4    |    36|
+|3     |DSP48E1   |     6|
+|4     |DSP48E1_1 |     8|
+|5     |DSP48E1_2 |     3|
+|6     |DSP48E1_3 |     9|
+|7     |LUT1      |    16|
+|8     |LUT2      |    35|
+|9     |LUT3      |   114|
+|10    |LUT4      |    98|
+|11    |LUT5      |   111|
+|12    |LUT6      |   377|
+|13    |MUXF7     |    27|
+|14    |MUXF8     |     9|
+|15    |FDCE      |    21|
+|16    |FDPE      |     1|
+|17    |FDRE      |    29|
+|18    |LD        |   297|
+|19    |IBUF      |     3|
+|20    |OBUF      |     9|
++------+----------+------+
 
 Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |     1|
-+------+---------+-------+------+
++------+---------------+----------------+------+
+|      |Instance       |Module          |Cells |
++------+---------------+----------------+------+
+|1     |top            |                |  1211|
+|2     |  clk_5        |clock_divider   |    46|
+|3     |  conv1        |convolution     |   584|
+|4     |    activation |ReLu            |    76|
+|5     |    quant      |quantization    |   139|
+|6     |  counter      |control_counter |    69|
+|7     |    counter_i  |counter_row     |    44|
+|8     |    counter_j  |counter_col     |    25|
+|9     |  image        |memory_image    |   498|
++------+---------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 122 ; free virtual = 3358
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2201.961 ; gain = 438.105 ; free physical = 153 ; free virtual = 5115
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 519 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:22 . Memory (MB): peak = 2201.500 ; gain = 265.434 ; free physical = 178 ; free virtual = 3414
-Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 2201.500 ; gain = 436.152 ; free physical = 178 ; free virtual = 3414
+Synthesis finished with 0 errors, 0 critical warnings and 121 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 2201.961 ; gain = 273.324 ; free physical = 215 ; free virtual = 5177
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 2201.969 ; gain = 438.105 ; free physical = 215 ; free virtual = 5177
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2201.500 ; gain = 0.000 ; free physical = 243 ; free virtual = 3479
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2201.969 ; gain = 0.000 ; free physical = 277 ; free virtual = 5247
+INFO: [Netlist 29-17] Analyzing 395 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2201.500 ; gain = 0.000 ; free physical = 185 ; free virtual = 3421
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2236.945 ; gain = 0.000 ; free physical = 219 ; free virtual = 5189
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 297 instances were transformed.
+  LD => LDCE: 297 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-54 Infos, 189 Warnings, 0 Critical Warnings and 0 Errors encountered.
+197 Infos, 152 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:34 . Memory (MB): peak = 2201.500 ; gain = 670.461 ; free physical = 320 ; free virtual = 3556
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2201.500 ; gain = 0.000 ; free physical = 320 ; free virtual = 3556
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:35 . Memory (MB): peak = 2236.945 ; gain = 724.242 ; free physical = 376 ; free virtual = 5347
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2236.945 ; gain = 0.000 ; free physical = 376 ; free virtual = 5347
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.runs/synth_1/ip_core.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file ip_core_utilization_synth.rpt -pb ip_core_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 16 01:17:58 2021...
+INFO: [Common 17-206] Exiting Vivado at Fri Jul 16 03:45:53 2021...

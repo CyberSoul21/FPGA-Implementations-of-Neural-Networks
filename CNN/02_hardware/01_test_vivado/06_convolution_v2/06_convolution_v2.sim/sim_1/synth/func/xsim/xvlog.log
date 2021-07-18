@@ -1,12 +1,8 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.sim/sim_1/synth/func/xsim/test_func_synth.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ReLu
 INFO: [VRFC 10-311] analyzing module clock_divider
-INFO: [VRFC 10-311] analyzing module control_counter
 INFO: [VRFC 10-311] analyzing module convolution
-INFO: [VRFC 10-311] analyzing module counter_col
-INFO: [VRFC 10-311] analyzing module counter_row
 INFO: [VRFC 10-311] analyzing module ip_core
-INFO: [VRFC 10-311] analyzing module memory_image
 INFO: [VRFC 10-311] analyzing module quantization
 INFO: [VRFC 10-311] analyzing module glbl
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.srcs/sim_1/new/test.v" into library xil_defaultlib

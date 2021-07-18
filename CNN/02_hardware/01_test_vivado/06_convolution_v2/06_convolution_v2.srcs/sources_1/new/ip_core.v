@@ -72,7 +72,8 @@ parameter dataWidthRstlConv=8
     input clk,
     input en,
     input rst,
-    output out,
+    output out_clk,
+    output out_led,
     output [7:0] out_quant
 );
 
@@ -97,7 +98,6 @@ wire [addressWidthConv-1:0] row_i;
 
 wire clk_div;//ok
 wire [addressWidthConv-1:0] pos_rstl;
-
 
 
 //********************************************//ok
@@ -253,7 +253,13 @@ convolution conv1(
 
 memory_rstl_conv save_data(.clk(clk),.wen(save_rstl),.ren(0),.wadd(pos_rstl),.radd(0),.data_in(num_final),.data_out());
 
-assign out = conv_ok;  
+
+
+
+
+//assign out = conv_ok;  
+assign out_clk = clk_div;  
+assign out_led = conv_ok;
 assign out_quant = num_final;
     
 

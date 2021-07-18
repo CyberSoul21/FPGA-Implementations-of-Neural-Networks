@@ -31,14 +31,16 @@ module test;
     reg [7:0] num;
     
     //outputs    
-    wire out;
+    wire out_clk;
+    wire out_led;
     
     //unit under test (UUT)
     ip_core UUT(
         .clk(clk),
         .rst(rst),
         .en(en),
-        .out(out)
+        .out_clk(out_clk),
+        .out_led(out_led)
     );
     
    
@@ -46,6 +48,7 @@ module test;
     begin
     clk = 0;
     rst = 0;
+    en = 0;
 
 
 
@@ -58,7 +61,7 @@ module test;
     initial begin
       #0 rst = 1;
       #5 en = 1;
-      //#5 rst = 0;
+      #5 rst = 0;
 //      #200 rst = 1;
 //      #10 rst = 0;
          

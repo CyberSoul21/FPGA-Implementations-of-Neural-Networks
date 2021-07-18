@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri Jul 16 10:21:57 2021
+# Process ID: 2371
+# Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.sim/sim_1/impl/timing/xsim
+# Command line: wbtcv -mode batch -source /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.sim/sim_1/impl/timing/xsim/xsim.dir/test_time_impl/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.sim/sim_1/impl/timing/xsim/webtalk.log
+# Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.sim/sim_1/impl/timing/xsim/webtalk.jou
+#-----------------------------------------------------------
+source /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/06_convolution_v2/06_convolution_v2.sim/sim_1/impl/timing/xsim/xsim.dir/test_time_impl/webtalk/xsim_webtalk.tcl -notrace

@@ -1,0 +1,1187 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun Jul 18 17:45:05 2021
+# Process ID: 19285
+# Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.runs/synth_1
+# Command line: vivado -log convolution.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source convolution.tcl
+# Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.runs/synth_1/convolution.vds
+# Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source convolution.tcl -notrace
+Command: synth_design -top convolution -part xc7z010clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 19350 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1965.543 ; gain = 201.684 ; free physical = 524 ; free virtual = 4292
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'convolution' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolution.v:24]
+	Parameter addressWidthConv bound to: 10 - type: integer 
+	Parameter dataWidthConv bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b11100 
+	Parameter n_r bound to: 5'b11100 
+	Parameter col_fil bound to: 5'b00011 
+	Parameter row_fil bound to: 5'b00011 
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter pwd bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt - type: string 
+	Parameter counterWidth bound to: 10 - type: integer 
+	Parameter numWeightFilter bound to: 10 - type: integer 
+	Parameter addressWidthFilter bound to: 4 - type: integer 
+	Parameter dataWidthFilter bound to: 16 - type: integer 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter numWeightImg bound to: 784 - type: integer 
+	Parameter addressWidthImg bound to: 10 - type: integer 
+	Parameter dataWidthImg bound to: 16 - type: integer 
+	Parameter weightFileImg bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem - type: string 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
+	Parameter numWeightRstlConv bound to: 676 - type: integer 
+	Parameter addressWidthRstlConv bound to: 10 - type: integer 
+	Parameter dataWidthRstlConv bound to: 8 - type: integer 
+INFO: [Synth 8-251] *********************************************************************** [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolution.v:86]
+INFO: [Synth 8-6157] synthesizing module 'clock_divider' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/clock_divider.v:22]
+	Parameter DIVISOR bound to: 28'b0000000000000000000000101010 
+INFO: [Synth 8-6155] done synthesizing module 'clock_divider' (1#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/clock_divider.v:22]
+INFO: [Synth 8-6157] synthesizing module 'control_counter' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/control_counter.v:25]
+	Parameter addressWidthConv bound to: 10 - type: integer 
+	Parameter dataWidthConv bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b11100 
+	Parameter n_r bound to: 5'b11100 
+	Parameter col_fil bound to: 5'b00011 
+	Parameter row_fil bound to: 5'b00011 
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter pwd bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt - type: string 
+	Parameter counterWidth bound to: 10 - type: integer 
+	Parameter numWeightFilter bound to: 10 - type: integer 
+	Parameter addressWidthFilter bound to: 4 - type: integer 
+	Parameter dataWidthFilter bound to: 16 - type: integer 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter numWeightImg bound to: 784 - type: integer 
+	Parameter addressWidthImg bound to: 10 - type: integer 
+	Parameter dataWidthImg bound to: 16 - type: integer 
+	Parameter weightFileImg bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem - type: string 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
+	Parameter numWeightRstlConv bound to: 676 - type: integer 
+	Parameter addressWidthRstlConv bound to: 10 - type: integer 
+	Parameter dataWidthRstlConv bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'counter_col' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/control_counter.v:202]
+	Parameter addressWidthConv bound to: 10 - type: integer 
+	Parameter dataWidthConv bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b11100 
+	Parameter n_r bound to: 5'b11100 
+	Parameter col_fil bound to: 5'b00011 
+	Parameter row_fil bound to: 5'b00011 
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter pwd bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt - type: string 
+	Parameter counterWidth bound to: 10 - type: integer 
+	Parameter numWeightFilter bound to: 10 - type: integer 
+	Parameter addressWidthFilter bound to: 4 - type: integer 
+	Parameter dataWidthFilter bound to: 16 - type: integer 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter numWeightImg bound to: 784 - type: integer 
+	Parameter addressWidthImg bound to: 10 - type: integer 
+	Parameter dataWidthImg bound to: 16 - type: integer 
+	Parameter weightFileImg bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem - type: string 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
+	Parameter numWeightRstlConv bound to: 676 - type: integer 
+	Parameter addressWidthRstlConv bound to: 10 - type: integer 
+	Parameter dataWidthRstlConv bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter_col' (2#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/control_counter.v:202]
+INFO: [Synth 8-6157] synthesizing module 'counter_row' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/control_counter.v:115]
+	Parameter addressWidthConv bound to: 10 - type: integer 
+	Parameter dataWidthConv bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b11100 
+	Parameter n_r bound to: 5'b11100 
+	Parameter col_fil bound to: 5'b00011 
+	Parameter row_fil bound to: 5'b00011 
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter pwd bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt - type: string 
+	Parameter counterWidth bound to: 10 - type: integer 
+	Parameter numWeightFilter bound to: 10 - type: integer 
+	Parameter addressWidthFilter bound to: 4 - type: integer 
+	Parameter dataWidthFilter bound to: 16 - type: integer 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter numWeightImg bound to: 784 - type: integer 
+	Parameter addressWidthImg bound to: 10 - type: integer 
+	Parameter dataWidthImg bound to: 16 - type: integer 
+	Parameter weightFileImg bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem - type: string 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
+	Parameter numWeightRstlConv bound to: 676 - type: integer 
+	Parameter addressWidthRstlConv bound to: 10 - type: integer 
+	Parameter dataWidthRstlConv bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter_row' (3#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/control_counter.v:115]
+INFO: [Synth 8-6155] done synthesizing module 'control_counter' (4#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/control_counter.v:25]
+INFO: [Synth 8-6157] synthesizing module 'counter' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/counter.v:23]
+	Parameter addressWidthConv bound to: 10 - type: integer 
+	Parameter dataWidthConv bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b11100 
+	Parameter n_r bound to: 5'b11100 
+	Parameter col_fil bound to: 5'b00011 
+	Parameter row_fil bound to: 5'b00011 
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter pwd bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt - type: string 
+	Parameter counterWidth bound to: 10 - type: integer 
+	Parameter numWeightFilter bound to: 10 - type: integer 
+	Parameter addressWidthFilter bound to: 4 - type: integer 
+	Parameter dataWidthFilter bound to: 16 - type: integer 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter numWeightImg bound to: 784 - type: integer 
+	Parameter addressWidthImg bound to: 10 - type: integer 
+	Parameter dataWidthImg bound to: 16 - type: integer 
+	Parameter weightFileImg bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem - type: string 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
+	Parameter numWeightRstlConv bound to: 676 - type: integer 
+	Parameter addressWidthRstlConv bound to: 10 - type: integer 
+	Parameter dataWidthRstlConv bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counter' (5#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/counter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'memory_filter' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:24]
+	Parameter addressWidthConv bound to: 10 - type: integer 
+	Parameter dataWidthConv bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b11100 
+	Parameter n_r bound to: 5'b11100 
+	Parameter col_fil bound to: 5'b00011 
+	Parameter row_fil bound to: 5'b00011 
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter pwd bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt - type: string 
+	Parameter counterWidth bound to: 10 - type: integer 
+	Parameter numWeightFilter bound to: 10 - type: integer 
+	Parameter addressWidthFilter bound to: 4 - type: integer 
+	Parameter dataWidthFilter bound to: 16 - type: integer 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter numWeightImg bound to: 784 - type: integer 
+	Parameter addressWidthImg bound to: 10 - type: integer 
+	Parameter dataWidthImg bound to: 16 - type: integer 
+	Parameter weightFileImg bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem - type: string 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
+	Parameter numWeightRstlConv bound to: 676 - type: integer 
+	Parameter addressWidthRstlConv bound to: 10 - type: integer 
+	Parameter dataWidthRstlConv bound to: 8 - type: integer 
+WARNING: [Synth 8-2898] ignoring malformed $readmem task: invalid memory name [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:93]
+WARNING: [Synth 8-3848] Net register[0] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:88]
+WARNING: [Synth 8-3848] Net register[1] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:88]
+WARNING: [Synth 8-3848] Net register[2] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:88]
+WARNING: [Synth 8-3848] Net register[3] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:88]
+WARNING: [Synth 8-3848] Net register[4] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:88]
+WARNING: [Synth 8-3848] Net register[5] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:88]
+WARNING: [Synth 8-3848] Net register[6] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:88]
+WARNING: [Synth 8-3848] Net register[7] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:88]
+WARNING: [Synth 8-3848] Net register[8] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:88]
+WARNING: [Synth 8-3848] Net register[9] in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:88]
+WARNING: [Synth 8-3848] Net ok in module/entity memory_filter does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:85]
+INFO: [Synth 8-6155] done synthesizing module 'memory_filter' (6#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v:24]
+WARNING: [Synth 8-7023] instance 'filter' of module 'memory_filter' has 13 connections declared, but only 12 given [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolution.v:162]
+INFO: [Synth 8-6157] synthesizing module 'memory_image' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_image.v:24]
+	Parameter addressWidthConv bound to: 10 - type: integer 
+	Parameter dataWidthConv bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b11100 
+	Parameter n_r bound to: 5'b11100 
+	Parameter col_fil bound to: 5'b00011 
+	Parameter row_fil bound to: 5'b00011 
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter pwd bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt - type: string 
+	Parameter counterWidth bound to: 10 - type: integer 
+	Parameter numWeightFilter bound to: 10 - type: integer 
+	Parameter addressWidthFilter bound to: 4 - type: integer 
+	Parameter dataWidthFilter bound to: 16 - type: integer 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter numWeightImg bound to: 784 - type: integer 
+	Parameter addressWidthImg bound to: 10 - type: integer 
+	Parameter dataWidthImg bound to: 16 - type: integer 
+	Parameter weightFileImg bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem - type: string 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
+	Parameter numWeightRstlConv bound to: 676 - type: integer 
+	Parameter addressWidthRstlConv bound to: 10 - type: integer 
+	Parameter dataWidthRstlConv bound to: 8 - type: integer 
+INFO: [Synth 8-3876] $readmem data file '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem' is read successfully [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_image.v:113]
+INFO: [Synth 8-6155] done synthesizing module 'memory_image' (7#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_image.v:24]
+INFO: [Synth 8-6157] synthesizing module 'convolucion' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:23]
+	Parameter addressWidthConv bound to: 10 - type: integer 
+	Parameter dataWidthConv bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b11100 
+	Parameter n_r bound to: 5'b11100 
+	Parameter col_fil bound to: 5'b00011 
+	Parameter row_fil bound to: 5'b00011 
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter pwd bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt - type: string 
+	Parameter counterWidth bound to: 10 - type: integer 
+	Parameter numWeightFilter bound to: 10 - type: integer 
+	Parameter addressWidthFilter bound to: 4 - type: integer 
+	Parameter dataWidthFilter bound to: 16 - type: integer 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter numWeightImg bound to: 784 - type: integer 
+	Parameter addressWidthImg bound to: 10 - type: integer 
+	Parameter dataWidthImg bound to: 16 - type: integer 
+	Parameter weightFileImg bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem - type: string 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
+	Parameter numWeightRstlConv bound to: 676 - type: integer 
+	Parameter addressWidthRstlConv bound to: 10 - type: integer 
+	Parameter dataWidthRstlConv bound to: 8 - type: integer 
+INFO: [Synth 8-251] *********************************************************************** [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:108]
+INFO: [Synth 8-6157] synthesizing module 'quantization' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/quantization.v:24]
+	Parameter addressWidthConv bound to: 10 - type: integer 
+	Parameter dataWidthConv bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b11100 
+	Parameter n_r bound to: 5'b11100 
+	Parameter col_fil bound to: 5'b00011 
+	Parameter row_fil bound to: 5'b00011 
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter pwd bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt - type: string 
+	Parameter counterWidth bound to: 10 - type: integer 
+	Parameter numWeightFilter bound to: 10 - type: integer 
+	Parameter addressWidthFilter bound to: 4 - type: integer 
+	Parameter dataWidthFilter bound to: 16 - type: integer 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter numWeightImg bound to: 784 - type: integer 
+	Parameter addressWidthImg bound to: 10 - type: integer 
+	Parameter dataWidthImg bound to: 16 - type: integer 
+	Parameter weightFileImg bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem - type: string 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
+	Parameter numWeightRstlConv bound to: 676 - type: integer 
+	Parameter addressWidthRstlConv bound to: 10 - type: integer 
+	Parameter dataWidthRstlConv bound to: 8 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/quantization.v:112]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/quantization.v:142]
+WARNING: [Synth 8-6014] Unused sequential element thld3_reg was removed.  [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/quantization.v:177]
+INFO: [Synth 8-6155] done synthesizing module 'quantization' (8#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/quantization.v:24]
+INFO: [Synth 8-6157] synthesizing module 'ReLu' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/ReLu.v:23]
+	Parameter addressWidthConv bound to: 10 - type: integer 
+	Parameter dataWidthConv bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b11100 
+	Parameter n_r bound to: 5'b11100 
+	Parameter col_fil bound to: 5'b00011 
+	Parameter row_fil bound to: 5'b00011 
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter pwd bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt - type: string 
+	Parameter counterWidth bound to: 10 - type: integer 
+	Parameter numWeightFilter bound to: 10 - type: integer 
+	Parameter addressWidthFilter bound to: 4 - type: integer 
+	Parameter dataWidthFilter bound to: 16 - type: integer 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter numWeightImg bound to: 784 - type: integer 
+	Parameter addressWidthImg bound to: 10 - type: integer 
+	Parameter dataWidthImg bound to: 16 - type: integer 
+	Parameter weightFileImg bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem - type: string 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
+	Parameter numWeightRstlConv bound to: 676 - type: integer 
+	Parameter addressWidthRstlConv bound to: 10 - type: integer 
+	Parameter dataWidthRstlConv bound to: 8 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/ReLu.v:98]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/ReLu.v:113]
+INFO: [Synth 8-6155] done synthesizing module 'ReLu' (9#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/ReLu.v:23]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:160]
+INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_rstl_conv.v:23]
+	Parameter addressWidthConv bound to: 10 - type: integer 
+	Parameter dataWidthConv bound to: 16 - type: integer 
+	Parameter n_c bound to: 5'b11100 
+	Parameter n_r bound to: 5'b11100 
+	Parameter col_fil bound to: 5'b00011 
+	Parameter row_fil bound to: 5'b00011 
+	Parameter s0 bound to: 4'b0000 
+	Parameter s1 bound to: 4'b0001 
+	Parameter s2 bound to: 4'b0010 
+	Parameter s3 bound to: 4'b0011 
+	Parameter s4 bound to: 4'b0100 
+	Parameter s5 bound to: 4'b0101 
+	Parameter s6 bound to: 4'b0110 
+	Parameter s7 bound to: 4'b0111 
+	Parameter s8 bound to: 4'b1000 
+	Parameter s9 bound to: 4'b1001 
+	Parameter s10 bound to: 4'b1010 
+	Parameter s11 bound to: 4'b1011 
+	Parameter s12 bound to: 4'b1100 
+	Parameter s13 bound to: 4'b1101 
+	Parameter s14 bound to: 4'b1110 
+	Parameter pwd bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt - type: string 
+	Parameter counterWidth bound to: 10 - type: integer 
+	Parameter numWeightFilter bound to: 10 - type: integer 
+	Parameter addressWidthFilter bound to: 4 - type: integer 
+	Parameter dataWidthFilter bound to: 16 - type: integer 
+	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt - type: string 
+	Parameter numWeightImg bound to: 784 - type: integer 
+	Parameter addressWidthImg bound to: 10 - type: integer 
+	Parameter dataWidthImg bound to: 16 - type: integer 
+	Parameter weightFileImg bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem - type: string 
+	Parameter q bound to: 64'b0000000000000000000000000000000001111000000101011010111100110000 
+	Parameter mask bound to: 8'b11111111 
+	Parameter zero bound to: 1'b0 
+	Parameter one bound to: 1'b1 
+	Parameter offset_ent bound to: 6 - type: integer 
+	Parameter offset_sor bound to: -1 - type: integer 
+	Parameter numWeightRstlConv bound to: 676 - type: integer 
+	Parameter addressWidthRstlConv bound to: 10 - type: integer 
+	Parameter dataWidthRstlConv bound to: 8 - type: integer 
+INFO: [Synth 8-251] wadd, x [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_rstl_conv.v:89]
+INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv' (10#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_rstl_conv.v:23]
+WARNING: [Synth 8-7023] instance 'save_data' of module 'memory_rstl_conv' has 7 connections declared, but only 4 given [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:160]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:185]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:215]
+INFO: [Synth 8-6155] done synthesizing module 'convolucion' (11#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:23]
+WARNING: [Synth 8-3848] Net out in module/entity convolution does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolution.v:76]
+WARNING: [Synth 8-3848] Net out_dot in module/entity convolution does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolution.v:77]
+WARNING: [Synth 8-3848] Net out_quant in module/entity convolution does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolution.v:78]
+INFO: [Synth 8-6155] done synthesizing module 'convolution' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolution.v:24]
+WARNING: [Synth 8-3331] design convolucion has unconnected port en
+WARNING: [Synth 8-3331] design convolucion has unconnected port rst
+WARNING: [Synth 8-3331] design memory_filter has unconnected port ok
+WARNING: [Synth 8-3331] design control_counter has unconnected port en
+WARNING: [Synth 8-3331] design convolution has unconnected port out
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[15]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[14]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[13]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[12]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[11]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[10]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[9]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[8]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[7]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[6]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[5]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[4]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[3]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[2]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[1]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[0]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[7]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[6]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[5]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[4]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[3]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[2]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[1]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2027.293 ; gain = 263.434 ; free physical = 544 ; free virtual = 4312
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2030.262 ; gain = 266.402 ; free physical = 536 ; free virtual = 4313
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2030.262 ; gain = 266.402 ; free physical = 536 ; free virtual = 4313
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2030.262 ; gain = 0.000 ; free physical = 529 ; free virtual = 4305
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/constrs_1/new/ports.xdc]
+Finished Parsing XDC File [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/constrs_1/new/ports.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/constrs_1/new/ports.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/convolution_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/convolution_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2198.012 ; gain = 0.000 ; free physical = 445 ; free virtual = 4221
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2198.012 ; gain = 0.000 ; free physical = 445 ; free virtual = 4221
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 526 ; free virtual = 4295
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 526 ; free virtual = 4295
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 526 ; free virtual = 4295
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3936] Found unconnected internal register 'res2_reg' and it is trimmed from '9' to '1' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/quantization.v:194]
+INFO: [Synth 8-802] inferred FSM for state register 'present_state_reg' in module 'ReLu'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                      s0 |                            00001 |                             0000
+                      s1 |                            00010 |                             0001
+                      s2 |                            00100 |                             0010
+                      s3 |                            01000 |                             0011
+                  iSTATE |                            10000 |                             0100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'present_state_reg' using encoding 'one-hot' in module 'ReLu'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 508 ; free virtual = 4285
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   9 Input     17 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 3     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
+	               17 Bit    Registers := 12    
+	               16 Bit    Registers := 19    
+	               10 Bit    Registers := 3     
+	                9 Bit    Registers := 9     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 4     
+	                1 Bit    Registers := 12    
++---Multipliers : 
+	                31x64  Multipliers := 1     
++---RAMs : 
+	               5K Bit         RAMs := 1     
++---Muxes : 
+	 785 Input     16 Bit        Muxes := 9     
+	   2 Input      9 Bit        Muxes := 3     
+	   5 Input      9 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+	  12 Input      1 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 11    
+	   5 Input      1 Bit        Muxes := 4     
+	   6 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module clock_divider 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module counter_col 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module counter_row 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
+Module counter 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
++---Registers : 
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module memory_filter 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 10    
+Module memory_image 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 9     
++---Muxes : 
+	 785 Input     16 Bit        Muxes := 9     
+Module quantization 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
+	                9 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 4     
++---Multipliers : 
+	                31x64  Multipliers := 1     
++---Muxes : 
+	  12 Input      1 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 11    
+	   2 Input      1 Bit        Muxes := 1     
+Module ReLu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 4     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      9 Bit        Muxes := 3     
+	   5 Input      9 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 4     
+Module memory_rstl_conv 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---RAMs : 
+	               5K Bit         RAMs := 1     
+Module convolucion 
+Detailed RTL Component Info : 
++---Adders : 
+	   9 Input     17 Bit       Adders := 1     
+	   2 Input     17 Bit       Adders := 1     
++---Registers : 
+	               17 Bit    Registers := 12    
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+	   6 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 8     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+DSP Report: Generating DSP p_img_0, operation Mode is: C+A*(B:0x1c).
+DSP Report: operator p_img_0 is absorbed into DSP p_img_0.
+DSP Report: operator p_img_00 is absorbed into DSP p_img_0.
+DSP Report: Generating DSP p_img_1, operation Mode is: C+A*(B:0x1c)+1.
+DSP Report: operator p_img_1 is absorbed into DSP p_img_1.
+DSP Report: operator p_img_00 is absorbed into DSP p_img_1.
+DSP Report: Generating DSP p_img_00, operation Mode is: A*(B:0x1c).
+DSP Report: operator p_img_00 is absorbed into DSP p_img_00.
+DSP Report: Generating DSP p_img_2, operation Mode is: PCIN+(A:0x0):B+(C:0x2).
+DSP Report: operator p_img_2 is absorbed into DSP p_img_2.
+DSP Report: Generating DSP p_img_3, operation Mode is: C+A*(B:0x1c).
+DSP Report: operator p_img_3 is absorbed into DSP p_img_3.
+DSP Report: operator p_img_30 is absorbed into DSP p_img_3.
+DSP Report: Generating DSP p_img_4, operation Mode is: C+A*(B:0x1c)+1.
+DSP Report: operator p_img_4 is absorbed into DSP p_img_4.
+DSP Report: operator p_img_30 is absorbed into DSP p_img_4.
+DSP Report: Generating DSP p_img_30, operation Mode is: A*(B:0x1c).
+DSP Report: operator p_img_30 is absorbed into DSP p_img_30.
+DSP Report: Generating DSP p_img_5, operation Mode is: PCIN+(A:0x0):B+(C:0x2).
+DSP Report: operator p_img_5 is absorbed into DSP p_img_5.
+DSP Report: Generating DSP p_img_6, operation Mode is: C+A*(B:0x1c).
+DSP Report: operator p_img_6 is absorbed into DSP p_img_6.
+DSP Report: operator p_img_60 is absorbed into DSP p_img_6.
+DSP Report: Generating DSP p_img_7, operation Mode is: C+A*(B:0x1c)+1.
+DSP Report: operator p_img_7 is absorbed into DSP p_img_7.
+DSP Report: operator p_img_60 is absorbed into DSP p_img_7.
+DSP Report: Generating DSP p_img_60, operation Mode is: A*(B:0x1c).
+DSP Report: operator p_img_60 is absorbed into DSP p_img_60.
+DSP Report: Generating DSP p_img_8, operation Mode is: PCIN+(A:0x0):B+(C:0x2).
+DSP Report: operator p_img_8 is absorbed into DSP p_img_8.
+WARNING: [Synth 8-6014] Unused sequential element conv1/save_data/mem_reg was removed. 
+WARNING: [Synth 8-3936] Found unconnected internal register 'conv1/quant/result2_reg' and it is trimmed from '32' to '17' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/quantization.v:152]
+WARNING: [Synth 8-3936] Found unconnected internal register 'conv1/quant/result1_reg' and it is trimmed from '64' to '63' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/quantization.v:146]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/quantization.v:146]
+DSP Report: Generating DSP conv1/p_2_in, operation Mode is: A*B2.
+DSP Report: register filter/rdata1_reg is absorbed into DSP conv1/p_2_in.
+DSP Report: operator conv1/p_2_in is absorbed into DSP conv1/p_2_in.
+DSP Report: Generating DSP conv1/p_4_in, operation Mode is: A*B2.
+DSP Report: register filter/rdata2_reg is absorbed into DSP conv1/p_4_in.
+DSP Report: operator conv1/p_4_in is absorbed into DSP conv1/p_4_in.
+DSP Report: Generating DSP conv1/p_6_in, operation Mode is: A*B2.
+DSP Report: register filter/rdata3_reg is absorbed into DSP conv1/p_6_in.
+DSP Report: operator conv1/p_6_in is absorbed into DSP conv1/p_6_in.
+DSP Report: Generating DSP conv1/p_8_in, operation Mode is: A*B2.
+DSP Report: register filter/rdata4_reg is absorbed into DSP conv1/p_8_in.
+DSP Report: operator conv1/p_8_in is absorbed into DSP conv1/p_8_in.
+DSP Report: Generating DSP conv1/p_10_in, operation Mode is: A*B2.
+DSP Report: register filter/rdata5_reg is absorbed into DSP conv1/p_10_in.
+DSP Report: operator conv1/p_10_in is absorbed into DSP conv1/p_10_in.
+DSP Report: Generating DSP conv1/p_12_in, operation Mode is: A*B2.
+DSP Report: register filter/rdata6_reg is absorbed into DSP conv1/p_12_in.
+DSP Report: operator conv1/p_12_in is absorbed into DSP conv1/p_12_in.
+DSP Report: Generating DSP conv1/p_14_in, operation Mode is: A*B2.
+DSP Report: register filter/rdata7_reg is absorbed into DSP conv1/p_14_in.
+DSP Report: operator conv1/p_14_in is absorbed into DSP conv1/p_14_in.
+DSP Report: Generating DSP conv1/p_16_in, operation Mode is: A*B2.
+DSP Report: register filter/rdata8_reg is absorbed into DSP conv1/p_16_in.
+DSP Report: operator conv1/p_16_in is absorbed into DSP conv1/p_16_in.
+DSP Report: Generating DSP conv1/p_0_in, operation Mode is: A*B2.
+DSP Report: register filter/rdata0_reg is absorbed into DSP conv1/p_0_in.
+DSP Report: operator conv1/p_0_in is absorbed into DSP conv1/p_0_in.
+DSP Report: Generating DSP conv1/quant/result10, operation Mode is: (A:0x1af30)*B2.
+DSP Report: register conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: Generating DSP conv1/quant/result1_reg, operation Mode is: (PCIN>>17)+A*B2.
+DSP Report: register conv1/quant/result1_reg is absorbed into DSP conv1/quant/result1_reg.
+DSP Report: register conv1/quant/result1_reg is absorbed into DSP conv1/quant/result1_reg.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result1_reg.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result1_reg.
+DSP Report: Generating DSP conv1/quant/result10, operation Mode is: A2*B.
+DSP Report: register conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: Generating DSP conv1/quant/result10, operation Mode is: PCIN+A2*(B:0x1af30).
+DSP Report: register conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: Generating DSP conv1/quant/result1_reg, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register conv1/quant/result1_reg is absorbed into DSP conv1/quant/result1_reg.
+DSP Report: register conv1/quant/result1_reg is absorbed into DSP conv1/quant/result1_reg.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result1_reg.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result1_reg.
+DSP Report: Generating DSP conv1/quant/result10, operation Mode is: A2*(B:0x1af30).
+DSP Report: register conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: Generating DSP conv1/quant/result10, operation Mode is: (PCIN>>17)+A2*B.
+DSP Report: register conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result10.
+DSP Report: Generating DSP conv1/quant/result1_reg, operation Mode is: PCIN+A2*(B:0x1af30).
+DSP Report: register conv1/quant/result1_reg is absorbed into DSP conv1/quant/result1_reg.
+DSP Report: register conv1/quant/result1_reg is absorbed into DSP conv1/quant/result1_reg.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result1_reg.
+DSP Report: operator conv1/quant/result10 is absorbed into DSP conv1/quant/result1_reg.
+WARNING: [Synth 8-3331] design convolution has unconnected port out
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[15]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[14]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[13]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[12]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[11]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[10]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[9]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[8]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[7]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[6]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[5]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[4]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[3]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[2]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[1]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_dot[0]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[7]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[6]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[5]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[4]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[3]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[2]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[1]
+WARNING: [Synth 8-3331] design convolution has unconnected port out_quant[0]
+WARNING: [Synth 8-3331] design convolution has unconnected port en
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/FSM_onehot_present_state_reg[4]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/FSM_onehot_present_state_reg[3]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/FSM_onehot_present_state_reg[2]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/FSM_onehot_present_state_reg[1]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/FSM_onehot_present_state_reg[0]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/FSM_onehot_next_state_reg[4]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/FSM_onehot_next_state_reg[3]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/FSM_onehot_next_state_reg[2]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/FSM_onehot_next_state_reg[1]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/activation/FSM_onehot_next_state_reg[0]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[47]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[46]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[45]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[44]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[43]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[42]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[41]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[40]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[39]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[38]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[37]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[36]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[35]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[34]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[33]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[32]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[31]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[30]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[29]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[28]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[27]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[26]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[25]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[24]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[23]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[22]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[21]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[20]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[19]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[18]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[17]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[16]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[15]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[14]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[13]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[12]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[11]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[10]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[9]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[8]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[7]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[6]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[5]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[4]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[3]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[2]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[1]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[0]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[47]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[46]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[45]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[44]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[43]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[42]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[41]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[40]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[39]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[38]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[37]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[36]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[35]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[34]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[33]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[32]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[31]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[30]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[29]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[28]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[27]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[26]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[25]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[24]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[23]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[22]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[21]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[20]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[19]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[18]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[17]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[16]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[15]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[14]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[13]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[12]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[11]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[10]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[9]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[8]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[7]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[6]__0) is unused and will be removed from module convolution.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 502 ; free virtual = 4284
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping	Report (see note below)
++-------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping            | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|memory_image | C+A*(B:0x1c)           | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|memory_image | C+A*(B:0x1c)+1         | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|memory_image | A*(B:0x1c)             | 10     | 5      | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|memory_image | PCIN+(A:0x0):B+(C:0x2) | 30     | 10     | 2      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|memory_image | C+A*(B:0x1c)           | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|memory_image | C+A*(B:0x1c)+1         | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|memory_image | A*(B:0x1c)             | 10     | 5      | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|memory_image | PCIN+(A:0x0):B+(C:0x2) | 30     | 10     | 2      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|memory_image | C+A*(B:0x1c)           | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|memory_image | C+A*(B:0x1c)+1         | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|memory_image | A*(B:0x1c)             | 10     | 5      | -      | -      | 15     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|memory_image | PCIN+(A:0x0):B+(C:0x2) | 30     | 10     | 2      | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|convolution  | A*B2                   | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2                   | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2                   | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2                   | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2                   | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2                   | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2                   | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2                   | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | A*B2                   | 16     | 16     | -      | -      | 32     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | (A:0x1af30)*B2         | 18     | 13     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution  | (PCIN>>17)+A*B2        | 15     | 13     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|convolution  | A2*B                   | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|convolution  | PCIN+A2*(B:0x1af30)    | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|convolution  | (PCIN>>17)+A2*B        | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
+|convolution  | A2*(B:0x1af30)         | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|convolution  | (PCIN>>17)+A2*B        | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|convolution  | PCIN+A2*(B:0x1af30)    | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
++-------------+------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 380 ; free virtual = 4154
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 380 ; free virtual = 4154
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 379 ; free virtual = 4153
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 378 ; free virtual = 4152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 378 ; free virtual = 4152
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 378 ; free virtual = 4152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 378 ; free virtual = 4152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 378 ; free virtual = 4152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 378 ; free virtual = 4152
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |OBUFT |    25|
++------+------+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |    25|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 378 ; free virtual = 4152
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 184 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 2198.012 ; gain = 266.402 ; free physical = 434 ; free virtual = 4208
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2198.012 ; gain = 434.152 ; free physical = 434 ; free virtual = 4208
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2198.012 ; gain = 0.000 ; free physical = 504 ; free virtual = 4279
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2198.012 ; gain = 0.000 ; free physical = 447 ; free virtual = 4221
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+57 Infos, 178 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:30 . Memory (MB): peak = 2198.012 ; gain = 685.305 ; free physical = 582 ; free virtual = 4357
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2198.012 ; gain = 0.000 ; free physical = 582 ; free virtual = 4357
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.runs/synth_1/convolution.dcp' has been generated.
+INFO: [Common 17-206] Exiting Vivado at Sun Jul 18 17:45:42 2021...

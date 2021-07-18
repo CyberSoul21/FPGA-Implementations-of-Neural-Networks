@@ -46,7 +46,46 @@ begin
   counter <= 28'd0;
  end
  clock_out <= (counter<DIVISOR/12)?1'b1:1'b0;
-
 end
 endmodule
+
+
+
+
+//module clock_divider_1s(input clock_in, output reg clock_out);
+
+//localparam div_value = 125000000/(2*1);
+//// division_value = 100Mhz/(2*desired Frequency) - 1
+////Counter
+//integer counter_value = 0; // 32 bit reg bus
+
+//always@ (posedge clock_in) //Sensitivity list
+//begin
+
+//    if(counter_value == div_value)
+//        counter_value <= 0;
+//    else
+//        counter_value <= counter_value + 1;
+
+//end
+
+
+//always@ (posedge clock_in)
+//begin
+//    if(counter_value == div_value)
+//        clock_out <= ~clock_out; //flip signal 
+//end
+
+//endmodule
+
+
+
+
+
+
+
+
+
+
+
 

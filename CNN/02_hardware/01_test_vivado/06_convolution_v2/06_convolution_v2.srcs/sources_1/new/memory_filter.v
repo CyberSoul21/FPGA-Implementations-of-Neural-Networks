@@ -44,7 +44,7 @@ parameter counterWidth= 10,
 
 //memory filter
 parameter numWeightFilter = 10, addressWidthFilter=4, dataWidthFilter=16,
-parameter weightFileFilter="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.mem",
+parameter weightFileFilter="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/filter1.txt",
    
 //memory image
 parameter numWeightImg = 784, 

@@ -135,6 +135,13 @@ wire signed [7:0] num_final;//ojo
 reg conv_ok;
 
 
+initial
+begin
+//conv_ok = 1'd0;
+//present_state = 3'd0;
+//next_state = 3'd0;
+end
+
 quantization quant(
     .clk(clk),
     .rst(rst_quant),
@@ -154,11 +161,12 @@ ReLu activation(
 
     
     
-    always @(clk) //Present estate 
+    always @(clk) //Present estate // //always @(*)
     begin
-        if(clk_div == 1 & en)
+        if(clk_div == 1)
         begin
             present_state <= s0;    
+            //conv_ok <= ~conv_ok;
         end
         else
         begin
@@ -166,7 +174,7 @@ ReLu activation(
         end    
     end    
 
-    always @(*)
+    always @(*) //always @(*)
     begin
         case(present_state)
             s0:
@@ -197,7 +205,7 @@ ReLu activation(
         endcase                
     end
 
-    always @ (*) begin
+    always @(*) begin
       case (present_state)
         s0: begin
             rstl_mult[0] <= $signed(rdata_img0*rdata_filt0);
@@ -231,7 +239,7 @@ ReLu activation(
             end 
         s5: begin
             save_rstl <= 0; 
-            conv_ok <= 1; 
+            conv_ok <= 1'd1; 
 //            $display("%d",num_final); 
             //$fwrite(fd,"hola");
             end                                                

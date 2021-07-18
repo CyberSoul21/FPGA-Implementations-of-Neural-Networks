@@ -80,7 +80,7 @@ parameter dataWidthRstlConv=8
     reg       aux_ok;
     reg [3:0] present_state, next_state;   
 
-    always @(clk,rst) //Present estate 
+    always @(clk) //Present estate //always @(clk,rst) //Present estate 
     begin
         if(rst)
         begin
@@ -93,7 +93,7 @@ parameter dataWidthRstlConv=8
         end    
     end    
 
-    always @(*)
+    always @(*) //always @ (*) 
     begin
         case(present_state)
             s0:
@@ -109,7 +109,7 @@ parameter dataWidthRstlConv=8
     end
 
 
-    always @ (*) begin
+    always @ (*) begin         //always @ (*) begin
       case (present_state)
         s0: begin
                 if($signed(num_quant) <= $signed(-8'd1))

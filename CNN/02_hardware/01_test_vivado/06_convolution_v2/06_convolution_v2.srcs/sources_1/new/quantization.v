@@ -93,7 +93,7 @@ parameter dataWidthRstlConv=8
     reg [8:0] res4;
     reg ok = 0;                
 
-    always @(clk,rst) //Present estate 
+    always @(clk) //Present estate //always @(clk)
     begin
         if(rst)
         begin
@@ -106,7 +106,7 @@ parameter dataWidthRstlConv=8
         end         
     end  
 
-    always @(*)
+    always @(*) //always @(*)
     begin
         case(present_state)
             s0:
@@ -130,14 +130,16 @@ parameter dataWidthRstlConv=8
             s9:
                 next_state <= s10;
             s10:
-                next_state <= s11;                                                                                        
+                next_state <= s11;
+            default:
+                next_state <= s0;                                                                                           
         endcase                
     end
 
     //===================    
     // Output logic
     //===================     
-    always @ (*) begin
+    always @ (*) begin   //always @ (*) begin
       case (present_state)
         s0: 
         begin
@@ -148,7 +150,7 @@ parameter dataWidthRstlConv=8
         s1:
         begin    
             //led <= 4'b0001;
-            result2 <= result1 >>> 31;
+           result2 <= result1 >>> 31; //result1[31:15];// result2 <= result1 >>> 31; //result2 <= result1[31:16] result2 <= result1[31:15]
         end
         s2:
         begin
@@ -203,9 +205,11 @@ parameter dataWidthRstlConv=8
         end
         s11:
         begin
-            result4 <= res1 + res3; //Add( ShiftRight(x, exponent),BitAnd( MaskIfGreaterThan(remainder, threshold), one ) ); 
+          result4 <= res1 + res3; //Add( ShiftRight(x, exponent),BitAnd( MaskIfGreaterThan(remainder, threshold), one ) ); 
           ok <= 1; 
         end
+//        default:
+//          ok <= 0;
       endcase 
     end 
 

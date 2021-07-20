@@ -180,7 +180,7 @@ memory_rstl_conv save_data(
         end    
     end    
 
-    always @(posedge clk) //always @(*)
+    always @(negedge clk) //always @(*)
     begin
         case(present_state)
             s0:

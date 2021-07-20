@@ -107,7 +107,7 @@ parameter dataWidthRstlConv=8
         end         
     end  
 
-    always @(posedge clk)  //always @(*)
+    always @(negedge clk)  //always @(*)
     begin
         case(present_state)
             s0:

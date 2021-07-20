@@ -96,17 +96,15 @@ parameter dataWidthRstlConv=8
     input [dataWidthConv-1:0] bias_filt, 
     
     input [addressWidthConv-1:0] pos_rstl,
-    
+    output out,
     output [7:0] out_quant       
 );
 
 //integer fd;
 
-initial
-begin
-//fd = $fopen("/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/04_convolution/04_convolution.srcs/sources_1/new/rstl_conv2.txt");
-$display("***********************************************************************");
-end
+
+
+
     
 //FSM
 reg [3:0] present_state, next_state; //ok
@@ -128,6 +126,16 @@ wire quant_ok;
 wire relu_ok;
 wire [8:0] num_quant;
 wire signed [7:0] num_final;//ojo
+
+reg conv_ok;
+
+initial
+begin
+$display("***********************************************************************");
+conv_ok = 1'd0;
+//present_state = 3'd0;
+//next_state = 3'd0;
+end
 
 //wire [addressWidthConv-1:0] pos_rstl;
 
@@ -211,7 +219,7 @@ memory_rstl_conv save_data(
         endcase                
     end
 
-    always @ (posedge clk) begin  //always @ (*) 
+    always @ (negedge clk) begin //always @ (posedge clk) begin   
       case (present_state)
         s0: begin
             rstl_mult[0] <= $signed(rdata_img0*rdata_filt0);
@@ -245,13 +253,14 @@ memory_rstl_conv save_data(
             end 
         s5: begin
             save_rstl <= 0; 
+            conv_ok <= 1'd1;
 //            $display("%d",num_final); 
             //$fwrite(fd,"hola");
             end                                                
       endcase 
     end 
 
-assign out = clk_div;
+assign out = conv_ok;
 //assign out_dot = rstl_sum;
 assign out_quant = num_final;
 

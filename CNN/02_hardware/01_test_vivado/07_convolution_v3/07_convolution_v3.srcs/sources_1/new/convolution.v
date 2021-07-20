@@ -74,7 +74,6 @@ parameter dataWidthRstlConv=8
     input en,
     input rst,
     output out,
-    output [dataWidthConv-1:0] out_dot,
     output [7:0] out_quant
 );
 
@@ -135,7 +134,7 @@ wire signed [7:0] num_final;//ojo
 
 wire [addressWidthConv-1:0] pos_rstl;
 
-
+wire out_conv;
 
 clock_divider clk_5(
     .clock_in(clk),
@@ -172,7 +171,8 @@ memory_filter filter(
     .rdata6(rdata_filt6),
     .rdata7(rdata_filt7),
     .rdata8(rdata_filt8),
-    .bias(bias_filt)
+    .bias(bias_filt),
+    .ok()
     ); //ok 
     
 
@@ -225,12 +225,13 @@ convolucion conv1(
     .rdata_filt8(rdata_filt8),
     .bias_filt(bias_filt),    
     .pos_rstl(pos_rstl),
+    .out(out_conv),
     .out_quant(num_final)
 );       
 
+assign out_quant = num_final;
 
-
-
+assign out = out_conv;
 
 
     

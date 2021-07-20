@@ -138,7 +138,7 @@ parameter dataWidthRstlConv=8
     //===================    
     // Output logic
     //===================     
-    always @ (posedge clk) begin  // always @ (*) begin
+    always @ (negedge clk) begin  // always @ (posedge clk) begin
       case (present_state)
         s0: 
         begin

@@ -39,7 +39,8 @@ module test;
     convolution UUT(
         .clk(clk),
         .rst(rst),
-        .en(en)
+        .en(en),
+        .out(out)
     );
     
    

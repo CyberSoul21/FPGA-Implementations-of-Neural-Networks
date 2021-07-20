@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="242500fs"></ZoomStartTime>
-      <ZoomEndTime time="1151501fs"></ZoomEndTime>
+      <ZoomStartTime time="100799fs"></ZoomStartTime>
+      <ZoomEndTime time="1179841fs"></ZoomEndTime>
       <Cursor1Time time="1000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="171"></NameColumnWidth>
-      <ValueColumnWidth column_width="153"></ValueColumnWidth>
+      <ValueColumnWidth column_width="149"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="58" />
+   <WVObjectSize size="60" />
    <wvobject type="logic" fp_name="/test/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -51,6 +51,14 @@
    <wvobject type="logic" fp_name="/test/rst">
       <obj_property name="ElementShortName">rst</obj_property>
       <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/out">
+      <obj_property name="ElementShortName">out</obj_property>
+      <obj_property name="ObjectShortName">out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/test/UUT/conv1/conv_ok">
+      <obj_property name="ElementShortName">conv_ok</obj_property>
+      <obj_property name="ObjectShortName">conv_ok</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/test/UUT/col_j">
       <obj_property name="ElementShortName">col_j[9:0]</obj_property>

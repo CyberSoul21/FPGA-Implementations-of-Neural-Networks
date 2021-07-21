@@ -227,7 +227,10 @@ convolucion conv1(
     .pos_rstl(pos_rstl),
     .out(out_conv),
     .out_quant(num_final)
-);       
+);   
+
+ 
+    
 
 assign out_quant = num_final;
 

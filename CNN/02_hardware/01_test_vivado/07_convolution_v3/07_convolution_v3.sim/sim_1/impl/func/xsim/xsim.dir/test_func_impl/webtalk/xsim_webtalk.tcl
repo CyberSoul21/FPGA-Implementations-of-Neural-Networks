@@ -1,6 +1,6 @@
 webtalk_init -webtalk_dir /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.sim/sim_1/impl/func/xsim/xsim.dir/test_func_impl/webtalk/
 webtalk_register_client -client project
-webtalk_add_data -client project -key date_generated -value "Tue Jul 20 14:24:57 2021" -context "software_version_and_target_device"
+webtalk_add_data -client project -key date_generated -value "Wed Jul 21 00:31:12 2021" -context "software_version_and_target_device"
 webtalk_add_data -client project -key product_version -value "XSIM v2019.2 (64-bit)" -context "software_version_and_target_device"
 webtalk_add_data -client project -key build_version -value "2708876" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_platform -value "LIN64" -context "software_version_and_target_device"
@@ -14,11 +14,11 @@ webtalk_add_data -client project -key target_package -value "not_applicable" -co
 webtalk_add_data -client project -key target_speed -value "not_applicable" -context "software_version_and_target_device"
 webtalk_add_data -client project -key random_id -value "5ef659bb-d738-4ce0-9b3f-bb4c51f232e4" -context "software_version_and_target_device"
 webtalk_add_data -client project -key project_id -value "446b55cbc9914f149ed77de7a795e317" -context "software_version_and_target_device"
-webtalk_add_data -client project -key project_iteration -value "8" -context "software_version_and_target_device"
+webtalk_add_data -client project -key project_iteration -value "16" -context "software_version_and_target_device"
 webtalk_add_data -client project -key os_name -value "Ubuntu" -context "user_environment"
 webtalk_add_data -client project -key os_release -value "Ubuntu 18.04.4 LTS" -context "user_environment"
 webtalk_add_data -client project -key cpu_name -value "Intel(R) Core(TM) i5-8300H CPU @ 2.30GHz" -context "user_environment"
-webtalk_add_data -client project -key cpu_speed -value "3932.527 MHz" -context "user_environment"
+webtalk_add_data -client project -key cpu_speed -value "3973.445 MHz" -context "user_environment"
 webtalk_add_data -client project -key total_processors -value "1" -context "user_environment"
 webtalk_add_data -client project -key system_ram -value "8.000 GB" -context "user_environment"
 webtalk_register_client -client xsim
@@ -26,7 +26,7 @@ webtalk_add_data -client xsim -key Command -value "xsim" -context "xsim\\command
 webtalk_add_data -client xsim -key trace_waveform -value "true" -context "xsim\\usage"
 webtalk_add_data -client xsim -key runtime -value "1 us" -context "xsim\\usage"
 webtalk_add_data -client xsim -key iteration -value "2" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Time -value "0.05_sec" -context "xsim\\usage"
-webtalk_add_data -client xsim -key Simulation_Memory -value "140628_KB" -context "xsim\\usage"
-webtalk_transmit -clientid 1879984430 -regid "" -xml /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.sim/sim_1/impl/func/xsim/xsim.dir/test_func_impl/webtalk/usage_statistics_ext_xsim.xml -html /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.sim/sim_1/impl/func/xsim/xsim.dir/test_func_impl/webtalk/usage_statistics_ext_xsim.html -wdm /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.sim/sim_1/impl/func/xsim/xsim.dir/test_func_impl/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
+webtalk_add_data -client xsim -key Simulation_Time -value "0.07_sec" -context "xsim\\usage"
+webtalk_add_data -client xsim -key Simulation_Memory -value "140768_KB" -context "xsim\\usage"
+webtalk_transmit -clientid 1220016862 -regid "" -xml /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.sim/sim_1/impl/func/xsim/xsim.dir/test_func_impl/webtalk/usage_statistics_ext_xsim.xml -html /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.sim/sim_1/impl/func/xsim/xsim.dir/test_func_impl/webtalk/usage_statistics_ext_xsim.html -wdm /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.sim/sim_1/impl/func/xsim/xsim.dir/test_func_impl/webtalk/usage_statistics_ext_xsim.wdm -intro "<H3>XSIM Usage Report</H3><BR>"
 webtalk_terminate

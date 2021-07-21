@@ -80,7 +80,7 @@ parameter dataWidthRstlConv=8
     reg       aux_ok;
     reg [3:0] present_state, next_state;   
 
-    always @(posedge clk) //Present estate // always @(clk) //Present estate 
+    always @(posedge clk or posedge rst) //Present estate // always @(clk) //Present estate 
     begin
         if(rst)
         begin

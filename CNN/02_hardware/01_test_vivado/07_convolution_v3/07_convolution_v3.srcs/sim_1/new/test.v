@@ -59,7 +59,7 @@ module test;
 
     initial begin
       #0 rst = 1;
-      #5 en = 1;
+      #5 en = 0;
       #5 rst = 0;
 //      #200 rst = 1;
 //      #10 rst = 0;

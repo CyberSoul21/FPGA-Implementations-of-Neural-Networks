@@ -94,7 +94,7 @@ parameter dataWidthRstlConv=8
     reg [8:0] res4;
     reg ok = 0;                
 
-    always @(posedge clk) //Present estate //always @(clk) //Present estate 
+    always @(negedge clk or posedge rst) //Present estate //always @(clk) //Present estate 
     begin
         if(rst)
         begin
@@ -138,7 +138,7 @@ parameter dataWidthRstlConv=8
     //===================    
     // Output logic
     //===================     
-    always @ (negedge clk) begin  // always @ (posedge clk) begin
+    always @(negedge clk) begin  // always @ (posedge clk) begin
       case (present_state)
         s0: 
         begin

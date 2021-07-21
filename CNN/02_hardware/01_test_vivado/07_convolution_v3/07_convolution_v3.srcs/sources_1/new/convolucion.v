@@ -168,8 +168,11 @@ ReLu activation(
 memory_rstl_conv save_data(
     .clk(clk),
     .wen(save_rstl),
+    .ren(0),
     .wadd(pos_rstl),
-    .data_in(num_final)
+    .radd(0),
+    .data_in(num_final),
+    .data_out()
     );
  
     

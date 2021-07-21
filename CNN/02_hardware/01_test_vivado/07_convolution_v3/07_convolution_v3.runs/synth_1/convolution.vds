@@ -2,23 +2,24 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Mon Jul 19 23:46:41 2021
-# Process ID: 9375
+# Start of session at: Wed Jul 21 00:14:48 2021
+# Process ID: 17360
 # Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.runs/synth_1
 # Command line: vivado -log convolution.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source convolution.tcl
 # Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.runs/synth_1/convolution.vds
 # Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source convolution.tcl -notrace
+create_project: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1512.879 ; gain = 13.016 ; free physical = 131 ; free virtual = 4032
 Command: synth_design -top convolution -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 9404 
+INFO: Helper process launched with PID 17413 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1965.539 ; gain = 201.684 ; free physical = 1064 ; free virtual = 4776
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1965.746 ; gain = 203.684 ; free physical = 225 ; free virtual = 3700
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'convolution' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolution.v:24]
 	Parameter addressWidthConv bound to: 10 - type: integer 
@@ -505,9 +506,8 @@ INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv' [/home/javier/Docume
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
 INFO: [Synth 8-251] wadd, x [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_rstl_conv.v:89]
 INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv' (10#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_rstl_conv.v:23]
-WARNING: [Synth 8-7023] instance 'save_data' of module 'memory_rstl_conv' has 7 connections declared, but only 4 given [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:168]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:193]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:223]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:196]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:226]
 INFO: [Synth 8-6155] done synthesizing module 'convolucion' (11#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolucion.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'convolution' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolution.v:24]
 WARNING: [Synth 8-3331] design convolucion has unconnected port en
@@ -515,7 +515,7 @@ WARNING: [Synth 8-3331] design convolucion has unconnected port rst
 WARNING: [Synth 8-3331] design memory_filter has unconnected port ok
 WARNING: [Synth 8-3331] design control_counter has unconnected port en
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2027.289 ; gain = 263.434 ; free physical = 1092 ; free virtual = 4804
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:07 . Memory (MB): peak = 2027.496 ; gain = 265.434 ; free physical = 252 ; free virtual = 3729
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -528,12 +528,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2030.258 ; gain = 266.402 ; free physical = 1089 ; free virtual = 4802
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 2027.496 ; gain = 265.434 ; free physical = 250 ; free virtual = 3728
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2030.258 ; gain = 266.402 ; free physical = 1089 ; free virtual = 4802
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 2027.496 ; gain = 265.434 ; free physical = 250 ; free virtual = 3728
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2030.258 ; gain = 0.000 ; free physical = 1082 ; free virtual = 4794
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2027.496 ; gain = 0.000 ; free physical = 242 ; free virtual = 3720
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -544,26 +544,26 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/convolution_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2196.008 ; gain = 0.000 ; free physical = 991 ; free virtual = 4704
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2200.215 ; gain = 0.000 ; free physical = 140 ; free virtual = 3630
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2196.008 ; gain = 0.000 ; free physical = 991 ; free virtual = 4704
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2200.215 ; gain = 0.000 ; free physical = 140 ; free virtual = 3630
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2196.008 ; gain = 432.152 ; free physical = 1068 ; free virtual = 4781
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2200.215 ; gain = 438.152 ; free physical = 210 ; free virtual = 3700
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2196.008 ; gain = 432.152 ; free physical = 1068 ; free virtual = 4781
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2200.215 ; gain = 438.152 ; free physical = 210 ; free virtual = 3700
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 2196.008 ; gain = 432.152 ; free physical = 1068 ; free virtual = 4781
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:14 . Memory (MB): peak = 2200.215 ; gain = 438.152 ; free physical = 210 ; free virtual = 3700
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
@@ -587,7 +587,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'present_state_reg' in modul
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'present_state_reg' using encoding 'one-hot' in module 'ReLu'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2196.008 ; gain = 432.152 ; free physical = 1057 ; free virtual = 4770
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:15 . Memory (MB): peak = 2200.215 ; gain = 438.152 ; free physical = 201 ; free virtual = 3692
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1066,7 +1066,7 @@ WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[31]__1) is u
 WARNING: [Synth 8-3332] Sequential element (conv1/quant/result1_reg[30]__1) is unused and will be removed from module convolution.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:12 ; elapsed = 00:00:15 . Memory (MB): peak = 2196.008 ; gain = 432.152 ; free physical = 1037 ; free virtual = 4755
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:18 . Memory (MB): peak = 2200.215 ; gain = 438.152 ; free physical = 183 ; free virtual = 3681
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1121,13 +1121,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2196.008 ; gain = 432.152 ; free physical = 856 ; free virtual = 4574
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:25 . Memory (MB): peak = 2200.215 ; gain = 438.152 ; free physical = 128 ; free virtual = 3517
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:22 . Memory (MB): peak = 2196.008 ; gain = 432.152 ; free physical = 853 ; free virtual = 4571
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:26 . Memory (MB): peak = 2200.215 ; gain = 438.152 ; free physical = 125 ; free virtual = 3513
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1154,7 +1154,7 @@ INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM bloc
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/control_counter.v:183]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/control_counter.v:270]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:23 . Memory (MB): peak = 2212.023 ; gain = 448.168 ; free physical = 842 ; free virtual = 4560
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:26 . Memory (MB): peak = 2211.230 ; gain = 449.168 ; free physical = 135 ; free virtual = 3505
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1180,13 +1180,13 @@ INFO: [Synth 8-6064] Net rstl_sum[16] is driving 53 big block pins (URAM, BRAM a
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2218.961 ; gain = 455.105 ; free physical = 841 ; free virtual = 4559
+Finished IO Insertion : Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 2218.168 ; gain = 456.105 ; free physical = 135 ; free virtual = 3505
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2218.961 ; gain = 455.105 ; free physical = 841 ; free virtual = 4559
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:22 ; elapsed = 00:00:29 . Memory (MB): peak = 2218.168 ; gain = 456.105 ; free physical = 135 ; free virtual = 3505
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1205,25 +1205,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2218.961 ; gain = 455.105 ; free physical = 840 ; free virtual = 4558
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 2218.168 ; gain = 456.105 ; free physical = 134 ; free virtual = 3504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:22 ; elapsed = 00:00:25 . Memory (MB): peak = 2218.961 ; gain = 455.105 ; free physical = 840 ; free virtual = 4558
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 2218.168 ; gain = 456.105 ; free physical = 134 ; free virtual = 3504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 2218.961 ; gain = 455.105 ; free physical = 841 ; free virtual = 4559
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 2218.168 ; gain = 456.105 ; free physical = 134 ; free virtual = 3505
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 2218.961 ; gain = 455.105 ; free physical = 841 ; free virtual = 4559
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 2218.168 ; gain = 456.105 ; free physical = 134 ; free virtual = 3505
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1255,10 +1255,10 @@ Report Cell Usage:
 |14    |LUT6      |   385|
 |15    |MUXF7     |    27|
 |16    |MUXF8     |     9|
-|17    |FDCE      |    21|
-|18    |FDPE      |     1|
-|19    |FDRE      |   311|
-|20    |FDSE      |    10|
+|17    |FDCE      |    29|
+|18    |FDPE      |     2|
+|19    |FDRE      |   303|
+|20    |FDSE      |     9|
 |21    |IBUF      |     2|
 |22    |OBUF      |     9|
 +------+----------+------+
@@ -1278,27 +1278,27 @@ Report Instance Areas:
 |9     |  image        |memory_image    |   498|
 +------+---------------+----------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 2218.961 ; gain = 455.105 ; free physical = 841 ; free virtual = 4559
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 2218.168 ; gain = 456.105 ; free physical = 134 ; free virtual = 3505
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 135 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 2218.961 ; gain = 289.355 ; free physical = 904 ; free virtual = 4622
-Synthesis Optimization Complete : Time (s): cpu = 00:00:22 ; elapsed = 00:00:26 . Memory (MB): peak = 2218.969 ; gain = 455.105 ; free physical = 904 ; free virtual = 4622
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 2218.168 ; gain = 283.387 ; free physical = 197 ; free virtual = 3567
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 2218.176 ; gain = 456.105 ; free physical = 197 ; free virtual = 3567
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2218.969 ; gain = 0.000 ; free physical = 971 ; free virtual = 4688
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2218.176 ; gain = 0.000 ; free physical = 189 ; free virtual = 3561
 INFO: [Netlist 29-17] Analyzing 94 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 1 inverter(s) to 5 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2250.977 ; gain = 0.000 ; free physical = 915 ; free virtual = 4633
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2253.152 ; gain = 0.000 ; free physical = 200 ; free virtual = 3578
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-199 Infos, 124 Warnings, 0 Critical Warnings and 0 Errors encountered.
+199 Infos, 123 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:34 . Memory (MB): peak = 2250.977 ; gain = 738.273 ; free physical = 1087 ; free virtual = 4805
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2250.977 ; gain = 0.000 ; free physical = 1087 ; free virtual = 4805
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:39 . Memory (MB): peak = 2253.152 ; gain = 740.273 ; free physical = 373 ; free virtual = 3750
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2253.152 ; gain = 0.000 ; free physical = 373 ; free virtual = 3751
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.runs/synth_1/convolution.dcp' has been generated.
-INFO: [Common 17-206] Exiting Vivado at Mon Jul 19 23:47:23 2021...
+INFO: [Common 17-206] Exiting Vivado at Wed Jul 21 00:15:53 2021...

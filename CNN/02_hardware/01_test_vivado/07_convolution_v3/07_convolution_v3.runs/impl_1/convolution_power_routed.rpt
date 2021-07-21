@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date             : Mon Jul 19 23:48:13 2021
+| Date             : Wed Jul 21 00:17:00 2021
 | Host             : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file convolution_power_routed.rpt -pb convolution_power_summary_routed.pb -rpx convolution_power_routed.rpx
 | Design           : convolution
@@ -33,7 +33,7 @@ Table of Contents
 | Total On-Chip Power (W)  | 0.128        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.034        |
+| Dynamic (W)              | 0.035        |
 | Device Static (W)        | 0.093        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 83.5         |
@@ -149,10 +149,10 @@ Table of Contents
 +-------------+-----------+
 | Name        | Power (W) |
 +-------------+-----------+
-| convolution |     0.034 |
+| convolution |     0.035 |
 |   conv1     |     0.003 |
 |   counter   |     0.001 |
-|   image     |     0.030 |
+|   image     |     0.029 |
 +-------------+-----------+
 
 

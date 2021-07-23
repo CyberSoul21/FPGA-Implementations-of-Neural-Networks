@@ -74,7 +74,10 @@ parameter dataWidthRstlConv=8
     input en,
     input rst,
     output out,
-    output [7:0] out_quant
+    output out2,
+    output [7:0] out_quant,
+    output [9:0] mdout
+    //output [7:0] out_quant2
 );
 
 //integer fd;
@@ -131,10 +134,18 @@ wire [dataWidthConv-1:0] bias_filt;
 //*********************************************
 
 wire signed [7:0] num_final;//ojo
+wire signed [7:0] num_final2;//ojo
 
 wire [addressWidthConv-1:0] pos_rstl;
 
+
 wire out_conv;
+wire out_conv2;
+wire save_rstl;
+wire save_rstl2;
+
+wire [addressWidthConv-1:0] wire_mdout;
+
 
 clock_divider clk_5(
     .clock_in(clk),
@@ -224,17 +235,81 @@ convolucion conv1(
     .rdata_filt7(rdata_filt7),
     .rdata_filt8(rdata_filt8),
     .bias_filt(bias_filt),    
-    .pos_rstl(pos_rstl),
+
+    .save_rstl(save_rstl),
     .out(out_conv),
     .out_quant(num_final)
 );   
 
- 
+memory_rstl_conv save_data(
+    .clk(clk),
+    .wen(save_rstl),
+    .ren(0),
+    .wadd(pos_rstl),
+    .radd(0),
+    .data_in(num_final),
+    .data_out()
+    ); 
+    
+    
+convolucion conv2(
+    .clk(clk),
+    .en(en),
+    .rst(rst),
+    .clk_div(clk_div),//ok        
+    //********************************************//ok
+    //Wire to extract data that composed the image
+    //********************************************
+    .rdata_img0(rdata_img0),
+    .rdata_img1(rdata_img1),
+    .rdata_img2(rdata_img2),
+    .rdata_img3(rdata_img3),
+    .rdata_img4(rdata_img4),
+    .rdata_img5(rdata_img5),
+    .rdata_img6(rdata_img6),
+    .rdata_img7(rdata_img7),
+    .rdata_img8(rdata_img8),
+    //********************************************    
+    //********************************************//ok
+    //Wire to extract weights of filter
+    //********************************************
+    .rdata_filt0(rdata_filt0),
+    .rdata_filt1(rdata_filt1),
+    .rdata_filt2(rdata_filt2),
+    .rdata_filt3(rdata_filt3),
+    .rdata_filt4(rdata_filt4),
+    .rdata_filt5(rdata_filt5),
+    .rdata_filt6(rdata_filt6),
+    .rdata_filt7(rdata_filt7),
+    .rdata_filt8(rdata_filt8),
+    .bias_filt(bias_filt),    
+
+    .save_rstl(save_rstl2),
+    .out(out_conv2),
+    .out_quant(num_final2)
+);      
+    
+    
+memory_rstl_conv2 save_data2(
+    .clk(clk),
+    .wen(save_rstl2),
+    .ren(0),
+    .wadd(pos_rstl),
+    .radd(0),
+    .data_in(num_final2),
+    .data_out(wire_mdout)
+    );     
     
 
 assign out_quant = num_final;
+//assign out_quant2 = num_final2;
 
 assign out = out_conv;
+
+
+assign out2 = out_conv2;
+
+assign mdout = wire_mdout;
 
 
     

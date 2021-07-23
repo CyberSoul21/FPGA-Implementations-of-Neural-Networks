@@ -53,7 +53,8 @@ parameter addressWidthImg=10, dataWidthImg= 16,
 parameter weightFileImg="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem",
       
 //quantization
-parameter q = 64'd2014687024, //q = 31'b1111000000101011010111100110000
+//parameter q = 64'd2014687024, //q = 31'b1111000000101011010111100110000
+parameter q = 63'd2014687024, //q = 31'b1111000000101011010111100110000
 parameter mask = 8'd255,
 parameter zero = 1'd0,
 parameter one = 1'd1,
@@ -86,10 +87,11 @@ parameter dataWidthRstlConv=8
     reg [31:0] remainder;
     reg [8:0] thld1;
     reg thld2;
-    reg thld3;
+    //reg thld3;
     reg [8:0] threshold;
     reg [8:0] res1;
-    reg [8:0] res2;
+    //reg [8:0] res2;
+    reg res2;
     reg res3;
     reg [8:0] res4;
     reg ok = 0;                
@@ -174,7 +176,7 @@ parameter dataWidthRstlConv=8
         s6:
         begin
             //led <= 4'b0110;
-            thld3 <= thld2 & 1; //BitAnd(MaskIfLessThan(x, zero), one))
+           // thld3 <= thld2 & 1; //BitAnd(MaskIfLessThan(x, zero), one))
         end
         s7:
         begin

@@ -95,7 +95,7 @@ parameter dataWidthRstlConv=8
     input [dataWidthConv-1:0] rdata_filt8,
     input [dataWidthConv-1:0] bias_filt, 
     
-    input [addressWidthConv-1:0] pos_rstl,
+    output reg save_rstl,
     output out,
     output [7:0] out_quant       
 );
@@ -118,7 +118,7 @@ reg rst_quant;
 reg [17-1:0] aux_bias;
 reg  [63:0] num;
 reg rst_relu;
-reg save_rstl;
+
 
 
 
@@ -165,15 +165,7 @@ ReLu activation(
     .sig_ok(relu_ok)
     );    
     
-memory_rstl_conv save_data(
-    .clk(clk),
-    .wen(save_rstl),
-    .ren(0),
-    .wadd(pos_rstl),
-    .radd(0),
-    .data_in(num_final),
-    .data_out()
-    );
+
  
     
     

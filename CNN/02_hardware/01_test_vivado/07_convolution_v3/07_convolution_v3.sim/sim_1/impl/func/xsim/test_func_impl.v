@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-// Date        : Wed Jul 21 00:29:17 2021
+// Date        : Fri Jul 23 00:33:55 2021
 // Host        : Tars running 64-bit Ubuntu 18.04.4 LTS
 // Command     : write_verilog -mode funcsim -nolib -force -file
 //               /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.sim/sim_1/impl/func/xsim/test_func_impl.v
@@ -518,7 +518,6 @@ module ReLu
         .I1(aux_num3[4]),
         .I2(aux_num3[7]),
         .O(\aux_num4[4]_i_1_n_0 ));
-  (* \PinAttr:I1:HOLD_DETOUR  = "170" *) 
   (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT3 #(
     .INIT(8'hDC)) 
@@ -1184,7 +1183,7 @@ module control_counter
 endmodule
 
 module convolucion
-   (out_OBUF,
+   (out2_OBUF,
     Q,
     en_count,
     clk_div,
@@ -1198,8 +1197,10 @@ module convolucion
     p_16_in_0,
     p_0_in_0,
     result10__1,
-    clk_IBUF_BUFG);
-  output out_OBUF;
+    clk_IBUF_BUFG,
+    lopt,
+    lopt_1);
+  output out2_OBUF;
   output [7:0]Q;
   input en_count;
   input clk_div;
@@ -1214,16 +1215,19 @@ module convolucion
   input [4:0]p_0_in_0;
   input result10__1;
   input clk_IBUF_BUFG;
+  output lopt;
+  output lopt_1;
 
   wire [4:0]A;
   wire [7:0]Q;
-  wire \__4/i__n_0 ;
-  wire \__5/i__n_0 ;
+  wire \__6/i__n_0 ;
+  wire \__7/i__n_0 ;
   wire activation_n_0;
   wire activation_n_1;
   wire clk_IBUF_BUFG;
   wire clk_div;
   wire conv_ok;
+  wire conv_ok_reg_lopt_replica_1;
   wire en_count;
   wire \next_state[0]_i_1_n_0 ;
   wire \next_state[1]_i_1_n_0 ;
@@ -1231,7 +1235,7 @@ module convolucion
   wire \next_state_reg_n_0_[0] ;
   wire \next_state_reg_n_0_[1] ;
   wire \next_state_reg_n_0_[2] ;
-  wire out_OBUF;
+  wire out2_OBUF;
   wire [4:0]p_0_in_0;
   wire p_0_in_n_100;
   wire p_0_in_n_101;
@@ -1739,20 +1743,21 @@ module convolucion
   wire [2:0]\NLW_rstl_sum_reg[7]_i_11_CO_UNCONNECTED ;
   wire [2:0]\NLW_rstl_sum_reg[7]_i_12_CO_UNCONNECTED ;
 
+  assign lopt = conv_ok_reg_lopt_replica_1;
   LUT3 #(
     .INIT(8'h02)) 
-    \__4/i_ 
+    \__6/i_ 
        (.I0(present_state[1]),
         .I1(present_state[2]),
         .I2(present_state[0]),
-        .O(\__4/i__n_0 ));
+        .O(\__6/i__n_0 ));
   LUT3 #(
     .INIT(8'h02)) 
-    \__5/i_ 
+    \__7/i_ 
        (.I0(present_state[0]),
         .I1(present_state[2]),
         .I2(present_state[1]),
-        .O(\__5/i__n_0 ));
+        .O(\__7/i__n_0 ));
   ReLu activation
        (.AR(rst_relu),
         .Q(activation_n_1),
@@ -1781,7 +1786,18 @@ module convolucion
        (.C(clk_IBUF_BUFG),
         .CE(1'b0),
         .D(1'b0),
-        .Q(out_OBUF),
+        .Q(out2_OBUF),
+        .S(conv_ok));
+  (* OPT_INSERTED_REPDRIVER *) 
+  (* OPT_MODIFIED = "SWEEP" *) 
+  FDSE #(
+    .INIT(1'b0),
+    .IS_C_INVERTED(1'b1)) 
+    conv_ok_reg_lopt_replica
+       (.C(clk_IBUF_BUFG),
+        .CE(1'b0),
+        .D(1'b0),
+        .Q(conv_ok_reg_lopt_replica_1),
         .S(conv_ok));
   LUT6 #(
     .INIT(64'hF5F0FCFF05000CFF)) 
@@ -2593,7 +2609,7 @@ module convolucion
         .ok_reg_0(quant_n_0),
         .result10__0_0({\rstl_sum_reg[16]_rep__1_n_0 ,\rstl_sum_reg[16]_rep__0_n_0 }),
         .result10__1_0(result10__1),
-        .result10__2_0(\__4/i__n_0 ),
+        .result10__2_0(\__6/i__n_0 ),
         .result1_reg_0(\rstl_sum_reg[16]_rep_n_0 ),
         .\result4_reg[8]_0 (quant_n_1),
         .\result4_reg[8]_1 (quant_n_2),
@@ -2603,7 +2619,7 @@ module convolucion
         .\result4_reg[8]_5 (quant_n_6),
         .\result4_reg[8]_6 (quant_n_7),
         .\result4_reg[8]_7 (quant_n_8));
-  (* \PinAttr:I3:HOLD_DETOUR  = "182" *) 
+  (* \PinAttr:I3:HOLD_DETOUR  = "179" *) 
   (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT4 #(
     .INIT(16'hFD0C)) 
@@ -5027,7 +5043,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[0] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[0]),
         .Q(rstl_sum[0]),
         .R(1'b0));
@@ -5036,7 +5052,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[10] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[10]),
         .Q(rstl_sum[10]),
         .R(1'b0));
@@ -5045,7 +5061,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[11] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[11]),
         .Q(rstl_sum[11]),
         .R(1'b0));
@@ -5086,7 +5102,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[12] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[12]),
         .Q(rstl_sum[12]),
         .R(1'b0));
@@ -5095,7 +5111,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[13] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[13]),
         .Q(rstl_sum[13]),
         .R(1'b0));
@@ -5104,7 +5120,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[14] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[14]),
         .Q(rstl_sum[14]),
         .R(1'b0));
@@ -5113,7 +5129,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[15] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[15]),
         .Q(rstl_sum[15]),
         .R(1'b0));
@@ -5179,7 +5195,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[16]_rep 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[16]),
         .Q(\rstl_sum_reg[16]_rep_n_0 ),
         .R(1'b0));
@@ -5189,7 +5205,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[16]_rep__0 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[16]),
         .Q(\rstl_sum_reg[16]_rep__0_n_0 ),
         .R(1'b0));
@@ -5199,7 +5215,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[16]_rep__1 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[16]),
         .Q(\rstl_sum_reg[16]_rep__1_n_0 ),
         .R(1'b0));
@@ -5209,7 +5225,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[16]_rep__2 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[16]),
         .Q(\rstl_sum_reg[16]_rep__2_n_0 ),
         .R(1'b0));
@@ -5219,7 +5235,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[16]_rep__3 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[16]),
         .Q(\rstl_sum_reg[16]_rep__3_n_0 ),
         .R(1'b0));
@@ -5229,7 +5245,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[16]_rep__4 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[16]),
         .Q(\rstl_sum_reg[16]_rep__4_n_0 ),
         .R(1'b0));
@@ -5266,7 +5282,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[1] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[1]),
         .Q(rstl_sum[1]),
         .R(1'b0));
@@ -5275,7 +5291,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[2] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[2]),
         .Q(rstl_sum[2]),
         .R(1'b0));
@@ -5284,7 +5300,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[3] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[3]),
         .Q(rstl_sum[3]),
         .R(1'b0));
@@ -5301,7 +5317,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[4] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[4]),
         .Q(rstl_sum[4]),
         .R(1'b0));
@@ -5310,7 +5326,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[5] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[5]),
         .Q(rstl_sum[5]),
         .R(1'b0));
@@ -5319,7 +5335,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[6] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[6]),
         .Q(rstl_sum[6]),
         .R(1'b0));
@@ -5328,7 +5344,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[7] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[7]),
         .Q(rstl_sum[7]),
         .R(1'b0));
@@ -5369,7 +5385,7 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[8] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[8]),
         .Q(rstl_sum[8]),
         .R(1'b0));
@@ -5378,13 +5394,13 @@ module convolucion
     .IS_C_INVERTED(1'b1)) 
     \rstl_sum_reg[9] 
        (.C(clk_IBUF_BUFG),
-        .CE(\__5/i__n_0 ),
+        .CE(\__7/i__n_0 ),
         .D(rstl_sum0[9]),
         .Q(rstl_sum[9]),
         .R(1'b0));
 endmodule
 
-(* ECO_CHECKSUM = "a80e7452" *) (* addressWidthConv = "10" *) (* addressWidthFilter = "4" *) 
+(* ECO_CHECKSUM = "e049938a" *) (* addressWidthConv = "10" *) (* addressWidthFilter = "4" *) 
 (* addressWidthImg = "10" *) (* addressWidthRstlConv = "10" *) (* col_fil = "5'b00011" *) 
 (* counterWidth = "10" *) (* dataWidthConv = "16" *) (* dataWidthFilter = "16" *) 
 (* dataWidthImg = "16" *) (* dataWidthRstlConv = "8" *) (* mask = "8'b11111111" *) 
@@ -5404,11 +5420,13 @@ module convolution
     en,
     rst,
     out,
+    out2,
     out_quant);
   input clk;
   input en;
   input rst;
   output out;
+  output out2;
   output [7:0]out_quant;
 
   wire clk;
@@ -5464,8 +5482,10 @@ module convolution
   wire image_n_7;
   wire image_n_8;
   wire image_n_9;
+  wire lopt;
   wire out;
-  wire out_OBUF;
+  wire out2;
+  wire out2_OBUF;
   wire [7:0]out_quant;
   wire [7:0]out_quant_OBUF;
   wire [9:1]p_img_31;
@@ -5473,6 +5493,7 @@ module convolution
   wire [9:0]row_i;
   wire rst;
   wire rst_IBUF;
+  wire NLW_conv1_lopt_1_UNCONNECTED;
 
   clock_divider clk_5
        (.clk_IBUF_BUFG(clk_IBUF_BUFG),
@@ -5489,7 +5510,9 @@ module convolution
         .clk_IBUF_BUFG(clk_IBUF_BUFG),
         .clk_div(clk_div),
         .en_count(en_count),
-        .out_OBUF(out_OBUF),
+        .lopt(lopt),
+        .lopt_1(NLW_conv1_lopt_1_UNCONNECTED),
+        .out2_OBUF(out2_OBUF),
         .p_0_in_0({image_n_0,image_n_1,image_n_2,image_n_3,image_n_4}),
         .p_10_in_0({image_n_25,image_n_26,image_n_27,image_n_28,image_n_29}),
         .p_12_in_0({image_n_30,image_n_31,image_n_32,image_n_33,image_n_34}),
@@ -5521,8 +5544,13 @@ module convolution
         .p_img_7_0({image_n_35,image_n_36,image_n_37,image_n_38,image_n_39}),
         .p_img_7_1(col_j),
         .p_img_8_0({image_n_40,image_n_41,image_n_42,image_n_43,image_n_44}));
+  (* OPT_MODIFIED = "SWEEP" *) 
+  OBUF out2_OBUF_inst
+       (.I(lopt),
+        .O(out2));
+  (* OPT_MODIFIED = "SWEEP" *) 
   OBUF out_OBUF_inst
-       (.I(out_OBUF),
+       (.I(out2_OBUF),
         .O(out));
   OBUF \out_quant_OBUF[0]_inst 
        (.I(out_quant_OBUF[0]),
@@ -12501,16 +12529,16 @@ module quantization
   wire [8:0]res1;
   wire \res1[8]_i_1_n_0 ;
   wire res2;
-  wire \res2[0]_i_10_n_0 ;
-  wire \res2[0]_i_1_n_0 ;
-  wire \res2[0]_i_3_n_0 ;
-  wire \res2[0]_i_4_n_0 ;
-  wire \res2[0]_i_5_n_0 ;
-  wire \res2[0]_i_6_n_0 ;
-  wire \res2[0]_i_7_n_0 ;
-  wire \res2[0]_i_8_n_0 ;
-  wire \res2[0]_i_9_n_0 ;
-  wire \res2_reg[0]_i_2_n_0 ;
+  wire res2_i_10_n_0;
+  wire res2_i_1_n_0;
+  wire res2_i_3_n_0;
+  wire res2_i_4_n_0;
+  wire res2_i_5_n_0;
+  wire res2_i_6_n_0;
+  wire res2_i_7_n_0;
+  wire res2_i_8_n_0;
+  wire res2_i_9_n_0;
+  wire res2_reg_i_2_n_0;
   wire res3;
   wire res3_i_1_n_0;
   wire [1:0]result10__0_0;
@@ -12753,8 +12781,8 @@ module quantization
   wire [7:6]threshold;
   wire \threshold[6]_i_1_n_0 ;
   wire \threshold[7]_i_1_n_0 ;
-  wire [2:0]\NLW_res2_reg[0]_i_2_CO_UNCONNECTED ;
-  wire [3:0]\NLW_res2_reg[0]_i_2_O_UNCONNECTED ;
+  wire [2:0]NLW_res2_reg_i_2_CO_UNCONNECTED;
+  wire [3:0]NLW_res2_reg_i_2_O_UNCONNECTED;
   wire NLW_result10_CARRYCASCOUT_UNCONNECTED;
   wire NLW_result10_MULTSIGNOUT_UNCONNECTED;
   wire NLW_result10_OVERFLOW_UNCONNECTED;
@@ -13174,89 +13202,89 @@ module quantization
         .R(1'b0));
   LUT6 #(
     .INIT(64'hFFFFFFBF00000080)) 
-    \res2[0]_i_1 
-       (.I0(\res2_reg[0]_i_2_n_0 ),
+    res2_i_1
+       (.I0(res2_reg_i_2_n_0),
         .I1(present_state[0]),
         .I2(present_state[3]),
         .I3(present_state[1]),
         .I4(present_state[2]),
         .I5(res2),
-        .O(\res2[0]_i_1_n_0 ));
+        .O(res2_i_1_n_0));
   LUT3 #(
     .INIT(8'h81)) 
-    \res2[0]_i_10 
+    res2_i_10
        (.I0(remainder[0]),
         .I1(remainder[1]),
         .I2(threshold[6]),
-        .O(\res2[0]_i_10_n_0 ));
+        .O(res2_i_10_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
-    \res2[0]_i_3 
+    res2_i_3
        (.I0(remainder[6]),
         .I1(threshold[6]),
         .I2(threshold[7]),
         .I3(remainder[7]),
-        .O(\res2[0]_i_3_n_0 ));
+        .O(res2_i_3_n_0));
   LUT3 #(
     .INIT(8'h32)) 
-    \res2[0]_i_4 
+    res2_i_4
        (.I0(remainder[4]),
         .I1(threshold[6]),
         .I2(remainder[5]),
-        .O(\res2[0]_i_4_n_0 ));
+        .O(res2_i_4_n_0));
   LUT3 #(
     .INIT(8'h32)) 
-    \res2[0]_i_5 
+    res2_i_5
        (.I0(remainder[2]),
         .I1(threshold[6]),
         .I2(remainder[3]),
-        .O(\res2[0]_i_5_n_0 ));
+        .O(res2_i_5_n_0));
   LUT3 #(
     .INIT(8'h32)) 
-    \res2[0]_i_6 
+    res2_i_6
        (.I0(remainder[0]),
         .I1(threshold[6]),
         .I2(remainder[1]),
-        .O(\res2[0]_i_6_n_0 ));
+        .O(res2_i_6_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
-    \res2[0]_i_7 
+    res2_i_7
        (.I0(remainder[6]),
         .I1(threshold[6]),
         .I2(remainder[7]),
         .I3(threshold[7]),
-        .O(\res2[0]_i_7_n_0 ));
+        .O(res2_i_7_n_0));
   LUT3 #(
     .INIT(8'h81)) 
-    \res2[0]_i_8 
+    res2_i_8
        (.I0(remainder[4]),
         .I1(remainder[5]),
         .I2(threshold[6]),
-        .O(\res2[0]_i_8_n_0 ));
+        .O(res2_i_8_n_0));
   LUT3 #(
     .INIT(8'h81)) 
-    \res2[0]_i_9 
+    res2_i_9
        (.I0(remainder[2]),
         .I1(remainder[3]),
         .I2(threshold[6]),
-        .O(\res2[0]_i_9_n_0 ));
+        .O(res2_i_9_n_0));
   FDRE #(
     .INIT(1'b0),
     .IS_C_INVERTED(1'b1)) 
-    \res2_reg[0] 
+    res2_reg
        (.C(clk_IBUF_BUFG),
         .CE(1'b1),
-        .D(\res2[0]_i_1_n_0 ),
+        .D(res2_i_1_n_0),
         .Q(res2),
         .R(1'b0));
   (* OPT_MODIFIED = "SWEEP" *) 
-  CARRY4 \res2_reg[0]_i_2 
+  CARRY4 res2_reg_i_2
        (.CI(1'b0),
-        .CO({\res2_reg[0]_i_2_n_0 ,\NLW_res2_reg[0]_i_2_CO_UNCONNECTED [2:0]}),
+        .CO({res2_reg_i_2_n_0,NLW_res2_reg_i_2_CO_UNCONNECTED[2:0]}),
         .CYINIT(1'b0),
-        .DI({\res2[0]_i_3_n_0 ,\res2[0]_i_4_n_0 ,\res2[0]_i_5_n_0 ,\res2[0]_i_6_n_0 }),
-        .O(\NLW_res2_reg[0]_i_2_O_UNCONNECTED [3:0]),
-        .S({\res2[0]_i_7_n_0 ,\res2[0]_i_8_n_0 ,\res2[0]_i_9_n_0 ,\res2[0]_i_10_n_0 }));
+        .DI({res2_i_3_n_0,res2_i_4_n_0,res2_i_5_n_0,res2_i_6_n_0}),
+        .O(NLW_res2_reg_i_2_O_UNCONNECTED[3:0]),
+        .S({res2_i_7_n_0,res2_i_8_n_0,res2_i_9_n_0,res2_i_10_n_0}));
   LUT6 #(
     .INIT(64'hFEFFFFFF02000000)) 
     res3_i_1

@@ -34,13 +34,15 @@ module test;
     
     //outputs    
     wire out;
+    wire out2;    
     
     //unit under test (UUT)
     convolution UUT(
         .clk(clk),
         .rst(rst),
         .en(en),
-        .out(out)
+        .out(out),
+        .out2(out2)
     );
     
    

@@ -38,6 +38,7 @@ read_verilog -library xil_defaultlib {
   /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_filter.v
   /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_image.v
   /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_rstl_conv.v
+  /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/memory_rstl_conv2.v
   /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/quantization.v
   /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.srcs/sources_1/new/convolution.v
 }

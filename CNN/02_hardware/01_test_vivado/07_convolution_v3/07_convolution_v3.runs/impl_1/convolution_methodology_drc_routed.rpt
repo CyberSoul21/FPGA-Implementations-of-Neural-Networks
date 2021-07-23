@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Jul 21 00:17:00 2021
+| Date         : Fri Jul 23 01:02:47 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_methodology -file convolution_methodology_drc_routed.rpt -pb convolution_methodology_drc_routed.pb -rpx convolution_methodology_drc_routed.rpx
 | Design       : convolution
@@ -23,14 +23,14 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 168
+             Violations found: 169
 +-----------+------------------+-------------------------------+------------+
 | Rule      | Severity         | Description                   | Violations |
 +-----------+------------------+-------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell   | 31         |
 | DPIR-1    | Warning          | Asynchronous driver check     | 123        |
 | SYNTH-10  | Warning          | Wide multiplier               | 5          |
-| TIMING-18 | Warning          | Missing input or output delay | 9          |
+| TIMING-18 | Warning          | Missing input or output delay | 10         |
 +-----------+------------------+-------------------------------+------------+
 
 2. REPORT DETAILS
@@ -837,40 +837,45 @@ Related violations: <none>
 
 TIMING-18#2 Warning
 Missing input or output delay  
-An output delay is missing on out_quant[0] relative to clock(s) sys_clk_pin
+An output delay is missing on out2 relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#3 Warning
 Missing input or output delay  
-An output delay is missing on out_quant[1] relative to clock(s) sys_clk_pin
+An output delay is missing on out_quant[0] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#4 Warning
 Missing input or output delay  
-An output delay is missing on out_quant[2] relative to clock(s) sys_clk_pin
+An output delay is missing on out_quant[1] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#5 Warning
 Missing input or output delay  
-An output delay is missing on out_quant[3] relative to clock(s) sys_clk_pin
+An output delay is missing on out_quant[2] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#6 Warning
 Missing input or output delay  
-An output delay is missing on out_quant[4] relative to clock(s) sys_clk_pin
+An output delay is missing on out_quant[3] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#7 Warning
 Missing input or output delay  
-An output delay is missing on out_quant[5] relative to clock(s) sys_clk_pin
+An output delay is missing on out_quant[4] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#8 Warning
 Missing input or output delay  
-An output delay is missing on out_quant[6] relative to clock(s) sys_clk_pin
+An output delay is missing on out_quant[5] relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on out_quant[6] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#10 Warning
 Missing input or output delay  
 An output delay is missing on out_quant[7] relative to clock(s) sys_clk_pin
 Related violations: <none>

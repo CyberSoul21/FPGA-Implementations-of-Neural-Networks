@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Jul 21 00:16:46 2021
+| Date         : Fri Jul 23 01:02:32 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_control_sets -verbose -file convolution_control_sets_placed.rpt
 | Design       : convolution
@@ -27,7 +27,7 @@ Table of Contents
 |    Minimum number of control sets                        |    20 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    65 |
+| Unused register locations in slices containing registers |    64 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              22 |            9 |
-| No           | No                    | Yes                    |               9 |            3 |
-| No           | Yes                   | No                     |              29 |            8 |
-| Yes          | No                    | No                     |             253 |           72 |
-| Yes          | No                    | Yes                    |              22 |           10 |
+| No           | No                    | No                     |              22 |            7 |
+| No           | No                    | Yes                    |               9 |            2 |
+| No           | Yes                   | No                     |              30 |            8 |
+| Yes          | No                    | No                     |             253 |           56 |
+| Yes          | No                    | Yes                    |              22 |            6 |
 | Yes          | Yes                   | No                     |               8 |            1 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -73,26 +73,26 @@ Table of Contents
 +------------------------+----------------------------------+-------------------------------------+------------------+----------------+
 |      Clock Signal      |           Enable Signal          |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
 +------------------------+----------------------------------+-------------------------------------+------------------+----------------+
-| ~clk_IBUF_BUFG         |                                  | conv1/conv_ok                       |                1 |              1 |
+| ~clk_IBUF_BUFG         |                                  | conv1/conv_ok                       |                1 |              2 |
 | ~clk_IBUF_BUFG         |                                  | conv1/rst_quant                     |                1 |              4 |
-|  clk_IBUF_BUFG         |                                  | conv1/rst_relu                      |                2 |              5 |
+|  clk_IBUF_BUFG         |                                  | conv1/rst_relu                      |                1 |              5 |
 |  clk_IBUF_BUFG         | conv1/activation/p_0_in          |                                     |                1 |              5 |
-|  clk_IBUF_BUFG         |                                  |                                     |                4 |              6 |
-|  clk_IBUF_BUFG         | conv1/activation/aux_num3_1      |                                     |                1 |              8 |
+|  clk_IBUF_BUFG         |                                  |                                     |                3 |              6 |
+|  clk_IBUF_BUFG         | conv1/activation/aux_num3_1      |                                     |                2 |              8 |
 |  clk_IBUF_BUFG         | conv1/activation/aux_num4        |                                     |                1 |              8 |
 |  clk_IBUF_BUFG         | conv1/activation/aux_num_0       | conv1/activation/aux_num[7]_i_1_n_0 |                1 |              8 |
 | ~clk_IBUF_BUFG         | conv1/quant/remainder[7]_i_1_n_0 |                                     |                2 |              8 |
 |  clk_IBUF_BUFG         | conv1/activation/aux_num2_2      |                                     |                2 |              9 |
+| ~clk_IBUF_BUFG         | conv1/quant/result4[8]_i_1_n_0   |                                     |                3 |              9 |
 | ~clk_IBUF_BUFG         | conv1/quant/res1[8]_i_1_n_0      |                                     |                2 |              9 |
-| ~clk_IBUF_BUFG         | conv1/quant/result4[8]_i_1_n_0   |                                     |                2 |              9 |
-|  clk_5/clk_div         | counter/counter_i/E[0]           | rst_IBUF                            |                4 |             11 |
-|  counter/counter_j/CLK | counter/counter_i/E[0]           | rst_IBUF                            |                6 |             11 |
-| ~clk_IBUF_BUFG         | conv1/quant/result1_n_0          |                                     |                4 |             14 |
-| ~clk_IBUF_BUFG         |                                  |                                     |                5 |             16 |
-| ~clk_IBUF_BUFG         | conv1/quant/result2[16]_i_1_n_0  |                                     |                5 |             17 |
-| ~clk_IBUF_BUFG         | conv1/__5/i__n_0                 |                                     |               10 |             22 |
+|  clk_5/clk_div         | counter/counter_i/E[0]           | rst_IBUF                            |                3 |             11 |
+|  counter/counter_j/CLK | counter/counter_i/E[0]           | rst_IBUF                            |                3 |             11 |
+| ~clk_IBUF_BUFG         | conv1/quant/result1_n_0          |                                     |                3 |             14 |
+| ~clk_IBUF_BUFG         |                                  |                                     |                4 |             16 |
+| ~clk_IBUF_BUFG         | conv1/quant/result2[16]_i_1_n_0  |                                     |                4 |             17 |
+| ~clk_IBUF_BUFG         | conv1/__7/i__n_0                 |                                     |                6 |             22 |
 |  clk_IBUF_BUFG         |                                  | clk_5/clear                         |                7 |             28 |
-| ~clk_IBUF_BUFG         | conv1/rstl_mult[1][16]_i_1_n_0   |                                     |               42 |            144 |
+| ~clk_IBUF_BUFG         | conv1/rstl_mult[1][16]_i_1_n_0   |                                     |               30 |            144 |
 +------------------------+----------------------------------+-------------------------------------+------------------+----------------+
 
 

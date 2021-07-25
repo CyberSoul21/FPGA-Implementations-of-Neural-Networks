@@ -98,7 +98,7 @@ clock_divider clk_5(
 
 control_counter counter(
     .clk(clk_div),
-    .en(en),
+    .en(1),
     .rst(rst),
     .i(row_i),
     .j(col_j)
@@ -130,7 +130,7 @@ memory_rstl_conv image(
 
     
     
-    always @(clk) //Present estate 
+    always @(posedge clk, posedge rst) //Present estate 
     begin
         if(clk_div == 1)
         begin
@@ -142,7 +142,7 @@ memory_rstl_conv image(
         end    
     end    
 
-    always @(*)
+    always @(negedge clk)
     begin
         case(present_state)
             s0:
@@ -158,7 +158,7 @@ memory_rstl_conv image(
         endcase                
     end
 
-    always @ (*) begin
+    always @ (negedge clk) begin
       case (present_state)
         s0: begin
                 if($signed(rdata_img0) >= $signed(rdata_img1))

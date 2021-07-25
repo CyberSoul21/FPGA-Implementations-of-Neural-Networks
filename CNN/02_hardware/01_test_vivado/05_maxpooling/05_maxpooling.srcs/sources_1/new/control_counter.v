@@ -62,6 +62,7 @@ parameter addressWidthImg=10, dataWidthImg= 16
         .clk(clk),
         .reset(rst),
         .en2(sig_en),
+        .blk(~en),
         .counter(j),
         .sig_ok(sig_ok_1)
     );
@@ -69,11 +70,12 @@ parameter addressWidthImg=10, dataWidthImg= 16
         .clk(sig_ok_1),
         .reset(rst),
         .en2(sig_en),
+        .blk(~en),
         .counter(i),
         .sig_ok(sig_ok_2)
     );
 
-    always @(*)
+    always @(sig_ok_2)
     begin    
         if(sig_ok_2)
         begin
@@ -118,7 +120,7 @@ parameter addressWidthImg=10, dataWidthImg= 16
 //parameter dataWidthRstlConv=8
 )
 (
-    input clk, reset, en2, 
+    input clk, reset, en2, blk, 
     output[counterWidth-1:0] counter, 
     output sig_ok
 );
@@ -137,7 +139,7 @@ parameter addressWidthImg=10, dataWidthImg= 16
     // up counter
     always @(posedge clk or posedge reset)
     begin
-        if(reset)
+        if(reset | blk)
         begin
             counter_2 <= 4'd0;
             ok <= 0;
@@ -186,7 +188,7 @@ parameter addressWidthImg=10, dataWidthImg= 16
 //parameter dataWidthRstlConv=8
 )
 (
-    input clk, reset, en2, 
+    input clk, reset, en2, blk, 
     output[counterWidth-1:0] counter, 
     output sig_ok
     
@@ -205,7 +207,7 @@ parameter addressWidthImg=10, dataWidthImg= 16
     // up counter
     always @(posedge clk or posedge reset)
     begin
-        if(reset)
+        if(reset | blk)
         begin
             counter_2 <= 4'd0;
             ok <= 0;

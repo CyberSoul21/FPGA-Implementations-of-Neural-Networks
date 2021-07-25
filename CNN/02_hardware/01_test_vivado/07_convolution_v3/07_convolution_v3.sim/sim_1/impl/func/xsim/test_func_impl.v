@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-// Date        : Fri Jul 23 00:33:55 2021
+// Date        : Sat Jul 24 13:38:20 2021
 // Host        : Tars running 64-bit Ubuntu 18.04.4 LTS
 // Command     : write_verilog -mode funcsim -nolib -force -file
 //               /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/07_convolution_v3/07_convolution_v3.sim/sim_1/impl/func/xsim/test_func_impl.v
@@ -5400,7 +5400,7 @@ module convolucion
         .R(1'b0));
 endmodule
 
-(* ECO_CHECKSUM = "e049938a" *) (* addressWidthConv = "10" *) (* addressWidthFilter = "4" *) 
+(* ECO_CHECKSUM = "6399a652" *) (* addressWidthConv = "10" *) (* addressWidthFilter = "4" *) 
 (* addressWidthImg = "10" *) (* addressWidthRstlConv = "10" *) (* col_fil = "5'b00011" *) 
 (* counterWidth = "10" *) (* dataWidthConv = "16" *) (* dataWidthFilter = "16" *) 
 (* dataWidthImg = "16" *) (* dataWidthRstlConv = "8" *) (* mask = "8'b11111111" *) 
@@ -5421,13 +5421,15 @@ module convolution
     rst,
     out,
     out2,
-    out_quant);
+    out_quant,
+    mdout);
   input clk;
   input en;
   input rst;
   output out;
   output out2;
   output [7:0]out_quant;
+  output [9:0]mdout;
 
   wire clk;
   wire clk_IBUF;
@@ -5483,6 +5485,7 @@ module convolution
   wire image_n_8;
   wire image_n_9;
   wire lopt;
+  wire [9:0]mdout;
   wire out;
   wire out2;
   wire out2_OBUF;
@@ -5544,6 +5547,36 @@ module convolution
         .p_img_7_0({image_n_35,image_n_36,image_n_37,image_n_38,image_n_39}),
         .p_img_7_1(col_j),
         .p_img_8_0({image_n_40,image_n_41,image_n_42,image_n_43,image_n_44}));
+  OBUF \mdout_OBUF[0]_inst 
+       (.I(1'b0),
+        .O(mdout[0]));
+  OBUF \mdout_OBUF[1]_inst 
+       (.I(1'b0),
+        .O(mdout[1]));
+  OBUF \mdout_OBUF[2]_inst 
+       (.I(1'b0),
+        .O(mdout[2]));
+  OBUF \mdout_OBUF[3]_inst 
+       (.I(1'b0),
+        .O(mdout[3]));
+  OBUF \mdout_OBUF[4]_inst 
+       (.I(1'b0),
+        .O(mdout[4]));
+  OBUF \mdout_OBUF[5]_inst 
+       (.I(1'b0),
+        .O(mdout[5]));
+  OBUF \mdout_OBUF[6]_inst 
+       (.I(1'b0),
+        .O(mdout[6]));
+  OBUF \mdout_OBUF[7]_inst 
+       (.I(1'b0),
+        .O(mdout[7]));
+  OBUF \mdout_OBUF[8]_inst 
+       (.I(1'b0),
+        .O(mdout[8]));
+  OBUF \mdout_OBUF[9]_inst 
+       (.I(1'b0),
+        .O(mdout[9]));
   (* OPT_MODIFIED = "SWEEP" *) 
   OBUF out2_OBUF_inst
        (.I(lopt),

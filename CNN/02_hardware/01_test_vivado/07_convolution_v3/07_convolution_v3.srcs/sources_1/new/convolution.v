@@ -75,8 +75,8 @@ parameter dataWidthRstlConv=8
     input rst,
     output out,
     output out2,
-    output [7:0] out_quant,
-    output [9:0] mdout
+    output [7:0] out_quant
+    //output [9:0] mdout
     //output [7:0] out_quant2
 );
 
@@ -246,9 +246,9 @@ memory_rstl_conv save_data(
     .wen(save_rstl),
     .ren(0),
     .wadd(pos_rstl),
-    .radd(0),
-    .data_in(num_final),
-    .data_out()
+    //.radd(0),
+    .data_in(num_final)
+    //.data_out()
     ); 
     
     
@@ -295,9 +295,9 @@ memory_rstl_conv2 save_data2(
     .wen(save_rstl2),
     .ren(0),
     .wadd(pos_rstl),
-    .radd(0),
-    .data_in(num_final2),
-    .data_out(wire_mdout)
+    //.radd(0),
+    .data_in(num_final2)
+    //.data_out(wire_mdout)
     );     
     
 
@@ -309,7 +309,7 @@ assign out = out_conv;
 
 assign out2 = out_conv2;
 
-assign mdout = wire_mdout;
+//assign mdout = wire_mdout;
 
 
     

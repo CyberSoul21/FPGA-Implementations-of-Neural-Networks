@@ -1,0 +1,22 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/ReLu.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/clock_divider.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/convolution.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/counterPositionRstlConv.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/memory_filter_1.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/memory_filter_2.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/memory_filter_3.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/memory_image.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/memory_rstl_conv_1.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/memory_rstl_conv_2.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/memory_rstl_conv_3.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/quantization.v" \
+"../../../../03_CNN_IP_core.srcs/sources_1/new/accQuant.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

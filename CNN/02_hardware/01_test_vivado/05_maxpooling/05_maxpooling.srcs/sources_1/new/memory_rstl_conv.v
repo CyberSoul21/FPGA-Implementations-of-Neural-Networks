@@ -61,7 +61,7 @@ parameter addressWidthImg=10, dataWidthImg= 16
 );
     
     reg [dataWidthImg-1:0] register[numWeightImg-1:0];
-    reg [dataWidthImg-1:0] data[numWeightImg-1:0];
+
     
     wire [11-1:0] p_img_0;
     wire [11-1:0] p_img_1;

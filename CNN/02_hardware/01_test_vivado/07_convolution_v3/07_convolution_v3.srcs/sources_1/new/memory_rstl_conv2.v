@@ -18,8 +18,6 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
-
 module memory_rstl_conv2
 #(
 //Convolution
@@ -73,13 +71,27 @@ parameter dataWidthRstlConv=8
     input wen,
     input ren,
     input [addressWidthRstlConv-1:0] wadd,
-    input [addressWidthRstlConv-1:0] radd,
+    input [addressWidthRstlConv-1:0] radd1,
+    input [addressWidthRstlConv-1:0] radd2,
     input signed [dataWidthRstlConv-1:0] data_in,
-    output reg [dataWidthRstlConv-1:0] data_out
+
+    output reg [dataWidthImg-1:0] rdata0,
+    output reg [dataWidthImg-1:0] rdata1,
+    output reg [dataWidthImg-1:0] rdata2,
+    output reg [dataWidthImg-1:0] rdata3 
 );
     
     reg [dataWidthRstlConv-1:0] mem [numWeightRstlConv-1:0];
 
+    wire [11-1:0] p_img_0;
+    wire [11-1:0] p_img_1;
+    wire [11-1:0] p_img_2;
+    wire [11-1:0] p_img_3;
+    
+    assign p_img_0 = (0+radd1)*(n_c) + (0+radd2);
+    assign p_img_1 = (0+radd1)*(n_c) + (1+radd2);
+    assign p_img_2 = (1+radd1)*(n_c) + (0+radd2);
+    assign p_img_3 = (1+radd1)*(n_c) + (1+radd2);     
 
     always @(posedge clk)
 	begin
@@ -96,7 +108,10 @@ parameter dataWidthRstlConv=8
     begin
         if (ren)
         begin
-            data_out <= mem[radd];
+            rdata0 <= mem[p_img_0];
+            rdata1 <= mem[p_img_1];
+            rdata2 <= mem[p_img_2];
+            rdata3 <= mem[p_img_3];
         end
     end 
 endmodule

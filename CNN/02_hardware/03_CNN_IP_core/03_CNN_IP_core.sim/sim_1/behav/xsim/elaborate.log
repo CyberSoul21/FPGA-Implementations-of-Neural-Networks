@@ -1,0 +1,32 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto 1230ebd30cbb4234915771c6b6cd97dd --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot accQuant_testbench_behav xil_defaultlib.accQuant_testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'ren' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/accQuant.v:324]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'ren' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/accQuant.v:339]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'ren' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/accQuant.v:354]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.clock_divider
+Compiling module xil_defaultlib.counter_col
+Compiling module xil_defaultlib.counter_row
+Compiling module xil_defaultlib.controlMemoryAddressImg
+Compiling module xil_defaultlib.counterPositionRstlConv
+Compiling module xil_defaultlib.memory_image
+Compiling module xil_defaultlib.memory_filter_1
+Compiling module xil_defaultlib.memory_filter_2
+Compiling module xil_defaultlib.memory_filter_3
+Compiling module xil_defaultlib.quantization
+Compiling module xil_defaultlib.ReLu
+Compiling module xil_defaultlib.convolution
+Compiling module xil_defaultlib.memory_rstl_conv_1
+Compiling module xil_defaultlib.memory_rstl_conv_2
+Compiling module xil_defaultlib.memory_rstl_conv_3
+Compiling module xil_defaultlib.accQuant
+Compiling module xil_defaultlib.accQuant_testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accQuant_testbench_behav

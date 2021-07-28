@@ -38,7 +38,7 @@ parameter s10 = 4'b1010, s11 = 4'b1011, s12 = 4'b1100, s13 = 4'b1101, s14 = 4'b1
 parameter counterWidth= 10,
  
 //memory image
-parameter numWeightImg = 12, 
+parameter numWeightImg = 36, 
 parameter addressWidthImg=10, dataWidthImg= 16
 //parameter weightFileImg="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem"
       	
@@ -76,25 +76,49 @@ parameter addressWidthImg=10, dataWidthImg= 16
     
 initial //Image
 begin
-register[0] =  -16'd77;
-register[1] =  -16'd77;
-register[2] =  -16'd78;
-register[3] =  -16'd79;
-register[4] =  -16'd82;
-register[5] =  -16'd83;
-register[6] =  -16'd83;
-register[7] =  -16'd84;
-register[8] =  -16'd87;
-register[9] =  -16'd88;
-register[10] = -16'd89;
-register[11] = -16'd90;
+register[0] =  -16'd0;
+register[1] =  -16'd1;
+register[2] =  -16'd2;
+register[3] =  -16'd3;
+register[4] =  -16'd4;
+register[5] =  -16'd5;
+register[6] =  -16'd6;
+register[7] =  -16'd7;
+register[8] =  -16'd8;
+register[9] =  -16'd9;
+register[10] = -16'd10;
+register[11] = -16'd11;
+register[12] =  -16'd12;
+register[13] =  -16'd13;
+register[14] =  -16'd14;
+register[15] =  -16'd15;
+register[16] =  -16'd16;
+register[17] =  -16'd17;
+register[18] =  -16'd18;
+register[19] =  -16'd19;
+register[20] =  -16'd20;
+register[21] =  -16'd21;
+register[22] = -16'd22;
+register[23] = -16'd23;
+register[24] = -16'd24;
+register[25] = -16'd25;
+register[26] = -16'd26;
+register[27] = -16'd27;
+register[28] = -16'd28;
+register[29] = -16'd29;
+register[30] = -16'd30;
+register[31] = -16'd31;
+register[32] = -16'd32;
+register[33] = -16'd33;
+register[34] = -16'd34;
+register[35] = -16'd35;
 end    
 
 
-    assign p_img_0 = (0+addr1)*(n_c) + (0+addr2);
-    assign p_img_1 = (0+addr1)*(n_c) + (1+addr2);
-    assign p_img_2 = (1+addr1)*(n_c) + (0+addr2);
-    assign p_img_3 = (1+addr1)*(n_c) + (1+addr2);    
+    assign p_img_0 = (addr2 + 0) + (addr1*3'd6);
+    assign p_img_1 = (addr2 + 1) + (addr1*3'd6);
+    assign p_img_2 = (addr2 + 6) + (addr1*3'd6);
+    assign p_img_3 = (addr2 + 7) + (addr1*3'd6);    
      
    
     always @(posedge clk)

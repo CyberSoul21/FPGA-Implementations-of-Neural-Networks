@@ -23,8 +23,10 @@
 module accQuant
 #(
     //Control Unit:
+    parameter numWeightRstlConv = 676,
     parameter addressWidthCount=10,
     parameter dataWidthCount=10, dataWidthMen=16, dataWidthMenConv = 8
+    
 )
 (
     input clk,
@@ -146,6 +148,8 @@ module accQuant
     wire save_rstl_max3;    
 //*******************************************************************************************************
 
+    reg dis_write_conv;
+    reg en_read_conv;
 
 //*******************************************************************************************************    
     
@@ -362,7 +366,7 @@ module accQuant
     memory_rstl_conv_1 save_data_1
     (
         .clk(clk),
-        .wen(save_rstl_1 & 1), //dis_write_conv
+        .wen(save_rstl_1 & dis_write_conv), //dis_write_conv
         .ren(en_count_max),
         .wadd(pos_rstl),
         .radd1(row_i_max),
@@ -418,7 +422,7 @@ module accQuant
     controlMemoryAddressConv positionConv
     (
         .clk(clk_div_max),
-        .en(1), //en_read_conv
+        .en(en_read_conv), //en_read_conv
         .rst(rst),
         .stop_count(en_count_max),
         .i(row_i_max),
@@ -429,7 +433,8 @@ module accQuant
     (
         .clk(clk_div_max),
         .rst(rst),
-        .en(en_count_max),
+        //.en(en_count_max),
+        .en(en_count_max & en_read_conv),
         .counter_1(pos_rstl_max1),
         .counter_2(pos_rstl_max2),
         .counter_3(pos_rstl_max3)
@@ -439,7 +444,7 @@ module accQuant
     (
         .clk(clk),
         .clk_div(clk_div_max),
-        .en(en),
+        .en(0),
         .rst(rst),
         .rdata_conv0(rdata_conv1_0),
         .rdata_conv1(rdata_conv1_1),
@@ -448,6 +453,22 @@ module accQuant
         .max(max),
         .save_rstl(save_rstl_max1)    
     );
+
+
+
+    always @(posedge clk_div)
+	begin
+	   if (pos_rstl == (numWeightRstlConv -1))
+	   begin
+	       dis_write_conv <= 0;
+	       en_read_conv <= 1; 
+	   end
+	   else
+	   begin
+	       dis_write_conv <= 1;
+	       en_read_conv <= 0;
+	   end
+	end 
 
 //Agregar variables en_read_conv y dis_write_conv para qye la unidad de control sepa cuando activar la maxpooling y cuando para de grabar en la conv
 //usando el tamano de la posisicon si este ha llegado a 675 empezar la maxpooling

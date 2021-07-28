@@ -53,7 +53,7 @@ module maxpooling
     
     always @(posedge clk, posedge rst) //Present estate 
     begin
-        if(clk_div == 1)
+        if(clk_div == 1 & en)
         begin
             present_state <= s0;    
         end

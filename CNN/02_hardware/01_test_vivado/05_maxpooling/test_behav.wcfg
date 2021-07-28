@@ -11,13 +11,13 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1053750fs"></ZoomStartTime>
-      <ZoomEndTime time="1529251fs"></ZoomEndTime>
-      <Cursor1Time time="1450000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1000001fs"></ZoomEndTime>
+      <Cursor1Time time="10000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="150"></NameColumnWidth>
-      <ValueColumnWidth column_width="83"></ValueColumnWidth>
+      <ValueColumnWidth column_width="79"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="14" />
    <wvobject type="logic" fp_name="/test/clk">
@@ -65,18 +65,22 @@
    <wvobject type="array" fp_name="/test/UUT/image/p_img_0">
       <obj_property name="ElementShortName">p_img_0[10:0]</obj_property>
       <obj_property name="ObjectShortName">p_img_0[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/test/UUT/image/p_img_1">
       <obj_property name="ElementShortName">p_img_1[10:0]</obj_property>
       <obj_property name="ObjectShortName">p_img_1[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/test/UUT/image/p_img_2">
       <obj_property name="ElementShortName">p_img_2[10:0]</obj_property>
       <obj_property name="ObjectShortName">p_img_2[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/test/UUT/image/p_img_3">
       <obj_property name="ElementShortName">p_img_3[10:0]</obj_property>
       <obj_property name="ObjectShortName">p_img_3[10:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/test/UUT/max3">
       <obj_property name="ElementShortName">max3[15:0]</obj_property>

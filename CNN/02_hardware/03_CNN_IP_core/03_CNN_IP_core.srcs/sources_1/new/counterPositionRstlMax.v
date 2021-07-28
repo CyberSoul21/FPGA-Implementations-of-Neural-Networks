@@ -56,14 +56,14 @@ module counterPositionRstlMax
         begin
             count_1 <= 4'd0;
             count_2 <= 4'd1;
-            count_3 <= 4'd3;
+            count_3 <= 4'd2;
             once <= 0;
         end
         else if(en && !once)
         begin
-            count_1 <= count_1 + 4'd0;
-            count_2 <= count_1 + 4'd1;
-            count_3 <= count_1 + 4'd2;
+            count_1 <= count_1 + 4'd3;
+            count_2 <= count_1 + 4'd3;
+            count_3 <= count_1 + 4'd3;
             if(count_3 == (numWeightRstlMax - 1))
             begin
                 once <= 1;

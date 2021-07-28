@@ -71,8 +71,8 @@ module counter_row_max
 #(
     //counter for read memory 
     parameter counterWidth= 10,
-    parameter n_c = 5'd26,  //number of column matrix image 
-    parameter n_r = 5'd26  //number of rows matrix image 
+    parameter n_c = 5'd28,  //number of column matrix image 
+    parameter n_r = 5'd28  //number of rows matrix image 
      
 )
 (

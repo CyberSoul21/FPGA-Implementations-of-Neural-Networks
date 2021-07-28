@@ -25,10 +25,9 @@ module control_counter
 //MaxPooling
 parameter addressWidthConv=10, dataWidthConv=16,
 
-parameter n_c = 5'd4,  //number of column matrix image 
-parameter n_r = 5'd3,  //number of rows matrix image 
-parameter col_fil = 5'd2, //number of columns of filter
-parameter row_fil = 5'd2, //number of rows of filter
+parameter n_c = 5'd6,  //number of column matrix image 
+parameter n_r = 5'd6,  //number of rows matrix image 
+
                        
 parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100,
 parameter s5 = 4'b0101, s6 = 4'b0110, s7 = 4'b0111, s8 = 4'b1000, s9 = 4'b1001,
@@ -97,8 +96,8 @@ module counter_row
 //MaxPooling
 parameter addressWidthConv=10, dataWidthConv=16,
 
-parameter n_c = 5'd4,  //number of column matrix image 
-parameter n_r = 5'd3,  //number of rows matrix image 
+parameter n_c = 5'd6,  //number of column matrix image 
+parameter n_r = 5'd6,  //number of rows matrix image 
 parameter col_fil = 5'd2, //number of columns of filter
 parameter row_fil = 5'd2, //number of rows of filter
                        
@@ -148,7 +147,7 @@ parameter addressWidthImg=10, dataWidthImg= 16
         begin
             counter_2 <= counter_2 + 4'd1;
             ok <= 0;
-            if(counter_2 == (n_r - 4'd2))
+            if(counter_2 == (n_r/4'd2 - 1))
             begin
                 counter_2 <= 0;
                 ok <= 1; 
@@ -165,10 +164,9 @@ module counter_col
 //MaxPooling
 parameter addressWidthConv=10, dataWidthConv=16,
 
-parameter n_c = 5'd4,  //number of column matrix image 
-parameter n_r = 5'd3,  //number of rows matrix image 
-parameter col_fil = 5'd2, //number of columns of filter
-parameter row_fil = 5'd2, //number of rows of filter
+parameter n_c = 5'd6,  //number of column matrix image 
+parameter n_r = 5'd6,  //number of rows matrix image 
+
                        
 parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100,
 parameter s5 = 4'b0101, s6 = 4'b0110, s7 = 4'b0111, s8 = 4'b1000, s9 = 4'b1001,
@@ -196,6 +194,7 @@ parameter addressWidthImg=10, dataWidthImg= 16
 
     
     reg [counterWidth-1:0] counter_2;
+    reg [counterWidth-1:0] aux_counter_2;
     //reg en2;
     reg ok;
     
@@ -210,17 +209,25 @@ parameter addressWidthImg=10, dataWidthImg= 16
         if(reset | blk)
         begin
             counter_2 <= 4'd0;
+            aux_counter_2 <= 4'd0;
             ok <= 0;
         end
         else if(en2)
         begin
-            counter_2 <= counter_2 + 4'd1;
+            counter_2 <= counter_2 + 4'd2;
+            aux_counter_2 <= aux_counter_2 + 4'd2;
             ok <= 0;
-            if(counter_2 == (n_c - 4'd2))
+            if(aux_counter_2 == (n_c - 4'd2))
             begin
-                counter_2 <= 0;
+                aux_counter_2 <= 0;
                 ok <= 1; 
             end
+        end
+        else if(!en2)
+        begin
+            counter_2 <= 4'd0;
+            aux_counter_2 <= 4'd0;
+            ok <= 0;
         end
     end 
     assign counter = counter_2;

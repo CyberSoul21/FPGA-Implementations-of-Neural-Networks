@@ -142,7 +142,9 @@ module accQuant
     wire [dataWidthMenConv-1:0] rdata_conv3_2;
     wire [dataWidthMenConv-1:0] rdata_conv3_3;            
     
-    wire [dataWidthMenConv-1:0] max;
+    wire [dataWidthMenConv-1:0] max1;
+    wire [dataWidthMenConv-1:0] max2;
+    wire [dataWidthMenConv-1:0] max3;
     wire save_rstl_max1;
     wire save_rstl_max2;
     wire save_rstl_max3;    
@@ -287,87 +289,87 @@ module accQuant
         .conv_ready(conv_ok_1)
     );
     
-//    convolution conv2
-//    (
-//        .clk(clk),
-//        .en(en),
-//        .rst(rst),
-//        .clk_div(clk_div),//ok        
-//        //********************************************//ok
-//        //Wire to extract data that composed the image
-//        //********************************************
-//        .rdata_img0(rdata_img0),
-//        .rdata_img1(rdata_img1),
-//        .rdata_img2(rdata_img2),
-//        .rdata_img3(rdata_img3),
-//        .rdata_img4(rdata_img4),
-//        .rdata_img5(rdata_img5),
-//        .rdata_img6(rdata_img6),
-//        .rdata_img7(rdata_img7),
-//        .rdata_img8(rdata_img8),
-//        //********************************************    
-//        //********************************************//ok
-//        //Wire to extract weights of filter
-//        //********************************************
-//        .rdata_filt0(rdata_filt2_0),
-//        .rdata_filt1(rdata_filt2_1),
-//        .rdata_filt2(rdata_filt2_2),
-//        .rdata_filt3(rdata_filt2_3),
-//        .rdata_filt4(rdata_filt2_4),
-//        .rdata_filt5(rdata_filt2_5),
-//        .rdata_filt6(rdata_filt2_6),
-//        .rdata_filt7(rdata_filt2_7),
-//        .rdata_filt8(rdata_filt2_8),
-//        .bias_filt(bias_filt2),    
+    convolution conv2
+    (
+        .clk(clk),
+        .en(en),
+        .rst(rst),
+        .clk_div(clk_div),//ok        
+        //********************************************//ok
+        //Wire to extract data that composed the image
+        //********************************************
+        .rdata_img0(rdata_img0),
+        .rdata_img1(rdata_img1),
+        .rdata_img2(rdata_img2),
+        .rdata_img3(rdata_img3),
+        .rdata_img4(rdata_img4),
+        .rdata_img5(rdata_img5),
+        .rdata_img6(rdata_img6),
+        .rdata_img7(rdata_img7),
+        .rdata_img8(rdata_img8),
+        //********************************************    
+        //********************************************//ok
+        //Wire to extract weights of filter
+        //********************************************
+        .rdata_filt0(rdata_filt2_0),
+        .rdata_filt1(rdata_filt2_1),
+        .rdata_filt2(rdata_filt2_2),
+        .rdata_filt3(rdata_filt2_3),
+        .rdata_filt4(rdata_filt2_4),
+        .rdata_filt5(rdata_filt2_5),
+        .rdata_filt6(rdata_filt2_6),
+        .rdata_filt7(rdata_filt2_7),
+        .rdata_filt8(rdata_filt2_8),
+        .bias_filt(bias_filt2),    
     
-//        .save_rstl(save_rstl_2),
-//        .out_quant(num_final_2),
-//        .conv_ready(conv_ok_2)
-//    );
+        .save_rstl(save_rstl_2),
+        .out_quant(num_final_2),
+        .conv_ready(conv_ok_2)
+    );
     
-//    convolution conv3
-//    (
-//        .clk(clk),
-//        .en(en),
-//        .rst(rst),
-//        .clk_div(clk_div),//ok        
-//        //********************************************//ok
-//        //Wire to extract data that composed the image
-//        //********************************************
-//        .rdata_img0(rdata_img0),
-//        .rdata_img1(rdata_img1),
-//        .rdata_img2(rdata_img2),
-//        .rdata_img3(rdata_img3),
-//        .rdata_img4(rdata_img4),
-//        .rdata_img5(rdata_img5),
-//        .rdata_img6(rdata_img6),
-//        .rdata_img7(rdata_img7),
-//        .rdata_img8(rdata_img8),
-//        //********************************************    
-//        //********************************************//ok
-//        //Wire to extract weights of filter
-//        //********************************************
-//        .rdata_filt0(rdata_filt3_0),
-//        .rdata_filt1(rdata_filt3_1),
-//        .rdata_filt2(rdata_filt3_2),
-//        .rdata_filt3(rdata_filt3_3),
-//        .rdata_filt4(rdata_filt3_4),
-//        .rdata_filt5(rdata_filt3_5),
-//        .rdata_filt6(rdata_filt3_6),
-//        .rdata_filt7(rdata_filt3_7),
-//        .rdata_filt8(rdata_filt3_8),
-//        .bias_filt(bias_filt3),    
+    convolution conv3
+    (
+        .clk(clk),
+        .en(en),
+        .rst(rst),
+        .clk_div(clk_div),//ok        
+        //********************************************//ok
+        //Wire to extract data that composed the image
+        //********************************************
+        .rdata_img0(rdata_img0),
+        .rdata_img1(rdata_img1),
+        .rdata_img2(rdata_img2),
+        .rdata_img3(rdata_img3),
+        .rdata_img4(rdata_img4),
+        .rdata_img5(rdata_img5),
+        .rdata_img6(rdata_img6),
+        .rdata_img7(rdata_img7),
+        .rdata_img8(rdata_img8),
+        //********************************************    
+        //********************************************//ok
+        //Wire to extract weights of filter
+        //********************************************
+        .rdata_filt0(rdata_filt3_0),
+        .rdata_filt1(rdata_filt3_1),
+        .rdata_filt2(rdata_filt3_2),
+        .rdata_filt3(rdata_filt3_3),
+        .rdata_filt4(rdata_filt3_4),
+        .rdata_filt5(rdata_filt3_5),
+        .rdata_filt6(rdata_filt3_6),
+        .rdata_filt7(rdata_filt3_7),
+        .rdata_filt8(rdata_filt3_8),
+        .bias_filt(bias_filt3),    
     
-//        .save_rstl(save_rstl_3),
-//        .out_quant(num_final_3),
-//        .conv_ready(conv_ok_3)
-//    );        
+        .save_rstl(save_rstl_3),
+        .out_quant(num_final_3),
+        .conv_ready(conv_ok_3)
+    );        
 
     memory_rstl_conv_1 save_data_1
     (
         .clk(clk),
         .wen(save_rstl_1 & dis_write_conv), //dis_write_conv
-        .ren(en_count_max),
+        .ren(en_count_max & en_read_conv),
         .wadd(pos_rstl),
         .radd1(row_i_max),
         .radd2(col_j_max),
@@ -378,35 +380,35 @@ module accQuant
         .rdata3(rdata_conv1_3)
      );
      
-//    memory_rstl_conv_2 save_data_2
-//    (
-//        .clk(clk),
-//        .wen(save_rstl_2),
-//        .ren(0),
-//        .wadd(pos_rstl),
-//        //.radd1(row_i_max),
-//        //.radd2(col_j_max),
-//        .data_in(num_final_2)
-//        //.rdata0(rdata_conv2_0),
-//        //.rdata1(rdata_conv2_1),
-//        //.rdata2(rdata_conv2_2),
-//        //.rdata3(rdata_conv2_3)
-//     ); 
+    memory_rstl_conv_2 save_data_2
+    (
+        .clk(clk),
+        .wen(save_rstl_2 & dis_write_conv),
+        .ren(en_count_max & en_read_conv),
+        .wadd(pos_rstl),
+        .radd1(row_i_max),
+        .radd2(col_j_max),
+        .data_in(num_final_2),
+        .rdata0(rdata_conv2_0),
+        .rdata1(rdata_conv2_1),
+        .rdata2(rdata_conv2_2),
+        .rdata3(rdata_conv2_3)
+     ); 
      
-//    memory_rstl_conv_3 save_data_3
-//    (
-//        .clk(clk),
-//        .wen(save_rstl_3),
-//        .ren(0),
-//        .wadd(pos_rstl),
-//        //.radd1(row_i_max),
-//        //.radd2(col_j_max),
-//        .data_in(num_final_3)
-//        //.rdata0(rdata_conv3_0),
-//        //.rdata1(rdata_conv3_1),
-//        //.rdata2(rdata_conv3_2),
-//        //.rdata3(rdata_conv3_3)
-//     );
+    memory_rstl_conv_3 save_data_3
+    (
+        .clk(clk),
+        .wen(save_rstl_3 & dis_write_conv),
+        .ren(en_count_max & en_read_conv),
+        .wadd(pos_rstl),
+        .radd1(row_i_max),
+        .radd2(col_j_max),
+        .data_in(num_final_3),
+        .rdata0(rdata_conv3_0),
+        .rdata1(rdata_conv3_1),
+        .rdata2(rdata_conv3_2),
+        .rdata3(rdata_conv3_3)
+     );
      
 //*******************************************************************************************************
 //*******************************************************************************************************
@@ -427,7 +429,8 @@ module accQuant
         .stop_count(en_count_max),
         .i(row_i_max),
         .j(col_j_max)
-    );               
+    );            
+  
 
     counterPositionRstlMax pos_memory_Max
     (
@@ -444,16 +447,66 @@ module accQuant
     (
         .clk(clk),
         .clk_div(clk_div_max),
-        .en(0),
+        .en(en_read_conv), //enable maxpooling
         .rst(rst),
         .rdata_conv0(rdata_conv1_0),
         .rdata_conv1(rdata_conv1_1),
         .rdata_conv2(rdata_conv1_2),
         .rdata_conv3(rdata_conv1_3),
-        .max(max),
+        .max(max1),
         .save_rstl(save_rstl_max1)    
     );
+    
+    
+    maxpooling maxpooling_2
+    (
+        .clk(clk),
+        .clk_div(clk_div_max),
+        .en(en_read_conv), //enable maxpooling
+        .rst(rst),
+        .rdata_conv0(rdata_conv2_0),
+        .rdata_conv1(rdata_conv2_1),
+        .rdata_conv2(rdata_conv2_2),
+        .rdata_conv3(rdata_conv2_3),
+        .max(max2),
+        .save_rstl(save_rstl_max2)    
+    );    
+    
+    
+    maxpooling maxpooling_3
+    (
+        .clk(clk),
+        .clk_div(clk_div_max),
+        .en(en_read_conv), //enable maxpooling
+        .rst(rst),
+        .rdata_conv0(rdata_conv3_0),
+        .rdata_conv1(rdata_conv3_1),
+        .rdata_conv2(rdata_conv3_2),
+        .rdata_conv3(rdata_conv3_3),
+        .max(max3),
+        .save_rstl(save_rstl_max3)    
+    );     
 
+    memory_rstl_max_1 save_max_1
+    (
+        .clk(clk),
+        .wen(save_rstl_max1 & 1), //dis_write_max
+//        .ren(en_count_max & en_read_conv),
+        .wadd1(pos_rstl_max1),
+        .wadd2(pos_rstl_max2),
+        .wadd3(pos_rstl_max3),
+//        .radd1(row_i_max),
+//        .radd2(col_j_max),
+        .data_in1(max1),
+        .data_in2(max2),
+        .data_in3(max3)
+//        .rdata0(rdata_conv1_0),
+//        .rdata1(rdata_conv1_1),
+//        .rdata2(rdata_conv1_2),
+//        .rdata3(rdata_conv1_3)
+     );
+     
+        
 
 
     always @(posedge clk_div)
@@ -461,14 +514,26 @@ module accQuant
 	   if (pos_rstl == (numWeightRstlConv -1))
 	   begin
 	       dis_write_conv <= 0;
-	       en_read_conv <= 1; 
+	       //en_read_conv <= 1; 
 	   end
 	   else
 	   begin
 	       dis_write_conv <= 1;
-	       en_read_conv <= 0;
+	       //en_read_conv <= 0;
 	   end
 	end 
+	
+    always @(posedge clk_div_max)
+	begin
+	   if ((pos_rstl == (numWeightRstlConv -1)) & (en_count_max))
+	   begin
+           en_read_conv <= 1; 
+	   end
+	   else
+	   begin
+	       en_read_conv <= 0;
+	   end
+	end 	
 
 //Agregar variables en_read_conv y dis_write_conv para qye la unidad de control sepa cuando activar la maxpooling y cuando para de grabar en la conv
 //usando el tamano de la posisicon si este ha llegado a 675 empezar la maxpooling
@@ -479,6 +544,6 @@ module accQuant
 
  
 
-
+    assign out = max1[0] & max2[0] & max3[0]; 
 
 endmodule

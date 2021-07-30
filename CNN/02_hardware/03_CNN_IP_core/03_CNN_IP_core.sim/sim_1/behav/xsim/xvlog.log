@@ -32,6 +32,12 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_impleme
 INFO: [VRFC 10-311] analyzing module memory_image
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/memory_rstl_conv_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module memory_rstl_conv_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/memory_rstl_conv_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory_rstl_conv_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/memory_rstl_conv_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory_rstl_conv_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/memory_rstl_max_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module memory_rstl_max_1
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/quantization.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module quantization
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sim_1/new/accQuant_testbench.v" into library xil_defaultlib

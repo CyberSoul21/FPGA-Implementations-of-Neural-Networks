@@ -53,10 +53,15 @@ module memory_rstl_conv_1
     wire [11-1:0] p_img_2;
     wire [11-1:0] p_img_3;
     
-    assign p_img_0 = (0+radd1)*(n_c) + (0+radd2);
-    assign p_img_1 = (0+radd1)*(n_c) + (1+radd2);
-    assign p_img_2 = (1+radd1)*(n_c) + (0+radd2);
-    assign p_img_3 = (1+radd1)*(n_c) + (1+radd2);     
+//    assign p_img_0 = (0+radd1)*(n_c) + (0+radd2);
+//    assign p_img_1 = (0+radd1)*(n_c) + (1+radd2);
+//    assign p_img_2 = (1+radd1)*(n_c) + (0+radd2);
+//    assign p_img_3 = (1+radd1)*(n_c) + (1+radd2);  
+    
+    assign p_img_0 = (radd2 + 0) + (radd1*n_c);
+    assign p_img_1 = (radd2 + 1) + (radd1*n_c);
+    assign p_img_2 = (radd2 + 26) + (radd1*n_c);
+    assign p_img_3 = (radd2 + 27) + (radd1*n_c);        
 
 
     always @(posedge clk)

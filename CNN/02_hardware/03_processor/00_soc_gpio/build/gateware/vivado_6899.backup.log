@@ -1,0 +1,66 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Jul 31 19:19:57 2021
+# Process ID: 6899
+# Current directory: /home/javier/workshop_litex/src/build/gateware
+# Command line: vivado -mode batch -source soc_gpio.tcl
+# Log file: /home/javier/workshop_litex/src/build/gateware/vivado.log
+# Journal file: /home/javier/workshop_litex/src/build/gateware/vivado.jou
+#-----------------------------------------------------------
+source soc_gpio.tcl
+# source "soc_gpio_route.tcl"
+## create_project -force -name soc_gpio -part xc7z020-clg400-1
+## set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+## add_files {imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
+## set_property library work [get_files {imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:]
+## add_files {imports/home/javier/workshop_litex/src/soc_gpio.v}
+## set_property library work [get_files {imports/home/javier/workshop_litex/src/soc_gpio.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/workshop_litex/src/soc_gpio.v:]
+## add_files {soc_gpio.v}
+## set_property library work [get_files {soc_gpio.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:]
+## read_xdc soc_gpio.xdc
+## synth_design -top soc_gpio -part xc7z020-clg400-1
+Command: synth_design -top soc_gpio -part xc7z020-clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 6961 
+WARNING: [Synth 8-2490] overwriting previous definition of module soc_gpio [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:2]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 1998.930 ; gain = 209.652 ; free physical = 135 ; free virtual = 4775
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'soc_gpio' [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:2]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:488]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:488]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:489]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:489]
+INFO: [Synth 8-3876] $readmem data file 'mem.init' is read successfully [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:1969]
+INFO: [Synth 8-3876] $readmem data file 'mem_1.init' is read successfully [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:1989]
+INFO: [Synth 8-3876] $readmem data file 'mem_2.init' is read successfully [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:2009]
+INFO: [Synth 8-3876] $readmem data file 'mem_3.init' is read successfully [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:2021]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:1730]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:1764]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:1788]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:1843]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:2058]
+ERROR: [Synth 8-316] illegal module recursion detected [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:2058]
+ERROR: [Synth 8-6156] failed synthesizing module 'soc_gpio' [/home/javier/workshop_litex/src/build/gateware/soc_gpio.v:2]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 2037.805 ; gain = 248.527 ; free physical = 216 ; free virtual = 4816
+---------------------------------------------------------------------------------
+RTL Elaboration failed
+INFO: [Common 17-83] Releasing license: Synthesis
+16 Infos, 2 Warnings, 0 Critical Warnings and 3 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+
+    while executing
+"source "soc_gpio_route.tcl""
+    (file "soc_gpio.tcl" line 1)
+INFO: [Common 17-206] Exiting Vivado at Sat Jul 31 19:20:29 2021...

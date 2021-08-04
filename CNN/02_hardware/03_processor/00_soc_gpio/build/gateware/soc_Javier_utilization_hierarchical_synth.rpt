@@ -1,0 +1,33 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Sat Jul 31 21:41:20 2021
+| Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
+| Command      : report_utilization -hierarchical -file soc_Javier_utilization_hierarchical_synth.rpt
+| Design       : soc_Javier
+| Device       : 7z010clg400-1
+| Design State : Synthesized
+------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
+|          Instance          |      Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
++----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
+| soc_Javier                 |            (top) |       2415 |       2399 |      16 |    0 | 1734 |     15 |      8 |            4 |
+|   (soc_Javier)             |            (top) |        204 |        188 |      16 |    0 |  473 |     14 |      0 |            0 |
+|   VexRiscv                 |         VexRiscv |       2208 |       2208 |       0 |    0 | 1252 |      1 |      8 |            4 |
+|     (VexRiscv)             |         VexRiscv |        977 |        977 |       0 |    0 | 1020 |      0 |      2 |            4 |
+|     IBusCachedPlugin_cache | InstructionCache |        667 |        667 |       0 |    0 |  111 |      1 |      1 |            0 |
+|     dataCache_1_           |        DataCache |        564 |        564 |       0 |    0 |  121 |      0 |      5 |            0 |
+|   gpio                     |             gpio |          3 |          3 |       0 |    0 |    9 |      0 |      0 |            0 |
++----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
+
+

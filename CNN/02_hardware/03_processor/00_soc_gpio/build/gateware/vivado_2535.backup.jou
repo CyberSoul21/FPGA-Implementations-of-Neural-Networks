@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Apr  3 23:37:07 2021
+# Process ID: 2535
+# Current directory: /home/javier/workshop_litex/src/build/gateware
+# Command line: vivado -mode batch -source soc_gpio.tcl
+# Log file: /home/javier/workshop_litex/src/build/gateware/vivado.log
+# Journal file: /home/javier/workshop_litex/src/build/gateware/vivado.jou
+#-----------------------------------------------------------
+source soc_gpio.tcl

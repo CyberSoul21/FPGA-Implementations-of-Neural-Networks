@@ -1,0 +1,36 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Wed Aug  4 03:17:58 2021
+| Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
+| Command      : report_utilization -hierarchical -file Wrapper_utilization_hierarchical_place.rpt
+| Design       : Wrapper
+| Device       : 7z010clg400-1
+| Design State : Fully Placed
+---------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
+|          Instance          |      Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
++----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
+| Wrapper                    |            (top) |       2328 |       2300 |      28 |    0 | 1746 |     15 |      8 |            4 |
+|   (Wrapper)                |            (top) |        201 |        185 |      16 |    0 |  499 |     14 |      0 |            0 |
+|   VexRiscv                 |         VexRiscv |       2116 |       2116 |       0 |    0 | 1246 |      1 |      8 |            4 |
+|     (VexRiscv)             |         VexRiscv |        938 |        938 |       0 |    0 | 1019 |      0 |      2 |            4 |
+|     IBusCachedPlugin_cache | InstructionCache |        651 |        651 |       0 |    0 |  106 |      1 |      1 |            0 |
+|     dataCache_1_           |        DataCache |        539 |        539 |       0 |    0 |  121 |      0 |      5 |            0 |
+|   wrapper                  |          wrapper |         13 |          1 |      12 |    0 |    1 |      0 |      0 |            0 |
+|     (wrapper)              |          wrapper |          1 |          1 |       0 |    0 |    1 |      0 |      0 |            0 |
+|     image                  |        ram_image |         12 |          0 |      12 |    0 |    0 |      0 |      0 |            0 |
++----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

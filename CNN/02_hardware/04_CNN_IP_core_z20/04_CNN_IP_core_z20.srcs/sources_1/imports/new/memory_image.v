@@ -56,7 +56,7 @@ module memory_image
 );
     
     reg [dataWidthImg-1:0] register[numWeightImg-1:0];
-    reg [dataWidthImg-1:0] data[numWeightImg-1:0];    
+    
     
     wire [addressWidthPos-1:0] p_img_0;
     wire [addressWidthPos-1:0] p_img_1;

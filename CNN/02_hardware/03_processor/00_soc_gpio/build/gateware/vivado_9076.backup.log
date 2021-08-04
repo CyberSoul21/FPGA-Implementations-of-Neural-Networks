@@ -1,0 +1,1741 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sat Jul 31 19:32:42 2021
+# Process ID: 9076
+# Current directory: /home/javier/workshop_litex/src/build/gateware
+# Command line: vivado -mode batch -source soc_Javier.tcl
+# Log file: /home/javier/workshop_litex/src/build/gateware/vivado.log
+# Journal file: /home/javier/workshop_litex/src/build/gateware/vivado.jou
+#-----------------------------------------------------------
+source soc_Javier.tcl
+# source "soc_Javier_route.tcl"
+## create_project -force -name soc_Javier -part xc7z020-clg400-1
+## set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+## add_files {imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
+## set_property library work [get_files {imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:]
+## add_files {imports/home/javier/workshop_litex/src/gpio.v}
+## set_property library work [get_files {imports/home/javier/workshop_litex/src/gpio.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/workshop_litex/src/gpio.v:]
+## add_files {soc_Javier.v}
+## set_property library work [get_files {soc_Javier.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:]
+## read_xdc soc_Javier.xdc
+## synth_design -top soc_Javier -part xc7z020-clg400-1
+Command: synth_design -top soc_Javier -part xc7z020-clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9125 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1988.746 ; gain = 201.715 ; free physical = 176 ; free virtual = 4771
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'soc_Javier' [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:2]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:488]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:488]
+INFO: [Synth 8-5534] Detected attribute (* dont_touch = "true" *) [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:489]
+INFO: [Synth 8-5534] Detected attribute (* async_reg = "true" *) [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:489]
+INFO: [Synth 8-3876] $readmem data file 'mem.init' is read successfully [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1969]
+INFO: [Synth 8-3876] $readmem data file 'mem_1.init' is read successfully [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1989]
+INFO: [Synth 8-3876] $readmem data file 'mem_2.init' is read successfully [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:2009]
+INFO: [Synth 8-3876] $readmem data file 'mem_3.init' is read successfully [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:2021]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1730]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1764]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1788]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1843]
+INFO: [Synth 8-6157] synthesizing module 'gpio' [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/workshop_litex/src/gpio.v:23]
+	Parameter data_width bound to: 3 - type: integer 
+WARNING: [Synth 8-5788] Register sw_reg_reg in module gpio is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/workshop_litex/src/gpio.v:46]
+WARNING: [Synth 8-5788] Register irq_reg in module gpio is has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/workshop_litex/src/gpio.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'gpio' (1#1) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/workshop_litex/src/gpio.v:23]
+INFO: [Synth 8-6157] synthesizing module 'VexRiscv' [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:1053]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:2221]
+INFO: [Synth 8-6157] synthesizing module 'InstructionCache' [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:46]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:147]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:148]
+WARNING: [Synth 8-6014] Unused sequential element decodeStage_mmuRsp_isIoAccess_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:318]
+WARNING: [Synth 8-6014] Unused sequential element decodeStage_mmuRsp_allowRead_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:319]
+WARNING: [Synth 8-6014] Unused sequential element decodeStage_mmuRsp_allowWrite_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:320]
+INFO: [Synth 8-6155] done synthesizing module 'InstructionCache' (2#1) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:46]
+INFO: [Synth 8-6157] synthesizing module 'DataCache' [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:336]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:478]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:479]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:480]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:481]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:482]
+WARNING: [Synth 8-6014] Unused sequential element tagsWriteLastCmd_valid_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:940]
+WARNING: [Synth 8-6014] Unused sequential element tagsWriteLastCmd_payload_way_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:941]
+WARNING: [Synth 8-6014] Unused sequential element tagsWriteLastCmd_payload_address_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:942]
+WARNING: [Synth 8-6014] Unused sequential element tagsWriteLastCmd_payload_data_valid_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:943]
+WARNING: [Synth 8-6014] Unused sequential element tagsWriteLastCmd_payload_data_error_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:944]
+WARNING: [Synth 8-6014] Unused sequential element tagsWriteLastCmd_payload_data_address_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:945]
+WARNING: [Synth 8-6014] Unused sequential element stageB_mmuRsp_allowExecute_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:967]
+WARNING: [Synth 8-6014] Unused sequential element stageB_tagsReadRsp_0_valid_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:972]
+WARNING: [Synth 8-6014] Unused sequential element stageB_tagsReadRsp_0_address_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:974]
+INFO: [Synth 8-6155] done synthesizing module 'DataCache' (3#1) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:336]
+WARNING: [Synth 8-6014] Unused sequential element IBusCachedPlugin_fetchPc_correctionReg_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:3838]
+WARNING: [Synth 8-6014] Unused sequential element IBusCachedPlugin_injector_nextPcCalc_valids_2_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:3933]
+WARNING: [Synth 8-6014] Unused sequential element IBusCachedPlugin_injector_nextPcCalc_valids_3_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:3934]
+WARNING: [Synth 8-6014] Unused sequential element IBusCachedPlugin_injector_nextPcCalc_valids_4_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:3935]
+WARNING: [Synth 8-6014] Unused sequential element IBusCachedPlugin_rspCounter_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:5285]
+WARNING: [Synth 8-6014] Unused sequential element DBusCachedPlugin_rspCounter_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:5289]
+WARNING: [Synth 8-6014] Unused sequential element execute_CsrPlugin_wfiWake_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:5308]
+WARNING: [Synth 8-6014] Unused sequential element dataCache_1__io_mem_cmd_s2mPipe_rData_last_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:4127]
+WARNING: [Synth 8-6014] Unused sequential element dataCache_1__io_mem_cmd_s2mPipe_m2sPipe_rData_last_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:4135]
+WARNING: [Synth 8-6014] Unused sequential element CsrPlugin_mcycle_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:5577]
+WARNING: [Synth 8-6014] Unused sequential element CsrPlugin_minstret_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:5579]
+WARNING: [Synth 8-6014] Unused sequential element decode_to_execute_CSR_READ_OPCODE_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:3398]
+WARNING: [Synth 8-6014] Unused sequential element decode_to_execute_FORMAL_PC_NEXT_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:3341]
+WARNING: [Synth 8-6014] Unused sequential element execute_to_memory_FORMAL_PC_NEXT_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:3340]
+WARNING: [Synth 8-6014] Unused sequential element memory_to_writeBack_FORMAL_PC_NEXT_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:3339]
+WARNING: [Synth 8-6014] Unused sequential element CsrPlugin_mtvec_mode_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:5862]
+INFO: [Synth 8-6155] done synthesizing module 'VexRiscv' (4#1) [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:1053]
+WARNING: [Synth 8-6014] Unused sequential element LED_REG_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1751]
+WARNING: [Synth 8-6014] Unused sequential element SW_REG_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1752]
+WARNING: [Synth 8-6014] Unused sequential element status_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1753]
+WARNING: [Synth 8-6014] Unused sequential element enable_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1761]
+WARNING: [Synth 8-6014] Unused sequential element soccontroller_scratch_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1783]
+WARNING: [Synth 8-6014] Unused sequential element soccontroller_bus_errors_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1784]
+WARNING: [Synth 8-6014] Unused sequential element timer_load_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1818]
+WARNING: [Synth 8-6014] Unused sequential element timer_reload_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1822]
+WARNING: [Synth 8-6014] Unused sequential element timer_en_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1826]
+WARNING: [Synth 8-6014] Unused sequential element timer_value_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1831]
+WARNING: [Synth 8-6014] Unused sequential element timer_status_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1832]
+WARNING: [Synth 8-6014] Unused sequential element timer_enable_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1840]
+WARNING: [Synth 8-6014] Unused sequential element uart_txfull_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1870]
+WARNING: [Synth 8-6014] Unused sequential element uart_rxempty_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1871]
+WARNING: [Synth 8-6014] Unused sequential element uart_status_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1872]
+WARNING: [Synth 8-6014] Unused sequential element uart_enable_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1880]
+WARNING: [Synth 8-6014] Unused sequential element uart_txempty_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1881]
+WARNING: [Synth 8-6014] Unused sequential element uart_rxfull_re_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:1882]
+WARNING: [Synth 8-6014] Unused sequential element memdat_1_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:2030]
+WARNING: [Synth 8-6014] Unused sequential element memdat_3_reg was removed.  [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:2047]
+INFO: [Synth 8-6155] done synthesizing module 'soc_Javier' (5#1) [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:2]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[31]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[30]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[29]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[28]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[27]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[26]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[25]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[24]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[23]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[22]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[21]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[20]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[19]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[18]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[17]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[16]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[15]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[14]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[13]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_execute_address[12]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_memory_mmuBus_rsp_allowExecute
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_memory_mmuBus_busy
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_isUser
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[31]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[30]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[29]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[28]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[27]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[26]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[25]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[24]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[23]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[22]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[21]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[20]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[19]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[18]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[17]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[16]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[15]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[14]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[13]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[12]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[11]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[10]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[9]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[8]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[7]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[6]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[5]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[4]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[3]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[2]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[1]
+WARNING: [Synth 8-3331] design DataCache has unconnected port io_cpu_writeBack_address[0]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_isValid
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[31]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[30]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[29]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[28]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[27]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[26]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[25]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[24]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[23]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[22]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[21]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[20]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[19]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[18]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[17]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[16]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[15]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[14]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[13]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[12]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[1]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_prefetch_pc[0]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_fetch_mmuBus_rsp_isIoAccess
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_fetch_mmuBus_rsp_allowRead
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_fetch_mmuBus_rsp_allowWrite
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_isValid
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[31]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[30]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[29]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[28]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[27]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[26]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[25]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[24]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[23]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[22]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[21]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[20]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[19]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[18]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[17]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[16]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[15]
+WARNING: [Synth 8-3331] design InstructionCache has unconnected port io_cpu_decode_pc[14]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 2064.465 ; gain = 277.434 ; free physical = 226 ; free virtual = 4781
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2079.309 ; gain = 292.277 ; free physical = 231 ; free virtual = 4789
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 2079.309 ; gain = 292.277 ; free physical = 231 ; free virtual = 4789
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2079.309 ; gain = 0.000 ; free physical = 219 ; free virtual = 4777
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:42]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == PRE} -of [get_cells -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}]'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:42]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -filter {ars_ff1 == TRUE}'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:44]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == Q} -of [get_cells -filter {ars_ff1 == TRUE}]'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:44]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -filter {ars_ff2 == TRUE}'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:44]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == D} -of [get_cells -filter {ars_ff2 == TRUE}]'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:44]
+Finished Parsing XDC File [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/soc_Javier_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/soc_Javier_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2252.996 ; gain = 0.000 ; free physical = 125 ; free virtual = 4675
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2252.996 ; gain = 0.000 ; free physical = 124 ; free virtual = 4674
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 2252.996 ; gain = 465.965 ; free physical = 230 ; free virtual = 4765
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 2252.996 ; gain = 465.965 ; free physical = 212 ; free virtual = 4763
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:17 . Memory (MB): peak = 2252.996 ; gain = 465.965 ; free physical = 212 ; free virtual = 4763
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:756]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:719]
+WARNING: [Synth 8-3936] Found unconnected internal register 'memdat_2_reg' and it is trimmed from '10' to '8' bits. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:2035]
+WARNING: [Synth 8-3936] Found unconnected internal register 'memdat_4_reg' and it is trimmed from '10' to '8' bits. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.v:2052]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:19 . Memory (MB): peak = 2252.996 ; gain = 465.965 ; free physical = 197 ; free virtual = 4752
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 1     
+	   3 Input     52 Bit       Adders := 1     
+	   2 Input     33 Bit       Adders := 3     
+	   3 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 6     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 9     
+	   2 Input      3 Bit       Adders := 4     
+	   2 Input      1 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               65 Bit    Registers := 1     
+	               52 Bit    Registers := 1     
+	               34 Bit    Registers := 1     
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 52    
+	               30 Bit    Registers := 1     
+	               22 Bit    Registers := 2     
+	               12 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 9     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 3     
+	                4 Bit    Registers := 17    
+	                3 Bit    Registers := 6     
+	                2 Bit    Registers := 18    
+	                1 Bit    Registers := 139   
++---RAMs : 
+	             128K Bit         RAMs := 1     
+	              64K Bit         RAMs := 1     
+	              32K Bit         RAMs := 1     
+	               8K Bit         RAMs := 4     
+	               2K Bit         RAMs := 2     
+	             1024 Bit         RAMs := 1     
+	              160 Bit         RAMs := 2     
++---ROMs : 
+	                              ROMs := 1     
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 99    
+	   3 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     30 Bit        Muxes := 2     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input     22 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 11    
+	   3 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 8     
+	   2 Input      4 Bit        Muxes := 9     
+	   4 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   7 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 2     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 158   
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module soc_Javier 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     33 Bit       Adders := 2     
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      5 Bit       Adders := 2     
+	   2 Input      4 Bit       Adders := 8     
++---Registers : 
+	               32 Bit    Registers := 14    
+	               12 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 8     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 35    
++---RAMs : 
+	             128K Bit         RAMs := 1     
+	              64K Bit         RAMs := 1     
+	              160 Bit         RAMs := 2     
++---ROMs : 
+	                              ROMs := 1     
++---Muxes : 
+	   3 Input     32 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 21    
+	   4 Input     32 Bit        Muxes := 1     
+	   2 Input     31 Bit        Muxes := 1     
+	   2 Input     30 Bit        Muxes := 1     
+	   2 Input     22 Bit        Muxes := 1     
+	   2 Input     14 Bit        Muxes := 1     
+	   5 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 11    
+	   3 Input      8 Bit        Muxes := 2     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 35    
+Module gpio 
+Detailed RTL Component Info : 
++---Registers : 
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
+Module InstructionCache 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               22 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 10    
++---RAMs : 
+	              32K Bit         RAMs := 1     
+	               2K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+Module DataCache 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      7 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 4     
+	               22 Bit    Registers := 1     
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 17    
++---RAMs : 
+	               8K Bit         RAMs := 4     
+	               2K Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 8     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 4     
+	   2 Input      7 Bit        Muxes := 6     
+	   2 Input      4 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 18    
+Module VexRiscv 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     64 Bit       Adders := 1     
+	   3 Input     52 Bit       Adders := 1     
+	   2 Input     33 Bit       Adders := 1     
+	   3 Input     33 Bit       Adders := 1     
+	   2 Input     32 Bit       Adders := 5     
+	   3 Input     32 Bit       Adders := 1     
+	   2 Input      6 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 2     
+	   2 Input      1 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               65 Bit    Registers := 1     
+	               52 Bit    Registers := 1     
+	               34 Bit    Registers := 1     
+	               33 Bit    Registers := 1     
+	               32 Bit    Registers := 30    
+	               30 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 5     
+	                3 Bit    Registers := 4     
+	                2 Bit    Registers := 14    
+	                1 Bit    Registers := 76    
++---RAMs : 
+	             1024 Bit         RAMs := 1     
++---Muxes : 
+	   2 Input     33 Bit        Muxes := 3     
+	   2 Input     32 Bit        Muxes := 70    
+	   3 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 4     
+	   2 Input     30 Bit        Muxes := 1     
+	   2 Input     25 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   5 Input      4 Bit        Muxes := 1     
+	   7 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 6     
+	   2 Input      1 Bit        Muxes := 98    
+	   3 Input      1 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'decode_to_execute_IS_RS1_SIGNED_reg' into 'decode_to_execute_IS_RS2_SIGNED_reg' [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:3388]
+WARNING: [Synth 8-3936] Found unconnected internal register 'memory_to_writeBack_MUL_HH_reg' and it is trimmed from '34' to '32' bits. [/home/javier/workshop_litex/src/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:3393]
+DSP Report: Generating DSP memory_to_writeBack_MUL_HH_reg, operation Mode is: (A*B)'.
+DSP Report: register memory_to_writeBack_MUL_HH_reg is absorbed into DSP memory_to_writeBack_MUL_HH_reg.
+DSP Report: register execute_to_memory_MUL_HH_reg is absorbed into DSP memory_to_writeBack_MUL_HH_reg.
+DSP Report: operator execute_MUL_HH is absorbed into DSP memory_to_writeBack_MUL_HH_reg.
+DSP Report: Generating DSP execute_to_memory_MUL_LH_reg, operation Mode is: (A*B)'.
+DSP Report: register execute_to_memory_MUL_LH_reg is absorbed into DSP execute_to_memory_MUL_LH_reg.
+DSP Report: operator execute_MUL_LH is absorbed into DSP execute_to_memory_MUL_LH_reg.
+DSP Report: Generating DSP execute_to_memory_MUL_HL_reg, operation Mode is: (A*B)'.
+DSP Report: register execute_to_memory_MUL_HL_reg is absorbed into DSP execute_to_memory_MUL_HL_reg.
+DSP Report: operator execute_MUL_HL is absorbed into DSP execute_to_memory_MUL_HL_reg.
+DSP Report: Generating DSP execute_to_memory_MUL_LL_reg, operation Mode is: (A*B)'.
+DSP Report: register execute_to_memory_MUL_LL_reg is absorbed into DSP execute_to_memory_MUL_LL_reg.
+DSP Report: operator execute_MUL_LL is absorbed into DSP execute_to_memory_MUL_LL_reg.
+INFO: [Synth 8-4652] Swapped enable and write-enable on 1 RAM instances of RAM ways_0_datas_reg to conserve power
+INFO: [Synth 8-3971] The signal "VexRiscv/RegFilePlugin_regFile_reg" was recognized as a true dual port RAM template.
+RAM Pipeline Warning: Read Address Register Found For RAM mem_1_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_1_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_2_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_2_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_1_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_2_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[1]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[2]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[3]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[4]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[5]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[6]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[7]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[8]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[9]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[10]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[11]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[12]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[13]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[14]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[15]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[16]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[17]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[18]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[19]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[20]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[21]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[22]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[23]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[24]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[25]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[26]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[27]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[28]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[29]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3886] merging instance 'rx_tick_reg[30]' (FDR) to 'rx_tick_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\rx_tick_reg[31] )
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[0]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[0]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[1]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[1]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[2]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[2]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[3]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[3]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[4]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[4]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[5]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[5]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[6]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[6]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[8]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[8]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[9]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[9]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[10]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[10]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[11]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[11]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[12]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[12]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[13]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[13]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[14]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[14]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[16]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[16]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[17]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[17]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[18]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[18]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[19]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[19]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[20]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[20]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[21]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[21]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[22]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[22]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[24]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[24]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[25]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[25]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[26]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[26]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[27]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[27]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[28]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[28]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[29]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[29]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[30]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[30]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[15]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[15]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[23]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[23]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[31]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[31]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/dBusWishbone_DAT_MISO_regNext_reg[7]' (FD) to 'VexRiscv/iBusWishbone_DAT_MISO_regNext_reg[7]'
+INFO: [Synth 8-3886] merging instance 'VexRiscv/decode_to_execute_INSTRUCTION_reg[5]' (FDE) to 'VexRiscv/decode_to_execute_MEMORY_WR_reg'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\execute_to_memory_BRANCH_CALC_reg[0] )
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[4]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[5]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[6]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[7]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[8]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[8]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[9]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[9]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[10]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[10]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[11]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[11]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[12]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[12]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[13]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[13]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[14]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[14]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[15]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[15]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[16]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[16]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[17]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[17]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[18]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[18]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[19]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[19]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[20]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[20]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[21]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[21]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[22]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[22]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[23]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface3_bank_bus_dat_r_reg[23]' (FDR) to 'csr_bankarray_interface3_bank_bus_dat_r_reg[31]'
+INFO: [Synth 8-3886] merging instance 'csr_bankarray_interface0_bank_bus_dat_r_reg[24]' (FDR) to 'csr_bankarray_interface0_bank_bus_dat_r_reg[31]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\csr_bankarray_interface0_bank_bus_dat_r_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\csr_bankarray_interface3_bank_bus_dat_r_reg[31] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (VexRiscv/\CsrPlugin_interrupt_code_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\IBusCachedPlugin_fetchPc_pcReg_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/IBusCachedPlugin_cache/lineLoader_hadError_reg)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (VexRiscv/\CsrPlugin_interrupt_targetPrivilege_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/CsrPlugin_mip_MTIP_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[30] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (VexRiscv/dataCache_1_/\loader_waysAllocator_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/dataCache_1_/loader_error_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\externalInterruptArray_regNext_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/IBusCachedPlugin_s1_tightlyCoupledHit_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/dataCache_1_/stageB_mmuRsp_exception_reg)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (VexRiscv/dataCache_1_/stageB_mmuRsp_allowWrite_reg)
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (VexRiscv/IBusCachedPlugin_cache/decodeStage_mmuRsp_allowExecute_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/IBusCachedPlugin_cache/decodeStage_mmuRsp_refilling_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\tx_tick_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/IBusCachedPlugin_cache/\decodeStage_mmuRsp_physicalAddress_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\_zz_68__reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\decode_to_execute_PC_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\execute_to_memory_PC_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (VexRiscv/\memory_to_writeBack_PC_reg[0] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:41 . Memory (MB): peak = 2252.996 ; gain = 465.965 ; free physical = 221 ; free virtual = 4715
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|soc_Javier  | p_0_out    | 64x8          | LUT            | 
+|soc_Javier  | p_0_out    | 64x8          | LUT            | 
+|soc_Javier  | memdat_reg | 8192x32       | Block RAM      | 
++------------+------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping	Report (see note below)
++--------------------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                     | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++--------------------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|VexRiscv/IBusCachedPlugin_cache | ways_0_datas_reg        | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|VexRiscv/IBusCachedPlugin_cache | ways_0_tags_reg         | 128 x 22(READ_FIRST)   | W |   | 128 x 22(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|VexRiscv/dataCache_1_           | ways_0_tags_reg         | 128 x 22(READ_FIRST)   | W |   | 128 x 22(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|VexRiscv/dataCache_1_           | ways_0_data_symbol0_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|VexRiscv/dataCache_1_           | ways_0_data_symbol1_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|VexRiscv/dataCache_1_           | ways_0_data_symbol2_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|VexRiscv/dataCache_1_           | ways_0_data_symbol3_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|soc_Javier                      | mem_1_reg               | 2 K x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 0      | 2      | 
+|soc_Javier                      | mem_2_reg               | 4 K x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 0      | 4      | 
++--------------------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+Distributed RAM: Preliminary Mapping	Report (see note below)
++------------+---------------+-----------+----------------------+-------------+
+|Module Name | RTL Object    | Inference | Size (Depth x Width) | Primitives  | 
++------------+---------------+-----------+----------------------+-------------+
+|soc_Javier  | storage_reg   | Implied   | 16 x 8               | RAM32M x 2	 | 
+|soc_Javier  | storage_1_reg | Implied   | 16 x 8               | RAM32M x 2	 | 
++------------+---------------+-----------+----------------------+-------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|VexRiscv    | (A*B)'      | 17     | 17     | -      | -      | 34     | 0    | 0    | -    | -    | -     | 1    | 1    | 
+|VexRiscv    | (A*B)'      | 17     | 17     | -      | -      | 34     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|VexRiscv    | (A*B)'      | 17     | 17     | -      | -      | 34     | 0    | 0    | -    | -    | -     | 1    | 0    | 
+|VexRiscv    | (A*B)'      | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 1    | 0    | 
++------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:49 . Memory (MB): peak = 2252.996 ; gain = 465.965 ; free physical = 138 ; free virtual = 4560
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:58 . Memory (MB): peak = 2336.004 ; gain = 548.973 ; free physical = 234 ; free virtual = 4500
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++--------------------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name                     | RTL Object              | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++--------------------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|VexRiscv/IBusCachedPlugin_cache | ways_0_datas_reg        | 1 K x 32(READ_FIRST)   | W |   | 1 K x 32(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      | 
+|VexRiscv/IBusCachedPlugin_cache | ways_0_tags_reg         | 128 x 22(READ_FIRST)   | W |   | 128 x 22(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|VexRiscv/dataCache_1_           | ways_0_tags_reg         | 128 x 22(READ_FIRST)   | W |   | 128 x 22(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|VexRiscv/dataCache_1_           | ways_0_data_symbol0_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|VexRiscv/dataCache_1_           | ways_0_data_symbol1_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|VexRiscv/dataCache_1_           | ways_0_data_symbol2_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|VexRiscv/dataCache_1_           | ways_0_data_symbol3_reg | 1 K x 8(READ_FIRST)    | W |   | 1 K x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
+|soc_Javier                      | mem_1_reg               | 2 K x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 0      | 2      | 
+|soc_Javier                      | mem_2_reg               | 4 K x 32(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 0      | 4      | 
++--------------------------------+-------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+
+Distributed RAM: Final Mapping	Report
++------------+---------------+-----------+----------------------+-------------+
+|Module Name | RTL Object    | Inference | Size (Depth x Width) | Primitives  | 
++------------+---------------+-----------+----------------------+-------------+
+|soc_Javier  | storage_reg   | Implied   | 16 x 8               | RAM32M x 2	 | 
+|soc_Javier  | storage_1_reg | Implied   | 16 x 8               | RAM32M x 2	 | 
++------------+---------------+-----------+----------------------+-------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7053] The timing for the instance VexRiscv/IBusCachedPlugin_cache/ways_0_datas_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance VexRiscv/IBusCachedPlugin_cache/ways_0_tags_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance VexRiscv/dataCache_1_/ways_0_tags_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance VexRiscv/RegFilePlugin_regFile_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance VexRiscv/RegFilePlugin_regFile_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_1_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_1_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_2_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_2_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_2_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_2_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance memdat_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance memdat_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance memdat_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance memdat_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance memdat_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance memdat_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance memdat_reg_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance memdat_reg_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:52 ; elapsed = 00:01:00 . Memory (MB): peak = 2344.012 ; gain = 556.980 ; free physical = 238 ; free virtual = 4497
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:56 ; elapsed = 00:01:03 . Memory (MB): peak = 2346.980 ; gain = 559.949 ; free physical = 251 ; free virtual = 4494
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:56 ; elapsed = 00:01:03 . Memory (MB): peak = 2346.980 ; gain = 559.949 ; free physical = 242 ; free virtual = 4494
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:56 ; elapsed = 00:01:04 . Memory (MB): peak = 2346.980 ; gain = 559.949 ; free physical = 234 ; free virtual = 4494
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:56 ; elapsed = 00:01:04 . Memory (MB): peak = 2346.980 ; gain = 559.949 ; free physical = 234 ; free virtual = 4494
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:56 ; elapsed = 00:01:04 . Memory (MB): peak = 2346.980 ; gain = 559.949 ; free physical = 234 ; free virtual = 4494
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:56 ; elapsed = 00:01:04 . Memory (MB): peak = 2346.980 ; gain = 559.949 ; free physical = 234 ; free virtual = 4494
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |BUFG        |     1|
+|2     |CARRY4      |   129|
+|3     |DSP48E1     |     1|
+|4     |DSP48E1_2   |     3|
+|5     |LUT1        |   130|
+|6     |LUT2        |   249|
+|7     |LUT3        |   339|
+|8     |LUT4        |   448|
+|9     |LUT5        |   555|
+|10    |LUT6        |   953|
+|11    |RAM32M      |     4|
+|12    |RAMB18E1    |     4|
+|13    |RAMB18E1_2  |     4|
+|14    |RAMB36E1    |     1|
+|15    |RAMB36E1_1  |     2|
+|16    |RAMB36E1_10 |     1|
+|17    |RAMB36E1_2  |     4|
+|18    |RAMB36E1_3  |     1|
+|19    |RAMB36E1_4  |     1|
+|20    |RAMB36E1_5  |     1|
+|21    |RAMB36E1_6  |     1|
+|22    |RAMB36E1_7  |     1|
+|23    |RAMB36E1_8  |     1|
+|24    |RAMB36E1_9  |     1|
+|25    |FDCE        |     4|
+|26    |FDRE        |  1673|
+|27    |FDSE        |    57|
+|28    |IBUF        |     7|
+|29    |OBUF        |     5|
++------+------------+------+
+
+Report Instance Areas: 
++------+---------------------------+-----------------+------+
+|      |Instance                   |Module           |Cells |
++------+---------------------------+-----------------+------+
+|1     |top                        |                 |  4581|
+|2     |  VexRiscv                 |VexRiscv         |  3811|
+|3     |    IBusCachedPlugin_cache |InstructionCache |   859|
+|4     |    dataCache_1_           |DataCache        |   789|
+|5     |  gpio                     |gpio             |    12|
++------+---------------------------+-----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:56 ; elapsed = 00:01:04 . Memory (MB): peak = 2346.980 ; gain = 559.949 ; free physical = 234 ; free virtual = 4494
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 120 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:53 ; elapsed = 00:00:59 . Memory (MB): peak = 2346.980 ; gain = 386.262 ; free physical = 303 ; free virtual = 4564
+Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:01:04 . Memory (MB): peak = 2346.988 ; gain = 559.949 ; free physical = 303 ; free virtual = 4564
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2346.988 ; gain = 0.000 ; free physical = 374 ; free virtual = 4634
+INFO: [Netlist 29-17] Analyzing 160 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:42]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == PRE} -of [get_cells -filter {ars_ff1 == TRUE || ars_ff2 == TRUE}]'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:42]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -filter {ars_ff1 == TRUE}'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:44]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == Q} -of [get_cells -filter {ars_ff1 == TRUE}]'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:44]
+WARNING: [Vivado 12-180] No cells matched 'get_cells -filter {ars_ff2 == TRUE}'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:44]
+WARNING: [Vivado 12-508] No pins matched 'get_pins -filter {REF_PIN_NAME == D} -of [get_cells -filter {ars_ff2 == TRUE}]'. [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc:44]
+Finished Parsing XDC File [/home/javier/workshop_litex/src/build/gateware/soc_Javier.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2378.996 ; gain = 0.000 ; free physical = 316 ; free virtual = 4577
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 4 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 4 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+219 Infos, 165 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:06 ; elapsed = 00:01:16 . Memory (MB): peak = 2378.996 ; gain = 843.531 ; free physical = 495 ; free virtual = 4757
+## report_timing_summary -file soc_Javier_timing_synth.rpt
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+## report_utilization -hierarchical -file soc_Javier_utilization_hierarchical_synth.rpt
+## report_utilization -file soc_Javier_utilization_synth.rpt
+## opt_design
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 2621.695 ; gain = 87.812 ; free physical = 166 ; free virtual = 4455
+
+Starting Cache Timing Information Task
+Ending Cache Timing Information Task | Checksum: 1113c68b9
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2621.695 ; gain = 0.000 ; free physical = 165 ; free virtual = 4455
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1e1f02ff2
+
+Time (s): cpu = 00:00:00.57 ; elapsed = 00:00:00.36 . Memory (MB): peak = 2689.680 ; gain = 0.000 ; free physical = 134 ; free virtual = 4359
+INFO: [Opt 31-389] Phase Retarget created 0 cells and removed 34 cells
+INFO: [Opt 31-1021] In phase Retarget, 1 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 1a3d48356
+
+Time (s): cpu = 00:00:00.63 ; elapsed = 00:00:00.42 . Memory (MB): peak = 2689.680 ; gain = 0.000 ; free physical = 134 ; free virtual = 4359
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 2 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 1651462d1
+
+Time (s): cpu = 00:00:00.75 ; elapsed = 00:00:00.54 . Memory (MB): peak = 2689.680 ; gain = 0.000 ; free physical = 133 ; free virtual = 4359
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 3 cells
+INFO: [Opt 31-1021] In phase Sweep, 4 netlist objects are constrained preventing optimization. Please run opt_design with -debug_log to get more detail. 
+
+Phase 4 BUFG optimization
+INFO: [Opt 31-1112] Starts optimizing BUFG(s) with a common MMCM/DPLL/XPLL driver.
+INFO: [Opt 31-1112] Starts optimizing BUFG(s) with a common driver.
+INFO: [Opt 31-1092] Phase BUFG optimization transformed 0 BUFG(s) to MBUFG(s).
+Phase 4 BUFG optimization | Checksum: 1651462d1
+
+Time (s): cpu = 00:00:00.83 ; elapsed = 00:00:00.62 . Memory (MB): peak = 2689.680 ; gain = 0.000 ; free physical = 133 ; free virtual = 4359
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 1651462d1
+
+Time (s): cpu = 00:00:00.88 ; elapsed = 00:00:00.68 . Memory (MB): peak = 2689.680 ; gain = 0.000 ; free physical = 133 ; free virtual = 4359
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 1651462d1
+
+Time (s): cpu = 00:00:00.93 ; elapsed = 00:00:00.74 . Memory (MB): peak = 2689.680 ; gain = 0.000 ; free physical = 133 ; free virtual = 4359
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               0  |              34  |                                              1  |
+|  Constant propagation         |               0  |               2  |                                              0  |
+|  Sweep                        |               0  |               3  |                                              4  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2689.680 ; gain = 0.000 ; free physical = 133 ; free virtual = 4359
+Ending Logic Optimization Task | Checksum: 16c329ead
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.88 . Memory (MB): peak = 2689.680 ; gain = 0.000 ; free physical = 133 ; free virtual = 4359
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=0.562 | TNS=0.000 |
+INFO: [Pwropt 34-9] Applying IDT optimizations ...
+INFO: [Pwropt 34-10] Applying ODC optimizations ...
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+
+
+Starting PowerOpt Patch Enables Task
+INFO: [Pwropt 34-162] WRITE_MODE attribute of 0 BRAM(s) out of a total of 23 has been updated to save power. Run report_power_opt to get a complete listing of the BRAMs updated.
+INFO: [Pwropt 34-201] Structural ODC has moved 0 WE to EN ports
+Number of BRAM Ports augmented: 0 newly gated: 1 Total Ports: 46
+Ending PowerOpt Patch Enables Task | Checksum: 17e8da918
+
+Time (s): cpu = 00:00:00.08 ; elapsed = 00:00:00.08 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 329 ; free virtual = 4347
+Ending Power Optimization Task | Checksum: 17e8da918
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 3055.602 ; gain = 365.922 ; free physical = 333 ; free virtual = 4351
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 17e8da918
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 333 ; free virtual = 4351
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 333 ; free virtual = 4351
+Ending Netlist Obfuscation Task | Checksum: 175310513
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 333 ; free virtual = 4351
+INFO: [Common 17-83] Releasing license: Implementation
+27 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 3055.602 ; gain = 521.719 ; free physical = 333 ; free virtual = 4351
+## place_design
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 8 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 331 ; free virtual = 4351
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 118e69c04
+
+Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.16 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 331 ; free virtual = 4351
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 331 ; free virtual = 4351
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 163d72951
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.84 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 326 ; free virtual = 4349
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 1ffead499
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 321 ; free virtual = 4346
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 1ffead499
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 321 ; free virtual = 4346
+Phase 1 Placer Initialization | Checksum: 1ffead499
+
+Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 321 ; free virtual = 4347
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 2123581ca
+
+Time (s): cpu = 00:00:05 ; elapsed = 00:00:02 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 316 ; free virtual = 4342
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1018] Found 215 candidate LUT instances to create LUTNM shape
+INFO: [Physopt 32-775] End 1 Pass. Optimized 88 nets or cells. Created 0 new cell, deleted 88 existing cells and moved 0 existing cell
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-670] No setup violation found.  DSP Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register to Pipeline Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  Shift Register Optimization was not performed.
+INFO: [Physopt 32-670] No setup violation found.  BRAM Register Optimization was not performed.
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 294 ; free virtual = 4322
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |            0  |             88  |                    88  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           0  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |            0  |             88  |                    88  |           0  |           3  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 187716d42
+
+Time (s): cpu = 00:00:26 ; elapsed = 00:00:08 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 293 ; free virtual = 4322
+Phase 2.2 Global Placement Core | Checksum: 1d444e504
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:09 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 293 ; free virtual = 4322
+Phase 2 Global Placement | Checksum: 1d444e504
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:09 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 294 ; free virtual = 4324
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 1950dec4b
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:09 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 294 ; free virtual = 4324
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 25ab35c96
+
+Time (s): cpu = 00:00:32 ; elapsed = 00:00:09 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 292 ; free virtual = 4323
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 21fda83bb
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:10 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 292 ; free virtual = 4323
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 1bfdc866e
+
+Time (s): cpu = 00:00:33 ; elapsed = 00:00:10 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 292 ; free virtual = 4323
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 1cc221772
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:10 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 290 ; free virtual = 4320
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 1d19bfca4
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:11 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 288 ; free virtual = 4319
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 19dbb5d80
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:11 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 288 ; free virtual = 4318
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 1ea12ed62
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:11 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 288 ; free virtual = 4318
+Phase 3 Detail Placement | Checksum: 1ea12ed62
+
+Time (s): cpu = 00:00:35 ; elapsed = 00:00:11 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 288 ; free virtual = 4318
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 10a0ec305
+
+Phase 4.1.1.1 BUFG Insertion
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Phase 4.1.1.1 BUFG Insertion | Checksum: 10a0ec305
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:12 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 284 ; free virtual = 4314
+INFO: [Place 30-746] Post Placement Timing Summary WNS=0.573. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: c7fb2fac
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:15 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 288 ; free virtual = 4316
+Phase 4.1 Post Commit Optimization | Checksum: c7fb2fac
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:15 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 280 ; free virtual = 4316
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: c7fb2fac
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:15 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 282 ; free virtual = 4319
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: c7fb2fac
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:15 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 282 ; free virtual = 4319
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 282 ; free virtual = 4319
+Phase 4.4 Final Placement Cleanup | Checksum: 14df1a3a8
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:15 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 282 ; free virtual = 4319
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 14df1a3a8
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:15 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 282 ; free virtual = 4319
+Ending Placer Task | Checksum: e2d48dc6
+
+Time (s): cpu = 00:00:41 ; elapsed = 00:00:15 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 282 ; free virtual = 4319
+INFO: [Common 17-83] Releasing license: Implementation
+24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:17 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 297 ; free virtual = 4334
+## report_utilization -hierarchical -file soc_Javier_utilization_hierarchical_place.rpt
+## report_utilization -file soc_Javier_utilization_place.rpt
+## report_io -file soc_Javier_io.rpt
+report_io: Time (s): cpu = 00:00:00.11 ; elapsed = 00:00:00.19 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 283 ; free virtual = 4319
+## report_control_sets -verbose -file soc_Javier_control_sets.rpt
+report_control_sets: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.13 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 289 ; free virtual = 4326
+## report_clock_utilization -file soc_Javier_clock_utilization.rpt
+## route_design
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 8 CPUs
+Checksum: PlaceDB: 267553f7 ConstDB: 0 ShapeSum: bc5f39cf RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 1144f7640
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 190 ; free virtual = 4207
+Post Restoration Checksum: NetGraph: e36e5ab9 NumContArr: 30e11b87 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 1144f7640
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 168 ; free virtual = 4194
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 1144f7640
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 126 ; free virtual = 4161
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 1144f7640
+
+Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 126 ; free virtual = 4161
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: 18519c5a0
+
+Time (s): cpu = 00:00:21 ; elapsed = 00:00:16 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 129 ; free virtual = 4148
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.597  | TNS=0.000  | WHS=-0.178 | THS=-30.761|
+
+Phase 2 Router Initialization | Checksum: 10fb5605b
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:17 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 129 ; free virtual = 4149
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 4017
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 4017
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 18a92dbcb
+
+Time (s): cpu = 00:00:25 ; elapsed = 00:00:18 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 154 ; free virtual = 4147
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 1432
+ Number of Nodes with overlaps = 550
+ Number of Nodes with overlaps = 269
+ Number of Nodes with overlaps = 129
+ Number of Nodes with overlaps = 72
+ Number of Nodes with overlaps = 34
+ Number of Nodes with overlaps = 23
+ Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.640  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 1716d4ee5
+
+Time (s): cpu = 00:00:47 ; elapsed = 00:00:28 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 152 ; free virtual = 4141
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 7
+ Number of Nodes with overlaps = 6
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 8
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.707  | TNS=0.000  | WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 172140e0e
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 141 ; free virtual = 4136
+Phase 4 Rip-up And Reroute | Checksum: 172140e0e
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 141 ; free virtual = 4136
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+Phase 5.1 Delay CleanUp | Checksum: 172140e0e
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 141 ; free virtual = 4136
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 172140e0e
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 141 ; free virtual = 4136
+Phase 5 Delay and Skew Optimization | Checksum: 172140e0e
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 141 ; free virtual = 4136
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1d1f90f29
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 141 ; free virtual = 4135
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=0.731  | TNS=0.000  | WHS=0.023  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 14621996a
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 139 ; free virtual = 4134
+Phase 6 Post Hold Fix | Checksum: 14621996a
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 139 ; free virtual = 4134
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 1.11644 %
+  Global Horizontal Routing Utilization  = 1.6725 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Phase 7 Route finalize | Checksum: 1456c2a2c
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 140 ; free virtual = 4134
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 1456c2a2c
+
+Time (s): cpu = 00:00:49 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 139 ; free virtual = 4133
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: bcce10c1
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 142 ; free virtual = 4137
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=0.731  | TNS=0.000  | WHS=0.023  | THS=0.000  |
+
+INFO: [Route 35-327] The final timing numbers are based on the router estimated timing analysis. For a complete and accurate timing signoff, please run report_timing_summary.
+Phase 10 Post Router Timing | Checksum: bcce10c1
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 141 ; free virtual = 4136
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:50 ; elapsed = 00:00:31 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 179 ; free virtual = 4174
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+13 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:52 ; elapsed = 00:00:33 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 179 ; free virtual = 4174
+## phys_opt_design
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Vivado_Tcl 4-241] Physical synthesis in post route mode ( 100.0% nets are fully routed)
+INFO: [Vivado_Tcl 4-383] Design worst setup slack (WNS) is greater than or equal to 0.000 ns. Skipping all physical synthesis optimizations.
+INFO: [Vivado_Tcl 4-232] No setup violation found. The netlist was not modified.
+INFO: [Common 17-83] Releasing license: Implementation
+5 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+## report_timing_summary -no_header -no_detailed_paths
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 6 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 5 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      0.731        0.000                      0                 4703        0.024        0.000                      0                 4703        2.750        0.000                       0                  1798  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock   Waveform(ns)         Period(ns)      Frequency(MHz)
+-----   ------------         ----------      --------------
+clk125  {0.000 4.000}        8.000           125.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+clk125              0.731        0.000                      0                 4699        0.024        0.000                      0                 4699        2.750        0.000                       0                  1798  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group         From Clock         To Clock               WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------         ----------         --------               -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+**async_default**  clk125             clk125                   5.578        0.000                      0                    4        0.957        0.000                      0                    4  
+
+
+## write_checkpoint -force soc_Javier_route.dcp
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 187 ; free virtual = 4177
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.33 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 178 ; free virtual = 4174
+INFO: [Common 17-1381] The checkpoint '/home/javier/workshop_litex/src/build/gateware/soc_Javier_route.dcp' has been generated.
+## report_route_status -file soc_Javier_route_status.rpt
+## report_drc -file soc_Javier_drc.rpt
+Command: report_drc -file soc_Javier_drc.rpt
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/tools/Xilinx/Vivado/2019.2/data/ip'.
+INFO: [DRC 23-27] Running DRC with 8 threads
+INFO: [Coretcl 2-168] The results of DRC are in file /home/javier/workshop_litex/src/build/gateware/soc_Javier_drc.rpt.
+report_drc completed successfully
+report_drc: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 3055.602 ; gain = 0.000 ; free physical = 167 ; free virtual = 4171
+## report_timing_summary -datasheet -max_paths 10 -file soc_Javier_timing.rpt
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 8 CPUs
+## report_power -file soc_Javier_power.rpt
+Command: report_power -file soc_Javier_power.rpt
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+WARNING: [Power 33-332] Found switching activity that implies high-fanout reset nets being asserted for excessive periods of time which may result in inaccurate power analysis.
+Resolution: To review and fix problems, please run Power Constraints Advisor in the GUI from Tools > Power Constraints Advisor or run report_power with the -advisory option to generate a text report.
+0 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+# source "soc_Javier_bitstream.tcl"
+## write_bitstream -force soc_Javier.bit 
+Command: write_bitstream -force soc_Javier.bit
+Attempting to get a license for feature 'Implementation' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7z020'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 8 threads
+WARNING: [DRC DPIP-1] Input pipelining: DSP VexRiscv/execute_to_memory_MUL_HL_reg input VexRiscv/execute_to_memory_MUL_HL_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP VexRiscv/execute_to_memory_MUL_HL_reg input VexRiscv/execute_to_memory_MUL_HL_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP VexRiscv/execute_to_memory_MUL_LH_reg input VexRiscv/execute_to_memory_MUL_LH_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP VexRiscv/execute_to_memory_MUL_LH_reg input VexRiscv/execute_to_memory_MUL_LH_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP VexRiscv/execute_to_memory_MUL_LL_reg input VexRiscv/execute_to_memory_MUL_LL_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP VexRiscv/execute_to_memory_MUL_LL_reg input VexRiscv/execute_to_memory_MUL_LL_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP VexRiscv/memory_to_writeBack_MUL_HH_reg input VexRiscv/memory_to_writeBack_MUL_HH_reg/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP VexRiscv/memory_to_writeBack_MUL_HH_reg input VexRiscv/memory_to_writeBack_MUL_HH_reg/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP VexRiscv/execute_to_memory_MUL_HL_reg multiplier stage VexRiscv/execute_to_memory_MUL_HL_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP VexRiscv/execute_to_memory_MUL_LH_reg multiplier stage VexRiscv/execute_to_memory_MUL_LH_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP VexRiscv/execute_to_memory_MUL_LL_reg multiplier stage VexRiscv/execute_to_memory_MUL_LL_reg/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+WARNING: [DRC ZPS7-1] PS7 block required: The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 12 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 8 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Writing bitstream ./soc_Javier.bit...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-120] WebTalk data collection is mandatory when using a WebPACK part without a full Vivado license. To see the specific WebTalk data collected for your design, open the usage_statistics_webtalk.html or usage_statistics_webtalk.xml file in the implementation directory.
+INFO: [Common 17-186] '/home/javier/workshop_litex/src/build/gateware/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Sat Jul 31 19:35:38 2021. For additional details about this file, please refer to the WebTalk help file at /tools/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+10 Infos, 12 Warnings, 0 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3246.512 ; gain = 190.910 ; free physical = 515 ; free virtual = 4147
+## quit
+INFO: [Common 17-206] Exiting Vivado at Sat Jul 31 19:35:39 2021...

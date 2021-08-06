@@ -100,7 +100,17 @@ parameter dataWidthRstlConv=8
 
         initial
 		begin
-	        $readmemb(weightFileFilter, register,0);
+	        //$readmemb(weightFileFilter, register,0);
+	        register[0] =  16'd46;
+	        register[1] = -16'd9;
+	        register[2] = -16'd127;
+	        register[3] =  16'd70;
+	        register[4] = -16'd23;
+	        register[5] = -16'd93;
+	        register[6] = -16'd20;
+	        register[7] = -16'd88;
+	        register[8] = -16'd86;
+	        register[9] = -16'd843;	        
 	    end
     
     always @(posedge clk)

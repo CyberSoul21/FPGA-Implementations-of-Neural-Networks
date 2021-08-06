@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date                      : Fri Jul 30 05:14:58 2021
+| Date                      : Wed Aug  4 19:53:39 2021
 | Host                      : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command                   : report_io -file accQuant_io_placed.rpt
 | Design                    : accQuant
@@ -268,7 +268,7 @@ Table of Contents
 | M11        |             |            | GND                     | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
 | M12        |             |            | VCCINT                  | VCCINT        |             |         |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M13        |             |            | GND                     | GND           |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |
-| M14        | out         | High Range | IO_L23P_T3_35           | OUTPUT        | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| M14        | out         | High Range | IO_L23P_T3_35           | TRISTATE      | LVCMOS33    |      35 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | M15        |             | High Range | IO_L23N_T3_35           | User IO       |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | M16        |             | High Range | VCCO_35                 | VCCO          |             |      35 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | M17        |             | High Range | IO_L8P_T1_AD10P_35      | User IO       |             |      35 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |

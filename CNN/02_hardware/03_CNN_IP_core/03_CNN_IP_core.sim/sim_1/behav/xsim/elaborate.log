@@ -18,32 +18,4 @@ WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 16 fo
 WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 16 for port 'rdata3' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/accQuant.v:410]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'wen' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/accQuant.v:493]
 Completed static elaboration
-Starting simulation data flow analysis
-Completed simulation data flow analysis
-Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.clock_divider
-Compiling module xil_defaultlib.counter_col
-Compiling module xil_defaultlib.counter_row
-Compiling module xil_defaultlib.controlMemoryAddressImg
-Compiling module xil_defaultlib.counterPositionRstlConv
-Compiling module xil_defaultlib.memory_image
-Compiling module xil_defaultlib.memory_filter_1
-Compiling module xil_defaultlib.memory_filter_2
-Compiling module xil_defaultlib.memory_filter_3
-Compiling module xil_defaultlib.quantization
-Compiling module xil_defaultlib.ReLu
-Compiling module xil_defaultlib.convolution
-Compiling module xil_defaultlib.memory_rstl_conv_1
-Compiling module xil_defaultlib.memory_rstl_conv_2
-Compiling module xil_defaultlib.memory_rstl_conv_3
-Compiling module xil_defaultlib.clock_divider_max
-Compiling module xil_defaultlib.counter_col_max
-Compiling module xil_defaultlib.counter_row_max
-Compiling module xil_defaultlib.controlMemoryAddressConv
-Compiling module xil_defaultlib.counterPositionRstlMax
-Compiling module xil_defaultlib.maxpooling
-Compiling module xil_defaultlib.memory_rstl_max_1
-Compiling module xil_defaultlib.accQuant
-Compiling module xil_defaultlib.accQuant_testbench
-Compiling module xil_defaultlib.glbl
-Built simulation snapshot accQuant_testbench_behav
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

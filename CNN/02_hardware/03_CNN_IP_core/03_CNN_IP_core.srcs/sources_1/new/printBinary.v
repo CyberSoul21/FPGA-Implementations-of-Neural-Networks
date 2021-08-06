@@ -54,21 +54,21 @@ reg flag;
 // [ -40,  68,  47]]; con_f2 = np.asarray(con_f2);           # filtre 2 conv2d
 //con_b2 = -696;
 
-initial
-begin
-i =0;
-flag=0;
-print[0] =  16'd46;
-print[1] = -16'd9;
-print[2] = -16'd127;
-print[3] =  16'd70;
-print[4] = -16'd23;
-print[5] = -16'd93;
-print[6] = -16'd20;
-print[7] = -16'd88;
-print[8] = -16'd86;
-print[9] = -16'd843;
-end
+//initial
+//begin
+//i =0;
+//flag=0;
+//print[0] =  16'd46;
+//print[1] = -16'd9;
+//print[2] = -16'd127;
+//print[3] =  16'd70;
+//print[4] = -16'd23;
+//print[5] = -16'd93;
+//print[6] = -16'd20;
+//print[7] = -16'd88;
+//print[8] = -16'd86;
+//print[9] = -16'd843;
+//end
 
 
 //initial
@@ -87,21 +87,21 @@ end
 //print[9] = -16'd1235;
 //end
 
-//initial
-//begin
-//i =0;
-//flag=0;
-//print[0] = -16'd33;
-//print[1] = -16'd111;
-//print[2] = -16'd115;
-//print[3] = -16'd127;
-//print[4] =  16'd28;
-//print[5] =  16'd14;
-//print[6] = -16'd40;
-//print[7] =  16'd68;
-//print[8] =  16'd47;
-//print[9] = -16'd696;
-//end
+initial
+begin
+i =0;
+flag=0;
+print[0] = -16'd33;
+print[1] = -16'd111;
+print[2] = -16'd115;
+print[3] = -16'd127;
+print[4] =  16'd28;
+print[5] =  16'd14;
+print[6] = -16'd40;
+print[7] =  16'd68;
+print[8] =  16'd47;
+print[9] = -16'd696;
+end
 
 always @(clk)
 begin

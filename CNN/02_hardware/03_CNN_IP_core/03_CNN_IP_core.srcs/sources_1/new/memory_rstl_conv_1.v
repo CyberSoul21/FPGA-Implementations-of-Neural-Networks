@@ -69,7 +69,7 @@ module memory_rstl_conv_1
 	   if (wen & (wadd < numWeightRstlConv))
 	   begin
 	       mem[wadd] <= data_in;
-	       $display("wadd1, %d",wadd,data_in); 
+	       //$display("wadd1, %d",wadd,data_in); 
 
 	   end
 	end 

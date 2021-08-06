@@ -1,0 +1,27 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/ReLu.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/clock_divider.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/clock_divider_max.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressImg.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/convolution.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/counterPositionRstlConv.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/counterPositionRstlMax.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/maxpooling.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_filter_1.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_filter_2.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_filter_3.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_image.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_rstl_conv_1.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_rstl_conv_2.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_rstl_conv_3.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_rstl_max_1.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v" \
+"../../../../04_CNN_IP_core_z20.srcs/sources_1/imports/new/accQuant.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

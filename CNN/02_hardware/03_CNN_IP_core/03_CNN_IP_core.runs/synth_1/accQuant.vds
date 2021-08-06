@@ -2,23 +2,24 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Fri Jul 30 05:13:13 2021
-# Process ID: 12829
+# Start of session at: Wed Aug  4 19:50:36 2021
+# Process ID: 8579
 # Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.runs/synth_1
 # Command line: vivado -log accQuant.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source accQuant.tcl
 # Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.runs/synth_1/accQuant.vds
 # Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source accQuant.tcl -notrace
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1537.156 ; gain = 97.016 ; free physical = 157 ; free virtual = 2476
 Command: synth_design -top accQuant -part xc7z010clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Device 21-403] Loading part xc7z010clg400-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 12871 
+INFO: Helper process launched with PID 8642 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1965.516 ; gain = 201.715 ; free physical = 845 ; free virtual = 3327
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 1989.055 ; gain = 202.715 ; free physical = 127 ; free virtual = 2048
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'accQuant' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/accQuant.v:23]
 	Parameter numWeightRstlConv bound to: 676 - type: integer 
@@ -273,6 +274,7 @@ INFO: [Synth 8-6157] synthesizing module 'memory_rstl_max_1' [/home/javier/Docum
 INFO: [Synth 8-251] wadd1_max1, x [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/memory_rstl_max_1.v:74]
 INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_max_1' (22#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/memory_rstl_max_1.v:23]
 WARNING: [Synth 8-689] width (32) of port connection 'wen' does not match port width (1) of module 'memory_rstl_max_1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/accQuant.v:493]
+WARNING: [Synth 8-3848] Net out in module/entity accQuant does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/accQuant.v:35]
 INFO: [Synth 8-6155] done synthesizing module 'accQuant' (23#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/accQuant.v:23]
 WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port clk
 WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port wen
@@ -334,8 +336,9 @@ WARNING: [Synth 8-3331] design maxpooling has unconnected port rst
 WARNING: [Synth 8-3331] design convolution has unconnected port en
 WARNING: [Synth 8-3331] design convolution has unconnected port rst
 WARNING: [Synth 8-3331] design controlMemoryAddressImg has unconnected port en
+WARNING: [Synth 8-3331] design accQuant has unconnected port out
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2027.266 ; gain = 263.465 ; free physical = 871 ; free virtual = 3354
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 2051.805 ; gain = 265.465 ; free physical = 243 ; free virtual = 2038
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -348,12 +351,12 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2033.203 ; gain = 269.402 ; free physical = 871 ; free virtual = 3353
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 2054.773 ; gain = 268.434 ; free physical = 200 ; free virtual = 2020
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2033.203 ; gain = 269.402 ; free physical = 871 ; free virtual = 3353
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:11 . Memory (MB): peak = 2054.773 ; gain = 268.434 ; free physical = 200 ; free virtual = 2020
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2033.203 ; gain = 0.000 ; free physical = 863 ; free virtual = 3345
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2054.773 ; gain = 0.000 ; free physical = 222 ; free virtual = 1993
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -364,26 +367,26 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/accQuant_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2203.922 ; gain = 0.000 ; free physical = 770 ; free virtual = 3252
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2224.523 ; gain = 0.000 ; free physical = 173 ; free virtual = 1900
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2203.922 ; gain = 0.000 ; free physical = 770 ; free virtual = 3252
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2224.523 ; gain = 0.000 ; free physical = 173 ; free virtual = 1899
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2203.922 ; gain = 440.121 ; free physical = 845 ; free virtual = 3327
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:22 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 251 ; free virtual = 1978
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2203.922 ; gain = 440.121 ; free physical = 845 ; free virtual = 3327
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:22 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 251 ; free virtual = 1978
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 2203.922 ; gain = 440.121 ; free physical = 845 ; free virtual = 3327
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:22 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 251 ; free virtual = 1978
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
 INFO: [Synth 8-5546] ROM "register" won't be mapped to RAM because it is too sparse
@@ -417,7 +420,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'present_state_reg' using e
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'present_state_reg' using encoding 'one-hot' in module 'maxpooling'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 2203.922 ; gain = 440.121 ; free physical = 834 ; free virtual = 3317
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:24 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 240 ; free virtual = 1968
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -459,7 +462,7 @@ Detailed RTL Component Info :
 	   6 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 3     
 	   2 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 39    
+	   2 Input      1 Bit        Muxes := 40    
 	  12 Input      1 Bit        Muxes := 3     
 	  13 Input      1 Bit        Muxes := 33    
 	   5 Input      1 Bit        Muxes := 21    
@@ -476,6 +479,8 @@ Module accQuant
 Detailed RTL Component Info : 
 +---Registers : 
 	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
 Module clock_divider 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -854,214 +859,23 @@ WARNING: [Synth 8-3331] design maxpooling has unconnected port rst
 WARNING: [Synth 8-3331] design convolution has unconnected port en
 WARNING: [Synth 8-3331] design convolution has unconnected port rst
 WARNING: [Synth 8-3331] design controlMemoryAddressImg has unconnected port en
+WARNING: [Synth 8-3331] design accQuant has unconnected port out
 INFO: [Synth 8-3971] The signal "save_data_1/mem_reg" was recognized as a true dual port RAM template.
 INFO: [Synth 8-4652] Swapped enable and write-enable on 4 RAM instances of RAM mem_reg to conserve power
 INFO: [Synth 8-3971] The signal "save_data_2/mem_reg" was recognized as a true dual port RAM template.
 INFO: [Synth 8-4652] Swapped enable and write-enable on 4 RAM instances of RAM mem_reg to conserve power
 INFO: [Synth 8-3971] The signal "save_data_3/mem_reg" was recognized as a true dual port RAM template.
 INFO: [Synth 8-4652] Swapped enable and write-enable on 4 RAM instances of RAM mem_reg to conserve power
-INFO: [Synth 8-3886] merging instance 'convolution:/rstl_mult_reg[0][15]' (FDE_1) to 'convolution:/rstl_mult_reg[0][16]'
-INFO: [Synth 8-3886] merging instance 'convolution:/rstl_mult_reg[7][15]' (FDE_1) to 'convolution:/rstl_mult_reg[7][16]'
-INFO: [Synth 8-3886] merging instance 'convolution:/rstl_mult_reg[8][15]' (FDE_1) to 'convolution:/rstl_mult_reg[8][16]'
-INFO: [Synth 8-3886] merging instance 'convolution:/rstl_mult_reg[6][15]' (FDE_1) to 'convolution:/rstl_mult_reg[6][16]'
-INFO: [Synth 8-3886] merging instance 'convolution:/rstl_mult_reg[4][15]' (FDE_1) to 'convolution:/rstl_mult_reg[4][16]'
-INFO: [Synth 8-3886] merging instance 'convolution:/rstl_mult_reg[5][15]' (FDE_1) to 'convolution:/rstl_mult_reg[5][16]'
-INFO: [Synth 8-3886] merging instance 'convolution:/rstl_mult_reg[3][15]' (FDE_1) to 'convolution:/rstl_mult_reg[3][16]'
-INFO: [Synth 8-3886] merging instance 'convolution:/rstl_mult_reg[1][15]' (FDE_1) to 'convolution:/rstl_mult_reg[1][16]'
-INFO: [Synth 8-3886] merging instance 'convolution:/rstl_mult_reg[2][15]' (FDE_1) to 'convolution:/rstl_mult_reg[2][16]'
-INFO: [Synth 8-3886] merging instance 'convolution:/quant/thld1_reg[7]' (FDRE_1) to 'convolution:/quant/thld1_reg[8]'
-INFO: [Synth 8-3886] merging instance 'convolution:/quant/thld1_reg[6]' (FDSE_1) to 'convolution:/quant/thld1_reg[0]'
-INFO: [Synth 8-3886] merging instance 'convolution:/quant/thld1_reg[5]' (FDSE_1) to 'convolution:/quant/thld1_reg[0]'
-INFO: [Synth 8-3886] merging instance 'convolution:/quant/thld1_reg[4]' (FDSE_1) to 'convolution:/quant/thld1_reg[0]'
-INFO: [Synth 8-3886] merging instance 'convolution:/quant/thld1_reg[3]' (FDSE_1) to 'convolution:/quant/thld1_reg[0]'
-INFO: [Synth 8-3886] merging instance 'convolution:/quant/thld1_reg[2]' (FDSE_1) to 'convolution:/quant/thld1_reg[0]'
-INFO: [Synth 8-3886] merging instance 'convolution:/quant/thld1_reg[1]' (FDSE_1) to 'convolution:/quant/thld1_reg[0]'
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (convolution:/\quant/thld1_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (convolution:/\quant/thld1_reg[8] )
-INFO: [Synth 8-3886] merging instance 'convolution:/aux_bias_reg[15]' (FDE_1) to 'convolution:/aux_bias_reg[16]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (convolution:/\activation/aux_num_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/bias_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata8_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata7_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata6_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata5_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata4_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\filter1/rdata3_reg[0] )
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[1]' (FDE) to 'image/rdata7_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[3]' (FDE) to 'image/rdata8_reg[5]'
-INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[6]' (FDE) to 'image/rdata7_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[8]' (FDE) to 'image/rdata7_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[9]' (FDE) to 'image/rdata7_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[10]' (FDE) to 'image/rdata7_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[11]' (FDE) to 'image/rdata7_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[12]' (FDE) to 'image/rdata7_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[13]' (FDE) to 'image/rdata7_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[14]' (FDE) to 'image/rdata7_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata8_reg[15]' (FDE) to 'image/rdata7_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[1]' (FDE) to 'image/rdata7_reg[6]'
-INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[3]' (FDE) to 'image/rdata7_reg[5]'
-INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[6]' (FDE) to 'image/rdata7_reg[8]'
-INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[8]' (FDE) to 'image/rdata7_reg[9]'
-INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[9]' (FDE) to 'image/rdata7_reg[10]'
-INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[10]' (FDE) to 'image/rdata7_reg[11]'
-INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[11]' (FDE) to 'image/rdata7_reg[12]'
-INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[12]' (FDE) to 'image/rdata7_reg[13]'
-INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[13]' (FDE) to 'image/rdata7_reg[14]'
-INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[14]' (FDE) to 'image/rdata7_reg[15]'
-INFO: [Synth 8-3886] merging instance 'image/rdata7_reg[15]' (FDE) to 'image/rdata5_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[1]' (FDE) to 'image/rdata5_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[3]' (FDE) to 'image/rdata6_reg[5]'
-INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[6]' (FDE) to 'image/rdata5_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[8]' (FDE) to 'image/rdata5_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[9]' (FDE) to 'image/rdata5_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[10]' (FDE) to 'image/rdata5_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[11]' (FDE) to 'image/rdata5_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[12]' (FDE) to 'image/rdata5_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[13]' (FDE) to 'image/rdata5_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[14]' (FDE) to 'image/rdata5_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata6_reg[15]' (FDE) to 'image/rdata5_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[1]' (FDE) to 'image/rdata5_reg[6]'
-INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[3]' (FDE) to 'image/rdata5_reg[5]'
-INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[6]' (FDE) to 'image/rdata5_reg[8]'
-INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[8]' (FDE) to 'image/rdata5_reg[9]'
-INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[9]' (FDE) to 'image/rdata5_reg[10]'
-INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[10]' (FDE) to 'image/rdata5_reg[11]'
-INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[11]' (FDE) to 'image/rdata5_reg[12]'
-INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[12]' (FDE) to 'image/rdata5_reg[13]'
-INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[13]' (FDE) to 'image/rdata5_reg[14]'
-INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[14]' (FDE) to 'image/rdata5_reg[15]'
-INFO: [Synth 8-3886] merging instance 'image/rdata5_reg[15]' (FDE) to 'image/rdata3_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[1]' (FDE) to 'image/rdata3_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[3]' (FDE) to 'image/rdata4_reg[5]'
-INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[6]' (FDE) to 'image/rdata3_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[8]' (FDE) to 'image/rdata3_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[9]' (FDE) to 'image/rdata3_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[10]' (FDE) to 'image/rdata3_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[11]' (FDE) to 'image/rdata3_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[12]' (FDE) to 'image/rdata3_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[13]' (FDE) to 'image/rdata3_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[14]' (FDE) to 'image/rdata3_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata4_reg[15]' (FDE) to 'image/rdata3_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[1]' (FDE) to 'image/rdata3_reg[6]'
-INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[3]' (FDE) to 'image/rdata3_reg[5]'
-INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[6]' (FDE) to 'image/rdata3_reg[8]'
-INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[8]' (FDE) to 'image/rdata3_reg[9]'
-INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[9]' (FDE) to 'image/rdata3_reg[10]'
-INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[10]' (FDE) to 'image/rdata3_reg[11]'
-INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[11]' (FDE) to 'image/rdata3_reg[12]'
-INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[12]' (FDE) to 'image/rdata3_reg[13]'
-INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[13]' (FDE) to 'image/rdata3_reg[14]'
-INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[14]' (FDE) to 'image/rdata3_reg[15]'
-INFO: [Synth 8-3886] merging instance 'image/rdata3_reg[15]' (FDE) to 'image/rdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[1]' (FDE) to 'image/rdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[3]' (FDE) to 'image/rdata2_reg[5]'
-INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[6]' (FDE) to 'image/rdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[8]' (FDE) to 'image/rdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[9]' (FDE) to 'image/rdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[10]' (FDE) to 'image/rdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[11]' (FDE) to 'image/rdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[12]' (FDE) to 'image/rdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[13]' (FDE) to 'image/rdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[14]' (FDE) to 'image/rdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata2_reg[15]' (FDE) to 'image/rdata1_reg[1]'
-INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[1]' (FDE) to 'image/rdata1_reg[6]'
-INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[3]' (FDE) to 'image/rdata1_reg[5]'
-INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[6]' (FDE) to 'image/rdata1_reg[8]'
-INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[8]' (FDE) to 'image/rdata1_reg[9]'
-INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[9]' (FDE) to 'image/rdata1_reg[10]'
-INFO: [Synth 8-3886] merging instance 'image/rdata1_reg[10]' (FDE) to 'image/rdata1_reg[11]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-3332] Sequential element (activation/FSM_onehot_present_state_reg[4]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (activation/FSM_onehot_present_state_reg[3]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (activation/FSM_onehot_present_state_reg[2]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (activation/FSM_onehot_present_state_reg[1]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (activation/FSM_onehot_present_state_reg[0]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (activation/FSM_onehot_next_state_reg[4]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (activation/FSM_onehot_next_state_reg[3]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (activation/FSM_onehot_next_state_reg[2]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (activation/FSM_onehot_next_state_reg[1]) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (activation/FSM_onehot_next_state_reg[0]) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[47]) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[46]) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[45]) is unused and will be removed from module convolution.
@@ -1111,17 +925,21 @@ WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[2]) is unused and 
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[1]) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[0]) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_present_state_reg[4]) is unused and will be removed from module maxpooling.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_present_state_reg[3]) is unused and will be removed from module maxpooling.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_present_state_reg[2]) is unused and will be removed from module maxpooling.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_present_state_reg[1]) is unused and will be removed from module maxpooling.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_present_state_reg[0]) is unused and will be removed from module maxpooling.
 WARNING: [Synth 8-3332] Sequential element (FSM_onehot_next_state_reg[4]) is unused and will be removed from module maxpooling.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_next_state_reg[3]) is unused and will be removed from module maxpooling.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_next_state_reg[2]) is unused and will be removed from module maxpooling.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_next_state_reg[1]) is unused and will be removed from module maxpooling.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_next_state_reg[0]) is unused and will be removed from module maxpooling.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 2203.922 ; gain = 440.121 ; free physical = 815 ; free virtual = 3304
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:26 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 234 ; free virtual = 1968
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
-
-Block RAM: Preliminary Mapping	Report (see note below)
--------NONE-------
-Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 
 DSP: Preliminary Mapping	Report (see note below)
 +-------------------+--------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
@@ -1212,28 +1030,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:24 . Memory (MB): peak = 2203.922 ; gain = 440.121 ; free physical = 640 ; free virtual = 3129
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:33 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 138 ; free virtual = 1837
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5584] The signal "save_data_1/mem_reg" is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
-INFO: [Synth 8-5584] The signal "save_data_1/mem_reg" is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
-INFO: [Synth 8-5584] The signal "save_data_2/mem_reg" is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
-INFO: [Synth 8-5584] The signal "save_data_2/mem_reg" is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
-INFO: [Synth 8-5584] The signal "save_data_3/mem_reg" is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
-INFO: [Synth 8-5584] The signal "save_data_3/mem_reg" is implemented as distributed LUT RAM for the following reason(s): The timing constraints suggest that the chosen mapping will yield better timing results.
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:25 . Memory (MB): peak = 2203.922 ; gain = 440.121 ; free physical = 623 ; free virtual = 3112
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start ROM, RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
-
-Distributed RAM: Final Mapping	Report
--------NONE-------
----------------------------------------------------------------------------------
-Finished ROM, RAM, DSP and Shift Register Reporting
+Finished Timing Optimization : Time (s): cpu = 00:00:18 ; elapsed = 00:00:33 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 138 ; free virtual = 1837
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1244,36 +1047,8 @@ Report RTL Partitions:
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:95]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:141]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:95]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:141]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:95]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:141]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:141]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:141]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:141]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:95]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:141]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:95]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:141]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:95]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressImg.v:141]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:145]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:145]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:145]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:145]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/controlMemoryAddressConv.v:145]
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:23 ; elapsed = 00:00:27 . Memory (MB): peak = 2233.992 ; gain = 470.191 ; free physical = 614 ; free virtual = 3103
+Finished Technology Mapping : Time (s): cpu = 00:00:18 ; elapsed = 00:00:33 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 137 ; free virtual = 1835
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1293,20 +1068,17 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6064] Net \conv3/rstl_sum [16] is driving 53 big block pins (URAM, BRAM and DSP loads). Created 6 replicas of its driver. 
-INFO: [Synth 8-6064] Net \conv2/rstl_sum [16] is driving 53 big block pins (URAM, BRAM and DSP loads). Created 6 replicas of its driver. 
-INFO: [Synth 8-6064] Net \conv1/rstl_sum [16] is driving 53 big block pins (URAM, BRAM and DSP loads). Created 6 replicas of its driver. 
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 2236.961 ; gain = 473.160 ; free physical = 613 ; free virtual = 3102
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 137 ; free virtual = 1836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:26 ; elapsed = 00:00:30 . Memory (MB): peak = 2236.961 ; gain = 473.160 ; free physical = 613 ; free virtual = 3102
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 137 ; free virtual = 1836
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1325,25 +1097,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2236.961 ; gain = 473.160 ; free physical = 610 ; free virtual = 3099
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 137 ; free virtual = 1836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2236.961 ; gain = 473.160 ; free physical = 610 ; free virtual = 3099
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 137 ; free virtual = 1836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2236.961 ; gain = 473.160 ; free physical = 610 ; free virtual = 3099
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 137 ; free virtual = 1836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2236.961 ; gain = 473.160 ; free physical = 610 ; free virtual = 3099
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 137 ; free virtual = 1836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1356,90 +1128,39 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+----------+------+
-|      |Cell      |Count |
-+------+----------+------+
-|1     |BUFG      |     2|
-|2     |CARRY4    |    98|
-|3     |DSP48E1   |    18|
-|4     |DSP48E1_1 |     3|
-|5     |DSP48E1_2 |     3|
-|6     |DSP48E1_3 |    36|
-|7     |DSP48E1_4 |     6|
-|8     |LUT1      |    17|
-|9     |LUT2      |    86|
-|10    |LUT3      |   399|
-|11    |LUT4      |   336|
-|12    |LUT5      |   274|
-|13    |LUT6      |   734|
-|14    |MUXF7     |    27|
-|15    |MUXF8     |     9|
-|16    |RAM64M    |   264|
-|17    |RAM64X1D  |   264|
-|18    |FDCE      |    76|
-|19    |FDPE      |     3|
-|20    |FDRE      |  1048|
-|21    |FDSE      |    27|
-|22    |IBUF      |     2|
-|23    |OBUF      |     1|
-+------+----------+------+
++------+------+------+
+|      |Cell  |Count |
++------+------+------+
+|1     |OBUFT |     1|
++------+------+------+
 
 Report Instance Areas: 
-+------+------------------+-------------------------+------+
-|      |Instance          |Module                   |Cells |
-+------+------------------+-------------------------+------+
-|1     |top               |                         |  3733|
-|2     |  image           |memory_image             |   498|
-|3     |  maxpooling_2    |maxpooling_2             |    36|
-|4     |  maxpooling_3    |maxpooling_3             |    36|
-|5     |  clk_second      |clock_divider            |    47|
-|6     |  clk_third       |clock_divider_max        |    46|
-|7     |  conv1           |convolution              |   541|
-|8     |    activation    |ReLu_6                   |    79|
-|9     |    quant         |quantization_7           |   125|
-|10    |  conv2           |convolution_0            |   541|
-|11    |    activation    |ReLu_4                   |    79|
-|12    |    quant         |quantization_5           |   125|
-|13    |  conv3           |convolution_1            |   541|
-|14    |    activation    |ReLu                     |    79|
-|15    |    quant         |quantization             |   125|
-|16    |  maxpooling_1    |maxpooling               |    37|
-|17    |  pos_memory_conv |counterPositionRstlConv  |   116|
-|18    |  positionConv    |controlMemoryAddressConv |    93|
-|19    |    counter_i     |counter_row_max          |    40|
-|20    |    counter_j     |counter_col_max          |    53|
-|21    |  positionImage   |controlMemoryAddressImg  |    71|
-|22    |    counter_i     |counter_row              |    46|
-|23    |    counter_j     |counter_col              |    25|
-|24    |  save_data_1     |memory_rstl_conv_1       |   374|
-|25    |  save_data_2     |memory_rstl_conv_2       |   374|
-|26    |  save_data_3     |memory_rstl_conv_3       |   374|
-+------+------------------+-------------------------+------+
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     1|
++------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 2236.961 ; gain = 473.160 ; free physical = 610 ; free virtual = 3099
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 137 ; free virtual = 1836
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 57 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:25 ; elapsed = 00:00:29 . Memory (MB): peak = 2236.961 ; gain = 302.441 ; free physical = 686 ; free virtual = 3175
-Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:31 . Memory (MB): peak = 2236.969 ; gain = 473.160 ; free physical = 686 ; free virtual = 3175
+Synthesis finished with 0 errors, 0 critical warnings and 76 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:28 . Memory (MB): peak = 2224.523 ; gain = 268.434 ; free physical = 189 ; free virtual = 1888
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:35 . Memory (MB): peak = 2224.523 ; gain = 438.184 ; free physical = 189 ; free virtual = 1889
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2236.969 ; gain = 0.000 ; free physical = 755 ; free virtual = 3244
-INFO: [Netlist 29-17] Analyzing 728 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2224.523 ; gain = 0.000 ; free physical = 183 ; free virtual = 1880
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 15 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2268.977 ; gain = 0.000 ; free physical = 696 ; free virtual = 3185
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2224.523 ; gain = 0.000 ; free physical = 195 ; free virtual = 1901
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 528 instances were transformed.
-  RAM64M => RAM64M (RAMD64E(x4)): 264 instances
-  RAM64X1D => RAM64X1D (RAMD64E(x2)): 264 instances
+No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-329 Infos, 164 Warnings, 0 Critical Warnings and 0 Errors encountered.
+88 Infos, 185 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 2268.977 ; gain = 756.328 ; free physical = 870 ; free virtual = 3359
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2268.977 ; gain = 0.000 ; free physical = 870 ; free virtual = 3359
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:46 . Memory (MB): peak = 2224.523 ; gain = 687.367 ; free physical = 328 ; free virtual = 2035
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2224.523 ; gain = 0.000 ; free physical = 328 ; free virtual = 2035
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.runs/synth_1/accQuant.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file accQuant_utilization_synth.rpt -pb accQuant_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Jul 30 05:14:00 2021...
+INFO: [Common 17-206] Exiting Vivado at Wed Aug  4 19:51:59 2021...

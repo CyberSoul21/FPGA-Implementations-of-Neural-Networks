@@ -251,7 +251,7 @@ module accQuant
     );
     
     
-    convolution conv1
+    convolution #(.q(63'd1595664240)) conv1
     (
         .clk(clk),
         .en(en),
@@ -289,7 +289,7 @@ module accQuant
         .conv_ready(conv_ok_1)
     );
     
-    convolution conv2
+    convolution #(.q(63'd1254864333)) conv2
     (
         .clk(clk),
         .en(en),
@@ -327,7 +327,7 @@ module accQuant
         .conv_ready(conv_ok_2)
     );
     
-    convolution conv3
+    convolution #(.q(63'd1441935755)) conv3
     (
         .clk(clk),
         .en(en),
@@ -544,6 +544,6 @@ module accQuant
 
  
 
-    assign out = max1[0] & max2[0] & max3[0]; 
+    //assign out = max1[0] & max2[0] & max3[0]; 
 
 endmodule

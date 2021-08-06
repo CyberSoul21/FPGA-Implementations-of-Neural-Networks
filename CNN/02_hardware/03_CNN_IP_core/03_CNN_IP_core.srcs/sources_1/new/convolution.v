@@ -26,7 +26,11 @@ module convolution
     parameter dataWidthConv=16,                       
     parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100,
     parameter s5 = 4'b0101, s6 = 4'b0110, s7 = 4'b0111, s8 = 4'b1000, s9 = 4'b1001,
-    parameter s10 = 4'b1010, s11 = 4'b1011, s12 = 4'b1100, s13 = 4'b1101, s14 = 4'b1110
+    parameter s10 = 4'b1010, s11 = 4'b1011, s12 = 4'b1100, s13 = 4'b1101, s14 = 4'b1110,
+    
+    //quantization
+    parameter q = 63'd2014687024 //q = 31'b1111000000101011010111100110000
+    
 )
 
 
@@ -86,7 +90,7 @@ module convolution
         //next_state = 3'd0;
     end
 
-    quantization quant
+    quantization #(.q(q)) quant 
     (
         .clk(clk),
         .rst(rst_quant),

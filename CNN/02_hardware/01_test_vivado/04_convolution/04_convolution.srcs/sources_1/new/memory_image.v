@@ -53,7 +53,8 @@ parameter addressWidthImg=10, dataWidthImg= 16,
 parameter weightFileImg="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/01_test_vivado/project_7/project_7.srcs/sources_1/new/image.mem",
       
 //quantization
-parameter q = 64'd2014687024, //q = 31'b1111000000101011010111100110000
+//parameter q = 64'd2014687024, //q = 31'b1111000000101011010111100110000
+parameter q = 64'd1595664240, //q = 31'b1111000000101011010111100110000
 parameter mask = 8'd255,
 parameter zero = 1'd0,
 parameter one = 1'd1,

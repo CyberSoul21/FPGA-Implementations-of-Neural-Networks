@@ -573,8 +573,8 @@ mnist = keras.datasets.mnist;
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data();
 #test_images = test_images[0:1000];
 #test_labels = test_labels[0:1000];
-test_images = test_images[0:1000];
-test_labels = test_labels[0:1000];
+test_images = test_images[0:100];
+test_labels = test_labels[0:100];
  
 # Imprimer quelques images
 fig = plt.figure(figsize=(3,3));

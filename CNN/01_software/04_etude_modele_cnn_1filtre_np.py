@@ -131,6 +131,8 @@ filtre = \
  [ -43,  64,  48]]; filtre = np.asarray(filtre);
 bias = -998;
 
+                                          # bias   0 conv2d 
+
 count = 0
 for i in range(0,3):
   for j in range(0,3):

@@ -24,7 +24,7 @@ module memory_filter_3
 #(
     //memory filter
     parameter numWeightFilter = 10, addressWidthFilter=4, dataWidthFilter=16,
-    parameter weightFileFilter="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/filter2.mem"
+    parameter weightFileFilter="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/filter3.mem"
 )
 ( 
     input clk,

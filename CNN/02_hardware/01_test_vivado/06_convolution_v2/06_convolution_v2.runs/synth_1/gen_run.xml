@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1626494533">
-  <File Type="VDS-TIMINGSUMMARY" Name="ip_core_timing_summary_synth.rpt"/>
+  <File Type="PA-TCL" Name="ip_core.tcl"/>
+  <File Type="REPORTS-TCL" Name="ip_core_reports.tcl"/>
+  <File Type="RDS-RDS" Name="ip_core.vds"/>
+  <File Type="RDS-UTIL" Name="ip_core_utilization_synth.rpt"/>
   <File Type="RDS-DCP" Name="ip_core.dcp"/>
   <File Type="RDS-UTIL-PB" Name="ip_core_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="ip_core_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="ip_core_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="ip_core.vds"/>
-  <File Type="REPORTS-TCL" Name="ip_core_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="ip_core_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="ip_core.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ReLu.v">

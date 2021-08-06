@@ -98,7 +98,7 @@ parameter dataWidthRstlConv=8
 	   if (wen & (wadd < numWeightRstlConv))
 	   begin
 	       mem[wadd] <= data_in;
-	       $display("wadd2, %d",wadd,data_in); 
+	       //$display("wadd2, %d",wadd,data_in); 
 
 	   end
 	end 

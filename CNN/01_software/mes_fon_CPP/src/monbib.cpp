@@ -115,8 +115,12 @@ std::int32_t MultiplyByQuantizedMultiplier(std::int32_t x, std::int32_t quantize
 }
 
 void QuantizeMultiplier(double double_multiplier, std::int32_t* quantized_multiplier, int* shift){
-  if (double_multiplier == 0.) {
-    *quantized_multiplier = 0; *shift = 0; return; } 
+  if (double_multiplier == 0.) 
+  {
+    *quantized_multiplier = 0; 
+    *shift = 0; 
+    return; 
+  } 
 
   const double q       = std::frexp(double_multiplier, shift);
         double q_fixed = static_cast<std::int64_t>(std::round(q*(1ll << 31)));

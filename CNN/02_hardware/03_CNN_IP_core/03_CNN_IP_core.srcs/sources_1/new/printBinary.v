@@ -33,7 +33,8 @@ module printBinary
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 reg [15:0]print[0:9];
-reg [3:0]i;
+reg [15:0]data[0:506];
+reg [9:0]i;
 reg flag;
 
 //con_f1 = \
@@ -71,46 +72,53 @@ reg flag;
 //end
 
 
-//initial
-//begin
-//i =0;
-//flag=0;
-//print[0] = -16'd79;
-//print[1] = -16'd63;
-//print[2] =  16'd51;
-//print[3] =  16'd78;
-//print[4] =  16'd58;
-//print[5] =  16'd61;
-//print[6] = -16'd127;
-//print[7] =  16'd91;
-//print[8] = -16'd72;
-//print[9] = -16'd1235;
-//end
+
+
+//fc_b = \
+//[ -48, 1081, -146,  -256, -109, 976, 31, 466, -905, 33];
 
 initial
 begin
 i =0;
 flag=0;
-print[0] = -16'd33;
-print[1] = -16'd111;
-print[2] = -16'd115;
-print[3] = -16'd127;
-print[4] =  16'd28;
-print[5] =  16'd14;
-print[6] = -16'd40;
-print[7] =  16'd68;
-print[8] =  16'd47;
-print[9] = -16'd696;
+
+data[0] = -16'd48;
+data[1] =  16'd1081;
+data[2] = -16'd146;
+data[3] = -16'd256;
+data[4] = -16'd109;
+data[5] =  16'd976;
+data[6] =  16'd31;
+data[7] =  16'd466;
+data[8] = -16'd905;
+data[9] =  16'd33;
+
+
+
+
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 always @(clk)
 begin
-    if(i< 4'd10 && flag == 0)
+    if(i< 9'd10 && flag == 0)
     begin
-        $display("%b",print[i]);
+        $display("%b",data[i]);
         i = i + 1;
     end
-    if(i==4'd10)
+    if(i==9'd10)
     begin
         flag = 1;
     end

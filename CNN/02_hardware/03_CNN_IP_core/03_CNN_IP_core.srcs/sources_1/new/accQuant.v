@@ -150,7 +150,7 @@ module accQuant
     wire save_rstl_max2;
     wire save_rstl_max3;    
 //*******************************************************************************************************
-
+    wire clk_div_dens;//ok
     reg dis_write_conv;
     reg en_read_conv;
     reg en_dense;
@@ -514,15 +514,37 @@ module accQuant
 //        .rdata3(rdata_conv1_3)
      );
      
+
+//*******************************************************************************************************
+//*******************************************************************************************************
+//*********************************************Dense*****************************************************     
+//*******************************************************************************************************     
+     
+    clock_divider_dens clk_fourth
+    (
+        .clock_in(clk),
+        .clock_out(clk_div_dens)
+    );
      
      
      counterPositionMemMax pos_mem_max
      (
-        .clk(clk),
+        .clk(clk_div_dens),
         .en(en_dense),
         .rst(rst),
         .pos_memory(pos_memory_max)
      
+     );
+     
+     full_connected dense
+     (
+        .clk(clk),
+        .clk_div(clk_div_dens),
+        .en(en_dense),
+        .rst(rst),
+        .pos_memory(pos_memory_max),
+        .rdata_max(),
+        .rdata_weight()        
      );
         
 
@@ -567,12 +589,7 @@ module accQuant
 
 	end 		
 
-//Agregar variables en_read_conv y dis_write_conv para qye la unidad de control sepa cuando activar la maxpooling y cuando para de grabar en la conv
-//usando el tamano de la posisicon si este ha llegado a 675 empezar la maxpooling
-//*******************************************************************************************************
-//*******************************************************************************************************
-//*********************************************Dense*****************************************************     
-//*******************************************************************************************************
+
 
  
 

@@ -38,50 +38,76 @@ module full_connected#(
 )
 (
     input clk,
+    input clk_div,
     input en,
     input rst,
+    input[dataWidthCount-1:0] pos_memory,
     input [dataWidthMax-1:0] rdata_max,
-    input [dataWidthWeight-1:0] rdata_weight,
-    
-    output[dataWidthCount-1:0] pos_memory
-    
-
+    input [dataWidthMax-1:0] rdata_weight
 );
 
 
-    reg [dataWidthCount-1:0] count;
-    reg once;
+    
+
+    //FSM
+    reg [3:0] present_state, next_state; //ok
+    
+
     
     initial
     begin
-        count <= 4'd0;
-        once <= 0;
+
+
+    end
+  
+    
+    always @(posedge clk) //Present estate 
+    begin
+        if(clk_div == 1 & en)
+        begin
+            present_state <= s0;    
+
+        end
+        else
+        begin
+            present_state <= next_state;
+        end    
+    end    
+
+    always @(negedge clk) //negedge
+    begin
+        case(present_state)
+            s0:
+                next_state <= s1;                
+            s1:
+                next_state <= s2;
+            s2:
+                next_state <= s3;
+                                                                                           
+        endcase                
+    end
+
+
+    always @ (negedge clk) begin //always @ (posedge clk) begin   
+      case (present_state)
+        s0: begin
+
+            end          
+        s1: begin
+
+            end
+        s2: begin
+                
+            end  
+ 
+
+                                                            
+      endcase 
     end
     
-    always @(posedge clk)
-    begin
-        if(rst)
-        begin
-            count <= 4'd0;
-            once <= 0;
-        end
-        if(en && !once)
-        begin
-            count <= count + 4'd1;
-            if(count == (numWeightRstlMax - 1))
-            begin
-                count <= 4'd0;
-                once <= 1;                
-            end
-        end
-    end 
     
-    assign pos_memory = count;
+    
 
-    
-    
-    
-    
     
 endmodule
 

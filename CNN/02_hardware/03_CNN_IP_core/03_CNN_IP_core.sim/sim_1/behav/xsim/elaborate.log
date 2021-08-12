@@ -47,7 +47,9 @@ Compiling module xil_defaultlib.controlMemoryAddressConv
 Compiling module xil_defaultlib.counterPositionRstlMax
 Compiling module xil_defaultlib.maxpooling
 Compiling module xil_defaultlib.memory_rstl_max_1
+Compiling module xil_defaultlib.clock_divider_dens
 Compiling module xil_defaultlib.counterPositionMemMax
+Compiling module xil_defaultlib.full_connected
 Compiling module xil_defaultlib.accQuant
 Compiling module xil_defaultlib.accQuant_testbench
 Compiling module xil_defaultlib.glbl

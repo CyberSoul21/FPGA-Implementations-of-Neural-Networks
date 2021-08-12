@@ -24,6 +24,7 @@ module accQuant
 #(
     //Control Unit:
     parameter numWeightRstlConv = 676,
+    parameter numWeightRstlMax = 507,
     parameter addressWidthCount=10,
     parameter dataWidthCount=10, dataWidthMen=16, dataWidthMenConv = 8
     
@@ -152,6 +153,13 @@ module accQuant
 
     reg dis_write_conv;
     reg en_read_conv;
+    reg en_dense;
+    wire [dataWidthCount-1:0] pos_memory_max;
+    
+    initial
+    begin
+        en_dense = 0;
+    end
 
 //*******************************************************************************************************    
     
@@ -506,6 +514,16 @@ module accQuant
 //        .rdata3(rdata_conv1_3)
      );
      
+     
+     
+     counterPositionMemMax pos_mem_max
+     (
+        .clk(clk),
+        .en(en_dense),
+        .rst(rst),
+        .pos_memory(pos_memory_max)
+     
+     );
         
 
 
@@ -527,13 +545,27 @@ module accQuant
 	begin
 	   if ((pos_rstl == (numWeightRstlConv -1)) & (en_count_max))
 	   begin
-           en_read_conv <= 1; 
+           en_read_conv <= 1;
 	   end
 	   else
 	   begin
 	       en_read_conv <= 0;
 	   end
-	end 	
+	end 
+	
+	
+    always @(posedge clk)
+	begin
+	   if ((pos_rstl_max3 == (numWeightRstlMax -1)) & clk_div_max)
+	   begin
+           en_dense <= 1; 
+	   end
+	   if ((pos_memory_max == (numWeightRstlMax -1)))
+	   begin
+           en_dense <= 0; 
+	   end	   
+
+	end 		
 
 //Agregar variables en_read_conv y dis_write_conv para qye la unidad de control sepa cuando activar la maxpooling y cuando para de grabar en la conv
 //usando el tamano de la posisicon si este ha llegado a 675 empezar la maxpooling

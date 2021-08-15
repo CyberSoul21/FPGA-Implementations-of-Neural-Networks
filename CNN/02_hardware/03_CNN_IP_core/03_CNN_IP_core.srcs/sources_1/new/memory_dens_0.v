@@ -24,7 +24,17 @@ module memory_dens_0
 #(
     //memory filter
     parameter numWeightDense = 507, addressWidthDense=10, dataWidthDense=8,
-    parameter weightFileDense ="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/dens_0.mem"
+    parameter weightFileDense ="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/dens_0.mem",
+
+    //quantization
+//    parameter q = 64'd2014687024, //q = 31'b1111000000101011010111100110000
+//    parameter mask = 8'd255,
+//    parameter zero = 1'd0,
+//    parameter one = 1'd1,
+    parameter offset_ent =  1,
+    parameter offset_sor = -1,
+    parameter offset_fil =  0
+
 )
 ( 
     input clk,
@@ -45,7 +55,7 @@ module memory_dens_0
     begin
         if (en)
         begin
-            rdata <= register[addr];
+            rdata <= register[addr] + offset_fil;
         end
     end 
 endmodule

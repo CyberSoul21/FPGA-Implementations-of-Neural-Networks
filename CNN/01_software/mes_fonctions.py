@@ -139,12 +139,12 @@ def full_np(entree, poids, bias, output_multiplier, output_shift, offset_ent, of
 
     # Full-connected
     #----------------------------------
-    ent = entree #+ offset_ent;                             # de tflite: input_val + input_offset
-    poids[idx] = poids[idx] #+ offset_fil;                  # de tflite: filtre + filtre_offset
-    Wx_b = np.tensordot( ent, poids[idx] ) #+ bias[idx];    # W*x + b
-    print(Wx_b);
-    print(idx);
-    sys.exit(0);
+    ent = entree + offset_ent;                             # de tflite: input_val + input_offset
+    poids[idx] = poids[idx] + offset_fil;                  # de tflite: filtre + filtre_offset
+    Wx_b = np.tensordot( ent, poids[idx] ) + bias[idx];    # W*x + b
+    #print(Wx_b);
+    #print(idx);
+    #sys.exit(0);
     # À échelle réduite
     #----------------------------------    
     nom_int = c_int( int(Wx_b) );                          # Ctype int32_t       
@@ -156,7 +156,8 @@ def full_np(entree, poids, bias, output_multiplier, output_shift, offset_ent, of
     nom_int = nom_int + offset_sor;                        # de tflite: acc += output_offset
     nom_int = max( nom_int, min_val );                     # Clamp 
     nom_int = min( nom_int, max_val );                     # Clamp
-
+    #print(nom_int);
+    #sys.exit(0);
     full_vec.append(nom_int);
 
   return full_vec;  

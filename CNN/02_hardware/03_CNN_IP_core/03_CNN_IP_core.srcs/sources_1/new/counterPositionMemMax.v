@@ -64,7 +64,7 @@ module counterPositionMemMax#(
         if(en && !once)
         begin
             count <= count + 4'd1;
-            if(count == (numWeightRstlMax - 1))
+            if(count == (numWeightRstlMax - 1 + 1 + 1))
             begin
                 count <= 4'd0;
                 once <= 1;                

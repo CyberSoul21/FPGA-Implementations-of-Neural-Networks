@@ -28,40 +28,43 @@ module memory_rstl_max_1
     parameter dataWidthImg= 16,
     parameter numWeightRstlConv = 507,
     parameter addressWidthRstlConv = 10, 
-    parameter dataWidthRstlConv = 8
+    parameter dataWidthRstlConv = 8,
+    
+    //quantization
+//    parameter q = 64'd2014687024, //q = 31'b1111000000101011010111100110000
+//    parameter mask = 8'd255,
+//    parameter zero = 1'd0,
+//    parameter one = 1'd1,
+    parameter offset_ent =  1,
+    parameter offset_sor = -1,
+    parameter offset_fil =  0    
 )
 ( 
     input clk,
+    input clk_div,
     input wen,
-//    input ren,
+    input ren,
     input [addressWidthRstlConv-1:0] wadd1,
     input [addressWidthRstlConv-1:0] wadd2,
     input [addressWidthRstlConv-1:0] wadd3,
-//    input [addressWidthRstlConv-1:0] radd1,
-//    input [addressWidthRstlConv-1:0] radd2,
+    input [addressWidthRstlConv-1:0] radd,
+
     input signed [dataWidthRstlConv-1:0] data_in1,
     input signed [dataWidthRstlConv-1:0] data_in2,
-    input signed [dataWidthRstlConv-1:0] data_in3
+    input signed [dataWidthRstlConv-1:0] data_in3,
 
-//    output reg [dataWidthImg-1:0] rdata0,
-//    output reg [dataWidthImg-1:0] rdata1,
-//    output reg [dataWidthImg-1:0] rdata2,
-//    output reg [dataWidthImg-1:0] rdata3 
+    output reg [dataWidthRstlConv-1:0] rdata
 
 );
     
     reg [dataWidthRstlConv-1:0] mem [numWeightRstlConv-1:0];
 
-//    wire [11-1:0] p_img_0;
-//    wire [11-1:0] p_img_1;
-//    wire [11-1:0] p_img_2;
-//    wire [11-1:0] p_img_3;
+    wire [addressWidthRstlConv-1:0] radd_wire;
+
     
    
-//    assign p_img_0 = (radd2 + 0) + (radd1*n_c);
-//    assign p_img_1 = (radd2 + 1) + (radd1*n_c);
-//    assign p_img_2 = (radd2 + 26) + (radd1*n_c);
-//    assign p_img_3 = (radd2 + 27) + (radd1*n_c);        
+    assign radd_wire = radd;
+       
 
 
     always @(posedge clk)
@@ -78,15 +81,12 @@ module memory_rstl_max_1
 	   end
 	end 
     
-//    always @(posedge clk)
-//    begin
-//        if (ren)
-//        begin
-//            rdata0 <= mem[p_img_0];
-//            rdata1 <= mem[p_img_1];
-//            rdata2 <= mem[p_img_2];
-//            rdata3 <= mem[p_img_3];
-//        end
-//    end 
+    always @(posedge clk_div)
+    begin
+        if (ren)
+        begin
+            rdata <= mem[radd_wire] + offset_ent;
+        end
+    end 
     
 endmodule

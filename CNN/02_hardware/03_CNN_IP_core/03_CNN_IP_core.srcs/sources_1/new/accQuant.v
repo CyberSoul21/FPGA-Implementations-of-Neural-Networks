@@ -26,7 +26,7 @@ module accQuant
     parameter numWeightRstlConv = 676,
     parameter numWeightRstlMax = 507,
     parameter addressWidthCount=10,
-    parameter dataWidthCount=10, dataWidthMen=16, dataWidthMenConv = 8
+    parameter dataWidthCount=10, dataWidthMen=16, dataWidthMenConv = 8, dataWidthMenMax = 8
     
 )
 (
@@ -154,7 +154,15 @@ module accQuant
     reg dis_write_conv;
     reg en_read_conv;
     reg en_dense;
+
+    
     wire [dataWidthCount-1:0] pos_memory_max;
+    
+    wire [dataWidthMenMax-1:0] data_max;
+    wire [dataWidthMenMax-1:0] data_dens_weight;
+    
+        
+    wire den_ok_0;
     
     initial
     begin
@@ -498,20 +506,17 @@ module accQuant
     memory_rstl_max_1 save_max_1
     (
         .clk(clk),
+        .clk_div(clk_div_dens),
         .wen(save_rstl_max1 & 1), //dis_write_max
-//        .ren(en_count_max & en_read_conv),
+        .ren(en_dense),
         .wadd1(pos_rstl_max1),
         .wadd2(pos_rstl_max2),
         .wadd3(pos_rstl_max3),
-//        .radd1(row_i_max),
-//        .radd2(col_j_max),
+        .radd(pos_memory_max),
         .data_in1(max1),
         .data_in2(max2),
-        .data_in3(max3)
-//        .rdata0(rdata_conv1_0),
-//        .rdata1(rdata_conv1_1),
-//        .rdata2(rdata_conv1_2),
-//        .rdata3(rdata_conv1_3)
+        .data_in3(max3),
+        .rdata(data_max)
      );
      
 
@@ -536,15 +541,26 @@ module accQuant
      
      );
      
-     full_connected dense
+     
+    memory_dens_0 mem_dens_0
+    
+    ( 
+        .clk(clk_div_dens), //clk_div_dens
+        .en(en_dense),
+        .addr(pos_memory_max),
+        .rdata(data_dens_weight)
+    );     
+     
+     full_connected dense_0
      (
         .clk(clk),
         .clk_div(clk_div_dens),
         .en(en_dense),
         .rst(rst),
         .pos_memory(pos_memory_max),
-        .rdata_max(),
-        .rdata_weight()        
+        .idata_max(data_max),
+        .idata_weight(data_dens_weight),
+        .den_ok(den_ok_0)        
      );
         
 
@@ -582,7 +598,7 @@ module accQuant
 	   begin
            en_dense <= 1; 
 	   end
-	   if ((pos_memory_max == (numWeightRstlMax -1)))
+	   if ((pos_memory_max == (numWeightRstlMax -1 + 1 +1)))
 	   begin
            en_dense <= 0; 
 	   end	   

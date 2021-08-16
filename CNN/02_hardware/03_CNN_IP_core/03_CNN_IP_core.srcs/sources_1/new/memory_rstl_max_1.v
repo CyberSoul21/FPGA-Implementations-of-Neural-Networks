@@ -27,6 +27,7 @@ module memory_rstl_max_1
     parameter n_r = 5'd26,  //number of rows matrix image 
     parameter dataWidthImg= 16,
     parameter numWeightRstlConv = 507,
+    //parameter numWeightRstlConv = 169,
     parameter addressWidthRstlConv = 10, 
     parameter dataWidthRstlConv = 8,
     
@@ -56,14 +57,18 @@ module memory_rstl_max_1
     output reg [dataWidthRstlConv-1:0] rdata
 
 );
-    
-    reg [dataWidthRstlConv-1:0] mem [numWeightRstlConv-1:0];
+   
+    reg [dataWidthRstlConv-1:0] mem_rstl_max[numWeightRstlConv-1:0];
 
-    wire [addressWidthRstlConv-1:0] radd_wire;
+//    reg [dataWidthRstlConv-1:0] mem_rstl_max1[numWeightRstlConv-1:0];
+//    reg [dataWidthRstlConv-1:0] mem_rstl_max2[numWeightRstlConv-1:0];
+//    reg [dataWidthRstlConv-1:0] mem_rstl_max3[numWeightRstlConv-1:0];
+
+//    wire [addressWidthRstlConv-1:0] radd_wire;
 
     
    
-    assign radd_wire = radd;
+    //assign radd_wire = radd;
        
 
 
@@ -71,21 +76,72 @@ module memory_rstl_max_1
 	begin
 	   if (wen & (wadd1 < numWeightRstlConv))
 	   begin
-	       mem[wadd1] <= data_in1;
-	       mem[wadd2] <= data_in2;
-	       mem[wadd3] <= data_in3;
+	       mem_rstl_max[wadd1] <= data_in1;
+	       mem_rstl_max[wadd2] <= data_in2;
+	       mem_rstl_max[wadd3] <= data_in3;
 	       $display("wadd1_max1, %d",wadd1,data_in1);
 	       $display("wadd1_max1, %d",wadd2,data_in2);
 	       $display("wadd1_max1, %d",wadd3,data_in3); 
 
 	   end
 	end 
+
+//    always @(posedge clk)
+//	begin
+//	   if (wen & (wadd3 < numWeightRstlConv) & (wadd3%3 == 0))
+//	   begin
+//	       mem_rstl_max1[wadd3] <= data_in1;
+
+//	   end
+//	end
+	
+//    always @(posedge clk)
+//	begin
+//	   if (wen & (wadd3 < numWeightRstlConv) & (wadd3%3 == 1))
+//	   begin
+
+//	       mem_rstl_max1[wadd3] <= data_in2;
+//	   end
+//	end	
+	
+//    always @(posedge clk)
+//	begin
+//	   if (wen & (wadd3 < numWeightRstlConv) & (wadd3%3 == 2))
+//	   begin
+
+//	       mem_rstl_max1[wadd3] <= data_in3;
+//	   end
+//	end		
+
+
+//    always @(posedge clk_div)
+//    begin
+//        if (ren)
+//        begin
+//            if(radd%3 == 0)
+//                rdata <= mem_rstl_max1[radd] + offset_ent;
+//            if(radd%3 == 1)
+//                rdata <= mem_rstl_max2[radd] + offset_ent;
+//            if(radd%3 == 2)
+//                rdata <= mem_rstl_max3[radd] + offset_ent;                                
+//        end
+//    end 
+
+//    always @(posedge clk_div)
+//    begin
+//        if (ren)
+//        begin
+//            rdata <= mem_rstl_max1[radd] + offset_ent;
+//        end
+//    end 
+
+		
     
     always @(posedge clk_div)
     begin
         if (ren)
         begin
-            rdata <= mem[radd_wire] + offset_ent;
+            rdata <= mem_rstl_max[radd] + offset_ent;
         end
     end 
     

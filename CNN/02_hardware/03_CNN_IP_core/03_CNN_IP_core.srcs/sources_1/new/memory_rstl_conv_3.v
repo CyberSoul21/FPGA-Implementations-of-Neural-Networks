@@ -39,14 +39,14 @@ module memory_rstl_conv_3
     input [addressWidthRstlConv-1:0] radd2,
     input signed [dataWidthRstlConv-1:0] data_in,
 
-    output reg [dataWidthImg-1:0] rdata0,
-    output reg [dataWidthImg-1:0] rdata1,
-    output reg [dataWidthImg-1:0] rdata2,
-    output reg [dataWidthImg-1:0] rdata3 
+    output reg [dataWidthRstlConv-1:0] rdata0,
+    output reg [dataWidthRstlConv-1:0] rdata1,
+    output reg [dataWidthRstlConv-1:0] rdata2,
+    output reg [dataWidthRstlConv-1:0] rdata3 
 
 );
     
-    reg [dataWidthRstlConv-1:0] mem [numWeightRstlConv-1:0];
+    reg [dataWidthRstlConv-1:0] mem_rstl_conv3 [numWeightRstlConv-1:0];
 
     wire [11-1:0] p_img_0;
     wire [11-1:0] p_img_1;
@@ -63,7 +63,7 @@ module memory_rstl_conv_3
 	begin
 	   if (wen & (wadd < numWeightRstlConv))
 	   begin
-	       mem[wadd] <= data_in;
+	       mem_rstl_conv3[wadd] <= data_in;
 	       //$display("wadd3, %d",wadd,data_in); 
 
 	   end
@@ -73,10 +73,10 @@ module memory_rstl_conv_3
     begin
         if (ren)
         begin
-            rdata0 <= mem[p_img_0];
-            rdata1 <= mem[p_img_1];
-            rdata2 <= mem[p_img_2];
-            rdata3 <= mem[p_img_3];
+            rdata0 <= mem_rstl_conv3[p_img_0];
+            rdata1 <= mem_rstl_conv3[p_img_1];
+            rdata2 <= mem_rstl_conv3[p_img_2];
+            rdata3 <= mem_rstl_conv3[p_img_3];
         end
     end 
 endmodule

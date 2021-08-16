@@ -26,14 +26,19 @@ module accQuant
     parameter numWeightRstlConv = 676,
     parameter numWeightRstlMax = 507,
     parameter addressWidthCount=10,
-    parameter dataWidthCount=10, dataWidthMen=16, dataWidthMenConv = 8, dataWidthMenMax = 8
+    parameter dataWidthCount=10, dataWidthMen=16, dataWidthMenConv = 8, dataWidthMenMax = 8, dataWidthNumDens = 8 
+    
     
 )
 (
     input clk,
     input en, 
     input rst, 
-    output out
+    output [7:0]out
+//    output [7:0]out1,
+//    output [7:0]out2,
+//    output [7:0]out3
+//    output [7:0]out4
 );
 
 
@@ -159,11 +164,64 @@ module accQuant
     wire [dataWidthCount-1:0] pos_memory_max;
     
     wire [dataWidthMenMax-1:0] data_max;
-    wire [dataWidthMenMax-1:0] data_dens_weight;
+    
     
         
-    wire den_ok_0;
+    wire den_ok_0; 
+    wire quant_ok_0;   
+    wire [dataWidthNumDens-1:0] num_dens_0;
+    wire [dataWidthMenMax-1:0] data_dens_weight_0;
     
+    wire den_ok_1;    
+    wire quant_ok_1;
+    wire [dataWidthNumDens-1:0] num_dens_1;
+    wire [dataWidthMenMax-1:0] data_dens_weight_1;
+    
+//    wire den_ok_2;
+//    wire quant_ok_2;    
+//    wire [dataWidthNumDens-1:0] num_dens_2;
+//    wire [dataWidthMenMax-1:0] data_dens_weight_2;
+
+//    wire den_ok_3;
+//    wire quant_ok_3;    
+//    wire [dataWidthNumDens-1:0] num_dens_3;
+//    wire [dataWidthMenMax-1:0] data_dens_weight_3;
+        
+//    wire den_ok_4;
+//    wire quant_ok_4;    
+//    wire [dataWidthNumDens-1:0] num_dens_4;                    
+//    wire [dataWidthMenMax-1:0] data_dens_weight_4;        
+        
+//    wire den_ok_5;
+//    wire quant_ok_5;    
+//    wire [dataWidthNumDens-1:0] num_dens_5;                    
+//    wire [dataWidthMenMax-1:0] data_dens_weight_5;
+    
+//    wire den_ok_6;
+//    wire quant_ok_6;    
+//    wire [dataWidthNumDens-1:0] num_dens_6;                    
+//    wire [dataWidthMenMax-1:0] data_dens_weight_6;
+    
+//    wire den_ok_7;
+//    wire quant_ok_7;    
+//    wire [dataWidthNumDens-1:0] num_dens_7;                    
+//    wire [dataWidthMenMax-1:0] data_dens_weight_7;
+    
+//    wire den_ok_8;
+//    wire quant_ok_8;    
+//    wire [dataWidthNumDens-1:0] num_dens_8;                    
+//    wire [dataWidthMenMax-1:0] data_dens_weight_8;
+    
+    
+//    wire den_ok_9;
+//    wire quant_ok_9;    
+//    wire [dataWidthNumDens-1:0] num_dens_9;                    
+//    wire [dataWidthMenMax-1:0] data_dens_weight_9;
+    
+    
+    
+
+
     initial
     begin
         en_dense = 0;
@@ -222,6 +280,7 @@ module accQuant
     (
         .clk(clk_div),
         .en(en_count),
+        .addr(0),
         .rdata0(rdata_filt1_0),
         .rdata1(rdata_filt1_1),
         .rdata2(rdata_filt1_2),
@@ -234,10 +293,12 @@ module accQuant
         .bias(bias_filt1)
     );
     
+        
     memory_filter_2 filter2
     (
         .clk(clk_div),
         .en(en_count),
+        .addr(0),
         .rdata0(rdata_filt2_0),
         .rdata1(rdata_filt2_1),
         .rdata2(rdata_filt2_2),
@@ -254,6 +315,7 @@ module accQuant
     (
         .clk(clk_div),
         .en(en_count),
+        .addr(0),
         .rdata0(rdata_filt3_0),
         .rdata1(rdata_filt3_1),
         .rdata2(rdata_filt3_2),
@@ -448,7 +510,7 @@ module accQuant
     );            
   
 
-    counterPositionRstlMax pos_memory_Max
+    counterPositionRstlMax pos_memory_Max_count
     (
         .clk(clk_div_max),
         .rst(rst),
@@ -548,10 +610,10 @@ module accQuant
         .clk(clk_div_dens), //clk_div_dens
         .en(en_dense),
         .addr(pos_memory_max),
-        .rdata(data_dens_weight)
+        .rdata(data_dens_weight_0)
     );     
      
-     full_connected dense_0
+     full_connected #(.bias(-16'd48)) dense_0
      (
         .clk(clk),
         .clk_div(clk_div_dens),
@@ -559,10 +621,209 @@ module accQuant
         .rst(rst),
         .pos_memory(pos_memory_max),
         .idata_max(data_max),
-        .idata_weight(data_dens_weight),
-        .den_ok(den_ok_0)        
+        .idata_weight(data_dens_weight_0),
+        .num_dens(num_dens_0),
+        .den_ok(den_ok_0),
+        .quant_ok(quant_ok_0)        
      );
+     
+
+    memory_dens_1 mem_dens_1   
+    ( 
+        .clk(clk_div_dens), //clk_div_dens
+        .en(en_dense),
+        .addr(pos_memory_max),
+        .rdata(data_dens_weight_1)
+    );     
+     
+     full_connected #(.bias(16'd1081)) dense_1
+     (
+        .clk(clk),
+        .clk_div(clk_div_dens),
+        .en(en_dense),
+        .rst(rst),
+        .pos_memory(pos_memory_max),
+        .idata_max(data_max),
+        .idata_weight(data_dens_weight_1),
+        .num_dens(num_dens_1),
+        .den_ok(den_ok_1),
+        .quant_ok(quant_ok_1)       
+     );     
+     
+//    memory_dens_2 mem_dens_2   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_2)
+//    );     
+     
+//     full_connected #(.bias(-16'd146)) dense_2
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_2),
+//        .num_dens(num_dens_2),
+//        .den_ok(den_ok_2),
+//        .quant_ok(quant_ok_2)        
+//     );     
+     
+//    memory_dens_3 mem_dens_3   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_3)
+//    );     
+     
+//     full_connected #(.bias(-16'd256)) dense_3
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_3),
+//        .num_dens(num_dens_3),
+//        .den_ok(den_ok_3),
+//        .quant_ok(quant_ok_3)        
+//     );      
         
+//    memory_dens_4 mem_dens_4   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_4)
+//    );     
+     
+//     full_connected #(.bias(-16'd109)) dense_4
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_4),
+//        .num_dens(num_dens_4),
+//        .den_ok(den_ok_4)        
+//     );  
+
+
+//    memory_dens_5 mem_dens_5   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_5)
+//    );     
+     
+//     full_connected #(.bias(-16'd48)) dense_5
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_5),
+//        .num_dens(num_dens_5),
+//        .den_ok(den_ok_5)        
+//     );  
+
+
+//    memory_dens_6 mem_dens_6   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_6)
+//    );     
+     
+//     full_connected #(.bias(-16'd48)) dense_6
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_6),
+//        .num_dens(num_dens_6),
+//        .den_ok(den_ok_6)        
+//     );  
+
+
+//    memory_dens_7 mem_dens_7   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_7)
+//    );     
+     
+//     full_connected #(.bias(-16'd48)) dense_7
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_7),
+//        .num_dens(num_dens_7),
+//        .den_ok(den_ok_7)        
+//     );  
+
+
+//    memory_dens_8 mem_dens_8   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_8)
+//    );     
+     
+//     full_connected #(.bias(-16'd48)) dense_8
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_8),
+//        .num_dens(num_dens_8),
+//        .den_ok(den_ok_8)        
+//     );  
+
+
+//    memory_dens_9 mem_dens_9   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_9)
+//    );     
+     
+//     full_connected #(.bias(-16'd48)) dense_9
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_9),
+//        .num_dens(num_dens_9),
+//        .den_ok(den_ok_9)        
+//     );         
 
 
     always @(posedge clk_div)
@@ -598,7 +859,7 @@ module accQuant
 	   begin
            en_dense <= 1; 
 	   end
-	   if ((pos_memory_max == (numWeightRstlMax -1 + 1 +1)))
+	   if ((pos_memory_max == (numWeightRstlMax -1 + 1 + 1)))
 	   begin
            en_dense <= 0; 
 	   end	   
@@ -607,7 +868,12 @@ module accQuant
 
 
 
- 
+//    assign out = num_dens_0 & num_dens_1 & num_dens_2 & num_dens_3 & num_dens_4 & num_dens_5 & num_dens_6 & num_dens_7 & num_dens_8 & num_dens_9;
+    assign out = num_dens_0 & num_dens_1;
+//    assign out1 = num_dens_1;
+//    assign out2 = num_dens_2;
+//    assign out3 = num_dens_3;
+//    assign out4 = num_dens_4;
 
     //assign out = max1[0] & max2[0] & max3[0]; 
 

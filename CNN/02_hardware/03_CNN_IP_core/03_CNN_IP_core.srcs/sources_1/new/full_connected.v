@@ -55,7 +55,9 @@ module full_connected#(
     input[dataWidthCount-1:0] pos_memory,
     input [dataWidthMax-1:0] idata_max,
     input [dataWidthMax-1:0] idata_weight,
-    output reg den_ok
+    output [dataWidthMax-1:0] num_dens,
+    output reg den_ok,
+    output quant_ok
 );
 
 
@@ -69,10 +71,10 @@ module full_connected#(
     reg  [dataWidthAux-1:0] aux_weight;
     
     //reg den_ok;
-    reg rst_quant;
+    //reg rst_quant;
     reg  [63:0] num;
     wire [8:0] num_quant;
-    wire quant_ok;
+    wire quant_ok_wire;
     
 
 
@@ -82,7 +84,7 @@ module full_connected#(
         .rst(~den_ok),
         .a(num),
         .num_quant(num_quant),
-        .sig_ok(quant_ok)
+        .sig_ok(quant_ok_wire)
     );
 
 
@@ -92,7 +94,8 @@ module full_connected#(
         rstl_sum <= 0;
         rstl_mult <= 0;
         den_ok <= 0;
-        rst_quant <= 0;
+        num <= 0;
+        //rst_quant <= 0;
 
     end
   
@@ -104,6 +107,12 @@ module full_connected#(
             present_state <= s0;    
 
         end
+//        if(rst)
+//        begin
+//            present_state <= s0;
+//            rstl_sum <= 0;
+//            rstl_mult <= 0;
+//        end        
         else
         begin
             present_state <= next_state;
@@ -120,7 +129,7 @@ module full_connected#(
                     next_state <= s2;
                 s2:
                     next_state <= s3;
-                                                                                               
+                                                                          
             endcase 
         end               
     end
@@ -144,19 +153,19 @@ module full_connected#(
             if(pos_memory == (numWeightRstlMax - 1 + 1 +1))
             begin
                 den_ok <= 1;
-                rst_quant <= 1;
+                //rst_quant <= 1;
                 num <= $signed(rstl_sum + bias);                
             end                
-            end              
- 
-
-                                                            
+            end
+                                     
       endcase
     end   
     end
     
+  
     
-    
+    assign quant_ok = quant_ok_wire;   
+    assign num_dens = $signed(num_quant + offset_sor);  
 
     
 endmodule

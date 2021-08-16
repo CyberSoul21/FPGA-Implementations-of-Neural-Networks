@@ -29,6 +29,7 @@ module memory_filter_1
 ( 
     input clk,
     input en,
+    input [addressWidthFilter-1:0] addr,
     output reg [dataWidthFilter-1:0] rdata0,
     output reg [dataWidthFilter-1:0] rdata1,
     output reg [dataWidthFilter-1:0] rdata2,
@@ -43,26 +44,29 @@ module memory_filter_1
     
     reg [dataWidthFilter-1:0] register[numWeightFilter-1:0];
 
-
+    wire [addressWidthFilter-1:0] addr_wire;
+    
         initial
 		begin
 	        $readmemb(weightFileFilter, register);
 	    end
     
+    assign addr_wire = addr;
+    
     always @(posedge clk)
     begin
         if (en)
         begin
-            rdata0 <= register[0];
-            rdata1 <= register[1];
-            rdata2 <= register[2];
-            rdata3 <= register[3];
-            rdata4 <= register[4];
-            rdata5 <= register[5];
-            rdata6 <= register[6];
-            rdata7 <= register[7];
-            rdata8 <= register[8];
-            bias <= register[9];
+            rdata0 <= register[addr_wire + 4'd0];
+            rdata1 <= register[addr_wire + 4'd1];
+            rdata2 <= register[addr_wire + 4'd2];
+            rdata3 <= register[addr_wire + 4'd3];
+            rdata4 <= register[addr_wire + 4'd4];
+            rdata5 <= register[addr_wire + 4'd5];
+            rdata6 <= register[addr_wire + 4'd6];
+            rdata7 <= register[addr_wire + 4'd7];
+            rdata8 <= register[addr_wire + 4'd8];
+            bias <= register[addr_wire + 4'd9];
         end
     end 
 endmodule

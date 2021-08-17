@@ -57,7 +57,7 @@ class Platform(XilinxPlatform):
     default_clk_period = 1e9/125e6
 
     def __init__(self):
-        XilinxPlatform.__init__(self, "xc7z010-clg400-1", _io, toolchain="vivado") #Javier
+        XilinxPlatform.__init__(self, "xc7z020-clg400-1", _io, toolchain="vivado") #Javier
 
 # Create our platform (fpga interface)
 platform = Platform()     

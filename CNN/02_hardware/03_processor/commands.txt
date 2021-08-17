@@ -1,0 +1,12 @@
+iverilog -o name_file_generated name_tfileTarget.v
+./sim 
+
+python3 soc.py
+
+djtgcfg enum
+
+djtgcfg init -d ZYBO-Z7
+
+djtgcfg prog -d ZYBO-Z7 -i 1 -f /build/gateware/soc_Javier.bit
+
+litex_term /dev/ttyUSB0 --kernel firmware/firmware.bin

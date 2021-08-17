@@ -1,11 +1,11 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Aug  4 03:17:58 2021
+| Date         : Mon Aug 16 17:08:20 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_utilization -file Wrapper_utilization_place.rpt
 | Design       : Wrapper
-| Device       : 7z010clg400-1
+| Device       : 7z020clg400-1
 | Design State : Fully Placed
 ------------------------------------------------------------------------------------
 
@@ -31,16 +31,16 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs                 | 2328 |     0 |     17600 | 13.23 |
-|   LUT as Logic             | 2300 |     0 |     17600 | 13.07 |
-|   LUT as Memory            |   28 |     0 |      6000 |  0.47 |
+| Slice LUTs                 | 2319 |     0 |     53200 |  4.36 |
+|   LUT as Logic             | 2291 |     0 |     53200 |  4.31 |
+|   LUT as Memory            |   28 |     0 |     17400 |  0.16 |
 |     LUT as Distributed RAM |   28 |     0 |           |       |
 |     LUT as Shift Register  |    0 |     0 |           |       |
-| Slice Registers            | 1746 |     0 |     35200 |  4.96 |
-|   Register as Flip Flop    | 1746 |     0 |     35200 |  4.96 |
-|   Register as Latch        |    0 |     0 |     35200 |  0.00 |
-| F7 Muxes                   |    0 |     0 |      8800 |  0.00 |
-| F8 Muxes                   |    0 |     0 |      4400 |  0.00 |
+| Slice Registers            | 1746 |     0 |    106400 |  1.64 |
+|   Register as Flip Flop    | 1746 |     0 |    106400 |  1.64 |
+|   Register as Latch        |    0 |     0 |    106400 |  0.00 |
+| F7 Muxes                   |    0 |     0 |     26600 |  0.00 |
+| F8 Muxes                   |    0 |     0 |     13300 |  0.00 |
 +----------------------------+------+-------+-----------+-------+
 
 
@@ -69,25 +69,25 @@ Table of Contents
 +--------------------------------------------+------+-------+-----------+-------+
 |                  Site Type                 | Used | Fixed | Available | Util% |
 +--------------------------------------------+------+-------+-----------+-------+
-| Slice                                      |  713 |     0 |      4400 | 16.20 |
-|   SLICEL                                   |  470 |     0 |           |       |
-|   SLICEM                                   |  243 |     0 |           |       |
-| LUT as Logic                               | 2300 |     0 |     17600 | 13.07 |
-|   using O5 output only                     |    2 |       |           |       |
-|   using O6 output only                     | 1934 |       |           |       |
-|   using O5 and O6                          |  364 |       |           |       |
-| LUT as Memory                              |   28 |     0 |      6000 |  0.47 |
+| Slice                                      |  760 |     0 |     13300 |  5.71 |
+|   SLICEL                                   |  593 |     0 |           |       |
+|   SLICEM                                   |  167 |     0 |           |       |
+| LUT as Logic                               | 2291 |     0 |     53200 |  4.31 |
+|   using O5 output only                     |    1 |       |           |       |
+|   using O6 output only                     | 1917 |       |           |       |
+|   using O5 and O6                          |  373 |       |           |       |
+| LUT as Memory                              |   28 |     0 |     17400 |  0.16 |
 |   LUT as Distributed RAM                   |   28 |     0 |           |       |
 |     using O5 output only                   |    0 |       |           |       |
 |     using O6 output only                   |    0 |       |           |       |
 |     using O5 and O6                        |   28 |       |           |       |
 |   LUT as Shift Register                    |    0 |     0 |           |       |
-| Slice Registers                            | 1746 |     0 |     35200 |  4.96 |
-|   Register driven from within the Slice    |  981 |       |           |       |
-|   Register driven from outside the Slice   |  765 |       |           |       |
-|     LUT in front of the register is unused |  243 |       |           |       |
-|     LUT in front of the register is used   |  522 |       |           |       |
-| Unique Control Sets                        |   61 |       |      4400 |  1.39 |
+| Slice Registers                            | 1746 |     0 |    106400 |  1.64 |
+|   Register driven from within the Slice    |  986 |       |           |       |
+|   Register driven from outside the Slice   |  760 |       |           |       |
+|     LUT in front of the register is unused |  297 |       |           |       |
+|     LUT in front of the register is used   |  463 |       |           |       |
+| Unique Control Sets                        |   61 |       |     13300 |  0.46 |
 +--------------------------------------------+------+-------+-----------+-------+
 * Note: Available Control Sets calculated as Slice Registers / 8, Review the Control Sets Report for more information regarding control sets.
 
@@ -98,10 +98,10 @@ Table of Contents
 +-------------------+------+-------+-----------+-------+
 |     Site Type     | Used | Fixed | Available | Util% |
 +-------------------+------+-------+-----------+-------+
-| Block RAM Tile    |   19 |     0 |        60 | 31.67 |
-|   RAMB36/FIFO*    |   15 |     0 |        60 | 25.00 |
+| Block RAM Tile    |   19 |     0 |       140 | 13.57 |
+|   RAMB36/FIFO*    |   15 |     0 |       140 | 10.71 |
 |     RAMB36E1 only |   15 |       |           |       |
-|   RAMB18          |    8 |     0 |       120 |  6.67 |
+|   RAMB18          |    8 |     0 |       280 |  2.86 |
 |     RAMB18E1 only |    8 |       |           |       |
 +-------------------+------+-------+-----------+-------+
 * Note: Each Block RAM Tile only has one FIFO logic available and therefore can accommodate only one FIFO36E1 or one FIFO18E1. However, if a FIFO18E1 occupies a Block RAM Tile, that tile can still accommodate a RAMB18E1
@@ -113,7 +113,7 @@ Table of Contents
 +----------------+------+-------+-----------+-------+
 |    Site Type   | Used | Fixed | Available | Util% |
 +----------------+------+-------+-----------+-------+
-| DSPs           |    4 |     0 |        80 |  5.00 |
+| DSPs           |    4 |     0 |       220 |  1.82 |
 |   DSP48E1 only |    4 |       |           |       |
 +----------------+------+-------+-----------+-------+
 
@@ -124,22 +124,22 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |    4 |     4 |       100 |  4.00 |
+| Bonded IOB                  |    4 |     4 |       125 |  3.20 |
 |   IOB Master Pads           |    3 |       |           |       |
 |   IOB Slave Pads            |    1 |       |           |       |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
-| PHY_CONTROL                 |    0 |     0 |         2 |  0.00 |
-| PHASER_REF                  |    0 |     0 |         2 |  0.00 |
-| OUT_FIFO                    |    0 |     0 |         8 |  0.00 |
-| IN_FIFO                     |    0 |     0 |         8 |  0.00 |
-| IDELAYCTRL                  |    0 |     0 |         2 |  0.00 |
-| IBUFDS                      |    0 |     0 |        96 |  0.00 |
-| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |         8 |  0.00 |
-| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |         8 |  0.00 |
-| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       100 |  0.00 |
-| ILOGIC                      |    0 |     0 |       100 |  0.00 |
-| OLOGIC                      |    0 |     0 |       100 |  0.00 |
+| PHY_CONTROL                 |    0 |     0 |         4 |  0.00 |
+| PHASER_REF                  |    0 |     0 |         4 |  0.00 |
+| OUT_FIFO                    |    0 |     0 |        16 |  0.00 |
+| IN_FIFO                     |    0 |     0 |        16 |  0.00 |
+| IDELAYCTRL                  |    0 |     0 |         4 |  0.00 |
+| IBUFDS                      |    0 |     0 |       121 |  0.00 |
+| PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        16 |  0.00 |
+| PHASER_IN/PHASER_IN_PHY     |    0 |     0 |        16 |  0.00 |
+| IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       200 |  0.00 |
+| ILOGIC                      |    0 |     0 |       125 |  0.00 |
+| OLOGIC                      |    0 |     0 |       125 |  0.00 |
 +-----------------------------+------+-------+-----------+-------+
 
 
@@ -150,12 +150,12 @@ Table of Contents
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
 | BUFGCTRL   |    1 |     0 |        32 |  3.13 |
-| BUFIO      |    0 |     0 |         8 |  0.00 |
-| MMCME2_ADV |    0 |     0 |         2 |  0.00 |
-| PLLE2_ADV  |    0 |     0 |         2 |  0.00 |
-| BUFMRCE    |    0 |     0 |         4 |  0.00 |
-| BUFHCE     |    0 |     0 |        48 |  0.00 |
-| BUFR       |    0 |     0 |         8 |  0.00 |
+| BUFIO      |    0 |     0 |        16 |  0.00 |
+| MMCME2_ADV |    0 |     0 |         4 |  0.00 |
+| PLLE2_ADV  |    0 |     0 |         4 |  0.00 |
+| BUFMRCE    |    0 |     0 |         8 |  0.00 |
+| BUFHCE     |    0 |     0 |        72 |  0.00 |
+| BUFR       |    0 |     0 |        16 |  0.00 |
 +------------+------+-------+-----------+-------+
 
 

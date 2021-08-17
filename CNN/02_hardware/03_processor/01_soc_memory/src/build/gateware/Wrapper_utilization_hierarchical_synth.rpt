@@ -1,11 +1,11 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Aug  4 03:17:43 2021
+| Date         : Mon Aug 16 17:08:05 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_utilization -hierarchical -file Wrapper_utilization_hierarchical_synth.rpt
 | Design       : Wrapper
-| Device       : 7z010clg400-1
+| Device       : 7z020clg400-1
 | Design State : Synthesized
 ---------------------------------------------------------------------------------------------------
 

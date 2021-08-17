@@ -1,4 +1,4 @@
-create_project -force -name Wrapper -part xc7z010-clg400-1
+create_project -force -name Wrapper -part xc7z020-clg400-1
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 add_files {Wrapper.v}
 set_property library work [get_files {Wrapper.v}]
@@ -7,7 +7,7 @@ set_property library work [get_files {imports/home/javier/Documents/fpga_impleme
 add_files {imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
 set_property library work [get_files {imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}]
 read_xdc Wrapper.xdc
-synth_design -top Wrapper -part xc7z010-clg400-1
+synth_design -top Wrapper -part xc7z020-clg400-1
 report_timing_summary -file Wrapper_timing_synth.rpt
 report_utilization -hierarchical -file Wrapper_utilization_hierarchical_synth.rpt
 report_utilization -file Wrapper_utilization_synth.rpt

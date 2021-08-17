@@ -1,11 +1,11 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Wed Aug  4 03:18:22 2021
+| Date         : Mon Aug 16 17:08:48 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_drc -file Wrapper_drc.rpt
 | Design       : Wrapper
-| Device       : xc7z010clg400-1
+| Device       : xc7z020clg400-1
 | Speed File   : -1
 | Design State : Fully Routed
 ------------------------------------------------------------------------------------

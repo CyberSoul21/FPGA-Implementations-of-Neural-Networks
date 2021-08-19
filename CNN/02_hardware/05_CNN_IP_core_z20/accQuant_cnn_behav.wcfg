@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="accQuant_testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="accQuant_testbench" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="3674213fs"></ZoomEndTime>
+      <Cursor1Time time="1000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="124"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/clk_div">
+      <obj_property name="ElementShortName">clk_div</obj_property>
+      <obj_property name="ObjectShortName">clk_div</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/en">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider84" type="divider">
+      <obj_property name="label">Convolution</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group83">
+      <obj_property name="label">Convolution</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="divider85" type="divider">
+         <obj_property name="label">Position Image</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#808080</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/col_j">
+         <obj_property name="ElementShortName">col_j[9:0]</obj_property>
+         <obj_property name="ObjectShortName">col_j[9:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/row_i">
+         <obj_property name="ElementShortName">row_i[9:0]</obj_property>
+         <obj_property name="ObjectShortName">row_i[9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider85" type="divider">
+         <obj_property name="label">Position rst conv</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#808080</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/pos_rstl">
+         <obj_property name="ElementShortName">pos_rstl[9:0]</obj_property>
+         <obj_property name="ObjectShortName">pos_rstl[9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider85" type="divider">
+         <obj_property name="label">Signals Control</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#808080</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_count">
+         <obj_property name="ElementShortName">en_count</obj_property>
+         <obj_property name="ObjectShortName">en_count</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/dis_write_conv">
+         <obj_property name="ElementShortName">dis_write_conv</obj_property>
+         <obj_property name="ObjectShortName">dis_write_conv</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_read_conv">
+         <obj_property name="ElementShortName">en_read_conv</obj_property>
+         <obj_property name="ObjectShortName">en_read_conv</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/save_rstl_1">
+         <obj_property name="ElementShortName">save_rstl_1</obj_property>
+         <obj_property name="ObjectShortName">save_rstl_1</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider85" type="divider">
+         <obj_property name="label">Op Conv</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#808080</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/conv1/present_state">
+         <obj_property name="ElementShortName">present_state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">present_state[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/num_final_1">
+         <obj_property name="ElementShortName">num_final_1[7:0]</obj_property>
+         <obj_property name="ObjectShortName">num_final_1[7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/pos_rstl_max3">
+      <obj_property name="ElementShortName">pos_rstl_max3[9:0]</obj_property>
+      <obj_property name="ObjectShortName">pos_rstl_max3[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>

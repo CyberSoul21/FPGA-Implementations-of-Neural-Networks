@@ -1,0 +1,4 @@
+Running: xsim.dir/accQuant_testbench_behav/xsimk -simmode gui -wdb accQuant_testbench_behav.wdb -simrunnum 0 -socket 47485
+Design successfully loaded
+Design Loading Memory Usage: 44308 KB (Peak: 44308 KB)
+Design Loading CPU Usage: 10 ms

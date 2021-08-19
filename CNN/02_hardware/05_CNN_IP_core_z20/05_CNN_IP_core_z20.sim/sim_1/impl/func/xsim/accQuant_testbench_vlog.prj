@@ -1,0 +1,7 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"accQuant_testbench_func_impl.v" \
+"../../../../../05_CNN_IP_core_z20.srcs/sim_1/new/accQuant_testbench.v" \
+
+# Do not sort compile order
+nosort

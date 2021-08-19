@@ -48,6 +48,7 @@ module accQuant_testbench;
     begin
     clk = 0;
     rst = 0;
+    en = 0;
 
 
 
@@ -59,7 +60,7 @@ module accQuant_testbench;
 
     initial begin
       #0 rst = 1;
-      #5 en = 0;
+      #5 en = 1;
       #5 rst = 0;
 
          

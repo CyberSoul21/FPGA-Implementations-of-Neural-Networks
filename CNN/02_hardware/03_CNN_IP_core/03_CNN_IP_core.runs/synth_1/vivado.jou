@@ -2,8 +2,8 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Mon Aug 16 09:07:54 2021
-# Process ID: 21560
+# Start of session at: Tue Aug 17 01:14:53 2021
+# Process ID: 1201
 # Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.runs/synth_1
 # Command line: vivado -log accQuant.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source accQuant.tcl
 # Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.runs/synth_1/accQuant.vds

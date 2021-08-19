@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1629400825">
+  <File Type="PA-TCL" Name="accQuant_cnn.tcl"/>
+  <File Type="REPORTS-TCL" Name="accQuant_cnn_reports.tcl"/>
+  <File Type="OPT-DCP" Name="accQuant_cnn_opt.dcp"/>
+  <File Type="OPT-DRC" Name="accQuant_cnn_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="accQuant_cnn.hwdef"/>
+  <File Type="PWROPT-DCP" Name="accQuant_cnn_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="accQuant_cnn_placed.dcp"/>
+  <File Type="PLACE-IO" Name="accQuant_cnn_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="accQuant_cnn_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="accQuant_cnn_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="accQuant_cnn_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="accQuant_cnn_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="accQuant_cnn_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="accQuant_cnn_physopt.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="accQuant_cnn_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="accQuant_cnn_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="accQuant_cnn_routed_bb.dcp"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="BG-BIT" Name="accQuant_cnn.bit"/>
+  <File Type="ROUTE-BUS-SKEW" Name="accQuant_cnn_bus_skew_routed.rpt"/>
+  <File Type="BITSTR-MSK" Name="accQuant_cnn.msk"/>
+  <File Type="BITSTR-RBT" Name="accQuant_cnn.rbt"/>
+  <File Type="BITSTR-NKY" Name="accQuant_cnn.nky"/>
+  <File Type="BITSTR-BMM" Name="accQuant_cnn_bd.bmm"/>
+  <File Type="PDI-FILE" Name="accQuant_cnn.pdi"/>
+  <File Type="ROUTE-DRC" Name="accQuant_cnn_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="accQuant_cnn.mmi"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="accQuant_cnn_postroute_physopt.dcp"/>
+  <File Type="ROUTE-DRC-PB" Name="accQuant_cnn_drc_routed.pb"/>
+  <File Type="BG-BGN" Name="accQuant_cnn.bgn"/>
+  <File Type="BG-BIN" Name="accQuant_cnn.bin"/>
+  <File Type="RCFI_FILE" Name="accQuant_cnn.rcfi"/>
+  <File Type="RDI-RDI" Name="accQuant_cnn.vdi"/>
+  <File Type="ROUTE-DRC-RPX" Name="accQuant_cnn_drc_routed.rpx"/>
+  <File Type="BG-DRC" Name="accQuant_cnn.drc"/>
+  <File Type="CFI_FILE" Name="accQuant_cnn.cfi"/>
+  <File Type="ROUTE-PWR" Name="accQuant_cnn_power_routed.rpt"/>
+  <File Type="BITSTR-SYSDEF" Name="accQuant_cnn.sysdef"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="accQuant_cnn_postroute_physopt_bb.dcp"/>
+  <File Type="NPI_FILE" Name="accQuant_cnn.npi"/>
+  <File Type="ROUTE-PWR-RPX" Name="accQuant_cnn_power_routed.rpx"/>
+  <File Type="RNPI_FILE" Name="accQuant_cnn.rnpi"/>
+  <File Type="ROUTE-PWR-SUM" Name="accQuant_cnn_power_summary_routed.pb"/>
+  <File Type="BITSTR-LTX" Name="accQuant_cnn.ltx"/>
+  <File Type="RBD_FILE" Name="accQuant_cnn.rbd"/>
+  <File Type="ROUTE-STATUS" Name="accQuant_cnn_route_status.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="accQuant_cnn_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="accQuant_cnn_bus_skew_routed.pb"/>
+  <File Type="ROUTE-CLK" Name="accQuant_cnn_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-TIMING-RPX" Name="accQuant_cnn_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-TIMING-PB" Name="accQuant_cnn_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="accQuant_cnn_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="accQuant_cnn_route_status.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="accQuant_cnn_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="accQuant_cnn_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="accQuant_cnn_methodology_drc_routed.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/ReLu.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clock_divider.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clock_divider_dens.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/clock_divider_max.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/controlMemoryAddressConv.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/controlMemoryAddressImg.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/convolution.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counterPositionRstlConv.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/counterPositionRstlMax.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/maxpooling.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/memory_filter_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/memory_filter_2.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/memory_filter_3.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/memory_image.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/memory_rstl_conv_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/memory_rstl_conv_2.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/memory_rstl_conv_3.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/memory_rstl_max_1.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/quantization.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/accQuant_cnn.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="accQuant_cnn"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+    <Filter Type="Utils"/>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design" EnableStepBool="1"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
+  </Strategy>
+</GenRun>

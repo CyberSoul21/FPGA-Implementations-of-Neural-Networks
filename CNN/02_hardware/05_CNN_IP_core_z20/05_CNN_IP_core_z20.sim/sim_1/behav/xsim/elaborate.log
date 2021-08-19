@@ -1,0 +1,46 @@
+Vivado Simulator 2019.2
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto a65216d8078a4bb6adff70654ed34c66 --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot accQuant_testbench_behav xil_defaultlib.accQuant_testbench xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 4 for port 'addr' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:329]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 4 for port 'addr' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:347]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 4 for port 'addr' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:364]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 1 for port 'wen' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:624]
+WARNING: [VRFC 10-5021] port 'wen_image' is not connected on this instance [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sim_1/new/accQuant_testbench.v:38]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.clock_divider
+Compiling module xil_defaultlib.counter_col
+Compiling module xil_defaultlib.counter_row
+Compiling module xil_defaultlib.controlMemoryAddressImg
+Compiling module xil_defaultlib.counterPositionRstlConv
+Compiling module xil_defaultlib.memory_image
+Compiling module xil_defaultlib.memory_filter_1
+Compiling module xil_defaultlib.memory_filter_2
+Compiling module xil_defaultlib.memory_filter_3
+Compiling module xil_defaultlib.quantization(q=63'b0101111100011...
+Compiling module xil_defaultlib.ReLu
+Compiling module xil_defaultlib.convolution(q=63'b01011111000110...
+Compiling module xil_defaultlib.quantization(q=63'b0100101011001...
+Compiling module xil_defaultlib.convolution(q=63'b01001010110010...
+Compiling module xil_defaultlib.quantization(q=63'b0101010111110...
+Compiling module xil_defaultlib.convolution(q=63'b01010101111100...
+Compiling module xil_defaultlib.memory_rstl_conv_1
+Compiling module xil_defaultlib.memory_rstl_conv_2
+Compiling module xil_defaultlib.memory_rstl_conv_3
+Compiling module xil_defaultlib.clock_divider_max
+Compiling module xil_defaultlib.counter_col_max
+Compiling module xil_defaultlib.counter_row_max
+Compiling module xil_defaultlib.controlMemoryAddressConv
+Compiling module xil_defaultlib.counterPositionRstlMax
+Compiling module xil_defaultlib.maxpooling
+Compiling module xil_defaultlib.memory_rstl_max_1
+Compiling module xil_defaultlib.clock_divider_dens
+Compiling module xil_defaultlib.accQuant_cnn
+Compiling module xil_defaultlib.accQuant_testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot accQuant_testbench_behav

@@ -25,7 +25,7 @@ int main(void) {
 	irq_setie(1);
   uart_init();
 
-/*
+
   static const int16_t image[9]={2,4,6,8,10,-12,14,16,18};
   int16_t pix = 0;
   char str[3];
@@ -72,10 +72,10 @@ int main(void) {
   sprintf(str, "Posicion 5 = %d", pix);
   puts(str);
 	printf("Posicion 5 = %d \n",pix);
-*/
 
 
 
+/*
   uint8_t read_num = 0;
   uint8_t signe = 0;
   //char read_num = 0;
@@ -100,7 +100,7 @@ int main(void) {
 
   //ser.write(b'2'); line = ser.readline(); print(line)
 
-
+*/
 
 
 

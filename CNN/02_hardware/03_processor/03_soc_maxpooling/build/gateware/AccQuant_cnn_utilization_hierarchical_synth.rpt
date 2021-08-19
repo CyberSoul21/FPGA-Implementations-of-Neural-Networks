@@ -1,0 +1,65 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Wed Aug 18 12:34:59 2021
+| Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
+| Command      : report_utilization -hierarchical -file AccQuant_cnn_utilization_hierarchical_synth.rpt
+| Design       : AccQuant_cnn
+| Device       : 7z020clg400-1
+| Design State : Synthesized
+--------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------------------+------------------------------+------------+------------+---------+------+------+--------+--------+--------------+
+|          Instance          |            Module            | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
++----------------------------+------------------------------+------------+------------+---------+------+------+--------+--------+--------------+
+| AccQuant_cnn               |                        (top) |      15683 |      11509 |    4174 |    0 | 7363 |     15 |      8 |           61 |
+|   (AccQuant_cnn)           |                        (top) |        289 |        273 |      16 |    0 |  586 |     14 |      0 |            0 |
+|   VexRiscv                 |                     VexRiscv |       2201 |       2201 |       0 |    0 | 1251 |      1 |      8 |            4 |
+|     (VexRiscv)             |                     VexRiscv |        917 |        917 |       0 |    0 | 1019 |      0 |      2 |            4 |
+|     IBusCachedPlugin_cache |             InstructionCache |        675 |        675 |       0 |    0 |  111 |      1 |      1 |            0 |
+|     dataCache_1_           |                    DataCache |        609 |        609 |       0 |    0 |  121 |      0 |      5 |            0 |
+|   accQuant_cnn             |                 accQuant_cnn |      13193 |       9035 |    4158 |    0 | 5526 |      0 |      0 |           57 |
+|     (accQuant_cnn)         |                 accQuant_cnn |          0 |          0 |       0 |    0 |    4 |      0 |      0 |            0 |
+|     clk_fourth             |           clock_divider_dens |         10 |         10 |       0 |    0 |   29 |      0 |      0 |            0 |
+|     clk_second             |                clock_divider |         11 |         11 |       0 |    0 |   29 |      0 |      0 |            0 |
+|     clk_third              |            clock_divider_max |         10 |         10 |       0 |    0 |   29 |      0 |      0 |            0 |
+|     conv1                  |                  convolution |        158 |        158 |       0 |    0 |  287 |      0 |      0 |           14 |
+|       (conv1)              |                  convolution |         89 |         89 |       0 |    0 |  170 |      0 |      0 |            9 |
+|       activation           |                       ReLu_3 |         24 |         24 |       0 |    0 |   45 |      0 |      0 |            0 |
+|       quant                |                 quantization |         45 |         45 |       0 |    0 |   72 |      0 |      0 |            5 |
+|     conv2                  |  convolution__parameterized0 |        158 |        158 |       0 |    0 |  287 |      0 |      0 |           14 |
+|       (conv2)              |  convolution__parameterized0 |         89 |         89 |       0 |    0 |  170 |      0 |      0 |            9 |
+|       activation           |                       ReLu_2 |         24 |         24 |       0 |    0 |   45 |      0 |      0 |            0 |
+|       quant                | quantization__parameterized0 |         45 |         45 |       0 |    0 |   72 |      0 |      0 |            5 |
+|     conv3                  |  convolution__parameterized1 |        156 |        156 |       0 |    0 |  287 |      0 |      0 |           14 |
+|       (conv3)              |  convolution__parameterized1 |         87 |         87 |       0 |    0 |  170 |      0 |      0 |            9 |
+|       activation           |                         ReLu |         24 |         24 |       0 |    0 |   45 |      0 |      0 |            0 |
+|       quant                | quantization__parameterized1 |         45 |         45 |       0 |    0 |   72 |      0 |      0 |            5 |
+|     image                  |                 memory_image |       3255 |        681 |    2574 |    0 |    1 |      0 |      0 |            9 |
+|     maxpooling_1           |                   maxpooling |         74 |         74 |       0 |    0 |   91 |      0 |      0 |            0 |
+|     maxpooling_2           |                 maxpooling_0 |         73 |         73 |       0 |    0 |   88 |      0 |      0 |            0 |
+|     maxpooling_3           |                 maxpooling_1 |         73 |         73 |       0 |    0 |   88 |      0 |      0 |            0 |
+|     pos_memory_Max_count   |       counterPositionRstlMax |       5931 |       5931 |       0 |    0 |   57 |      0 |      0 |            0 |
+|     pos_memory_conv        |      counterPositionRstlConv |         71 |         71 |       0 |    0 |   37 |      0 |      0 |            0 |
+|     positionConv           |     controlMemoryAddressConv |         55 |         55 |       0 |    0 |   30 |      0 |      0 |            0 |
+|       counter_i            |              counter_row_max |         25 |         25 |       0 |    0 |   11 |      0 |      0 |            0 |
+|       counter_j            |              counter_col_max |         30 |         30 |       0 |    0 |   19 |      0 |      0 |            0 |
+|     positionImage          |      controlMemoryAddressImg |         63 |         63 |       0 |    0 |   22 |      0 |      0 |            0 |
+|       counter_i            |                  counter_row |         33 |         33 |       0 |    0 |   11 |      0 |      0 |            0 |
+|       counter_j            |                  counter_col |         30 |         30 |       0 |    0 |   11 |      0 |      0 |            0 |
+|     save_data_1            |           memory_rstl_conv_1 |        664 |        136 |     528 |    0 |   32 |      0 |      0 |            4 |
+|     save_data_2            |           memory_rstl_conv_2 |        664 |        136 |     528 |    0 |   32 |      0 |      0 |            2 |
+|     save_data_3            |           memory_rstl_conv_3 |        664 |        136 |     528 |    0 |   32 |      0 |      0 |            0 |
+|     save_max_1             |            memory_rstl_max_1 |       1103 |       1103 |       0 |    0 | 4064 |      0 |      0 |            0 |
++----------------------------+------------------------------+------------+------------+---------+------+------+--------+--------+--------------+
+
+

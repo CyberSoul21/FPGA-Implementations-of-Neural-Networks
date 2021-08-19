@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/clock_divider.v" \
+"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressImg.v" \
+"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/counterPositionRstlConv.v" \
+"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/memory_image.v" \
+"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

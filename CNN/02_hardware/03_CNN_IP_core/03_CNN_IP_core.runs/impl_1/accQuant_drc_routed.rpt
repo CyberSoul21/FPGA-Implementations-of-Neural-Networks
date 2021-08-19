@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Mon Aug 16 09:11:39 2021
+| Date         : Tue Aug 17 01:18:44 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_drc -file accQuant_drc_routed.rpt -pb accQuant_drc_routed.pb -rpx accQuant_drc_routed.rpx
 | Design       : accQuant
@@ -24,13 +24,13 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 117
+             Violations found: 79
 +--------+----------+------------------------+------------+
 | Rule   | Severity | Description            | Violations |
 +--------+----------+------------------------+------------+
-| DPIP-1 | Warning  | Input pipelining       | 23         |
-| DPOP-1 | Warning  | PREG Output pipelining | 44         |
-| DPOP-2 | Warning  | MREG Output pipelining | 49         |
+| DPIP-1 | Warning  | Input pipelining       | 5          |
+| DPOP-1 | Warning  | PREG Output pipelining | 34         |
+| DPOP-2 | Warning  | MREG Output pipelining | 39         |
 | ZPS7-1 | Warning  | PS7 block required     | 1          |
 +--------+----------+------------------------+------------+
 
@@ -59,96 +59,6 @@ Related violations: <none>
 DPIP-1#5 Warning
 Input pipelining  
 DSP image/p_img_1 input image/p_img_1/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#6 Warning
-Input pipelining  
-DSP image/p_img_3 input image/p_img_3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#7 Warning
-Input pipelining  
-DSP image/p_img_3 input image/p_img_3/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#8 Warning
-Input pipelining  
-DSP image/p_img_30__0 input image/p_img_30__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#9 Warning
-Input pipelining  
-DSP image/p_img_4 input image/p_img_4/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#10 Warning
-Input pipelining  
-DSP image/p_img_4 input image/p_img_4/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#11 Warning
-Input pipelining  
-DSP image/p_img_6 input image/p_img_6/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#12 Warning
-Input pipelining  
-DSP image/p_img_6 input image/p_img_6/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#13 Warning
-Input pipelining  
-DSP image/p_img_60__0 input image/p_img_60__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#14 Warning
-Input pipelining  
-DSP image/p_img_7 input image/p_img_7/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#15 Warning
-Input pipelining  
-DSP image/p_img_7 input image/p_img_7/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#16 Warning
-Input pipelining  
-DSP save_data_1/p_img_0 input save_data_1/p_img_0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#17 Warning
-Input pipelining  
-DSP save_data_1/p_img_0 input save_data_1/p_img_0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#18 Warning
-Input pipelining  
-DSP save_data_1/p_img_1 input save_data_1/p_img_1/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#19 Warning
-Input pipelining  
-DSP save_data_1/p_img_1 input save_data_1/p_img_1/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#20 Warning
-Input pipelining  
-DSP save_data_1/p_img_2 input save_data_1/p_img_2/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#21 Warning
-Input pipelining  
-DSP save_data_1/p_img_2 input save_data_1/p_img_2/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#22 Warning
-Input pipelining  
-DSP save_data_1/p_img_3 input save_data_1/p_img_3/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
-Related violations: <none>
-
-DPIP-1#23 Warning
-Input pipelining  
-DSP save_data_1/p_img_3 input save_data_1/p_img_3/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPOP-1#1 Warning
@@ -319,56 +229,6 @@ Related violations: <none>
 DPOP-1#34 Warning
 PREG Output pipelining  
 DSP image/p_img_1 output image/p_img_1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#35 Warning
-PREG Output pipelining  
-DSP image/p_img_3 output image/p_img_3/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#36 Warning
-PREG Output pipelining  
-DSP image/p_img_30__0 output image/p_img_30__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#37 Warning
-PREG Output pipelining  
-DSP image/p_img_4 output image/p_img_4/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#38 Warning
-PREG Output pipelining  
-DSP image/p_img_6 output image/p_img_6/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#39 Warning
-PREG Output pipelining  
-DSP image/p_img_60__0 output image/p_img_60__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#40 Warning
-PREG Output pipelining  
-DSP image/p_img_7 output image/p_img_7/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#41 Warning
-PREG Output pipelining  
-DSP save_data_1/p_img_0 output save_data_1/p_img_0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#42 Warning
-PREG Output pipelining  
-DSP save_data_1/p_img_1 output save_data_1/p_img_1/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#43 Warning
-PREG Output pipelining  
-DSP save_data_1/p_img_2 output save_data_1/p_img_2/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
-Related violations: <none>
-
-DPOP-1#44 Warning
-PREG Output pipelining  
-DSP save_data_1/p_img_3 output save_data_1/p_img_3/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 DPOP-2#1 Warning
@@ -564,56 +424,6 @@ Related violations: <none>
 DPOP-2#39 Warning
 MREG Output pipelining  
 DSP image/p_img_1 multiplier stage image/p_img_1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#40 Warning
-MREG Output pipelining  
-DSP image/p_img_3 multiplier stage image/p_img_3/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#41 Warning
-MREG Output pipelining  
-DSP image/p_img_30__0 multiplier stage image/p_img_30__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#42 Warning
-MREG Output pipelining  
-DSP image/p_img_4 multiplier stage image/p_img_4/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#43 Warning
-MREG Output pipelining  
-DSP image/p_img_6 multiplier stage image/p_img_6/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#44 Warning
-MREG Output pipelining  
-DSP image/p_img_60__0 multiplier stage image/p_img_60__0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#45 Warning
-MREG Output pipelining  
-DSP image/p_img_7 multiplier stage image/p_img_7/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#46 Warning
-MREG Output pipelining  
-DSP save_data_1/p_img_0 multiplier stage save_data_1/p_img_0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#47 Warning
-MREG Output pipelining  
-DSP save_data_1/p_img_1 multiplier stage save_data_1/p_img_1/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#48 Warning
-MREG Output pipelining  
-DSP save_data_1/p_img_2 multiplier stage save_data_1/p_img_2/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
-Related violations: <none>
-
-DPOP-2#49 Warning
-MREG Output pipelining  
-DSP save_data_1/p_img_3 multiplier stage save_data_1/p_img_3/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
 Related violations: <none>
 
 ZPS7-1#1 Warning

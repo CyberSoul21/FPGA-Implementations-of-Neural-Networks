@@ -32,17 +32,18 @@ module wrapper
     input clk,
     input en, 
 
-    input [addressWidthImg-1:0] addr, 
+    input [addressWidthImg-1:0] addr,
+
     input signed [dataWidthImg-1:0] data_in, 
     input mem_ok,
-    output signed [dataWidthImg-1:0] data_out
+    output  [dataWidthImg-1:0] data_out
 );
     
 
     reg en_w;
     wire [addressWidthImg-1:0] addr_w;
     wire signed [dataWidthImg-1:0] data_in_w;
-    wire signed [dataWidthImg-1:0] data_out_w;
+    wire  [dataWidthImg-1:0] data_out_w;
     
     
     assign addr_w = addr;
@@ -51,7 +52,7 @@ module wrapper
         
     ram_image image( 
         .clk(clk),
-        .wen(en_w),
+        .wen(en),
         .waddr(addr_w),
         .raddr(4'd5),
         .wdata(data_in_w),

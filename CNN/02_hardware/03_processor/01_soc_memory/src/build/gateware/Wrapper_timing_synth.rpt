@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Mon Aug 16 17:08:05 2021
+| Date         : Fri Aug 20 18:38:27 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_timing_summary -file Wrapper_timing_synth.rpt
 | Design       : Wrapper
@@ -128,7 +128,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      0.563        0.000                      0                 4901        0.045        0.000                      0                 4901        2.750        0.000                       0                  1844  
+      0.563        0.000                      0                 4900        0.045        0.000                      0                 4900        2.750        0.000                       0                  1843  
 
 
 All user specified timing constraints are met.
@@ -151,7 +151,7 @@ clk125  {0.000 4.000}        8.000           125.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-clk125              0.563        0.000                      0                 4901        0.045        0.000                      0                 4901        2.750        0.000                       0                  1844  
+clk125              0.563        0.000                      0                 4900        0.045        0.000                      0                 4900        2.750        0.000                       0                  1843  
 
 
 ------------------------------------------------------------------------------------------------
@@ -218,7 +218,7 @@ Slack (MET) :             0.563ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
                          net (fo=1, unplaced)         0.800     2.275    clk125_IBUF
                          BUFG (Prop_bufg_I_O)         0.101     2.376 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1843, unplaced)      0.584     2.960    VexRiscv/clk125_IBUF_BUFG
+                         net (fo=1842, unplaced)      0.584     2.960    VexRiscv/clk125_IBUF_BUFG
                          FDRE                                         r  VexRiscv/decode_to_execute_INSTRUCTION_reg[7]/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.478     3.438 f  VexRiscv/decode_to_execute_INSTRUCTION_reg[7]/Q
@@ -253,7 +253,7 @@ Slack (MET) :             0.563ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
                          net (fo=1, unplaced)         0.760    10.164    clk125_IBUF
                          BUFG (Prop_bufg_I_O)         0.091    10.255 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1843, unplaced)      0.439    10.694    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
+                         net (fo=1842, unplaced)      0.439    10.694    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
                          FDRE                                         r  VexRiscv/dataCache_1_/stage0_colisions_regNextWhen_reg[0]/C
                          clock pessimism              0.120    10.815    
                          clock uncertainty           -0.035    10.779    
@@ -293,7 +293,7 @@ Slack (MET) :             0.045ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
                          net (fo=1, unplaced)         0.337     0.580    clk125_IBUF
                          BUFG (Prop_bufg_I_O)         0.026     0.606 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1843, unplaced)      0.114     0.720    clk125_IBUF_BUFG
+                         net (fo=1842, unplaced)      0.114     0.720    clk125_IBUF_BUFG
                          FDRE                                         r  regs0_reg/C
   -------------------------------------------------------------------    -------------------
                          FDRE (Prop_fdre_C_Q)         0.147     0.867 r  regs0_reg/Q
@@ -307,7 +307,7 @@ Slack (MET) :             0.045ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
                          net (fo=1, unplaced)         0.355     0.785    clk125_IBUF
                          BUFG (Prop_bufg_I_O)         0.029     0.814 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1843, unplaced)      0.259     1.073    clk125_IBUF_BUFG
+                         net (fo=1842, unplaced)      0.259     1.073    clk125_IBUF_BUFG
                          FDRE                                         r  regs1_reg/C
                          clock pessimism             -0.209     0.865    
                          FDRE (Hold_fdre_C_D)         0.038     0.903    regs1_reg

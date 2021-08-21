@@ -27,6 +27,7 @@ int main(void) {
 
 
   static const int16_t image[9]={2,4,6,8,10,-12,14,16,18};
+  static const int16_t image2[9]={3,9,12,15,18,-21,24,27,3};
   int16_t pix = 0;
   char str[3];
 	int test = 1;
@@ -72,6 +73,55 @@ int main(void) {
   sprintf(str, "Posicion 5 = %d", pix);
   puts(str);
 	printf("Posicion 5 = %d \n",pix);
+
+
+
+
+
+
+
+
+
+  printf("Memoria Inicial 2 \n");
+  printf("**********************\n");
+  wait_ms(10);
+  pix = Wrapper_DATA_OUT_REG_read();
+  sprintf(str, "Posicion 5 = %d", pix);
+  printf("Posicion 5 = %d \n",pix);
+  printf("**********************\n");
+
+  printf("Llenar Memoria \n");
+  printf("**********************\n");
+  for(int i = 0; i < 0x09; i++)
+  {
+    //printf("image[i] = %i \n",image[i]);
+    sprintf(str, "image[%d] = %d",i, image2[i]);
+    puts(str);
+    printf("\n");
+    //Wrapper_MEM_OK_REG_write(1);
+    //Wrapper_EN_REG_write(1);
+    Wrapper_ADDR_REG_write(i);
+    Wrapper_DATA_IN_REG_write(image2[i]);
+    wait_ms(500);
+  };
+
+  printf("Memoria Llena \n");
+  printf("**********************\n");
+  printf("**********************\n");
+
+
+  wait_ms(10);
+  printf("Imagen guardada en la memoria \n");
+  pix = Wrapper_DATA_OUT_REG_read();
+  sprintf(str, "Posicion 5 = %d", pix);
+  puts(str);
+  printf("Posicion 5 = %d \n",pix);
+
+
+
+
+
+
 
 
 

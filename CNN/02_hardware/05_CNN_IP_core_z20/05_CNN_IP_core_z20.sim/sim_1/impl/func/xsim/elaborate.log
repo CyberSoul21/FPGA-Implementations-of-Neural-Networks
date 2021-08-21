@@ -22,12 +22,13 @@ Compiling module xil_defaultlib.clock_divider_dens
 Compiling module unisims_ver.x_lut2_mux4
 Compiling module unisims_ver.LUT2
 Compiling module xil_defaultlib.clock_divider
-Compiling module unisims_ver.x_lut3_mux8
-Compiling module unisims_ver.LUT3
 Compiling module xil_defaultlib.clock_divider_max
 Compiling module unisims_ver.FDRE(INIT=1'b1)
 Compiling module unisims_ver.FDPE_default
 Compiling module unisims_ver.FDCE_default
+Compiling module unisims_ver.x_lut3_mux8
+Compiling module unisims_ver.LUT3
+Compiling module unisims_ver.FDSE(INIT=1'b0)
 Compiling module unisims_ver.FDSE_default
 Compiling module xil_defaultlib.ReLu_3
 Compiling module unisims_ver.FDRE(IS_C_INVERTED=1'b1)
@@ -83,8 +84,6 @@ Compiling module unisims_ver.RAM64M(INIT_A=64'b11111111111111...
 Compiling module unisims_ver.RAM64M(INIT_B=64'b01111111111111...
 Compiling module unisims_ver.RAM64M(INIT_A=64'b01111111111111...
 Compiling module xil_defaultlib.memory_image
-Compiling module unisims_ver.FDSE(INIT=1'b0)
-Compiling module unisims_ver.FDRE(INIT=1'b1,IS_C_INVERTED=1'b...
 Compiling module xil_defaultlib.maxpooling
 Compiling module xil_defaultlib.maxpooling_0
 Compiling module xil_defaultlib.maxpooling_1

@@ -49,18 +49,29 @@ module maxpooling
     reg [dataWidthMax-1:0] max2;
     reg [dataWidthMax-1:0] max3;
 
-  
+    initial
+    begin
+        save_rstl = 0;
+    end
     
     always @(posedge clk) //Present estate 
     begin
-        if(clk_div == 1 & en)
+        if(rst)
         begin
-            present_state <= s0;    
+            present_state = 0; 
         end
-        else
+        else if(en)
         begin
-            present_state <= next_state;
-        end    
+            if(clk_div == 1)
+            begin
+                present_state <= s0;
+                
+            end
+            else
+            begin
+                present_state <= next_state;
+            end     
+        end     
     end    
 
     always @(negedge clk)

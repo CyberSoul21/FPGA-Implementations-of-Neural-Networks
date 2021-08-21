@@ -2,13 +2,13 @@
 # Webtalk v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed Aug 18 01:13:05 2021
-# Process ID: 19375
+# Start of session at: Thu Aug 19 21:25:03 2021
+# Process ID: 23178
 # Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.sim/sim_1/impl/func/xsim
 # Command line: wbtcv -mode batch -source /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.sim/sim_1/impl/func/xsim/xsim.dir/accQuant_testbench_func_impl/webtalk/xsim_webtalk.tcl -notrace
 # Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.sim/sim_1/impl/func/xsim/webtalk.log
 # Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.sim/sim_1/impl/func/xsim/webtalk.jou
 #-----------------------------------------------------------
 source /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.sim/sim_1/impl/func/xsim/xsim.dir/accQuant_testbench_func_impl/webtalk/xsim_webtalk.tcl -notrace
-webtalk_transmit: Time (s): cpu = 00:00:00.77 ; elapsed = 00:00:08 . Memory (MB): peak = 385.789 ; gain = 0.000 ; free physical = 889 ; free virtual = 3077
-INFO: [Common 17-206] Exiting Webtalk at Wed Aug 18 01:13:13 2021...
+INFO: [Common 17-186] '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.sim/sim_1/impl/func/xsim/xsim.dir/accQuant_testbench_func_impl/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Thu Aug 19 21:25:05 2021. For additional details about this file, please refer to the WebTalk help file at /tools/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Thu Aug 19 21:25:05 2021...

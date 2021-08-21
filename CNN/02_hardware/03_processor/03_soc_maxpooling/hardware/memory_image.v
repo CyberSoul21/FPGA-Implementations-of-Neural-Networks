@@ -26,7 +26,7 @@ module memory_image
     parameter numWeightImg = 784, 
     parameter addressWidthPos = 11,
     parameter addressWidthImg=10, dataWidthImg= 16,
-    parameter weightFileImg="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/zeros_image.mem",
+    parameter weightFileImg="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/image.mem",
     parameter n_c = 5'd28,  //number of column matrix image 
     parameter n_r = 5'd28,  //number of rows matrix image 
     //quantization
@@ -43,9 +43,14 @@ module memory_image
     input ren,
     input [addressWidthImg-1:0] addr1,
     input [addressWidthImg-1:0] addr2,
-    input [addressWidthImg-1:0] wadd,
-    input [dataWidthImg-1:0] wdata,
-    output reg mem_full,
+    
+    input [addressWidthImg-1:0] wadd,  //test soc
+    input [dataWidthImg-1:0] wdata,    //test soc
+    
+    input ren2,                        //test soc   
+    input [addressWidthImg-1:0] radd, //test soc
+    output signed [dataWidthImg-1:0] rdata, //test soc   
+    output reg mem_full,   //test soc
     
     output reg [dataWidthImg-1:0] rdata0,
     output reg [dataWidthImg-1:0] rdata1,
@@ -122,7 +127,13 @@ module memory_image
        begin
            mem_full <= 0;
        end
-    end     
+    end 
+
+
+    assign rdata = register[radd];  //test soc
+
+
+
     
 endmodule
 

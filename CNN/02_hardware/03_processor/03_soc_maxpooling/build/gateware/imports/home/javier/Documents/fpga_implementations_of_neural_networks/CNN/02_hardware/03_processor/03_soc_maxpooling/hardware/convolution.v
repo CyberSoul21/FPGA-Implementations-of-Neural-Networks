@@ -62,8 +62,7 @@ module convolution
     input [dataWidthConv-1:0] bias_filt, 
     
     output reg save_rstl,
-    output [7:0] out_quant,
-    output conv_ready       
+    output [7:0] out_quant      
 );
     //FSM
     reg [3:0] present_state, next_state; //ok
@@ -75,7 +74,7 @@ module convolution
     reg [17-1:0] aux_bias;
     reg  [63:0] num;
     reg rst_relu;
-    reg conv_ok;
+
 
     wire quant_ok;
     wire relu_ok;
@@ -85,10 +84,11 @@ module convolution
     initial
     begin
         $display("***********************************************************************");
-        conv_ok   = 1'd0;
         save_rstl = 0;
         rst_relu  = 0;
         rst_quant = 0;
+        present_state = 0;
+        
 
     end
 
@@ -112,19 +112,22 @@ module convolution
 
     always @(posedge clk) //Present estate  // always @(clk) //Present estate 
     begin
-        if(((clk_div == 1) & en) || rst)
+        if(rst)
         begin
-            present_state <= s0;
-            
-//            conv_ok   = 1'd0;
-//            save_rstl = 0;
-//            rst_relu  = 0;
-//            rst_quant = 0;                
+            present_state = 0; 
         end
-        else
+        else if(en)
         begin
-            present_state <= next_state;
-        end    
+            if(clk_div == 1)
+            begin
+                present_state <= s0;
+                
+            end
+            else
+            begin
+                present_state <= next_state;
+            end     
+        end  
     end    
 
     always @(negedge clk) //always @(*)
@@ -171,6 +174,8 @@ module convolution
             rstl_mult[7] <= $signed(rdata_img7*rdata_filt7);
             rstl_mult[8] <= $signed(rdata_img8*rdata_filt8);
             save_rstl <= 0;
+            rst_relu <= 0;
+            rst_quant <= 0;
             end          
         s1: begin
             rstl_sum <= $signed(rstl_mult[0] + rstl_mult[1] + rstl_mult[2] + rstl_mult[3] + rstl_mult[4] + rstl_mult[5] + rstl_mult[6] + rstl_mult[7] + rstl_mult[8]);
@@ -192,14 +197,12 @@ module convolution
             end 
         s5: begin
             save_rstl <= 0; 
-            conv_ok <= 1'd1;
 //            $display("%d",num_final); 
             //$fwrite(fd,"hola");
             end                                                
       endcase 
     end 
 
-assign conv_ready = conv_ok;
 assign out_quant = num_final;
 
 endmodule    

@@ -178,6 +178,8 @@ module quantization
             result4 <= res1 + res3; //Add( ShiftRight(x, exponent),BitAnd( MaskIfGreaterThan(remainder, threshold), one ) ); 
             ok <= 1; 
         end
+        default:
+            result4 <= 0;
       endcase 
     end 
 

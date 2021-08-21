@@ -37,7 +37,8 @@ module counterPositionRstlConv
     
     initial
     begin
-        once <= 1;
+        once = 1;
+        count = 0;
     end
     
     always @(posedge clk)
@@ -45,8 +46,9 @@ module counterPositionRstlConv
         if(rst)
         begin
             count <= 4'd0;
+            once = 1;
         end
-        if(once)
+        else if(once)
         begin
             count <= 4'd0;
             once <= 0;

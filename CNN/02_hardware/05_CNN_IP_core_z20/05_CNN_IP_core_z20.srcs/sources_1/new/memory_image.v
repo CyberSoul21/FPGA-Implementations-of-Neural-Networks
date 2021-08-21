@@ -43,9 +43,14 @@ module memory_image
     input ren,
     input [addressWidthImg-1:0] addr1,
     input [addressWidthImg-1:0] addr2,
-    input [addressWidthImg-1:0] wadd,
-    input [dataWidthImg-1:0] wdata,
-    output reg mem_full,
+    
+    input [addressWidthImg-1:0] wadd,  //test soc
+    input [dataWidthImg-1:0] wdata,    //test soc
+    
+    input ren2,                        //test soc   
+    input [addressWidthImg-1:0] radd, //test soc
+    output signed [dataWidthImg-1:0] rdata, //test soc   
+    output reg mem_full,   //test soc
     
     output reg [dataWidthImg-1:0] rdata0,
     output reg [dataWidthImg-1:0] rdata1,
@@ -122,7 +127,13 @@ module memory_image
 	   begin
 	       mem_full <= 0;
 	   end
-	end     
+	end 
+
+
+    assign rdata = register[radd];  //test soc
+
+
+
     
 endmodule
 

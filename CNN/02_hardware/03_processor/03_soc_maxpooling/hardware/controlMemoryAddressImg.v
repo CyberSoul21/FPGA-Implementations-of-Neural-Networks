@@ -26,16 +26,21 @@ module controlMemoryAddressImg
     parameter counterWidth= 10   
 )
 (
-    input clk, en, rst, 
+    input clk, clk_div, en, rst, 
     output stop_count,
     output[counterWidth-1:0] i,j    
 );
     wire sig_ok_1;
     wire sig_ok_2;
     reg sig_en;
+    
+    initial
+    begin
+        sig_en = 0;
+    end
 
     counter_col counter_j(
-        .clk(clk),
+        .clk(clk_div),
         .rst(rst),
         .en(sig_en & en),
         .counter(j),
@@ -48,19 +53,41 @@ module controlMemoryAddressImg
         .counter(i),
         .sig_ok(sig_ok_2)
     );
-
-    always @(sig_ok_2) //always @(*)
+    
+    
+    always @(posedge clk) //always @(*)
+    begin
+    if(rst)
+    begin
+        sig_en <= 0;
+    end
+    if(en)
     begin    
         if(sig_ok_2)
         begin
             sig_en <= 0;
         end
         else if(!sig_ok_2)
-            sig_en <= 1;
         begin
-        
+            sig_en <= 1;        
         end
-    end
+    end          
+    end    
+
+//    always @(sig_ok_2) //always @(*)
+//    begin    
+//        if(sig_ok_2)
+//        begin
+//            sig_en <= 0;
+//        end
+//        else if(!sig_ok_2)
+//        begin
+//            sig_en <= 1;        
+//        end      
+//    end
+    
+    
+    
     assign stop_count = sig_en;
 endmodule
 

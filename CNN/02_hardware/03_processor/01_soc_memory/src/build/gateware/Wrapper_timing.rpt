@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Mon Aug 16 17:08:48 2021
+| Date         : Fri Aug 20 18:39:29 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_timing_summary -datasheet -max_paths 10 -file Wrapper_timing.rpt
 | Design       : Wrapper
@@ -128,7 +128,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      0.280        0.000                      0                 4894        0.024        0.000                      0                 4894        2.750        0.000                       0                  1839  
+      0.541        0.000                      0                 4893        0.024        0.000                      0                 4893        2.750        0.000                       0                  1838  
 
 
 All user specified timing constraints are met.
@@ -151,7 +151,7 @@ clk125  {0.000 4.000}        8.000           125.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-clk125              0.280        0.000                      0                 4894        0.024        0.000                      0                 4894        2.750        0.000                       0                  1839  
+clk125              0.541        0.000                      0                 4893        0.024        0.000                      0                 4893        2.750        0.000                       0                  1838  
 
 
 ------------------------------------------------------------------------------------------------
@@ -182,7 +182,7 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  clk125
   To Clock:  clk125
 
-Setup :            0  Failing Endpoints,  Worst Slack        0.280ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        0.541ns,  Total Violation        0.000ns
 Hold  :            0  Failing Endpoints,  Worst Slack        0.024ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        2.750ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
@@ -190,19 +190,19 @@ PW    :            0  Failing Endpoints,  Worst Slack        2.750ns,  Total Vio
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.280ns  (required time - arrival time)
-  Source:                 VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+Slack (MET) :             0.541ns  (required time - arrival time)
+  Source:                 VexRiscv/decode_to_execute_SRC2_CTRL_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            VexRiscv/RegFilePlugin_regFile_reg_2/ADDRARDADDR[9]
-                            (rising edge-triggered cell RAMB18E1 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            VexRiscv/decode_to_execute_RS2_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             clk125
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        6.954ns  (logic 1.426ns (20.505%)  route 5.528ns (79.495%))
-  Logic Levels:           6  (LUT3=1 LUT4=1 LUT5=2 LUT6=2)
-  Clock Path Skew:        0.043ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.438ns = ( 13.438 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.819ns
+  Data Path Delay:        7.496ns  (logic 2.939ns (39.207%)  route 4.557ns (60.792%))
+  Logic Levels:           13  (CARRY4=7 LUT4=1 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.009ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.400ns = ( 13.400 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.833ns
     Clock Pessimism Removal (CPR):    0.424ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -218,24 +218,45 @@ Slack (MET) :             0.280ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.522     3.997    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.721     5.819    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
-    SLICE_X76Y21         FDRE                                         r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+                         net (fo=1837, routed)        1.735     5.833    VexRiscv/clk125_IBUF_BUFG
+    SLICE_X79Y5          FDRE                                         r  VexRiscv/decode_to_execute_SRC2_CTRL_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X76Y21         FDRE (Prop_fdre_C_Q)         0.456     6.275 r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/Q
-                         net (fo=25, routed)          1.235     7.510    VexRiscv/dataCache_1_/stageB_waysHits
-    SLICE_X68Y20         LUT5 (Prop_lut5_I3_O)        0.154     7.664 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29/O
-                         net (fo=4, routed)           0.836     8.500    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29_n_0
-    SLICE_X67Y21         LUT6 (Prop_lut6_I5_O)        0.327     8.827 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_2/O
-                         net (fo=158, routed)         0.611     9.438    VexRiscv/dataCache_1_/stageB_flusher_valid_reg_0
-    SLICE_X69Y21         LUT4 (Prop_lut4_I0_O)        0.124     9.562 r  VexRiscv/dataCache_1_/stageA_mask[3]_i_1/O
-                         net (fo=300, routed)         0.593    10.155    VexRiscv/dataCache_1_/memory_DivPlugin_div_counter_willClear
-    SLICE_X73Y21         LUT5 (Prop_lut5_I0_O)        0.124    10.279 r  VexRiscv/dataCache_1_/decode_to_execute_ENV_CTRL[1]_i_1/O
-                         net (fo=181, routed)         0.431    10.710    VexRiscv/IBusCachedPlugin_cache/execute_CsrPlugin_writeEnable0
-    SLICE_X72Y22         LUT6 (Prop_lut6_I4_O)        0.124    10.834 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2/O
-                         net (fo=14, routed)          0.647    11.481    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2_n_0
-    SLICE_X74Y20         LUT3 (Prop_lut3_I1_O)        0.117    11.598 r  VexRiscv/IBusCachedPlugin_cache/RegFilePlugin_regFile_reg_2_i_1/O
-                         net (fo=1, routed)           1.176    12.773    VexRiscv/decode_RegFilePlugin_regFileReadAddress2[4]
-    RAMB18_X4Y9          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_2/ADDRARDADDR[9]
+    SLICE_X79Y5          FDRE (Prop_fdre_C_Q)         0.456     6.289 r  VexRiscv/decode_to_execute_SRC2_CTRL_reg[0]/Q
+                         net (fo=37, routed)          1.102     7.391    VexRiscv/dataCache_1_/execute_to_memory_REGFILE_WRITE_DATA_reg[11]_0[0]
+    SLICE_X80Y10         LUT5 (Prop_lut5_I2_O)        0.124     7.515 r  VexRiscv/dataCache_1_/execute_to_memory_SHIFT_RIGHT[30]_i_6/O
+                         net (fo=26, routed)          0.489     8.003    VexRiscv/dataCache_1_/decode_to_execute_INSTRUCTION_reg[7]_0
+    SLICE_X85Y9          LUT6 (Prop_lut6_I4_O)        0.124     8.127 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_43/O
+                         net (fo=1, routed)           0.505     8.633    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_43_n_0
+    SLICE_X84Y9          CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     9.289 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_33/CO[3]
+                         net (fo=1, routed)           0.000     9.289    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_33_n_0
+    SLICE_X84Y10         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.403 r  VexRiscv/dataCache_1_/ways_0_tags_reg_i_42/CO[3]
+                         net (fo=1, routed)           0.000     9.403    VexRiscv/dataCache_1_/ways_0_tags_reg_i_42_n_0
+    SLICE_X84Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.517 r  VexRiscv/dataCache_1_/ways_0_tags_reg_i_41/CO[3]
+                         net (fo=1, routed)           0.000     9.517    VexRiscv/dataCache_1__n_386
+    SLICE_X84Y12         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.631 r  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[15]_i_4/CO[3]
+                         net (fo=1, routed)           0.000     9.631    VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[15]_i_4_n_0
+    SLICE_X84Y13         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.745 r  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[19]_i_4/CO[3]
+                         net (fo=1, routed)           0.000     9.745    VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[19]_i_4_n_0
+    SLICE_X84Y14         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.859 r  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[23]_i_4/CO[3]
+                         net (fo=1, routed)           0.000     9.859    VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[23]_i_4_n_0
+    SLICE_X84Y15         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    10.193 r  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[27]_i_4/O[1]
+                         net (fo=1, routed)           0.611    10.804    VexRiscv/_zz_269_[25]
+    SLICE_X79Y16         LUT6 (Prop_lut6_I4_O)        0.303    11.107 f  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA[25]_i_3/O
+                         net (fo=1, routed)           0.443    11.549    VexRiscv/execute_to_memory_REGFILE_WRITE_DATA[25]_i_3_n_0
+    SLICE_X80Y16         LUT6 (Prop_lut6_I5_O)        0.124    11.673 r  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA[25]_i_1/O
+                         net (fo=3, routed)           0.746    12.419    VexRiscv/IBusCachedPlugin_cache/decode_to_execute_RS1_reg[31][25]
+    SLICE_X89Y18         LUT4 (Prop_lut4_I1_O)        0.124    12.543 r  VexRiscv/IBusCachedPlugin_cache/decode_to_execute_RS2[25]_i_3/O
+                         net (fo=1, routed)           0.662    13.205    VexRiscv/IBusCachedPlugin_cache/decode_to_execute_RS2[25]_i_3_n_0
+    SLICE_X90Y20         LUT5 (Prop_lut5_I4_O)        0.124    13.329 r  VexRiscv/IBusCachedPlugin_cache/decode_to_execute_RS2[25]_i_1/O
+                         net (fo=1, routed)           0.000    13.329    VexRiscv/decode_RS2[25]
+    SLICE_X90Y20         FDRE                                         r  VexRiscv/decode_to_execute_RS2_reg[25]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk125 rise edge)     8.000     8.000 r  
@@ -244,31 +265,30 @@ Slack (MET) :             0.280ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.293    11.697    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.650    13.438    VexRiscv/clk125_IBUF_BUFG
-    RAMB18_X4Y9          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_2/CLKARDCLK
-                         clock pessimism              0.424    13.862    
-                         clock uncertainty           -0.035    13.827    
-    RAMB18_X4Y9          RAMB18E1 (Setup_ramb18e1_CLKARDCLK_ADDRARDADDR[9])
-                                                     -0.774    13.053    VexRiscv/RegFilePlugin_regFile_reg_2
+                         net (fo=1837, routed)        1.611    13.400    VexRiscv/clk125_IBUF_BUFG
+    SLICE_X90Y20         FDRE                                         r  VexRiscv/decode_to_execute_RS2_reg[25]/C
+                         clock pessimism              0.424    13.824    
+                         clock uncertainty           -0.035    13.788    
+    SLICE_X90Y20         FDRE (Setup_fdre_C_D)        0.081    13.869    VexRiscv/decode_to_execute_RS2_reg[25]
   -------------------------------------------------------------------
-                         required time                         13.053    
-                         arrival time                         -12.773    
+                         required time                         13.869    
+                         arrival time                         -13.329    
   -------------------------------------------------------------------
-                         slack                                  0.280    
+                         slack                                  0.541    
 
-Slack (MET) :             0.407ns  (required time - arrival time)
-  Source:                 VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+Slack (MET) :             0.613ns  (required time - arrival time)
+  Source:                 VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/C
                             (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            VexRiscv/RegFilePlugin_regFile_reg_1/ADDRARDADDR[9]
-                            (rising edge-triggered cell RAMB18E1 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[26]/CE
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             clk125
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        6.833ns  (logic 1.427ns (20.884%)  route 5.406ns (79.116%))
-  Logic Levels:           6  (LUT3=1 LUT4=1 LUT5=2 LUT6=2)
-  Clock Path Skew:        0.043ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.438ns = ( 13.438 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.819ns
+  Data Path Delay:        6.879ns  (logic 1.336ns (19.422%)  route 5.543ns (80.578%))
+  Logic Levels:           5  (LUT4=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.065ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.339ns = ( 13.339 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.828ns
     Clock Pessimism Removal (CPR):    0.424ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -284,24 +304,22 @@ Slack (MET) :             0.407ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.522     3.997    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.721     5.819    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
-    SLICE_X76Y21         FDRE                                         r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+                         net (fo=1837, routed)        1.730     5.828    VexRiscv/IBusCachedPlugin_cache/clk125_IBUF_BUFG
+    SLICE_X78Y13         FDRE                                         r  VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X76Y21         FDRE (Prop_fdre_C_Q)         0.456     6.275 r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/Q
-                         net (fo=25, routed)          1.235     7.510    VexRiscv/dataCache_1_/stageB_waysHits
-    SLICE_X68Y20         LUT5 (Prop_lut5_I3_O)        0.154     7.664 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29/O
-                         net (fo=4, routed)           0.836     8.500    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29_n_0
-    SLICE_X67Y21         LUT6 (Prop_lut6_I5_O)        0.327     8.827 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_2/O
-                         net (fo=158, routed)         0.611     9.438    VexRiscv/dataCache_1_/stageB_flusher_valid_reg_0
-    SLICE_X69Y21         LUT4 (Prop_lut4_I0_O)        0.124     9.562 r  VexRiscv/dataCache_1_/stageA_mask[3]_i_1/O
-                         net (fo=300, routed)         0.593    10.155    VexRiscv/dataCache_1_/memory_DivPlugin_div_counter_willClear
-    SLICE_X73Y21         LUT5 (Prop_lut5_I0_O)        0.124    10.279 r  VexRiscv/dataCache_1_/decode_to_execute_ENV_CTRL[1]_i_1/O
-                         net (fo=181, routed)         0.431    10.710    VexRiscv/IBusCachedPlugin_cache/execute_CsrPlugin_writeEnable0
-    SLICE_X72Y22         LUT6 (Prop_lut6_I4_O)        0.124    10.834 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2/O
-                         net (fo=14, routed)          0.659    11.493    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2_n_0
-    SLICE_X72Y20         LUT3 (Prop_lut3_I1_O)        0.118    11.611 r  VexRiscv/IBusCachedPlugin_cache/RegFilePlugin_regFile_reg_1_i_1/O
-                         net (fo=1, routed)           1.041    12.652    VexRiscv/decode_RegFilePlugin_regFileReadAddress1[4]
-    RAMB18_X4Y8          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_1/ADDRARDADDR[9]
+    SLICE_X78Y13         FDRE (Prop_fdre_C_Q)         0.456     6.284 r  VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/Q
+                         net (fo=22, routed)          1.526     7.810    VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]_0[31]
+    SLICE_X69Y5          LUT4 (Prop_lut4_I3_O)        0.152     7.962 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_32/O
+                         net (fo=2, routed)           0.683     8.645    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_32_n_0
+    SLICE_X68Y5          LUT6 (Prop_lut6_I4_O)        0.326     8.971 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_19/O
+                         net (fo=2, routed)           0.584     9.554    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_19_n_0
+    SLICE_X68Y3          LUT6 (Prop_lut6_I0_O)        0.124     9.678 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_10/O
+                         net (fo=3, routed)           0.599    10.277    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_10_n_0
+    SLICE_X68Y4          LUT6 (Prop_lut6_I3_O)        0.124    10.401 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_3/O
+                         net (fo=3, routed)           1.164    11.565    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_3_n_0
+    SLICE_X70Y9          LUT5 (Prop_lut5_I0_O)        0.154    11.719 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_1/O
+                         net (fo=36, routed)          0.987    12.707    VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr
+    SLICE_X70Y17         FDRE                                         r  VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[26]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk125 rise edge)     8.000     8.000 r  
@@ -310,31 +328,30 @@ Slack (MET) :             0.407ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.293    11.697    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.650    13.438    VexRiscv/clk125_IBUF_BUFG
-    RAMB18_X4Y8          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_1/CLKARDCLK
-                         clock pessimism              0.424    13.862    
-                         clock uncertainty           -0.035    13.827    
-    RAMB18_X4Y8          RAMB18E1 (Setup_ramb18e1_CLKARDCLK_ADDRARDADDR[9])
-                                                     -0.768    13.059    VexRiscv/RegFilePlugin_regFile_reg_1
+                         net (fo=1837, routed)        1.550    13.339    VexRiscv/clk125_IBUF_BUFG
+    SLICE_X70Y17         FDRE                                         r  VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[26]/C
+                         clock pessimism              0.424    13.763    
+                         clock uncertainty           -0.035    13.727    
+    SLICE_X70Y17         FDRE (Setup_fdre_C_CE)      -0.408    13.319    VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[26]
   -------------------------------------------------------------------
-                         required time                         13.059    
-                         arrival time                         -12.652    
+                         required time                         13.319    
+                         arrival time                         -12.707    
   -------------------------------------------------------------------
-                         slack                                  0.407    
+                         slack                                  0.613    
 
-Slack (MET) :             0.429ns  (required time - arrival time)
-  Source:                 VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+Slack (MET) :             0.613ns  (required time - arrival time)
+  Source:                 VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/C
                             (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            VexRiscv/RegFilePlugin_regFile_reg_2/ADDRARDADDR[7]
-                            (rising edge-triggered cell RAMB18E1 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[29]/CE
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             clk125
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        6.811ns  (logic 1.427ns (20.952%)  route 5.384ns (79.048%))
-  Logic Levels:           6  (LUT3=1 LUT4=1 LUT5=2 LUT6=2)
-  Clock Path Skew:        0.043ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.438ns = ( 13.438 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.819ns
+  Data Path Delay:        6.879ns  (logic 1.336ns (19.422%)  route 5.543ns (80.578%))
+  Logic Levels:           5  (LUT4=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.065ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.339ns = ( 13.339 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.828ns
     Clock Pessimism Removal (CPR):    0.424ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -350,24 +367,22 @@ Slack (MET) :             0.429ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.522     3.997    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.721     5.819    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
-    SLICE_X76Y21         FDRE                                         r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+                         net (fo=1837, routed)        1.730     5.828    VexRiscv/IBusCachedPlugin_cache/clk125_IBUF_BUFG
+    SLICE_X78Y13         FDRE                                         r  VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X76Y21         FDRE (Prop_fdre_C_Q)         0.456     6.275 r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/Q
-                         net (fo=25, routed)          1.235     7.510    VexRiscv/dataCache_1_/stageB_waysHits
-    SLICE_X68Y20         LUT5 (Prop_lut5_I3_O)        0.154     7.664 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29/O
-                         net (fo=4, routed)           0.836     8.500    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29_n_0
-    SLICE_X67Y21         LUT6 (Prop_lut6_I5_O)        0.327     8.827 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_2/O
-                         net (fo=158, routed)         0.611     9.438    VexRiscv/dataCache_1_/stageB_flusher_valid_reg_0
-    SLICE_X69Y21         LUT4 (Prop_lut4_I0_O)        0.124     9.562 r  VexRiscv/dataCache_1_/stageA_mask[3]_i_1/O
-                         net (fo=300, routed)         0.593    10.155    VexRiscv/dataCache_1_/memory_DivPlugin_div_counter_willClear
-    SLICE_X73Y21         LUT5 (Prop_lut5_I0_O)        0.124    10.279 r  VexRiscv/dataCache_1_/decode_to_execute_ENV_CTRL[1]_i_1/O
-                         net (fo=181, routed)         0.431    10.710    VexRiscv/IBusCachedPlugin_cache/execute_CsrPlugin_writeEnable0
-    SLICE_X72Y22         LUT6 (Prop_lut6_I4_O)        0.124    10.834 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2/O
-                         net (fo=14, routed)          0.624    11.457    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2_n_0
-    SLICE_X71Y20         LUT3 (Prop_lut3_I1_O)        0.118    11.575 r  VexRiscv/IBusCachedPlugin_cache/RegFilePlugin_regFile_reg_2_i_3/O
-                         net (fo=1, routed)           1.054    12.630    VexRiscv/decode_RegFilePlugin_regFileReadAddress2[2]
-    RAMB18_X4Y9          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_2/ADDRARDADDR[7]
+    SLICE_X78Y13         FDRE (Prop_fdre_C_Q)         0.456     6.284 r  VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/Q
+                         net (fo=22, routed)          1.526     7.810    VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]_0[31]
+    SLICE_X69Y5          LUT4 (Prop_lut4_I3_O)        0.152     7.962 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_32/O
+                         net (fo=2, routed)           0.683     8.645    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_32_n_0
+    SLICE_X68Y5          LUT6 (Prop_lut6_I4_O)        0.326     8.971 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_19/O
+                         net (fo=2, routed)           0.584     9.554    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_19_n_0
+    SLICE_X68Y3          LUT6 (Prop_lut6_I0_O)        0.124     9.678 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_10/O
+                         net (fo=3, routed)           0.599    10.277    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_10_n_0
+    SLICE_X68Y4          LUT6 (Prop_lut6_I3_O)        0.124    10.401 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_3/O
+                         net (fo=3, routed)           1.164    11.565    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_3_n_0
+    SLICE_X70Y9          LUT5 (Prop_lut5_I0_O)        0.154    11.719 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_1/O
+                         net (fo=36, routed)          0.987    12.707    VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr
+    SLICE_X70Y17         FDRE                                         r  VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[29]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk125 rise edge)     8.000     8.000 r  
@@ -376,31 +391,30 @@ Slack (MET) :             0.429ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.293    11.697    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.650    13.438    VexRiscv/clk125_IBUF_BUFG
-    RAMB18_X4Y9          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_2/CLKARDCLK
-                         clock pessimism              0.424    13.862    
-                         clock uncertainty           -0.035    13.827    
-    RAMB18_X4Y9          RAMB18E1 (Setup_ramb18e1_CLKARDCLK_ADDRARDADDR[7])
-                                                     -0.768    13.059    VexRiscv/RegFilePlugin_regFile_reg_2
+                         net (fo=1837, routed)        1.550    13.339    VexRiscv/clk125_IBUF_BUFG
+    SLICE_X70Y17         FDRE                                         r  VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[29]/C
+                         clock pessimism              0.424    13.763    
+                         clock uncertainty           -0.035    13.727    
+    SLICE_X70Y17         FDRE (Setup_fdre_C_CE)      -0.408    13.319    VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[29]
   -------------------------------------------------------------------
-                         required time                         13.059    
-                         arrival time                         -12.630    
+                         required time                         13.319    
+                         arrival time                         -12.707    
   -------------------------------------------------------------------
-                         slack                                  0.429    
+                         slack                                  0.613    
 
-Slack (MET) :             0.449ns  (required time - arrival time)
-  Source:                 VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+Slack (MET) :             0.646ns  (required time - arrival time)
+  Source:                 VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/C
                             (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            VexRiscv/RegFilePlugin_regFile_reg_2/ADDRARDADDR[8]
-                            (rising edge-triggered cell RAMB18E1 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[14]/CE
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             clk125
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        6.785ns  (logic 1.428ns (21.045%)  route 5.357ns (78.955%))
-  Logic Levels:           6  (LUT3=1 LUT4=1 LUT5=2 LUT6=2)
-  Clock Path Skew:        0.043ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.438ns = ( 13.438 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.819ns
+  Data Path Delay:        6.884ns  (logic 1.336ns (19.407%)  route 5.548ns (80.593%))
+  Logic Levels:           5  (LUT4=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.063ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.341ns = ( 13.341 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.828ns
     Clock Pessimism Removal (CPR):    0.424ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -416,24 +430,22 @@ Slack (MET) :             0.449ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.522     3.997    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.721     5.819    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
-    SLICE_X76Y21         FDRE                                         r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+                         net (fo=1837, routed)        1.730     5.828    VexRiscv/IBusCachedPlugin_cache/clk125_IBUF_BUFG
+    SLICE_X78Y13         FDRE                                         r  VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X76Y21         FDRE (Prop_fdre_C_Q)         0.456     6.275 r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/Q
-                         net (fo=25, routed)          1.235     7.510    VexRiscv/dataCache_1_/stageB_waysHits
-    SLICE_X68Y20         LUT5 (Prop_lut5_I3_O)        0.154     7.664 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29/O
-                         net (fo=4, routed)           0.836     8.500    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29_n_0
-    SLICE_X67Y21         LUT6 (Prop_lut6_I5_O)        0.327     8.827 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_2/O
-                         net (fo=158, routed)         0.611     9.438    VexRiscv/dataCache_1_/stageB_flusher_valid_reg_0
-    SLICE_X69Y21         LUT4 (Prop_lut4_I0_O)        0.124     9.562 r  VexRiscv/dataCache_1_/stageA_mask[3]_i_1/O
-                         net (fo=300, routed)         0.593    10.155    VexRiscv/dataCache_1_/memory_DivPlugin_div_counter_willClear
-    SLICE_X73Y21         LUT5 (Prop_lut5_I0_O)        0.124    10.279 r  VexRiscv/dataCache_1_/decode_to_execute_ENV_CTRL[1]_i_1/O
-                         net (fo=181, routed)         0.431    10.710    VexRiscv/IBusCachedPlugin_cache/execute_CsrPlugin_writeEnable0
-    SLICE_X72Y22         LUT6 (Prop_lut6_I4_O)        0.124    10.834 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2/O
-                         net (fo=14, routed)          0.468    11.301    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2_n_0
-    SLICE_X72Y20         LUT3 (Prop_lut3_I1_O)        0.119    11.420 r  VexRiscv/IBusCachedPlugin_cache/RegFilePlugin_regFile_reg_2_i_2/O
-                         net (fo=1, routed)           1.184    12.604    VexRiscv/decode_RegFilePlugin_regFileReadAddress2[3]
-    RAMB18_X4Y9          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_2/ADDRARDADDR[8]
+    SLICE_X78Y13         FDRE (Prop_fdre_C_Q)         0.456     6.284 r  VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/Q
+                         net (fo=22, routed)          1.526     7.810    VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]_0[31]
+    SLICE_X69Y5          LUT4 (Prop_lut4_I3_O)        0.152     7.962 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_32/O
+                         net (fo=2, routed)           0.683     8.645    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_32_n_0
+    SLICE_X68Y5          LUT6 (Prop_lut6_I4_O)        0.326     8.971 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_19/O
+                         net (fo=2, routed)           0.584     9.554    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_19_n_0
+    SLICE_X68Y3          LUT6 (Prop_lut6_I0_O)        0.124     9.678 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_10/O
+                         net (fo=3, routed)           0.599    10.277    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_10_n_0
+    SLICE_X68Y4          LUT6 (Prop_lut6_I3_O)        0.124    10.401 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_3/O
+                         net (fo=3, routed)           1.164    11.565    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_3_n_0
+    SLICE_X70Y9          LUT5 (Prop_lut5_I0_O)        0.154    11.719 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_1/O
+                         net (fo=36, routed)          0.993    12.712    VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr
+    SLICE_X66Y13         FDRE                                         r  VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[14]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk125 rise edge)     8.000     8.000 r  
@@ -442,31 +454,30 @@ Slack (MET) :             0.449ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.293    11.697    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.650    13.438    VexRiscv/clk125_IBUF_BUFG
-    RAMB18_X4Y9          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_2/CLKARDCLK
-                         clock pessimism              0.424    13.862    
-                         clock uncertainty           -0.035    13.827    
-    RAMB18_X4Y9          RAMB18E1 (Setup_ramb18e1_CLKARDCLK_ADDRARDADDR[8])
-                                                     -0.774    13.053    VexRiscv/RegFilePlugin_regFile_reg_2
+                         net (fo=1837, routed)        1.552    13.341    VexRiscv/clk125_IBUF_BUFG
+    SLICE_X66Y13         FDRE                                         r  VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[14]/C
+                         clock pessimism              0.424    13.765    
+                         clock uncertainty           -0.035    13.729    
+    SLICE_X66Y13         FDRE (Setup_fdre_C_CE)      -0.372    13.357    VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[14]
   -------------------------------------------------------------------
-                         required time                         13.053    
-                         arrival time                         -12.604    
+                         required time                         13.357    
+                         arrival time                         -12.712    
   -------------------------------------------------------------------
-                         slack                                  0.449    
+                         slack                                  0.646    
 
-Slack (MET) :             0.452ns  (required time - arrival time)
-  Source:                 VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+Slack (MET) :             0.646ns  (required time - arrival time)
+  Source:                 VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/C
                             (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            VexRiscv/RegFilePlugin_regFile_reg_1/ADDRARDADDR[8]
-                            (rising edge-triggered cell RAMB18E1 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[18]/CE
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             clk125
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        6.990ns  (logic 1.433ns (20.500%)  route 5.557ns (79.500%))
-  Logic Levels:           6  (LUT3=1 LUT4=1 LUT5=2 LUT6=2)
-  Clock Path Skew:        0.043ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.438ns = ( 13.438 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.819ns
+  Data Path Delay:        6.884ns  (logic 1.336ns (19.407%)  route 5.548ns (80.593%))
+  Logic Levels:           5  (LUT4=1 LUT5=1 LUT6=3)
+  Clock Path Skew:        -0.063ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.341ns = ( 13.341 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.828ns
     Clock Pessimism Removal (CPR):    0.424ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -482,24 +493,22 @@ Slack (MET) :             0.452ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.522     3.997    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.721     5.819    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
-    SLICE_X76Y21         FDRE                                         r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+                         net (fo=1837, routed)        1.730     5.828    VexRiscv/IBusCachedPlugin_cache/clk125_IBUF_BUFG
+    SLICE_X78Y13         FDRE                                         r  VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X76Y21         FDRE (Prop_fdre_C_Q)         0.456     6.275 r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/Q
-                         net (fo=25, routed)          1.235     7.510    VexRiscv/dataCache_1_/stageB_waysHits
-    SLICE_X68Y20         LUT5 (Prop_lut5_I3_O)        0.154     7.664 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29/O
-                         net (fo=4, routed)           0.836     8.500    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29_n_0
-    SLICE_X67Y21         LUT6 (Prop_lut6_I5_O)        0.327     8.827 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_2/O
-                         net (fo=158, routed)         0.611     9.438    VexRiscv/dataCache_1_/stageB_flusher_valid_reg_0
-    SLICE_X69Y21         LUT4 (Prop_lut4_I0_O)        0.124     9.562 r  VexRiscv/dataCache_1_/stageA_mask[3]_i_1/O
-                         net (fo=300, routed)         0.593    10.155    VexRiscv/dataCache_1_/memory_DivPlugin_div_counter_willClear
-    SLICE_X73Y21         LUT5 (Prop_lut5_I0_O)        0.124    10.279 r  VexRiscv/dataCache_1_/decode_to_execute_ENV_CTRL[1]_i_1/O
-                         net (fo=181, routed)         0.431    10.710    VexRiscv/IBusCachedPlugin_cache/execute_CsrPlugin_writeEnable0
-    SLICE_X72Y22         LUT6 (Prop_lut6_I4_O)        0.124    10.834 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2/O
-                         net (fo=14, routed)          0.624    11.457    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2_n_0
-    SLICE_X71Y20         LUT3 (Prop_lut3_I1_O)        0.124    11.581 r  VexRiscv/IBusCachedPlugin_cache/RegFilePlugin_regFile_reg_1_i_2/O
-                         net (fo=1, routed)           1.228    12.809    VexRiscv/decode_RegFilePlugin_regFileReadAddress1[3]
-    RAMB18_X4Y8          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_1/ADDRARDADDR[8]
+    SLICE_X78Y13         FDRE (Prop_fdre_C_Q)         0.456     6.284 r  VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]/Q
+                         net (fo=22, routed)          1.526     7.810    VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]_0[31]
+    SLICE_X69Y5          LUT4 (Prop_lut4_I3_O)        0.152     7.962 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_32/O
+                         net (fo=2, routed)           0.683     8.645    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_32_n_0
+    SLICE_X68Y5          LUT6 (Prop_lut6_I4_O)        0.326     8.971 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_19/O
+                         net (fo=2, routed)           0.584     9.554    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_19_n_0
+    SLICE_X68Y3          LUT6 (Prop_lut6_I0_O)        0.124     9.678 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_10/O
+                         net (fo=3, routed)           0.599    10.277    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_10_n_0
+    SLICE_X68Y4          LUT6 (Prop_lut6_I3_O)        0.124    10.401 f  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_3/O
+                         net (fo=3, routed)           1.164    11.565    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_3_n_0
+    SLICE_X70Y9          LUT5 (Prop_lut5_I0_O)        0.154    11.719 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr[31]_i_1/O
+                         net (fo=36, routed)          0.993    12.712    VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr
+    SLICE_X66Y13         FDRE                                         r  VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[18]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk125 rise edge)     8.000     8.000 r  
@@ -508,31 +517,30 @@ Slack (MET) :             0.452ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.293    11.697    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.650    13.438    VexRiscv/clk125_IBUF_BUFG
-    RAMB18_X4Y8          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_1/CLKARDCLK
-                         clock pessimism              0.424    13.862    
-                         clock uncertainty           -0.035    13.827    
-    RAMB18_X4Y8          RAMB18E1 (Setup_ramb18e1_CLKARDCLK_ADDRARDADDR[8])
-                                                     -0.566    13.261    VexRiscv/RegFilePlugin_regFile_reg_1
+                         net (fo=1837, routed)        1.552    13.341    VexRiscv/clk125_IBUF_BUFG
+    SLICE_X66Y13         FDRE                                         r  VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[18]/C
+                         clock pessimism              0.424    13.765    
+                         clock uncertainty           -0.035    13.729    
+    SLICE_X66Y13         FDRE (Setup_fdre_C_CE)      -0.372    13.357    VexRiscv/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[18]
   -------------------------------------------------------------------
-                         required time                         13.261    
-                         arrival time                         -12.809    
+                         required time                         13.357    
+                         arrival time                         -12.712    
   -------------------------------------------------------------------
-                         slack                                  0.452    
+                         slack                                  0.646    
 
-Slack (MET) :             0.461ns  (required time - arrival time)
-  Source:                 VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+Slack (MET) :             0.649ns  (required time - arrival time)
+  Source:                 VexRiscv/decode_to_execute_SRC2_CTRL_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            VexRiscv/RegFilePlugin_regFile_reg_2/ADDRARDADDR[6]
-                            (rising edge-triggered cell RAMB18E1 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            VexRiscv/decode_to_execute_RS1_reg[25]/D
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             clk125
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        6.981ns  (logic 1.433ns (20.527%)  route 5.548ns (79.473%))
-  Logic Levels:           6  (LUT3=1 LUT4=1 LUT5=2 LUT6=2)
-  Clock Path Skew:        0.043ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.438ns = ( 13.438 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.819ns
+  Data Path Delay:        7.383ns  (logic 2.939ns (39.806%)  route 4.444ns (60.194%))
+  Logic Levels:           13  (CARRY4=7 LUT4=1 LUT5=2 LUT6=3)
+  Clock Path Skew:        -0.009ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.400ns = ( 13.400 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.833ns
     Clock Pessimism Removal (CPR):    0.424ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
@@ -548,110 +556,45 @@ Slack (MET) :             0.461ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.522     3.997    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.721     5.819    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
-    SLICE_X76Y21         FDRE                                         r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+                         net (fo=1837, routed)        1.735     5.833    VexRiscv/clk125_IBUF_BUFG
+    SLICE_X79Y5          FDRE                                         r  VexRiscv/decode_to_execute_SRC2_CTRL_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X76Y21         FDRE (Prop_fdre_C_Q)         0.456     6.275 r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/Q
-                         net (fo=25, routed)          1.235     7.510    VexRiscv/dataCache_1_/stageB_waysHits
-    SLICE_X68Y20         LUT5 (Prop_lut5_I3_O)        0.154     7.664 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29/O
-                         net (fo=4, routed)           0.836     8.500    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29_n_0
-    SLICE_X67Y21         LUT6 (Prop_lut6_I5_O)        0.327     8.827 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_2/O
-                         net (fo=158, routed)         0.611     9.438    VexRiscv/dataCache_1_/stageB_flusher_valid_reg_0
-    SLICE_X69Y21         LUT4 (Prop_lut4_I0_O)        0.124     9.562 r  VexRiscv/dataCache_1_/stageA_mask[3]_i_1/O
-                         net (fo=300, routed)         0.593    10.155    VexRiscv/dataCache_1_/memory_DivPlugin_div_counter_willClear
-    SLICE_X73Y21         LUT5 (Prop_lut5_I0_O)        0.124    10.279 r  VexRiscv/dataCache_1_/decode_to_execute_ENV_CTRL[1]_i_1/O
-                         net (fo=181, routed)         0.431    10.710    VexRiscv/IBusCachedPlugin_cache/execute_CsrPlugin_writeEnable0
-    SLICE_X72Y22         LUT6 (Prop_lut6_I4_O)        0.124    10.834 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2/O
-                         net (fo=14, routed)          0.647    11.481    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2_n_0
-    SLICE_X74Y20         LUT3 (Prop_lut3_I1_O)        0.124    11.605 r  VexRiscv/IBusCachedPlugin_cache/RegFilePlugin_regFile_reg_2_i_4/O
-                         net (fo=1, routed)           1.195    12.800    VexRiscv/decode_RegFilePlugin_regFileReadAddress2[1]
-    RAMB18_X4Y9          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_2/ADDRARDADDR[6]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk125 rise edge)     8.000     8.000 r  
-    K17                                               0.000     8.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     8.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           2.293    11.697    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.650    13.438    VexRiscv/clk125_IBUF_BUFG
-    RAMB18_X4Y9          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_2/CLKARDCLK
-                         clock pessimism              0.424    13.862    
-                         clock uncertainty           -0.035    13.827    
-    RAMB18_X4Y9          RAMB18E1 (Setup_ramb18e1_CLKARDCLK_ADDRARDADDR[6])
-                                                     -0.566    13.261    VexRiscv/RegFilePlugin_regFile_reg_2
-  -------------------------------------------------------------------
-                         required time                         13.261    
-                         arrival time                         -12.800    
-  -------------------------------------------------------------------
-                         slack                                  0.461    
-
-Slack (MET) :             0.514ns  (required time - arrival time)
-  Source:                 VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            VexRiscv/memory_DivPlugin_rs1_reg[29]/D
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             clk125
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        7.462ns  (logic 2.979ns (39.922%)  route 4.483ns (60.078%))
-  Logic Levels:           12  (CARRY4=8 LUT4=2 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.051ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.344ns = ( 13.344 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.819ns
-    Clock Pessimism Removal (CPR):    0.424ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           2.522     3.997    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.721     5.819    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
-    SLICE_X76Y21         FDRE                                         r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X76Y21         FDRE (Prop_fdre_C_Q)         0.456     6.275 r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/Q
-                         net (fo=25, routed)          1.235     7.510    VexRiscv/dataCache_1_/stageB_waysHits
-    SLICE_X68Y20         LUT5 (Prop_lut5_I3_O)        0.154     7.664 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29/O
-                         net (fo=4, routed)           0.836     8.500    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29_n_0
-    SLICE_X67Y21         LUT6 (Prop_lut6_I5_O)        0.327     8.827 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_2/O
-                         net (fo=158, routed)         0.611     9.438    VexRiscv/dataCache_1_/stageB_flusher_valid_reg_0
-    SLICE_X69Y21         LUT4 (Prop_lut4_I0_O)        0.124     9.562 r  VexRiscv/dataCache_1_/stageA_mask[3]_i_1/O
-                         net (fo=300, routed)         1.207    10.769    VexRiscv/dataCache_1_/memory_DivPlugin_div_counter_willClear
-    SLICE_X86Y24         LUT4 (Prop_lut4_I3_O)        0.116    10.885 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1[3]_i_2/O
-                         net (fo=1, routed)           0.594    11.479    VexRiscv/dataCache_1_/memory_DivPlugin_rs1[3]_i_2_n_0
-    SLICE_X87Y25         CARRY4 (Prop_carry4_CYINIT_CO[3])
-                                                      0.784    12.263 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.263    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[3]_i_1_n_0
-    SLICE_X87Y26         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.377 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.377    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[7]_i_1_n_0
-    SLICE_X87Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.491 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.491    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[11]_i_1_n_0
-    SLICE_X87Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.605 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.605    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[15]_i_1_n_0
-    SLICE_X87Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.719 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.719    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[19]_i_1_n_0
-    SLICE_X87Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.833 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.833    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[23]_i_1_n_0
-    SLICE_X87Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.947 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[27]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.947    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[27]_i_1_n_0
-    SLICE_X87Y32         CARRY4 (Prop_carry4_CI_O[1])
-                                                      0.334    13.281 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[31]_i_2/O[1]
-                         net (fo=1, routed)           0.000    13.281    VexRiscv/dataCache_1__n_426
-    SLICE_X87Y32         FDRE                                         r  VexRiscv/memory_DivPlugin_rs1_reg[29]/D
+    SLICE_X79Y5          FDRE (Prop_fdre_C_Q)         0.456     6.289 r  VexRiscv/decode_to_execute_SRC2_CTRL_reg[0]/Q
+                         net (fo=37, routed)          1.102     7.391    VexRiscv/dataCache_1_/execute_to_memory_REGFILE_WRITE_DATA_reg[11]_0[0]
+    SLICE_X80Y10         LUT5 (Prop_lut5_I2_O)        0.124     7.515 r  VexRiscv/dataCache_1_/execute_to_memory_SHIFT_RIGHT[30]_i_6/O
+                         net (fo=26, routed)          0.489     8.003    VexRiscv/dataCache_1_/decode_to_execute_INSTRUCTION_reg[7]_0
+    SLICE_X85Y9          LUT6 (Prop_lut6_I4_O)        0.124     8.127 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_43/O
+                         net (fo=1, routed)           0.505     8.633    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_43_n_0
+    SLICE_X84Y9          CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.656     9.289 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_33/CO[3]
+                         net (fo=1, routed)           0.000     9.289    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_33_n_0
+    SLICE_X84Y10         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.403 r  VexRiscv/dataCache_1_/ways_0_tags_reg_i_42/CO[3]
+                         net (fo=1, routed)           0.000     9.403    VexRiscv/dataCache_1_/ways_0_tags_reg_i_42_n_0
+    SLICE_X84Y11         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.517 r  VexRiscv/dataCache_1_/ways_0_tags_reg_i_41/CO[3]
+                         net (fo=1, routed)           0.000     9.517    VexRiscv/dataCache_1__n_386
+    SLICE_X84Y12         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.631 r  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[15]_i_4/CO[3]
+                         net (fo=1, routed)           0.000     9.631    VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[15]_i_4_n_0
+    SLICE_X84Y13         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.745 r  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[19]_i_4/CO[3]
+                         net (fo=1, routed)           0.000     9.745    VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[19]_i_4_n_0
+    SLICE_X84Y14         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     9.859 r  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[23]_i_4/CO[3]
+                         net (fo=1, routed)           0.000     9.859    VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[23]_i_4_n_0
+    SLICE_X84Y15         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    10.193 r  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA_reg[27]_i_4/O[1]
+                         net (fo=1, routed)           0.611    10.804    VexRiscv/_zz_269_[25]
+    SLICE_X79Y16         LUT6 (Prop_lut6_I4_O)        0.303    11.107 f  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA[25]_i_3/O
+                         net (fo=1, routed)           0.443    11.549    VexRiscv/execute_to_memory_REGFILE_WRITE_DATA[25]_i_3_n_0
+    SLICE_X80Y16         LUT6 (Prop_lut6_I5_O)        0.124    11.673 r  VexRiscv/execute_to_memory_REGFILE_WRITE_DATA[25]_i_1/O
+                         net (fo=3, routed)           0.647    12.320    VexRiscv/IBusCachedPlugin_cache/decode_to_execute_RS1_reg[31][25]
+    SLICE_X89Y19         LUT4 (Prop_lut4_I1_O)        0.124    12.444 r  VexRiscv/IBusCachedPlugin_cache/decode_to_execute_RS1[25]_i_3/O
+                         net (fo=1, routed)           0.648    13.092    VexRiscv/IBusCachedPlugin_cache/decode_to_execute_RS1[25]_i_3_n_0
+    SLICE_X90Y20         LUT5 (Prop_lut5_I4_O)        0.124    13.216 r  VexRiscv/IBusCachedPlugin_cache/decode_to_execute_RS1[25]_i_1/O
+                         net (fo=1, routed)           0.000    13.216    VexRiscv/decode_RS1[25]
+    SLICE_X90Y20         FDRE                                         r  VexRiscv/decode_to_execute_RS1_reg[25]/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk125 rise edge)     8.000     8.000 r  
@@ -660,182 +603,31 @@ Slack (MET) :             0.514ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.293    11.697    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.555    13.344    VexRiscv/clk125_IBUF_BUFG
-    SLICE_X87Y32         FDRE                                         r  VexRiscv/memory_DivPlugin_rs1_reg[29]/C
-                         clock pessimism              0.424    13.768    
-                         clock uncertainty           -0.035    13.732    
-    SLICE_X87Y32         FDRE (Setup_fdre_C_D)        0.062    13.794    VexRiscv/memory_DivPlugin_rs1_reg[29]
+                         net (fo=1837, routed)        1.611    13.400    VexRiscv/clk125_IBUF_BUFG
+    SLICE_X90Y20         FDRE                                         r  VexRiscv/decode_to_execute_RS1_reg[25]/C
+                         clock pessimism              0.424    13.824    
+                         clock uncertainty           -0.035    13.788    
+    SLICE_X90Y20         FDRE (Setup_fdre_C_D)        0.077    13.865    VexRiscv/decode_to_execute_RS1_reg[25]
   -------------------------------------------------------------------
-                         required time                         13.794    
-                         arrival time                         -13.281    
+                         required time                         13.865    
+                         arrival time                         -13.216    
   -------------------------------------------------------------------
-                         slack                                  0.514    
+                         slack                                  0.649    
 
-Slack (MET) :             0.535ns  (required time - arrival time)
-  Source:                 VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
+Slack (MET) :             0.662ns  (required time - arrival time)
+  Source:                 grant_reg/C
                             (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            VexRiscv/memory_DivPlugin_rs1_reg[31]/D
+  Destination:            ADDR_REG_storage_reg[0]/CE
                             (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             clk125
   Path Type:              Setup (Max at Slow Process Corner)
   Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        7.441ns  (logic 2.958ns (39.752%)  route 4.483ns (60.247%))
-  Logic Levels:           12  (CARRY4=8 LUT4=2 LUT5=1 LUT6=1)
-  Clock Path Skew:        -0.051ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.344ns = ( 13.344 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.819ns
-    Clock Pessimism Removal (CPR):    0.424ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           2.522     3.997    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.721     5.819    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
-    SLICE_X76Y21         FDRE                                         r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X76Y21         FDRE (Prop_fdre_C_Q)         0.456     6.275 r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/Q
-                         net (fo=25, routed)          1.235     7.510    VexRiscv/dataCache_1_/stageB_waysHits
-    SLICE_X68Y20         LUT5 (Prop_lut5_I3_O)        0.154     7.664 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29/O
-                         net (fo=4, routed)           0.836     8.500    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29_n_0
-    SLICE_X67Y21         LUT6 (Prop_lut6_I5_O)        0.327     8.827 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_2/O
-                         net (fo=158, routed)         0.611     9.438    VexRiscv/dataCache_1_/stageB_flusher_valid_reg_0
-    SLICE_X69Y21         LUT4 (Prop_lut4_I0_O)        0.124     9.562 r  VexRiscv/dataCache_1_/stageA_mask[3]_i_1/O
-                         net (fo=300, routed)         1.207    10.769    VexRiscv/dataCache_1_/memory_DivPlugin_div_counter_willClear
-    SLICE_X86Y24         LUT4 (Prop_lut4_I3_O)        0.116    10.885 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1[3]_i_2/O
-                         net (fo=1, routed)           0.594    11.479    VexRiscv/dataCache_1_/memory_DivPlugin_rs1[3]_i_2_n_0
-    SLICE_X87Y25         CARRY4 (Prop_carry4_CYINIT_CO[3])
-                                                      0.784    12.263 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[3]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.263    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[3]_i_1_n_0
-    SLICE_X87Y26         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.377 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[7]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.377    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[7]_i_1_n_0
-    SLICE_X87Y27         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.491 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[11]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.491    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[11]_i_1_n_0
-    SLICE_X87Y28         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.605 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[15]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.605    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[15]_i_1_n_0
-    SLICE_X87Y29         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.719 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[19]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.719    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[19]_i_1_n_0
-    SLICE_X87Y30         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.833 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[23]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.833    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[23]_i_1_n_0
-    SLICE_X87Y31         CARRY4 (Prop_carry4_CI_CO[3])
-                                                      0.114    12.947 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[27]_i_1/CO[3]
-                         net (fo=1, routed)           0.000    12.947    VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[27]_i_1_n_0
-    SLICE_X87Y32         CARRY4 (Prop_carry4_CI_O[3])
-                                                      0.313    13.260 r  VexRiscv/dataCache_1_/memory_DivPlugin_rs1_reg[31]_i_2/O[3]
-                         net (fo=1, routed)           0.000    13.260    VexRiscv/dataCache_1__n_424
-    SLICE_X87Y32         FDRE                                         r  VexRiscv/memory_DivPlugin_rs1_reg[31]/D
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk125 rise edge)     8.000     8.000 r  
-    K17                                               0.000     8.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     8.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           2.293    11.697    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.555    13.344    VexRiscv/clk125_IBUF_BUFG
-    SLICE_X87Y32         FDRE                                         r  VexRiscv/memory_DivPlugin_rs1_reg[31]/C
-                         clock pessimism              0.424    13.768    
-                         clock uncertainty           -0.035    13.732    
-    SLICE_X87Y32         FDRE (Setup_fdre_C_D)        0.062    13.794    VexRiscv/memory_DivPlugin_rs1_reg[31]
-  -------------------------------------------------------------------
-                         required time                         13.794    
-                         arrival time                         -13.260    
-  -------------------------------------------------------------------
-                         slack                                  0.535    
-
-Slack (MET) :             0.570ns  (required time - arrival time)
-  Source:                 VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            VexRiscv/RegFilePlugin_regFile_reg_1/ADDRARDADDR[5]
-                            (rising edge-triggered cell RAMB18E1 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             clk125
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        6.872ns  (logic 1.433ns (20.852%)  route 5.439ns (79.148%))
-  Logic Levels:           6  (LUT3=1 LUT4=1 LUT5=2 LUT6=2)
-  Clock Path Skew:        0.043ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.438ns = ( 13.438 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.819ns
-    Clock Pessimism Removal (CPR):    0.424ns
-  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
-    Total System Jitter     (TSJ):    0.071ns
-    Total Input Jitter      (TIJ):    0.000ns
-    Discrete Jitter          (DJ):    0.000ns
-    Phase Error              (PE):    0.000ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           2.522     3.997    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.721     5.819    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
-    SLICE_X76Y21         FDRE                                         r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X76Y21         FDRE (Prop_fdre_C_Q)         0.456     6.275 r  VexRiscv/dataCache_1_/stageB_waysHits_reg[0]/Q
-                         net (fo=25, routed)          1.235     7.510    VexRiscv/dataCache_1_/stageB_waysHits
-    SLICE_X68Y20         LUT5 (Prop_lut5_I3_O)        0.154     7.664 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29/O
-                         net (fo=4, routed)           0.836     8.500    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_29_n_0
-    SLICE_X67Y21         LUT6 (Prop_lut6_I5_O)        0.327     8.827 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_2/O
-                         net (fo=158, routed)         0.611     9.438    VexRiscv/dataCache_1_/stageB_flusher_valid_reg_0
-    SLICE_X69Y21         LUT4 (Prop_lut4_I0_O)        0.124     9.562 r  VexRiscv/dataCache_1_/stageA_mask[3]_i_1/O
-                         net (fo=300, routed)         0.593    10.155    VexRiscv/dataCache_1_/memory_DivPlugin_div_counter_willClear
-    SLICE_X73Y21         LUT5 (Prop_lut5_I0_O)        0.124    10.279 r  VexRiscv/dataCache_1_/decode_to_execute_ENV_CTRL[1]_i_1/O
-                         net (fo=181, routed)         0.431    10.710    VexRiscv/IBusCachedPlugin_cache/execute_CsrPlugin_writeEnable0
-    SLICE_X72Y22         LUT6 (Prop_lut6_I4_O)        0.124    10.834 r  VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2/O
-                         net (fo=14, routed)          0.659    11.493    VexRiscv/IBusCachedPlugin_cache/CsrPlugin_exceptionPortCtrl_exceptionValidsRegs_execute_i_2_n_0
-    SLICE_X72Y20         LUT3 (Prop_lut3_I1_O)        0.124    11.617 r  VexRiscv/IBusCachedPlugin_cache/RegFilePlugin_regFile_reg_1_i_5/O
-                         net (fo=1, routed)           1.074    12.691    VexRiscv/decode_RegFilePlugin_regFileReadAddress1[0]
-    RAMB18_X4Y8          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_1/ADDRARDADDR[5]
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk125 rise edge)     8.000     8.000 r  
-    K17                                               0.000     8.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     8.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           2.293    11.697    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.650    13.438    VexRiscv/clk125_IBUF_BUFG
-    RAMB18_X4Y8          RAMB18E1                                     r  VexRiscv/RegFilePlugin_regFile_reg_1/CLKARDCLK
-                         clock pessimism              0.424    13.862    
-                         clock uncertainty           -0.035    13.827    
-    RAMB18_X4Y8          RAMB18E1 (Setup_ramb18e1_CLKARDCLK_ADDRARDADDR[5])
-                                                     -0.566    13.261    VexRiscv/RegFilePlugin_regFile_reg_1
-  -------------------------------------------------------------------
-                         required time                         13.261    
-                         arrival time                         -12.691    
-  -------------------------------------------------------------------
-                         slack                                  0.570    
-
-Slack (MET) :             0.577ns  (required time - arrival time)
-  Source:                 VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[4]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            VexRiscv/IBusCachedPlugin_cache/ways_0_tags_reg/ADDRARDADDR[10]
-                            (rising edge-triggered cell RAMB18E1 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             clk125
-  Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        6.809ns  (logic 1.656ns (24.320%)  route 5.153ns (75.680%))
+  Data Path Delay:        6.880ns  (logic 1.666ns (24.215%)  route 5.214ns (75.785%))
   Logic Levels:           6  (LUT2=1 LUT4=2 LUT5=2 LUT6=1)
-  Clock Path Skew:        -0.013ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    5.372ns = ( 13.372 - 8.000 ) 
-    Source Clock Delay      (SCD):    5.809ns
-    Clock Pessimism Removal (CPR):    0.424ns
+  Clock Path Skew:        -0.218ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.283ns = ( 13.283 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.824ns
+    Clock Pessimism Removal (CPR):    0.323ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -850,24 +642,24 @@ Slack (MET) :             0.577ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.522     3.997    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.711     5.809    VexRiscv/IBusCachedPlugin_cache/clk125_IBUF_BUFG
-    SLICE_X59Y23         FDRE                                         r  VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[4]/C
+                         net (fo=1837, routed)        1.726     5.824    clk125_IBUF_BUFG
+    SLICE_X55Y10         FDRE                                         r  grant_reg/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X59Y23         FDRE (Prop_fdre_C_Q)         0.456     6.265 f  VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[4]/Q
-                         net (fo=38, routed)          1.077     7.342    VexRiscv/IBusCachedPlugin_cache/io_cpu_fetch_data_regNextWhen_reg[31]_0[4]
-    SLICE_X62Y24         LUT2 (Prop_lut2_I1_O)        0.148     7.490 r  VexRiscv/IBusCachedPlugin_cache/decode_to_execute_PREDICTION_HAD_BRANCHED2_i_2/O
-                         net (fo=4, routed)           0.617     8.107    VexRiscv/IBusCachedPlugin_cache/decode_to_execute_PREDICTION_HAD_BRANCHED2_i_2_n_0
-    SLICE_X60Y23         LUT6 (Prop_lut6_I4_O)        0.328     8.435 f  VexRiscv/IBusCachedPlugin_cache/ways_0_datas_reg_i_51/O
-                         net (fo=1, routed)           0.444     8.879    VexRiscv/IBusCachedPlugin_cache/ways_0_datas_reg_i_51_n_0
-    SLICE_X60Y23         LUT4 (Prop_lut4_I0_O)        0.124     9.003 f  VexRiscv/IBusCachedPlugin_cache/ways_0_datas_reg_i_34/O
-                         net (fo=4, routed)           0.816     9.819    VexRiscv/IBusCachedPlugin_cache/decodeStage_hit_valid_reg_1
-    SLICE_X62Y23         LUT4 (Prop_lut4_I0_O)        0.148     9.967 f  VexRiscv/IBusCachedPlugin_cache/ways_0_datas_reg_i_36/O
-                         net (fo=30, routed)          0.883    10.849    VexRiscv/dataCache_1_/ways_0_tags_reg_3
-    SLICE_X61Y23         LUT5 (Prop_lut5_I0_O)        0.328    11.177 r  VexRiscv/dataCache_1_/ways_0_datas_reg_i_18/O
-                         net (fo=1, routed)           0.440    11.617    VexRiscv/IBusCachedPlugin_cache/ways_0_tags_reg_2
-    SLICE_X56Y23         LUT5 (Prop_lut5_I2_O)        0.124    11.741 r  VexRiscv/IBusCachedPlugin_cache/ways_0_datas_reg_i_3/O
-                         net (fo=3, routed)           0.877    12.618    VexRiscv/IBusCachedPlugin_cache/io_cpu_prefetch_pc[7]
-    RAMB18_X3Y10         RAMB18E1                                     r  VexRiscv/IBusCachedPlugin_cache/ways_0_tags_reg/ADDRARDADDR[10]
+    SLICE_X55Y10         FDRE (Prop_fdre_C_Q)         0.456     6.280 r  grant_reg/Q
+                         net (fo=125, routed)         0.949     7.229    VexRiscv/IBusCachedPlugin_cache/grant
+    SLICE_X56Y11         LUT5 (Prop_lut5_I2_O)        0.124     7.353 f  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_7/O
+                         net (fo=1, routed)           0.537     7.890    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_7_n_0
+    SLICE_X56Y11         LUT6 (Prop_lut6_I5_O)        0.124     8.014 r  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_4/O
+                         net (fo=4, routed)           0.783     8.797    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_4_n_0
+    SLICE_X54Y11         LUT4 (Prop_lut4_I1_O)        0.150     8.947 f  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_2/O
+                         net (fo=7, routed)           0.716     9.662    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_2_0[3]
+    SLICE_X49Y11         LUT5 (Prop_lut5_I3_O)        0.328     9.990 f  VexRiscv/IBusCachedPlugin_cache/storage_reg_0_15_0_5_i_8/O
+                         net (fo=52, routed)          0.659    10.649    VexRiscv/IBusCachedPlugin_cache/storage_reg_0_15_0_5_i_8_n_0
+    SLICE_X46Y11         LUT4 (Prop_lut4_I3_O)        0.153    10.802 r  VexRiscv/IBusCachedPlugin_cache/timer_load_storage[31]_i_3/O
+                         net (fo=43, routed)          1.051    11.853    VexRiscv/IBusCachedPlugin_cache/timer_load_storage[31]_i_3_n_0
+    SLICE_X43Y8          LUT2 (Prop_lut2_I0_O)        0.331    12.184 r  VexRiscv/IBusCachedPlugin_cache/ADDR_REG_storage[3]_i_1/O
+                         net (fo=4, routed)           0.519    12.704    csr_bankarray_csrbank0_ADDR_REG0_re
+    SLICE_X43Y8          FDRE                                         r  ADDR_REG_storage_reg[0]/CE
   -------------------------------------------------------------------    -------------------
 
                          (clock clk125 rise edge)     8.000     8.000 r  
@@ -876,17 +668,211 @@ Slack (MET) :             0.577ns  (required time - arrival time)
     K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           2.293    11.697    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        1.584    13.372    VexRiscv/IBusCachedPlugin_cache/clk125_IBUF_BUFG
-    RAMB18_X3Y10         RAMB18E1                                     r  VexRiscv/IBusCachedPlugin_cache/ways_0_tags_reg/CLKARDCLK
-                         clock pessimism              0.424    13.796    
-                         clock uncertainty           -0.035    13.761    
-    RAMB18_X3Y10         RAMB18E1 (Setup_ramb18e1_CLKARDCLK_ADDRARDADDR[10])
-                                                     -0.566    13.195    VexRiscv/IBusCachedPlugin_cache/ways_0_tags_reg
+                         net (fo=1837, routed)        1.494    13.283    clk125_IBUF_BUFG
+    SLICE_X43Y8          FDRE                                         r  ADDR_REG_storage_reg[0]/C
+                         clock pessimism              0.323    13.606    
+                         clock uncertainty           -0.035    13.571    
+    SLICE_X43Y8          FDRE (Setup_fdre_C_CE)      -0.205    13.366    ADDR_REG_storage_reg[0]
   -------------------------------------------------------------------
-                         required time                         13.195    
-                         arrival time                         -12.618    
+                         required time                         13.366    
+                         arrival time                         -12.704    
   -------------------------------------------------------------------
-                         slack                                  0.577    
+                         slack                                  0.662    
+
+Slack (MET) :             0.662ns  (required time - arrival time)
+  Source:                 grant_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            ADDR_REG_storage_reg[1]/CE
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk125
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
+  Data Path Delay:        6.880ns  (logic 1.666ns (24.215%)  route 5.214ns (75.785%))
+  Logic Levels:           6  (LUT2=1 LUT4=2 LUT5=2 LUT6=1)
+  Clock Path Skew:        -0.218ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.283ns = ( 13.283 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.824ns
+    Clock Pessimism Removal (CPR):    0.323ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           2.522     3.997    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        1.726     5.824    clk125_IBUF_BUFG
+    SLICE_X55Y10         FDRE                                         r  grant_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X55Y10         FDRE (Prop_fdre_C_Q)         0.456     6.280 r  grant_reg/Q
+                         net (fo=125, routed)         0.949     7.229    VexRiscv/IBusCachedPlugin_cache/grant
+    SLICE_X56Y11         LUT5 (Prop_lut5_I2_O)        0.124     7.353 f  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_7/O
+                         net (fo=1, routed)           0.537     7.890    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_7_n_0
+    SLICE_X56Y11         LUT6 (Prop_lut6_I5_O)        0.124     8.014 r  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_4/O
+                         net (fo=4, routed)           0.783     8.797    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_4_n_0
+    SLICE_X54Y11         LUT4 (Prop_lut4_I1_O)        0.150     8.947 f  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_2/O
+                         net (fo=7, routed)           0.716     9.662    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_2_0[3]
+    SLICE_X49Y11         LUT5 (Prop_lut5_I3_O)        0.328     9.990 f  VexRiscv/IBusCachedPlugin_cache/storage_reg_0_15_0_5_i_8/O
+                         net (fo=52, routed)          0.659    10.649    VexRiscv/IBusCachedPlugin_cache/storage_reg_0_15_0_5_i_8_n_0
+    SLICE_X46Y11         LUT4 (Prop_lut4_I3_O)        0.153    10.802 r  VexRiscv/IBusCachedPlugin_cache/timer_load_storage[31]_i_3/O
+                         net (fo=43, routed)          1.051    11.853    VexRiscv/IBusCachedPlugin_cache/timer_load_storage[31]_i_3_n_0
+    SLICE_X43Y8          LUT2 (Prop_lut2_I0_O)        0.331    12.184 r  VexRiscv/IBusCachedPlugin_cache/ADDR_REG_storage[3]_i_1/O
+                         net (fo=4, routed)           0.519    12.704    csr_bankarray_csrbank0_ADDR_REG0_re
+    SLICE_X43Y8          FDRE                                         r  ADDR_REG_storage_reg[1]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk125 rise edge)     8.000     8.000 r  
+    K17                                               0.000     8.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     8.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           2.293    11.697    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        1.494    13.283    clk125_IBUF_BUFG
+    SLICE_X43Y8          FDRE                                         r  ADDR_REG_storage_reg[1]/C
+                         clock pessimism              0.323    13.606    
+                         clock uncertainty           -0.035    13.571    
+    SLICE_X43Y8          FDRE (Setup_fdre_C_CE)      -0.205    13.366    ADDR_REG_storage_reg[1]
+  -------------------------------------------------------------------
+                         required time                         13.366    
+                         arrival time                         -12.704    
+  -------------------------------------------------------------------
+                         slack                                  0.662    
+
+Slack (MET) :             0.662ns  (required time - arrival time)
+  Source:                 grant_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            ADDR_REG_storage_reg[2]/CE
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk125
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
+  Data Path Delay:        6.880ns  (logic 1.666ns (24.215%)  route 5.214ns (75.785%))
+  Logic Levels:           6  (LUT2=1 LUT4=2 LUT5=2 LUT6=1)
+  Clock Path Skew:        -0.218ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.283ns = ( 13.283 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.824ns
+    Clock Pessimism Removal (CPR):    0.323ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           2.522     3.997    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        1.726     5.824    clk125_IBUF_BUFG
+    SLICE_X55Y10         FDRE                                         r  grant_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X55Y10         FDRE (Prop_fdre_C_Q)         0.456     6.280 r  grant_reg/Q
+                         net (fo=125, routed)         0.949     7.229    VexRiscv/IBusCachedPlugin_cache/grant
+    SLICE_X56Y11         LUT5 (Prop_lut5_I2_O)        0.124     7.353 f  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_7/O
+                         net (fo=1, routed)           0.537     7.890    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_7_n_0
+    SLICE_X56Y11         LUT6 (Prop_lut6_I5_O)        0.124     8.014 r  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_4/O
+                         net (fo=4, routed)           0.783     8.797    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_4_n_0
+    SLICE_X54Y11         LUT4 (Prop_lut4_I1_O)        0.150     8.947 f  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_2/O
+                         net (fo=7, routed)           0.716     9.662    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_2_0[3]
+    SLICE_X49Y11         LUT5 (Prop_lut5_I3_O)        0.328     9.990 f  VexRiscv/IBusCachedPlugin_cache/storage_reg_0_15_0_5_i_8/O
+                         net (fo=52, routed)          0.659    10.649    VexRiscv/IBusCachedPlugin_cache/storage_reg_0_15_0_5_i_8_n_0
+    SLICE_X46Y11         LUT4 (Prop_lut4_I3_O)        0.153    10.802 r  VexRiscv/IBusCachedPlugin_cache/timer_load_storage[31]_i_3/O
+                         net (fo=43, routed)          1.051    11.853    VexRiscv/IBusCachedPlugin_cache/timer_load_storage[31]_i_3_n_0
+    SLICE_X43Y8          LUT2 (Prop_lut2_I0_O)        0.331    12.184 r  VexRiscv/IBusCachedPlugin_cache/ADDR_REG_storage[3]_i_1/O
+                         net (fo=4, routed)           0.519    12.704    csr_bankarray_csrbank0_ADDR_REG0_re
+    SLICE_X43Y8          FDRE                                         r  ADDR_REG_storage_reg[2]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk125 rise edge)     8.000     8.000 r  
+    K17                                               0.000     8.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     8.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           2.293    11.697    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        1.494    13.283    clk125_IBUF_BUFG
+    SLICE_X43Y8          FDRE                                         r  ADDR_REG_storage_reg[2]/C
+                         clock pessimism              0.323    13.606    
+                         clock uncertainty           -0.035    13.571    
+    SLICE_X43Y8          FDRE (Setup_fdre_C_CE)      -0.205    13.366    ADDR_REG_storage_reg[2]
+  -------------------------------------------------------------------
+                         required time                         13.366    
+                         arrival time                         -12.704    
+  -------------------------------------------------------------------
+                         slack                                  0.662    
+
+Slack (MET) :             0.662ns  (required time - arrival time)
+  Source:                 grant_reg/C
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            ADDR_REG_storage_reg[3]/CE
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk125
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
+  Data Path Delay:        6.880ns  (logic 1.666ns (24.215%)  route 5.214ns (75.785%))
+  Logic Levels:           6  (LUT2=1 LUT4=2 LUT5=2 LUT6=1)
+  Clock Path Skew:        -0.218ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    5.283ns = ( 13.283 - 8.000 ) 
+    Source Clock Delay      (SCD):    5.824ns
+    Clock Pessimism Removal (CPR):    0.323ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     1.475 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           2.522     3.997    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.101     4.098 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        1.726     5.824    clk125_IBUF_BUFG
+    SLICE_X55Y10         FDRE                                         r  grant_reg/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X55Y10         FDRE (Prop_fdre_C_Q)         0.456     6.280 r  grant_reg/Q
+                         net (fo=125, routed)         0.949     7.229    VexRiscv/IBusCachedPlugin_cache/grant
+    SLICE_X56Y11         LUT5 (Prop_lut5_I2_O)        0.124     7.353 f  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_7/O
+                         net (fo=1, routed)           0.537     7.890    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_7_n_0
+    SLICE_X56Y11         LUT6 (Prop_lut6_I5_O)        0.124     8.014 r  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_4/O
+                         net (fo=4, routed)           0.783     8.797    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_4_n_0
+    SLICE_X54Y11         LUT4 (Prop_lut4_I1_O)        0.150     8.947 f  VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_2/O
+                         net (fo=7, routed)           0.716     9.662    VexRiscv/IBusCachedPlugin_cache/slave_sel_r[3]_i_2_0[3]
+    SLICE_X49Y11         LUT5 (Prop_lut5_I3_O)        0.328     9.990 f  VexRiscv/IBusCachedPlugin_cache/storage_reg_0_15_0_5_i_8/O
+                         net (fo=52, routed)          0.659    10.649    VexRiscv/IBusCachedPlugin_cache/storage_reg_0_15_0_5_i_8_n_0
+    SLICE_X46Y11         LUT4 (Prop_lut4_I3_O)        0.153    10.802 r  VexRiscv/IBusCachedPlugin_cache/timer_load_storage[31]_i_3/O
+                         net (fo=43, routed)          1.051    11.853    VexRiscv/IBusCachedPlugin_cache/timer_load_storage[31]_i_3_n_0
+    SLICE_X43Y8          LUT2 (Prop_lut2_I0_O)        0.331    12.184 r  VexRiscv/IBusCachedPlugin_cache/ADDR_REG_storage[3]_i_1/O
+                         net (fo=4, routed)           0.519    12.704    csr_bankarray_csrbank0_ADDR_REG0_re
+    SLICE_X43Y8          FDRE                                         r  ADDR_REG_storage_reg[3]/CE
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk125 rise edge)     8.000     8.000 r  
+    K17                                               0.000     8.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     8.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         1.404     9.404 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           2.293    11.697    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    11.788 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        1.494    13.283    clk125_IBUF_BUFG
+    SLICE_X43Y8          FDRE                                         r  ADDR_REG_storage_reg[3]/C
+                         clock pessimism              0.323    13.606    
+                         clock uncertainty           -0.035    13.571    
+    SLICE_X43Y8          FDRE (Setup_fdre_C_CE)      -0.205    13.366    ADDR_REG_storage_reg[3]
+  -------------------------------------------------------------------
+                         required time                         13.366    
+                         arrival time                         -12.704    
+  -------------------------------------------------------------------
+                         slack                                  0.662    
 
 
 
@@ -895,402 +881,18 @@ Slack (MET) :             0.577ns  (required time - arrival time)
 Min Delay Paths
 --------------------------------------------------------------------------------------
 Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 uart_tx_fifo_produce_reg[0]/C
+  Source:                 uart_rx_fifo_produce_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            storage_reg_0_15_6_9/RAMA/WADR0
+  Destination:            storage_1_reg_0_15_0_5/RAMA/WADR0
                             (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             clk125
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        0.347ns  (logic 0.141ns (40.599%)  route 0.206ns (59.401%))
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
   Logic Levels:           0  
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.217ns
-    Source Clock Delay      (SCD):    1.691ns
-    Clock Pessimism Removal (CPR):    0.513ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.581     1.691    clk125_IBUF_BUFG
-    SLICE_X59Y10         FDRE                                         r  uart_tx_fifo_produce_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X59Y10         FDRE (Prop_fdre_C_Q)         0.141     1.832 r  uart_tx_fifo_produce_reg[0]/Q
-                         net (fo=20, routed)          0.206     2.038    storage_reg_0_15_6_9/ADDRD0
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMA/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.850     2.217    storage_reg_0_15_6_9/WCLK
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMA/CLK
-                         clock pessimism             -0.513     1.704    
-    SLICE_X58Y10         RAMD32 (Hold_ramd32_CLK_WADR0)
-                                                      0.310     2.014    storage_reg_0_15_6_9/RAMA
-  -------------------------------------------------------------------
-                         required time                         -2.014    
-                         arrival time                           2.038    
-  -------------------------------------------------------------------
-                         slack                                  0.024    
-
-Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 uart_tx_fifo_produce_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            storage_reg_0_15_6_9/RAMA_D1/WADR0
-                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             clk125
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        0.347ns  (logic 0.141ns (40.599%)  route 0.206ns (59.401%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.217ns
-    Source Clock Delay      (SCD):    1.691ns
-    Clock Pessimism Removal (CPR):    0.513ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.581     1.691    clk125_IBUF_BUFG
-    SLICE_X59Y10         FDRE                                         r  uart_tx_fifo_produce_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X59Y10         FDRE (Prop_fdre_C_Q)         0.141     1.832 r  uart_tx_fifo_produce_reg[0]/Q
-                         net (fo=20, routed)          0.206     2.038    storage_reg_0_15_6_9/ADDRD0
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMA_D1/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.850     2.217    storage_reg_0_15_6_9/WCLK
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMA_D1/CLK
-                         clock pessimism             -0.513     1.704    
-    SLICE_X58Y10         RAMD32 (Hold_ramd32_CLK_WADR0)
-                                                      0.310     2.014    storage_reg_0_15_6_9/RAMA_D1
-  -------------------------------------------------------------------
-                         required time                         -2.014    
-                         arrival time                           2.038    
-  -------------------------------------------------------------------
-                         slack                                  0.024    
-
-Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 uart_tx_fifo_produce_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            storage_reg_0_15_6_9/RAMB/WADR0
-                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             clk125
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        0.347ns  (logic 0.141ns (40.599%)  route 0.206ns (59.401%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.217ns
-    Source Clock Delay      (SCD):    1.691ns
-    Clock Pessimism Removal (CPR):    0.513ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.581     1.691    clk125_IBUF_BUFG
-    SLICE_X59Y10         FDRE                                         r  uart_tx_fifo_produce_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X59Y10         FDRE (Prop_fdre_C_Q)         0.141     1.832 r  uart_tx_fifo_produce_reg[0]/Q
-                         net (fo=20, routed)          0.206     2.038    storage_reg_0_15_6_9/ADDRD0
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMB/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.850     2.217    storage_reg_0_15_6_9/WCLK
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMB/CLK
-                         clock pessimism             -0.513     1.704    
-    SLICE_X58Y10         RAMD32 (Hold_ramd32_CLK_WADR0)
-                                                      0.310     2.014    storage_reg_0_15_6_9/RAMB
-  -------------------------------------------------------------------
-                         required time                         -2.014    
-                         arrival time                           2.038    
-  -------------------------------------------------------------------
-                         slack                                  0.024    
-
-Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 uart_tx_fifo_produce_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            storage_reg_0_15_6_9/RAMB_D1/WADR0
-                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             clk125
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        0.347ns  (logic 0.141ns (40.599%)  route 0.206ns (59.401%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.217ns
-    Source Clock Delay      (SCD):    1.691ns
-    Clock Pessimism Removal (CPR):    0.513ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.581     1.691    clk125_IBUF_BUFG
-    SLICE_X59Y10         FDRE                                         r  uart_tx_fifo_produce_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X59Y10         FDRE (Prop_fdre_C_Q)         0.141     1.832 r  uart_tx_fifo_produce_reg[0]/Q
-                         net (fo=20, routed)          0.206     2.038    storage_reg_0_15_6_9/ADDRD0
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMB_D1/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.850     2.217    storage_reg_0_15_6_9/WCLK
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMB_D1/CLK
-                         clock pessimism             -0.513     1.704    
-    SLICE_X58Y10         RAMD32 (Hold_ramd32_CLK_WADR0)
-                                                      0.310     2.014    storage_reg_0_15_6_9/RAMB_D1
-  -------------------------------------------------------------------
-                         required time                         -2.014    
-                         arrival time                           2.038    
-  -------------------------------------------------------------------
-                         slack                                  0.024    
-
-Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 uart_tx_fifo_produce_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            storage_reg_0_15_6_9/RAMC/WADR0
-                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             clk125
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        0.347ns  (logic 0.141ns (40.599%)  route 0.206ns (59.401%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.217ns
-    Source Clock Delay      (SCD):    1.691ns
-    Clock Pessimism Removal (CPR):    0.513ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.581     1.691    clk125_IBUF_BUFG
-    SLICE_X59Y10         FDRE                                         r  uart_tx_fifo_produce_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X59Y10         FDRE (Prop_fdre_C_Q)         0.141     1.832 r  uart_tx_fifo_produce_reg[0]/Q
-                         net (fo=20, routed)          0.206     2.038    storage_reg_0_15_6_9/ADDRD0
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMC/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.850     2.217    storage_reg_0_15_6_9/WCLK
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMC/CLK
-                         clock pessimism             -0.513     1.704    
-    SLICE_X58Y10         RAMD32 (Hold_ramd32_CLK_WADR0)
-                                                      0.310     2.014    storage_reg_0_15_6_9/RAMC
-  -------------------------------------------------------------------
-                         required time                         -2.014    
-                         arrival time                           2.038    
-  -------------------------------------------------------------------
-                         slack                                  0.024    
-
-Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 uart_tx_fifo_produce_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            storage_reg_0_15_6_9/RAMC_D1/WADR0
-                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             clk125
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        0.347ns  (logic 0.141ns (40.599%)  route 0.206ns (59.401%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.217ns
-    Source Clock Delay      (SCD):    1.691ns
-    Clock Pessimism Removal (CPR):    0.513ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.581     1.691    clk125_IBUF_BUFG
-    SLICE_X59Y10         FDRE                                         r  uart_tx_fifo_produce_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X59Y10         FDRE (Prop_fdre_C_Q)         0.141     1.832 r  uart_tx_fifo_produce_reg[0]/Q
-                         net (fo=20, routed)          0.206     2.038    storage_reg_0_15_6_9/ADDRD0
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMC_D1/WADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.850     2.217    storage_reg_0_15_6_9/WCLK
-    SLICE_X58Y10         RAMD32                                       r  storage_reg_0_15_6_9/RAMC_D1/CLK
-                         clock pessimism             -0.513     1.704    
-    SLICE_X58Y10         RAMD32 (Hold_ramd32_CLK_WADR0)
-                                                      0.310     2.014    storage_reg_0_15_6_9/RAMC_D1
-  -------------------------------------------------------------------
-                         required time                         -2.014    
-                         arrival time                           2.038    
-  -------------------------------------------------------------------
-                         slack                                  0.024    
-
-Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 uart_tx_fifo_produce_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            storage_reg_0_15_6_9/RAMD/ADR0
-                            (rising edge-triggered cell RAMS32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             clk125
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        0.347ns  (logic 0.141ns (40.599%)  route 0.206ns (59.401%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.217ns
-    Source Clock Delay      (SCD):    1.691ns
-    Clock Pessimism Removal (CPR):    0.513ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.581     1.691    clk125_IBUF_BUFG
-    SLICE_X59Y10         FDRE                                         r  uart_tx_fifo_produce_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X59Y10         FDRE (Prop_fdre_C_Q)         0.141     1.832 r  uart_tx_fifo_produce_reg[0]/Q
-                         net (fo=20, routed)          0.206     2.038    storage_reg_0_15_6_9/ADDRD0
-    SLICE_X58Y10         RAMS32                                       r  storage_reg_0_15_6_9/RAMD/ADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.850     2.217    storage_reg_0_15_6_9/WCLK
-    SLICE_X58Y10         RAMS32                                       r  storage_reg_0_15_6_9/RAMD/CLK
-                         clock pessimism             -0.513     1.704    
-    SLICE_X58Y10         RAMS32 (Hold_rams32_CLK_ADR0)
-                                                      0.310     2.014    storage_reg_0_15_6_9/RAMD
-  -------------------------------------------------------------------
-                         required time                         -2.014    
-                         arrival time                           2.038    
-  -------------------------------------------------------------------
-                         slack                                  0.024    
-
-Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 uart_tx_fifo_produce_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            storage_reg_0_15_6_9/RAMD_D1/ADR0
-                            (rising edge-triggered cell RAMS32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             clk125
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        0.347ns  (logic 0.141ns (40.599%)  route 0.206ns (59.401%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.217ns
-    Source Clock Delay      (SCD):    1.691ns
-    Clock Pessimism Removal (CPR):    0.513ns
-
-    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
-  -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.581     1.691    clk125_IBUF_BUFG
-    SLICE_X59Y10         FDRE                                         r  uart_tx_fifo_produce_reg[0]/C
-  -------------------------------------------------------------------    -------------------
-    SLICE_X59Y10         FDRE (Prop_fdre_C_Q)         0.141     1.832 r  uart_tx_fifo_produce_reg[0]/Q
-                         net (fo=20, routed)          0.206     2.038    storage_reg_0_15_6_9/ADDRD0
-    SLICE_X58Y10         RAMS32                                       r  storage_reg_0_15_6_9/RAMD_D1/ADR0
-  -------------------------------------------------------------------    -------------------
-
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
-                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
-    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.850     2.217    storage_reg_0_15_6_9/WCLK
-    SLICE_X58Y10         RAMS32                                       r  storage_reg_0_15_6_9/RAMD_D1/CLK
-                         clock pessimism             -0.513     1.704    
-    SLICE_X58Y10         RAMS32 (Hold_rams32_CLK_ADR0)
-                                                      0.310     2.014    storage_reg_0_15_6_9/RAMD_D1
-  -------------------------------------------------------------------
-                         required time                         -2.014    
-                         arrival time                           2.038    
-  -------------------------------------------------------------------
-                         slack                                  0.024    
-
-Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 ADDR_REG_storage_reg[0]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            wrapper/image/ram_reg_0_15_0_5/RAMA/WADR0
-                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Path Group:             clk125
-  Path Type:              Hold (Min at Fast Process Corner)
-  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        0.347ns  (logic 0.141ns (40.599%)  route 0.206ns (59.401%))
-  Logic Levels:           0  
-  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.213ns
-    Source Clock Delay      (SCD):    1.689ns
+    Destination Clock Delay (DCD):    2.196ns
+    Source Clock Delay      (SCD):    1.672ns
     Clock Pessimism Removal (CPR):    0.511ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1301,12 +903,12 @@ Slack (MET) :             0.024ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           0.842     1.084    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.579     1.689    clk125_IBUF_BUFG
-    SLICE_X59Y15         FDRE                                         r  ADDR_REG_storage_reg[0]/C
+                         net (fo=1837, routed)        0.562     1.672    clk125_IBUF_BUFG
+    SLICE_X43Y6          FDRE                                         r  uart_rx_fifo_produce_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X59Y15         FDRE (Prop_fdre_C_Q)         0.141     1.830 r  ADDR_REG_storage_reg[0]/Q
-                         net (fo=25, routed)          0.206     2.036    wrapper/image/ram_reg_0_15_0_5/ADDRD0
-    SLICE_X58Y15         RAMD32                                       r  wrapper/image/ram_reg_0_15_0_5/RAMA/WADR0
+    SLICE_X43Y6          FDRE (Prop_fdre_C_Q)         0.141     1.813 r  uart_rx_fifo_produce_reg[0]/Q
+                         net (fo=20, routed)          0.206     2.019    storage_1_reg_0_15_0_5/ADDRD0
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMA/WADR0
   -------------------------------------------------------------------    -------------------
 
                          (clock clk125 rise edge)     0.000     0.000 r  
@@ -1315,30 +917,30 @@ Slack (MET) :             0.024ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           0.907     1.338    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.846     2.213    wrapper/image/ram_reg_0_15_0_5/WCLK
-    SLICE_X58Y15         RAMD32                                       r  wrapper/image/ram_reg_0_15_0_5/RAMA/CLK
-                         clock pessimism             -0.511     1.702    
-    SLICE_X58Y15         RAMD32 (Hold_ramd32_CLK_WADR0)
-                                                      0.310     2.012    wrapper/image/ram_reg_0_15_0_5/RAMA
+                         net (fo=1837, routed)        0.829     2.196    storage_1_reg_0_15_0_5/WCLK
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMA/CLK
+                         clock pessimism             -0.511     1.685    
+    SLICE_X42Y6          RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     1.995    storage_1_reg_0_15_0_5/RAMA
   -------------------------------------------------------------------
-                         required time                         -2.012    
-                         arrival time                           2.036    
+                         required time                         -1.995    
+                         arrival time                           2.019    
   -------------------------------------------------------------------
                          slack                                  0.024    
 
 Slack (MET) :             0.024ns  (arrival time - required time)
-  Source:                 ADDR_REG_storage_reg[0]/C
+  Source:                 uart_rx_fifo_produce_reg[0]/C
                             (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            wrapper/image/ram_reg_0_15_0_5/RAMA_D1/WADR0
+  Destination:            storage_1_reg_0_15_0_5/RAMA_D1/WADR0
                             (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             clk125
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        0.347ns  (logic 0.141ns (40.599%)  route 0.206ns (59.401%))
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
   Logic Levels:           0  
   Clock Path Skew:        0.013ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    2.213ns
-    Source Clock Delay      (SCD):    1.689ns
+    Destination Clock Delay (DCD):    2.196ns
+    Source Clock Delay      (SCD):    1.672ns
     Clock Pessimism Removal (CPR):    0.511ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -1349,12 +951,12 @@ Slack (MET) :             0.024ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           0.842     1.084    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.579     1.689    clk125_IBUF_BUFG
-    SLICE_X59Y15         FDRE                                         r  ADDR_REG_storage_reg[0]/C
+                         net (fo=1837, routed)        0.562     1.672    clk125_IBUF_BUFG
+    SLICE_X43Y6          FDRE                                         r  uart_rx_fifo_produce_reg[0]/C
   -------------------------------------------------------------------    -------------------
-    SLICE_X59Y15         FDRE (Prop_fdre_C_Q)         0.141     1.830 r  ADDR_REG_storage_reg[0]/Q
-                         net (fo=25, routed)          0.206     2.036    wrapper/image/ram_reg_0_15_0_5/ADDRD0
-    SLICE_X58Y15         RAMD32                                       r  wrapper/image/ram_reg_0_15_0_5/RAMA_D1/WADR0
+    SLICE_X43Y6          FDRE (Prop_fdre_C_Q)         0.141     1.813 r  uart_rx_fifo_produce_reg[0]/Q
+                         net (fo=20, routed)          0.206     2.019    storage_1_reg_0_15_0_5/ADDRD0
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMA_D1/WADR0
   -------------------------------------------------------------------    -------------------
 
                          (clock clk125 rise edge)     0.000     0.000 r  
@@ -1363,16 +965,400 @@ Slack (MET) :             0.024ns  (arrival time - required time)
     K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
                          net (fo=1, routed)           0.907     1.338    clk125_IBUF
     BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1838, routed)        0.846     2.213    wrapper/image/ram_reg_0_15_0_5/WCLK
-    SLICE_X58Y15         RAMD32                                       r  wrapper/image/ram_reg_0_15_0_5/RAMA_D1/CLK
-                         clock pessimism             -0.511     1.702    
-    SLICE_X58Y15         RAMD32 (Hold_ramd32_CLK_WADR0)
-                                                      0.310     2.012    wrapper/image/ram_reg_0_15_0_5/RAMA_D1
+                         net (fo=1837, routed)        0.829     2.196    storage_1_reg_0_15_0_5/WCLK
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMA_D1/CLK
+                         clock pessimism             -0.511     1.685    
+    SLICE_X42Y6          RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     1.995    storage_1_reg_0_15_0_5/RAMA_D1
   -------------------------------------------------------------------
-                         required time                         -2.012    
-                         arrival time                           2.036    
+                         required time                         -1.995    
+                         arrival time                           2.019    
   -------------------------------------------------------------------
                          slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 uart_rx_fifo_produce_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            storage_1_reg_0_15_0_5/RAMB/WADR0
+                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk125
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.196ns
+    Source Clock Delay      (SCD):    1.672ns
+    Clock Pessimism Removal (CPR):    0.511ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.562     1.672    clk125_IBUF_BUFG
+    SLICE_X43Y6          FDRE                                         r  uart_rx_fifo_produce_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y6          FDRE (Prop_fdre_C_Q)         0.141     1.813 r  uart_rx_fifo_produce_reg[0]/Q
+                         net (fo=20, routed)          0.206     2.019    storage_1_reg_0_15_0_5/ADDRD0
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMB/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.829     2.196    storage_1_reg_0_15_0_5/WCLK
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMB/CLK
+                         clock pessimism             -0.511     1.685    
+    SLICE_X42Y6          RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     1.995    storage_1_reg_0_15_0_5/RAMB
+  -------------------------------------------------------------------
+                         required time                         -1.995    
+                         arrival time                           2.019    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 uart_rx_fifo_produce_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            storage_1_reg_0_15_0_5/RAMB_D1/WADR0
+                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk125
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.196ns
+    Source Clock Delay      (SCD):    1.672ns
+    Clock Pessimism Removal (CPR):    0.511ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.562     1.672    clk125_IBUF_BUFG
+    SLICE_X43Y6          FDRE                                         r  uart_rx_fifo_produce_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y6          FDRE (Prop_fdre_C_Q)         0.141     1.813 r  uart_rx_fifo_produce_reg[0]/Q
+                         net (fo=20, routed)          0.206     2.019    storage_1_reg_0_15_0_5/ADDRD0
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMB_D1/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.829     2.196    storage_1_reg_0_15_0_5/WCLK
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMB_D1/CLK
+                         clock pessimism             -0.511     1.685    
+    SLICE_X42Y6          RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     1.995    storage_1_reg_0_15_0_5/RAMB_D1
+  -------------------------------------------------------------------
+                         required time                         -1.995    
+                         arrival time                           2.019    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 uart_rx_fifo_produce_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            storage_1_reg_0_15_0_5/RAMC/WADR0
+                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk125
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.196ns
+    Source Clock Delay      (SCD):    1.672ns
+    Clock Pessimism Removal (CPR):    0.511ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.562     1.672    clk125_IBUF_BUFG
+    SLICE_X43Y6          FDRE                                         r  uart_rx_fifo_produce_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y6          FDRE (Prop_fdre_C_Q)         0.141     1.813 r  uart_rx_fifo_produce_reg[0]/Q
+                         net (fo=20, routed)          0.206     2.019    storage_1_reg_0_15_0_5/ADDRD0
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMC/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.829     2.196    storage_1_reg_0_15_0_5/WCLK
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMC/CLK
+                         clock pessimism             -0.511     1.685    
+    SLICE_X42Y6          RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     1.995    storage_1_reg_0_15_0_5/RAMC
+  -------------------------------------------------------------------
+                         required time                         -1.995    
+                         arrival time                           2.019    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 uart_rx_fifo_produce_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            storage_1_reg_0_15_0_5/RAMC_D1/WADR0
+                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk125
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.196ns
+    Source Clock Delay      (SCD):    1.672ns
+    Clock Pessimism Removal (CPR):    0.511ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.562     1.672    clk125_IBUF_BUFG
+    SLICE_X43Y6          FDRE                                         r  uart_rx_fifo_produce_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y6          FDRE (Prop_fdre_C_Q)         0.141     1.813 r  uart_rx_fifo_produce_reg[0]/Q
+                         net (fo=20, routed)          0.206     2.019    storage_1_reg_0_15_0_5/ADDRD0
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMC_D1/WADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.829     2.196    storage_1_reg_0_15_0_5/WCLK
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMC_D1/CLK
+                         clock pessimism             -0.511     1.685    
+    SLICE_X42Y6          RAMD32 (Hold_ramd32_CLK_WADR0)
+                                                      0.310     1.995    storage_1_reg_0_15_0_5/RAMC_D1
+  -------------------------------------------------------------------
+                         required time                         -1.995    
+                         arrival time                           2.019    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 uart_rx_fifo_produce_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            storage_1_reg_0_15_0_5/RAMD/ADR0
+                            (rising edge-triggered cell RAMS32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk125
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.196ns
+    Source Clock Delay      (SCD):    1.672ns
+    Clock Pessimism Removal (CPR):    0.511ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.562     1.672    clk125_IBUF_BUFG
+    SLICE_X43Y6          FDRE                                         r  uart_rx_fifo_produce_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y6          FDRE (Prop_fdre_C_Q)         0.141     1.813 r  uart_rx_fifo_produce_reg[0]/Q
+                         net (fo=20, routed)          0.206     2.019    storage_1_reg_0_15_0_5/ADDRD0
+    SLICE_X42Y6          RAMS32                                       r  storage_1_reg_0_15_0_5/RAMD/ADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.829     2.196    storage_1_reg_0_15_0_5/WCLK
+    SLICE_X42Y6          RAMS32                                       r  storage_1_reg_0_15_0_5/RAMD/CLK
+                         clock pessimism             -0.511     1.685    
+    SLICE_X42Y6          RAMS32 (Hold_rams32_CLK_ADR0)
+                                                      0.310     1.995    storage_1_reg_0_15_0_5/RAMD
+  -------------------------------------------------------------------
+                         required time                         -1.995    
+                         arrival time                           2.019    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.024ns  (arrival time - required time)
+  Source:                 uart_rx_fifo_produce_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            storage_1_reg_0_15_0_5/RAMD_D1/ADR0
+                            (rising edge-triggered cell RAMS32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk125
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
+  Data Path Delay:        0.347ns  (logic 0.141ns (40.606%)  route 0.206ns (59.394%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.196ns
+    Source Clock Delay      (SCD):    1.672ns
+    Clock Pessimism Removal (CPR):    0.511ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.562     1.672    clk125_IBUF_BUFG
+    SLICE_X43Y6          FDRE                                         r  uart_rx_fifo_produce_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y6          FDRE (Prop_fdre_C_Q)         0.141     1.813 r  uart_rx_fifo_produce_reg[0]/Q
+                         net (fo=20, routed)          0.206     2.019    storage_1_reg_0_15_0_5/ADDRD0
+    SLICE_X42Y6          RAMS32                                       r  storage_1_reg_0_15_0_5/RAMD_D1/ADR0
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.829     2.196    storage_1_reg_0_15_0_5/WCLK
+    SLICE_X42Y6          RAMS32                                       r  storage_1_reg_0_15_0_5/RAMD_D1/CLK
+                         clock pessimism             -0.511     1.685    
+    SLICE_X42Y6          RAMS32 (Hold_rams32_CLK_ADR0)
+                                                      0.310     1.995    storage_1_reg_0_15_0_5/RAMD_D1
+  -------------------------------------------------------------------
+                         required time                         -1.995    
+                         arrival time                           2.019    
+  -------------------------------------------------------------------
+                         slack                                  0.024    
+
+Slack (MET) :             0.069ns  (arrival time - required time)
+  Source:                 uart_rx_fifo_produce_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            storage_1_reg_0_15_0_5/RAMA/WADR1
+                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk125
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
+  Data Path Delay:        0.337ns  (logic 0.128ns (37.955%)  route 0.209ns (62.045%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.196ns
+    Source Clock Delay      (SCD):    1.672ns
+    Clock Pessimism Removal (CPR):    0.511ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.562     1.672    clk125_IBUF_BUFG
+    SLICE_X43Y6          FDRE                                         r  uart_rx_fifo_produce_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y6          FDRE (Prop_fdre_C_Q)         0.128     1.800 r  uart_rx_fifo_produce_reg[1]/Q
+                         net (fo=19, routed)          0.209     2.009    storage_1_reg_0_15_0_5/ADDRD1
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMA/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.829     2.196    storage_1_reg_0_15_0_5/WCLK
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMA/CLK
+                         clock pessimism             -0.511     1.685    
+    SLICE_X42Y6          RAMD32 (Hold_ramd32_CLK_WADR1)
+                                                      0.255     1.940    storage_1_reg_0_15_0_5/RAMA
+  -------------------------------------------------------------------
+                         required time                         -1.940    
+                         arrival time                           2.009    
+  -------------------------------------------------------------------
+                         slack                                  0.069    
+
+Slack (MET) :             0.069ns  (arrival time - required time)
+  Source:                 uart_rx_fifo_produce_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            storage_1_reg_0_15_0_5/RAMA_D1/WADR1
+                            (rising edge-triggered cell RAMD32 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Path Group:             clk125
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
+  Data Path Delay:        0.337ns  (logic 0.128ns (37.955%)  route 0.209ns (62.045%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.013ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    2.196ns
+    Source Clock Delay      (SCD):    1.672ns
+    Clock Pessimism Removal (CPR):    0.511ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.842     1.084    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     1.110 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.562     1.672    clk125_IBUF_BUFG
+    SLICE_X43Y6          FDRE                                         r  uart_rx_fifo_produce_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X43Y6          FDRE (Prop_fdre_C_Q)         0.128     1.800 r  uart_rx_fifo_produce_reg[1]/Q
+                         net (fo=19, routed)          0.209     2.009    storage_1_reg_0_15_0_5/ADDRD1
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMA_D1/WADR1
+  -------------------------------------------------------------------    -------------------
+
+                         (clock clk125 rise edge)     0.000     0.000 r  
+    K17                                               0.000     0.000 r  clk125 (IN)
+                         net (fo=0)                   0.000     0.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
+                         net (fo=1, routed)           0.907     1.338    clk125_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     1.367 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1837, routed)        0.829     2.196    storage_1_reg_0_15_0_5/WCLK
+    SLICE_X42Y6          RAMD32                                       r  storage_1_reg_0_15_0_5/RAMA_D1/CLK
+                         clock pessimism             -0.511     1.685    
+    SLICE_X42Y6          RAMD32 (Hold_ramd32_CLK_WADR1)
+                                                      0.255     1.940    storage_1_reg_0_15_0_5/RAMA_D1
+  -------------------------------------------------------------------
+                         required time                         -1.940    
+                         arrival time                           2.009    
+  -------------------------------------------------------------------
+                         slack                                  0.069    
 
 
 
@@ -1385,37 +1371,37 @@ Waveform(ns):       { 0.000 4.000 }
 Period(ns):         8.000
 Sources:            { clk125 }
 
-Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location      Pin
-Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB36_X3Y4   VexRiscv/IBusCachedPlugin_cache/ways_0_datas_reg/CLKARDCLK
-Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X3Y10  VexRiscv/IBusCachedPlugin_cache/ways_0_tags_reg/CLKARDCLK
-Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            2.944         8.000       5.056      RAMB18_X3Y10  VexRiscv/IBusCachedPlugin_cache/ways_0_tags_reg/CLKBWRCLK
-Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y8   VexRiscv/RegFilePlugin_regFile_reg_1/CLKARDCLK
-Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y8   VexRiscv/RegFilePlugin_regFile_reg_1/CLKBWRCLK
-Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y9   VexRiscv/RegFilePlugin_regFile_reg_2/CLKARDCLK
-Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y9   VexRiscv/RegFilePlugin_regFile_reg_2/CLKBWRCLK
-Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y4   VexRiscv/dataCache_1_/ways_0_data_symbol0_reg/CLKARDCLK
-Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y6   VexRiscv/dataCache_1_/ways_0_data_symbol1_reg/CLKARDCLK
-Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y5   VexRiscv/dataCache_1_/ways_0_data_symbol2_reg/CLKARDCLK
-Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X54Y15  wrapper/image/ram_reg_0_15_6_11/RAMA/CLK
-Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X54Y15  wrapper/image/ram_reg_0_15_6_11/RAMA_D1/CLK
-Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X54Y15  wrapper/image/ram_reg_0_15_6_11/RAMB/CLK
-Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X54Y15  wrapper/image/ram_reg_0_15_6_11/RAMB_D1/CLK
-Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X54Y15  wrapper/image/ram_reg_0_15_6_11/RAMC/CLK
-Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X54Y15  wrapper/image/ram_reg_0_15_6_11/RAMC_D1/CLK
-Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         4.000       2.750      SLICE_X54Y15  wrapper/image/ram_reg_0_15_6_11/RAMD/CLK
-Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         4.000       2.750      SLICE_X54Y15  wrapper/image/ram_reg_0_15_6_11/RAMD_D1/CLK
-Low Pulse Width   Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y14  storage_1_reg_0_15_0_5/RAMA/CLK
-Low Pulse Width   Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y14  storage_1_reg_0_15_0_5/RAMA_D1/CLK
-High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y14  storage_1_reg_0_15_0_5/RAMA/CLK
-High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y14  storage_1_reg_0_15_0_5/RAMA_D1/CLK
-High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y14  storage_1_reg_0_15_0_5/RAMB/CLK
-High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y14  storage_1_reg_0_15_0_5/RAMB_D1/CLK
-High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y14  storage_1_reg_0_15_0_5/RAMC/CLK
-High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y14  storage_1_reg_0_15_0_5/RAMC_D1/CLK
-High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y14  storage_1_reg_0_15_0_5/RAMD/CLK
-High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y14  storage_1_reg_0_15_0_5/RAMD_D1/CLK
-High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y13  storage_1_reg_0_15_6_9/RAMA/CLK
-High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X58Y13  storage_1_reg_0_15_6_9/RAMA_D1/CLK
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location     Pin
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB36_X4Y2  VexRiscv/IBusCachedPlugin_cache/ways_0_datas_reg/CLKARDCLK
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X3Y4  VexRiscv/IBusCachedPlugin_cache/ways_0_tags_reg/CLKARDCLK
+Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            2.944         8.000       5.056      RAMB18_X3Y4  VexRiscv/IBusCachedPlugin_cache/ways_0_tags_reg/CLKBWRCLK
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y6  VexRiscv/RegFilePlugin_regFile_reg_1/CLKARDCLK
+Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y6  VexRiscv/RegFilePlugin_regFile_reg_1/CLKBWRCLK
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y8  VexRiscv/RegFilePlugin_regFile_reg_2/CLKARDCLK
+Min Period        n/a     RAMB18E1/CLKBWRCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y8  VexRiscv/RegFilePlugin_regFile_reg_2/CLKBWRCLK
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y0  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg/CLKARDCLK
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y2  VexRiscv/dataCache_1_/ways_0_data_symbol1_reg/CLKARDCLK
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.944         8.000       5.056      RAMB18_X4Y1  VexRiscv/dataCache_1_/ways_0_data_symbol2_reg/CLKARDCLK
+Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y8  storage_reg_0_15_0_5/RAMA/CLK
+Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y8  storage_reg_0_15_0_5/RAMA_D1/CLK
+Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y8  storage_reg_0_15_0_5/RAMB/CLK
+Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y8  storage_reg_0_15_0_5/RAMB_D1/CLK
+Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y8  storage_reg_0_15_0_5/RAMC/CLK
+Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y8  storage_reg_0_15_0_5/RAMC_D1/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y8  storage_reg_0_15_0_5/RAMD/CLK
+Low Pulse Width   Slow    RAMS32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y8  storage_reg_0_15_0_5/RAMD_D1/CLK
+Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y9  storage_reg_0_15_6_9/RAMA/CLK
+Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y9  storage_reg_0_15_6_9/RAMA_D1/CLK
+High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y6  storage_1_reg_0_15_0_5/RAMA/CLK
+High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y6  storage_1_reg_0_15_0_5/RAMA_D1/CLK
+High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y6  storage_1_reg_0_15_0_5/RAMB/CLK
+High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y6  storage_1_reg_0_15_0_5/RAMB_D1/CLK
+High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y6  storage_1_reg_0_15_0_5/RAMC/CLK
+High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y6  storage_1_reg_0_15_0_5/RAMC_D1/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y6  storage_1_reg_0_15_0_5/RAMD/CLK
+High Pulse Width  Fast    RAMS32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y6  storage_1_reg_0_15_0_5/RAMD_D1/CLK
+High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y5  storage_1_reg_0_15_6_9/RAMA/CLK
+High Pulse Width  Fast    RAMD32/CLK          n/a            1.250         4.000       2.750      SLICE_X42Y5  storage_1_reg_0_15_6_9/RAMA_D1/CLK
 
 
 
@@ -1430,8 +1416,8 @@ Input Ports Setup/Hold
 Reference | Input     | IO Reg  | Delay |     Setup(ns) | Process |      Hold(ns) | Process | Internal |
 Clock     | Port      | Type    | Type  | to Clk (Edge) | Corner  | to Clk (Edge) | Corner  | Clock    |
 ----------+-----------+---------+-------+---------------+---------+---------------+---------+----------+
-clk125    | cpu_reset | FDRE    | -     |     0.996 (r) | FAST    |     0.974 (r) | SLOW    |          |
-clk125    | serial_rx | FDRE    | -     |     1.108 (r) | FAST    |     0.808 (r) | SLOW    |          |
+clk125    | cpu_reset | FDRE    | -     |     1.176 (r) | FAST    |     0.659 (r) | SLOW    |          |
+clk125    | serial_rx | FDRE    | -     |     1.188 (r) | FAST    |     0.549 (r) | SLOW    |          |
 ----------+-----------+---------+-------+---------------+---------+---------------+---------+----------+
 
 
@@ -1441,7 +1427,7 @@ Output Ports Clock-to-out
 Reference | Output    | IO Reg | Delay | Max Clk (Edge) | Process | Min Clk (Edge) | Process | Internal |
 Clock     | Port      | Type   | Type  |    to port(ns) | Corner  |    to port(ns) | Corner  | Clock    |
 ----------+-----------+--------+-------+----------------+---------+----------------+---------+----------+
-clk125    | serial_tx | FDRE   | -     |     15.198 (r) | SLOW    |      5.132 (r) | FAST    |          |
+clk125    | serial_tx | FDRE   | -     |     15.779 (r) | SLOW    |      5.418 (r) | FAST    |          |
 ----------+-----------+--------+-------+----------------+---------+----------------+---------+----------+
 
 
@@ -1451,7 +1437,7 @@ Setup between Clocks
 Source | Destination |  Src:Rise     | Process |  Src:Rise     | Process |  Src:Fall     | Process |  Src:Fall     | Process |
 Clock  | Clock       | Dest:Rise(ns) | Corner  | Dest:Fall(ns) | Corner  | Dest:Rise(ns) | Corner  | Dest:Fall(ns) | Corner  |
 -------+-------------+---------------+---------+---------------+---------+---------------+---------+---------------+---------+
-clk125 | clk125      |         7.720 | SLOW    |               |         |               |         |               |         |
+clk125 | clk125      |         7.459 | SLOW    |               |         |               |         |               |         |
 -------+-------------+---------------+---------+---------------+---------+---------------+---------+---------------+---------+
 
 

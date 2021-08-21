@@ -6,7 +6,7 @@
 <Project Version="7" Minor="44" Path="/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/03_soc_maxpooling/build/gateware/AccQuant_cnn.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="15762711c3aa4307926ce65e0ee0f930"/>
+    <Option Name="Id" Val="7076f5f731da48eb80660b146a036c01"/>
     <Option Name="Part" Val="xc7z020clg400-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>

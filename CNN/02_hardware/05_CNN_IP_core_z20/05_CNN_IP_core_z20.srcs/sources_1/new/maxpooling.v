@@ -49,7 +49,10 @@ module maxpooling
     reg [dataWidthMax-1:0] max2;
     reg [dataWidthMax-1:0] max3;
 
-  
+    initial
+    begin
+        save_rstl = 0;
+    end
     
     always @(posedge clk) //Present estate 
     begin

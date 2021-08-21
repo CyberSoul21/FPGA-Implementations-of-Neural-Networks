@@ -277,13 +277,20 @@ reg [9:0] WADD_IMAGE_storage = 10'd0;
 reg WADD_IMAGE_re = 1'd0;
 reg [15:0] WDATA_IMAGE_storage = 16'd0;
 reg WDATA_IMAGE_re = 1'd0;
-reg WEN_MAX_storage = 1'd0;
-reg WEN_MAX_re = 1'd0;
-reg [9:0] RADD_MEMORY_MAX_storage = 10'd0;
-reg RADD_MEMORY_MAX_re = 1'd0;
-wire [7:0] DATA_MAX_OUT_status;
-wire DATA_MAX_OUT_we;
-reg DATA_MAX_OUT_re = 1'd0;
+reg REN_MEMORY_storage = 1'd0;
+reg REN_MEMORY_re = 1'd0;
+reg REN_IMAGE_storage = 1'd0;
+reg REN_IMAGE_re = 1'd0;
+reg [9:0] RADD_IMAGE_storage = 10'd0;
+reg RADD_IMAGE_re = 1'd0;
+wire [15:0] RDATA_IMAGE_status;
+wire RDATA_IMAGE_we;
+reg RDATA_IMAGE_re = 1'd0;
+reg [9:0] RADD_MEMORY_storage = 10'd0;
+reg RADD_MEMORY_re = 1'd0;
+wire [7:0] DATA_MEMORY_status;
+wire DATA_MEMORY_we;
+reg DATA_MEMORY_re = 1'd0;
 wire MAX_OK_status;
 wire MAX_OK_we;
 reg MAX_OK_re = 1'd0;
@@ -362,18 +369,30 @@ reg csr_bankarray_csrbank0_WDATA_IMAGE0_re;
 wire [15:0] csr_bankarray_csrbank0_WDATA_IMAGE0_r;
 reg csr_bankarray_csrbank0_WDATA_IMAGE0_we;
 wire [15:0] csr_bankarray_csrbank0_WDATA_IMAGE0_w;
-reg csr_bankarray_csrbank0_WEN_MAX0_re;
-wire csr_bankarray_csrbank0_WEN_MAX0_r;
-reg csr_bankarray_csrbank0_WEN_MAX0_we;
-wire csr_bankarray_csrbank0_WEN_MAX0_w;
-reg csr_bankarray_csrbank0_RADD_MEMORY_MAX0_re;
-wire [9:0] csr_bankarray_csrbank0_RADD_MEMORY_MAX0_r;
-reg csr_bankarray_csrbank0_RADD_MEMORY_MAX0_we;
-wire [9:0] csr_bankarray_csrbank0_RADD_MEMORY_MAX0_w;
-reg csr_bankarray_csrbank0_DATA_MAX_OUT_re;
-wire [7:0] csr_bankarray_csrbank0_DATA_MAX_OUT_r;
-reg csr_bankarray_csrbank0_DATA_MAX_OUT_we;
-wire [7:0] csr_bankarray_csrbank0_DATA_MAX_OUT_w;
+reg csr_bankarray_csrbank0_REN_MEMORY0_re;
+wire csr_bankarray_csrbank0_REN_MEMORY0_r;
+reg csr_bankarray_csrbank0_REN_MEMORY0_we;
+wire csr_bankarray_csrbank0_REN_MEMORY0_w;
+reg csr_bankarray_csrbank0_REN_IMAGE0_re;
+wire csr_bankarray_csrbank0_REN_IMAGE0_r;
+reg csr_bankarray_csrbank0_REN_IMAGE0_we;
+wire csr_bankarray_csrbank0_REN_IMAGE0_w;
+reg csr_bankarray_csrbank0_RADD_IMAGE0_re;
+wire [9:0] csr_bankarray_csrbank0_RADD_IMAGE0_r;
+reg csr_bankarray_csrbank0_RADD_IMAGE0_we;
+wire [9:0] csr_bankarray_csrbank0_RADD_IMAGE0_w;
+reg csr_bankarray_csrbank0_RDATA_IMAGE_re;
+wire [15:0] csr_bankarray_csrbank0_RDATA_IMAGE_r;
+reg csr_bankarray_csrbank0_RDATA_IMAGE_we;
+wire [15:0] csr_bankarray_csrbank0_RDATA_IMAGE_w;
+reg csr_bankarray_csrbank0_RADD_MEMORY0_re;
+wire [9:0] csr_bankarray_csrbank0_RADD_MEMORY0_r;
+reg csr_bankarray_csrbank0_RADD_MEMORY0_we;
+wire [9:0] csr_bankarray_csrbank0_RADD_MEMORY0_w;
+reg csr_bankarray_csrbank0_DATA_MEMORY_re;
+wire [7:0] csr_bankarray_csrbank0_DATA_MEMORY_r;
+reg csr_bankarray_csrbank0_DATA_MEMORY_we;
+wire [7:0] csr_bankarray_csrbank0_DATA_MEMORY_w;
 reg csr_bankarray_csrbank0_MAX_OK_re;
 wire csr_bankarray_csrbank0_MAX_OK_r;
 reg csr_bankarray_csrbank0_MAX_OK_we;
@@ -996,84 +1015,132 @@ always @(*) begin
 	dummy_d_17 <= dummy_s;
 // synthesis translate_on
 end
-assign csr_bankarray_csrbank0_WEN_MAX0_r = csr_bankarray_interface0_bank_bus_dat_w[0];
+assign csr_bankarray_csrbank0_REN_MEMORY0_r = csr_bankarray_interface0_bank_bus_dat_w[0];
 
 // synthesis translate_off
 reg dummy_d_18;
 // synthesis translate_on
 always @(*) begin
-	csr_bankarray_csrbank0_WEN_MAX0_re <= 1'd0;
-	csr_bankarray_csrbank0_WEN_MAX0_we <= 1'd0;
+	csr_bankarray_csrbank0_REN_MEMORY0_re <= 1'd0;
+	csr_bankarray_csrbank0_REN_MEMORY0_we <= 1'd0;
 	if ((csr_bankarray_csrbank0_sel & (csr_bankarray_interface0_bank_bus_adr[8:0] == 3'd5))) begin
-		csr_bankarray_csrbank0_WEN_MAX0_re <= csr_bankarray_interface0_bank_bus_we;
-		csr_bankarray_csrbank0_WEN_MAX0_we <= (~csr_bankarray_interface0_bank_bus_we);
+		csr_bankarray_csrbank0_REN_MEMORY0_re <= csr_bankarray_interface0_bank_bus_we;
+		csr_bankarray_csrbank0_REN_MEMORY0_we <= (~csr_bankarray_interface0_bank_bus_we);
 	end
 // synthesis translate_off
 	dummy_d_18 <= dummy_s;
 // synthesis translate_on
 end
-assign csr_bankarray_csrbank0_RADD_MEMORY_MAX0_r = csr_bankarray_interface0_bank_bus_dat_w[9:0];
+assign csr_bankarray_csrbank0_REN_IMAGE0_r = csr_bankarray_interface0_bank_bus_dat_w[0];
 
 // synthesis translate_off
 reg dummy_d_19;
 // synthesis translate_on
 always @(*) begin
-	csr_bankarray_csrbank0_RADD_MEMORY_MAX0_re <= 1'd0;
-	csr_bankarray_csrbank0_RADD_MEMORY_MAX0_we <= 1'd0;
+	csr_bankarray_csrbank0_REN_IMAGE0_re <= 1'd0;
+	csr_bankarray_csrbank0_REN_IMAGE0_we <= 1'd0;
 	if ((csr_bankarray_csrbank0_sel & (csr_bankarray_interface0_bank_bus_adr[8:0] == 3'd6))) begin
-		csr_bankarray_csrbank0_RADD_MEMORY_MAX0_re <= csr_bankarray_interface0_bank_bus_we;
-		csr_bankarray_csrbank0_RADD_MEMORY_MAX0_we <= (~csr_bankarray_interface0_bank_bus_we);
+		csr_bankarray_csrbank0_REN_IMAGE0_re <= csr_bankarray_interface0_bank_bus_we;
+		csr_bankarray_csrbank0_REN_IMAGE0_we <= (~csr_bankarray_interface0_bank_bus_we);
 	end
 // synthesis translate_off
 	dummy_d_19 <= dummy_s;
 // synthesis translate_on
 end
-assign csr_bankarray_csrbank0_DATA_MAX_OUT_r = csr_bankarray_interface0_bank_bus_dat_w[7:0];
+assign csr_bankarray_csrbank0_RADD_IMAGE0_r = csr_bankarray_interface0_bank_bus_dat_w[9:0];
 
 // synthesis translate_off
 reg dummy_d_20;
 // synthesis translate_on
 always @(*) begin
-	csr_bankarray_csrbank0_DATA_MAX_OUT_re <= 1'd0;
-	csr_bankarray_csrbank0_DATA_MAX_OUT_we <= 1'd0;
+	csr_bankarray_csrbank0_RADD_IMAGE0_re <= 1'd0;
+	csr_bankarray_csrbank0_RADD_IMAGE0_we <= 1'd0;
 	if ((csr_bankarray_csrbank0_sel & (csr_bankarray_interface0_bank_bus_adr[8:0] == 3'd7))) begin
-		csr_bankarray_csrbank0_DATA_MAX_OUT_re <= csr_bankarray_interface0_bank_bus_we;
-		csr_bankarray_csrbank0_DATA_MAX_OUT_we <= (~csr_bankarray_interface0_bank_bus_we);
+		csr_bankarray_csrbank0_RADD_IMAGE0_re <= csr_bankarray_interface0_bank_bus_we;
+		csr_bankarray_csrbank0_RADD_IMAGE0_we <= (~csr_bankarray_interface0_bank_bus_we);
 	end
 // synthesis translate_off
 	dummy_d_20 <= dummy_s;
 // synthesis translate_on
 end
-assign csr_bankarray_csrbank0_MAX_OK_r = csr_bankarray_interface0_bank_bus_dat_w[0];
+assign csr_bankarray_csrbank0_RDATA_IMAGE_r = csr_bankarray_interface0_bank_bus_dat_w[15:0];
 
 // synthesis translate_off
 reg dummy_d_21;
 // synthesis translate_on
 always @(*) begin
-	csr_bankarray_csrbank0_MAX_OK_re <= 1'd0;
-	csr_bankarray_csrbank0_MAX_OK_we <= 1'd0;
+	csr_bankarray_csrbank0_RDATA_IMAGE_re <= 1'd0;
+	csr_bankarray_csrbank0_RDATA_IMAGE_we <= 1'd0;
 	if ((csr_bankarray_csrbank0_sel & (csr_bankarray_interface0_bank_bus_adr[8:0] == 4'd8))) begin
-		csr_bankarray_csrbank0_MAX_OK_re <= csr_bankarray_interface0_bank_bus_we;
-		csr_bankarray_csrbank0_MAX_OK_we <= (~csr_bankarray_interface0_bank_bus_we);
+		csr_bankarray_csrbank0_RDATA_IMAGE_re <= csr_bankarray_interface0_bank_bus_we;
+		csr_bankarray_csrbank0_RDATA_IMAGE_we <= (~csr_bankarray_interface0_bank_bus_we);
 	end
 // synthesis translate_off
 	dummy_d_21 <= dummy_s;
 // synthesis translate_on
 end
-assign csr_bankarray_csrbank0_MEM_OK_r = csr_bankarray_interface0_bank_bus_dat_w[0];
+assign csr_bankarray_csrbank0_RADD_MEMORY0_r = csr_bankarray_interface0_bank_bus_dat_w[9:0];
 
 // synthesis translate_off
 reg dummy_d_22;
 // synthesis translate_on
 always @(*) begin
+	csr_bankarray_csrbank0_RADD_MEMORY0_re <= 1'd0;
+	csr_bankarray_csrbank0_RADD_MEMORY0_we <= 1'd0;
+	if ((csr_bankarray_csrbank0_sel & (csr_bankarray_interface0_bank_bus_adr[8:0] == 4'd9))) begin
+		csr_bankarray_csrbank0_RADD_MEMORY0_re <= csr_bankarray_interface0_bank_bus_we;
+		csr_bankarray_csrbank0_RADD_MEMORY0_we <= (~csr_bankarray_interface0_bank_bus_we);
+	end
+// synthesis translate_off
+	dummy_d_22 <= dummy_s;
+// synthesis translate_on
+end
+assign csr_bankarray_csrbank0_DATA_MEMORY_r = csr_bankarray_interface0_bank_bus_dat_w[7:0];
+
+// synthesis translate_off
+reg dummy_d_23;
+// synthesis translate_on
+always @(*) begin
+	csr_bankarray_csrbank0_DATA_MEMORY_re <= 1'd0;
+	csr_bankarray_csrbank0_DATA_MEMORY_we <= 1'd0;
+	if ((csr_bankarray_csrbank0_sel & (csr_bankarray_interface0_bank_bus_adr[8:0] == 4'd10))) begin
+		csr_bankarray_csrbank0_DATA_MEMORY_re <= csr_bankarray_interface0_bank_bus_we;
+		csr_bankarray_csrbank0_DATA_MEMORY_we <= (~csr_bankarray_interface0_bank_bus_we);
+	end
+// synthesis translate_off
+	dummy_d_23 <= dummy_s;
+// synthesis translate_on
+end
+assign csr_bankarray_csrbank0_MAX_OK_r = csr_bankarray_interface0_bank_bus_dat_w[0];
+
+// synthesis translate_off
+reg dummy_d_24;
+// synthesis translate_on
+always @(*) begin
+	csr_bankarray_csrbank0_MAX_OK_re <= 1'd0;
+	csr_bankarray_csrbank0_MAX_OK_we <= 1'd0;
+	if ((csr_bankarray_csrbank0_sel & (csr_bankarray_interface0_bank_bus_adr[8:0] == 4'd11))) begin
+		csr_bankarray_csrbank0_MAX_OK_re <= csr_bankarray_interface0_bank_bus_we;
+		csr_bankarray_csrbank0_MAX_OK_we <= (~csr_bankarray_interface0_bank_bus_we);
+	end
+// synthesis translate_off
+	dummy_d_24 <= dummy_s;
+// synthesis translate_on
+end
+assign csr_bankarray_csrbank0_MEM_OK_r = csr_bankarray_interface0_bank_bus_dat_w[0];
+
+// synthesis translate_off
+reg dummy_d_25;
+// synthesis translate_on
+always @(*) begin
 	csr_bankarray_csrbank0_MEM_OK_re <= 1'd0;
 	csr_bankarray_csrbank0_MEM_OK_we <= 1'd0;
-	if ((csr_bankarray_csrbank0_sel & (csr_bankarray_interface0_bank_bus_adr[8:0] == 4'd9))) begin
+	if ((csr_bankarray_csrbank0_sel & (csr_bankarray_interface0_bank_bus_adr[8:0] == 4'd12))) begin
 		csr_bankarray_csrbank0_MEM_OK_re <= csr_bankarray_interface0_bank_bus_we;
 		csr_bankarray_csrbank0_MEM_OK_we <= (~csr_bankarray_interface0_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_22 <= dummy_s;
+	dummy_d_25 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank0_EN0_w = EN_storage;
@@ -1081,10 +1148,14 @@ assign csr_bankarray_csrbank0_RST0_w = RST_storage;
 assign csr_bankarray_csrbank0_WEN_IMAGE0_w = WEN_IMAGE_storage;
 assign csr_bankarray_csrbank0_WADD_IMAGE0_w = WADD_IMAGE_storage[9:0];
 assign csr_bankarray_csrbank0_WDATA_IMAGE0_w = WDATA_IMAGE_storage[15:0];
-assign csr_bankarray_csrbank0_WEN_MAX0_w = WEN_MAX_storage;
-assign csr_bankarray_csrbank0_RADD_MEMORY_MAX0_w = RADD_MEMORY_MAX_storage[9:0];
-assign csr_bankarray_csrbank0_DATA_MAX_OUT_w = DATA_MAX_OUT_status[7:0];
-assign DATA_MAX_OUT_we = csr_bankarray_csrbank0_DATA_MAX_OUT_we;
+assign csr_bankarray_csrbank0_REN_MEMORY0_w = REN_MEMORY_storage;
+assign csr_bankarray_csrbank0_REN_IMAGE0_w = REN_IMAGE_storage;
+assign csr_bankarray_csrbank0_RADD_IMAGE0_w = RADD_IMAGE_storage[9:0];
+assign csr_bankarray_csrbank0_RDATA_IMAGE_w = RDATA_IMAGE_status[15:0];
+assign RDATA_IMAGE_we = csr_bankarray_csrbank0_RDATA_IMAGE_we;
+assign csr_bankarray_csrbank0_RADD_MEMORY0_w = RADD_MEMORY_storage[9:0];
+assign csr_bankarray_csrbank0_DATA_MEMORY_w = DATA_MEMORY_status[7:0];
+assign DATA_MEMORY_we = csr_bankarray_csrbank0_DATA_MEMORY_we;
 assign csr_bankarray_csrbank0_MAX_OK_w = MAX_OK_status;
 assign MAX_OK_we = csr_bankarray_csrbank0_MAX_OK_we;
 assign csr_bankarray_csrbank0_MEM_OK_w = MEM_OK_status;
@@ -1093,7 +1164,7 @@ assign csr_bankarray_csrbank1_sel = (csr_bankarray_interface1_bank_bus_adr[13:9]
 assign csr_bankarray_csrbank1_reset0_r = csr_bankarray_interface1_bank_bus_dat_w[0];
 
 // synthesis translate_off
-reg dummy_d_23;
+reg dummy_d_26;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank1_reset0_re <= 1'd0;
@@ -1103,13 +1174,13 @@ always @(*) begin
 		csr_bankarray_csrbank1_reset0_we <= (~csr_bankarray_interface1_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_23 <= dummy_s;
+	dummy_d_26 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank1_scratch0_r = csr_bankarray_interface1_bank_bus_dat_w[31:0];
 
 // synthesis translate_off
-reg dummy_d_24;
+reg dummy_d_27;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank1_scratch0_re <= 1'd0;
@@ -1119,13 +1190,13 @@ always @(*) begin
 		csr_bankarray_csrbank1_scratch0_we <= (~csr_bankarray_interface1_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_24 <= dummy_s;
+	dummy_d_27 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank1_bus_errors_r = csr_bankarray_interface1_bank_bus_dat_w[31:0];
 
 // synthesis translate_off
-reg dummy_d_25;
+reg dummy_d_28;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank1_bus_errors_re <= 1'd0;
@@ -1135,7 +1206,7 @@ always @(*) begin
 		csr_bankarray_csrbank1_bus_errors_we <= (~csr_bankarray_interface1_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_25 <= dummy_s;
+	dummy_d_28 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank1_reset0_w = soccontroller_reset_storage;
@@ -1145,7 +1216,7 @@ assign soccontroller_bus_errors_we = csr_bankarray_csrbank1_bus_errors_we;
 assign csr_bankarray_sel = (csr_bankarray_sram_bus_adr[13:9] == 2'd2);
 
 // synthesis translate_off
-reg dummy_d_26;
+reg dummy_d_29;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_sram_bus_dat_r <= 32'd0;
@@ -1153,7 +1224,7 @@ always @(*) begin
 		csr_bankarray_sram_bus_dat_r <= csr_bankarray_dat_r;
 	end
 // synthesis translate_off
-	dummy_d_26 <= dummy_s;
+	dummy_d_29 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_adr = csr_bankarray_sram_bus_adr[5:0];
@@ -1161,7 +1232,7 @@ assign csr_bankarray_csrbank2_sel = (csr_bankarray_interface2_bank_bus_adr[13:9]
 assign csr_bankarray_csrbank2_load0_r = csr_bankarray_interface2_bank_bus_dat_w[31:0];
 
 // synthesis translate_off
-reg dummy_d_27;
+reg dummy_d_30;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank2_load0_re <= 1'd0;
@@ -1171,13 +1242,13 @@ always @(*) begin
 		csr_bankarray_csrbank2_load0_we <= (~csr_bankarray_interface2_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_27 <= dummy_s;
+	dummy_d_30 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank2_reload0_r = csr_bankarray_interface2_bank_bus_dat_w[31:0];
 
 // synthesis translate_off
-reg dummy_d_28;
+reg dummy_d_31;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank2_reload0_re <= 1'd0;
@@ -1187,13 +1258,13 @@ always @(*) begin
 		csr_bankarray_csrbank2_reload0_we <= (~csr_bankarray_interface2_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_28 <= dummy_s;
+	dummy_d_31 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank2_en0_r = csr_bankarray_interface2_bank_bus_dat_w[0];
 
 // synthesis translate_off
-reg dummy_d_29;
+reg dummy_d_32;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank2_en0_re <= 1'd0;
@@ -1203,13 +1274,13 @@ always @(*) begin
 		csr_bankarray_csrbank2_en0_we <= (~csr_bankarray_interface2_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_29 <= dummy_s;
+	dummy_d_32 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank2_update_value0_r = csr_bankarray_interface2_bank_bus_dat_w[0];
 
 // synthesis translate_off
-reg dummy_d_30;
+reg dummy_d_33;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank2_update_value0_re <= 1'd0;
@@ -1219,13 +1290,13 @@ always @(*) begin
 		csr_bankarray_csrbank2_update_value0_we <= (~csr_bankarray_interface2_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_30 <= dummy_s;
+	dummy_d_33 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank2_value_r = csr_bankarray_interface2_bank_bus_dat_w[31:0];
 
 // synthesis translate_off
-reg dummy_d_31;
+reg dummy_d_34;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank2_value_re <= 1'd0;
@@ -1235,13 +1306,13 @@ always @(*) begin
 		csr_bankarray_csrbank2_value_we <= (~csr_bankarray_interface2_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_31 <= dummy_s;
+	dummy_d_34 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank2_ev_status_r = csr_bankarray_interface2_bank_bus_dat_w[0];
 
 // synthesis translate_off
-reg dummy_d_32;
+reg dummy_d_35;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank2_ev_status_re <= 1'd0;
@@ -1251,13 +1322,13 @@ always @(*) begin
 		csr_bankarray_csrbank2_ev_status_we <= (~csr_bankarray_interface2_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_32 <= dummy_s;
+	dummy_d_35 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank2_ev_pending_r = csr_bankarray_interface2_bank_bus_dat_w[0];
 
 // synthesis translate_off
-reg dummy_d_33;
+reg dummy_d_36;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank2_ev_pending_re <= 1'd0;
@@ -1267,13 +1338,13 @@ always @(*) begin
 		csr_bankarray_csrbank2_ev_pending_we <= (~csr_bankarray_interface2_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_33 <= dummy_s;
+	dummy_d_36 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank2_ev_enable0_r = csr_bankarray_interface2_bank_bus_dat_w[0];
 
 // synthesis translate_off
-reg dummy_d_34;
+reg dummy_d_37;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank2_ev_enable0_re <= 1'd0;
@@ -1283,7 +1354,7 @@ always @(*) begin
 		csr_bankarray_csrbank2_ev_enable0_we <= (~csr_bankarray_interface2_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_34 <= dummy_s;
+	dummy_d_37 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank2_load0_w = timer_load_storage[31:0];
@@ -1304,7 +1375,7 @@ assign csr_bankarray_csrbank3_sel = (csr_bankarray_interface3_bank_bus_adr[13:9]
 assign uart_rxtx_r = csr_bankarray_interface3_bank_bus_dat_w[7:0];
 
 // synthesis translate_off
-reg dummy_d_35;
+reg dummy_d_38;
 // synthesis translate_on
 always @(*) begin
 	uart_rxtx_re <= 1'd0;
@@ -1314,13 +1385,13 @@ always @(*) begin
 		uart_rxtx_we <= (~csr_bankarray_interface3_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_35 <= dummy_s;
+	dummy_d_38 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank3_txfull_r = csr_bankarray_interface3_bank_bus_dat_w[0];
 
 // synthesis translate_off
-reg dummy_d_36;
+reg dummy_d_39;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank3_txfull_re <= 1'd0;
@@ -1330,13 +1401,13 @@ always @(*) begin
 		csr_bankarray_csrbank3_txfull_we <= (~csr_bankarray_interface3_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_36 <= dummy_s;
+	dummy_d_39 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank3_rxempty_r = csr_bankarray_interface3_bank_bus_dat_w[0];
 
 // synthesis translate_off
-reg dummy_d_37;
+reg dummy_d_40;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank3_rxempty_re <= 1'd0;
@@ -1346,13 +1417,13 @@ always @(*) begin
 		csr_bankarray_csrbank3_rxempty_we <= (~csr_bankarray_interface3_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_37 <= dummy_s;
+	dummy_d_40 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank3_ev_status_r = csr_bankarray_interface3_bank_bus_dat_w[1:0];
 
 // synthesis translate_off
-reg dummy_d_38;
+reg dummy_d_41;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank3_ev_status_re <= 1'd0;
@@ -1362,13 +1433,13 @@ always @(*) begin
 		csr_bankarray_csrbank3_ev_status_we <= (~csr_bankarray_interface3_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_38 <= dummy_s;
+	dummy_d_41 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank3_ev_pending_r = csr_bankarray_interface3_bank_bus_dat_w[1:0];
 
 // synthesis translate_off
-reg dummy_d_39;
+reg dummy_d_42;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank3_ev_pending_re <= 1'd0;
@@ -1378,13 +1449,13 @@ always @(*) begin
 		csr_bankarray_csrbank3_ev_pending_we <= (~csr_bankarray_interface3_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_39 <= dummy_s;
+	dummy_d_42 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank3_ev_enable0_r = csr_bankarray_interface3_bank_bus_dat_w[1:0];
 
 // synthesis translate_off
-reg dummy_d_40;
+reg dummy_d_43;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank3_ev_enable0_re <= 1'd0;
@@ -1394,13 +1465,13 @@ always @(*) begin
 		csr_bankarray_csrbank3_ev_enable0_we <= (~csr_bankarray_interface3_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_40 <= dummy_s;
+	dummy_d_43 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank3_txempty_r = csr_bankarray_interface3_bank_bus_dat_w[0];
 
 // synthesis translate_off
-reg dummy_d_41;
+reg dummy_d_44;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank3_txempty_re <= 1'd0;
@@ -1410,13 +1481,13 @@ always @(*) begin
 		csr_bankarray_csrbank3_txempty_we <= (~csr_bankarray_interface3_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_41 <= dummy_s;
+	dummy_d_44 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank3_rxfull_r = csr_bankarray_interface3_bank_bus_dat_w[0];
 
 // synthesis translate_off
-reg dummy_d_42;
+reg dummy_d_45;
 // synthesis translate_on
 always @(*) begin
 	csr_bankarray_csrbank3_rxfull_re <= 1'd0;
@@ -1426,7 +1497,7 @@ always @(*) begin
 		csr_bankarray_csrbank3_rxfull_we <= (~csr_bankarray_interface3_bank_bus_we);
 	end
 // synthesis translate_off
-	dummy_d_42 <= dummy_s;
+	dummy_d_45 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank3_txfull_w = uart_txfull_status;
@@ -1435,28 +1506,28 @@ assign csr_bankarray_csrbank3_rxempty_w = uart_rxempty_status;
 assign uart_rxempty_we = csr_bankarray_csrbank3_rxempty_we;
 
 // synthesis translate_off
-reg dummy_d_43;
+reg dummy_d_46;
 // synthesis translate_on
 always @(*) begin
 	uart_status_status <= 2'd0;
 	uart_status_status[0] <= uart_tx0;
 	uart_status_status[1] <= uart_rx0;
 // synthesis translate_off
-	dummy_d_43 <= dummy_s;
+	dummy_d_46 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank3_ev_status_w = uart_status_status[1:0];
 assign uart_status_we = csr_bankarray_csrbank3_ev_status_we;
 
 // synthesis translate_off
-reg dummy_d_44;
+reg dummy_d_47;
 // synthesis translate_on
 always @(*) begin
 	uart_pending_status <= 2'd0;
 	uart_pending_status[0] <= uart_tx1;
 	uart_pending_status[1] <= uart_rx1;
 // synthesis translate_off
-	dummy_d_44 <= dummy_s;
+	dummy_d_47 <= dummy_s;
 // synthesis translate_on
 end
 assign csr_bankarray_csrbank3_ev_pending_w = uart_pending_status[1:0];
@@ -1490,7 +1561,7 @@ assign csr_bankarray_sram_bus_dat_w = csr_interconnect_dat_w;
 assign csr_interconnect_dat_r = ((((csr_bankarray_interface0_bank_bus_dat_r | csr_bankarray_interface1_bank_bus_dat_r) | csr_bankarray_interface2_bank_bus_dat_r) | csr_bankarray_interface3_bank_bus_dat_r) | csr_bankarray_sram_bus_dat_r);
 
 // synthesis translate_off
-reg dummy_d_45;
+reg dummy_d_48;
 // synthesis translate_on
 always @(*) begin
 	array_muxed0 <= 30'd0;
@@ -1503,12 +1574,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_45 <= dummy_s;
+	dummy_d_48 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_46;
+reg dummy_d_49;
 // synthesis translate_on
 always @(*) begin
 	array_muxed1 <= 32'd0;
@@ -1521,12 +1592,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_46 <= dummy_s;
+	dummy_d_49 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_47;
+reg dummy_d_50;
 // synthesis translate_on
 always @(*) begin
 	array_muxed2 <= 4'd0;
@@ -1539,12 +1610,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_47 <= dummy_s;
+	dummy_d_50 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_48;
+reg dummy_d_51;
 // synthesis translate_on
 always @(*) begin
 	array_muxed3 <= 1'd0;
@@ -1557,12 +1628,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_48 <= dummy_s;
+	dummy_d_51 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_49;
+reg dummy_d_52;
 // synthesis translate_on
 always @(*) begin
 	array_muxed4 <= 1'd0;
@@ -1575,12 +1646,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_49 <= dummy_s;
+	dummy_d_52 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_50;
+reg dummy_d_53;
 // synthesis translate_on
 always @(*) begin
 	array_muxed5 <= 1'd0;
@@ -1593,12 +1664,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_50 <= dummy_s;
+	dummy_d_53 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_51;
+reg dummy_d_54;
 // synthesis translate_on
 always @(*) begin
 	array_muxed6 <= 3'd0;
@@ -1611,12 +1682,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_51 <= dummy_s;
+	dummy_d_54 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_52;
+reg dummy_d_55;
 // synthesis translate_on
 always @(*) begin
 	array_muxed7 <= 2'd0;
@@ -1629,7 +1700,7 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_52 <= dummy_s;
+	dummy_d_55 <= dummy_s;
 // synthesis translate_on
 end
 assign rx_rx = regs1;
@@ -1803,18 +1874,27 @@ always @(posedge sys_clk) begin
 				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_WDATA_IMAGE0_w;
 			end
 			3'd5: begin
-				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_WEN_MAX0_w;
+				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_REN_MEMORY0_w;
 			end
 			3'd6: begin
-				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_RADD_MEMORY_MAX0_w;
+				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_REN_IMAGE0_w;
 			end
 			3'd7: begin
-				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_DATA_MAX_OUT_w;
+				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_RADD_IMAGE0_w;
 			end
 			4'd8: begin
-				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_MAX_OK_w;
+				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_RDATA_IMAGE_w;
 			end
 			4'd9: begin
+				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_RADD_MEMORY0_w;
+			end
+			4'd10: begin
+				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_DATA_MEMORY_w;
+			end
+			4'd11: begin
+				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_MAX_OK_w;
+			end
+			4'd12: begin
 				csr_bankarray_interface0_bank_bus_dat_r <= csr_bankarray_csrbank0_MEM_OK_w;
 			end
 		endcase
@@ -1839,15 +1919,24 @@ always @(posedge sys_clk) begin
 		WDATA_IMAGE_storage[15:0] <= csr_bankarray_csrbank0_WDATA_IMAGE0_r;
 	end
 	WDATA_IMAGE_re <= csr_bankarray_csrbank0_WDATA_IMAGE0_re;
-	if (csr_bankarray_csrbank0_WEN_MAX0_re) begin
-		WEN_MAX_storage <= csr_bankarray_csrbank0_WEN_MAX0_r;
+	if (csr_bankarray_csrbank0_REN_MEMORY0_re) begin
+		REN_MEMORY_storage <= csr_bankarray_csrbank0_REN_MEMORY0_r;
 	end
-	WEN_MAX_re <= csr_bankarray_csrbank0_WEN_MAX0_re;
-	if (csr_bankarray_csrbank0_RADD_MEMORY_MAX0_re) begin
-		RADD_MEMORY_MAX_storage[9:0] <= csr_bankarray_csrbank0_RADD_MEMORY_MAX0_r;
+	REN_MEMORY_re <= csr_bankarray_csrbank0_REN_MEMORY0_re;
+	if (csr_bankarray_csrbank0_REN_IMAGE0_re) begin
+		REN_IMAGE_storage <= csr_bankarray_csrbank0_REN_IMAGE0_r;
 	end
-	RADD_MEMORY_MAX_re <= csr_bankarray_csrbank0_RADD_MEMORY_MAX0_re;
-	DATA_MAX_OUT_re <= csr_bankarray_csrbank0_DATA_MAX_OUT_re;
+	REN_IMAGE_re <= csr_bankarray_csrbank0_REN_IMAGE0_re;
+	if (csr_bankarray_csrbank0_RADD_IMAGE0_re) begin
+		RADD_IMAGE_storage[9:0] <= csr_bankarray_csrbank0_RADD_IMAGE0_r;
+	end
+	RADD_IMAGE_re <= csr_bankarray_csrbank0_RADD_IMAGE0_re;
+	RDATA_IMAGE_re <= csr_bankarray_csrbank0_RDATA_IMAGE_re;
+	if (csr_bankarray_csrbank0_RADD_MEMORY0_re) begin
+		RADD_MEMORY_storage[9:0] <= csr_bankarray_csrbank0_RADD_MEMORY0_r;
+	end
+	RADD_MEMORY_re <= csr_bankarray_csrbank0_RADD_MEMORY0_re;
+	DATA_MEMORY_re <= csr_bankarray_csrbank0_DATA_MEMORY_re;
 	MAX_OK_re <= csr_bankarray_csrbank0_MAX_OK_re;
 	MEM_OK_re <= csr_bankarray_csrbank0_MEM_OK_re;
 	csr_bankarray_interface1_bank_bus_dat_r <= 1'd0;
@@ -2036,11 +2125,16 @@ always @(posedge sys_clk) begin
 		WADD_IMAGE_re <= 1'd0;
 		WDATA_IMAGE_storage <= 16'd0;
 		WDATA_IMAGE_re <= 1'd0;
-		WEN_MAX_storage <= 1'd0;
-		WEN_MAX_re <= 1'd0;
-		RADD_MEMORY_MAX_storage <= 10'd0;
-		RADD_MEMORY_MAX_re <= 1'd0;
-		DATA_MAX_OUT_re <= 1'd0;
+		REN_MEMORY_storage <= 1'd0;
+		REN_MEMORY_re <= 1'd0;
+		REN_IMAGE_storage <= 1'd0;
+		REN_IMAGE_re <= 1'd0;
+		RADD_IMAGE_storage <= 10'd0;
+		RADD_IMAGE_re <= 1'd0;
+		RDATA_IMAGE_re <= 1'd0;
+		RADD_MEMORY_storage <= 10'd0;
+		RADD_MEMORY_re <= 1'd0;
+		DATA_MEMORY_re <= 1'd0;
 		MAX_OK_re <= 1'd0;
 		MEM_OK_re <= 1'd0;
 		rs232phytx_state <= 1'd0;
@@ -2156,15 +2250,18 @@ assign uart_rx_fifo_rdport_dat_r = memdat_4;
 accQuant_cnn accQuant_cnn(
 	.clk(CLK),
 	.en(EN_storage),
-	.radd_memory_max(RADD_MEMORY_MAX_storage),
+	.radd_image(RADD_IMAGE_storage),
+	.radd_memory(RADD_MEMORY_storage),
+	.ren_image(REN_IMAGE_storage),
+	.ren_memory(REN_MEMORY_storage),
 	.rst(RST_storage),
 	.wadd_image(WADD_IMAGE_storage),
 	.wdata_image(WDATA_IMAGE_storage),
 	.wen_image(WEN_IMAGE_storage),
-	.wen_max(WEN_MAX_storage),
-	.data_max_out(DATA_MAX_OUT_status),
+	.data_memory(DATA_MEMORY_status),
 	.mem_full_image(MEM_OK_status),
-	.out(MAX_OK_status)
+	.out(MAX_OK_status),
+	.rdata_image(RDATA_IMAGE_status)
 );
 
 VexRiscv VexRiscv(

@@ -46,6 +46,7 @@ module counterPositionRstlConv
         if(rst)
         begin
             count <= 4'd0;
+            once = 1;
         end
         else if(once)
         begin

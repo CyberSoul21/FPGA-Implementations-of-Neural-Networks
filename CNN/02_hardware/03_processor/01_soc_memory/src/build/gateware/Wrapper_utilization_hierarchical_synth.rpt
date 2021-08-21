@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Mon Aug 16 17:08:05 2021
+| Date         : Fri Aug 20 18:38:27 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_utilization -hierarchical -file Wrapper_utilization_hierarchical_synth.rpt
 | Design       : Wrapper
@@ -21,14 +21,13 @@ Table of Contents
 +----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
 |          Instance          |      Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
-| Wrapper                    |            (top) |       2433 |       2405 |      28 |    0 | 1751 |     15 |      8 |            4 |
+| Wrapper                    |            (top) |       2432 |       2404 |      28 |    0 | 1750 |     15 |      8 |            4 |
 |   (Wrapper)                |            (top) |        204 |        188 |      16 |    0 |  499 |     14 |      0 |            0 |
 |   VexRiscv                 |         VexRiscv |       2216 |       2216 |       0 |    0 | 1251 |      1 |      8 |            4 |
 |     (VexRiscv)             |         VexRiscv |        977 |        977 |       0 |    0 | 1019 |      0 |      2 |            4 |
 |     IBusCachedPlugin_cache | InstructionCache |        669 |        669 |       0 |    0 |  111 |      1 |      1 |            0 |
 |     dataCache_1_           |        DataCache |        570 |        570 |       0 |    0 |  121 |      0 |      5 |            0 |
-|   wrapper                  |          wrapper |         13 |          1 |      12 |    0 |    1 |      0 |      0 |            0 |
-|     (wrapper)              |          wrapper |          1 |          1 |       0 |    0 |    1 |      0 |      0 |            0 |
+|   wrapper                  |          wrapper |         12 |          0 |      12 |    0 |    0 |      0 |      0 |            0 |
 |     image                  |        ram_image |         12 |          0 |      12 |    0 |    0 |      0 |      0 |            0 |
 +----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
 

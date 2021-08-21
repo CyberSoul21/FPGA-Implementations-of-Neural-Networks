@@ -4,21 +4,13 @@ verilog xil_defaultlib  \
 "../../../../05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v" \
 "../../../../05_CNN_IP_core_z20.srcs/sources_1/new/clock_divider.v" \
 "../../../../05_CNN_IP_core_z20.srcs/sources_1/new/clock_divider_dens.v" \
-"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/clock_divider_max.v" \
-"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v" \
 "../../../../05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressImg.v" \
 "../../../../05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v" \
 "../../../../05_CNN_IP_core_z20.srcs/sources_1/new/counterPositionRstlConv.v" \
-"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/counterPositionRstlMax.v" \
-"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/maxpooling.v" \
 "../../../../05_CNN_IP_core_z20.srcs/sources_1/new/memory_filter_1.v" \
 "../../../../05_CNN_IP_core_z20.srcs/sources_1/new/memory_filter_2.v" \
-"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/memory_filter_3.v" \
 "../../../../05_CNN_IP_core_z20.srcs/sources_1/new/memory_image.v" \
 "../../../../05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_1.v" \
-"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_2.v" \
-"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_3.v" \
-"../../../../05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_max_1.v" \
 "../../../../05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v" \
 "../../../../05_CNN_IP_core_z20.srcs/sim_1/new/accQuant_testbench.v" \
 

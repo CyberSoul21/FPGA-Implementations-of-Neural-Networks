@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Thu Aug 19 14:21:39 2021
+| Date         : Thu Aug 19 20:38:51 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_utilization -file accQuant_cnn_utilization_synth.rpt -pb accQuant_cnn_utilization_synth.pb
 | Design       : accQuant_cnn
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+-------+-------+-----------+-------+
 |          Site Type         |  Used | Fixed | Available | Util% |
 +----------------------------+-------+-------+-----------+-------+
-| Slice LUTs*                | 11265 |     0 |     53200 | 21.17 |
-|   LUT as Logic             |  8691 |     0 |     53200 | 16.34 |
+| Slice LUTs*                | 11268 |     0 |     53200 | 21.18 |
+|   LUT as Logic             |  8694 |     0 |     53200 | 16.34 |
 |   LUT as Memory            |  2574 |     0 |     17400 | 14.79 |
 |     LUT as Distributed RAM |  2574 |     0 |           |       |
 |     LUT as Shift Register  |     0 |     0 |           |       |
-| Slice Registers            |  5393 |     0 |    106400 |  5.07 |
-|   Register as Flip Flop    |  5393 |     0 |    106400 |  5.07 |
+| Slice Registers            |  5395 |     0 |    106400 |  5.07 |
+|   Register as Flip Flop    |  5395 |     0 |    106400 |  5.07 |
 |   Register as Latch        |     0 |     0 |    106400 |  0.00 |
 | F7 Muxes                   |   528 |     0 |     26600 |  1.98 |
 | F8 Muxes                   |   250 |     0 |     13300 |  1.88 |
@@ -59,7 +59,7 @@ Table of Contents
 | 3     |          Yes |           - |          Set |
 | 76    |          Yes |           - |        Reset |
 | 50    |          Yes |         Set |            - |
-| 5264  |          Yes |       Reset |            - |
+| 5266  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -150,19 +150,19 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 5264 |        Flop & Latch |
-| LUT5     | 4303 |                 LUT |
-| LUT6     | 3319 |                 LUT |
+| FDRE     | 5266 |        Flop & Latch |
+| LUT5     | 4298 |                 LUT |
+| LUT6     | 3327 |                 LUT |
 | RAMD64E  | 2574 |  Distributed Memory |
-| LUT3     |  826 |                 LUT |
+| LUT3     |  827 |                 LUT |
 | MUXF7    |  528 |               MuxFx |
-| LUT4     |  520 |                 LUT |
+| LUT4     |  519 |                 LUT |
 | MUXF8    |  250 |               MuxFx |
-| LUT2     |  214 |                 LUT |
+| LUT2     |  213 |                 LUT |
 | CARRY4   |  153 |          CarryLogic |
 | FDCE     |   76 |        Flop & Latch |
 | DSP48E1  |   63 |    Block Arithmetic |
-| LUT1     |   53 |                 LUT |
+| LUT1     |   54 |                 LUT |
 | FDSE     |   50 |        Flop & Latch |
 | IBUF     |   40 |                  IO |
 | RAMB18E1 |   12 |        Block Memory |

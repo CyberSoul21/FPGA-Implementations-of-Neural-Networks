@@ -102,27 +102,27 @@ module full_connected#(
     
     always @(posedge clk) //Present estate 
     begin
-        if(clk_div == 1 & en)
+        if(rst)
         begin
-            present_state <= s0;    
-
+            present_state = 0; 
         end
-//        if(rst)
-//        begin
-//            present_state <= s0;
-//            rstl_sum <= 0;
-//            rstl_mult <= 0;
-//        end        
-        else
+        else if(en)
         begin
-            present_state <= next_state;
-        end    
+            if(clk_div == 1)
+            begin
+                present_state <= s0;
+                
+            end
+            else
+            begin
+                present_state <= next_state;
+            end     
+        end            
     end    
 
     always @(negedge clk) //negedge
     begin
-        if(en) begin
-            case(present_state)
+        case(present_state)
                 s0:
                     next_state <= s1;                
                 s1:
@@ -131,16 +131,20 @@ module full_connected#(
                     next_state <= s3;
                                                                           
             endcase 
-        end               
     end
 
 
     always @ (negedge clk) begin //always @ (posedge clk) begin
-    if(en) begin   
+        if(rst)
+        begin
+           den_ok <= 0;
+           rstl_sum <= 0;
+        end    
       case (present_state)
         s0: begin
                 aux_weight <= $signed(idata_weight);
                 aux_max <= $signed(idata_max);
+     
             end          
         s1: begin
                 rstl_mult <= $signed(aux_weight*aux_max);
@@ -153,13 +157,11 @@ module full_connected#(
             if(pos_memory == (numWeightRstlMax - 1 + 1 +1))
             begin
                 den_ok <= 1;
-                //rst_quant <= 1;
-                num <= $signed(rstl_sum + bias);                
+                num <= $signed(rstl_sum + bias);               
             end                
             end
                                      
       endcase
-    end   
     end
     
   

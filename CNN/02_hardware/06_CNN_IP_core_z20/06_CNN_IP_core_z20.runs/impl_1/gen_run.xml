@@ -1,80 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="impl_1" LaunchPart="xc7z020clg400-1" LaunchTime="1629924966">
+  <File Type="PA-TCL" Name="accQuant.tcl"/>
+  <File Type="REPORTS-TCL" Name="accQuant_reports.tcl"/>
+  <File Type="OPT-DCP" Name="accQuant_opt.dcp"/>
+  <File Type="OPT-DRC" Name="accQuant_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="accQuant.hwdef"/>
+  <File Type="PWROPT-DCP" Name="accQuant_pwropt.dcp"/>
+  <File Type="PLACE-DCP" Name="accQuant_placed.dcp"/>
+  <File Type="PLACE-IO" Name="accQuant_io_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="accQuant_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="accQuant_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="accQuant_control_sets_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="accQuant_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="accQuant_postplace_pwropt.dcp"/>
+  <File Type="PHYSOPT-DCP" Name="accQuant_physopt.dcp"/>
+  <File Type="ROUTE-ERROR-DCP" Name="accQuant_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="accQuant_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="accQuant_routed_bb.dcp"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
-  <File Type="BG-DRC" Name="accQuant.drc"/>
+  <File Type="BG-BIT" Name="accQuant.bit"/>
+  <File Type="ROUTE-BUS-SKEW" Name="accQuant_bus_skew_routed.rpt"/>
+  <File Type="BITSTR-MSK" Name="accQuant.msk"/>
+  <File Type="BITSTR-RBT" Name="accQuant.rbt"/>
+  <File Type="BITSTR-NKY" Name="accQuant.nky"/>
+  <File Type="BITSTR-BMM" Name="accQuant_bd.bmm"/>
+  <File Type="PDI-FILE" Name="accQuant.pdi"/>
+  <File Type="ROUTE-DRC" Name="accQuant_drc_routed.rpt"/>
+  <File Type="BITSTR-MMI" Name="accQuant.mmi"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="accQuant_postroute_physopt.dcp"/>
+  <File Type="ROUTE-DRC-PB" Name="accQuant_drc_routed.pb"/>
   <File Type="BG-BGN" Name="accQuant.bgn"/>
+  <File Type="BG-BIN" Name="accQuant.bin"/>
+  <File Type="RCFI_FILE" Name="accQuant.rcfi"/>
+  <File Type="RDI-RDI" Name="accQuant.vdi"/>
+  <File Type="ROUTE-DRC-RPX" Name="accQuant_drc_routed.rpx"/>
+  <File Type="BG-DRC" Name="accQuant.drc"/>
+  <File Type="CFI_FILE" Name="accQuant.cfi"/>
+  <File Type="ROUTE-PWR" Name="accQuant_power_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="accQuant.sysdef"/>
-  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="accQuant_postroute_physopt_bb.dcp"/>
+  <File Type="NPI_FILE" Name="accQuant.npi"/>
+  <File Type="ROUTE-PWR-RPX" Name="accQuant_power_routed.rpx"/>
+  <File Type="RNPI_FILE" Name="accQuant.rnpi"/>
+  <File Type="ROUTE-PWR-SUM" Name="accQuant_power_summary_routed.pb"/>
   <File Type="BITSTR-LTX" Name="accQuant.ltx"/>
   <File Type="RBD_FILE" Name="accQuant.rbd"/>
-  <File Type="NPI_FILE" Name="accQuant.npi"/>
-  <File Type="RNPI_FILE" Name="accQuant.rnpi"/>
-  <File Type="CFI_FILE" Name="accQuant.cfi"/>
-  <File Type="RDI-RDI" Name="accQuant.vdi"/>
-  <File Type="RCFI_FILE" Name="accQuant.rcfi"/>
-  <File Type="PDI-FILE" Name="accQuant.pdi"/>
-  <File Type="BITSTR-MMI" Name="accQuant.mmi"/>
-  <File Type="BITSTR-BMM" Name="accQuant_bd.bmm"/>
-  <File Type="BITSTR-NKY" Name="accQuant.nky"/>
-  <File Type="BITSTR-RBT" Name="accQuant.rbt"/>
-  <File Type="BITSTR-MSK" Name="accQuant.msk"/>
-  <File Type="BG-BIN" Name="accQuant.bin"/>
-  <File Type="BG-BIT" Name="accQuant.bit"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="accQuant_bus_skew_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="accQuant_bus_skew_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="accQuant_bus_skew_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="accQuant_timing_summary_postroute_physopted.rpx"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="accQuant_timing_summary_postroute_physopted.pb"/>
-  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="accQuant_timing_summary_postroute_physopted.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="accQuant_postroute_physopt_bb.dcp"/>
-  <File Type="POSTROUTE-PHYSOPT-DCP" Name="accQuant_postroute_physopt.dcp"/>
+  <File Type="ROUTE-STATUS" Name="accQuant_route_status.rpt"/>
   <File Type="ROUTE-BUS-SKEW-RPX" Name="accQuant_bus_skew_routed.rpx"/>
   <File Type="ROUTE-BUS-SKEW-PB" Name="accQuant_bus_skew_routed.pb"/>
-  <File Type="ROUTE-BUS-SKEW" Name="accQuant_bus_skew_routed.rpt"/>
   <File Type="ROUTE-CLK" Name="accQuant_clock_utilization_routed.rpt"/>
-  <File Type="ROUTE-SIMILARITY" Name="accQuant_incremental_reuse_routed.rpt"/>
   <File Type="ROUTE-TIMING-RPX" Name="accQuant_timing_summary_routed.rpx"/>
   <File Type="ROUTE-TIMING-PB" Name="accQuant_timing_summary_routed.pb"/>
   <File Type="ROUTE-TIMINGSUMMARY" Name="accQuant_timing_summary_routed.rpt"/>
   <File Type="ROUTE-STATUS-PB" Name="accQuant_route_status.pb"/>
-  <File Type="ROUTE-STATUS" Name="accQuant_route_status.rpt"/>
-  <File Type="ROUTE-PWR-RPX" Name="accQuant_power_routed.rpx"/>
-  <File Type="ROUTE-PWR-SUM" Name="accQuant_power_summary_routed.pb"/>
-  <File Type="ROUTE-PWR" Name="accQuant_power_routed.rpt"/>
   <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="accQuant_methodology_drc_routed.pb"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="accQuant_methodology_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="accQuant_methodology_drc_routed.rpt"/>
-  <File Type="ROUTE-DRC-RPX" Name="accQuant_drc_routed.rpx"/>
-  <File Type="ROUTE-DRC-PB" Name="accQuant_drc_routed.pb"/>
-  <File Type="ROUTE-DRC" Name="accQuant_drc_routed.rpt"/>
-  <File Type="ROUTE-BLACKBOX-DCP" Name="accQuant_routed_bb.dcp"/>
-  <File Type="ROUTE-DCP" Name="accQuant_routed.dcp"/>
-  <File Type="ROUTE-ERROR-DCP" Name="accQuant_routed_error.dcp"/>
-  <File Type="PHYSOPT-TIMING" Name="accQuant_timing_summary_physopted.rpt"/>
-  <File Type="PHYSOPT-DRC" Name="accQuant_drc_physopted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="accQuant_physopt.dcp"/>
-  <File Type="POSTPLACE-PWROPT-TIMING" Name="accQuant_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="POSTPLACE-PWROPT-DCP" Name="accQuant_postplace_pwropt.dcp"/>
-  <File Type="PLACE-TIMING" Name="accQuant_timing_summary_placed.rpt"/>
-  <File Type="PLACE-PRE-SIMILARITY" Name="accQuant_incremental_reuse_pre_placed.rpt"/>
-  <File Type="PLACE-SIMILARITY" Name="accQuant_incremental_reuse_placed.rpt"/>
-  <File Type="PLACE-CTRL" Name="accQuant_control_sets_placed.rpt"/>
-  <File Type="PLACE-UTIL-PB" Name="accQuant_utilization_placed.pb"/>
-  <File Type="PLACE-UTIL" Name="accQuant_utilization_placed.rpt"/>
-  <File Type="PLACE-CLK" Name="accQuant_clock_utilization_placed.rpt"/>
-  <File Type="PLACE-IO" Name="accQuant_io_placed.rpt"/>
-  <File Type="PLACE-DCP" Name="accQuant_placed.dcp"/>
-  <File Type="PWROPT-DRC" Name="accQuant_drc_pwropted.rpt"/>
-  <File Type="PWROPT-DCP" Name="accQuant_pwropt.dcp"/>
-  <File Type="OPT-HWDEF" Name="accQuant.hwdef"/>
-  <File Type="OPT-METHODOLOGY-DRC" Name="accQuant_methodology_drc_opted.rpt"/>
-  <File Type="OPT-DRC" Name="accQuant_drc_opted.rpt"/>
-  <File Type="OPT-DCP" Name="accQuant_opt.dcp"/>
-  <File Type="INIT-TIMING" Name="accQuant_timing_summary_init.rpt"/>
-  <File Type="PWROPT-TIMING" Name="accQuant_timing_summary_pwropted.rpt"/>
-  <File Type="REPORTS-TCL" Name="accQuant_reports.tcl"/>
-  <File Type="OPT-TIMING" Name="accQuant_timing_summary_opted.rpt"/>
-  <File Type="PA-TCL" Name="accQuant.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/new/ReLu.v">
@@ -534,9 +515,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
-      <Desc>Default settings for Implementation.</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
     <Step Id="init_design"/>
     <Step Id="opt_design"/>
     <Step Id="power_opt_design"/>
@@ -546,5 +525,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
+    <Step Id="write_device_image"/>
   </Strategy>
 </GenRun>

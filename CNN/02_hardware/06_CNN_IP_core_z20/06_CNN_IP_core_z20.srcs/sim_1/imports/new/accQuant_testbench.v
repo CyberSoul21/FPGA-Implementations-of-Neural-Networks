@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 07/25/2021 01:50:31 AM
+// Create Date: 08/17/2021 01:10:44 PM
 // Design Name: 
 // Module Name: accQuant_testbench
 // Project Name: 
@@ -20,7 +20,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-
 module accQuant_testbench;
 
 
@@ -32,16 +31,20 @@ module accQuant_testbench;
 //    reg [7:0] num;
     
     //outputs    
-    wire out;
-    wire [8-1:0] data_memory;
+    wire conv_ok;
+    wire dens_ok;
+    wire max_ok;
 //    wire out2;    
     
     //unit under test (UUT)
     accQuant UUT(
+        //.clk_fpga(clk),
         .clk(clk),
         .rst(rst),
         .en(en),
-        .data_memory(data_memory)
+        .conv_ok(conv_ok),
+        .max_ok(max_ok),
+        .dens_ok(dens_ok)
     );
     
    
@@ -61,8 +64,13 @@ module accQuant_testbench;
 
     initial begin
       #0 rst = 1;
-      #5 en = 1;
+      #5 en = 0;
       #5 rst = 0;
+      #730 en = 1;
+      #535009 $display("-----------RESET--------------"); 
+      #535010 rst = 1;
+      #535020 rst = 0;
+
 
          
     end  
@@ -70,3 +78,4 @@ module accQuant_testbench;
 
 
 endmodule
+

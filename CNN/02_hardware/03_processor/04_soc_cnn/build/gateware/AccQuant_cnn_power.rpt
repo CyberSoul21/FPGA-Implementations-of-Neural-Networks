@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date             : Wed Aug 25 21:33:32 2021
+| Date             : Thu Aug 26 15:42:52 2021
 | Host             : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file AccQuant_cnn_power.rpt
 | Design           : AccQuant_cnn
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.321        |
+| Total On-Chip Power (W)  | 0.257        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.214        |
-| Device Static (W)        | 0.108        |
+| Dynamic (W)              | 0.150        |
+| Device Static (W)        | 0.107        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 81.3         |
-| Junction Temperature (C) | 28.7         |
+| Max Ambient (C)          | 82.0         |
+| Junction Temperature (C) | 28.0         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.012 |        3 |       --- |             --- |
-| Slice Logic              |     0.022 |    25261 |       --- |             --- |
-|   LUT as Logic           |     0.020 |    11826 |     53200 |           22.23 |
-|   CARRY4                 |     0.001 |      401 |     13300 |            3.02 |
-|   Register               |    <0.001 |     8032 |    106400 |            7.55 |
+| Clocks                   |     0.011 |        3 |       --- |             --- |
+| Slice Logic              |     0.019 |    25573 |       --- |             --- |
+|   LUT as Logic           |     0.017 |    11928 |     53200 |           22.42 |
+|   CARRY4                 |    <0.001 |      401 |     13300 |            3.02 |
+|   Register               |    <0.001 |     8192 |    106400 |            7.70 |
 |   BUFG                   |    <0.001 |        4 |        32 |           12.50 |
-|   F7/F8 Muxes            |    <0.001 |      796 |     53200 |            1.50 |
+|   F7/F8 Muxes            |    <0.001 |      784 |     53200 |            1.47 |
 |   LUT as Distributed RAM |    <0.001 |     2876 |     17400 |           16.53 |
-|   Others                 |     0.000 |      177 |       --- |             --- |
-| Signals                  |     0.065 |    19981 |       --- |             --- |
+|   Others                 |     0.000 |      167 |       --- |             --- |
+| Signals                  |     0.057 |    20329 |       --- |             --- |
 | Block RAM                |     0.046 |       30 |       140 |           21.43 |
-| DSPs                     |     0.069 |      121 |       220 |           55.00 |
+| DSPs                     |     0.017 |      121 |       220 |           55.00 |
 | I/O                      |    <0.001 |        4 |       125 |            3.20 |
-| Static Power             |     0.108 |          |           |                 |
-| Total                    |     0.321 |          |           |                 |
+| Static Power             |     0.107 |          |           |                 |
+| Total                    |     0.257 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.219 |       0.210 |      0.009 |
+| Vccint    |       1.000 |     0.156 |       0.147 |      0.009 |
 | Vccaux    |       1.800 |     0.011 |       0.000 |      0.011 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -89,7 +89,7 @@ Table of Contents
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccpint   |       1.000 |     0.018 |       0.000 |      0.018 |
+| Vccpint   |       1.000 |     0.017 |       0.000 |      0.017 |
 | Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
 | Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -152,31 +152,11 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| AccQuant_cnn               |     0.214 |
-|   VexRiscv                 |     0.057 |
-|     IBusCachedPlugin_cache |     0.011 |
+| AccQuant_cnn               |     0.150 |
+|   VexRiscv                 |     0.053 |
+|     IBusCachedPlugin_cache |     0.010 |
 |     dataCache_1_           |     0.009 |
-|   accQuant_cnn             |     0.115 |
-|     dense_0                |     0.006 |
-|       quant                |     0.005 |
-|     dense_1                |     0.006 |
-|       quant                |     0.005 |
-|     dense_2                |     0.006 |
-|       quant                |     0.006 |
-|     dense_3                |     0.006 |
-|       quant                |     0.006 |
-|     dense_4                |     0.006 |
-|       quant                |     0.006 |
-|     dense_5                |     0.006 |
-|       quant                |     0.006 |
-|     dense_6                |     0.006 |
-|       quant                |     0.006 |
-|     dense_7                |     0.006 |
-|       quant                |     0.005 |
-|     dense_8                |     0.006 |
-|       quant                |     0.005 |
-|     dense_9                |     0.006 |
-|       quant                |     0.005 |
+|   accQuant_cnn             |     0.056 |
 |     image                  |     0.051 |
 +----------------------------+-----------+
 

@@ -2,3 +2,6 @@ Running: xsim.dir/accQuant_testbench_behav/xsimk -simmode gui -wdb accQuant_test
 Design successfully loaded
 Design Loading Memory Usage: 44344 KB (Peak: 44344 KB)
 Design Loading CPU Usage: 20 ms
+Simulation completed
+Simulation Memory Usage: 126340 KB (Peak: 183612 KB)
+Simulation CPU Usage: 290 ms

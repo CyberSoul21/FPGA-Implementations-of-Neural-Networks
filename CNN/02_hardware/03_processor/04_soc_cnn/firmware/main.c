@@ -78,7 +78,7 @@ int main(void) {
   AccQuant_cnn_RST_write(1);
   //AccQuant_cnn_RST_write(0);
   AccQuant_cnn_WEN_IMAGE_write(0);
-
+  wait_ms(50);
 
 
   printf("MEM_OK = %d \n",AccQuant_cnn_MEM_OK_read());
@@ -96,7 +96,7 @@ int main(void) {
     //puts(str);
     //printf("\n");
     AccQuant_cnn_WADD_IMAGE_write(i);
-    AccQuant_cnn_WDATA_IMAGE_write(image_0[i]);
+    AccQuant_cnn_WDATA_IMAGE_write(image_1[i]);
     //printf("MEM_OK = %d \n",AccQuant_cnn_MEM_OK_read());
     wait_ms(1);
   };
@@ -107,7 +107,7 @@ int main(void) {
   printf("DENS_OK = %d \n",AccQuant_cnn_DENS_OK_read());
   printf("MEM_OK = %d \n",AccQuant_cnn_MEM_OK_read());
 
-
+wait_ms(50);
 
 
   printf("Activa Acelerador\n");
@@ -119,7 +119,7 @@ int main(void) {
   printf("CONV_OK = %d \n",AccQuant_cnn_CONV_OK_read());
   printf("MAX_OK = %d \n",AccQuant_cnn_MAX_OK_read());
   printf("DENS_OK = %d \n",AccQuant_cnn_DENS_OK_read());
-
+wait_ms(50);
 
   //AccQuant_cnn_SEL_write(2); //multiplexer
   AccQuant_cnn_REN_MEMORY_write(1);  
@@ -136,7 +136,7 @@ int main(void) {
   {
     AccQuant_cnn_RADD_MEMORY_write(i);
     //conv = AccQuant_cnn_DATA_MEMORY_read();
-    //rintf("%d \n",conv);
+    //printf("%d \n",conv);
 
     //sprintf(str, "%d",conv);
    // puts(str);
@@ -175,11 +175,82 @@ int main(void) {
   printf("Data Dense 8 = %d \n",conv); 
   AccQuant_cnn_SEL_write(9); //multiplexer
   conv = AccQuant_cnn_DATA_MEMORY_read();
-  printf("Data Dense 9 = %d \n",conv);             
+  printf("Data Dense 9 = %d \n",conv);   
+  AccQuant_cnn_SEL_write(10); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("pos max = %d \n",conv); 
 
 
   AccQuant_cnn_EN_write(0);
+  AccQuant_cnn_RST_write(1);
+  wait_ms(50);
   AccQuant_cnn_RST_write(0);
+
+
+
+
+
+  printf("Reinicio\n");
+  printf("**********************\n");
+  printf("CONV_OK = %d \n",AccQuant_cnn_CONV_OK_read());
+  printf("MAX_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("DENS_OK = %d \n",AccQuant_cnn_DENS_OK_read());
+  printf("MEM_OK = %d \n",AccQuant_cnn_MEM_OK_read());
+
+  AccQuant_cnn_SEL_write(0); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("Data Dense 0 = %d \n",conv); 
+  AccQuant_cnn_SEL_write(1); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("Data Dense 1 = %d \n",conv); 
+  AccQuant_cnn_SEL_write(2); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("Data Dense 2 = %d \n",conv);  
+  AccQuant_cnn_SEL_write(3); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("Data Dense 3 = %d \n",conv); 
+  AccQuant_cnn_SEL_write(4); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("Data Dense 4 = %d \n",conv); 
+  AccQuant_cnn_SEL_write(5); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("Data Dense 5 = %d \n",conv); 
+  AccQuant_cnn_SEL_write(6); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("Data Dense 6 = %d \n",conv); 
+  AccQuant_cnn_SEL_write(7); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("Data Dense 7 = %d \n",conv); 
+  AccQuant_cnn_SEL_write(8); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("Data Dense 8 = %d \n",conv); 
+  AccQuant_cnn_SEL_write(9); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("Data Dense 9 = %d \n",conv);
+  AccQuant_cnn_SEL_write(10); //multiplexer
+  conv = AccQuant_cnn_DATA_MEMORY_read();
+  printf("pos max = %d \n",conv);  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*

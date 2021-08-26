@@ -7,6 +7,6 @@ djtgcfg enum
 
 djtgcfg init -d ZYBO-Z7
 
-djtgcfg prog -d ZYBO-Z7 -i 1 -f build/gateware/soc_Javier.bit
+djtgcfg prog -d ZYBO-Z7 -i 1 -f ../build/gateware/
 
 litex_term /dev/ttyUSB0 --kernel firmware/firmware.bin

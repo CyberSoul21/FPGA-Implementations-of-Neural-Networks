@@ -1,0 +1,141 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Aug 26 15:38:11 2021
+# Process ID: 21492
+# Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware
+# Command line: vivado -mode batch -source AccQuant_cnn.tcl
+# Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/vivado.log
+# Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/vivado.jou
+#-----------------------------------------------------------
+source AccQuant_cnn.tcl
+# source "AccQuant_cnn_route.tcl"
+## create_project -force -name AccQuant_cnn -part xc7z020-clg400-1
+## set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+## add_files {AccQuant_cnn.v}
+## set_property library work [get_files {AccQuant_cnn.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/AccQuant_cnn.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/ReLu.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/ReLu.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/ReLu.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/accQuant_cnn.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/accQuant_cnn.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/accQuant_cnn.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider_dens.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider_dens.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider_dens.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider_fpga.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider_fpga.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider_fpga.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider_max.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider_max.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/clock_divider_max.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/controlMemoryAddressConv.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/controlMemoryAddressConv.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/controlMemoryAddressConv.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/controlMemoryAddressImg.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/controlMemoryAddressImg.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/controlMemoryAddressImg.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/convolution.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/convolution.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/convolution.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/counterPositionMemMax.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/counterPositionMemMax.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/counterPositionMemMax.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/counterPositionRstlConv.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/counterPositionRstlConv.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/counterPositionRstlConv.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/counterPositionRstlMax.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/counterPositionRstlMax.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/counterPositionRstlMax.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/full_connected.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/full_connected.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/full_connected.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/maxpooling.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/maxpooling.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/maxpooling.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_0.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_0.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_0.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_1.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_1.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_1.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_2.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_2.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_2.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_3.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_3.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_3.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_4.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_4.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_4.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_5.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_5.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_5.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_6.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_6.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_6.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_7.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_7.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_7.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_8.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_8.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_8.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_9.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_9.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_dens_9.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_filter_1.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_filter_1.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_filter_1.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_filter_2.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_filter_2.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_filter_2.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_filter_3.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_filter_3.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_filter_3.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_image.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_image.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_image.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_conv_1.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_conv_1.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_conv_1.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_conv_2.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_conv_2.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_conv_2.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_conv_3.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_conv_3.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_conv_3.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_max_1.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_max_1.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/memory_rstl_max_1.v:]
+## add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/quantization.v}
+## set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/quantization.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/quantization.v:]
+## add_files {imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
+## set_property library work [get_files {imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}]
+WARNING: [filemgmt 56-99] Vivado Synthesis ignores library specification for Verilog or SystemVerilog files. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v:]
+## read_xdc AccQuant_cnn.xdc
+## synth_design -top AccQuant_cnn -part xc7z020-clg400-1
+Command: synth_design -top AccQuant_cnn -part xc7z020-clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 21537 
+ERROR: [Synth 8-2715] syntax error near / [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/accQuant_cnn.v:288]
+INFO: [Synth 8-2350] module accQuant_cnn ignored due to previous errors [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/accQuant_cnn.v:23]
+Failed to read verilog '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/build/gateware/imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/04_soc_cnn/hardware/accQuant_cnn.v'
+INFO: [Common 17-83] Releasing license: Synthesis
+4 Infos, 0 Warnings, 0 Critical Warnings and 2 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Synthesis failed - please see the console or run log file for details
+
+    while executing
+"source "AccQuant_cnn_route.tcl""
+    (file "AccQuant_cnn.tcl" line 1)
+INFO: [Common 17-206] Exiting Vivado at Thu Aug 26 15:38:31 2021...

@@ -3,6 +3,29 @@
 // Company: 
 // Engineer: 
 // 
+// Create Date: 04/28/2021 11:31:04 PM
+// Design Name: 
+// Module Name: quantization
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
 // Create Date: 08/17/2021 01:52:34 PM
 // Design Name: 
 // Module Name: quantization
@@ -18,6 +41,9 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
+
+
+
 
 
 module quantization
@@ -50,7 +76,8 @@ module quantization
     
     //reg [64:0] a;  
     reg [63:0] result1;
-    reg [31:0] result2;
+    reg [63:0] result2;
+    //reg [31:0] result2;
     reg [8:0]  result3;
     reg [8:0]  result4;
     reg [31:0] remainder;
@@ -178,8 +205,6 @@ module quantization
             result4 <= res1 + res3; //Add( ShiftRight(x, exponent),BitAnd( MaskIfGreaterThan(remainder, threshold), one ) ); 
             ok <= 1; 
         end
-        default:
-            result4 <= 0;
       endcase 
     end 
 
@@ -187,3 +212,4 @@ module quantization
     assign sig_ok = ok;
 
 endmodule
+

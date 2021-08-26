@@ -31,15 +31,20 @@ module accQuant_testbench;
 //    reg [7:0] num;
     
     //outputs    
-    wire out;
+    wire conv_ok;
+    wire dens_ok;
+    wire max_ok;
 //    wire out2;    
     
     //unit under test (UUT)
     accQuant_cnn UUT(
+        //.clk_fpga(clk),
         .clk(clk),
         .rst(rst),
         .en(en),
-        .out(out)
+        .conv_ok(conv_ok),
+        .max_ok(max_ok),
+        .dens_ok(dens_ok)
     );
     
    

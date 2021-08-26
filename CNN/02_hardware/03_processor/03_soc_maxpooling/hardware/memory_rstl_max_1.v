@@ -20,6 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
+
 module memory_rstl_max_1
 #(
     //memory_rstl_max
@@ -69,9 +70,12 @@ module memory_rstl_max_1
 	       mem_rstl_max[wadd1] <= data_in1;
 	       mem_rstl_max[wadd2] <= data_in2;
 	       mem_rstl_max[wadd3] <= data_in3;
-	       $display("max1, %d",wadd1,data_in1);
-	       $display("max1, %d",wadd2,data_in2);
-	       $display("max1, %d",wadd3,data_in3); 
+//	       $display("max1, %d",wadd1,data_in1);
+//	       $display("max1, %d",wadd2,data_in2);
+//	       $display("max1, %d",wadd3,data_in3);
+	       $display("%d",data_in1);
+	       $display("%d",data_in2);
+	       $display("%d",data_in3); 
 
 	   end
 	end 
@@ -84,5 +88,6 @@ module memory_rstl_max_1
             rdata <= mem_rstl_max[radd] + offset_ent;
         end
     end 
+
     
 endmodule

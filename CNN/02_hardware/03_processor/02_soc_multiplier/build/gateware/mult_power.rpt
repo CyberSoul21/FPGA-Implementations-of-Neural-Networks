@@ -1,11 +1,11 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date             : Tue Aug  3 19:40:52 2021
+| Date             : Sat Aug 21 12:46:11 2021
 | Host             : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file mult_power.rpt
 | Design           : mult
-| Device           : xc7z010clg400-1
+| Device           : xc7z020clg400-1
 | Design State     : routed
 | Grade            : commercial
 | Process          : typical
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.182        |
+| Total On-Chip Power (W)  | 0.204        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.090        |
-| Device Static (W)        | 0.092        |
+| Dynamic (W)              | 0.099        |
+| Device Static (W)        | 0.105        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 82.9         |
-| Junction Temperature (C) | 27.1         |
+| Max Ambient (C)          | 82.6         |
+| Junction Temperature (C) | 27.4         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,19 +52,19 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.010 |        3 |       --- |             --- |
-| Slice Logic              |     0.012 |     4770 |       --- |             --- |
-|   LUT as Logic           |     0.011 |     2387 |     17600 |           13.56 |
-|   CARRY4                 |    <0.001 |      142 |      4400 |            3.23 |
-|   Register               |    <0.001 |     1770 |     35200 |            5.03 |
-|   LUT as Distributed RAM |    <0.001 |       16 |      6000 |            0.27 |
-|   Others                 |     0.000 |       12 |       --- |             --- |
-| Signals                  |     0.017 |     4201 |       --- |             --- |
-| Block RAM                |     0.045 |       19 |        60 |           31.67 |
-| DSPs                     |     0.005 |        4 |        80 |            5.00 |
-| I/O                      |    <0.001 |        4 |       100 |            4.00 |
-| Static Power             |     0.092 |          |           |                 |
-| Total                    |     0.182 |          |           |                 |
+| Clocks                   |     0.011 |        3 |       --- |             --- |
+| Slice Logic              |     0.015 |     4882 |       --- |             --- |
+|   LUT as Logic           |     0.013 |     2392 |     53200 |            4.50 |
+|   CARRY4                 |    <0.001 |      134 |     13300 |            1.01 |
+|   Register               |    <0.001 |     1871 |    106400 |            1.76 |
+|   LUT as Distributed RAM |    <0.001 |       16 |     17400 |            0.09 |
+|   Others                 |     0.000 |       16 |       --- |             --- |
+| Signals                  |     0.021 |     4472 |       --- |             --- |
+| Block RAM                |     0.046 |       19 |       140 |           13.57 |
+| DSPs                     |     0.006 |        9 |       220 |            4.09 |
+| I/O                      |    <0.001 |        4 |       125 |            3.20 |
+| Static Power             |     0.105 |          |           |                 |
+| Total                    |     0.204 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,8 +74,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.091 |       0.086 |      0.004 |
-| Vccaux    |       1.800 |     0.005 |       0.000 |      0.005 |
+| Vccint    |       1.000 |     0.104 |       0.096 |      0.008 |
+| Vccaux    |       1.800 |     0.010 |       0.000 |      0.010 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -150,10 +150,12 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| mult                       |     0.090 |
-|   VexRiscv                 |     0.050 |
-|     IBusCachedPlugin_cache |     0.010 |
-|     dataCache_1_           |     0.008 |
+| mult                       |     0.099 |
+|   VexRiscv                 |     0.056 |
+|     IBusCachedPlugin_cache |     0.011 |
+|     dataCache_1_           |     0.010 |
+|   signed_mult              |     0.002 |
+|     quant                  |     0.002 |
 +----------------------------+-----------+
 
 

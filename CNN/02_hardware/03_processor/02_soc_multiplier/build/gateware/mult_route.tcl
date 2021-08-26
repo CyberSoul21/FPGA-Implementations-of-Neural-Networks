@@ -1,5 +1,9 @@
-create_project -force -name mult -part xc7z010-clg400-1
+create_project -force -name mult -part xc7z020-clg400-1
 set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
+add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/02_soc_multiplier/soc/ReLu.v}
+set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/02_soc_multiplier/soc/ReLu.v}]
+add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/02_soc_multiplier/soc/quantization.v}
+set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/02_soc_multiplier/soc/quantization.v}]
 add_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/02_soc_multiplier/soc/signed_mult.v}
 set_property library work [get_files {imports/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_processor/02_soc_multiplier/soc/signed_mult.v}]
 add_files {imports/home/javier/litex/pythondata-cpu-vexriscv/pythondata_cpu_vexriscv/verilog/VexRiscv.v}
@@ -7,7 +11,7 @@ set_property library work [get_files {imports/home/javier/litex/pythondata-cpu-v
 add_files {mult.v}
 set_property library work [get_files {mult.v}]
 read_xdc mult.xdc
-synth_design -top mult -part xc7z010-clg400-1
+synth_design -top mult -part xc7z020-clg400-1
 report_timing_summary -file mult_timing_synth.rpt
 report_utilization -hierarchical -file mult_utilization_hierarchical_synth.rpt
 report_utilization -file mult_utilization_synth.rpt

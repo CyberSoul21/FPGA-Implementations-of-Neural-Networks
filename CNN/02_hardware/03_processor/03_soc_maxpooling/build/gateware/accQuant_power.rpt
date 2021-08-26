@@ -1,0 +1,956 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------
+| Tool Version     : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date             : Wed Aug 25 16:33:02 2021
+| Host             : Tars running 64-bit Ubuntu 18.04.4 LTS
+| Command          : report_power -file accQuant_power.rpt
+| Design           : accQuant
+| Device           : xc7z020clg400-1
+| Design State     : routed
+| Grade            : commercial
+| Process          : typical
+| Characterization : Production
+----------------------------------------------------------------------------------------
+
+Power Report
+
+Table of Contents
+-----------------
+1. Summary
+1.1 On-Chip Components
+1.2 Power Supply Summary
+1.3 Confidence Level
+2. Settings
+2.1 Environment
+2.2 Clock Constraints
+3. Detailed Reports
+3.1 By Hierarchy
+
+1. Summary
+----------
+
++--------------------------+-----------------------------------+
+| Total On-Chip Power (W)  | 142.361 (Junction temp exceeded!) |
+| Design Power Budget (W)  | Unspecified*                      |
+| Power Budget Margin (W)  | NA                                |
+| Dynamic (W)              | 141.308                           |
+| Device Static (W)        | 1.053                             |
+| Effective TJA (C/W)      | 11.5                              |
+| Max Ambient (C)          | 0.0                               |
+| Junction Temperature (C) | 125.0                             |
+| Confidence Level         | Low                               |
+| Setting File             | ---                               |
+| Simulation Activity File | ---                               |
+| Design Nets Matched      | NA                                |
++--------------------------+-----------------------------------+
+* Specify Design Power Budget using, set_operating_conditions -design_power_budget <value in Watts>
+
+
+1.1 On-Chip Components
+----------------------
+
++--------------------------+-----------+----------+-----------+-----------------+
+| On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
++--------------------------+-----------+----------+-----------+-----------------+
+| Slice Logic              |    17.690 |    18570 |       --- |             --- |
+|   LUT as Logic           |    12.513 |     8748 |     53200 |           16.44 |
+|   LUT as Distributed RAM |     4.299 |     2860 |     17400 |           16.44 |
+|   CARRY4                 |     0.700 |      153 |     13300 |            1.15 |
+|   Register               |     0.172 |     5395 |    106400 |            5.07 |
+|   BUFG                   |     0.006 |        3 |        32 |            9.38 |
+|   Others                 |     0.000 |       62 |       --- |             --- |
+|   F7/F8 Muxes            |     0.000 |      778 |     53200 |            1.46 |
+| Signals                  |    64.261 |    12676 |       --- |             --- |
+| Block RAM                |     0.150 |        6 |       140 |            4.29 |
+| DSPs                     |    51.255 |       63 |       220 |           28.64 |
+| I/O                      |     7.951 |       78 |       125 |           62.40 |
+| Static Power             |     1.053 |          |           |                 |
+| Total                    |   142.361 |          |           |                 |
++--------------------------+-----------+----------+-----------+-----------------+
+
+
+1.2 Power Supply Summary
+------------------------
+
++-----------+-------------+-----------+-------------+------------+
+| Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
++-----------+-------------+-----------+-------------+------------+
+| Vccint    |       1.000 |   133.846 |     133.540 |      0.306 |
+| Vccaux    |       1.800 |     0.735 |       0.635 |      0.100 |
+| Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
+| Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
+| Vcco18    |       1.800 |     3.676 |       3.675 |      0.001 |
+| Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
+| Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
+| Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccbram   |       1.000 |     0.042 |       0.009 |      0.033 |
+| MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
+| MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
+| MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccpint   |       1.000 |     0.473 |       0.000 |      0.473 |
+| Vccpaux   |       1.800 |     0.010 |       0.000 |      0.010 |
+| Vccpll    |       1.800 |     0.003 |       0.000 |      0.003 |
+| Vcco_ddr  |       1.500 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio0 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vcco_mio1 |       1.800 |     0.000 |       0.000 |      0.000 |
+| Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
++-----------+-------------+-----------+-------------+------------+
+
+
+1.3 Confidence Level
+--------------------
+
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                             |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                                    |
+| Clock nodes activity        | Low        | User specified less than 75% of clocks                 | Provide missing clock activity with a constraint file, simulation results or by editing the "By Clock Domain" view |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view           |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views         |
+| Device models               | High       | Device models are Production                           |                                                                                                                    |
+|                             |            |                                                        |                                                                                                                    |
+| Overall confidence level    | Low        |                                                        |                                                                                                                    |
++-----------------------------+------------+--------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+
+2. Settings
+-----------
+
+2.1 Environment
+---------------
+
++-----------------------+------------------------+
+| Ambient Temp (C)      | 25.0                   |
+| ThetaJA (C/W)         | 11.5                   |
+| Airflow (LFM)         | 250                    |
+| Heat Sink             | none                   |
+| ThetaSA (C/W)         | 0.0                    |
+| Board Selection       | medium (10"x10")       |
+| # of Board Layers     | 8to11 (8 to 11 Layers) |
+| Board Temperature (C) | 25.0                   |
++-----------------------+------------------------+
+
+
+2.2 Clock Constraints
+---------------------
+
++-------+--------+-----------------+
+| Clock | Domain | Constraint (ns) |
++-------+--------+-----------------+
+
+
+3. Detailed Reports
+-------------------
+
+3.1 By Hierarchy
+----------------
+
++------------------------------------+-----------+
+| Name                               | Power (W) |
++------------------------------------+-----------+
+| accQuant                           |   141.308 |
+|   clk_fourth                       |     0.019 |
+|   clk_second                       |     0.024 |
+|   clk_third                        |     0.020 |
+|   conv1                            |    17.202 |
+|     activation                     |     0.014 |
+|     quant                          |     4.607 |
+|   conv2                            |    17.237 |
+|     activation                     |     0.015 |
+|     quant                          |     4.745 |
+|   conv3                            |    17.193 |
+|     activation                     |     0.015 |
+|     quant                          |     4.664 |
+|   image                            |    69.818 |
+|     register_reg_r10_0_63_0_2      |     0.010 |
+|     register_reg_r10_0_63_12_14    |     0.008 |
+|     register_reg_r10_0_63_15_15    |     0.005 |
+|     register_reg_r10_0_63_3_5      |     0.010 |
+|     register_reg_r10_0_63_6_8      |     0.011 |
+|     register_reg_r10_0_63_9_11     |     0.008 |
+|     register_reg_r10_128_191_0_2   |     0.009 |
+|     register_reg_r10_128_191_12_14 |     0.009 |
+|     register_reg_r10_128_191_15_15 |     0.004 |
+|     register_reg_r10_128_191_3_5   |     0.009 |
+|     register_reg_r10_128_191_6_8   |     0.008 |
+|     register_reg_r10_128_191_9_11  |     0.008 |
+|     register_reg_r10_192_255_0_2   |     0.008 |
+|     register_reg_r10_192_255_12_14 |     0.008 |
+|     register_reg_r10_192_255_15_15 |     0.005 |
+|     register_reg_r10_192_255_3_5   |     0.009 |
+|     register_reg_r10_192_255_6_8   |     0.008 |
+|     register_reg_r10_192_255_9_11  |     0.008 |
+|     register_reg_r10_256_319_0_2   |     0.009 |
+|     register_reg_r10_256_319_12_14 |     0.008 |
+|     register_reg_r10_256_319_15_15 |     0.004 |
+|     register_reg_r10_256_319_3_5   |     0.008 |
+|     register_reg_r10_256_319_6_8   |     0.009 |
+|     register_reg_r10_256_319_9_11  |     0.008 |
+|     register_reg_r10_320_383_0_2   |     0.010 |
+|     register_reg_r10_320_383_12_14 |     0.009 |
+|     register_reg_r10_320_383_15_15 |     0.005 |
+|     register_reg_r10_320_383_3_5   |     0.010 |
+|     register_reg_r10_320_383_6_8   |     0.009 |
+|     register_reg_r10_320_383_9_11  |     0.009 |
+|     register_reg_r10_384_447_0_2   |     0.010 |
+|     register_reg_r10_384_447_12_14 |     0.008 |
+|     register_reg_r10_384_447_15_15 |     0.005 |
+|     register_reg_r10_384_447_3_5   |     0.008 |
+|     register_reg_r10_384_447_6_8   |     0.010 |
+|     register_reg_r10_384_447_9_11  |     0.009 |
+|     register_reg_r10_448_511_0_2   |     0.009 |
+|     register_reg_r10_448_511_12_14 |     0.008 |
+|     register_reg_r10_448_511_15_15 |     0.004 |
+|     register_reg_r10_448_511_3_5   |     0.009 |
+|     register_reg_r10_448_511_6_8   |     0.010 |
+|     register_reg_r10_448_511_9_11  |     0.009 |
+|     register_reg_r10_512_575_0_2   |     0.008 |
+|     register_reg_r10_512_575_12_14 |     0.010 |
+|     register_reg_r10_512_575_15_15 |     0.005 |
+|     register_reg_r10_512_575_3_5   |     0.009 |
+|     register_reg_r10_512_575_6_8   |     0.008 |
+|     register_reg_r10_512_575_9_11  |     0.008 |
+|     register_reg_r10_576_639_0_2   |     0.008 |
+|     register_reg_r10_576_639_12_14 |     0.008 |
+|     register_reg_r10_576_639_15_15 |     0.005 |
+|     register_reg_r10_576_639_3_5   |     0.009 |
+|     register_reg_r10_576_639_6_8   |     0.008 |
+|     register_reg_r10_576_639_9_11  |     0.008 |
+|     register_reg_r10_640_703_0_2   |     0.008 |
+|     register_reg_r10_640_703_12_14 |     0.009 |
+|     register_reg_r10_640_703_15_15 |     0.004 |
+|     register_reg_r10_640_703_3_5   |     0.008 |
+|     register_reg_r10_640_703_6_8   |     0.008 |
+|     register_reg_r10_640_703_9_11  |     0.011 |
+|     register_reg_r10_64_127_0_2    |     0.008 |
+|     register_reg_r10_64_127_12_14  |     0.009 |
+|     register_reg_r10_64_127_15_15  |     0.004 |
+|     register_reg_r10_64_127_3_5    |     0.008 |
+|     register_reg_r10_64_127_6_8    |     0.009 |
+|     register_reg_r10_64_127_9_11   |     0.008 |
+|     register_reg_r10_704_767_0_2   |     0.009 |
+|     register_reg_r10_704_767_12_14 |     0.008 |
+|     register_reg_r10_704_767_15_15 |     0.005 |
+|     register_reg_r10_704_767_3_5   |     0.009 |
+|     register_reg_r10_704_767_6_8   |     0.008 |
+|     register_reg_r10_704_767_9_11  |     0.010 |
+|     register_reg_r10_768_831_0_2   |     0.010 |
+|     register_reg_r10_768_831_12_14 |     0.008 |
+|     register_reg_r10_768_831_15_15 |     0.005 |
+|     register_reg_r10_768_831_3_5   |     0.008 |
+|     register_reg_r10_768_831_6_8   |     0.011 |
+|     register_reg_r10_768_831_9_11  |     0.009 |
+|     register_reg_r1_0_63_0_2       |     0.007 |
+|     register_reg_r1_0_63_12_14     |     0.008 |
+|     register_reg_r1_0_63_15_15     |     0.004 |
+|     register_reg_r1_0_63_3_5       |     0.011 |
+|     register_reg_r1_0_63_6_8       |     0.009 |
+|     register_reg_r1_0_63_9_11      |     0.008 |
+|     register_reg_r1_128_191_0_2    |     0.008 |
+|     register_reg_r1_128_191_12_14  |     0.008 |
+|     register_reg_r1_128_191_15_15  |     0.004 |
+|     register_reg_r1_128_191_3_5    |     0.008 |
+|     register_reg_r1_128_191_6_8    |     0.010 |
+|     register_reg_r1_128_191_9_11   |     0.008 |
+|     register_reg_r1_192_255_0_2    |     0.008 |
+|     register_reg_r1_192_255_12_14  |     0.008 |
+|     register_reg_r1_192_255_15_15  |     0.004 |
+|     register_reg_r1_192_255_3_5    |     0.009 |
+|     register_reg_r1_192_255_6_8    |     0.009 |
+|     register_reg_r1_192_255_9_11   |     0.009 |
+|     register_reg_r1_256_319_0_2    |     0.010 |
+|     register_reg_r1_256_319_12_14  |     0.010 |
+|     register_reg_r1_256_319_15_15  |     0.005 |
+|     register_reg_r1_256_319_3_5    |     0.010 |
+|     register_reg_r1_256_319_6_8    |     0.008 |
+|     register_reg_r1_256_319_9_11   |     0.009 |
+|     register_reg_r1_320_383_0_2    |     0.011 |
+|     register_reg_r1_320_383_12_14  |     0.011 |
+|     register_reg_r1_320_383_15_15  |     0.005 |
+|     register_reg_r1_320_383_3_5    |     0.009 |
+|     register_reg_r1_320_383_6_8    |     0.010 |
+|     register_reg_r1_320_383_9_11   |     0.009 |
+|     register_reg_r1_384_447_0_2    |     0.008 |
+|     register_reg_r1_384_447_12_14  |     0.008 |
+|     register_reg_r1_384_447_15_15  |     0.004 |
+|     register_reg_r1_384_447_3_5    |     0.008 |
+|     register_reg_r1_384_447_6_8    |     0.009 |
+|     register_reg_r1_384_447_9_11   |     0.009 |
+|     register_reg_r1_448_511_0_2    |     0.009 |
+|     register_reg_r1_448_511_12_14  |     0.009 |
+|     register_reg_r1_448_511_15_15  |     0.005 |
+|     register_reg_r1_448_511_3_5    |     0.009 |
+|     register_reg_r1_448_511_6_8    |     0.008 |
+|     register_reg_r1_448_511_9_11   |     0.008 |
+|     register_reg_r1_512_575_0_2    |     0.010 |
+|     register_reg_r1_512_575_12_14  |     0.008 |
+|     register_reg_r1_512_575_15_15  |     0.004 |
+|     register_reg_r1_512_575_3_5    |     0.008 |
+|     register_reg_r1_512_575_6_8    |     0.008 |
+|     register_reg_r1_512_575_9_11   |     0.008 |
+|     register_reg_r1_576_639_0_2    |     0.009 |
+|     register_reg_r1_576_639_12_14  |     0.008 |
+|     register_reg_r1_576_639_15_15  |     0.005 |
+|     register_reg_r1_576_639_3_5    |     0.011 |
+|     register_reg_r1_576_639_6_8    |     0.008 |
+|     register_reg_r1_576_639_9_11   |     0.008 |
+|     register_reg_r1_640_703_0_2    |     0.009 |
+|     register_reg_r1_640_703_12_14  |     0.009 |
+|     register_reg_r1_640_703_15_15  |     0.004 |
+|     register_reg_r1_640_703_3_5    |     0.008 |
+|     register_reg_r1_640_703_6_8    |     0.008 |
+|     register_reg_r1_640_703_9_11   |     0.008 |
+|     register_reg_r1_64_127_0_2     |     0.009 |
+|     register_reg_r1_64_127_12_14   |     0.009 |
+|     register_reg_r1_64_127_15_15   |     0.005 |
+|     register_reg_r1_64_127_3_5     |     0.008 |
+|     register_reg_r1_64_127_6_8     |     0.009 |
+|     register_reg_r1_64_127_9_11    |     0.008 |
+|     register_reg_r1_704_767_0_2    |     0.009 |
+|     register_reg_r1_704_767_12_14  |     0.008 |
+|     register_reg_r1_704_767_15_15  |     0.004 |
+|     register_reg_r1_704_767_3_5    |     0.008 |
+|     register_reg_r1_704_767_6_8    |     0.008 |
+|     register_reg_r1_704_767_9_11   |     0.011 |
+|     register_reg_r1_768_831_0_2    |     0.008 |
+|     register_reg_r1_768_831_12_14  |     0.009 |
+|     register_reg_r1_768_831_15_15  |     0.006 |
+|     register_reg_r1_768_831_3_5    |     0.009 |
+|     register_reg_r1_768_831_6_8    |     0.010 |
+|     register_reg_r1_768_831_9_11   |     0.008 |
+|     register_reg_r2_0_63_0_2       |     0.009 |
+|     register_reg_r2_0_63_12_14     |     0.007 |
+|     register_reg_r2_0_63_15_15     |     0.004 |
+|     register_reg_r2_0_63_3_5       |     0.009 |
+|     register_reg_r2_0_63_6_8       |     0.009 |
+|     register_reg_r2_0_63_9_11      |     0.008 |
+|     register_reg_r2_128_191_0_2    |     0.009 |
+|     register_reg_r2_128_191_12_14  |     0.008 |
+|     register_reg_r2_128_191_15_15  |     0.005 |
+|     register_reg_r2_128_191_3_5    |     0.008 |
+|     register_reg_r2_128_191_6_8    |     0.007 |
+|     register_reg_r2_128_191_9_11   |     0.008 |
+|     register_reg_r2_192_255_0_2    |     0.010 |
+|     register_reg_r2_192_255_12_14  |     0.008 |
+|     register_reg_r2_192_255_15_15  |     0.005 |
+|     register_reg_r2_192_255_3_5    |     0.008 |
+|     register_reg_r2_192_255_6_8    |     0.009 |
+|     register_reg_r2_192_255_9_11   |     0.007 |
+|     register_reg_r2_256_319_0_2    |     0.008 |
+|     register_reg_r2_256_319_12_14  |     0.008 |
+|     register_reg_r2_256_319_15_15  |     0.005 |
+|     register_reg_r2_256_319_3_5    |     0.009 |
+|     register_reg_r2_256_319_6_8    |     0.008 |
+|     register_reg_r2_256_319_9_11   |     0.008 |
+|     register_reg_r2_320_383_0_2    |     0.008 |
+|     register_reg_r2_320_383_12_14  |     0.009 |
+|     register_reg_r2_320_383_15_15  |     0.004 |
+|     register_reg_r2_320_383_3_5    |     0.008 |
+|     register_reg_r2_320_383_6_8    |     0.008 |
+|     register_reg_r2_320_383_9_11   |     0.009 |
+|     register_reg_r2_384_447_0_2    |     0.008 |
+|     register_reg_r2_384_447_12_14  |     0.010 |
+|     register_reg_r2_384_447_15_15  |     0.005 |
+|     register_reg_r2_384_447_3_5    |     0.008 |
+|     register_reg_r2_384_447_6_8    |     0.008 |
+|     register_reg_r2_384_447_9_11   |     0.009 |
+|     register_reg_r2_448_511_0_2    |     0.009 |
+|     register_reg_r2_448_511_12_14  |     0.009 |
+|     register_reg_r2_448_511_15_15  |     0.005 |
+|     register_reg_r2_448_511_3_5    |     0.009 |
+|     register_reg_r2_448_511_6_8    |     0.008 |
+|     register_reg_r2_448_511_9_11   |     0.009 |
+|     register_reg_r2_512_575_0_2    |     0.008 |
+|     register_reg_r2_512_575_12_14  |     0.008 |
+|     register_reg_r2_512_575_15_15  |     0.005 |
+|     register_reg_r2_512_575_3_5    |     0.010 |
+|     register_reg_r2_512_575_6_8    |     0.008 |
+|     register_reg_r2_512_575_9_11   |     0.008 |
+|     register_reg_r2_576_639_0_2    |     0.008 |
+|     register_reg_r2_576_639_12_14  |     0.009 |
+|     register_reg_r2_576_639_15_15  |     0.005 |
+|     register_reg_r2_576_639_3_5    |     0.008 |
+|     register_reg_r2_576_639_6_8    |     0.008 |
+|     register_reg_r2_576_639_9_11   |     0.009 |
+|     register_reg_r2_640_703_0_2    |     0.009 |
+|     register_reg_r2_640_703_12_14  |     0.008 |
+|     register_reg_r2_640_703_15_15  |     0.005 |
+|     register_reg_r2_640_703_3_5    |     0.008 |
+|     register_reg_r2_640_703_6_8    |     0.009 |
+|     register_reg_r2_640_703_9_11   |     0.008 |
+|     register_reg_r2_64_127_0_2     |     0.008 |
+|     register_reg_r2_64_127_12_14   |     0.009 |
+|     register_reg_r2_64_127_15_15   |     0.005 |
+|     register_reg_r2_64_127_3_5     |     0.008 |
+|     register_reg_r2_64_127_6_8     |     0.009 |
+|     register_reg_r2_64_127_9_11    |     0.008 |
+|     register_reg_r2_704_767_0_2    |     0.009 |
+|     register_reg_r2_704_767_12_14  |     0.008 |
+|     register_reg_r2_704_767_15_15  |     0.004 |
+|     register_reg_r2_704_767_3_5    |     0.009 |
+|     register_reg_r2_704_767_6_8    |     0.008 |
+|     register_reg_r2_704_767_9_11   |     0.008 |
+|     register_reg_r2_768_831_0_2    |     0.008 |
+|     register_reg_r2_768_831_12_14  |     0.008 |
+|     register_reg_r2_768_831_15_15  |     0.006 |
+|     register_reg_r2_768_831_3_5    |     0.009 |
+|     register_reg_r2_768_831_6_8    |     0.008 |
+|     register_reg_r2_768_831_9_11   |     0.007 |
+|     register_reg_r3_0_63_0_2       |     0.008 |
+|     register_reg_r3_0_63_12_14     |     0.008 |
+|     register_reg_r3_0_63_15_15     |     0.004 |
+|     register_reg_r3_0_63_3_5       |     0.008 |
+|     register_reg_r3_0_63_6_8       |     0.008 |
+|     register_reg_r3_0_63_9_11      |     0.008 |
+|     register_reg_r3_128_191_0_2    |     0.008 |
+|     register_reg_r3_128_191_12_14  |     0.010 |
+|     register_reg_r3_128_191_15_15  |     0.004 |
+|     register_reg_r3_128_191_3_5    |     0.008 |
+|     register_reg_r3_128_191_6_8    |     0.011 |
+|     register_reg_r3_128_191_9_11   |     0.008 |
+|     register_reg_r3_192_255_0_2    |     0.008 |
+|     register_reg_r3_192_255_12_14  |     0.008 |
+|     register_reg_r3_192_255_15_15  |     0.005 |
+|     register_reg_r3_192_255_3_5    |     0.009 |
+|     register_reg_r3_192_255_6_8    |     0.009 |
+|     register_reg_r3_192_255_9_11   |     0.008 |
+|     register_reg_r3_256_319_0_2    |     0.008 |
+|     register_reg_r3_256_319_12_14  |     0.009 |
+|     register_reg_r3_256_319_15_15  |     0.004 |
+|     register_reg_r3_256_319_3_5    |     0.008 |
+|     register_reg_r3_256_319_6_8    |     0.010 |
+|     register_reg_r3_256_319_9_11   |     0.008 |
+|     register_reg_r3_320_383_0_2    |     0.008 |
+|     register_reg_r3_320_383_12_14  |     0.009 |
+|     register_reg_r3_320_383_15_15  |     0.006 |
+|     register_reg_r3_320_383_3_5    |     0.009 |
+|     register_reg_r3_320_383_6_8    |     0.010 |
+|     register_reg_r3_320_383_9_11   |     0.009 |
+|     register_reg_r3_384_447_0_2    |     0.008 |
+|     register_reg_r3_384_447_12_14  |     0.008 |
+|     register_reg_r3_384_447_15_15  |     0.005 |
+|     register_reg_r3_384_447_3_5    |     0.011 |
+|     register_reg_r3_384_447_6_8    |     0.009 |
+|     register_reg_r3_384_447_9_11   |     0.009 |
+|     register_reg_r3_448_511_0_2    |     0.011 |
+|     register_reg_r3_448_511_12_14  |     0.010 |
+|     register_reg_r3_448_511_15_15  |     0.005 |
+|     register_reg_r3_448_511_3_5    |     0.008 |
+|     register_reg_r3_448_511_6_8    |     0.009 |
+|     register_reg_r3_448_511_9_11   |     0.008 |
+|     register_reg_r3_512_575_0_2    |     0.008 |
+|     register_reg_r3_512_575_12_14  |     0.007 |
+|     register_reg_r3_512_575_15_15  |     0.005 |
+|     register_reg_r3_512_575_3_5    |     0.009 |
+|     register_reg_r3_512_575_6_8    |     0.010 |
+|     register_reg_r3_512_575_9_11   |     0.008 |
+|     register_reg_r3_576_639_0_2    |     0.008 |
+|     register_reg_r3_576_639_12_14  |     0.008 |
+|     register_reg_r3_576_639_15_15  |     0.004 |
+|     register_reg_r3_576_639_3_5    |     0.008 |
+|     register_reg_r3_576_639_6_8    |     0.010 |
+|     register_reg_r3_576_639_9_11   |     0.009 |
+|     register_reg_r3_640_703_0_2    |     0.008 |
+|     register_reg_r3_640_703_12_14  |     0.008 |
+|     register_reg_r3_640_703_15_15  |     0.006 |
+|     register_reg_r3_640_703_3_5    |     0.011 |
+|     register_reg_r3_640_703_6_8    |     0.010 |
+|     register_reg_r3_640_703_9_11   |     0.011 |
+|     register_reg_r3_64_127_0_2     |     0.007 |
+|     register_reg_r3_64_127_12_14   |     0.009 |
+|     register_reg_r3_64_127_15_15   |     0.005 |
+|     register_reg_r3_64_127_3_5     |     0.008 |
+|     register_reg_r3_64_127_6_8     |     0.008 |
+|     register_reg_r3_64_127_9_11    |     0.008 |
+|     register_reg_r3_704_767_0_2    |     0.008 |
+|     register_reg_r3_704_767_12_14  |     0.008 |
+|     register_reg_r3_704_767_15_15  |     0.004 |
+|     register_reg_r3_704_767_3_5    |     0.007 |
+|     register_reg_r3_704_767_6_8    |     0.009 |
+|     register_reg_r3_704_767_9_11   |     0.009 |
+|     register_reg_r3_768_831_0_2    |     0.008 |
+|     register_reg_r3_768_831_12_14  |     0.011 |
+|     register_reg_r3_768_831_15_15  |     0.005 |
+|     register_reg_r3_768_831_3_5    |     0.008 |
+|     register_reg_r3_768_831_6_8    |     0.011 |
+|     register_reg_r3_768_831_9_11   |     0.008 |
+|     register_reg_r4_0_63_0_2       |     0.009 |
+|     register_reg_r4_0_63_12_14     |     0.008 |
+|     register_reg_r4_0_63_15_15     |     0.005 |
+|     register_reg_r4_0_63_3_5       |     0.009 |
+|     register_reg_r4_0_63_6_8       |     0.009 |
+|     register_reg_r4_0_63_9_11      |     0.010 |
+|     register_reg_r4_128_191_0_2    |     0.008 |
+|     register_reg_r4_128_191_12_14  |     0.009 |
+|     register_reg_r4_128_191_15_15  |     0.005 |
+|     register_reg_r4_128_191_3_5    |     0.008 |
+|     register_reg_r4_128_191_6_8    |     0.009 |
+|     register_reg_r4_128_191_9_11   |     0.008 |
+|     register_reg_r4_192_255_0_2    |     0.008 |
+|     register_reg_r4_192_255_12_14  |     0.008 |
+|     register_reg_r4_192_255_15_15  |     0.004 |
+|     register_reg_r4_192_255_3_5    |     0.008 |
+|     register_reg_r4_192_255_6_8    |     0.008 |
+|     register_reg_r4_192_255_9_11   |     0.012 |
+|     register_reg_r4_256_319_0_2    |     0.009 |
+|     register_reg_r4_256_319_12_14  |     0.009 |
+|     register_reg_r4_256_319_15_15  |     0.005 |
+|     register_reg_r4_256_319_3_5    |     0.008 |
+|     register_reg_r4_256_319_6_8    |     0.008 |
+|     register_reg_r4_256_319_9_11   |     0.008 |
+|     register_reg_r4_320_383_0_2    |     0.009 |
+|     register_reg_r4_320_383_12_14  |     0.009 |
+|     register_reg_r4_320_383_15_15  |     0.004 |
+|     register_reg_r4_320_383_3_5    |     0.008 |
+|     register_reg_r4_320_383_6_8    |     0.008 |
+|     register_reg_r4_320_383_9_11   |     0.007 |
+|     register_reg_r4_384_447_0_2    |     0.008 |
+|     register_reg_r4_384_447_12_14  |     0.008 |
+|     register_reg_r4_384_447_15_15  |     0.005 |
+|     register_reg_r4_384_447_3_5    |     0.008 |
+|     register_reg_r4_384_447_6_8    |     0.008 |
+|     register_reg_r4_384_447_9_11   |     0.008 |
+|     register_reg_r4_448_511_0_2    |     0.011 |
+|     register_reg_r4_448_511_12_14  |     0.008 |
+|     register_reg_r4_448_511_15_15  |     0.005 |
+|     register_reg_r4_448_511_3_5    |     0.009 |
+|     register_reg_r4_448_511_6_8    |     0.008 |
+|     register_reg_r4_448_511_9_11   |     0.008 |
+|     register_reg_r4_512_575_0_2    |     0.008 |
+|     register_reg_r4_512_575_12_14  |     0.009 |
+|     register_reg_r4_512_575_15_15  |     0.005 |
+|     register_reg_r4_512_575_3_5    |     0.008 |
+|     register_reg_r4_512_575_6_8    |     0.008 |
+|     register_reg_r4_512_575_9_11   |     0.008 |
+|     register_reg_r4_576_639_0_2    |     0.009 |
+|     register_reg_r4_576_639_12_14  |     0.008 |
+|     register_reg_r4_576_639_15_15  |     0.005 |
+|     register_reg_r4_576_639_3_5    |     0.008 |
+|     register_reg_r4_576_639_6_8    |     0.009 |
+|     register_reg_r4_576_639_9_11   |     0.008 |
+|     register_reg_r4_640_703_0_2    |     0.008 |
+|     register_reg_r4_640_703_12_14  |     0.009 |
+|     register_reg_r4_640_703_15_15  |     0.004 |
+|     register_reg_r4_640_703_3_5    |     0.009 |
+|     register_reg_r4_640_703_6_8    |     0.009 |
+|     register_reg_r4_640_703_9_11   |     0.008 |
+|     register_reg_r4_64_127_0_2     |     0.008 |
+|     register_reg_r4_64_127_12_14   |     0.010 |
+|     register_reg_r4_64_127_15_15   |     0.004 |
+|     register_reg_r4_64_127_3_5     |     0.008 |
+|     register_reg_r4_64_127_6_8     |     0.007 |
+|     register_reg_r4_64_127_9_11    |     0.009 |
+|     register_reg_r4_704_767_0_2    |     0.008 |
+|     register_reg_r4_704_767_12_14  |     0.008 |
+|     register_reg_r4_704_767_15_15  |     0.005 |
+|     register_reg_r4_704_767_3_5    |     0.009 |
+|     register_reg_r4_704_767_6_8    |     0.008 |
+|     register_reg_r4_704_767_9_11   |     0.009 |
+|     register_reg_r4_768_831_0_2    |     0.009 |
+|     register_reg_r4_768_831_12_14  |     0.010 |
+|     register_reg_r4_768_831_15_15  |     0.005 |
+|     register_reg_r4_768_831_3_5    |     0.010 |
+|     register_reg_r4_768_831_6_8    |     0.008 |
+|     register_reg_r4_768_831_9_11   |     0.009 |
+|     register_reg_r5_0_63_0_2       |     0.009 |
+|     register_reg_r5_0_63_12_14     |     0.010 |
+|     register_reg_r5_0_63_15_15     |     0.004 |
+|     register_reg_r5_0_63_3_5       |     0.011 |
+|     register_reg_r5_0_63_6_8       |     0.008 |
+|     register_reg_r5_0_63_9_11      |     0.011 |
+|     register_reg_r5_128_191_0_2    |     0.007 |
+|     register_reg_r5_128_191_12_14  |     0.008 |
+|     register_reg_r5_128_191_15_15  |     0.005 |
+|     register_reg_r5_128_191_3_5    |     0.010 |
+|     register_reg_r5_128_191_6_8    |     0.009 |
+|     register_reg_r5_128_191_9_11   |     0.009 |
+|     register_reg_r5_192_255_0_2    |     0.007 |
+|     register_reg_r5_192_255_12_14  |     0.008 |
+|     register_reg_r5_192_255_15_15  |     0.004 |
+|     register_reg_r5_192_255_3_5    |     0.010 |
+|     register_reg_r5_192_255_6_8    |     0.008 |
+|     register_reg_r5_192_255_9_11   |     0.009 |
+|     register_reg_r5_256_319_0_2    |     0.010 |
+|     register_reg_r5_256_319_12_14  |     0.008 |
+|     register_reg_r5_256_319_15_15  |     0.005 |
+|     register_reg_r5_256_319_3_5    |     0.009 |
+|     register_reg_r5_256_319_6_8    |     0.010 |
+|     register_reg_r5_256_319_9_11   |     0.008 |
+|     register_reg_r5_320_383_0_2    |     0.010 |
+|     register_reg_r5_320_383_12_14  |     0.007 |
+|     register_reg_r5_320_383_15_15  |     0.006 |
+|     register_reg_r5_320_383_3_5    |     0.010 |
+|     register_reg_r5_320_383_6_8    |     0.011 |
+|     register_reg_r5_320_383_9_11   |     0.009 |
+|     register_reg_r5_384_447_0_2    |     0.010 |
+|     register_reg_r5_384_447_12_14  |     0.008 |
+|     register_reg_r5_384_447_15_15  |     0.004 |
+|     register_reg_r5_384_447_3_5    |     0.009 |
+|     register_reg_r5_384_447_6_8    |     0.009 |
+|     register_reg_r5_384_447_9_11   |     0.007 |
+|     register_reg_r5_448_511_0_2    |     0.008 |
+|     register_reg_r5_448_511_12_14  |     0.008 |
+|     register_reg_r5_448_511_15_15  |     0.005 |
+|     register_reg_r5_448_511_3_5    |     0.011 |
+|     register_reg_r5_448_511_6_8    |     0.009 |
+|     register_reg_r5_448_511_9_11   |     0.010 |
+|     register_reg_r5_512_575_0_2    |     0.010 |
+|     register_reg_r5_512_575_12_14  |     0.008 |
+|     register_reg_r5_512_575_15_15  |     0.004 |
+|     register_reg_r5_512_575_3_5    |     0.009 |
+|     register_reg_r5_512_575_6_8    |     0.011 |
+|     register_reg_r5_512_575_9_11   |     0.011 |
+|     register_reg_r5_576_639_0_2    |     0.009 |
+|     register_reg_r5_576_639_12_14  |     0.008 |
+|     register_reg_r5_576_639_15_15  |     0.004 |
+|     register_reg_r5_576_639_3_5    |     0.008 |
+|     register_reg_r5_576_639_6_8    |     0.010 |
+|     register_reg_r5_576_639_9_11   |     0.010 |
+|     register_reg_r5_640_703_0_2    |     0.009 |
+|     register_reg_r5_640_703_12_14  |     0.008 |
+|     register_reg_r5_640_703_15_15  |     0.004 |
+|     register_reg_r5_640_703_3_5    |     0.011 |
+|     register_reg_r5_640_703_6_8    |     0.009 |
+|     register_reg_r5_640_703_9_11   |     0.009 |
+|     register_reg_r5_64_127_0_2     |     0.010 |
+|     register_reg_r5_64_127_12_14   |     0.007 |
+|     register_reg_r5_64_127_15_15   |     0.005 |
+|     register_reg_r5_64_127_3_5     |     0.010 |
+|     register_reg_r5_64_127_6_8     |     0.010 |
+|     register_reg_r5_64_127_9_11    |     0.010 |
+|     register_reg_r5_704_767_0_2    |     0.010 |
+|     register_reg_r5_704_767_12_14  |     0.009 |
+|     register_reg_r5_704_767_15_15  |     0.005 |
+|     register_reg_r5_704_767_3_5    |     0.011 |
+|     register_reg_r5_704_767_6_8    |     0.011 |
+|     register_reg_r5_704_767_9_11   |     0.008 |
+|     register_reg_r5_768_831_0_2    |     0.011 |
+|     register_reg_r5_768_831_12_14  |     0.011 |
+|     register_reg_r5_768_831_15_15  |     0.006 |
+|     register_reg_r5_768_831_3_5    |     0.008 |
+|     register_reg_r5_768_831_6_8    |     0.012 |
+|     register_reg_r5_768_831_9_11   |     0.009 |
+|     register_reg_r6_0_63_0_2       |     0.008 |
+|     register_reg_r6_0_63_12_14     |     0.008 |
+|     register_reg_r6_0_63_15_15     |     0.005 |
+|     register_reg_r6_0_63_3_5       |     0.008 |
+|     register_reg_r6_0_63_6_8       |     0.008 |
+|     register_reg_r6_0_63_9_11      |     0.008 |
+|     register_reg_r6_128_191_0_2    |     0.008 |
+|     register_reg_r6_128_191_12_14  |     0.009 |
+|     register_reg_r6_128_191_15_15  |     0.005 |
+|     register_reg_r6_128_191_3_5    |     0.009 |
+|     register_reg_r6_128_191_6_8    |     0.009 |
+|     register_reg_r6_128_191_9_11   |     0.008 |
+|     register_reg_r6_192_255_0_2    |     0.010 |
+|     register_reg_r6_192_255_12_14  |     0.010 |
+|     register_reg_r6_192_255_15_15  |     0.005 |
+|     register_reg_r6_192_255_3_5    |     0.008 |
+|     register_reg_r6_192_255_6_8    |     0.008 |
+|     register_reg_r6_192_255_9_11   |     0.008 |
+|     register_reg_r6_256_319_0_2    |     0.009 |
+|     register_reg_r6_256_319_12_14  |     0.009 |
+|     register_reg_r6_256_319_15_15  |     0.005 |
+|     register_reg_r6_256_319_3_5    |     0.008 |
+|     register_reg_r6_256_319_6_8    |     0.009 |
+|     register_reg_r6_256_319_9_11   |     0.009 |
+|     register_reg_r6_320_383_0_2    |     0.008 |
+|     register_reg_r6_320_383_12_14  |     0.008 |
+|     register_reg_r6_320_383_15_15  |     0.004 |
+|     register_reg_r6_320_383_3_5    |     0.008 |
+|     register_reg_r6_320_383_6_8    |     0.008 |
+|     register_reg_r6_320_383_9_11   |     0.008 |
+|     register_reg_r6_384_447_0_2    |     0.008 |
+|     register_reg_r6_384_447_12_14  |     0.008 |
+|     register_reg_r6_384_447_15_15  |     0.004 |
+|     register_reg_r6_384_447_3_5    |     0.008 |
+|     register_reg_r6_384_447_6_8    |     0.008 |
+|     register_reg_r6_384_447_9_11   |     0.009 |
+|     register_reg_r6_448_511_0_2    |     0.009 |
+|     register_reg_r6_448_511_12_14  |     0.009 |
+|     register_reg_r6_448_511_15_15  |     0.005 |
+|     register_reg_r6_448_511_3_5    |     0.009 |
+|     register_reg_r6_448_511_6_8    |     0.010 |
+|     register_reg_r6_448_511_9_11   |     0.009 |
+|     register_reg_r6_512_575_0_2    |     0.010 |
+|     register_reg_r6_512_575_12_14  |     0.009 |
+|     register_reg_r6_512_575_15_15  |     0.005 |
+|     register_reg_r6_512_575_3_5    |     0.008 |
+|     register_reg_r6_512_575_6_8    |     0.009 |
+|     register_reg_r6_512_575_9_11   |     0.008 |
+|     register_reg_r6_576_639_0_2    |     0.009 |
+|     register_reg_r6_576_639_12_14  |     0.008 |
+|     register_reg_r6_576_639_15_15  |     0.004 |
+|     register_reg_r6_576_639_3_5    |     0.008 |
+|     register_reg_r6_576_639_6_8    |     0.010 |
+|     register_reg_r6_576_639_9_11   |     0.008 |
+|     register_reg_r6_640_703_0_2    |     0.008 |
+|     register_reg_r6_640_703_12_14  |     0.008 |
+|     register_reg_r6_640_703_15_15  |     0.005 |
+|     register_reg_r6_640_703_3_5    |     0.009 |
+|     register_reg_r6_640_703_6_8    |     0.008 |
+|     register_reg_r6_640_703_9_11   |     0.008 |
+|     register_reg_r6_64_127_0_2     |     0.010 |
+|     register_reg_r6_64_127_12_14   |     0.008 |
+|     register_reg_r6_64_127_15_15   |     0.004 |
+|     register_reg_r6_64_127_3_5     |     0.009 |
+|     register_reg_r6_64_127_6_8     |     0.008 |
+|     register_reg_r6_64_127_9_11    |     0.008 |
+|     register_reg_r6_704_767_0_2    |     0.011 |
+|     register_reg_r6_704_767_12_14  |     0.008 |
+|     register_reg_r6_704_767_15_15  |     0.006 |
+|     register_reg_r6_704_767_3_5    |     0.008 |
+|     register_reg_r6_704_767_6_8    |     0.010 |
+|     register_reg_r6_704_767_9_11   |     0.009 |
+|     register_reg_r6_768_831_0_2    |     0.008 |
+|     register_reg_r6_768_831_12_14  |     0.008 |
+|     register_reg_r6_768_831_15_15  |     0.006 |
+|     register_reg_r6_768_831_3_5    |     0.007 |
+|     register_reg_r6_768_831_6_8    |     0.008 |
+|     register_reg_r6_768_831_9_11   |     0.008 |
+|     register_reg_r7_0_63_0_2       |     0.009 |
+|     register_reg_r7_0_63_12_14     |     0.009 |
+|     register_reg_r7_0_63_15_15     |     0.004 |
+|     register_reg_r7_0_63_3_5       |     0.008 |
+|     register_reg_r7_0_63_6_8       |     0.009 |
+|     register_reg_r7_0_63_9_11      |     0.009 |
+|     register_reg_r7_128_191_0_2    |     0.008 |
+|     register_reg_r7_128_191_12_14  |     0.008 |
+|     register_reg_r7_128_191_15_15  |     0.005 |
+|     register_reg_r7_128_191_3_5    |     0.008 |
+|     register_reg_r7_128_191_6_8    |     0.009 |
+|     register_reg_r7_128_191_9_11   |     0.010 |
+|     register_reg_r7_192_255_0_2    |     0.009 |
+|     register_reg_r7_192_255_12_14  |     0.009 |
+|     register_reg_r7_192_255_15_15  |     0.005 |
+|     register_reg_r7_192_255_3_5    |     0.008 |
+|     register_reg_r7_192_255_6_8    |     0.008 |
+|     register_reg_r7_192_255_9_11   |     0.008 |
+|     register_reg_r7_256_319_0_2    |     0.008 |
+|     register_reg_r7_256_319_12_14  |     0.009 |
+|     register_reg_r7_256_319_15_15  |     0.005 |
+|     register_reg_r7_256_319_3_5    |     0.008 |
+|     register_reg_r7_256_319_6_8    |     0.008 |
+|     register_reg_r7_256_319_9_11   |     0.008 |
+|     register_reg_r7_320_383_0_2    |     0.009 |
+|     register_reg_r7_320_383_12_14  |     0.009 |
+|     register_reg_r7_320_383_15_15  |     0.005 |
+|     register_reg_r7_320_383_3_5    |     0.007 |
+|     register_reg_r7_320_383_6_8    |     0.009 |
+|     register_reg_r7_320_383_9_11   |     0.008 |
+|     register_reg_r7_384_447_0_2    |     0.009 |
+|     register_reg_r7_384_447_12_14  |     0.009 |
+|     register_reg_r7_384_447_15_15  |     0.004 |
+|     register_reg_r7_384_447_3_5    |     0.008 |
+|     register_reg_r7_384_447_6_8    |     0.008 |
+|     register_reg_r7_384_447_9_11   |     0.009 |
+|     register_reg_r7_448_511_0_2    |     0.008 |
+|     register_reg_r7_448_511_12_14  |     0.008 |
+|     register_reg_r7_448_511_15_15  |     0.004 |
+|     register_reg_r7_448_511_3_5    |     0.008 |
+|     register_reg_r7_448_511_6_8    |     0.009 |
+|     register_reg_r7_448_511_9_11   |     0.008 |
+|     register_reg_r7_512_575_0_2    |     0.010 |
+|     register_reg_r7_512_575_12_14  |     0.009 |
+|     register_reg_r7_512_575_15_15  |     0.006 |
+|     register_reg_r7_512_575_3_5    |     0.010 |
+|     register_reg_r7_512_575_6_8    |     0.011 |
+|     register_reg_r7_512_575_9_11   |     0.009 |
+|     register_reg_r7_576_639_0_2    |     0.008 |
+|     register_reg_r7_576_639_12_14  |     0.009 |
+|     register_reg_r7_576_639_15_15  |     0.006 |
+|     register_reg_r7_576_639_3_5    |     0.008 |
+|     register_reg_r7_576_639_6_8    |     0.009 |
+|     register_reg_r7_576_639_9_11   |     0.009 |
+|     register_reg_r7_640_703_0_2    |     0.010 |
+|     register_reg_r7_640_703_12_14  |     0.008 |
+|     register_reg_r7_640_703_15_15  |     0.004 |
+|     register_reg_r7_640_703_3_5    |     0.009 |
+|     register_reg_r7_640_703_6_8    |     0.008 |
+|     register_reg_r7_640_703_9_11   |     0.010 |
+|     register_reg_r7_64_127_0_2     |     0.011 |
+|     register_reg_r7_64_127_12_14   |     0.010 |
+|     register_reg_r7_64_127_15_15   |     0.005 |
+|     register_reg_r7_64_127_3_5     |     0.009 |
+|     register_reg_r7_64_127_6_8     |     0.009 |
+|     register_reg_r7_64_127_9_11    |     0.009 |
+|     register_reg_r7_704_767_0_2    |     0.008 |
+|     register_reg_r7_704_767_12_14  |     0.010 |
+|     register_reg_r7_704_767_15_15  |     0.005 |
+|     register_reg_r7_704_767_3_5    |     0.009 |
+|     register_reg_r7_704_767_6_8    |     0.008 |
+|     register_reg_r7_704_767_9_11   |     0.009 |
+|     register_reg_r7_768_831_0_2    |     0.010 |
+|     register_reg_r7_768_831_12_14  |     0.010 |
+|     register_reg_r7_768_831_15_15  |     0.005 |
+|     register_reg_r7_768_831_3_5    |     0.009 |
+|     register_reg_r7_768_831_6_8    |     0.008 |
+|     register_reg_r7_768_831_9_11   |     0.008 |
+|     register_reg_r8_0_63_0_2       |     0.009 |
+|     register_reg_r8_0_63_12_14     |     0.007 |
+|     register_reg_r8_0_63_15_15     |     0.005 |
+|     register_reg_r8_0_63_3_5       |     0.010 |
+|     register_reg_r8_0_63_6_8       |     0.008 |
+|     register_reg_r8_0_63_9_11      |     0.008 |
+|     register_reg_r8_128_191_0_2    |     0.008 |
+|     register_reg_r8_128_191_12_14  |     0.011 |
+|     register_reg_r8_128_191_15_15  |     0.005 |
+|     register_reg_r8_128_191_3_5    |     0.011 |
+|     register_reg_r8_128_191_6_8    |     0.008 |
+|     register_reg_r8_128_191_9_11   |     0.009 |
+|     register_reg_r8_192_255_0_2    |     0.008 |
+|     register_reg_r8_192_255_12_14  |     0.008 |
+|     register_reg_r8_192_255_15_15  |     0.004 |
+|     register_reg_r8_192_255_3_5    |     0.009 |
+|     register_reg_r8_192_255_6_8    |     0.007 |
+|     register_reg_r8_192_255_9_11   |     0.008 |
+|     register_reg_r8_256_319_0_2    |     0.008 |
+|     register_reg_r8_256_319_12_14  |     0.008 |
+|     register_reg_r8_256_319_15_15  |     0.005 |
+|     register_reg_r8_256_319_3_5    |     0.010 |
+|     register_reg_r8_256_319_6_8    |     0.010 |
+|     register_reg_r8_256_319_9_11   |     0.008 |
+|     register_reg_r8_320_383_0_2    |     0.009 |
+|     register_reg_r8_320_383_12_14  |     0.010 |
+|     register_reg_r8_320_383_15_15  |     0.006 |
+|     register_reg_r8_320_383_3_5    |     0.010 |
+|     register_reg_r8_320_383_6_8    |     0.008 |
+|     register_reg_r8_320_383_9_11   |     0.008 |
+|     register_reg_r8_384_447_0_2    |     0.009 |
+|     register_reg_r8_384_447_12_14  |     0.008 |
+|     register_reg_r8_384_447_15_15  |     0.004 |
+|     register_reg_r8_384_447_3_5    |     0.009 |
+|     register_reg_r8_384_447_6_8    |     0.008 |
+|     register_reg_r8_384_447_9_11   |     0.009 |
+|     register_reg_r8_448_511_0_2    |     0.008 |
+|     register_reg_r8_448_511_12_14  |     0.010 |
+|     register_reg_r8_448_511_15_15  |     0.005 |
+|     register_reg_r8_448_511_3_5    |     0.008 |
+|     register_reg_r8_448_511_6_8    |     0.011 |
+|     register_reg_r8_448_511_9_11   |     0.010 |
+|     register_reg_r8_512_575_0_2    |     0.009 |
+|     register_reg_r8_512_575_12_14  |     0.007 |
+|     register_reg_r8_512_575_15_15  |     0.005 |
+|     register_reg_r8_512_575_3_5    |     0.008 |
+|     register_reg_r8_512_575_6_8    |     0.008 |
+|     register_reg_r8_512_575_9_11   |     0.009 |
+|     register_reg_r8_576_639_0_2    |     0.008 |
+|     register_reg_r8_576_639_12_14  |     0.009 |
+|     register_reg_r8_576_639_15_15  |     0.004 |
+|     register_reg_r8_576_639_3_5    |     0.008 |
+|     register_reg_r8_576_639_6_8    |     0.010 |
+|     register_reg_r8_576_639_9_11   |     0.010 |
+|     register_reg_r8_640_703_0_2    |     0.010 |
+|     register_reg_r8_640_703_12_14  |     0.011 |
+|     register_reg_r8_640_703_15_15  |     0.005 |
+|     register_reg_r8_640_703_3_5    |     0.009 |
+|     register_reg_r8_640_703_6_8    |     0.008 |
+|     register_reg_r8_640_703_9_11   |     0.008 |
+|     register_reg_r8_64_127_0_2     |     0.008 |
+|     register_reg_r8_64_127_12_14   |     0.010 |
+|     register_reg_r8_64_127_15_15   |     0.006 |
+|     register_reg_r8_64_127_3_5     |     0.008 |
+|     register_reg_r8_64_127_6_8     |     0.009 |
+|     register_reg_r8_64_127_9_11    |     0.008 |
+|     register_reg_r8_704_767_0_2    |     0.009 |
+|     register_reg_r8_704_767_12_14  |     0.008 |
+|     register_reg_r8_704_767_15_15  |     0.005 |
+|     register_reg_r8_704_767_3_5    |     0.008 |
+|     register_reg_r8_704_767_6_8    |     0.008 |
+|     register_reg_r8_704_767_9_11   |     0.008 |
+|     register_reg_r8_768_831_0_2    |     0.012 |
+|     register_reg_r8_768_831_12_14  |     0.011 |
+|     register_reg_r8_768_831_15_15  |     0.006 |
+|     register_reg_r8_768_831_3_5    |     0.007 |
+|     register_reg_r8_768_831_6_8    |     0.009 |
+|     register_reg_r8_768_831_9_11   |     0.010 |
+|     register_reg_r9_0_63_0_2       |     0.009 |
+|     register_reg_r9_0_63_12_14     |     0.007 |
+|     register_reg_r9_0_63_15_15     |     0.005 |
+|     register_reg_r9_0_63_3_5       |     0.007 |
+|     register_reg_r9_0_63_6_8       |     0.007 |
+|     register_reg_r9_0_63_9_11      |     0.009 |
+|     register_reg_r9_128_191_0_2    |     0.010 |
+|     register_reg_r9_128_191_12_14  |     0.009 |
+|     register_reg_r9_128_191_15_15  |     0.004 |
+|     register_reg_r9_128_191_3_5    |     0.009 |
+|     register_reg_r9_128_191_6_8    |     0.010 |
+|     register_reg_r9_128_191_9_11   |     0.010 |
+|     register_reg_r9_192_255_0_2    |     0.007 |
+|     register_reg_r9_192_255_12_14  |     0.008 |
+|     register_reg_r9_192_255_15_15  |     0.005 |
+|     register_reg_r9_192_255_3_5    |     0.008 |
+|     register_reg_r9_192_255_6_8    |     0.009 |
+|     register_reg_r9_192_255_9_11   |     0.008 |
+|     register_reg_r9_256_319_0_2    |     0.008 |
+|     register_reg_r9_256_319_12_14  |     0.008 |
+|     register_reg_r9_256_319_15_15  |     0.006 |
+|     register_reg_r9_256_319_3_5    |     0.007 |
+|     register_reg_r9_256_319_6_8    |     0.009 |
+|     register_reg_r9_256_319_9_11   |     0.008 |
+|     register_reg_r9_320_383_0_2    |     0.007 |
+|     register_reg_r9_320_383_12_14  |     0.008 |
+|     register_reg_r9_320_383_15_15  |     0.004 |
+|     register_reg_r9_320_383_3_5    |     0.009 |
+|     register_reg_r9_320_383_6_8    |     0.008 |
+|     register_reg_r9_320_383_9_11   |     0.008 |
+|     register_reg_r9_384_447_0_2    |     0.008 |
+|     register_reg_r9_384_447_12_14  |     0.007 |
+|     register_reg_r9_384_447_15_15  |     0.004 |
+|     register_reg_r9_384_447_3_5    |     0.008 |
+|     register_reg_r9_384_447_6_8    |     0.007 |
+|     register_reg_r9_384_447_9_11   |     0.010 |
+|     register_reg_r9_448_511_0_2    |     0.009 |
+|     register_reg_r9_448_511_12_14  |     0.010 |
+|     register_reg_r9_448_511_15_15  |     0.005 |
+|     register_reg_r9_448_511_3_5    |     0.009 |
+|     register_reg_r9_448_511_6_8    |     0.009 |
+|     register_reg_r9_448_511_9_11   |     0.009 |
+|     register_reg_r9_512_575_0_2    |     0.008 |
+|     register_reg_r9_512_575_12_14  |     0.007 |
+|     register_reg_r9_512_575_15_15  |     0.004 |
+|     register_reg_r9_512_575_3_5    |     0.008 |
+|     register_reg_r9_512_575_6_8    |     0.008 |
+|     register_reg_r9_512_575_9_11   |     0.010 |
+|     register_reg_r9_576_639_0_2    |     0.009 |
+|     register_reg_r9_576_639_12_14  |     0.008 |
+|     register_reg_r9_576_639_15_15  |     0.004 |
+|     register_reg_r9_576_639_3_5    |     0.008 |
+|     register_reg_r9_576_639_6_8    |     0.009 |
+|     register_reg_r9_576_639_9_11   |     0.008 |
+|     register_reg_r9_640_703_0_2    |     0.008 |
+|     register_reg_r9_640_703_12_14  |     0.008 |
+|     register_reg_r9_640_703_15_15  |     0.004 |
+|     register_reg_r9_640_703_3_5    |     0.007 |
+|     register_reg_r9_640_703_6_8    |     0.008 |
+|     register_reg_r9_640_703_9_11   |     0.010 |
+|     register_reg_r9_64_127_0_2     |     0.010 |
+|     register_reg_r9_64_127_12_14   |     0.007 |
+|     register_reg_r9_64_127_15_15   |     0.005 |
+|     register_reg_r9_64_127_3_5     |     0.008 |
+|     register_reg_r9_64_127_6_8     |     0.007 |
+|     register_reg_r9_64_127_9_11    |     0.008 |
+|     register_reg_r9_704_767_0_2    |     0.008 |
+|     register_reg_r9_704_767_12_14  |     0.008 |
+|     register_reg_r9_704_767_15_15  |     0.005 |
+|     register_reg_r9_704_767_3_5    |     0.008 |
+|     register_reg_r9_704_767_6_8    |     0.007 |
+|     register_reg_r9_704_767_9_11   |     0.008 |
+|     register_reg_r9_768_831_0_2    |     0.009 |
+|     register_reg_r9_768_831_12_14  |     0.008 |
+|     register_reg_r9_768_831_15_15  |     0.004 |
+|     register_reg_r9_768_831_3_5    |     0.010 |
+|     register_reg_r9_768_831_6_8    |     0.009 |
+|     register_reg_r9_768_831_9_11   |     0.007 |
+|   pos_memory_conv                  |     0.279 |
+|   positionImage                    |     1.343 |
+|     counter_i                      |     0.693 |
+|     counter_j                      |     0.646 |
+|   save_data_1                      |     0.050 |
+|   save_data_2                      |     0.050 |
+|   save_data_3                      |     0.050 |
+|   save_max_1                       |     1.310 |
++------------------------------------+-----------+
+
+

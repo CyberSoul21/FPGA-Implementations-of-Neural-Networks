@@ -78,9 +78,9 @@ module memory_image
     wire [addressWidthPos-1:0] p_img_8;
 
     initial
-       begin
-            $readmemb(weightFileImg, register);
-        end
+	   begin
+	        $readmemb(weightFileImg, register);
+	    end
 
     assign p_img_0 = (0+addr1)*(n_c) + (0+addr2);
     assign p_img_1 = (0+addr1)*(n_c) + (1+addr2);
@@ -112,22 +112,22 @@ module memory_image
     
     
     always @(posedge clk)
-    begin
-       if (wen)
-       begin
-           register[wadd] <= wdata;
-           //$display("wadd1, %d",wadd,data_in); 
+	begin
+	   if (wen)
+	   begin
+	       register[wadd] <= wdata;
+	       //$display("wadd1, %d",wadd,data_in); 
 
-       end
-       if(wadd >= (numWeightImg -1) )
-       begin
-           mem_full <= 1;
-       end
-       else
-       begin
-           mem_full <= 0;
-       end
-    end 
+	   end
+	   if(wadd >= (numWeightImg -1) )
+	   begin
+	       mem_full <= 1;
+	   end
+	   else
+	   begin
+	       mem_full <= 0;
+	   end
+	end 
 
 
     assign rdata = register[radd];  //test soc

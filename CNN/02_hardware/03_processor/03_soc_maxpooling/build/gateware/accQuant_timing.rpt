@@ -1,0 +1,360 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Wed Aug 25 16:32:59 2021
+| Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
+| Command      : report_timing_summary -datasheet -max_paths 10 -file accQuant_timing.rpt
+| Design       : accQuant
+| Device       : 7z020-clg400
+| Speed File   : -1  PRODUCTION 1.11 2014-09-11
+------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock
+2. checking constant_clock
+3. checking pulse_width_clock
+4. checking unconstrained_internal_endpoints
+5. checking no_input_delay
+6. checking no_output_delay
+7. checking multiple_clock
+8. checking generated_clocks
+9. checking loops
+10. checking partial_input_delay
+11. checking partial_output_delay
+12. checking latch_loops
+
+1. checking no_clock
+--------------------
+ There are 5306 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+
+ There are 8 register/latch pins with no clock driven by root clock pin: clk_fourth/clock_out_reg/Q (HIGH)
+
+ There are 2910 register/latch pins with no clock driven by root clock pin: clk_second/clock_out_reg/Q (HIGH)
+
+ There are 75 register/latch pins with no clock driven by root clock pin: clk_third/clock_out_reg/Q (HIGH)
+
+ There are 11 register/latch pins with no clock driven by root clock pin: positionConv/counter_j/ok_reg/Q (HIGH)
+
+ There are 11 register/latch pins with no clock driven by root clock pin: positionImage/counter_j/ok_reg/Q (HIGH)
+
+
+2. checking constant_clock
+--------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock
+-----------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints
+--------------------------------------------
+ There are 34321 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay
+--------------------------
+ There are 39 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay
+---------------------------
+ There are 27 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock
+--------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks
+----------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops
+-----------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay
+--------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay
+---------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops
+------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+         NA           NA                     NA                   NA           NA           NA                     NA                   NA           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Data sheet
+| ----------
+------------------------------------------------------------------------------------------------
+
+Combinational Delays
+
+--------------+-----------------+-----------+---------+-----------+---------+
+From          | To              |   Max     | Process |   Min     | Process |
+Port          | Port            | Delay(ns) | Corner  | Delay(ns) | Corner  |
+--------------+-----------------+-----------+---------+-----------+---------+
+radd_image[0] | rdata_image[0]  |    15.810 | SLOW    |     5.762 | FAST    |
+radd_image[0] | rdata_image[1]  |    15.879 | SLOW    |     5.847 | FAST    |
+radd_image[0] | rdata_image[2]  |    16.255 | SLOW    |     5.182 | FAST    |
+radd_image[0] | rdata_image[3]  |    16.965 | SLOW    |     5.782 | FAST    |
+radd_image[0] | rdata_image[4]  |    17.230 | SLOW    |     5.955 | FAST    |
+radd_image[0] | rdata_image[5]  |    17.182 | SLOW    |     5.891 | FAST    |
+radd_image[0] | rdata_image[6]  |    16.432 | SLOW    |     5.294 | FAST    |
+radd_image[0] | rdata_image[7]  |    16.805 | SLOW    |     5.422 | FAST    |
+radd_image[0] | rdata_image[8]  |    17.051 | SLOW    |     5.432 | FAST    |
+radd_image[0] | rdata_image[9]  |    14.137 | SLOW    |     4.960 | FAST    |
+radd_image[0] | rdata_image[10] |    15.066 | SLOW    |     5.309 | FAST    |
+radd_image[0] | rdata_image[11] |    14.936 | SLOW    |     5.389 | FAST    |
+radd_image[0] | rdata_image[12] |    14.744 | SLOW    |     5.379 | FAST    |
+radd_image[0] | rdata_image[13] |    15.292 | SLOW    |     5.631 | FAST    |
+radd_image[0] | rdata_image[14] |    16.732 | SLOW    |     5.589 | FAST    |
+radd_image[0] | rdata_image[15] |    15.201 | SLOW    |     5.290 | FAST    |
+radd_image[1] | rdata_image[0]  |    17.493 | SLOW    |     6.341 | FAST    |
+radd_image[1] | rdata_image[1]  |    17.434 | SLOW    |     6.385 | FAST    |
+radd_image[1] | rdata_image[2]  |    16.704 | SLOW    |     5.595 | FAST    |
+radd_image[1] | rdata_image[3]  |    17.155 | SLOW    |     6.122 | FAST    |
+radd_image[1] | rdata_image[4]  |    17.093 | SLOW    |     6.182 | FAST    |
+radd_image[1] | rdata_image[5]  |    17.424 | SLOW    |     6.015 | FAST    |
+radd_image[1] | rdata_image[6]  |    17.089 | SLOW    |     5.278 | FAST    |
+radd_image[1] | rdata_image[7]  |    17.219 | SLOW    |     5.525 | FAST    |
+radd_image[1] | rdata_image[8]  |    17.620 | SLOW    |     5.370 | FAST    |
+radd_image[1] | rdata_image[9]  |    15.510 | SLOW    |     5.196 | FAST    |
+radd_image[1] | rdata_image[10] |    16.191 | SLOW    |     5.555 | FAST    |
+radd_image[1] | rdata_image[11] |    16.423 | SLOW    |     5.581 | FAST    |
+radd_image[1] | rdata_image[12] |    16.085 | SLOW    |     5.733 | FAST    |
+radd_image[1] | rdata_image[13] |    16.402 | SLOW    |     6.115 | FAST    |
+radd_image[1] | rdata_image[14] |    16.785 | SLOW    |     6.113 | FAST    |
+radd_image[1] | rdata_image[15] |    17.425 | SLOW    |     5.208 | FAST    |
+radd_image[2] | rdata_image[0]  |    17.569 | SLOW    |     6.095 | FAST    |
+radd_image[2] | rdata_image[1]  |    17.931 | SLOW    |     6.014 | FAST    |
+radd_image[2] | rdata_image[2]  |    17.228 | SLOW    |     5.632 | FAST    |
+radd_image[2] | rdata_image[3]  |    19.006 | SLOW    |     6.132 | FAST    |
+radd_image[2] | rdata_image[4]  |    19.317 | SLOW    |     6.260 | FAST    |
+radd_image[2] | rdata_image[5]  |    19.561 | SLOW    |     6.266 | FAST    |
+radd_image[2] | rdata_image[6]  |    16.847 | SLOW    |     5.455 | FAST    |
+radd_image[2] | rdata_image[7]  |    17.136 | SLOW    |     5.607 | FAST    |
+radd_image[2] | rdata_image[8]  |    17.612 | SLOW    |     5.589 | FAST    |
+radd_image[2] | rdata_image[9]  |    15.390 | SLOW    |     4.962 | FAST    |
+radd_image[2] | rdata_image[10] |    16.336 | SLOW    |     5.323 | FAST    |
+radd_image[2] | rdata_image[11] |    16.174 | SLOW    |     5.799 | FAST    |
+radd_image[2] | rdata_image[12] |    18.341 | SLOW    |     5.974 | FAST    |
+radd_image[2] | rdata_image[13] |    18.624 | SLOW    |     6.348 | FAST    |
+radd_image[2] | rdata_image[14] |    19.145 | SLOW    |     6.413 | FAST    |
+radd_image[2] | rdata_image[15] |    17.421 | SLOW    |     5.305 | FAST    |
+radd_image[3] | rdata_image[0]  |    17.652 | SLOW    |     5.757 | FAST    |
+radd_image[3] | rdata_image[1]  |    17.682 | SLOW    |     5.674 | FAST    |
+radd_image[3] | rdata_image[2]  |    17.361 | SLOW    |     5.232 | FAST    |
+radd_image[3] | rdata_image[3]  |    17.891 | SLOW    |     6.709 | FAST    |
+radd_image[3] | rdata_image[4]  |    18.044 | SLOW    |     6.734 | FAST    |
+radd_image[3] | rdata_image[5]  |    18.318 | SLOW    |     6.773 | FAST    |
+radd_image[3] | rdata_image[6]  |    16.953 | SLOW    |     5.489 | FAST    |
+radd_image[3] | rdata_image[7]  |    17.333 | SLOW    |     5.647 | FAST    |
+radd_image[3] | rdata_image[8]  |    17.204 | SLOW    |     5.602 | FAST    |
+radd_image[3] | rdata_image[9]  |    14.925 | SLOW    |     5.158 | FAST    |
+radd_image[3] | rdata_image[10] |    16.155 | SLOW    |     5.721 | FAST    |
+radd_image[3] | rdata_image[11] |    15.938 | SLOW    |     5.810 | FAST    |
+radd_image[3] | rdata_image[12] |    16.770 | SLOW    |     6.065 | FAST    |
+radd_image[3] | rdata_image[13] |    17.052 | SLOW    |     6.356 | FAST    |
+radd_image[3] | rdata_image[14] |    17.564 | SLOW    |     6.385 | FAST    |
+radd_image[3] | rdata_image[15] |    15.406 | SLOW    |     5.345 | FAST    |
+radd_image[4] | rdata_image[0]  |    17.012 | SLOW    |     6.145 | FAST    |
+radd_image[4] | rdata_image[1]  |    16.987 | SLOW    |     6.273 | FAST    |
+radd_image[4] | rdata_image[2]  |    15.947 | SLOW    |     5.612 | FAST    |
+radd_image[4] | rdata_image[3]  |    16.819 | SLOW    |     6.245 | FAST    |
+radd_image[4] | rdata_image[4]  |    17.121 | SLOW    |     6.315 | FAST    |
+radd_image[4] | rdata_image[5]  |    16.805 | SLOW    |     6.087 | FAST    |
+radd_image[4] | rdata_image[6]  |    16.206 | SLOW    |     5.655 | FAST    |
+radd_image[4] | rdata_image[7]  |    17.432 | SLOW    |     5.610 | FAST    |
+radd_image[4] | rdata_image[8]  |    16.439 | SLOW    |     5.435 | FAST    |
+radd_image[4] | rdata_image[9]  |    14.739 | SLOW    |     5.173 | FAST    |
+radd_image[4] | rdata_image[10] |    15.439 | SLOW    |     5.533 | FAST    |
+radd_image[4] | rdata_image[11] |    16.583 | SLOW    |     5.721 | FAST    |
+radd_image[4] | rdata_image[12] |    15.372 | SLOW    |     5.562 | FAST    |
+radd_image[4] | rdata_image[13] |    15.538 | SLOW    |     5.782 | FAST    |
+radd_image[4] | rdata_image[14] |    16.136 | SLOW    |     5.977 | FAST    |
+radd_image[4] | rdata_image[15] |    17.048 | SLOW    |     5.454 | FAST    |
+radd_image[5] | rdata_image[0]  |    14.890 | SLOW    |     5.489 | FAST    |
+radd_image[5] | rdata_image[1]  |    15.266 | SLOW    |     5.424 | FAST    |
+radd_image[5] | rdata_image[2]  |    14.236 | SLOW    |     4.929 | FAST    |
+radd_image[5] | rdata_image[3]  |    15.845 | SLOW    |     5.596 | FAST    |
+radd_image[5] | rdata_image[4]  |    16.155 | SLOW    |     5.656 | FAST    |
+radd_image[5] | rdata_image[5]  |    16.074 | SLOW    |     5.561 | FAST    |
+radd_image[5] | rdata_image[6]  |    14.783 | SLOW    |     5.054 | FAST    |
+radd_image[5] | rdata_image[7]  |    14.990 | SLOW    |     5.236 | FAST    |
+radd_image[5] | rdata_image[8]  |    15.456 | SLOW    |     5.255 | FAST    |
+radd_image[5] | rdata_image[9]  |    14.293 | SLOW    |     4.813 | FAST    |
+radd_image[5] | rdata_image[10] |    15.152 | SLOW    |     5.311 | FAST    |
+radd_image[5] | rdata_image[11] |    15.021 | SLOW    |     5.346 | FAST    |
+radd_image[5] | rdata_image[12] |    15.822 | SLOW    |     5.481 | FAST    |
+radd_image[5] | rdata_image[13] |    16.478 | SLOW    |     5.863 | FAST    |
+radd_image[5] | rdata_image[14] |    16.905 | SLOW    |     5.838 | FAST    |
+radd_image[5] | rdata_image[15] |    14.644 | SLOW    |     5.102 | FAST    |
+radd_image[6] | rdata_image[0]  |    14.161 | SLOW    |     5.497 | FAST    |
+radd_image[6] | rdata_image[1]  |    14.824 | SLOW    |     5.504 | FAST    |
+radd_image[6] | rdata_image[2]  |    13.613 | SLOW    |     5.116 | FAST    |
+radd_image[6] | rdata_image[3]  |    14.854 | SLOW    |     5.746 | FAST    |
+radd_image[6] | rdata_image[4]  |    14.552 | SLOW    |     5.679 | FAST    |
+radd_image[6] | rdata_image[5]  |    14.902 | SLOW    |     5.690 | FAST    |
+radd_image[6] | rdata_image[6]  |    13.952 | SLOW    |     5.120 | FAST    |
+radd_image[6] | rdata_image[7]  |    13.624 | SLOW    |     5.240 | FAST    |
+radd_image[6] | rdata_image[8]  |    13.941 | SLOW    |     5.304 | FAST    |
+radd_image[6] | rdata_image[9]  |    13.213 | SLOW    |     4.740 | FAST    |
+radd_image[6] | rdata_image[10] |    13.341 | SLOW    |     5.265 | FAST    |
+radd_image[6] | rdata_image[11] |    13.418 | SLOW    |     5.098 | FAST    |
+radd_image[6] | rdata_image[12] |    13.673 | SLOW    |     4.733 | FAST    |
+radd_image[6] | rdata_image[13] |    14.613 | SLOW    |     5.094 | FAST    |
+radd_image[6] | rdata_image[14] |    14.234 | SLOW    |     5.254 | FAST    |
+radd_image[6] | rdata_image[15] |    13.806 | SLOW    |     5.258 | FAST    |
+radd_image[7] | rdata_image[0]  |    14.192 | SLOW    |     5.567 | FAST    |
+radd_image[7] | rdata_image[1]  |    14.536 | SLOW    |     5.494 | FAST    |
+radd_image[7] | rdata_image[2]  |    13.853 | SLOW    |     4.849 | FAST    |
+radd_image[7] | rdata_image[3]  |    15.425 | SLOW    |     5.928 | FAST    |
+radd_image[7] | rdata_image[4]  |    15.124 | SLOW    |     5.886 | FAST    |
+radd_image[7] | rdata_image[5]  |    15.287 | SLOW    |     5.848 | FAST    |
+radd_image[7] | rdata_image[6]  |    14.951 | SLOW    |     5.003 | FAST    |
+radd_image[7] | rdata_image[7]  |    15.313 | SLOW    |     5.376 | FAST    |
+radd_image[7] | rdata_image[8]  |    15.497 | SLOW    |     5.317 | FAST    |
+radd_image[7] | rdata_image[9]  |    12.728 | SLOW    |     4.390 | FAST    |
+radd_image[7] | rdata_image[10] |    14.595 | SLOW    |     4.952 | FAST    |
+radd_image[7] | rdata_image[11] |    13.101 | SLOW    |     5.095 | FAST    |
+radd_image[7] | rdata_image[12] |    14.759 | SLOW    |     5.423 | FAST    |
+radd_image[7] | rdata_image[13] |    15.218 | SLOW    |     5.612 | FAST    |
+radd_image[7] | rdata_image[14] |    15.091 | SLOW    |     5.855 | FAST    |
+radd_image[7] | rdata_image[15] |    14.485 | SLOW    |     5.627 | FAST    |
+radd_image[8] | rdata_image[0]  |    12.159 | SLOW    |     4.943 | FAST    |
+radd_image[8] | rdata_image[1]  |    12.579 | SLOW    |     5.108 | FAST    |
+radd_image[8] | rdata_image[2]  |    11.422 | SLOW    |     4.549 | FAST    |
+radd_image[8] | rdata_image[3]  |    12.113 | SLOW    |     4.930 | FAST    |
+radd_image[8] | rdata_image[4]  |    12.139 | SLOW    |     4.960 | FAST    |
+radd_image[8] | rdata_image[5]  |    12.121 | SLOW    |     4.952 | FAST    |
+radd_image[8] | rdata_image[6]  |    12.417 | SLOW    |     4.999 | FAST    |
+radd_image[8] | rdata_image[7]  |    12.394 | SLOW    |     5.027 | FAST    |
+radd_image[8] | rdata_image[8]  |    12.798 | SLOW    |     5.168 | FAST    |
+radd_image[8] | rdata_image[9]  |    11.002 | SLOW    |     4.328 | FAST    |
+radd_image[8] | rdata_image[10] |    12.590 | SLOW    |     5.080 | FAST    |
+radd_image[8] | rdata_image[11] |    12.476 | SLOW    |     5.053 | FAST    |
+radd_image[8] | rdata_image[12] |    11.261 | SLOW    |     4.510 | FAST    |
+radd_image[8] | rdata_image[13] |    12.155 | SLOW    |     4.928 | FAST    |
+radd_image[8] | rdata_image[14] |    12.078 | SLOW    |     4.948 | FAST    |
+radd_image[8] | rdata_image[15] |    12.585 | SLOW    |     5.085 | FAST    |
+radd_image[9] | rdata_image[0]  |    13.207 | SLOW    |     5.309 | FAST    |
+radd_image[9] | rdata_image[1]  |    12.850 | SLOW    |     5.202 | FAST    |
+radd_image[9] | rdata_image[2]  |    12.181 | SLOW    |     4.825 | FAST    |
+radd_image[9] | rdata_image[3]  |    12.859 | SLOW    |     5.213 | FAST    |
+radd_image[9] | rdata_image[4]  |    12.657 | SLOW    |     5.158 | FAST    |
+radd_image[9] | rdata_image[5]  |    12.899 | SLOW    |     5.246 | FAST    |
+radd_image[9] | rdata_image[6]  |    12.469 | SLOW    |     5.023 | FAST    |
+radd_image[9] | rdata_image[7]  |    12.504 | SLOW    |     5.077 | FAST    |
+radd_image[9] | rdata_image[8]  |    12.613 | SLOW    |     5.118 | FAST    |
+radd_image[9] | rdata_image[9]  |    11.133 | SLOW    |     4.382 | FAST    |
+radd_image[9] | rdata_image[10] |    12.626 | SLOW    |     5.105 | FAST    |
+radd_image[9] | rdata_image[11] |    12.106 | SLOW    |     4.939 | FAST    |
+radd_image[9] | rdata_image[12] |    12.308 | SLOW    |     4.899 | FAST    |
+radd_image[9] | rdata_image[13] |    12.820 | SLOW    |     5.193 | FAST    |
+radd_image[9] | rdata_image[14] |    13.113 | SLOW    |     5.326 | FAST    |
+radd_image[9] | rdata_image[15] |    12.305 | SLOW    |     4.994 | FAST    |
+--------------+-----------------+-----------+---------+-----------+---------+
+
+
+

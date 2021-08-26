@@ -1,0 +1,151 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Wed Aug 25 15:59:35 2021
+| Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
+| Command      : report_control_sets -verbose -file accQuant_control_sets_placed.rpt
+| Design       : accQuant
+| Device       : xc7z020
+-------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    73 |
+|    Minimum number of control sets                        |    73 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   240 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    73 |
+| >= 0 to < 4        |     5 |
+| >= 4 to < 6        |     9 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |    22 |
+| >= 10 to < 12      |     6 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     3 |
+| >= 16              |    27 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              68 |           40 |
+| No           | No                    | Yes                    |              46 |           16 |
+| No           | Yes                   | No                     |              29 |           12 |
+| Yes          | No                    | No                     |             744 |          202 |
+| Yes          | No                    | Yes                    |              33 |           14 |
+| Yes          | Yes                   | No                     |             120 |           29 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------+------------------------------------------------+----------------------------------------+------------------+----------------+
+|         Clock Signal         |                  Enable Signal                 |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++------------------------------+------------------------------------------------+----------------------------------------+------------------+----------------+
+|  clk_fourth/clock_out_reg_0  |                                                |                                        |                1 |              1 |
+|  clk_IBUF_BUFG               | clk_third/max_ok_reg                           | rst_IBUF                               |                1 |              1 |
+|  clk_IBUF_BUFG               | pos_mem_max/dens_ok_reg0_out                   | rst_IBUF                               |                1 |              1 |
+|  clk_div_max_BUFG            |                                                |                                        |                2 |              2 |
+|  clk_div_BUFG                |                                                |                                        |                2 |              2 |
+| ~clk_IBUF_BUFG               |                                                | conv3/rst_quant                        |                1 |              4 |
+| ~clk_IBUF_BUFG               |                                                | conv2/rst_quant                        |                1 |              4 |
+| ~clk_IBUF_BUFG               |                                                | conv1/rst_quant                        |                1 |              4 |
+|  clk_IBUF_BUFG               |                                                | conv1/rst_relu                         |                2 |              5 |
+|  clk_IBUF_BUFG               | conv1/activation/p_0_in                        |                                        |                2 |              5 |
+|  clk_IBUF_BUFG               |                                                | conv3/rst_relu                         |                2 |              5 |
+|  clk_IBUF_BUFG               | conv3/activation/p_0_in                        |                                        |                3 |              5 |
+|  clk_IBUF_BUFG               |                                                | conv2/rst_relu                         |                1 |              5 |
+|  clk_IBUF_BUFG               | conv2/activation/p_0_in                        |                                        |                1 |              5 |
+|  clk_IBUF_BUFG               | conv2/activation/aux_num_0                     | conv2/activation/aux_num[7]_i_1__0_n_0 |                1 |              8 |
+| ~clk_IBUF_BUFG               | conv3/quant/remainder[7]_i_1_n_0               |                                        |                2 |              8 |
+| ~clk_IBUF_BUFG               | conv1/quant/remainder[7]_i_1__1_n_0            |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | conv3/activation/aux_num4                      |                                        |                1 |              8 |
+|  clk_IBUF_BUFG               | conv3/activation/aux_num3_1                    |                                        |                2 |              8 |
+| ~clk_IBUF_BUFG               | conv2/quant/remainder[7]_i_1__0_n_0            |                                        |                1 |              8 |
+|  clk_IBUF_BUFG               | conv1/activation/aux_num_0                     | conv1/activation/aux_num[7]_i_1__1_n_0 |                1 |              8 |
+|  clk_IBUF_BUFG               | conv1/activation/aux_num4                      |                                        |                1 |              8 |
+|  clk_IBUF_BUFG               | conv3/activation/aux_num_0                     | conv3/activation/aux_num[7]_i_1_n_0    |                2 |              8 |
+|  clk_IBUF_BUFG               | conv2/activation/aux_num3_1                    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | conv2/activation/aux_num4                      |                                        |                1 |              8 |
+|  clk_IBUF_BUFG               | conv1/activation/aux_num3_1                    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | conv1/activation/aux_num2_2                    |                                        |                3 |              9 |
+| ~clk_IBUF_BUFG               | conv3/quant/res1[8]_i_1_n_0                    |                                        |                4 |              9 |
+|  clk_IBUF_BUFG               | conv2/activation/aux_num2_2                    |                                        |                3 |              9 |
+| ~clk_IBUF_BUFG               | conv1/quant/res1[8]_i_1__1_n_0                 |                                        |                2 |              9 |
+|  clk_IBUF_BUFG               | conv3/activation/aux_num2_2                    |                                        |                2 |              9 |
+|  clk_IBUF_BUFG               |                                                | clk_div_BUFG                           |                5 |              9 |
+| ~clk_IBUF_BUFG               | conv1/quant/result4[8]_i_1__1_n_0              |                                        |                2 |              9 |
+| ~clk_IBUF_BUFG               | conv2/quant/result4[8]_i_1__0_n_0              |                                        |                2 |              9 |
+| ~clk_IBUF_BUFG               | conv2/quant/res1[8]_i_1__0_n_0                 |                                        |                3 |              9 |
+| ~clk_IBUF_BUFG               | conv3/quant/result4[8]_i_1_n_0                 |                                        |                2 |              9 |
+|  clk_fourth/clock_out_reg_0  |                                                | pos_mem_max/count[9]_i_1__0_n_0        |                4 |             10 |
+|  clk_div_BUFG                | positionImage/en_count                         | pos_memory_conv/count[9]_i_1_n_0       |                2 |             10 |
+|  clk_div_max_BUFG            |                                                | positionConv/counter_i/count_3         |                3 |             10 |
+|  positionConv/counter_j/CLK  | positionConv/counter_i/counter_2[9]_i_1__2_n_0 | rst_IBUF                               |                4 |             11 |
+|  positionImage/counter_j/CLK | positionImage/counter_i/E[0]                   | rst_IBUF                               |                5 |             11 |
+|  clk_div_BUFG                | positionImage/counter_i/E[0]                   | rst_IBUF                               |                5 |             11 |
+|  clk_IBUF_BUFG               |                                                |                                        |               12 |             12 |
+| ~clk_IBUF_BUFG               | conv2/quant/result1__0_n_0                     |                                        |                4 |             14 |
+| ~clk_IBUF_BUFG               | conv3/quant/result1_n_0                        |                                        |                4 |             14 |
+| ~clk_IBUF_BUFG               | conv1/quant/result1__1_n_0                     |                                        |                7 |             14 |
+| ~clk_IBUF_BUFG               | conv3/quant/result2[16]_i_1_n_0                |                                        |                6 |             17 |
+| ~clk_IBUF_BUFG               | conv3/rstl_sum[16]_i_1_n_0                     |                                        |                5 |             17 |
+| ~clk_IBUF_BUFG               | conv1/rstl_sum[16]_i_1__1_n_0                  |                                        |                5 |             17 |
+| ~clk_IBUF_BUFG               | conv1/quant/result2[16]_i_1__1_n_0             |                                        |                5 |             17 |
+| ~clk_IBUF_BUFG               | conv2/quant/result2[16]_i_1__0_n_0             |                                        |                5 |             17 |
+| ~clk_IBUF_BUFG               | conv2/rstl_sum[16]_i_1__0_n_0                  |                                        |                5 |             17 |
+|  clk_div_max_BUFG            |                                                | rst_IBUF                               |                8 |             19 |
+|  clk_IBUF_BUFG               | en_IBUF                                        | clk_fourth/counter[0]_i_1__0_n_0       |                7 |             28 |
+|  clk_IBUF_BUFG               | en_IBUF                                        | clk_third/counter[0]_i_1_n_0           |                7 |             28 |
+|  clk_IBUF_BUFG               | en_IBUF                                        | clk_second/counter[0]_i_1__1_n_0       |                7 |             28 |
+| ~clk_IBUF_BUFG               |                                                |                                        |               23 |             51 |
+| ~clk_IBUF_BUFG               | conv2/rstl_mult[1][16]_i_1__0_n_0              |                                        |               40 |            144 |
+| ~clk_IBUF_BUFG               | conv1/rstl_mult[1][16]_i_1__1_n_0              |                                        |               32 |            144 |
+| ~clk_IBUF_BUFG               | conv3/rstl_mult[1][16]_i_1_n_0                 |                                        |               39 |            144 |
+|  clk_div_BUFG                | image/register_reg_r1_448_511_0_2_i_1_n_0      |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_576_639_0_2_i_1_n_0      |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_640_703_0_2_i_1_n_0      |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_256_319_0_2_i_1_n_0      |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_512_575_0_2_i_1_n_0      |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_64_127_0_2_i_1_n_0       |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_384_447_0_2_i_1_n_0      |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_320_383_0_2_i_1_n_0      |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_704_767_0_2_i_1_n_0      |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_768_831_0_2_i_1_n_0      |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_192_255_0_2_i_1_n_0      |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_128_191_0_2_i_1_n_0      |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_0_63_0_2_i_1_n_0         |                                        |               55 |            220 |
++------------------------------+------------------------------------------------+----------------------------------------+------------------+----------------+
+
+

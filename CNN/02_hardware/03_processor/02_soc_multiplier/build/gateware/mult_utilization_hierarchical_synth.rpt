@@ -1,11 +1,11 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Tue Aug  3 19:40:05 2021
+| Date         : Sat Aug 21 12:45:28 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_utilization -hierarchical -file mult_utilization_hierarchical_synth.rpt
 | Design       : mult
-| Device       : 7z010clg400-1
+| Device       : 7z020clg400-1
 | Design State : Synthesized
 ------------------------------------------------------------------------------------------------
 
@@ -21,13 +21,15 @@ Table of Contents
 +----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
 |          Instance          |      Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
-| mult                       |            (top) |       2513 |       2497 |      16 |    0 | 1775 |     15 |      8 |            4 |
-|   (mult)                   |            (top) |        204 |        188 |      16 |    0 |  492 |     14 |      0 |            0 |
-|   VexRiscv                 |         VexRiscv |       2244 |       2244 |       0 |    0 | 1251 |      1 |      8 |            4 |
-|     (VexRiscv)             |         VexRiscv |        976 |        976 |       0 |    0 | 1019 |      0 |      2 |            4 |
-|     IBusCachedPlugin_cache | InstructionCache |        698 |        698 |       0 |    0 |  111 |      1 |      1 |            0 |
-|     dataCache_1_           |        DataCache |        570 |        570 |       0 |    0 |  121 |      0 |      5 |            0 |
-|   signed_mult              |      signed_mult |         65 |         65 |       0 |    0 |   32 |      0 |      0 |            0 |
+| mult                       |            (top) |       2494 |       2478 |      16 |    0 | 1876 |     15 |      8 |            9 |
+|   (mult)                   |            (top) |        205 |        189 |      16 |    0 |  510 |     14 |      0 |            0 |
+|   VexRiscv                 |         VexRiscv |       2225 |       2225 |       0 |    0 | 1251 |      1 |      8 |            4 |
+|     (VexRiscv)             |         VexRiscv |        919 |        919 |       0 |    0 | 1019 |      0 |      2 |            4 |
+|     IBusCachedPlugin_cache | InstructionCache |        697 |        697 |       0 |    0 |  111 |      1 |      1 |            0 |
+|     dataCache_1_           |        DataCache |        609 |        609 |       0 |    0 |  121 |      0 |      5 |            0 |
+|   signed_mult              |      signed_mult |         64 |         64 |       0 |    0 |  115 |      0 |      0 |            5 |
+|     activation             |             ReLu |         20 |         20 |       0 |    0 |   44 |      0 |      0 |            0 |
+|     quant                  |     quantization |         44 |         44 |       0 |    0 |   71 |      0 |      0 |            5 |
 +----------------------------+------------------+------------+------------+---------+------+------+--------+--------+--------------+
 
 

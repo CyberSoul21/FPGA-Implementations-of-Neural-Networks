@@ -10,7 +10,7 @@ from litex.build.xilinx import XilinxPlatform
 from litex.soc.integration.soc_core import *
 from litex.soc.integration.builder import *
 
-from accQuant_cnn import *
+from accQuant import *
 
 
 # IOs ----------------------------------------------------------------------------------------------
@@ -62,7 +62,7 @@ class Platform(XilinxPlatform):
 # Create our platform (fpga interface)
 platform = Platform()     
 
-platform.add_source("hardware/accQuant_cnn.v") #Javier
+platform.add_source("hardware/accQuant.v") #Javier
 platform.add_source("hardware/clock_divider.v") #Javier
 platform.add_source("hardware/controlMemoryAddressImg.v") #Javier
 platform.add_source("hardware/counterPositionRstlConv.v") #Javier
@@ -82,6 +82,27 @@ platform.add_source("hardware/memory_rstl_max_1.v") #Javier
 platform.add_source("hardware/clock_divider_dens.v") #Javier
 platform.add_source("hardware/quantization.v") #Javier
 platform.add_source("hardware/ReLu.v") #Javier
+platform.add_source("hardware/memory_dens_0.v") #Javier
+platform.add_source("hardware/memory_dens_1.v") #Javier
+platform.add_source("hardware/memory_dens_2.v") #Javier
+platform.add_source("hardware/memory_dens_3.v") #Javier
+platform.add_source("hardware/memory_dens_4.v") #Javier
+platform.add_source("hardware/memory_dens_5.v") #Javier
+platform.add_source("hardware/memory_dens_6.v") #Javier
+platform.add_source("hardware/memory_dens_7.v") #Javier
+platform.add_source("hardware/memory_dens_8.v") #Javier
+platform.add_source("hardware/memory_dens_9.v") #Javier
+platform.add_source("hardware/counterPositionMemMax.v") #Javier
+platform.add_source("hardware/full_connected.v") #Javier
+platform.add_source("hardware/clock_divider_fpga.v") #Javier
+
+
+
+
+
+
+
+
 
 
 # Create our soc (fpga description)
@@ -101,10 +122,10 @@ class BaseSoC(SoCCore):
         # Clock Reset Generation
         self.submodules.crg = CRG(platform.request("clk125"), platform.request("cpu_reset"))
         #Periferico Javier
-        self.submodules.AccQuant_cnn = accQuant_cnn() #Creacion del perferico
-        self.add_csr("AccQuant_cnn")
+        self.submodules.AccQuant = accQuant() #Creacion del perferico
+        self.add_csr("accQuant")
         self.comb += [
-            self.AccQuant_cnn.CLK.eq(ClockSignal()) #Entrada 
+            self.AccQuant.CLK.eq(ClockSignal()) #Entrada 
 	        ]     
 
 soc = BaseSoC(platform)
@@ -112,5 +133,5 @@ soc = BaseSoC(platform)
 # Build --------------------------------------------------------------------------------------------
 
 builder = Builder(soc, output_dir="build", csr_csv="memory_map.csv")
-builder.build(build_name="AccQuant_cnn")
+builder.build(build_name="accQuant")
    

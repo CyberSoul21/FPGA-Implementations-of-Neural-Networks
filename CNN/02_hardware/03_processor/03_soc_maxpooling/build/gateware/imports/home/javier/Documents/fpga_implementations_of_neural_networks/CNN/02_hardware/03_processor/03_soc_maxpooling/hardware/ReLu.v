@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 08/17/2021 01:52:56 PM
+// Create Date: 07/24/2021 07:47:40 PM
 // Design Name: 
 // Module Name: ReLu
 // Project Name: 
@@ -46,12 +46,7 @@ module ReLu
     reg [8:0] aux_num3;
     reg [8:0] aux_num4;
     reg       aux_ok;
-    reg [3:0] present_state, next_state; 
-    
-    initial
-    begin
-        aux_num4 = 0;
-    end  
+    reg [3:0] present_state, next_state;   
 
     always @(posedge clk or posedge rst) //Present estate // always @(clk) //Present estate 
     begin
@@ -110,8 +105,7 @@ module ReLu
                 else
                     aux_num4 <= aux_num3;     
                 aux_ok <= 1;    
-            end 
-        default: aux_num4 <= 0;                 
+            end             
       endcase 
     end 
 
@@ -120,5 +114,4 @@ module ReLu
 
 
 endmodule
-
 

@@ -108,6 +108,7 @@ module ReLu
       endcase 
     end 
 
+//    assign num = num_quant;
     assign num = aux_num4;
     assign sig_ok = aux_ok;  
 

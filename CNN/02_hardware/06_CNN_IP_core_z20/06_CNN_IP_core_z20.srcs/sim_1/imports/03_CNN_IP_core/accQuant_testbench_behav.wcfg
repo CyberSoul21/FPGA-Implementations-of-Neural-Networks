@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="accQuant_testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="accQuant_testbench" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="999090751fs"></ZoomStartTime>
+      <ZoomEndTime time="1000844355fs"></ZoomEndTime>
+      <Cursor1Time time="1001000000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="148"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="71" />
+   <wvobject type="logic" fp_name="/accQuant_testbench/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/clk_div">
+      <obj_property name="ElementShortName">clk_div</obj_property>
+      <obj_property name="ObjectShortName">clk_div</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/clk_div_max">
+      <obj_property name="ElementShortName">clk_div_max</obj_property>
+      <obj_property name="ObjectShortName">clk_div_max</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/clk_div_dens">
+      <obj_property name="ElementShortName">clk_div_dens</obj_property>
+      <obj_property name="ObjectShortName">clk_div_dens</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/en">
+      <obj_property name="ElementShortName">en</obj_property>
+      <obj_property name="ObjectShortName">en</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/rst">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider131" type="divider">
+      <obj_property name="label">FSM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/conv1/present_state">
+      <obj_property name="ElementShortName">present_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">present_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/conv1/quant/present_state">
+      <obj_property name="ElementShortName">present_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">present_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/conv1/activation/present_state">
+      <obj_property name="ElementShortName">present_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">present_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider131" type="divider">
+      <obj_property name="label">Signals of Control</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#0000A0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_count">
+      <obj_property name="ElementShortName">en_count</obj_property>
+      <obj_property name="ObjectShortName">en_count</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/conv1/rst_quant">
+      <obj_property name="ElementShortName">rst_quant</obj_property>
+      <obj_property name="ObjectShortName">rst_quant</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/conv1/quant_ok">
+      <obj_property name="ElementShortName">quant_ok</obj_property>
+      <obj_property name="ObjectShortName">quant_ok</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/conv1/rst_relu">
+      <obj_property name="ElementShortName">rst_relu</obj_property>
+      <obj_property name="ObjectShortName">rst_relu</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/conv1/relu_ok">
+      <obj_property name="ElementShortName">relu_ok</obj_property>
+      <obj_property name="ObjectShortName">relu_ok</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/save_rstl_1">
+      <obj_property name="ElementShortName">save_rstl_1</obj_property>
+      <obj_property name="ObjectShortName">save_rstl_1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/conv_ok_1">
+      <obj_property name="ElementShortName">conv_ok_1</obj_property>
+      <obj_property name="ObjectShortName">conv_ok_1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/dis_write_conv">
+      <obj_property name="ElementShortName">dis_write_conv</obj_property>
+      <obj_property name="ObjectShortName">dis_write_conv</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_read_conv">
+      <obj_property name="ElementShortName">en_read_conv</obj_property>
+      <obj_property name="ObjectShortName">en_read_conv</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_count_max">
+      <obj_property name="ElementShortName">en_count_max</obj_property>
+      <obj_property name="ObjectShortName">en_count_max</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/den_ok_0">
+      <obj_property name="ElementShortName">den_ok_0</obj_property>
+      <obj_property name="ObjectShortName">den_ok_0</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/dense_0/quant/sig_ok">
+      <obj_property name="ElementShortName">sig_ok</obj_property>
+      <obj_property name="ObjectShortName">sig_ok</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_dense">
+      <obj_property name="ElementShortName">en_dense</obj_property>
+      <obj_property name="ObjectShortName">en_dense</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/pos_rstl_max3">
+      <obj_property name="ElementShortName">pos_rstl_max3[9:0]</obj_property>
+      <obj_property name="ObjectShortName">pos_rstl_max3[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/pos_memory_max">
+      <obj_property name="ElementShortName">pos_memory_max[9:0]</obj_property>
+      <obj_property name="ObjectShortName">pos_memory_max[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/data_dens_weight_0">
+      <obj_property name="ElementShortName">data_dens_weight_0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_dens_weight_0[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/data_max">
+      <obj_property name="ElementShortName">data_max[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_max[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/present_state">
+      <obj_property name="ElementShortName">present_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">present_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/rstl_mult">
+      <obj_property name="ElementShortName">rstl_mult[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rstl_mult[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/rstl_sum">
+      <obj_property name="ElementShortName">rstl_sum[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rstl_sum[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/num">
+      <obj_property name="ElementShortName">num[63:0]</obj_property>
+      <obj_property name="ObjectShortName">num[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/num_dens">
+      <obj_property name="ElementShortName">num_dens[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_dens[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_1/num_dens">
+      <obj_property name="ElementShortName">num_dens[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_dens[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_2/num_dens">
+      <obj_property name="ElementShortName">num_dens[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_dens[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_3/num_dens">
+      <obj_property name="ElementShortName">num_dens[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_dens[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_4/num_dens">
+      <obj_property name="ElementShortName">num_dens[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_dens[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_5/num_dens">
+      <obj_property name="ElementShortName">num_dens[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_dens[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_6/num_dens">
+      <obj_property name="ElementShortName">num_dens[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_dens[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_7/num_dens">
+      <obj_property name="ElementShortName">num_dens[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_dens[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_8/num_dens">
+      <obj_property name="ElementShortName">num_dens[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_dens[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_9/num_dens">
+      <obj_property name="ElementShortName">num_dens[7:0]</obj_property>
+      <obj_property name="ObjectShortName">num_dens[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider4090" type="divider">
+      <obj_property name="label">Counters</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#0000FF</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/col_j">
+      <obj_property name="ElementShortName">col_j[9:0]</obj_property>
+      <obj_property name="ObjectShortName">col_j[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/row_i">
+      <obj_property name="ElementShortName">row_i[9:0]</obj_property>
+      <obj_property name="ObjectShortName">row_i[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/pos_rstl">
+      <obj_property name="ElementShortName">pos_rstl[9:0]</obj_property>
+      <obj_property name="ObjectShortName">pos_rstl[9:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider4094" type="divider">
+      <obj_property name="label">data filter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#00FFFF</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_filt1_0">
+      <obj_property name="ElementShortName">rdata_filt1_0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_filt1_0[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_filt1_1">
+      <obj_property name="ElementShortName">rdata_filt1_1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_filt1_1[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_filt1_2">
+      <obj_property name="ElementShortName">rdata_filt1_2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_filt1_2[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_filt1_3">
+      <obj_property name="ElementShortName">rdata_filt1_3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_filt1_3[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_filt1_4">
+      <obj_property name="ElementShortName">rdata_filt1_4[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_filt1_4[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_filt1_5">
+      <obj_property name="ElementShortName">rdata_filt1_5[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_filt1_5[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_filt1_6">
+      <obj_property name="ElementShortName">rdata_filt1_6[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_filt1_6[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_filt1_7">
+      <obj_property name="ElementShortName">rdata_filt1_7[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_filt1_7[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_filt1_8">
+      <obj_property name="ElementShortName">rdata_filt1_8[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_filt1_8[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/bias_filt1">
+      <obj_property name="ElementShortName">bias_filt1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">bias_filt1[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider4094" type="divider">
+      <obj_property name="label">data Image</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#00FFFF</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_img0">
+      <obj_property name="ElementShortName">rdata_img0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_img0[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_img1">
+      <obj_property name="ElementShortName">rdata_img1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_img1[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_img2">
+      <obj_property name="ElementShortName">rdata_img2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_img2[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_img3">
+      <obj_property name="ElementShortName">rdata_img3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_img3[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_img4">
+      <obj_property name="ElementShortName">rdata_img4[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_img4[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_img5">
+      <obj_property name="ElementShortName">rdata_img5[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_img5[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_img6">
+      <obj_property name="ElementShortName">rdata_img6[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_img6[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_img7">
+      <obj_property name="ElementShortName">rdata_img7[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_img7[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/rdata_img8">
+      <obj_property name="ElementShortName">rdata_img8[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata_img8[15:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider8270" type="divider">
+      <obj_property name="label">Operation</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#FFFF00</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/conv1/rstl_sum">
+      <obj_property name="ElementShortName">rstl_sum[16:0]</obj_property>
+      <obj_property name="ObjectShortName">rstl_sum[16:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider8270" type="divider">
+      <obj_property name="label">Quantization</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#A52A2A</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider8270" type="divider">
+      <obj_property name="label">Save</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">#008000</obj_property>
+   </wvobject>
+</wave_config>

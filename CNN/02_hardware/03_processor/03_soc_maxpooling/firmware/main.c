@@ -26,7 +26,7 @@ int main(void) {
 
 
   static const int16_t image[784]={-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,55,127,127,127,127,127,127,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,127,-6,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,14,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,35,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,14,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,35,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,127,127,127,35,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,127,127,127,127,127,127,127,127,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6,-6};
-  char str[3];
+  char str[4];
   int8_t conv = 0;
   int16_t conv2 = 0;
 
@@ -45,10 +45,10 @@ int main(void) {
   wait_ms(500);
   AccQuant_cnn_RADD_MEMORY_write(8);
   printf("Data Memory Max = %d \n",AccQuant_cnn_DATA_MEMORY_read());
-  printf("MAX_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("CONV_OK = %d \n",AccQuant_cnn_CONV_OK_read());
   wait_ms(500);
   printf("Data Memory Max = %d \n",AccQuant_cnn_DATA_MEMORY_read());
-  printf("MAX_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("CONV_OK = %d \n",AccQuant_cnn_CONV_OK_read());
   AccQuant_cnn_WEN_IMAGE_write(1);
   AccQuant_cnn_WADD_IMAGE_write(790);
 
@@ -59,9 +59,9 @@ int main(void) {
   AccQuant_cnn_RST_write(1);
   AccQuant_cnn_RST_write(0);
   AccQuant_cnn_REN_MEMORY_write(0);  
-  printf("MAX_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("CONV_OK = %d \n",AccQuant_cnn_CONV_OK_read());
   wait_ms(500);
-  printf("MAX_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("CONV_OK = %d \n",AccQuant_cnn_CONV_OK_read());
 */
 
  
@@ -96,7 +96,9 @@ int main(void) {
   };
   printf("Memoria Lllena\n");
   printf("**********************\n");
-  printf("MEM_OK = %d \n",AccQuant_cnn_MEM_OK_read());
+  printf("CONV_OK = %d \n",AccQuant_cnn_CONV_OK_read());
+  printf("MAX_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("DENS_OK = %d \n",AccQuant_cnn_DENS_OK_read());
   printf("MEM_OK = %d \n",AccQuant_cnn_MEM_OK_read());
   printf("Activa Acelerador\n");
   printf("**********************\n");
@@ -104,29 +106,52 @@ int main(void) {
   AccQuant_cnn_RST_write(0);//zero
   AccQuant_cnn_RST_write(0);
   AccQuant_cnn_WEN_IMAGE_write(0);
-  printf("CONV_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("CONV_OK = %d \n",AccQuant_cnn_CONV_OK_read());
+  printf("MAX_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("DENS_OK = %d \n",AccQuant_cnn_DENS_OK_read());
 
 
-  //AccQuant_cnn_SEL_write(0); //multiplexer
+  AccQuant_cnn_SEL_write(2); //multiplexer
   AccQuant_cnn_REN_MEMORY_write(1);  
-  AccQuant_cnn_RADD_MEMORY_write(561);
+  AccQuant_cnn_RADD_MEMORY_write(93);
   conv = AccQuant_cnn_DATA_MEMORY_read();
-  AccQuant_cnn_EN_write(0);
-  AccQuant_cnn_RST_write(0);
+  //AccQuant_cnn_EN_write(0);
+  //AccQuant_cnn_RST_write(0);
   printf("DATA = %d \n",conv);
 
+
+  AccQuant_cnn_REN_MEMORY_write(1); 
+  //wait_ms(50);
+  for(int i = 0; i < 507; i++)
+  {
+    AccQuant_cnn_RADD_MEMORY_write(i);
+    conv = AccQuant_cnn_DATA_MEMORY_read();
+    printf("%d \n",conv);
+
+    //sprintf(str, "%d",conv);
+   // puts(str);
+
+
+  }
+  wait_ms(50);
+  printf("MAX_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("DENS_OK = %d \n",AccQuant_cnn_DENS_OK_read());
+  //conv = AccQuant_cnn_DATA_MEMORY_read();
+  //printf("Data Dense = %d \n",conv);  
+  AccQuant_cnn_EN_write(0);
+  AccQuant_cnn_RST_write(0);
 
 
 /*
   
-  printf("CON_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("CON_OK = %d \n",AccQuant_cnn_CONV_OK_read());
   wait_ms(50);
   //AccQuant_cnn_EN_write(0);
-  printf("CONV_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("CONV_OK = %d \n",AccQuant_cnn_CONV_OK_read());
   AccQuant_cnn_RST_write(1);
   wait_ms(50);
   AccQuant_cnn_EN_write(0);
-  printf("CONV_OK = %d \n",AccQuant_cnn_MAX_OK_read());
+  printf("CONV_OK = %d \n",AccQuant_cnn_CONV_OK_read());
 
   printf("**********************\n");
   printf("Pruebas en Memoria\n");

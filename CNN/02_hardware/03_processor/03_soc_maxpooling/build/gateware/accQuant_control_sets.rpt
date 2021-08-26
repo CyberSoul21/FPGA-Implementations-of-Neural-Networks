@@ -1,0 +1,666 @@
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
+| Date         : Wed Aug 25 16:32:21 2021
+| Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
+| Command      : report_control_sets -verbose -file accQuant_control_sets.rpt
+| Design       : accQuant
+| Device       : xc7z020
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   588 |
+|    Minimum number of control sets                        |   588 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   221 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   588 |
+| >= 0 to < 4        |     4 |
+| >= 4 to < 6        |     9 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |   536 |
+| >= 10 to < 12      |     4 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     3 |
+| >= 16              |    32 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              85 |           44 |
+| No           | No                    | Yes                    |              46 |           13 |
+| No           | Yes                   | No                     |              63 |           27 |
+| Yes          | No                    | No                     |            5048 |         1811 |
+| Yes          | No                    | Yes                    |              33 |           14 |
+| Yes          | Yes                   | No                     |             120 |           30 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------+--------------------------------------------------+----------------------------------------+------------------+----------------+
+|         Clock Signal         |                   Enable Signal                  |            Set/Reset Signal            | Slice Load Count | Bel Load Count |
++------------------------------+--------------------------------------------------+----------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG               | positionImage/sig_en_i_2_n_0                     | positionImage/counter_i/sig_en         |                1 |              1 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/max_ok_reg                  | rst_IBUF                               |                1 |              1 |
+|  clk_div_max_BUFG            |                                                  |                                        |                2 |              2 |
+|  clk_div_BUFG                |                                                  |                                        |                2 |              2 |
+| ~clk_IBUF_BUFG               |                                                  | conv1/rst_quant                        |                1 |              4 |
+| ~clk_IBUF_BUFG               |                                                  | conv3/rst_quant                        |                1 |              4 |
+| ~clk_IBUF_BUFG               |                                                  | conv2/rst_quant                        |                1 |              4 |
+|  clk_IBUF_BUFG               |                                                  | conv3/rst_relu                         |                1 |              5 |
+|  clk_IBUF_BUFG               |                                                  | conv1/rst_relu                         |                1 |              5 |
+|  clk_IBUF_BUFG               |                                                  | conv2/rst_relu                         |                1 |              5 |
+|  clk_IBUF_BUFG               | conv2/activation/p_0_in                          |                                        |                1 |              5 |
+|  clk_IBUF_BUFG               | conv1/activation/p_0_in                          |                                        |                1 |              5 |
+|  clk_IBUF_BUFG               | conv3/activation/p_0_in                          |                                        |                1 |              5 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/E[0]                        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_3[0]         |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_0[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_7[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_3[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_3[0]         |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_0[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_6[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_1[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_2[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_2[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_4[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_2[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_1[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_38[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_1[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_0[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_3[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_4[0]     |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_7[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_3[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_2[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_1[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_5[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_2[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_0[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_1[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | conv3/activation/aux_num_0                       | conv3/activation/aux_num[7]_i_1__1_n_0 |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_3[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_8[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_2[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_6[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_5[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_2[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_3_reg[5]_rep__0_0[0]  |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_11[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_12[0]        |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_10[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_6[0]  |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_16[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_5[0]     |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_4[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_3[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_1[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_4[0]         |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_13[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_5[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_13[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_0[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_0[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_2[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_1[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_5[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_4[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_6[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_9[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_5[0]         |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_14[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_2[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_8[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_13[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_15[0]    |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_11[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_13[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_17[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_9[0]         |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__1_3[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_13[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_1[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_24[0]    |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_19[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_11[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_12[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_10[0]        |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_21[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_0[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_7[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_20[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_1[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_6[0]     |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_2[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__1_5[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_13[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_18[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_23[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_5[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_6[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_20[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_26[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_15[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_18[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_12[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_11[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_20[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_5[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_12[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__1_2[0]  |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_22[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_28[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep_3[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__1_7[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_29[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_34[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_rep_4[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_rep_6[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_21[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_31[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_37[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_7[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_10[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_28[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_39[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_17[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_30[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_7[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_6[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_16[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_35[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_15[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | conv2/activation/aux_num_0                       | conv2/activation/aux_num[7]_i_1__0_n_0 |                1 |              8 |
+|  clk_IBUF_BUFG               | conv2/activation/aux_num3_1                      |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_15[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_0[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_19[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_8[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_22[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_3[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_19[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_2[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_4[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_1[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_41[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_14[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_44[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_13[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | conv2/activation/aux_num4                        |                                        |                1 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_6[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_5[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_6[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_35[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_13[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_16[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_4[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_3[0]         |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_0[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_3[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_2[0]         |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_14[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_46[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_36[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_16[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_42[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_32[0]        |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_21[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_28[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_17[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_10[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_19[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_21[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_27[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_25[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_21[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_0[0]     |                                        |                3 |              8 |
+| ~clk_IBUF_BUFG               | maxpooling_3/max1[7]_i_1__1_n_0                  |                                        |                1 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_36[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep_2[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep_1[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_32[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_20[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_5[0]         |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_20[0] |                                        |                3 |              8 |
+| ~clk_IBUF_BUFG               | maxpooling_3/max2[7]_i_1__1_n_0                  |                                        |                1 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_12[0]    |                                        |                3 |              8 |
+| ~clk_IBUF_BUFG               | maxpooling_2/max2[7]_i_1__0_n_0                  |                                        |                1 |              8 |
+| ~clk_IBUF_BUFG               | maxpooling_2/max1[7]_i_1__0_n_0                  |                                        |                1 |              8 |
+| ~clk_IBUF_BUFG               | maxpooling_1/max2[7]_i_1_n_0                     |                                        |                1 |              8 |
+| ~clk_IBUF_BUFG               | maxpooling_1/max1[7]_i_1_n_0                     |                                        |                1 |              8 |
+| ~clk_IBUF_BUFG               | conv3/quant/remainder[7]_i_1__1_n_0              |                                        |                2 |              8 |
+| ~clk_IBUF_BUFG               | conv1/quant/remainder[7]_i_1_n_0                 |                                        |                2 |              8 |
+| ~clk_IBUF_BUFG               | conv2/quant/remainder[7]_i_1__0_n_0              |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_25[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_13[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_14[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_28[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_7[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_16[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_14[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_29[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_15[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_29[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_18[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_19[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | conv1/activation/aux_num_0                       | conv1/activation/aux_num[7]_i_1_n_0    |                2 |              8 |
+|  clk_IBUF_BUFG               | conv1/activation/aux_num3_1                      |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_15[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_4[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_29[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_12[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_12[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_3[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_18[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | conv1/activation/aux_num4                        |                                        |                1 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep_6[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_13[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_30[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_14[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_12[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_rep_8[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_32[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_8[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_6[0]     |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_8[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_11[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_4[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_4[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_15[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_7[0]     |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_7[0]  |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_12[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_11[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_0[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_1[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_17[0]    |                                        |                3 |              8 |
+|  clk_fourth/CLK              | save_max_1/rdata[7]_i_1_n_0                      |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_3[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_16[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_9[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_8[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_0[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_24[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_31[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_22[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_23[0]        |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_26[0]        |                                        |                6 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_29[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_20[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_17[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_8[0]         |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_30[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_16[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_12[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_14[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_11[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_15[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_18[0] |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_11[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_12[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_9[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_8[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_4[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_2[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_1[0]         |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_9[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_8[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_10[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_5[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_7[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_0[0]         |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_6[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_9[0]         |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_7[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_3[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_0[0]  |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_1[0]  |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_0[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_2[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_5[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_0[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_10[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_10[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_1[0]         |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_3_reg[6]_rep_0[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_11[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_34[0]        |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | conv3/activation/aux_num4                        |                                        |                1 |              8 |
+|  clk_IBUF_BUFG               | conv3/activation/aux_num3_1                      |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_18[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_9[0]  |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_17[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_11[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_19[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_16[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_3_reg[5]_rep_0[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_13[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep_5[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_32[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_13[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_12[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_23[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_25[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_13[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_24[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_23[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_2[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_17[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_9[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_10[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_4[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_18[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_19[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_7[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_22[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_5[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_16[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_17[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_19[0]    |                                        |                5 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_11[0] |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_10[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_6[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_17[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_4[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_14[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_8[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_15[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_14[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_0[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_17[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_20[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__1_1[0]  |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__1_0[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_21[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_9[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_8[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_15[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_18[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_2[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_3[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_1[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_18[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_rep_2[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_28[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_22[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_rep_0[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_9[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_22[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_rep_3[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_16[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_18[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_4[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_23[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_rep_1[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_3[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_24[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_27[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_17[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_23[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_19[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_26[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_27[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_8[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_20[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_22[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__1_6[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_6[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_21[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_24[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_31[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_35[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_36[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_10[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_rep_7[0]     |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_9[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_21[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_29[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_26[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_27[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_10[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_11[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_11[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_10[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_30[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_8[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_26[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_5[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_28[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_6[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_7[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_23[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_17[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_13[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_22[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_23[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_26[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_30[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_4[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_25[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_28[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_20[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep_4[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_12[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_rep_5[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_25[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_32[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_23[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_2[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_45[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_15[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_47[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_12[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_35[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_25[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_31[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_40[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_24[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_36[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_30[0] |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_37[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_15[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_46[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_54[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_31[0]        |                                        |                6 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_40[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_37[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_26[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_17[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_11[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_6[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_27[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_19[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_8[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_31[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_33[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_rep_10[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_30[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_rep_9[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_24[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_25[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_25[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_4[0]     |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_5[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_1[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_14[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_3[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_21[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_24[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_10[0]        |                                        |                6 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_9[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_25[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_14[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_21[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_20[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_12[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_7[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_16[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__1_4[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_16[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_11[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_15[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_14[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_14[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_24[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_6[0]         |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_16[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_13[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_15[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_53[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_39[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_38[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_52[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_51[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_50[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_29[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_14[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_3[0]     |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_21[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_27[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_22[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_9[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_6[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_8[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_5[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_7[0]     |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_10[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_10[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_4[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_rep_31[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep_0[0]     |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_33[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_14[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_8[0]     |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep_15[0]    |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_7[0]         |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_8[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_7[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_18[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_1[0]     |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_7[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_5[0]  |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_10[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_22[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_27[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_11[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_33[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_30[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_28[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_9[0]  |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_18[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_26[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_29[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_49[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_37[0]    |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep_7[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_32[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_38[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_33[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_28[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_23[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_43[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_45[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_rep_34[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[3]_34[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[6]_rep_48[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_26[0] |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_19[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_rep__0_12[0] |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[7]_31[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_rep_9[0]     |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_42[0]        |                                        |                2 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[1]_27[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_44[0]        |                                        |                4 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[4]_18[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_43[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[5]_41[0]        |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[2]_rep__0_27[0] |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[8]_9[0]         |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               | pos_memory_Max_count/count_2_reg[0]_rep_20[0]    |                                        |                3 |              8 |
+|  clk_IBUF_BUFG               |                                                  | clk_div_BUFG                           |                3 |              9 |
+| ~clk_IBUF_BUFG               | conv2/quant/result4[8]_i_1__0_n_0                |                                        |                2 |              9 |
+| ~clk_IBUF_BUFG               | conv1/quant/res1[8]_i_1_n_0                      |                                        |                2 |              9 |
+| ~clk_IBUF_BUFG               | conv2/quant/res1[8]_i_1__0_n_0                   |                                        |                2 |              9 |
+| ~clk_IBUF_BUFG               | conv3/quant/res1[8]_i_1__1_n_0                   |                                        |                2 |              9 |
+| ~clk_IBUF_BUFG               | conv1/quant/result4[8]_i_1_n_0                   |                                        |                2 |              9 |
+| ~clk_IBUF_BUFG               | conv3/quant/result4[8]_i_1__1_n_0                |                                        |                2 |              9 |
+|  clk_IBUF_BUFG               | conv2/activation/aux_num2_2                      |                                        |                2 |              9 |
+|  clk_IBUF_BUFG               | conv3/activation/aux_num2_2                      |                                        |                3 |              9 |
+|  clk_IBUF_BUFG               | conv1/activation/aux_num2_2                      |                                        |                3 |              9 |
+|  clk_div_BUFG                | positionImage/stop_count                         | pos_memory_conv/count[9]_i_1_n_0       |                2 |             10 |
+|  clk_div_BUFG                | positionImage/counter_i/E[0]                     | rst_IBUF                               |                5 |             11 |
+|  positionConv/counter_j/CLK  | positionConv/counter_i/counter_2[9]_i_1__2_n_0   | rst_IBUF                               |                4 |             11 |
+|  positionImage/counter_j/CLK | positionImage/counter_i/E[0]                     | rst_IBUF                               |                5 |             11 |
+| ~clk_IBUF_BUFG               | conv3/quant/result1__1_n_0                       |                                        |                4 |             14 |
+| ~clk_IBUF_BUFG               | conv1/quant/result1_n_0                          |                                        |                2 |             14 |
+| ~clk_IBUF_BUFG               | conv2/quant/result1__0_n_0                       |                                        |                4 |             14 |
+| ~clk_IBUF_BUFG               | conv3/quant/result2[16]_i_1__1_n_0               |                                        |                4 |             17 |
+| ~clk_IBUF_BUFG               | conv2/quant/result2[16]_i_1__0_n_0               |                                        |                4 |             17 |
+| ~clk_IBUF_BUFG               | conv1/quant/result2[16]_i_1_n_0                  |                                        |                4 |             17 |
+| ~clk_IBUF_BUFG               | conv2/rstl_sum[16]_i_1__0_n_0                    |                                        |                5 |             17 |
+| ~clk_IBUF_BUFG               | conv3/rstl_sum[16]_i_1__1_n_0                    |                                        |                5 |             17 |
+| ~clk_IBUF_BUFG               | conv1/rstl_sum[16]_i_1_n_0                       |                                        |                5 |             17 |
+|  clk_div_max_BUFG            |                                                  | rst_IBUF                               |                7 |             19 |
+|  clk_IBUF_BUFG               |                                                  |                                        |               13 |             20 |
+|  clk_IBUF_BUFG               | en_IBUF                                          | clk_second/counter[0]_i_1_n_0          |                7 |             28 |
+|  clk_IBUF_BUFG               | en_IBUF                                          | clk_third/counter[0]_i_1__0_n_0        |                7 |             28 |
+|  clk_IBUF_BUFG               | en_IBUF                                          | clk_fourth/counter[0]_i_1__1_n_0       |                7 |             28 |
+|  clk_div_max_BUFG            |                                                  | pos_memory_Max_count/count_3           |               24 |             54 |
+| ~clk_IBUF_BUFG               |                                                  |                                        |               27 |             61 |
+| ~clk_IBUF_BUFG               | maxpooling_2/max3[7]_i_1__0_n_0                  |                                        |               22 |             64 |
+| ~clk_IBUF_BUFG               | maxpooling_3/max3[7]_i_1__1_n_0                  |                                        |               22 |             64 |
+| ~clk_IBUF_BUFG               | maxpooling_1/max3[7]_i_1_n_0                     |                                        |               24 |             64 |
+| ~clk_IBUF_BUFG               | conv2/rstl_mult[1][16]_i_1__0_n_0                |                                        |               48 |            144 |
+| ~clk_IBUF_BUFG               | conv3/rstl_mult[1][16]_i_1__1_n_0                |                                        |               40 |            144 |
+| ~clk_IBUF_BUFG               | conv1/rstl_mult[1][16]_i_1_n_0                   |                                        |               43 |            144 |
+|  clk_div_BUFG                | image/register_reg_r1_512_575_0_2_i_1_n_0        |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_384_447_0_2_i_1_n_0        |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_448_511_0_2_i_1_n_0        |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_640_703_0_2_i_1_n_0        |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_704_767_0_2_i_1_n_0        |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_768_831_0_2_i_1_n_0        |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_576_639_0_2_i_1_n_0        |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_320_383_0_2_i_1_n_0        |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_256_319_0_2_i_1_n_0        |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_128_191_0_2_i_1_n_0        |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_192_255_0_2_i_1_n_0        |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_64_127_0_2_i_1_n_0         |                                        |               55 |            220 |
+|  clk_div_BUFG                | image/register_reg_r1_0_63_0_2_i_1_n_0           |                                        |               55 |            220 |
++------------------------------+--------------------------------------------------+----------------------------------------+------------------+----------------+
+
+

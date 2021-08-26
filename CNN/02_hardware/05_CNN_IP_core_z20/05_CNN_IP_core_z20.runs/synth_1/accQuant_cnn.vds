@@ -2,23 +2,24 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Thu Aug 19 20:37:32 2021
-# Process ID: 28136
+# Start of session at: Tue Aug 24 03:21:52 2021
+# Process ID: 9802
 # Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.runs/synth_1
 # Command line: vivado -log accQuant_cnn.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source accQuant_cnn.tcl
 # Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.runs/synth_1/accQuant_cnn.vds
 # Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source accQuant_cnn.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1512.699 ; gain = 46.016 ; free physical = 245 ; free virtual = 4238
 Command: synth_design -top accQuant_cnn -part xc7z020clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 28184 
+INFO: Helper process launched with PID 9823 
+WARNING: [Synth 8-992] mem_full_image_wire is already implicitly declared earlier [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:710]
+WARNING: [Synth 8-992] rdata_image_w is already implicitly declared earlier [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:711]
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1750.199 ; gain = 214.469 ; free physical = 146 ; free virtual = 3945
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1754.172 ; gain = 218.438 ; free physical = 712 ; free virtual = 3311
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'accQuant_cnn' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:23]
 	Parameter numWeightRstlConv bound to: 676 - type: integer 
@@ -65,7 +66,7 @@ INFO: [Synth 8-6157] synthesizing module 'memory_image' [/home/javier/Documents/
 	Parameter one bound to: 1'b1 
 	Parameter offset_ent bound to: 6 - type: integer 
 	Parameter offset_sor bound to: -1 - type: integer 
-INFO: [Synth 8-3876] $readmem data file '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/image.mem' is read successfully [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_image.v:77]
+INFO: [Synth 8-3876] $readmem data file '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/image.mem' is read successfully [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_image.v:82]
 INFO: [Synth 8-6155] done synthesizing module 'memory_image' (6#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_image.v:23]
 INFO: [Synth 8-6157] synthesizing module 'memory_filter_1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_filter_1.v:23]
 	Parameter numWeightFilter bound to: 10 - type: integer 
@@ -88,7 +89,7 @@ INFO: [Synth 8-6157] synthesizing module 'memory_filter_3' [/home/javier/Documen
 	Parameter weightFileFilter bound to: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/filter3.mem - type: string 
 INFO: [Synth 8-3876] $readmem data file '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/filter3.mem' is read successfully [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_filter_3.v:51]
 INFO: [Synth 8-6155] done synthesizing module 'memory_filter_3' (9#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_filter_3.v:23]
-INFO: [Synth 8-6157] synthesizing module 'convolution' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:23]
+INFO: [Synth 8-6157] synthesizing module 'convolution' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:24]
 	Parameter dataWidthConv bound to: 16 - type: integer 
 	Parameter s0 bound to: 4'b0000 
 	Parameter s1 bound to: 4'b0001 
@@ -106,8 +107,8 @@ INFO: [Synth 8-6157] synthesizing module 'convolution' [/home/javier/Documents/f
 	Parameter s13 bound to: 4'b1101 
 	Parameter s14 bound to: 4'b1110 
 	Parameter q bound to: 63'b000000000000000000000000000000001011111000110111110011101110000 
-INFO: [Synth 8-251] *********************************************************************** [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:86]
-INFO: [Synth 8-6157] synthesizing module 'quantization' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:23]
+INFO: [Synth 8-251] *********************************************************************** [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:88]
+INFO: [Synth 8-6157] synthesizing module 'quantization' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:25]
 	Parameter s0 bound to: 4'b0000 
 	Parameter s1 bound to: 4'b0001 
 	Parameter s2 bound to: 4'b0010 
@@ -130,8 +131,8 @@ INFO: [Synth 8-6157] synthesizing module 'quantization' [/home/javier/Documents/
 	Parameter one bound to: 1'b1 
 	Parameter offset_ent bound to: 6 - type: integer 
 	Parameter offset_sor bound to: -1 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:83]
-INFO: [Synth 8-6155] done synthesizing module 'quantization' (10#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:113]
+INFO: [Synth 8-6155] done synthesizing module 'quantization' (10#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:25]
 INFO: [Synth 8-6157] synthesizing module 'ReLu' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/ReLu.v:23]
 	Parameter s0 bound to: 4'b0000 
 	Parameter s1 bound to: 4'b0001 
@@ -154,12 +155,12 @@ INFO: [Synth 8-6157] synthesizing module 'ReLu' [/home/javier/Documents/fpga_imp
 	Parameter one bound to: 1'b1 
 	Parameter offset_ent bound to: 6 - type: integer 
 	Parameter offset_sor bound to: -1 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/ReLu.v:71]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/ReLu.v:77]
 INFO: [Synth 8-6155] done synthesizing module 'ReLu' (11#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/ReLu.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:135]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:165]
-INFO: [Synth 8-6155] done synthesizing module 'convolution' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:23]
-INFO: [Synth 8-6157] synthesizing module 'convolution__parameterized0' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:138]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:168]
+INFO: [Synth 8-6155] done synthesizing module 'convolution' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:24]
+INFO: [Synth 8-6157] synthesizing module 'convolution__parameterized0' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:24]
 	Parameter dataWidthConv bound to: 16 - type: integer 
 	Parameter s0 bound to: 4'b0000 
 	Parameter s1 bound to: 4'b0001 
@@ -177,8 +178,8 @@ INFO: [Synth 8-6157] synthesizing module 'convolution__parameterized0' [/home/ja
 	Parameter s13 bound to: 4'b1101 
 	Parameter s14 bound to: 4'b1110 
 	Parameter q bound to: 63'b000000000000000000000000000000001001010110010111011010111001101 
-INFO: [Synth 8-251] *********************************************************************** [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:86]
-INFO: [Synth 8-6157] synthesizing module 'quantization__parameterized0' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:23]
+INFO: [Synth 8-251] *********************************************************************** [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:88]
+INFO: [Synth 8-6157] synthesizing module 'quantization__parameterized0' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:25]
 	Parameter s0 bound to: 4'b0000 
 	Parameter s1 bound to: 4'b0001 
 	Parameter s2 bound to: 4'b0010 
@@ -201,12 +202,12 @@ INFO: [Synth 8-6157] synthesizing module 'quantization__parameterized0' [/home/j
 	Parameter one bound to: 1'b1 
 	Parameter offset_ent bound to: 6 - type: integer 
 	Parameter offset_sor bound to: -1 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:83]
-INFO: [Synth 8-6155] done synthesizing module 'quantization__parameterized0' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:135]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:165]
-INFO: [Synth 8-6155] done synthesizing module 'convolution__parameterized0' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:23]
-INFO: [Synth 8-6157] synthesizing module 'convolution__parameterized1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:113]
+INFO: [Synth 8-6155] done synthesizing module 'quantization__parameterized0' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:25]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:138]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:168]
+INFO: [Synth 8-6155] done synthesizing module 'convolution__parameterized0' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:24]
+INFO: [Synth 8-6157] synthesizing module 'convolution__parameterized1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:24]
 	Parameter dataWidthConv bound to: 16 - type: integer 
 	Parameter s0 bound to: 4'b0000 
 	Parameter s1 bound to: 4'b0001 
@@ -224,8 +225,8 @@ INFO: [Synth 8-6157] synthesizing module 'convolution__parameterized1' [/home/ja
 	Parameter s13 bound to: 4'b1101 
 	Parameter s14 bound to: 4'b1110 
 	Parameter q bound to: 63'b000000000000000000000000000000001010101111100100011000110001011 
-INFO: [Synth 8-251] *********************************************************************** [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:86]
-INFO: [Synth 8-6157] synthesizing module 'quantization__parameterized1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:23]
+INFO: [Synth 8-251] *********************************************************************** [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:88]
+INFO: [Synth 8-6157] synthesizing module 'quantization__parameterized1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:25]
 	Parameter s0 bound to: 4'b0000 
 	Parameter s1 bound to: 4'b0001 
 	Parameter s2 bound to: 4'b0010 
@@ -248,36 +249,35 @@ INFO: [Synth 8-6157] synthesizing module 'quantization__parameterized1' [/home/j
 	Parameter one bound to: 1'b1 
 	Parameter offset_ent bound to: 6 - type: integer 
 	Parameter offset_sor bound to: -1 - type: integer 
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:83]
-INFO: [Synth 8-6155] done synthesizing module 'quantization__parameterized1' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:23]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:135]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:165]
-INFO: [Synth 8-6155] done synthesizing module 'convolution__parameterized1' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:23]
-INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv_1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_1.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:113]
+INFO: [Synth 8-6155] done synthesizing module 'quantization__parameterized1' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:25]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:138]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:168]
+INFO: [Synth 8-6155] done synthesizing module 'convolution__parameterized1' (12#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/convolution.v:24]
+INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv_1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_1.v:83]
 	Parameter n_c bound to: 5'b11010 
 	Parameter n_r bound to: 5'b11010 
 	Parameter dataWidthImg bound to: 16 - type: integer 
 	Parameter numWeightRstlConv bound to: 676 - type: integer 
 	Parameter addressWidthRstlConv bound to: 10 - type: integer 
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
-INFO: [Synth 8-251] conv1, x [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_1.v:72]
-INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv_1' (13#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_1.v:23]
-INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv_2' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_2.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv_1' (13#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_1.v:83]
+INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv_2' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_2.v:92]
 	Parameter n_c bound to: 5'b11010 
 	Parameter n_r bound to: 5'b11010 
 	Parameter dataWidthImg bound to: 16 - type: integer 
 	Parameter numWeightRstlConv bound to: 676 - type: integer 
 	Parameter addressWidthRstlConv bound to: 10 - type: integer 
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv_2' (14#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_2.v:23]
-INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv_3' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_3.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv_2' (14#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_2.v:92]
+INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv_3' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_3.v:77]
 	Parameter n_c bound to: 5'b11010 
 	Parameter n_r bound to: 5'b11010 
 	Parameter dataWidthImg bound to: 16 - type: integer 
 	Parameter numWeightRstlConv bound to: 676 - type: integer 
 	Parameter addressWidthRstlConv bound to: 10 - type: integer 
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv_3' (15#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_3.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv_3' (15#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_conv_3.v:77]
 INFO: [Synth 8-6157] synthesizing module 'clock_divider_max' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/clock_divider_max.v:23]
 	Parameter DIVISOR bound to: 28'b0000000000000000000000000110 
 INFO: [Synth 8-6155] done synthesizing module 'clock_divider_max' (16#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/clock_divider_max.v:23]
@@ -294,10 +294,10 @@ INFO: [Synth 8-6157] synthesizing module 'counter_row_max' [/home/javier/Documen
 	Parameter n_r bound to: 5'b11010 
 INFO: [Synth 8-6155] done synthesizing module 'counter_row_max' (18#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:70]
 INFO: [Synth 8-6155] done synthesizing module 'controlMemoryAddressConv' (19#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:23]
-INFO: [Synth 8-6157] synthesizing module 'counterPositionRstlMax' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/counterPositionRstlMax.v:23]
+INFO: [Synth 8-6157] synthesizing module 'counterPositionRstlMax' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/counterPositionRstlMax.v:24]
 	Parameter counterWidth bound to: 10 - type: integer 
-	Parameter numWeightRstlMax bound to: 507 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'counterPositionRstlMax' (20#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/counterPositionRstlMax.v:23]
+	Parameter numWeightRstlMax bound to: 169 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'counterPositionRstlMax' (20#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/counterPositionRstlMax.v:24]
 INFO: [Synth 8-6157] synthesizing module 'maxpooling' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/maxpooling.v:23]
 	Parameter addressWidthConv bound to: 10 - type: integer 
 	Parameter dataWidthMax bound to: 8 - type: integer 
@@ -319,48 +319,44 @@ INFO: [Synth 8-6157] synthesizing module 'maxpooling' [/home/javier/Documents/fp
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/maxpooling.v:79]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/maxpooling.v:92]
 INFO: [Synth 8-6155] done synthesizing module 'maxpooling' (21#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/maxpooling.v:23]
-INFO: [Synth 8-6157] synthesizing module 'memory_rstl_max_1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_max_1.v:23]
+INFO: [Synth 8-6157] synthesizing module 'memory_rstl_max_1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_max_1.v:26]
 	Parameter n_c bound to: 5'b11010 
 	Parameter n_r bound to: 5'b11010 
 	Parameter dataWidthImg bound to: 16 - type: integer 
-	Parameter numWeightRstlConv bound to: 507 - type: integer 
+	Parameter numWeightRstlConv bound to: 169 - type: integer 
 	Parameter addressWidthRstlConv bound to: 10 - type: integer 
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
 	Parameter offset_ent bound to: 1 - type: integer 
 	Parameter offset_sor bound to: -1 - type: integer 
 	Parameter offset_fil bound to: 0 - type: integer 
-INFO: [Synth 8-251] max1, x [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_max_1.v:72]
-INFO: [Synth 8-251] max1, x [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_max_1.v:73]
-INFO: [Synth 8-251] max1, x [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_max_1.v:74]
-WARNING: [Synth 8-4767] Trying to implement RAM 'mem_rstl_max_reg' in registers. Block RAM or DRAM implementation is not possible; see log for reasons.
-Reason is one or more of the following :
-	1: RAM has multiple writes via different ports in same process. If RAM inferencing intended, write to one port per process. 
-	2: Unable to determine number of words or word size in RAM. 
-	3: No valid read/write found for RAM. 
-RAM "mem_rstl_max_reg" dissolved into registers
-INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_max_1' (22#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_max_1.v:23]
-WARNING: [Synth 8-689] width (32) of port connection 'wen' does not match port width (1) of module 'memory_rstl_max_1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:624]
+INFO: [Synth 8-251] max1, x [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_max_1.v:67]
+INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_max_1' (22#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/memory_rstl_max_1.v:26]
+WARNING: [Synth 8-689] width (32) of port connection 'wen' does not match port width (1) of module 'memory_rstl_max_1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:679]
 INFO: [Synth 8-6157] synthesizing module 'clock_divider_dens' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/clock_divider_dens.v:23]
 	Parameter DIVISOR bound to: 28'b0000000000000000000000000100 
 INFO: [Synth 8-6155] done synthesizing module 'clock_divider_dens' (23#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/clock_divider_dens.v:23]
-WARNING: [Synth 8-3848] Net pos_memory_max in module/entity accQuant_cnn does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:192]
+WARNING: [Synth 8-3848] Net pos_rstl_max3 in module/entity accQuant_cnn does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:158]
+WARNING: [Synth 8-3848] Net pos_memory_max in module/entity accQuant_cnn does not have driver. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:199]
 INFO: [Synth 8-6155] done synthesizing module 'accQuant_cnn' (24#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/accQuant_cnn.v:23]
-WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port wadd2[9]
-WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port wadd3[9]
 WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port radd[9]
+WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port radd[8]
+WARNING: [Synth 8-3331] design memory_image has unconnected port ren2
+WARNING: [Synth 8-3331] design accQuant_cnn has unconnected port sel[2]
+WARNING: [Synth 8-3331] design accQuant_cnn has unconnected port sel[1]
+WARNING: [Synth 8-3331] design accQuant_cnn has unconnected port sel[0]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1868.949 ; gain = 333.219 ; free physical = 217 ; free virtual = 3910
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1803.047 ; gain = 267.312 ; free physical = 742 ; free virtual = 3344
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1883.793 ; gain = 348.062 ; free physical = 232 ; free virtual = 3926
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1817.891 ; gain = 282.156 ; free physical = 741 ; free virtual = 3343
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
-INFO: [Device 21-403] Loading part xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1891.797 ; gain = 356.066 ; free physical = 231 ; free virtual = 3925
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1825.895 ; gain = 290.160 ; free physical = 740 ; free virtual = 3342
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -396,15 +392,15 @@ INFO: [Synth 8-802] inferred FSM for state register 'present_state_reg' in modul
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-                      s0 |                            00001 |                             0000
-                      s1 |                            00010 |                             0001
-                      s2 |                            00100 |                             0010
-                      s3 |                            01000 |                             0011
-                  iSTATE |                            10000 |                             0100
+                      s0 |                              000 |                             0000
+                      s1 |                              001 |                             0001
+                      s2 |                              010 |                             0010
+                      s3 |                              011 |                             0011
+                  iSTATE |                              100 |                             0100
 ---------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'present_state_reg' using encoding 'one-hot' in module 'ReLu'
+INFO: [Synth 8-3354] encoded FSM with state register 'present_state_reg' using encoding 'sequential' in module 'ReLu'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:14 . Memory (MB): peak = 2029.211 ; gain = 493.480 ; free physical = 155 ; free virtual = 3688
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1856.785 ; gain = 321.051 ; free physical = 632 ; free virtual = 3235
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -421,46 +417,44 @@ Detailed RTL Component Info :
 	   9 Input     17 Bit       Adders := 3     
 	   2 Input     17 Bit       Adders := 3     
 	   2 Input     16 Bit       Adders := 9     
-	   2 Input     10 Bit       Adders := 20    
-	   2 Input      9 Bit       Adders := 9     
-	   2 Input      8 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 18    
+	   2 Input      8 Bit       Adders := 10    
 	   2 Input      4 Bit       Adders := 27    
 +---Registers : 
-	               64 Bit    Registers := 3     
-	               32 Bit    Registers := 6     
+	               64 Bit    Registers := 15    
 	               17 Bit    Registers := 36    
 	               16 Bit    Registers := 39    
-	               10 Bit    Registers := 9     
-	                9 Bit    Registers := 27    
-	                8 Bit    Registers := 529   
-	                4 Bit    Registers := 18    
+	               10 Bit    Registers := 7     
+	                8 Bit    Registers := 37    
+	                4 Bit    Registers := 14    
 	                2 Bit    Registers := 3     
-	                1 Bit    Registers := 39    
+	                1 Bit    Registers := 37    
 +---Multipliers : 
 	                31x64  Multipliers := 3     
 +---RAMs : 
 	               5K Bit         RAMs := 3     
+	               1K Bit         RAMs := 1     
 +---Muxes : 
 	  11 Input     16 Bit        Muxes := 30    
 	   2 Input     10 Bit        Muxes := 5     
-	  13 Input      9 Bit        Muxes := 3     
-	   2 Input      9 Bit        Muxes := 9     
-	   5 Input      9 Bit        Muxes := 6     
-	   2 Input      8 Bit        Muxes := 1023  
+	  13 Input      8 Bit        Muxes := 3     
+	   2 Input      8 Bit        Muxes := 12    
+	   5 Input      8 Bit        Muxes := 6     
 	   5 Input      4 Bit        Muxes := 3     
-	   2 Input      4 Bit        Muxes := 24    
+	   2 Input      4 Bit        Muxes := 16    
 	   6 Input      4 Bit        Muxes := 3     
-	   4 Input      4 Bit        Muxes := 3     
+	   4 Input      4 Bit        Muxes := 1     
+	   4 Input      3 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 3     
 	   2 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 1592  
-	  12 Input      1 Bit        Muxes := 3     
-	  13 Input      1 Bit        Muxes := 33    
-	   5 Input      1 Bit        Muxes := 13    
-	   6 Input      1 Bit        Muxes := 15    
-	   7 Input      1 Bit        Muxes := 24    
+	   2 Input      1 Bit        Muxes := 60    
+	  12 Input      1 Bit        Muxes := 27    
+	  13 Input      1 Bit        Muxes := 12    
+	   5 Input      1 Bit        Muxes := 25    
+	   6 Input      1 Bit        Muxes := 10    
+	   7 Input      1 Bit        Muxes := 21    
 	   3 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -544,33 +538,33 @@ Detailed RTL Component Info :
 Module quantization 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
 +---Registers : 
-	               64 Bit    Registers := 1     
-	               32 Bit    Registers := 2     
-	                9 Bit    Registers := 5     
+	               64 Bit    Registers := 5     
+	                8 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Multipliers : 
 	                31x64  Multipliers := 1     
 +---Muxes : 
-	  13 Input      9 Bit        Muxes := 1     
-	  12 Input      1 Bit        Muxes := 1     
-	  13 Input      1 Bit        Muxes := 11    
+	  13 Input      8 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 9     
+	  13 Input      1 Bit        Muxes := 4     
 	   2 Input      1 Bit        Muxes := 1     
 Module ReLu 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	                9 Bit    Registers := 4     
+	                8 Bit    Registers := 4     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      9 Bit        Muxes := 3     
-	   5 Input      9 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 3     
+	   5 Input      8 Bit        Muxes := 2     
 	   5 Input      4 Bit        Muxes := 1     
-	   5 Input      1 Bit        Muxes := 4     
+	   4 Input      3 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 8     
 Module convolution 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -585,26 +579,25 @@ Detailed RTL Component Info :
 	   6 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 11    
-	   6 Input      1 Bit        Muxes := 1     
-	   7 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 12    
+	   6 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 7     
 Module quantization__parameterized0 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
 +---Registers : 
-	               64 Bit    Registers := 1     
-	               32 Bit    Registers := 2     
-	                9 Bit    Registers := 5     
+	               64 Bit    Registers := 5     
+	                8 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Multipliers : 
 	                31x64  Multipliers := 1     
 +---Muxes : 
-	  13 Input      9 Bit        Muxes := 1     
-	  12 Input      1 Bit        Muxes := 1     
-	  13 Input      1 Bit        Muxes := 11    
+	  13 Input      8 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 9     
+	  13 Input      1 Bit        Muxes := 4     
 	   2 Input      1 Bit        Muxes := 1     
 Module convolution__parameterized0 
 Detailed RTL Component Info : 
@@ -620,26 +613,25 @@ Detailed RTL Component Info :
 	   6 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 11    
-	   6 Input      1 Bit        Muxes := 1     
-	   7 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 12    
+	   6 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 7     
 Module quantization__parameterized1 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 2     
 +---Registers : 
-	               64 Bit    Registers := 1     
-	               32 Bit    Registers := 2     
-	                9 Bit    Registers := 5     
+	               64 Bit    Registers := 5     
+	                8 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 3     
 +---Multipliers : 
 	                31x64  Multipliers := 1     
 +---Muxes : 
-	  13 Input      9 Bit        Muxes := 1     
-	  12 Input      1 Bit        Muxes := 1     
-	  13 Input      1 Bit        Muxes := 11    
+	  13 Input      8 Bit        Muxes := 1     
+	  12 Input      1 Bit        Muxes := 9     
+	  13 Input      1 Bit        Muxes := 4     
 	   2 Input      1 Bit        Muxes := 1     
 Module convolution__parameterized1 
 Detailed RTL Component Info : 
@@ -655,9 +647,9 @@ Detailed RTL Component Info :
 	   6 Input      4 Bit        Muxes := 1     
 	   2 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 11    
-	   6 Input      1 Bit        Muxes := 1     
-	   7 Input      1 Bit        Muxes := 8     
+	   2 Input      1 Bit        Muxes := 12    
+	   6 Input      1 Bit        Muxes := 2     
+	   7 Input      1 Bit        Muxes := 7     
 Module memory_rstl_conv_1 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -710,9 +702,9 @@ Detailed RTL Component Info :
 Module counterPositionRstlMax 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     10 Bit       Adders := 3     
+	   2 Input     10 Bit       Adders := 1     
 +---Registers : 
-	               10 Bit    Registers := 3     
+	               10 Bit    Registers := 1     
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   5 Input      1 Bit        Muxes := 1     
@@ -736,10 +728,9 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	                8 Bit    Registers := 508   
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 1014  
-	   2 Input      1 Bit        Muxes := 1521  
+	                8 Bit    Registers := 1     
++---RAMs : 
+	               1K Bit         RAMs := 1     
 Module clock_divider_dens 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -788,9 +779,7 @@ DSP Report: operator p_img_60 is absorbed into DSP p_img_7.
 DSP Report: Generating DSP p_img_8, operation Mode is: C+A*(B:0x1c).
 DSP Report: operator p_img_8 is absorbed into DSP p_img_8.
 DSP Report: operator p_img_60 is absorbed into DSP p_img_8.
-WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '32' to '17' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:123]
-WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result1_reg' and it is trimmed from '64' to '63' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:117]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:117]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:147]
 DSP Report: Generating DSP p_2_in, operation Mode is: A*B.
 DSP Report: operator p_2_in is absorbed into DSP p_2_in.
 DSP Report: Generating DSP p_4_in, operation Mode is: A*B.
@@ -844,9 +833,7 @@ DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
-WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '32' to '17' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:123]
-WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result1_reg' and it is trimmed from '64' to '63' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:117]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:117]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:147]
 DSP Report: Generating DSP p_2_in, operation Mode is: A*B.
 DSP Report: operator p_2_in is absorbed into DSP p_2_in.
 DSP Report: Generating DSP p_4_in, operation Mode is: A*B.
@@ -900,9 +887,7 @@ DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
-WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '32' to '17' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:123]
-WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result1_reg' and it is trimmed from '64' to '63' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:117]
-INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:117]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/quantization.v:147]
 DSP Report: Generating DSP p_2_in, operation Mode is: A*B.
 DSP Report: operator p_2_in is absorbed into DSP p_2_in.
 DSP Report: Generating DSP p_4_in, operation Mode is: A*B.
@@ -992,144 +977,130 @@ DSP Report: operator p_img_00 is absorbed into DSP p_img_1.
 DSP Report: Generating DSP p_img_0, operation Mode is: C+A*(B:0x1a).
 DSP Report: operator p_img_0 is absorbed into DSP p_img_0.
 DSP Report: operator p_img_00 is absorbed into DSP p_img_0.
-WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port wadd2[9]
-WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port wadd3[9]
-WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port radd[9]
+WARNING: [Synth 8-3331] design memory_image has unconnected port ren2
+WARNING: [Synth 8-3331] design accQuant_cnn has unconnected port sel[2]
+WARNING: [Synth 8-3331] design accQuant_cnn has unconnected port sel[1]
+WARNING: [Synth 8-3331] design accQuant_cnn has unconnected port sel[0]
+WARNING: [Synth 8-3331] design accQuant_cnn has unconnected port radd_memory[9]
+WARNING: [Synth 8-3331] design accQuant_cnn has unconnected port radd_memory[8]
 INFO: [Synth 8-3971] The signal "save_data_1/mem_rstl_conv1_reg" was recognized as a true dual port RAM template.
 INFO: [Synth 8-4652] Swapped enable and write-enable on 4 RAM instances of RAM mem_rstl_conv1_reg to conserve power
 INFO: [Synth 8-3971] The signal "save_data_2/mem_rstl_conv2_reg" was recognized as a true dual port RAM template.
 INFO: [Synth 8-4652] Swapped enable and write-enable on 4 RAM instances of RAM mem_rstl_conv2_reg to conserve power
 INFO: [Synth 8-3971] The signal "save_data_3/mem_rstl_conv3_reg" was recognized as a true dual port RAM template.
 INFO: [Synth 8-4652] Swapped enable and write-enable on 4 RAM instances of RAM mem_rstl_conv3_reg to conserve power
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[0]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[1]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[2]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[3]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[4]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[5]' (FDE) to 'filter3/rdata8_reg[4]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[6]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[7]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[8]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[9]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[10]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[11]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[12]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[13]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[14]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata0_reg[15]' (FDE) to 'filter3/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[0]' (FDE) to 'filter3/rdata8_reg[1]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[1]' (FDE) to 'filter3/rdata8_reg[2]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[2]' (FDE) to 'filter3/rdata8_reg[3]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[3]' (FDE) to 'filter3/rdata8_reg[5]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[4]' (FDE) to 'filter3/rdata8_reg[6]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[5]' (FDE) to 'filter3/rdata6_reg[3]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[6]' (FDE) to 'filter3/rdata8_reg[7]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[7]' (FDE) to 'filter3/rdata8_reg[8]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[8]' (FDE) to 'filter3/rdata8_reg[9]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[9]' (FDE) to 'filter3/rdata8_reg[10]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[10]' (FDE) to 'filter3/rdata8_reg[11]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[11]' (FDE) to 'filter3/rdata8_reg[12]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[12]' (FDE) to 'filter3/rdata8_reg[13]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[13]' (FDE) to 'filter3/rdata8_reg[14]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[14]' (FDE) to 'filter3/rdata8_reg[15]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata8_reg[15]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[0]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[1]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[2]' (FDE) to 'filter3/rdata6_reg[3]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[3]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[4]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[5]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[6]' (FDE) to 'filter3/rdata6_reg[3]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[7]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[8]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[9]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[10]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[11]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[12]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[13]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[14]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata7_reg[15]' (FDE) to 'filter3/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[0]' (FDE) to 'filter3/rdata6_reg[1]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[1]' (FDE) to 'filter3/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[2]' (FDE) to 'filter3/rdata6_reg[5]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[3]' (FDE) to 'filter3/rdata6_reg[4]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[4]' (FDE) to 'filter3/rdata6_reg[6]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[5]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[6]' (FDE) to 'filter3/rdata6_reg[7]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[7]' (FDE) to 'filter3/rdata6_reg[8]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[8]' (FDE) to 'filter3/rdata6_reg[9]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[9]' (FDE) to 'filter3/rdata6_reg[10]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[10]' (FDE) to 'filter3/rdata6_reg[11]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[11]' (FDE) to 'filter3/rdata6_reg[12]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[12]' (FDE) to 'filter3/rdata6_reg[13]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[13]' (FDE) to 'filter3/rdata6_reg[14]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[14]' (FDE) to 'filter3/rdata6_reg[15]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata6_reg[15]' (FDE) to 'filter3/rdata4_reg[2]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[0]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[1]' (FDE) to 'filter3/rdata4_reg[2]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[2]' (FDE) to 'filter3/rdata4_reg[2]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[3]' (FDE) to 'filter3/rdata4_reg[2]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[4]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[5]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[6]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[7]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[8]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[9]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[10]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[11]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[12]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[13]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[14]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata5_reg[15]' (FDE) to 'filter3/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[0]' (FDE) to 'filter3/rdata4_reg[1]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[1]' (FDE) to 'filter3/rdata4_reg[5]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[2]' (FDE) to 'filter3/rdata4_reg[3]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[3]' (FDE) to 'filter3/rdata4_reg[4]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[4]' (FDE) to 'filter3/rdata2_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[5]' (FDE) to 'filter3/rdata4_reg[6]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[6]' (FDE) to 'filter3/rdata4_reg[7]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[7]' (FDE) to 'filter3/rdata4_reg[8]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[8]' (FDE) to 'filter3/rdata4_reg[9]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[9]' (FDE) to 'filter3/rdata4_reg[10]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[10]' (FDE) to 'filter3/rdata4_reg[11]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[11]' (FDE) to 'filter3/rdata4_reg[12]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[12]' (FDE) to 'filter3/rdata4_reg[13]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[13]' (FDE) to 'filter3/rdata4_reg[14]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[14]' (FDE) to 'filter3/rdata4_reg[15]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata4_reg[15]' (FDE) to 'filter3/rdata2_reg[1]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata3_reg[0]' (FDE) to 'filter3/rdata2_reg[0]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata3_reg[1]' (FDE) to 'filter3/rdata2_reg[1]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata3_reg[2]' (FDE) to 'filter3/rdata2_reg[1]'
-INFO: [Synth 8-3886] merging instance 'filter3/rdata3_reg[3]' (FDE) to 'filter3/rdata2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[0]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[1]' (FDE) to 'filter1/rdata8_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[2]' (FDE) to 'filter1/rdata8_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[3]' (FDE) to 'filter1/rdata8_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[4]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[5]' (FDE) to 'filter1/rdata8_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[6]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[7]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[8]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[9]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[10]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[11]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[12]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[13]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[14]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata0_reg[15]' (FDE) to 'filter1/rdata8_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[0]' (FDE) to 'filter1/rdata8_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[1]' (FDE) to 'filter1/rdata8_reg[3]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[2]' (FDE) to 'filter1/rdata8_reg[4]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[3]' (FDE) to 'filter1/rdata8_reg[5]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[4]' (FDE) to 'filter1/rdata8_reg[6]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[5]' (FDE) to 'filter1/rdata8_reg[7]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[6]' (FDE) to 'filter1/rdata6_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[7]' (FDE) to 'filter1/rdata8_reg[8]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[8]' (FDE) to 'filter1/rdata8_reg[9]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[9]' (FDE) to 'filter1/rdata8_reg[10]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[10]' (FDE) to 'filter1/rdata8_reg[11]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[11]' (FDE) to 'filter1/rdata8_reg[12]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[12]' (FDE) to 'filter1/rdata8_reg[13]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[13]' (FDE) to 'filter1/rdata8_reg[14]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[14]' (FDE) to 'filter1/rdata8_reg[15]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata8_reg[15]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[0]' (FDE) to 'filter1/rdata6_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[1]' (FDE) to 'filter1/rdata6_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[2]' (FDE) to 'filter1/rdata6_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[3]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[4]' (FDE) to 'filter1/rdata6_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[5]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[6]' (FDE) to 'filter1/rdata6_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[7]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[8]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[9]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[10]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[11]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[12]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[13]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[14]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata7_reg[15]' (FDE) to 'filter1/rdata6_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[0]' (FDE) to 'filter1/rdata6_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[1]' (FDE) to 'filter1/rdata6_reg[4]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[2]' (FDE) to 'filter1/rdata6_reg[3]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[3]' (FDE) to 'filter1/rdata6_reg[5]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[4]' (FDE) to 'filter1/rdata4_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[5]' (FDE) to 'filter1/rdata6_reg[6]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[6]' (FDE) to 'filter1/rdata6_reg[7]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[7]' (FDE) to 'filter1/rdata6_reg[8]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[8]' (FDE) to 'filter1/rdata6_reg[9]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[9]' (FDE) to 'filter1/rdata6_reg[10]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[10]' (FDE) to 'filter1/rdata6_reg[11]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[11]' (FDE) to 'filter1/rdata6_reg[12]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[12]' (FDE) to 'filter1/rdata6_reg[13]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[13]' (FDE) to 'filter1/rdata6_reg[14]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[14]' (FDE) to 'filter1/rdata6_reg[15]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata6_reg[15]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[0]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[1]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[2]' (FDE) to 'filter1/rdata4_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[3]' (FDE) to 'filter1/rdata4_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[4]' (FDE) to 'filter1/rdata4_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[5]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[6]' (FDE) to 'filter1/rdata4_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[7]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[8]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[9]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[10]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[11]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[12]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[13]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[14]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata5_reg[15]' (FDE) to 'filter1/rdata4_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[0]' (FDE) to 'filter1/rdata4_reg[3]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[1]' (FDE) to 'filter1/rdata4_reg[2]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[2]' (FDE) to 'filter1/rdata4_reg[4]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[3]' (FDE) to 'filter1/rdata4_reg[5]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[4]' (FDE) to 'filter1/rdata2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[5]' (FDE) to 'filter1/rdata4_reg[6]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[6]' (FDE) to 'filter1/rdata4_reg[7]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[7]' (FDE) to 'filter1/rdata4_reg[8]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[8]' (FDE) to 'filter1/rdata4_reg[9]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[9]' (FDE) to 'filter1/rdata4_reg[10]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[10]' (FDE) to 'filter1/rdata4_reg[11]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[11]' (FDE) to 'filter1/rdata4_reg[12]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[12]' (FDE) to 'filter1/rdata4_reg[13]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[13]' (FDE) to 'filter1/rdata4_reg[14]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[14]' (FDE) to 'filter1/rdata4_reg[15]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata4_reg[15]' (FDE) to 'filter1/rdata2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata3_reg[0]' (FDE) to 'filter1/rdata2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata3_reg[1]' (FDE) to 'filter1/rdata2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata3_reg[2]' (FDE) to 'filter1/rdata2_reg[0]'
+INFO: [Synth 8-3886] merging instance 'filter1/rdata3_reg[3]' (FDE) to 'filter1/rdata2_reg[1]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter3/\bias_reg[9] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (filter3/\bias_reg[15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter2/\bias_reg[10] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (filter2/\bias_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv1/\quant/result2_reg[63] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv1/\quant/result3_reg[63] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter1/\bias_reg[9] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (filter1/\bias_reg[15] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (conv3/\quant/thld1_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv3/\quant/thld1_reg[8] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (conv2/\quant/thld1_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv2/\quant/thld1_reg[8] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (conv1/\quant/thld1_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv1/\quant/thld1_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv3/\activation/aux_num_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv2/\activation/aux_num_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv1/\activation/aux_num_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv3/\present_state_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv2/\present_state_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv1/\quant/thld1_reg[7] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv1/\present_state_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (maxpooling:/\present_state_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv3/\aux_bias_reg[9] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (conv3/\aux_bias_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv2/\aux_bias_reg[10] )
-INFO: [Synth 8-3333] propagating constant 1 across sequential element (conv2/\aux_bias_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (maxpooling_1/\present_state_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (en_dense_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (max_ok_reg_reg)
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv1/\aux_bias_reg[9] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (conv1/\aux_bias_reg[16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv3/\quant/threshold_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv2/\quant/threshold_reg[8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (conv1/\quant/threshold_reg[8] )
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[47]) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[46]) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[45]) is unused and will be removed from module convolution.
@@ -1212,6 +1183,7 @@ WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[17]__0) is unused 
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[16]__0) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[15]__0) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[14]__0) is unused and will be removed from module convolution.
+WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[13]__0) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[47]__1) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[46]__1) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[45]__1) is unused and will be removed from module convolution.
@@ -1229,10 +1201,9 @@ WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[34]__1) is unused 
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[33]__1) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[32]__1) is unused and will be removed from module convolution.
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[31]__1) is unused and will be removed from module convolution.
-WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[30]__1) is unused and will be removed from module convolution.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 2338.258 ; gain = 802.527 ; free physical = 389 ; free virtual = 3623
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2004.520 ; gain = 468.785 ; free physical = 474 ; free virtual = 3090
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1243,11 +1214,12 @@ Block RAM: Preliminary Mapping	Report (see note below)
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 
 Distributed RAM: Preliminary Mapping	Report (see note below)
-+------------+--------------+-----------+----------------------+------------------------------+
-|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives                   | 
-+------------+--------------+-----------+----------------------+------------------------------+
-|image       | register_reg | Implied   | 1 K x 16             | RAM64X1D x 117	RAM64M x 585	 | 
-+------------+--------------+-----------+----------------------+------------------------------+
++-------------+-----------------------------+-----------+----------------------+------------------------------+
+|Module Name  | RTL Object                  | Inference | Size (Depth x Width) | Primitives                   | 
++-------------+-----------------------------+-----------+----------------------+------------------------------+
+|image        | register_reg                | Implied   | 1 K x 16             | RAM64X1D x 130	RAM64M x 650	 | 
+|accQuant_cnn | save_max_1/mem_rstl_max_reg | Implied   | 256 x 8              | RAM64X1D x 6	RAM64M x 6	     | 
++-------------+-----------------------------+-----------+----------------------+------------------------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 
@@ -1273,8 +1245,8 @@ DSP: Preliminary Mapping	Report (see note below)
 |convolution        | A*B                 | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | A*B                 | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | A*B                 | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|convolution        | (A:0x1e770)*B2      | 18     | 13     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|convolution        | (PCIN>>17)+A*B2     | 15     | 13     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|convolution        | (A:0x1e770)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution        | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |convolution        | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | PCIN+A2*(B:0x1e770) | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
@@ -1290,8 +1262,8 @@ DSP: Preliminary Mapping	Report (see note below)
 |convolution        | A*B                 | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | A*B                 | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | A*B                 | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|convolution        | (A:0x1b5cd)*B2      | 18     | 13     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|convolution        | (PCIN>>17)+A*B2     | 15     | 13     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|convolution        | (A:0x1b5cd)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|convolution        | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |convolution        | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | PCIN+A2*(B:0x1b5cd) | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
@@ -1307,8 +1279,8 @@ DSP: Preliminary Mapping	Report (see note below)
 |convolution        | A*B                 | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | A*B                 | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | A*B                 | 16     | 16     | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|convolution        | (A:0x318b)*B2       | 13     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
-|convolution        | (PCIN>>17)+A*B2     | 15     | 13     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
+|convolution        | (A:0x318b)*B2       | 14     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|convolution        | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |convolution        | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | PCIN+A2*(B:0x318b)  | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |convolution        | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
@@ -1344,7 +1316,7 @@ No constraint files found.
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:42 . Memory (MB): peak = 2338.258 ; gain = 802.527 ; free physical = 394 ; free virtual = 3618
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 2004.520 ; gain = 468.785 ; free physical = 474 ; free virtual = 3089
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -1354,11 +1326,12 @@ Block RAM: Final Mapping	Report
 -------NONE-------
 
 Distributed RAM: Final Mapping	Report
-+------------+--------------+-----------+----------------------+------------------------------+
-|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives                   | 
-+------------+--------------+-----------+----------------------+------------------------------+
-|image       | register_reg | Implied   | 1 K x 16             | RAM64X1D x 117	RAM64M x 585	 | 
-+------------+--------------+-----------+----------------------+------------------------------+
++-------------+-----------------------------+-----------+----------------------+------------------------------+
+|Module Name  | RTL Object                  | Inference | Size (Depth x Width) | Primitives                   | 
++-------------+-----------------------------+-----------+----------------------+------------------------------+
+|image        | register_reg                | Implied   | 1 K x 16             | RAM64X1D x 130	RAM64M x 650	 | 
+|accQuant_cnn | save_max_1/mem_rstl_max_reg | Implied   | 256 x 8              | RAM64X1D x 6	RAM64M x 6	     | 
++-------------+-----------------------------+-----------+----------------------+------------------------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
@@ -1389,28 +1362,12 @@ INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM bloc
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:97]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:97]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:145]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:145]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:145]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:145]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:97]
-INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sources_1/new/controlMemoryAddressConv.v:145]
 INFO: [Synth 8-7053] The timing for the instance save_data_1/mem_rstl_conv1_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7053] The timing for the instance save_data_1/mem_rstl_conv1_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7053] The timing for the instance save_data_1/mem_rstl_conv1_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7053] The timing for the instance save_data_1/mem_rstl_conv1_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7053] The timing for the instance save_data_2/mem_rstl_conv2_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7053] The timing for the instance save_data_2/mem_rstl_conv2_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7053] The timing for the instance save_data_2/mem_rstl_conv2_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7053] The timing for the instance save_data_2/mem_rstl_conv2_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7053] The timing for the instance save_data_3/mem_rstl_conv3_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7053] The timing for the instance save_data_3/mem_rstl_conv3_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7053] The timing for the instance save_data_3/mem_rstl_conv3_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7053] The timing for the instance save_data_3/mem_rstl_conv3_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:00:46 . Memory (MB): peak = 2338.258 ; gain = 802.527 ; free physical = 390 ; free virtual = 3619
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 2004.520 ; gain = 468.785 ; free physical = 473 ; free virtual = 3089
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1434,13 +1391,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 2338.258 ; gain = 802.527 ; free physical = 326 ; free virtual = 3557
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2004.520 ; gain = 468.785 ; free physical = 475 ; free virtual = 3084
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 2338.258 ; gain = 802.527 ; free physical = 326 ; free virtual = 3557
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2004.520 ; gain = 468.785 ; free physical = 475 ; free virtual = 3084
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -1459,25 +1416,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 2338.258 ; gain = 802.527 ; free physical = 325 ; free virtual = 3556
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2004.520 ; gain = 468.785 ; free physical = 475 ; free virtual = 3084
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 2338.258 ; gain = 802.527 ; free physical = 325 ; free virtual = 3555
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2004.520 ; gain = 468.785 ; free physical = 475 ; free virtual = 3084
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:51 . Memory (MB): peak = 2338.258 ; gain = 802.527 ; free physical = 312 ; free virtual = 3544
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2004.520 ; gain = 468.785 ; free physical = 475 ; free virtual = 3084
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:51 . Memory (MB): peak = 2338.258 ; gain = 802.527 ; free physical = 311 ; free virtual = 3544
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2004.520 ; gain = 468.785 ; free physical = 475 ; free virtual = 3084
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -1494,86 +1451,72 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     3|
-|2     |CARRY4   |   153|
-|3     |DSP48E1  |    63|
-|4     |LUT1     |    55|
-|5     |LUT2     |   213|
-|6     |LUT3     |   827|
-|7     |LUT4     |   519|
-|8     |LUT5     |  4298|
-|9     |LUT6     |  3327|
-|10    |MUXF7    |   528|
-|11    |MUXF8    |   250|
-|12    |RAM64M   |   585|
-|13    |RAM64X1D |   117|
-|14    |RAMB18E1 |    12|
-|15    |FDCE     |    76|
-|16    |FDPE     |     3|
-|17    |FDRE     |  5266|
-|18    |FDSE     |    50|
-|19    |IBUF     |    40|
-|20    |OBUF     |    10|
+|2     |CARRY4   |    89|
+|3     |DSP48E1  |    27|
+|4     |LUT1     |    24|
+|5     |LUT2     |    41|
+|6     |LUT3     |   299|
+|7     |LUT4     |   143|
+|8     |LUT5     |    79|
+|9     |LUT6     |   748|
+|10    |RAM64M   |   656|
+|11    |RAM64X1D |   136|
+|12    |RAMB18E1 |     4|
+|13    |FDCE     |    59|
+|14    |FDRE     |   419|
+|15    |IBUF     |    49|
+|16    |OBUF     |    27|
 +------+---------+------+
 
 Report Instance Areas: 
-+------+-----------------------+-----------------------------+------+
-|      |Instance               |Module                       |Cells |
-+------+-----------------------+-----------------------------+------+
-|1     |top                    |                             | 16395|
-|2     |  clk_fourth           |clock_divider_dens           |    49|
-|3     |  clk_second           |clock_divider                |    47|
-|4     |  clk_third            |clock_divider_max            |    45|
-|5     |  conv1                |convolution                  |   564|
-|6     |    activation         |ReLu_3                       |    73|
-|7     |    quant              |quantization                 |   140|
-|8     |  conv2                |convolution__parameterized0  |   564|
-|9     |    activation         |ReLu_2                       |    73|
-|10    |    quant              |quantization__parameterized0 |   140|
-|11    |  conv3                |convolution__parameterized1  |   562|
-|12    |    activation         |ReLu                         |    73|
-|13    |    quant              |quantization__parameterized1 |   140|
-|14    |  image                |memory_image                 |  1501|
-|15    |  maxpooling_1         |maxpooling                   |   170|
-|16    |  maxpooling_2         |maxpooling_0                 |   168|
-|17    |  maxpooling_3         |maxpooling_1                 |   168|
-|18    |  pos_memory_Max_count |counterPositionRstlMax       |  6207|
-|19    |  pos_memory_conv      |counterPositionRstlConv      |    32|
-|20    |  positionConv         |controlMemoryAddressConv     |    93|
-|21    |    counter_i          |counter_row_max              |    40|
-|22    |    counter_j          |counter_col_max              |    53|
-|23    |  positionImage        |controlMemoryAddressImg      |    93|
-|24    |    counter_i          |counter_row                  |    46|
-|25    |    counter_j          |counter_col                  |    44|
-|26    |  save_data_1          |memory_rstl_conv_1           |    42|
-|27    |  save_data_2          |memory_rstl_conv_2           |    42|
-|28    |  save_data_3          |memory_rstl_conv_3           |    42|
-|29    |  save_max_1           |memory_rstl_max_1            |  5948|
-+------+-----------------------+-----------------------------+------+
++------+-----------------------+-------------------------+------+
+|      |Instance               |Module                   |Cells |
++------+-----------------------+-------------------------+------+
+|1     |top                    |                         |  2803|
+|2     |  clk_fourth           |clock_divider_dens       |    49|
+|3     |  clk_second           |clock_divider            |    47|
+|4     |  clk_third            |clock_divider_max        |    46|
+|5     |  conv1                |convolution              |   545|
+|6     |    activation         |ReLu                     |    65|
+|7     |    quant              |quantization             |   130|
+|8     |  image                |memory_image             |  1659|
+|9     |  maxpooling_1         |maxpooling               |    58|
+|10    |  pos_memory_Max_count |counterPositionRstlMax   |    29|
+|11    |  pos_memory_conv      |counterPositionRstlConv  |    28|
+|12    |  positionConv         |controlMemoryAddressConv |    82|
+|13    |    counter_i          |counter_row_max          |    29|
+|14    |    counter_j          |counter_col_max          |    53|
+|15    |  positionImage        |controlMemoryAddressImg  |    93|
+|16    |    counter_i          |counter_row              |    46|
+|17    |    counter_j          |counter_col              |    44|
+|18    |  save_data_1          |memory_rstl_conv_1       |    44|
+|19    |  save_max_1           |memory_rstl_max_1        |    41|
++------+-----------------------+-------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:51 . Memory (MB): peak = 2338.258 ; gain = 802.527 ; free physical = 311 ; free virtual = 3543
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2004.520 ; gain = 468.785 ; free physical = 475 ; free virtual = 3084
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 405 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:51 ; elapsed = 00:00:51 . Memory (MB): peak = 2338.258 ; gain = 802.527 ; free physical = 309 ; free virtual = 3541
-Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:00:51 . Memory (MB): peak = 2338.266 ; gain = 802.527 ; free physical = 308 ; free virtual = 3541
+Synthesis finished with 0 errors, 0 critical warnings and 448 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2004.520 ; gain = 468.785 ; free physical = 478 ; free virtual = 3087
+Synthesis Optimization Complete : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2004.527 ; gain = 468.785 ; free physical = 478 ; free virtual = 3087
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.13 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2338.266 ; gain = 0.000 ; free physical = 218 ; free virtual = 3474
-INFO: [Netlist 29-17] Analyzing 1708 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.05 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2013.426 ; gain = 0.000 ; free physical = 540 ; free virtual = 3149
+INFO: [Netlist 29-17] Analyzing 912 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 15 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2394.285 ; gain = 0.000 ; free physical = 134 ; free virtual = 3410
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 5 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2143.203 ; gain = 0.000 ; free physical = 454 ; free virtual = 3062
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 702 instances were transformed.
-  RAM64M => RAM64M (RAMD64E(x4)): 585 instances
-  RAM64X1D => RAM64X1D (RAMD64E(x2)): 117 instances
+  A total of 792 instances were transformed.
+  RAM64M => RAM64M (RAMD64E(x4)): 656 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 136 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-296 Infos, 115 Warnings, 0 Critical Warnings and 0 Errors encountered.
+260 Infos, 117 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:58 ; elapsed = 00:01:01 . Memory (MB): peak = 2394.285 ; gain = 881.586 ; free physical = 276 ; free virtual = 3552
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2394.285 ; gain = 0.000 ; free physical = 276 ; free virtual = 3552
+synth_design: Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2143.203 ; gain = 630.500 ; free physical = 586 ; free virtual = 3195
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2143.203 ; gain = 0.000 ; free physical = 586 ; free virtual = 3195
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.runs/synth_1/accQuant_cnn.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file accQuant_cnn_utilization_synth.rpt -pb accQuant_cnn_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Aug 19 20:38:52 2021...
+INFO: [Common 17-206] Exiting Vivado at Tue Aug 24 03:22:31 2021...

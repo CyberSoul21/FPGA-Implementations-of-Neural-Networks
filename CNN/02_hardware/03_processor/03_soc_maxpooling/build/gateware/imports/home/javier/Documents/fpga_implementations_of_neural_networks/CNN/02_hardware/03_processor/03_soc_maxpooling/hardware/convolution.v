@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 08/17/2021 01:48:43 PM
+// Create Date: 07/24/2021 07:28:03 PM
 // Design Name: 
 // Module Name: convolution
 // Project Name: 
@@ -29,7 +29,7 @@ module convolution
     parameter s10 = 4'b1010, s11 = 4'b1011, s12 = 4'b1100, s13 = 4'b1101, s14 = 4'b1110,
     
     //quantization
-    parameter q = 63'd2014687024 //q = 31'b1111000000101011010111100110000
+    parameter q = 64'd2014687024 //q = 31'b1111000000101011010111100110000
     
 )
 
@@ -62,7 +62,8 @@ module convolution
     input [dataWidthConv-1:0] bias_filt, 
     
     output reg save_rstl,
-    output [7:0] out_quant      
+    output [7:0] out_quant,
+    output conv_ready       
 );
     //FSM
     reg [3:0] present_state, next_state; //ok
@@ -74,22 +75,20 @@ module convolution
     reg [17-1:0] aux_bias;
     reg  [63:0] num;
     reg rst_relu;
-
+    reg conv_ok;
 
     wire quant_ok;
     wire relu_ok;
+    //wire [7:0] num_quant;
     wire [8:0] num_quant;
     wire signed [7:0] num_final;//ojo
         
     initial
     begin
         $display("***********************************************************************");
-        save_rstl = 0;
-        rst_relu  = 0;
-        rst_quant = 0;
-        present_state = 0;
-        
-
+        conv_ok = 1'd0;
+        //present_state = 3'd0;
+        //next_state = 3'd0;
     end
 
     quantization #(.q(q)) quant 
@@ -112,22 +111,14 @@ module convolution
 
     always @(posedge clk) //Present estate  // always @(clk) //Present estate 
     begin
-        if(rst)
+        if(clk_div == 1)
         begin
-            present_state = 0; 
+            present_state <= s0;    
         end
-        else if(en)
+        else
         begin
-            if(clk_div == 1)
-            begin
-                present_state <= s0;
-                
-            end
-            else
-            begin
-                present_state <= next_state;
-            end     
-        end  
+            present_state <= next_state;
+        end    
     end    
 
     always @(negedge clk) //always @(*)
@@ -174,8 +165,6 @@ module convolution
             rstl_mult[7] <= $signed(rdata_img7*rdata_filt7);
             rstl_mult[8] <= $signed(rdata_img8*rdata_filt8);
             save_rstl <= 0;
-            rst_relu <= 0;
-            rst_quant <= 0;
             end          
         s1: begin
             rstl_sum <= $signed(rstl_mult[0] + rstl_mult[1] + rstl_mult[2] + rstl_mult[3] + rstl_mult[4] + rstl_mult[5] + rstl_mult[6] + rstl_mult[7] + rstl_mult[8]);
@@ -197,12 +186,14 @@ module convolution
             end 
         s5: begin
             save_rstl <= 0; 
+            conv_ok <= 1'd1;
 //            $display("%d",num_final); 
             //$fwrite(fd,"hola");
             end                                                
       endcase 
     end 
 
+assign conv_ready = conv_ok;
 assign out_quant = num_final;
 
 endmodule    

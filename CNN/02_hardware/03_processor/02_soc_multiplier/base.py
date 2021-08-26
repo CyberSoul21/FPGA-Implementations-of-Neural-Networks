@@ -63,6 +63,8 @@ class Platform(XilinxPlatform):
 platform = Platform()     
 
 platform.add_source("soc/signed_mult.v") #Javier
+platform.add_source("soc/quantization.v") #Javier
+platform.add_source("soc/ReLu.v") #Javier
 
 # Create our soc (fpga description)
 class BaseSoC(SoCCore):

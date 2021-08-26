@@ -22,9 +22,9 @@ class signed_mult(Module,AutoCSR):
 
 
         ##Valores Internos        
-        self.A        = CSRStorage(8) #Escritura lectura
-        self.B        = CSRStorage(8)  #lectura
-        self.OUT      = CSRStatus(16)
+        self.A        = CSRStorage(16) #Escritura lectura
+        self.B        = CSRStorage(17)  #lectura
+        self.OUT      = CSRStatus(8)
 
 
         self.specials +=Instance("signed_mult",

@@ -267,11 +267,11 @@ wire sys_rst;
 wire por_clk;
 reg int_rst = 1'd1;
 wire CLK;
-reg [7:0] A_storage = 8'd0;
+reg [15:0] A_storage = 16'd0;
 reg A_re = 1'd0;
-reg [7:0] B_storage = 8'd0;
+reg [16:0] B_storage = 17'd0;
 reg B_re = 1'd0;
-wire [15:0] OUT_status;
+wire [7:0] OUT_status;
 wire OUT_we;
 reg OUT_re = 1'd0;
 reg rs232phytx_state = 1'd0;
@@ -352,17 +352,17 @@ wire csr_bankarray_interface1_bank_bus_we;
 wire [31:0] csr_bankarray_interface1_bank_bus_dat_w;
 reg [31:0] csr_bankarray_interface1_bank_bus_dat_r = 32'd0;
 reg csr_bankarray_csrbank1_A0_re;
-wire [7:0] csr_bankarray_csrbank1_A0_r;
+wire [15:0] csr_bankarray_csrbank1_A0_r;
 reg csr_bankarray_csrbank1_A0_we;
-wire [7:0] csr_bankarray_csrbank1_A0_w;
+wire [15:0] csr_bankarray_csrbank1_A0_w;
 reg csr_bankarray_csrbank1_B0_re;
-wire [7:0] csr_bankarray_csrbank1_B0_r;
+wire [16:0] csr_bankarray_csrbank1_B0_r;
 reg csr_bankarray_csrbank1_B0_we;
-wire [7:0] csr_bankarray_csrbank1_B0_w;
+wire [16:0] csr_bankarray_csrbank1_B0_w;
 reg csr_bankarray_csrbank1_OUT_re;
-wire [15:0] csr_bankarray_csrbank1_OUT_r;
+wire [7:0] csr_bankarray_csrbank1_OUT_r;
 reg csr_bankarray_csrbank1_OUT_we;
-wire [15:0] csr_bankarray_csrbank1_OUT_w;
+wire [7:0] csr_bankarray_csrbank1_OUT_w;
 wire csr_bankarray_csrbank1_sel;
 wire [13:0] csr_bankarray_interface2_bank_bus_adr;
 wire csr_bankarray_interface2_bank_bus_we;
@@ -940,7 +940,7 @@ always @(*) begin
 end
 assign csr_bankarray_adr = csr_bankarray_sram_bus_adr[5:0];
 assign csr_bankarray_csrbank1_sel = (csr_bankarray_interface1_bank_bus_adr[13:9] == 1'd0);
-assign csr_bankarray_csrbank1_A0_r = csr_bankarray_interface1_bank_bus_dat_w[7:0];
+assign csr_bankarray_csrbank1_A0_r = csr_bankarray_interface1_bank_bus_dat_w[15:0];
 
 // synthesis translate_off
 reg dummy_d_17;
@@ -956,7 +956,7 @@ always @(*) begin
 	dummy_d_17 <= dummy_s;
 // synthesis translate_on
 end
-assign csr_bankarray_csrbank1_B0_r = csr_bankarray_interface1_bank_bus_dat_w[7:0];
+assign csr_bankarray_csrbank1_B0_r = csr_bankarray_interface1_bank_bus_dat_w[16:0];
 
 // synthesis translate_off
 reg dummy_d_18;
@@ -972,7 +972,7 @@ always @(*) begin
 	dummy_d_18 <= dummy_s;
 // synthesis translate_on
 end
-assign csr_bankarray_csrbank1_OUT_r = csr_bankarray_interface1_bank_bus_dat_w[15:0];
+assign csr_bankarray_csrbank1_OUT_r = csr_bankarray_interface1_bank_bus_dat_w[7:0];
 
 // synthesis translate_off
 reg dummy_d_19;
@@ -988,9 +988,9 @@ always @(*) begin
 	dummy_d_19 <= dummy_s;
 // synthesis translate_on
 end
-assign csr_bankarray_csrbank1_A0_w = A_storage[7:0];
-assign csr_bankarray_csrbank1_B0_w = B_storage[7:0];
-assign csr_bankarray_csrbank1_OUT_w = OUT_status[15:0];
+assign csr_bankarray_csrbank1_A0_w = A_storage[15:0];
+assign csr_bankarray_csrbank1_B0_w = B_storage[16:0];
+assign csr_bankarray_csrbank1_OUT_w = OUT_status[7:0];
 assign OUT_we = csr_bankarray_csrbank1_OUT_we;
 assign csr_bankarray_csrbank2_sel = (csr_bankarray_interface2_bank_bus_adr[13:9] == 2'd3);
 assign csr_bankarray_csrbank2_load0_r = csr_bankarray_interface2_bank_bus_dat_w[31:0];
@@ -1658,11 +1658,11 @@ always @(posedge sys_clk) begin
 		endcase
 	end
 	if (csr_bankarray_csrbank1_A0_re) begin
-		A_storage[7:0] <= csr_bankarray_csrbank1_A0_r;
+		A_storage[15:0] <= csr_bankarray_csrbank1_A0_r;
 	end
 	A_re <= csr_bankarray_csrbank1_A0_re;
 	if (csr_bankarray_csrbank1_B0_re) begin
-		B_storage[7:0] <= csr_bankarray_csrbank1_B0_r;
+		B_storage[16:0] <= csr_bankarray_csrbank1_B0_r;
 	end
 	B_re <= csr_bankarray_csrbank1_B0_re;
 	OUT_re <= csr_bankarray_csrbank1_OUT_re;
@@ -1818,9 +1818,9 @@ always @(posedge sys_clk) begin
 		timer_enable_storage <= 1'd0;
 		timer_enable_re <= 1'd0;
 		timer_value <= 32'd0;
-		A_storage <= 8'd0;
+		A_storage <= 16'd0;
 		A_re <= 1'd0;
-		B_storage <= 8'd0;
+		B_storage <= 17'd0;
 		B_re <= 1'd0;
 		OUT_re <= 1'd0;
 		rs232phytx_state <= 1'd0;

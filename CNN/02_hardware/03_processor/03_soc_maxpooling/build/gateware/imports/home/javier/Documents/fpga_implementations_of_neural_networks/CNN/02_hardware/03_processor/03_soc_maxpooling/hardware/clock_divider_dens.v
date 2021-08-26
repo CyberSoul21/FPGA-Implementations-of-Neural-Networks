@@ -20,9 +20,10 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module clock_divider_dens(clock_in,clock_out);
+module clock_divider_dens(clock_in,en,rst,clock_out);
 
     input clock_in; // input clock on FPGA
+    input en,rst;
     output reg clock_out; // output clock after dividing the input clock by divisor
     reg[27:0] counter=28'd0;
     parameter DIVISOR = 28'd4; //parameter DIVISOR = 28'd12;
@@ -39,13 +40,19 @@ module clock_divider_dens(clock_in,clock_out);
     
     always @(posedge clock_in)
     begin
-     counter <= counter + 28'd1;
-     if(counter>=(DIVISOR-1))
-     begin
-      counter <= 28'd0;
-     end
-     clock_out <= (counter<DIVISOR/4)?1'b1:1'b0; // clock_out <= (counter<DIVISOR/12)?1'b1:1'b0;
-    
+        if(rst)
+        begin
+            counter <= 28'd0;
+        end
+        if(en)
+        begin
+            counter <= counter + 28'd1;
+            if(counter>=(DIVISOR-1))
+            begin
+                counter <= 28'd0;
+            end
+            clock_out <= (counter<DIVISOR/4)?1'b1:1'b0; // clock_out <= (counter<DIVISOR/12)?1'b1:1'b0;
+        end
     end
 endmodule
 

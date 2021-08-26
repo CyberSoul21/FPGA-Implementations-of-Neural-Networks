@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Thu Aug 19 20:41:17 2021
+| Date         : Tue Aug 24 03:23:50 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_bus_skew -warn_on_violation -file accQuant_cnn_bus_skew_routed.rpt -pb accQuant_cnn_bus_skew_routed.pb -rpx accQuant_cnn_bus_skew_routed.rpx
 | Design       : accQuant_cnn

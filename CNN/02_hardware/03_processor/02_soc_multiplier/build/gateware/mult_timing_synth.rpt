@@ -1,11 +1,11 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Tue Aug  3 19:40:05 2021
+| Date         : Sat Aug 21 12:45:28 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_timing_summary -file mult_timing_synth.rpt
 | Design       : mult
-| Device       : 7z010-clg400
+| Device       : 7z020-clg400
 | Speed File   : -1  PRODUCTION 1.11 2014-09-11
 ------------------------------------------------------------------------------------
 
@@ -128,7 +128,7 @@ Table of Contents
 
     WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
     -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-      0.541        0.000                      0                 4778        0.007        0.000                      0                 4778        2.750        0.000                       0                  1844  
+      0.446        0.000                      0                 5110        0.045        0.000                      0                 5110        2.750        0.000                       0                  1946  
 
 
 All user specified timing constraints are met.
@@ -151,7 +151,7 @@ clk125  {0.000 4.000}        8.000           125.000
 
 Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
 -----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
-clk125              0.541        0.000                      0                 4778        0.007        0.000                      0                 4778        2.750        0.000                       0                  1844  
+clk125              0.446        0.000                      0                 5110        0.045        0.000                      0                 5110        2.750        0.000                       0                  1946  
 
 
 ------------------------------------------------------------------------------------------------
@@ -182,28 +182,28 @@ Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing 
 From Clock:  clk125
   To Clock:  clk125
 
-Setup :            0  Failing Endpoints,  Worst Slack        0.541ns,  Total Violation        0.000ns
-Hold  :            0  Failing Endpoints,  Worst Slack        0.007ns,  Total Violation        0.000ns
+Setup :            0  Failing Endpoints,  Worst Slack        0.446ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.045ns,  Total Violation        0.000ns
 PW    :            0  Failing Endpoints,  Worst Slack        2.750ns,  Total Violation        0.000ns
 ---------------------------------------------------------------------------------------------------
 
 
 Max Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.541ns  (required time - arrival time)
-  Source:                 VexRiscv/decode_to_execute_INSTRUCTION_reg[7]/C
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
-  Destination:            VexRiscv/dataCache_1_/stage0_colisions_regNextWhen_reg[0]/D
-                            (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+Slack (MET) :             0.446ns  (required time - arrival time)
+  Source:                 signed_mult/quant/result10__1/CLK
+                            (falling edge-triggered cell DSP48E1 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
+  Destination:            signed_mult/quant/result1_reg/PCIN[0]
+                            (falling edge-triggered cell DSP48E1 clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
   Path Group:             clk125
   Path Type:              Setup (Max at Slow Process Corner)
-  Requirement:            8.000ns  (clk125 rise@8.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        7.308ns  (logic 3.004ns (41.106%)  route 4.304ns (58.894%))
-  Logic Levels:           9  (CARRY4=3 LUT4=1 LUT5=2 LUT6=3)
+  Requirement:            8.000ns  (clk125 fall@12.000ns - clk125 fall@4.000ns)
+  Data Path Delay:        5.974ns  (logic 5.919ns (99.079%)  route 0.055ns (0.921%))
+  Logic Levels:           1  (DSP48E1=1)
   Clock Path Skew:        -0.145ns (DCD - SCD + CPR)
-    Destination Clock Delay (DCD):    2.711ns = ( 10.711 - 8.000 ) 
-    Source Clock Delay      (SCD):    2.976ns
-    Clock Pessimism Removal (CPR):    0.121ns
+    Destination Clock Delay (DCD):    2.694ns = ( 14.694 - 12.000 ) 
+    Source Clock Delay      (SCD):    2.960ns = ( 6.960 - 4.000 ) 
+    Clock Pessimism Removal (CPR):    0.120ns
   Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
     Total System Jitter     (TSJ):    0.071ns
     Total Input Jitter      (TIJ):    0.000ns
@@ -212,57 +212,41 @@ Slack (MET) :             0.541ns  (required time - arrival time)
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
   -------------------------------------------------------------------    -------------------
-                         (clock clk125 rise edge)     0.000     0.000 r  
-    K17                                               0.000     0.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         1.492     1.492 r  clk125_IBUF_inst/O
-                         net (fo=1, unplaced)         0.800     2.291    clk125_IBUF
-                         BUFG (Prop_bufg_I_O)         0.101     2.392 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1843, unplaced)      0.584     2.976    VexRiscv/clk125_IBUF_BUFG
-                         FDRE                                         r  VexRiscv/decode_to_execute_INSTRUCTION_reg[7]/C
+                         (clock clk125 fall edge)     4.000     4.000 f  
+    K17                                               0.000     4.000 f  clk125 (IN)
+                         net (fo=0)                   0.000     4.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         1.475     5.475 f  clk125_IBUF_inst/O
+                         net (fo=1, unplaced)         0.800     6.275    clk125_IBUF
+                         BUFG (Prop_bufg_I_O)         0.101     6.376 f  clk125_IBUF_BUFG_inst/O
+                         net (fo=1949, unplaced)      0.584     6.960    signed_mult/quant/result10__1_0
+                         DSP48E1                                      r  signed_mult/quant/result10__1/CLK  (IS_INVERTED)
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.456     3.432 f  VexRiscv/decode_to_execute_INSTRUCTION_reg[7]/Q
-                         net (fo=6, unplaced)         0.838     4.270    VexRiscv/dataCache_1_/CsrPlugin_exceptionPortCtrl_exceptionContext_badAddr_reg[31]_0[4]
-                         LUT5 (Prop_lut5_I0_O)        0.295     4.565 r  VexRiscv/dataCache_1_/execute_to_memory_SHIFT_RIGHT[30]_i_6/O
-                         net (fo=26, unplaced)        0.515     5.080    VexRiscv/dataCache_1_/decode_to_execute_INSTRUCTION_reg[7]_0
-                         LUT6 (Prop_lut6_I4_O)        0.124     5.204 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_43/O
-                         net (fo=1, unplaced)         0.665     5.869    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_43_n_0
-                         CARRY4 (Prop_carry4_S[0]_CO[3])
-                                                      0.656     6.525 r  VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_33/CO[3]
-                         net (fo=1, unplaced)         0.000     6.525    VexRiscv/dataCache_1_/ways_0_data_symbol0_reg_i_33_n_0
-                         CARRY4 (Prop_carry4_CI_O[2])
-                                                      0.256     6.781 r  VexRiscv/dataCache_1_/ways_0_tags_reg_i_42/O[2]
-                         net (fo=3, unplaced)         0.470     7.251    VexRiscv/dataCache_1_/_zz_269_[6]
-                         LUT5 (Prop_lut5_I4_O)        0.295     7.546 r  VexRiscv/dataCache_1_/stage0_colisions_regNextWhen[0]_i_15/O
-                         net (fo=1, unplaced)         0.449     7.995    VexRiscv/dataCache_1_/stage0_colisions_regNextWhen[0]_i_15_n_0
-                         LUT6 (Prop_lut6_I5_O)        0.124     8.119 r  VexRiscv/dataCache_1_/stage0_colisions_regNextWhen[0]_i_11/O
-                         net (fo=1, unplaced)         0.449     8.568    VexRiscv/dataCache_1_/stage0_colisions_regNextWhen[0]_i_11_n_0
-                         LUT6 (Prop_lut6_I0_O)        0.124     8.692 r  VexRiscv/dataCache_1_/stage0_colisions_regNextWhen[0]_i_7/O
-                         net (fo=1, unplaced)         0.000     8.692    VexRiscv/dataCache_1_/stage0_colisions_regNextWhen[0]_i_7_n_0
-                         CARRY4 (Prop_carry4_S[1]_CO[3])
-                                                      0.550     9.242 r  VexRiscv/dataCache_1_/stage0_colisions_regNextWhen_reg[0]_i_2/CO[3]
-                         net (fo=1, unplaced)         0.918    10.160    VexRiscv/dataCache_1_/stage0_colisions_regNextWhen_reg[0]_i_2_n_0
-                         LUT4 (Prop_lut4_I0_O)        0.124    10.284 r  VexRiscv/dataCache_1_/stage0_colisions_regNextWhen[0]_i_1/O
-                         net (fo=1, unplaced)         0.000    10.284    VexRiscv/dataCache_1_/stage0_colisions
-                         FDRE                                         r  VexRiscv/dataCache_1_/stage0_colisions_regNextWhen_reg[0]/D
+                         DSP48E1 (Prop_dsp48e1_CLK_PCOUT[47])
+                                                      4.206    11.166 r  signed_mult/quant/result10__1/PCOUT[47]
+                         net (fo=1, unplaced)         0.055    11.221    signed_mult/quant/result10__1_n_106
+                         DSP48E1 (Prop_dsp48e1_PCIN[47]_PCOUT[0])
+                                                      1.713    12.934 r  signed_mult/quant/result10__2/PCOUT[0]
+                         net (fo=1, unplaced)         0.000    12.934    signed_mult/quant/result10__2_n_153
+                         DSP48E1                                      r  signed_mult/quant/result1_reg/PCIN[0]
   -------------------------------------------------------------------    -------------------
 
-                         (clock clk125 rise edge)     8.000     8.000 r  
-    K17                                               0.000     8.000 r  clk125 (IN)
-                         net (fo=0)                   0.000     8.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         1.421     9.421 r  clk125_IBUF_inst/O
-                         net (fo=1, unplaced)         0.760    10.181    clk125_IBUF
-                         BUFG (Prop_bufg_I_O)         0.091    10.272 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1843, unplaced)      0.439    10.711    VexRiscv/dataCache_1_/clk125_IBUF_BUFG
-                         FDRE                                         r  VexRiscv/dataCache_1_/stage0_colisions_regNextWhen_reg[0]/C
-                         clock pessimism              0.121    10.831    
-                         clock uncertainty           -0.035    10.796    
-                         FDRE (Setup_fdre_C_D)        0.029    10.825    VexRiscv/dataCache_1_/stage0_colisions_regNextWhen_reg[0]
+                         (clock clk125 fall edge)    12.000    12.000 f  
+    K17                                               0.000    12.000 f  clk125 (IN)
+                         net (fo=0)                   0.000    12.000    clk125
+    K17                  IBUF (Prop_ibuf_I_O)         1.404    13.404 f  clk125_IBUF_inst/O
+                         net (fo=1, unplaced)         0.760    14.164    clk125_IBUF
+                         BUFG (Prop_bufg_I_O)         0.091    14.255 f  clk125_IBUF_BUFG_inst/O
+                         net (fo=1949, unplaced)      0.439    14.694    signed_mult/quant/result10__1_0
+                         DSP48E1                                      r  signed_mult/quant/result1_reg/CLK  (IS_INVERTED)
+                         clock pessimism              0.120    14.815    
+                         clock uncertainty           -0.035    14.779    
+                         DSP48E1 (Setup_dsp48e1_CLK_PCIN[0])
+                                                     -1.400    13.379    signed_mult/quant/result1_reg
   -------------------------------------------------------------------
-                         required time                         10.825    
-                         arrival time                         -10.284    
+                         required time                         13.379    
+                         arrival time                         -12.934    
   -------------------------------------------------------------------
-                         slack                                  0.541    
+                         slack                                  0.446    
 
 
 
@@ -270,7 +254,7 @@ Slack (MET) :             0.541ns  (required time - arrival time)
 
 Min Delay Paths
 --------------------------------------------------------------------------------------
-Slack (MET) :             0.007ns  (arrival time - required time)
+Slack (MET) :             0.045ns  (arrival time - required time)
   Source:                 regs0_reg/C
                             (rising edge-triggered cell FDRE clocked by clk125  {rise@0.000ns fall@4.000ns period=8.000ns})
   Destination:            regs1_reg/D
@@ -278,11 +262,11 @@ Slack (MET) :             0.007ns  (arrival time - required time)
   Path Group:             clk125
   Path Type:              Hold (Min at Fast Process Corner)
   Requirement:            0.000ns  (clk125 rise@0.000ns - clk125 rise@0.000ns)
-  Data Path Delay:        0.222ns  (logic 0.141ns (63.533%)  route 0.081ns (36.467%))
+  Data Path Delay:        0.228ns  (logic 0.147ns (64.493%)  route 0.081ns (35.507%))
   Logic Levels:           0  
   Clock Path Skew:        0.145ns (DCD - SCD - CPR)
-    Destination Clock Delay (DCD):    1.090ns
-    Source Clock Delay      (SCD):    0.737ns
+    Destination Clock Delay (DCD):    1.073ns
+    Source Clock Delay      (SCD):    0.720ns
     Clock Pessimism Removal (CPR):    0.209ns
 
     Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
@@ -290,32 +274,32 @@ Slack (MET) :             0.007ns  (arrival time - required time)
                          (clock clk125 rise edge)     0.000     0.000 r  
     K17                                               0.000     0.000 r  clk125 (IN)
                          net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.259     0.259 r  clk125_IBUF_inst/O
-                         net (fo=1, unplaced)         0.337     0.597    clk125_IBUF
-                         BUFG (Prop_bufg_I_O)         0.026     0.623 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1843, unplaced)      0.114     0.737    clk125_IBUF_BUFG
+    K17                  IBUF (Prop_ibuf_I_O)         0.243     0.243 r  clk125_IBUF_inst/O
+                         net (fo=1, unplaced)         0.337     0.580    clk125_IBUF
+                         BUFG (Prop_bufg_I_O)         0.026     0.606 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1949, unplaced)      0.114     0.720    clk125_IBUF_BUFG
                          FDRE                                         r  regs0_reg/C
   -------------------------------------------------------------------    -------------------
-                         FDRE (Prop_fdre_C_Q)         0.141     0.878 r  regs0_reg/Q
-                         net (fo=1, unplaced)         0.081     0.959    regs0
+                         FDRE (Prop_fdre_C_Q)         0.147     0.867 r  regs0_reg/Q
+                         net (fo=1, unplaced)         0.081     0.948    regs0
                          FDRE                                         r  regs1_reg/D
   -------------------------------------------------------------------    -------------------
 
                          (clock clk125 rise edge)     0.000     0.000 r  
     K17                                               0.000     0.000 r  clk125 (IN)
                          net (fo=0)                   0.000     0.000    clk125
-    K17                  IBUF (Prop_ibuf_I_O)         0.447     0.447 r  clk125_IBUF_inst/O
-                         net (fo=1, unplaced)         0.355     0.802    clk125_IBUF
-                         BUFG (Prop_bufg_I_O)         0.029     0.831 r  clk125_IBUF_BUFG_inst/O
-                         net (fo=1843, unplaced)      0.259     1.090    clk125_IBUF_BUFG
+    K17                  IBUF (Prop_ibuf_I_O)         0.431     0.431 r  clk125_IBUF_inst/O
+                         net (fo=1, unplaced)         0.355     0.785    clk125_IBUF
+                         BUFG (Prop_bufg_I_O)         0.029     0.814 r  clk125_IBUF_BUFG_inst/O
+                         net (fo=1949, unplaced)      0.259     1.073    clk125_IBUF_BUFG
                          FDRE                                         r  regs1_reg/C
-                         clock pessimism             -0.209     0.882    
-                         FDRE (Hold_fdre_C_D)         0.070     0.952    regs1_reg
+                         clock pessimism             -0.209     0.865    
+                         FDRE (Hold_fdre_C_D)         0.038     0.903    regs1_reg
   -------------------------------------------------------------------
-                         required time                         -0.952    
-                         arrival time                           0.959    
+                         required time                         -0.903    
+                         arrival time                           0.948    
   -------------------------------------------------------------------
-                         slack                                  0.007    
+                         slack                                  0.045    
 
 
 
@@ -328,10 +312,10 @@ Waveform(ns):       { 0.000 4.000 }
 Period(ns):         8.000
 Sources:            { clk125 }
 
-Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
-Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.944         8.000       5.056                VexRiscv/IBusCachedPlugin_cache/ways_0_datas_reg/CLKARDCLK
-Low Pulse Width   Slow    RAMD32/CLK          n/a            1.250         4.000       2.750                storage_1_reg_0_15_0_5/RAMA/CLK
-High Pulse Width  Slow    RAMD32/CLK          n/a            1.250         4.000       2.750                storage_1_reg_0_15_0_5/RAMA/CLK
+Check Type        Corner  Lib Pin      Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location  Pin
+Min Period        n/a     DSP48E1/CLK  n/a            3.884         8.000       4.116                signed_mult/quant/result1_reg/CLK
+Low Pulse Width   Slow    RAMD32/CLK   n/a            1.250         4.000       2.750                storage_1_reg_0_15_0_5/RAMA/CLK
+High Pulse Width  Fast    RAMD32/CLK   n/a            1.250         4.000       2.750                storage_1_reg_0_15_0_5/RAMA/CLK
 
 
 

@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 1ns
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -34,6 +34,7 @@ module accQuant_cnn
 )
 (
     input clk,
+    //input clk_fpga,
     input en, //enable convolution after save data in memory
     input rst, 
     
@@ -49,9 +50,12 @@ module accQuant_cnn
     
     input ren_memory,                               //test soc
     input [dataWidthCount-1:0] radd_memory,       //test soc
-    output [dataWidthMenMax-1:0] data_memory,   //test soc
+    output signed [dataWidthMenMax-1:0] data_memory,   //test soc   test 14:28
+//    output [dataWidthMenMax-1:0] data_memory,   //test soc
     //output [7:0]out
-    output out
+    output conv_ok,
+    output max_ok,
+    output dens_ok
 
 );
 
@@ -158,7 +162,7 @@ module accQuant_cnn
     //********************************************//ok
     //Wire to extract result from convolution
     //********************************************
-    wire [dataWidthMenConv-1:0] rdata_conv1_0;
+    wire [dataWidthMenConv-1:0] rdata_conv1_0; 
     wire [dataWidthMenConv-1:0] rdata_conv1_1;
     wire [dataWidthMenConv-1:0] rdata_conv1_2;
     wire [dataWidthMenConv-1:0] rdata_conv1_3;
@@ -180,7 +184,8 @@ module accQuant_cnn
     wire save_rstl_max2;
     wire save_rstl_max3;    
     
-    reg max_ok;
+    reg max_ok_reg;
+    reg dens_ok_reg;
 //******************************************************************************************************* 
 //*******************************************************************************************************
 //*******************************************************************************************************
@@ -210,46 +215,46 @@ module accQuant_cnn
     wire [dataWidthNumDens-1:0] num_dens_1;
     wire [dataWidthMenMax-1:0] data_dens_weight_1;
     
-//    wire den_ok_2;
-//    wire quant_ok_2;    
-//    wire [dataWidthNumDens-1:0] num_dens_2;
-//    wire [dataWidthMenMax-1:0] data_dens_weight_2;
+    wire den_ok_2;
+    wire quant_ok_2;    
+    wire [dataWidthNumDens-1:0] num_dens_2;
+    wire [dataWidthMenMax-1:0] data_dens_weight_2;
 
-//    wire den_ok_3;
-//    wire quant_ok_3;    
-//    wire [dataWidthNumDens-1:0] num_dens_3;
-//    wire [dataWidthMenMax-1:0] data_dens_weight_3;
+    wire den_ok_3;
+    wire quant_ok_3;    
+    wire [dataWidthNumDens-1:0] num_dens_3;
+    wire [dataWidthMenMax-1:0] data_dens_weight_3;
         
-//    wire den_ok_4;
-//    wire quant_ok_4;    
-//    wire [dataWidthNumDens-1:0] num_dens_4;                    
-//    wire [dataWidthMenMax-1:0] data_dens_weight_4;        
+    wire den_ok_4;
+    wire quant_ok_4;    
+    wire [dataWidthNumDens-1:0] num_dens_4;                    
+    wire [dataWidthMenMax-1:0] data_dens_weight_4;        
         
-//    wire den_ok_5;
-//    wire quant_ok_5;    
-//    wire [dataWidthNumDens-1:0] num_dens_5;                    
-//    wire [dataWidthMenMax-1:0] data_dens_weight_5;
+    wire den_ok_5;
+    wire quant_ok_5;    
+    wire [dataWidthNumDens-1:0] num_dens_5;                    
+    wire [dataWidthMenMax-1:0] data_dens_weight_5;
     
-//    wire den_ok_6;
-//    wire quant_ok_6;    
-//    wire [dataWidthNumDens-1:0] num_dens_6;                    
-//    wire [dataWidthMenMax-1:0] data_dens_weight_6;
+    wire den_ok_6;
+    wire quant_ok_6;    
+    wire [dataWidthNumDens-1:0] num_dens_6;                    
+    wire [dataWidthMenMax-1:0] data_dens_weight_6;
     
-//    wire den_ok_7;
-//    wire quant_ok_7;    
-//    wire [dataWidthNumDens-1:0] num_dens_7;                    
-//    wire [dataWidthMenMax-1:0] data_dens_weight_7;
+    wire den_ok_7;
+    wire quant_ok_7;    
+    wire [dataWidthNumDens-1:0] num_dens_7;                    
+    wire [dataWidthMenMax-1:0] data_dens_weight_7;
     
-//    wire den_ok_8;
-//    wire quant_ok_8;    
-//    wire [dataWidthNumDens-1:0] num_dens_8;                    
-//    wire [dataWidthMenMax-1:0] data_dens_weight_8;
+    wire den_ok_8;
+    wire quant_ok_8;    
+    wire [dataWidthNumDens-1:0] num_dens_8;                    
+    wire [dataWidthMenMax-1:0] data_dens_weight_8;
     
     
-//    wire den_ok_9;
-//    wire quant_ok_9;    
-//    wire [dataWidthNumDens-1:0] num_dens_9;                    
-//    wire [dataWidthMenMax-1:0] data_dens_weight_9;
+    wire den_ok_9;
+    wire quant_ok_9;    
+    wire [dataWidthNumDens-1:0] num_dens_9;                    
+    wire [dataWidthMenMax-1:0] data_dens_weight_9;
     
     
     
@@ -258,16 +263,19 @@ module accQuant_cnn
     initial
     begin
         en_dense = 0;
-        max_ok = 0;
+        max_ok_reg = 0;
+        dens_ok_reg = 0;
         dis_write_conv = 0;
         en_read_conv = 0;
+
     end
 
 
 //******************************************************************************************************* 
 
+//    wire clk;
 
-
+//    clock_divider_fpga clk_5MH(.clk(clk_fpga),.clk2(clk));
 
 
 
@@ -305,7 +313,7 @@ module accQuant_cnn
     );  
     
     
-    memory_image image
+    memory_image image //ok
     (
         .clk(clk_div),
         .ren(en_count),
@@ -348,39 +356,39 @@ module accQuant_cnn
     );
     
         
-//    memory_filter_2 filter2
-//    (
-//        .clk(clk_div),
-//        .en(en_count),
-//        .addr(0),
-//        .rdata0(rdata_filt2_0),
-//        .rdata1(rdata_filt2_1),
-//        .rdata2(rdata_filt2_2),
-//        .rdata3(rdata_filt2_3),
-//        .rdata4(rdata_filt2_4),
-//        .rdata5(rdata_filt2_5),
-//        .rdata6(rdata_filt2_6),
-//        .rdata7(rdata_filt2_7),
-//        .rdata8(rdata_filt2_8),
-//        .bias(bias_filt2)
-//    );
+    memory_filter_2 filter2
+    (
+        .clk(clk_div),
+        .en(en_count),
+        .addr(0),
+        .rdata0(rdata_filt2_0),
+        .rdata1(rdata_filt2_1),
+        .rdata2(rdata_filt2_2),
+        .rdata3(rdata_filt2_3),
+        .rdata4(rdata_filt2_4),
+        .rdata5(rdata_filt2_5),
+        .rdata6(rdata_filt2_6),
+        .rdata7(rdata_filt2_7),
+        .rdata8(rdata_filt2_8),
+        .bias(bias_filt2)
+    );
     
-//    memory_filter_3 filter3
-//    (
-//        .clk(clk_div),
-//        .en(en_count),
-//        .addr(0),
-//        .rdata0(rdata_filt3_0),
-//        .rdata1(rdata_filt3_1),
-//        .rdata2(rdata_filt3_2),
-//        .rdata3(rdata_filt3_3),
-//        .rdata4(rdata_filt3_4),
-//        .rdata5(rdata_filt3_5),
-//        .rdata6(rdata_filt3_6),
-//        .rdata7(rdata_filt3_7),
-//        .rdata8(rdata_filt3_8),
-//        .bias(bias_filt3)
-//    );
+    memory_filter_3 filter3
+    (
+        .clk(clk_div),
+        .en(en_count),
+        .addr(0),
+        .rdata0(rdata_filt3_0),
+        .rdata1(rdata_filt3_1),
+        .rdata2(rdata_filt3_2),
+        .rdata3(rdata_filt3_3),
+        .rdata4(rdata_filt3_4),
+        .rdata5(rdata_filt3_5),
+        .rdata6(rdata_filt3_6),
+        .rdata7(rdata_filt3_7),
+        .rdata8(rdata_filt3_8),
+        .bias(bias_filt3)
+    );
     
     
     convolution #(.q(63'd1595664240)) conv1
@@ -420,96 +428,96 @@ module accQuant_cnn
         .out_quant(num_final_1)
     );
     
-//    convolution #(.q(63'd1254864333)) conv2
-//    (
-//        .clk(clk),
-//        .en(en & dis_write_conv),
-//        .rst(rst),
-//        .clk_div(clk_div),//ok        
-//        //********************************************//ok
-//        //Wire to extract data that composed the image
-//        //********************************************
-//        .rdata_img0(rdata_img0),
-//        .rdata_img1(rdata_img1),
-//        .rdata_img2(rdata_img2),
-//        .rdata_img3(rdata_img3),
-//        .rdata_img4(rdata_img4),
-//        .rdata_img5(rdata_img5),
-//        .rdata_img6(rdata_img6),
-//        .rdata_img7(rdata_img7),
-//        .rdata_img8(rdata_img8),
-//        //********************************************    
-//        //********************************************//ok
-//        //Wire to extract weights of filter
-//        //********************************************
-//        .rdata_filt0(rdata_filt2_0),
-//        .rdata_filt1(rdata_filt2_1),
-//        .rdata_filt2(rdata_filt2_2),
-//        .rdata_filt3(rdata_filt2_3),
-//        .rdata_filt4(rdata_filt2_4),
-//        .rdata_filt5(rdata_filt2_5),
-//        .rdata_filt6(rdata_filt2_6),
-//        .rdata_filt7(rdata_filt2_7),
-//        .rdata_filt8(rdata_filt2_8),
-//        .bias_filt(bias_filt2),    
-    
-//        .save_rstl(save_rstl_2),
-//        .out_quant(num_final_2)
-//    );
-    
-//    convolution #(.q(63'd1441935755)) conv3
-//    (
-//        .clk(clk),
-//        .en(en & dis_write_conv),
-//        .rst(rst),
-//        .clk_div(clk_div),//ok        
-//        //********************************************//ok
-//        //Wire to extract data that composed the image
-//        //********************************************
-//        .rdata_img0(rdata_img0),
-//        .rdata_img1(rdata_img1),
-//        .rdata_img2(rdata_img2),
-//        .rdata_img3(rdata_img3),
-//        .rdata_img4(rdata_img4),
-//        .rdata_img5(rdata_img5),
-//        .rdata_img6(rdata_img6),
-//        .rdata_img7(rdata_img7),
-//        .rdata_img8(rdata_img8),
-//        //********************************************    
-//        //********************************************//ok
-//        //Wire to extract weights of filter
-//        //********************************************
-//        .rdata_filt0(rdata_filt3_0),
-//        .rdata_filt1(rdata_filt3_1),
-//        .rdata_filt2(rdata_filt3_2),
-//        .rdata_filt3(rdata_filt3_3),
-//        .rdata_filt4(rdata_filt3_4),
-//        .rdata_filt5(rdata_filt3_5),
-//        .rdata_filt6(rdata_filt3_6),
-//        .rdata_filt7(rdata_filt3_7),
-//        .rdata_filt8(rdata_filt3_8),
-//        .bias_filt(bias_filt3),    
-    
-//        .save_rstl(save_rstl_3),
-//        .out_quant(num_final_3)
-//    );        
-
-
-    memory_rstl_conv_1 save_data_1 //test soc
+    convolution #(.q(63'd1254864333)) conv2
     (
         .clk(clk),
-        .wen(save_rstl_1 & dis_write_conv), //dis_write_conv
-        .ren(ren_memory),
-        .wadd(pos_rstl),
-        .radd(radd_memory),
-        .data_in(num_final_1),
-        .rdata(rdata_conv1_0)
-     );
+        .en(en & dis_write_conv),
+        .rst(rst),
+        .clk_div(clk_div),//ok        
+        //********************************************//ok
+        //Wire to extract data that composed the image
+        //********************************************
+        .rdata_img0(rdata_img0),
+        .rdata_img1(rdata_img1),
+        .rdata_img2(rdata_img2),
+        .rdata_img3(rdata_img3),
+        .rdata_img4(rdata_img4),
+        .rdata_img5(rdata_img5),
+        .rdata_img6(rdata_img6),
+        .rdata_img7(rdata_img7),
+        .rdata_img8(rdata_img8),
+        //********************************************    
+        //********************************************//ok
+        //Wire to extract weights of filter
+        //********************************************
+        .rdata_filt0(rdata_filt2_0),
+        .rdata_filt1(rdata_filt2_1),
+        .rdata_filt2(rdata_filt2_2),
+        .rdata_filt3(rdata_filt2_3),
+        .rdata_filt4(rdata_filt2_4),
+        .rdata_filt5(rdata_filt2_5),
+        .rdata_filt6(rdata_filt2_6),
+        .rdata_filt7(rdata_filt2_7),
+        .rdata_filt8(rdata_filt2_8),
+        .bias_filt(bias_filt2),    
+    
+        .save_rstl(save_rstl_2),
+        .out_quant(num_final_2)
+    );
+    
+    convolution #(.q(63'd1441935755)) conv3
+    (
+        .clk(clk),
+        .en(en & dis_write_conv),
+        .rst(rst),
+        .clk_div(clk_div),//ok        
+        //********************************************//ok
+        //Wire to extract data that composed the image
+        //********************************************
+        .rdata_img0(rdata_img0),
+        .rdata_img1(rdata_img1),
+        .rdata_img2(rdata_img2),
+        .rdata_img3(rdata_img3),
+        .rdata_img4(rdata_img4),
+        .rdata_img5(rdata_img5),
+        .rdata_img6(rdata_img6),
+        .rdata_img7(rdata_img7),
+        .rdata_img8(rdata_img8),
+        //********************************************    
+        //********************************************//ok
+        //Wire to extract weights of filter
+        //********************************************
+        .rdata_filt0(rdata_filt3_0),
+        .rdata_filt1(rdata_filt3_1),
+        .rdata_filt2(rdata_filt3_2),
+        .rdata_filt3(rdata_filt3_3),
+        .rdata_filt4(rdata_filt3_4),
+        .rdata_filt5(rdata_filt3_5),
+        .rdata_filt6(rdata_filt3_6),
+        .rdata_filt7(rdata_filt3_7),
+        .rdata_filt8(rdata_filt3_8),
+        .bias_filt(bias_filt3),    
+    
+        .save_rstl(save_rstl_3),
+        .out_quant(num_final_3)
+    );        
+
+
+//    memory_rstl_conv_1 save_data_1 //test soc
+//    (
+//        .clk(clk),
+//        .wen(save_rstl_1 & dis_write_conv), //dis_write_conv
+//        .ren(ren_memory),
+//        .wadd(pos_rstl),
+//        .radd(radd_memory),
+//        .data_in(num_final_1),
+//        .rdata(rdata_conv1_0)
+//     );
      
 //    memory_rstl_conv_2 save_data_2 //test soc
 //    (
 //        .clk(clk),
-//        .wen(save_rstl_1 & dis_write_conv), //dis_write_conv
+//        .wen(save_rstl_2 & dis_write_conv), //dis_write_conv
 //        .ren(ren_memory),
 //        .wadd(pos_rstl),
 //        .radd(radd_memory),
@@ -520,7 +528,7 @@ module accQuant_cnn
 //    memory_rstl_conv_3 save_data_3 //test soc
 //    (
 //        .clk(clk),
-//        .wen(save_rstl_1 & dis_write_conv), //dis_write_conv
+//        .wen(save_rstl_3 & dis_write_conv), //dis_write_conv
 //        .ren(ren_memory),
 //        .wadd(pos_rstl),
 //        .radd(radd_memory),
@@ -528,50 +536,50 @@ module accQuant_cnn
 //        .rdata(rdata_conv3_0)
 //     );          
 
-//    memory_rstl_conv_1 save_data_1
-//    (
-//        .clk(clk),
-//        .wen(save_rstl_1 & dis_write_conv), //dis_write_conv
-//        .ren(en_count_max & en_read_conv),
-//        .wadd(pos_rstl),
-//        .radd1(row_i_max),
-//        .radd2(col_j_max),
-//        .data_in(num_final_1),
-//        .rdata0(rdata_conv1_0),
-//        .rdata1(rdata_conv1_1),
-//        .rdata2(rdata_conv1_2),
-//        .rdata3(rdata_conv1_3)
-//     );
+    memory_rstl_conv_1 save_data_1
+    (
+        .clk(clk),
+        .wen(save_rstl_1 & dis_write_conv), //dis_write_conv
+        .ren(en_count_max & en_read_conv),
+        .wadd(pos_rstl),
+        .radd1(row_i_max),
+        .radd2(col_j_max),
+        .data_in(num_final_1),
+        .rdata0(rdata_conv1_0),
+        .rdata1(rdata_conv1_1),
+        .rdata2(rdata_conv1_2),
+        .rdata3(rdata_conv1_3)
+     );
      
-//    memory_rstl_conv_2 save_data_2
-//    (
-//        .clk(clk),
-//        .wen(save_rstl_2 & dis_write_conv),
-//        .ren(en_count_max & en_read_conv),
-//        .wadd(pos_rstl),
-//        .radd1(row_i_max),
-//        .radd2(col_j_max),
-//        .data_in(num_final_2),
-//        .rdata0(rdata_conv2_0),
-//        .rdata1(rdata_conv2_1),
-//        .rdata2(rdata_conv2_2),
-//        .rdata3(rdata_conv2_3)
-//     ); 
+    memory_rstl_conv_2 save_data_2
+    (
+        .clk(clk),
+        .wen(save_rstl_2 & dis_write_conv),
+        .ren(en_count_max & en_read_conv),
+        .wadd(pos_rstl),
+        .radd1(row_i_max),
+        .radd2(col_j_max),
+        .data_in(num_final_2),
+        .rdata0(rdata_conv2_0),
+        .rdata1(rdata_conv2_1),
+        .rdata2(rdata_conv2_2),
+        .rdata3(rdata_conv2_3)
+     ); 
      
-//    memory_rstl_conv_3 save_data_3
-//    (
-//        .clk(clk),
-//        .wen(save_rstl_3 & dis_write_conv),
-//        .ren(en_count_max & en_read_conv),
-//        .wadd(pos_rstl),
-//        .radd1(row_i_max),
-//        .radd2(col_j_max),
-//        .data_in(num_final_3),
-//        .rdata0(rdata_conv3_0),
-//        .rdata1(rdata_conv3_1),
-//        .rdata2(rdata_conv3_2),
-//        .rdata3(rdata_conv3_3)
-//     );  
+    memory_rstl_conv_3 save_data_3
+    (
+        .clk(clk),
+        .wen(save_rstl_3 & dis_write_conv),
+        .ren(en_count_max & en_read_conv),
+        .wadd(pos_rstl),
+        .radd1(row_i_max),
+        .radd2(col_j_max),
+        .data_in(num_final_3),
+        .rdata0(rdata_conv3_0),
+        .rdata1(rdata_conv3_1),
+        .rdata2(rdata_conv3_2),
+        .rdata3(rdata_conv3_3)
+     );  
         
 //******************************************************************************************************* 
 //*******************************************************************************************************
@@ -585,24 +593,36 @@ module accQuant_cnn
 //******************************************************************************************************* 
 
 
-//    clock_divider_max clk_third
-//    (
-//        .clock_in(clk),
-//        .en(en),
-//        .rst(rst),
-//        .clock_out(clk_div_max)
-//    );
+    clock_divider_max clk_third
+    (
+        .clock_in(clk),
+        .en(en),
+        .rst(rst),
+        .clock_out(clk_div_max)
+    );
     
-//    controlMemoryAddressConv positionConv
-//    (
-//        .clk(clk_div_max),
-//        .en(en_read_conv), //en_read_conv
-//        .rst(rst),
-//        .stop_count(en_count_max),
-//        .i(row_i_max),
-//        .j(col_j_max)
-//    );            
+    controlMemoryAddressConv positionConv
+    (
+        .clk(clk_div_max),
+        .en(en_read_conv), //en_read_conv
+        .rst(rst),
+        .stop_count(en_count_max),
+        .i(row_i_max),
+        .j(col_j_max)
+    );            
   
+
+    counterPositionRstlMax pos_memory_Max_count
+    (
+        .clk(clk_div_max),
+        .rst(rst),
+        //.en(en_count_max),
+        .en(en_count_max & en_read_conv),
+        .counter_1(pos_rstl_max1),
+        .counter_2(pos_rstl_max2),
+        .counter_3(pos_rstl_max3)
+    );
+
 
 //    counterPositionRstlMax pos_memory_Max_count
 //    (
@@ -610,54 +630,53 @@ module accQuant_cnn
 //        .rst(rst),
 //        //.en(en_count_max),
 //        .en(en_count_max & en_read_conv),
-//        .counter_1(pos_rstl_max1),
-//        .counter_2(pos_rstl_max2),
-//        .counter_3(pos_rstl_max3)
+//        .counter_1(pos_rstl_max1)
 //    );
     
-//    maxpooling maxpooling_1
-//    (
-//        .clk(clk),
-//        .clk_div(clk_div_max),
-//        .en(en_read_conv), //enable maxpooling
-//        .rst(rst),
-//        .rdata_conv0(rdata_conv1_0),
-//        .rdata_conv1(rdata_conv1_1),
-//        .rdata_conv2(rdata_conv1_2),
-//        .rdata_conv3(rdata_conv1_3),
-//        .max(max1),
-//        .save_rstl(save_rstl_max1)    
-//    );
+    maxpooling maxpooling_1
+    (
+        .clk(clk),
+        .clk_div(clk_div_max),
+        .en(en_read_conv), //enable maxpooling
+        .rst(rst),
+        .rdata_conv0(rdata_conv1_0),
+        .rdata_conv1(rdata_conv1_1),
+        .rdata_conv2(rdata_conv1_2),
+        .rdata_conv3(rdata_conv1_3),
+        .max(max1),
+        .save_rstl(save_rstl_max1)    
+    );
     
     
-//    maxpooling maxpooling_2
-//    (
-//        .clk(clk),
-//        .clk_div(clk_div_max),
-//        .en(en_read_conv), //enable maxpooling
-//        .rst(rst),
-//        .rdata_conv0(rdata_conv2_0),
-//        .rdata_conv1(rdata_conv2_1),
-//        .rdata_conv2(rdata_conv2_2),
-//        .rdata_conv3(rdata_conv2_3),
-//        .max(max2),
-//        .save_rstl(save_rstl_max2)    
-//    );    
+    maxpooling maxpooling_2
+    (
+        .clk(clk),
+        .clk_div(clk_div_max),
+        .en(en_read_conv), //enable maxpooling
+        .rst(rst),
+        .rdata_conv0(rdata_conv2_0),
+        .rdata_conv1(rdata_conv2_1),
+        .rdata_conv2(rdata_conv2_2),
+        .rdata_conv3(rdata_conv2_3),
+        .max(max2),
+        .save_rstl(save_rstl_max2)    
+    );    
     
     
-//    maxpooling maxpooling_3
-//    (
-//        .clk(clk),
-//        .clk_div(clk_div_max),
-//        .en(en_read_conv), //enable maxpooling
-//        .rst(rst),
-//        .rdata_conv0(rdata_conv3_0),
-//        .rdata_conv1(rdata_conv3_1),
-//        .rdata_conv2(rdata_conv3_2),
-//        .rdata_conv3(rdata_conv3_3),
-//        .max(max3),
-//        .save_rstl(save_rstl_max3)    
-//    );     
+    maxpooling maxpooling_3
+    (
+        .clk(clk),
+        .clk_div(clk_div_max),
+        .en(en_read_conv), //enable maxpooling
+        .rst(rst),
+        .rdata_conv0(rdata_conv3_0),
+        .rdata_conv1(rdata_conv3_1),
+        .rdata_conv2(rdata_conv3_2),
+        .rdata_conv3(rdata_conv3_3),
+        .max(max3),
+        .save_rstl(save_rstl_max3)    
+    );     
+
 
 //    memory_rstl_max_1 save_max_1
 //    (
@@ -665,31 +684,54 @@ module accQuant_cnn
 //        .clk_div(clk_div_dens),
 //        .wen(save_rstl_max1 & 1), //dis_write_max
 //        //.ren(en_dense),
-//        .ren(en_dense | wen_max),
+//        .ren(en_dense | ren_memory),
 //        .wadd1(pos_rstl_max1),
-//        .wadd2(pos_rstl_max2),
-//        .wadd3(pos_rstl_max3),
 //        //.radd(pos_memory_max),
 //        .radd(radd_memory), //test soc
 //        .data_in1(max1),
-//        .data_in2(max2),
-//        .data_in3(max3),
 //        .rdata(data_max)
 //     );
+
+
+    memory_rstl_max_1 save_max_1
+    (
+        .clk(clk),
+        .clk_div(clk_div_dens),
+        .wen(save_rstl_max1 & 1), //dis_write_max
+        //.ren(en_dense),
+        .ren(en_dense | ren_memory),
+        .wadd1(pos_rstl_max1),
+        .wadd2(pos_rstl_max2),
+        .wadd3(pos_rstl_max3),
+        .radd(pos_memory_max),
+        //.radd(radd_memory), //test soc
+        .data_in1(max1),
+        .data_in2(max2),
+        .data_in3(max3),
+        .rdata(data_max)
+     );
+
+
 
      wire mem_full_image_wire;
      wire signed [dataWidthImg-1:0] rdata_image_w;
      assign rdata_image = rdata_image_w;
 
-     assign data_memory = rdata_conv1_0;//data_max;
+
+     
+     
 //     assign data_memory = (sel == 2'd0) ? rdata_conv1_0 : 
 //                          (sel == 2'd1) ? rdata_conv2_0 : 
 //                          (sel == 2'd2) ? rdata_conv3_0 : 0;
 
-//     assign data_memory = (sel == 2'd0) ? rdata_conv1_0 : rdata_conv2_0;
+
      
-     assign out = dis_write_conv;//max_ok;
+     assign conv_ok = dis_write_conv;//convolution ok;
+     assign max_ok = max_ok_reg;//maxpooling ok;
+     assign dens_ok = dens_ok_reg;
      assign mem_full_image = mem_full_image_wire;
+     
+     assign data_memory = num_dens_0;//data_max;
      
 
 //******************************************************************************************************* 
@@ -704,8 +746,244 @@ module accQuant_cnn
     clock_divider_dens clk_fourth
     (
         .clock_in(clk),
+        .en(en),
+        .rst(rst),        
         .clock_out(clk_div_dens)
     );
+    
+     counterPositionMemMax pos_mem_max
+     (
+        .clk(clk_div_dens),
+        .en(en_dense),
+        .rst(rst),
+        .pos_memory(pos_memory_max)
+     
+     );
+     
+     
+    memory_dens_0 mem_dens_0
+    
+    ( 
+        .clk(clk_div_dens), //clk_div_dens
+        .en(en_dense),
+        .addr(pos_memory_max),
+        .rdata(data_dens_weight_0)
+    );     
+     
+     full_connected #(.bias(-16'd48)) dense_0
+     (
+        .clk(clk),
+        .clk_div(clk_div_dens),
+        .en(en_dense),
+        .rst(rst),
+        .pos_memory(pos_memory_max),
+        .idata_max(data_max),
+        .idata_weight(data_dens_weight_0),
+        .num_dens(num_dens_0),
+        .den_ok(den_ok_0),
+        .quant_ok(quant_ok_0)        
+     );
+     
+
+    memory_dens_1 mem_dens_1   
+    ( 
+        .clk(clk_div_dens), //clk_div_dens
+        .en(en_dense),
+        .addr(pos_memory_max),
+        .rdata(data_dens_weight_1)
+    );     
+     
+     full_connected #(.bias(16'd1081)) dense_1
+     (
+        .clk(clk),
+        .clk_div(clk_div_dens),
+        .en(en_dense),
+        .rst(rst),
+        .pos_memory(pos_memory_max),
+        .idata_max(data_max),
+        .idata_weight(data_dens_weight_1),
+        .num_dens(num_dens_1),
+        .den_ok(den_ok_1),
+        .quant_ok(quant_ok_1)       
+     );     
+     
+//    memory_dens_2 mem_dens_2   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_2)
+//    );     
+     
+//     full_connected #(.bias(-16'd146)) dense_2
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_2),
+//        .num_dens(num_dens_2),
+//        .den_ok(den_ok_2),
+//        .quant_ok(quant_ok_2)        
+//     );     
+     
+//    memory_dens_3 mem_dens_3   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_3)
+//    );     
+     
+//     full_connected #(.bias(-16'd256)) dense_3
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_3),
+//        .num_dens(num_dens_3),
+//        .den_ok(den_ok_3),
+//        .quant_ok(quant_ok_3)        
+//     );      
+        
+//    memory_dens_4 mem_dens_4   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_4)
+//    );     
+     
+//     full_connected #(.bias(-16'd109)) dense_4
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_4),
+//        .num_dens(num_dens_4),
+//        .den_ok(den_ok_4)        
+//     );  
+
+
+//    memory_dens_5 mem_dens_5   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_5)
+//    );     
+     
+//     full_connected #(.bias(-16'd48)) dense_5
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_5),
+//        .num_dens(num_dens_5),
+//        .den_ok(den_ok_5)        
+//     );  
+
+
+//    memory_dens_6 mem_dens_6   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_6)
+//    );     
+     
+//     full_connected #(.bias(-16'd48)) dense_6
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_6),
+//        .num_dens(num_dens_6),
+//        .den_ok(den_ok_6)        
+//     );  
+
+
+//    memory_dens_7 mem_dens_7   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_7)
+//    );     
+     
+//     full_connected #(.bias(-16'd48)) dense_7
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_7),
+//        .num_dens(num_dens_7),
+//        .den_ok(den_ok_7)        
+//     );  
+
+
+//    memory_dens_8 mem_dens_8   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_8)
+//    );     
+     
+//     full_connected #(.bias(-16'd48)) dense_8
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_8),
+//        .num_dens(num_dens_8),
+//        .den_ok(den_ok_8)        
+//     );  
+
+
+//    memory_dens_9 mem_dens_9   
+//    ( 
+//        .clk(clk_div_dens), //clk_div_dens
+//        .en(en_dense),
+//        .addr(pos_memory_max),
+//        .rdata(data_dens_weight_9)
+//    );     
+     
+//     full_connected #(.bias(-16'd48)) dense_9
+//     (
+//        .clk(clk),
+//        .clk_div(clk_div_dens),
+//        .en(en_dense),
+//        .rst(rst),
+//        .pos_memory(pos_memory_max),
+//        .idata_max(data_max),
+//        .idata_weight(data_dens_weight_9),
+//        .num_dens(num_dens_9),
+//        .den_ok(den_ok_9)        
+//     );       
+    
+    
+    
 //******************************************************************************************************* 
 //*******************************************************************************************************
 //*******************************************************************************************************
@@ -770,16 +1048,25 @@ module accQuant_cnn
     always @(posedge clk)
     begin
        if(rst)
-           max_ok <= 0;
-       if ((pos_rstl_max3 == (numWeightRstlMax -1)) & clk_div_max)
        begin
-           en_dense <= 1; 
-           max_ok <= 1;
+           max_ok_reg <= 0;
+           dens_ok_reg <= 0;
        end
-       if ((pos_memory_max == (numWeightRstlMax -1 + 1 + 1)))
-       begin
-           en_dense <= 0; 
-       end     
+       else if(en)
+       begin           
+           if ((pos_rstl_max3 == (numWeightRstlMax -1)) & clk_div_max)
+           begin
+               en_dense <= 1; 
+               max_ok_reg <= 1;
+               dens_ok_reg <= 0;
+           end
+    
+           if ((pos_memory_max == (numWeightRstlMax -1 + 1 + 1)))
+           begin
+               en_dense <= 0; 
+               dens_ok_reg <= 1;
+           end
+        end                
 
     end 
 //*******************************************************************************************************

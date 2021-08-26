@@ -20,7 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module quantization
+
+
+module quantization   //Arreglo quantizacion
 #(
     //quantization
     parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100,
@@ -40,7 +42,8 @@ module quantization
     input clk,
     input rst,
     input [63:0] a,
-    output [8:0] num_quant,
+    output signed [7:0] num_quant, //test 14:28
+    //output [8:0] num_quant,
     output sig_ok    
 );
 
@@ -50,20 +53,47 @@ module quantization
     
     //reg [64:0] a;  
     reg [63:0] result1;
-    reg [31:0] result2;
-    reg [8:0]  result3;
-    reg [8:0]  result4;
-    reg [31:0] remainder;
-    reg [8:0] thld1;
+    reg [63:0] result2;    //test 14:28
+    //reg [31:0] result2; 
+    reg [63:0]  result3; //test 14:28
+    //reg [8:0]  result3;
+    reg [7:0]  result4; //test 14:28 
+    //reg [8:0]  result4;
+    reg [63:0] remainder; //test 14:28
+    //reg [31:0] remainder; 
+    reg [7:0] thld1; // test 14:28
+    //reg [8:0] thld1; 
     reg thld2;
     //reg thld3;
-    reg [8:0] threshold;
-    reg [8:0] res1;
+    reg [7:0] threshold; //test 14:28 
+    //reg [8:0] threshold;
+    reg [63:0] res1;     //test 14:28
+    //reg [8:0] res1;
     //reg [8:0] res2;
     reg [1:0]res2;
     reg [1:0]res3;
     reg [8:0] res4;
-    reg ok = 0;                
+    reg ok = 0; 
+     
+    
+
+    initial
+    begin
+            result1 = 0;
+            result2 = 0;
+            result3 = 0;
+            result4 = 0;
+            remainder = 0;
+            thld1 = 0;
+            thld2 = 0;
+            threshold = 0;
+            res1 = 0;
+            res2 = 0;
+            res3 = 0;
+            ok = 0;
+
+            present_state = s0;    
+    end             
 
     always @(negedge clk or posedge rst) //Present estate //always @(clk) //Present estate 
     begin
@@ -103,7 +133,7 @@ module quantization
                 next_state <= s10;
             s10:
                 next_state <= s11;                                                                                        
-        endcase                
+        endcase             
     end
 
     //===================    
@@ -114,13 +144,24 @@ module quantization
         s0: 
         begin
             //led <= 4'b0000;
-            result1 <= a*q;
+            result1 <= $signed(a*q);
+            result2 <= 0;
+            result3 <= 0;
+            remainder <= 0;
+            thld1 <= 0;
+            thld2 <= 0;
+            threshold <= 0;
+            res1 <= 0;
+            res2 <= 0;
+            res3 <= 0;
             ok <= 0;  
         end
         s1:
         begin    
             //led <= 4'b0001;
+            //result2 <= result1 >> 31; // test 14:28
             result2 <= result1 >>> 31;
+            
         end
         s2:
         begin
@@ -130,11 +171,13 @@ module quantization
         s3:
         begin
             //led <= 4'b0011;
+            //result3 <= result2 >> 8; //test 14:28   //probar solo con >>
             result3 <= result2 >>> 8;
         end
         s4:
         begin
             //led <= 4'b0100;
+            //thld1 <= mask >> 1;//ShiftRight(mask, 1) //test 14:28
             thld1 <= mask >>> 1;//ShiftRight(mask, 1)
         end
         s5:
@@ -155,6 +198,7 @@ module quantization
         s8:
         begin
             //led <= 4'b1000;
+            //res1 <= result2 >> exponent; //ShiftRight(x, exponent)  // test 14:28
             res1 <= result2 >>> exponent; //ShiftRight(x, exponent)
         end
         s9:
@@ -175,7 +219,8 @@ module quantization
         end
         s11:
         begin
-            result4 <= res1 + res3; //Add( ShiftRight(x, exponent),BitAnd( MaskIfGreaterThan(remainder, threshold), one ) ); 
+            result4 <= $signed(res1 + res3); // test 14:28
+            //result4 <= res1 + res3; //Add( ShiftRight(x, exponent),BitAnd( MaskIfGreaterThan(remainder, threshold), one ) ); 
             ok <= 1; 
         end
         default:
@@ -187,3 +232,10 @@ module quantization
     assign sig_ok = ok;
 
 endmodule
+
+
+
+
+
+
+

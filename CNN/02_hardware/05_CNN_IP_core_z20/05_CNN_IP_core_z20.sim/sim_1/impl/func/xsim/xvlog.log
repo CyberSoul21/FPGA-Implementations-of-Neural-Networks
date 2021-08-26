@@ -1,7 +1,5 @@
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.sim/sim_1/impl/func/xsim/accQuant_testbench_func_impl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ReLu
-INFO: [VRFC 10-311] analyzing module ReLu_2
-INFO: [VRFC 10-311] analyzing module ReLu_3
 INFO: [VRFC 10-311] analyzing module accQuant_cnn
 INFO: [VRFC 10-311] analyzing module clock_divider
 INFO: [VRFC 10-311] analyzing module clock_divider_dens
@@ -9,8 +7,6 @@ INFO: [VRFC 10-311] analyzing module clock_divider_max
 INFO: [VRFC 10-311] analyzing module controlMemoryAddressConv
 INFO: [VRFC 10-311] analyzing module controlMemoryAddressImg
 INFO: [VRFC 10-311] analyzing module convolution
-INFO: [VRFC 10-311] analyzing module convolution__parameterized0
-INFO: [VRFC 10-311] analyzing module convolution__parameterized1
 INFO: [VRFC 10-311] analyzing module counterPositionRstlConv
 INFO: [VRFC 10-311] analyzing module counterPositionRstlMax
 INFO: [VRFC 10-311] analyzing module counter_col
@@ -18,16 +14,11 @@ INFO: [VRFC 10-311] analyzing module counter_col_max
 INFO: [VRFC 10-311] analyzing module counter_row
 INFO: [VRFC 10-311] analyzing module counter_row_max
 INFO: [VRFC 10-311] analyzing module maxpooling
-INFO: [VRFC 10-311] analyzing module maxpooling_0
-INFO: [VRFC 10-311] analyzing module maxpooling_1
 INFO: [VRFC 10-311] analyzing module memory_image
 INFO: [VRFC 10-311] analyzing module memory_rstl_conv_1
-INFO: [VRFC 10-311] analyzing module memory_rstl_conv_2
-INFO: [VRFC 10-311] analyzing module memory_rstl_conv_3
 INFO: [VRFC 10-311] analyzing module memory_rstl_max_1
 INFO: [VRFC 10-311] analyzing module quantization
-INFO: [VRFC 10-311] analyzing module quantization__parameterized0
-INFO: [VRFC 10-311] analyzing module quantization__parameterized1
 INFO: [VRFC 10-311] analyzing module glbl
 INFO: [VRFC 10-2263] Analyzing Verilog file "/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sim_1/new/accQuant_testbench.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module accQuant_testbench
+INFO: [VRFC 10-2458] undeclared symbol max_ok, assumed default net type wire [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sim_1/new/accQuant_testbench.v:43]

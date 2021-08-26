@@ -163,6 +163,10 @@ monbib.QuantizeMultiplier( c_double(M_b2), byref(M0), byref(shift) );
 print("M_b2= ", M_b2, "M0= ", M0.value, "shift= ", shift.value);
 mc_2 = conv_np(entree, con_f2, con_b2, M0.value, shift.value, offset_ent, offset_sor, verbose=1); # print(mc_2);
 
+for x in mc_1:
+    for y in x:
+        print(int(y))
+
 
 print(" \n ");
 print("************************************** ");
@@ -219,6 +223,10 @@ flatten_aux = np.append(flatten_aux, con_aux11);
 flatten_aux = np.append(flatten_aux, con_aux12);
 flatten_aux = np.expand_dims(flatten_aux, axis=0); print(flatten_aux);
 #sys.exit(0); # Terminer l'execution
+
+
+for x in flatten_aux[0]:
+    print(int(x))
 
 print(" \n ");
 print("************************************** ");

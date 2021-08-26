@@ -11,15 +11,19 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="4325000001fs"></ZoomEndTime>
-      <Cursor1Time time="3001000000fs"></Cursor1Time>
+      <ZoomStartTime time="4852128333fs"></ZoomStartTime>
+      <ZoomEndTime time="4858178334fs"></ZoomEndTime>
+      <Cursor1Time time="4855310000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="120"></NameColumnWidth>
-      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+      <NameColumnWidth column_width="196"></NameColumnWidth>
+      <ValueColumnWidth column_width="163"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="13" />
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/clk_fpga">
+      <obj_property name="ElementShortName">clk_fpga</obj_property>
+      <obj_property name="ObjectShortName">clk_fpga</obj_property>
+   </wvobject>
    <wvobject type="logic" fp_name="/accQuant_testbench/UUT/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -27,6 +31,14 @@
    <wvobject type="logic" fp_name="/accQuant_testbench/UUT/clk_div">
       <obj_property name="ElementShortName">clk_div</obj_property>
       <obj_property name="ObjectShortName">clk_div</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/clk_div_max">
+      <obj_property name="ElementShortName">clk_div_max</obj_property>
+      <obj_property name="ObjectShortName">clk_div_max</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/clk_div_dens">
+      <obj_property name="ElementShortName">clk_div_dens</obj_property>
+      <obj_property name="ObjectShortName">clk_div_dens</obj_property>
    </wvobject>
    <wvobject type="logic" fp_name="/accQuant_testbench/rst">
       <obj_property name="ElementShortName">rst</obj_property>
@@ -43,7 +55,6 @@
    <wvobject type="group" fp_name="group83">
       <obj_property name="label">Convolution</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="divider85" type="divider">
          <obj_property name="label">Position Image</obj_property>
          <obj_property name="DisplayName">label</obj_property>
@@ -82,18 +93,6 @@
          <obj_property name="ElementShortName">dis_write_conv</obj_property>
          <obj_property name="ObjectShortName">dis_write_conv</obj_property>
       </wvobject>
-      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_read_conv">
-         <obj_property name="ElementShortName">en_read_conv</obj_property>
-         <obj_property name="ObjectShortName">en_read_conv</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_count_max">
-         <obj_property name="ElementShortName">en_count_max</obj_property>
-         <obj_property name="ObjectShortName">en_count_max</obj_property>
-      </wvobject>
-      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/save_rstl_max1">
-         <obj_property name="ElementShortName">save_rstl_max1</obj_property>
-         <obj_property name="ObjectShortName">save_rstl_max1</obj_property>
-      </wvobject>
       <wvobject type="logic" fp_name="/accQuant_testbench/UUT/save_rstl_1">
          <obj_property name="ElementShortName">save_rstl_1</obj_property>
          <obj_property name="ObjectShortName">save_rstl_1</obj_property>
@@ -103,23 +102,145 @@
          <obj_property name="DisplayName">label</obj_property>
          <obj_property name="BkColor">#808080</obj_property>
       </wvobject>
-      <wvobject type="array" fp_name="/accQuant_testbench/UUT/conv1/present_state">
-         <obj_property name="ElementShortName">present_state[3:0]</obj_property>
-         <obj_property name="ObjectShortName">present_state[3:0]</obj_property>
-      </wvobject>
       <wvobject type="array" fp_name="/accQuant_testbench/UUT/num_final_1">
          <obj_property name="ElementShortName">num_final_1[7:0]</obj_property>
          <obj_property name="ObjectShortName">num_final_1[7:0]</obj_property>
          <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject type="array" fp_name="/accQuant_testbench/UUT/pos_rstl_max3">
-      <obj_property name="ElementShortName">pos_rstl_max3[9:0]</obj_property>
-      <obj_property name="ObjectShortName">pos_rstl_max3[9:0]</obj_property>
-      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="divider84" type="divider">
+      <obj_property name="label">Maxpooling</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/max_ok">
-      <obj_property name="ElementShortName">max_ok</obj_property>
-      <obj_property name="ObjectShortName">max_ok</obj_property>
+   <wvobject type="group" fp_name="group107">
+      <obj_property name="label">Maxpooling</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="divider85" type="divider">
+         <obj_property name="label">Position Conv</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#808080</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/col_j_max">
+         <obj_property name="ElementShortName">col_j_max[9:0]</obj_property>
+         <obj_property name="ObjectShortName">col_j_max[9:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/row_i_max">
+         <obj_property name="ElementShortName">row_i_max[9:0]</obj_property>
+         <obj_property name="ObjectShortName">row_i_max[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider85" type="divider">
+         <obj_property name="label">Position rst max</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#808080</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/pos_rstl_max3">
+         <obj_property name="ElementShortName">pos_rstl_max3[9:0]</obj_property>
+         <obj_property name="ObjectShortName">pos_rstl_max3[9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider85" type="divider">
+         <obj_property name="label">Signals Control</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#808080</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/save_rstl_max1">
+         <obj_property name="ElementShortName">save_rstl_max1</obj_property>
+         <obj_property name="ObjectShortName">save_rstl_max1</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/accQuant_testbench/conv_ok">
+         <obj_property name="ElementShortName">conv_ok</obj_property>
+         <obj_property name="ObjectShortName">conv_ok</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/max_ok">
+         <obj_property name="ElementShortName">max_ok</obj_property>
+         <obj_property name="ObjectShortName">max_ok</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_read_conv">
+         <obj_property name="ElementShortName">en_read_conv</obj_property>
+         <obj_property name="ObjectShortName">en_read_conv</obj_property>
+      </wvobject>
+      <wvobject fp_name="divider85" type="divider">
+         <obj_property name="label">Op Max</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="BkColor">#808080</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/max1">
+         <obj_property name="ElementShortName">max1[7:0]</obj_property>
+         <obj_property name="ObjectShortName">max1[7:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/save_max_1/mem_rstl_max">
+         <obj_property name="ElementShortName">mem_rstl_max[506:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_rstl_max[506:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/dense_0/den_ok">
+         <obj_property name="ElementShortName">den_ok</obj_property>
+         <obj_property name="ObjectShortName">den_ok</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/accQuant_testbench/dens_ok">
+         <obj_property name="ElementShortName">dens_ok</obj_property>
+         <obj_property name="ObjectShortName">dens_ok</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="divider84" type="divider">
+      <obj_property name="label">Dense</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="group51">
+      <obj_property name="label">fullconnected</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/pos_rstl_max3">
+         <obj_property name="ElementShortName">pos_rstl_max3[9:0]</obj_property>
+         <obj_property name="ObjectShortName">pos_rstl_max3[9:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_dense">
+         <obj_property name="ElementShortName">en_dense</obj_property>
+         <obj_property name="ObjectShortName">en_dense</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/pos_memory_max">
+         <obj_property name="ElementShortName">pos_memory_max[9:0]</obj_property>
+         <obj_property name="ObjectShortName">pos_memory_max[9:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/data_dens_weight_0">
+         <obj_property name="ElementShortName">data_dens_weight_0[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_dens_weight_0[7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/data_max">
+         <obj_property name="ElementShortName">data_max[7:0]</obj_property>
+         <obj_property name="ObjectShortName">data_max[7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/present_state">
+         <obj_property name="ElementShortName">present_state[3:0]</obj_property>
+         <obj_property name="ObjectShortName">present_state[3:0]</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/rstl_mult">
+         <obj_property name="ElementShortName">rstl_mult[15:0]</obj_property>
+         <obj_property name="ObjectShortName">rstl_mult[15:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/rstl_sum">
+         <obj_property name="ElementShortName">rstl_sum[15:0]</obj_property>
+         <obj_property name="ObjectShortName">rstl_sum[15:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/num">
+         <obj_property name="ElementShortName">num[63:0]</obj_property>
+         <obj_property name="ObjectShortName">num[63:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/num_quant">
+         <obj_property name="ElementShortName">num_quant[8:0]</obj_property>
+         <obj_property name="ObjectShortName">num_quant[8:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject type="array" fp_name="/accQuant_testbench/UUT/num_dens_0">
+         <obj_property name="ElementShortName">num_dens_0[7:0]</obj_property>
+         <obj_property name="ObjectShortName">num_dens_0[7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
    </wvobject>
 </wave_config>

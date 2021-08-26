@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="1801000001fs"></ZoomEndTime>
-      <Cursor1Time time="0fs"></Cursor1Time>
+      <ZoomStartTime time="536774166fs"></ZoomStartTime>
+      <ZoomEndTime time="538125167fs"></ZoomEndTime>
+      <Cursor1Time time="537900000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="156"></NameColumnWidth>
+      <NameColumnWidth column_width="152"></NameColumnWidth>
       <ValueColumnWidth column_width="66"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="67" />
+   <WVObjectSize size="64" />
    <wvobject type="logic" fp_name="/accQuant_testbench/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -105,10 +105,6 @@
       <obj_property name="ElementShortName">en_count_max</obj_property>
       <obj_property name="ObjectShortName">en_count_max</obj_property>
    </wvobject>
-   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_dense">
-      <obj_property name="ElementShortName">en_dense</obj_property>
-      <obj_property name="ObjectShortName">en_dense</obj_property>
-   </wvobject>
    <wvobject type="logic" fp_name="/accQuant_testbench/UUT/den_ok_0">
       <obj_property name="ElementShortName">den_ok_0</obj_property>
       <obj_property name="ObjectShortName">den_ok_0</obj_property>
@@ -117,23 +113,37 @@
       <obj_property name="ElementShortName">sig_ok</obj_property>
       <obj_property name="ObjectShortName">sig_ok</obj_property>
    </wvobject>
+   <wvobject type="logic" fp_name="/accQuant_testbench/UUT/en_dense">
+      <obj_property name="ElementShortName">en_dense</obj_property>
+      <obj_property name="ObjectShortName">en_dense</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/accQuant_testbench/UUT/pos_rstl_max3">
       <obj_property name="ElementShortName">pos_rstl_max3[9:0]</obj_property>
       <obj_property name="ObjectShortName">pos_rstl_max3[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/present_state">
-      <obj_property name="ElementShortName">present_state[3:0]</obj_property>
-      <obj_property name="ObjectShortName">present_state[3:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/accQuant_testbench/UUT/pos_memory_max">
       <obj_property name="ElementShortName">pos_memory_max[9:0]</obj_property>
       <obj_property name="ObjectShortName">pos_memory_max[9:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/data_dens_weight_0">
+      <obj_property name="ElementShortName">data_dens_weight_0[7:0]</obj_property>
+      <obj_property name="ObjectShortName">data_dens_weight_0[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
    <wvobject type="array" fp_name="/accQuant_testbench/UUT/data_max">
       <obj_property name="ElementShortName">data_max[7:0]</obj_property>
       <obj_property name="ObjectShortName">data_max[7:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/present_state">
+      <obj_property name="ElementShortName">present_state[3:0]</obj_property>
+      <obj_property name="ObjectShortName">present_state[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/rstl_mult">
+      <obj_property name="ElementShortName">rstl_mult[15:0]</obj_property>
+      <obj_property name="ObjectShortName">rstl_mult[15:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/rstl_sum">
@@ -145,30 +155,6 @@
       <obj_property name="ElementShortName">num[63:0]</obj_property>
       <obj_property name="ObjectShortName">num[63:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/quant/result1">
-      <obj_property name="ElementShortName">result1[63:0]</obj_property>
-      <obj_property name="ObjectShortName">result1[63:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/quant/result2">
-      <obj_property name="ElementShortName">result2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">result2[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/quant/res1">
-      <obj_property name="ElementShortName">res1[8:0]</obj_property>
-      <obj_property name="ObjectShortName">res1[8:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/quant/res2">
-      <obj_property name="ElementShortName">res2[1:0]</obj_property>
-      <obj_property name="ObjectShortName">res2[1:0]</obj_property>
-      <obj_property name="Radix">BINARYRADIX</obj_property>
-   </wvobject>
-   <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/quant/res3">
-      <obj_property name="ElementShortName">res3[1:0]</obj_property>
-      <obj_property name="ObjectShortName">res3[1:0]</obj_property>
    </wvobject>
    <wvobject type="array" fp_name="/accQuant_testbench/UUT/dense_0/quant/num_quant">
       <obj_property name="ElementShortName">num_quant[8:0]</obj_property>

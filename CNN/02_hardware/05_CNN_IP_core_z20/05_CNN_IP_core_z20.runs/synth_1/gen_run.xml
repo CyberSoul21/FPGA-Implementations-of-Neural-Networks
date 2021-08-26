@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1629423450">
-  <File Type="PA-TCL" Name="accQuant_cnn.tcl"/>
-  <File Type="REPORTS-TCL" Name="accQuant_cnn_reports.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1629793310">
   <File Type="RDS-RDS" Name="accQuant_cnn.vds"/>
-  <File Type="RDS-UTIL" Name="accQuant_cnn_utilization_synth.rpt"/>
-  <File Type="RDS-DCP" Name="accQuant_cnn.dcp"/>
+  <File Type="REPORTS-TCL" Name="accQuant_cnn_reports.tcl"/>
   <File Type="RDS-UTIL-PB" Name="accQuant_cnn_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="accQuant_cnn.dcp"/>
+  <File Type="PA-TCL" Name="accQuant_cnn.tcl"/>
+  <File Type="RDS-UTIL" Name="accQuant_cnn_utilization_synth.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ReLu.v">
@@ -143,6 +143,14 @@
     </File>
     <File Path="$PSRCDIR/sources_1/new/accQuant_cnn.v">
       <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/signed_mult.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7z010clg400-1" LaunchTime="1629180891">
-  <File Type="REPORTS-TCL" Name="accQuant_reports.tcl"/>
-  <File Type="RDS-RDS" Name="accQuant.vds"/>
-  <File Type="RDS-DCP" Name="accQuant.dcp"/>
   <File Type="RDS-UTIL-PB" Name="accQuant_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="accQuant_utilization_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="accQuant_reports.tcl"/>
+  <File Type="RDS-DCP" Name="accQuant.dcp"/>
+  <File Type="RDS-RDS" Name="accQuant.vds"/>
   <File Type="PA-TCL" Name="accQuant.tcl"/>
+  <File Type="RDS-UTIL" Name="accQuant_utilization_synth.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/ReLu.v">

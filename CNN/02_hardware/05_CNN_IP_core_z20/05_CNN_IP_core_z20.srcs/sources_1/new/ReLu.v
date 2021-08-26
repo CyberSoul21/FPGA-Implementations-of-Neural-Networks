@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module ReLu
+module ReLu  //Arreglo ReLu
 #(
     parameter s0 = 4'b0000, s1 = 4'b0001, s2 = 4'b0010, s3 = 4'b0011, s4 = 4'b0100,
     parameter s5 = 4'b0101, s6 = 4'b0110, s7 = 4'b0111, s8 = 4'b1000, s9 = 4'b1001,
@@ -36,15 +36,21 @@ module ReLu
 )
 (
     input clk, rst, 
-    input [8:0] num_quant, 
-    output [7:0] num, 
+//    input [8:0] num_quant,
+    input signed [7:0] num_quant, //test 14:28
+    output signed [7:0] num, 
     output sig_ok
 );
 
-    reg [8:0] aux_num;
-    reg [8:0] aux_num2;
-    reg [8:0] aux_num3;
-    reg [8:0] aux_num4;
+    reg [7:0] aux_num;
+    reg [7:0] aux_num2;
+    reg [7:0] aux_num3;
+    reg [7:0] aux_num4;
+
+//    reg [8:0] aux_num;
+//    reg [8:0] aux_num2;
+//    reg [8:0] aux_num3;
+//    reg [8:0] aux_num4;
     reg       aux_ok;
     reg [3:0] present_state, next_state; 
     
@@ -115,6 +121,7 @@ module ReLu
       endcase 
     end 
 
+    //assign num = $signed(num_quant); //test 14:28
     assign num = aux_num4;
     assign sig_ok = aux_ok;  
 

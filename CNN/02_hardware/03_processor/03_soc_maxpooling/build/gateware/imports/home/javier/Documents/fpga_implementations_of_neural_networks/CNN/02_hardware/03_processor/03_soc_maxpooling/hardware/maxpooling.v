@@ -37,7 +37,7 @@ module maxpooling
     input [dataWidthMax-1:0] rdata_conv1,
     input [dataWidthMax-1:0] rdata_conv2,
     input [dataWidthMax-1:0] rdata_conv3,
-    output [dataWidthMax-1:0]max,
+    output signed [dataWidthMax-1:0]max,
     output reg save_rstl
 
 );
@@ -93,32 +93,32 @@ module maxpooling
         s0: begin
                 if($signed(rdata_conv0) >= $signed(rdata_conv1))
                 begin
-                    max1 <= rdata_conv0;
+                    max1 <= $signed(rdata_conv0);
                 end
                 else
                 begin
-                    max1 <= rdata_conv1;
+                    max1 <= $signed(rdata_conv1);
                 end
                 save_rstl <= 0;
             end          
         s1: begin
                 if($signed(rdata_conv2) >= $signed(rdata_conv3))
                 begin
-                    max2 <= rdata_conv2;
+                    max2 <= $signed(rdata_conv2);
                 end
                 else
                 begin
-                    max2 <= rdata_conv3;
+                    max2 <= $signed(rdata_conv3);
                 end
             end
         s2: begin
                 if($signed(max1) >= $signed(max2))
                 begin
-                    max3 <= max1;
+                    max3 <= $signed(max1);
                 end
                 else
                 begin
-                    max3 <= max2;
+                    max3 <= $signed(max2);
                 end  
             end  
         s3: begin
@@ -130,7 +130,7 @@ module maxpooling
       endcase 
     end 
 
-    assign max = max3;
+    assign max = $signed(max3);
 
 
 

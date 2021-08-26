@@ -4,7 +4,7 @@ Running: /tools/Xilinx/Vivado/2019.2/bin/unwrapped/lnx64.o/xelab -wto a65216d807
 Using 8 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'wen_image' is not connected on this instance [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sim_1/new/accQuant_testbench.v:38]
+WARNING: [VRFC 10-5021] port 'sel' is not connected on this instance [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/05_CNN_IP_core_z20/05_CNN_IP_core_z20.srcs/sim_1/new/accQuant_testbench.v:38]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -23,14 +23,10 @@ Compiling module unisims_ver.x_lut2_mux4
 Compiling module unisims_ver.LUT2
 Compiling module xil_defaultlib.clock_divider
 Compiling module xil_defaultlib.clock_divider_max
-Compiling module unisims_ver.FDRE(INIT=1'b1)
-Compiling module unisims_ver.FDPE_default
-Compiling module unisims_ver.FDCE_default
 Compiling module unisims_ver.x_lut3_mux8
 Compiling module unisims_ver.LUT3
-Compiling module unisims_ver.FDSE(INIT=1'b0)
-Compiling module unisims_ver.FDSE_default
-Compiling module xil_defaultlib.ReLu_3
+Compiling module unisims_ver.FDCE_default
+Compiling module xil_defaultlib.ReLu
 Compiling module unisims_ver.FDRE(IS_C_INVERTED=1'b1)
 Compiling module unisims_ver.DSP48E1(ALUMODEREG=0,BCASCREG=0,...
 Compiling module unisims_ver.FDCE(IS_C_INVERTED=1'b1)
@@ -38,12 +34,6 @@ Compiling module unisims_ver.DSP48E1(ALUMODEREG=0,BCASCREG=0,...
 Compiling module unisims_ver.DSP48E1(ALUMODEREG=0,BCASCREG=0,...
 Compiling module xil_defaultlib.quantization
 Compiling module xil_defaultlib.convolution
-Compiling module xil_defaultlib.ReLu_2
-Compiling module xil_defaultlib.quantization__parameterized0
-Compiling module xil_defaultlib.convolution__parameterized0
-Compiling module xil_defaultlib.ReLu
-Compiling module xil_defaultlib.quantization__parameterized1
-Compiling module xil_defaultlib.convolution__parameterized1
 Compiling module unisims_ver.OBUF
 Compiling module unisims_ver.DSP48E1(ACASCREG=0,ALUMODEREG=0,...
 Compiling module unisims_ver.RAM64M(INIT_B=64'b11111111111111...
@@ -85,8 +75,7 @@ Compiling module unisims_ver.RAM64M(INIT_B=64'b01111111111111...
 Compiling module unisims_ver.RAM64M(INIT_A=64'b01111111111111...
 Compiling module xil_defaultlib.memory_image
 Compiling module xil_defaultlib.maxpooling
-Compiling module xil_defaultlib.maxpooling_0
-Compiling module xil_defaultlib.maxpooling_1
+Compiling module unisims_ver.FDRE(INIT=1'b1)
 Compiling module xil_defaultlib.counterPositionRstlMax
 Compiling module xil_defaultlib.counterPositionRstlConv
 Compiling module xil_defaultlib.counter_row_max
@@ -98,10 +87,7 @@ Compiling module xil_defaultlib.controlMemoryAddressImg
 Compiling module unisims_ver.RB18_INTERNAL_VLOG(READ_WIDTH_A=...
 Compiling module unisims_ver.RAMB18E1(READ_WIDTH_A=18,READ_WI...
 Compiling module xil_defaultlib.memory_rstl_conv_1
-Compiling module xil_defaultlib.memory_rstl_conv_2
-Compiling module xil_defaultlib.memory_rstl_conv_3
-Compiling module unisims_ver.MUXF7
-Compiling module unisims_ver.MUXF8
+Compiling module unisims_ver.RAM64M
 Compiling module xil_defaultlib.memory_rstl_max_1
 Compiling module xil_defaultlib.accQuant_cnn
 Compiling module xil_defaultlib.accQuant_testbench

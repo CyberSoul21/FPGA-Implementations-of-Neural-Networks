@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date         : Thu Aug 26 15:41:18 2021
+| Date         : Thu Aug 26 16:19:01 2021
 | Host         : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command      : report_utilization -hierarchical -file AccQuant_cnn_utilization_hierarchical_synth.rpt
 | Design       : AccQuant_cnn
@@ -21,18 +21,18 @@ Table of Contents
 +----------------------------+---------------------------------+------------+------------+---------+------+------+--------+--------+--------------+
 |          Instance          |              Module             | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP48 Blocks |
 +----------------------------+---------------------------------+------------+------------+---------+------+------+--------+--------+--------------+
-| AccQuant_cnn               |                           (top) |      15085 |      12209 |    2876 |    0 | 8197 |     15 |     30 |          121 |
+| AccQuant_cnn               |                           (top) |      15089 |      12213 |    2876 |    0 | 8197 |     15 |     30 |          121 |
 |   (AccQuant_cnn)           |                           (top) |        288 |        272 |      16 |    0 |  591 |     14 |      0 |            0 |
 |   VexRiscv                 |                        VexRiscv |       2259 |       2259 |       0 |    0 | 1251 |      1 |      8 |            4 |
 |     (VexRiscv)             |                        VexRiscv |        976 |        976 |       0 |    0 | 1019 |      0 |      2 |            4 |
 |     IBusCachedPlugin_cache |                InstructionCache |        713 |        713 |       0 |    0 |  111 |      1 |      1 |            0 |
 |     dataCache_1_           |                       DataCache |        570 |        570 |       0 |    0 |  121 |      0 |      5 |            0 |
-|   accQuant_cnn             |                    accQuant_cnn |      12538 |       9678 |    2860 |    0 | 6355 |      0 |     22 |          117 |
+|   accQuant_cnn             |                    accQuant_cnn |      12542 |       9682 |    2860 |    0 | 6355 |      0 |     22 |          117 |
 |     (accQuant_cnn)         |                    accQuant_cnn |          0 |          0 |       0 |    0 |    4 |      0 |      0 |            0 |
 |     clk_5MH                |              clock_divider_fpga |          4 |          4 |       0 |    0 |    5 |      0 |      0 |            0 |
 |     clk_fourth             |              clock_divider_dens |         12 |         12 |       0 |    0 |   29 |      0 |      0 |            0 |
 |     clk_second             |                   clock_divider |         11 |         11 |       0 |    0 |   29 |      0 |      0 |            0 |
-|     clk_third              |               clock_divider_max |         11 |         11 |       0 |    0 |   29 |      0 |      0 |            0 |
+|     clk_third              |               clock_divider_max |         10 |         10 |       0 |    0 |   29 |      0 |      0 |            0 |
 |     conv1                  |                     convolution |        162 |        162 |       0 |    0 |  287 |      0 |      0 |           14 |
 |       (conv1)              |                     convolution |         93 |         93 |       0 |    0 |  170 |      0 |      0 |            9 |
 |       activation           |                         ReLu_17 |         24 |         24 |       0 |    0 |   45 |      0 |      0 |            0 |
@@ -102,7 +102,7 @@ Table of Contents
 |     save_data_1            |              memory_rstl_conv_1 |          8 |          8 |       0 |    0 |    0 |      0 |      4 |            4 |
 |     save_data_2            |              memory_rstl_conv_2 |          8 |          8 |       0 |    0 |    0 |      0 |      4 |            2 |
 |     save_data_3            |              memory_rstl_conv_3 |          8 |          8 |       0 |    0 |    0 |      0 |      4 |            0 |
-|     save_max_1             |               memory_rstl_max_1 |       1102 |       1102 |       0 |    0 | 4072 |      0 |      0 |            0 |
+|     save_max_1             |               memory_rstl_max_1 |       1107 |       1107 |       0 |    0 | 4072 |      0 |      0 |            0 |
 +----------------------------+---------------------------------+------------+------------+---------+------+------+--------+--------+--------------+
 
 

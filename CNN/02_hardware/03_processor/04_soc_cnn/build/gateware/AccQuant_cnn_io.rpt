@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version              : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date                      : Thu Aug 26 15:42:00 2021
+| Date                      : Thu Aug 26 16:19:45 2021
 | Host                      : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command                   : report_io -file AccQuant_cnn_io.rpt
 | Design                    : AccQuant_cnn

@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.2 (lin64) Build 2708876 Wed Nov  6 21:39:14 MST 2019
-| Date             : Thu Aug 26 15:42:52 2021
+| Date             : Thu Aug 26 16:20:40 2021
 | Host             : Tars running 64-bit Ubuntu 18.04.4 LTS
 | Command          : report_power -file AccQuant_cnn_power.rpt
 | Design           : AccQuant_cnn
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.257        |
+| Total On-Chip Power (W)  | 0.259        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.150        |
+| Dynamic (W)              | 0.153        |
 | Device Static (W)        | 0.107        |
 | Effective TJA (C/W)      | 11.5         |
 | Max Ambient (C)          | 82.0         |
@@ -52,21 +52,21 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.011 |        3 |       --- |             --- |
-| Slice Logic              |     0.019 |    25573 |       --- |             --- |
-|   LUT as Logic           |     0.017 |    11928 |     53200 |           22.42 |
+| Clocks                   |     0.012 |        3 |       --- |             --- |
+| Slice Logic              |     0.019 |    25581 |       --- |             --- |
+|   LUT as Logic           |     0.017 |    11936 |     53200 |           22.44 |
 |   CARRY4                 |    <0.001 |      401 |     13300 |            3.02 |
 |   Register               |    <0.001 |     8192 |    106400 |            7.70 |
 |   BUFG                   |    <0.001 |        4 |        32 |           12.50 |
-|   F7/F8 Muxes            |    <0.001 |      784 |     53200 |            1.47 |
+|   F7/F8 Muxes            |    <0.001 |      786 |     53200 |            1.48 |
 |   LUT as Distributed RAM |    <0.001 |     2876 |     17400 |           16.53 |
 |   Others                 |     0.000 |      167 |       --- |             --- |
-| Signals                  |     0.057 |    20329 |       --- |             --- |
+| Signals                  |     0.059 |    20340 |       --- |             --- |
 | Block RAM                |     0.046 |       30 |       140 |           21.43 |
 | DSPs                     |     0.017 |      121 |       220 |           55.00 |
 | I/O                      |    <0.001 |        4 |       125 |            3.20 |
 | Static Power             |     0.107 |          |           |                 |
-| Total                    |     0.257 |          |           |                 |
+| Total                    |     0.259 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -76,7 +76,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.156 |       0.147 |      0.009 |
+| Vccint    |       1.000 |     0.158 |       0.149 |      0.009 |
 | Vccaux    |       1.800 |     0.011 |       0.000 |      0.011 |
 | Vcco33    |       3.300 |     0.000 |       0.000 |      0.000 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -152,12 +152,12 @@ Table of Contents
 +----------------------------+-----------+
 | Name                       | Power (W) |
 +----------------------------+-----------+
-| AccQuant_cnn               |     0.150 |
-|   VexRiscv                 |     0.053 |
+| AccQuant_cnn               |     0.153 |
+|   VexRiscv                 |     0.054 |
 |     IBusCachedPlugin_cache |     0.010 |
 |     dataCache_1_           |     0.009 |
-|   accQuant_cnn             |     0.056 |
-|     image                  |     0.051 |
+|   accQuant_cnn             |     0.058 |
+|     image                  |     0.052 |
 +----------------------------+-----------+
 
 

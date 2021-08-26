@@ -85,7 +85,7 @@ module memory_rstl_max_1
     begin
         if (ren)
         begin
-            rdata <= mem_rstl_max[radd]; //+ offset_ent;
+            rdata <= mem_rstl_max[radd] + offset_ent;
         end
     end 
 

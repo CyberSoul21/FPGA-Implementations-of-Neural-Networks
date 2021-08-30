@@ -25,9 +25,9 @@ lst = [3,5,1,18,4,8,11,17,84,7];
 mnist = keras.datasets.mnist;
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data();
 
-img_test = test_images[18];
-#print(test_images[5]);
-#img_test = np.asarray(img_test);                           # Convertir données à tableau numpy
+img_test = test_images[7];
+print(test_images[5]);
+img_test = np.asarray(img_test);                           # Convertir données à tableau numpy
 
 
 # Imprimer quelques images
@@ -36,7 +36,7 @@ plt.imshow(img_test, cmap="gray", interpolation=None);
 plt.title(r"$~5~$");
 plt.tight_layout();
 plt.show();
-#print(img_test);
+print(img_test);
 
 print(" \n ");
 print("************************************** ");

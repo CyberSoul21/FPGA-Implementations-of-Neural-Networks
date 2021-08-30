@@ -2,23 +2,23 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Wed Aug 25 15:56:09 2021
-# Process ID: 21945
+# Start of session at: Sat Aug 28 21:00:52 2021
+# Process ID: 23078
 # Current directory: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.runs/synth_1
 # Command line: vivado -log accQuant.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source accQuant.tcl
 # Log file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.runs/synth_1/accQuant.vds
 # Journal file: /home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.runs/synth_1/vivado.jou
 #-----------------------------------------------------------
 source accQuant.tcl -notrace
-create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 1512.605 ; gain = 50.016 ; free physical = 295 ; free virtual = 3320
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1537.121 ; gain = 112.016 ; free physical = 3426 ; free virtual = 6578
 Command: synth_design -top accQuant -part xc7z020clg400-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 22034 
+INFO: Helper process launched with PID 23132 
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1750.105 ; gain = 214.469 ; free physical = 204 ; free virtual = 3021
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 1774.590 ; gain = 214.438 ; free physical = 3123 ; free virtual = 6280
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'accQuant' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/accQuant.v:23]
 	Parameter numWeightRstlConv bound to: 676 - type: integer 
@@ -265,14 +265,14 @@ INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv_1' [/home/javier/Docu
 	Parameter addressWidthRstlConv bound to: 10 - type: integer 
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv_1' (13#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_rstl_conv_1.v:23]
-INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv_2' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_rstl_conv_2.v:24]
+INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv_2' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_rstl_conv_2.v:23]
 	Parameter n_c bound to: 5'b11010 
 	Parameter n_r bound to: 5'b11010 
 	Parameter dataWidthImg bound to: 16 - type: integer 
 	Parameter numWeightRstlConv bound to: 676 - type: integer 
 	Parameter addressWidthRstlConv bound to: 10 - type: integer 
 	Parameter dataWidthRstlConv bound to: 8 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv_2' (14#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_rstl_conv_2.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'memory_rstl_conv_2' (14#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_rstl_conv_2.v:23]
 INFO: [Synth 8-6157] synthesizing module 'memory_rstl_conv_3' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_rstl_conv_3.v:23]
 	Parameter n_c bound to: 5'b11010 
 	Parameter n_r bound to: 5'b11010 
@@ -417,7 +417,7 @@ INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:140]
 INFO: [Synth 8-6155] done synthesizing module 'quantization__parameterized2' (25#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:49]
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:125]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:140]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:143]
 INFO: [Synth 8-6155] done synthesizing module 'full_connected' (26#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:23]
 INFO: [Synth 8-6157] synthesizing module 'memory_dens_1' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_dens_1.v:23]
 	Parameter numWeightDense bound to: 507 - type: integer 
@@ -459,7 +459,7 @@ INFO: [Synth 8-6157] synthesizing module 'full_connected__parameterized0' [/home
 	Parameter offset_fil bound to: 0 - type: integer 
 	Parameter bias bound to: 16'b0000010000111001 
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:125]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:140]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:143]
 INFO: [Synth 8-6155] done synthesizing module 'full_connected__parameterized0' (27#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:23]
 INFO: [Synth 8-6157] synthesizing module 'memory_dens_2' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_dens_2.v:23]
 	Parameter numWeightDense bound to: 507 - type: integer 
@@ -501,7 +501,7 @@ INFO: [Synth 8-6157] synthesizing module 'full_connected__parameterized1' [/home
 	Parameter offset_fil bound to: 0 - type: integer 
 	Parameter bias bound to: 16'b1111111101101110 
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:125]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:140]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:143]
 INFO: [Synth 8-6155] done synthesizing module 'full_connected__parameterized1' (28#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:23]
 INFO: [Synth 8-6157] synthesizing module 'memory_dens_3' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_dens_3.v:23]
 	Parameter numWeightDense bound to: 507 - type: integer 
@@ -543,7 +543,7 @@ INFO: [Synth 8-6157] synthesizing module 'full_connected__parameterized2' [/home
 	Parameter offset_fil bound to: 0 - type: integer 
 	Parameter bias bound to: 16'b1111111100000000 
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:125]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:140]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:143]
 INFO: [Synth 8-6155] done synthesizing module 'full_connected__parameterized2' (29#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:23]
 INFO: [Synth 8-6157] synthesizing module 'memory_dens_4' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_dens_4.v:23]
 	Parameter numWeightDense bound to: 507 - type: integer 
@@ -585,7 +585,7 @@ INFO: [Synth 8-6157] synthesizing module 'full_connected__parameterized3' [/home
 	Parameter offset_fil bound to: 0 - type: integer 
 	Parameter bias bound to: 16'b1111111110010011 
 INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:125]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:140]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:143]
 INFO: [Synth 8-6155] done synthesizing module 'full_connected__parameterized3' (30#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:23]
 INFO: [Synth 8-6157] synthesizing module 'memory_dens_5' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_dens_5.v:23]
 	Parameter numWeightDense bound to: 507 - type: integer 
@@ -638,11 +638,6 @@ INFO: [Synth 8-6157] synthesizing module 'memory_dens_9' [/home/javier/Documents
 INFO: [Synth 8-3876] $readmem data file '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/03_CNN_IP_core/03_CNN_IP_core.srcs/sources_1/new/dens_9.mem' is read successfully [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_dens_9.v:51]
 INFO: [Synth 8-6155] done synthesizing module 'memory_dens_9' (35#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/memory_dens_9.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'accQuant' (36#1) [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/accQuant.v:23]
-WARNING: [Synth 8-3331] design full_connected has unconnected port rst
-WARNING: [Synth 8-3331] design full_connected__parameterized3 has unconnected port rst
-WARNING: [Synth 8-3331] design full_connected__parameterized2 has unconnected port rst
-WARNING: [Synth 8-3331] design full_connected__parameterized1 has unconnected port rst
-WARNING: [Synth 8-3331] design full_connected__parameterized0 has unconnected port rst
 WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port wadd2[9]
 WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port wadd3[9]
 WARNING: [Synth 8-3331] design memory_rstl_max_1 has unconnected port radd[9]
@@ -664,17 +659,17 @@ WARNING: [Synth 8-3331] design accQuant has unconnected port radd_memory[2]
 WARNING: [Synth 8-3331] design accQuant has unconnected port radd_memory[1]
 WARNING: [Synth 8-3331] design accQuant has unconnected port radd_memory[0]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:09 . Memory (MB): peak = 1876.855 ; gain = 341.219 ; free physical = 234 ; free virtual = 2987
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:07 . Memory (MB): peak = 1901.340 ; gain = 341.188 ; free physical = 3075 ; free virtual = 6236
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1891.699 ; gain = 356.062 ; free physical = 251 ; free virtual = 3004
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1916.184 ; gain = 356.031 ; free physical = 3092 ; free virtual = 6254
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:10 . Memory (MB): peak = 1899.703 ; gain = 364.066 ; free physical = 252 ; free virtual = 3004
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1924.188 ; gain = 364.035 ; free physical = 3092 ; free virtual = 6254
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -708,6 +703,7 @@ INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address
 INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "register" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-802] inferred FSM for state register 'present_state_reg' in module 'ReLu'
+INFO: [Synth 8-4471] merging register 'max_ok_reg_reg' into 'en_dense_reg' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/accQuant.v:1018]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
@@ -719,16 +715,16 @@ INFO: [Synth 8-802] inferred FSM for state register 'present_state_reg' in modul
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'present_state_reg' using encoding 'one-hot' in module 'ReLu'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 2060.969 ; gain = 525.332 ; free physical = 143 ; free virtual = 2755
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2067.578 ; gain = 507.426 ; free physical = 2823 ; free virtual = 6012
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |accQuant__GB0 |           1|     35537|
-|2     |accQuant__GB1 |           1|      7000|
-|3     |accQuant__GB2 |           1|     11118|
+|1     |accQuant__GB0 |           1|     35098|
+|2     |accQuant__GB1 |           1|      8469|
+|3     |accQuant__GB2 |           1|     11121|
 +------+--------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
@@ -741,19 +737,19 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit       Adders := 19    
 	   2 Input     10 Bit       Adders := 21    
 	   2 Input      9 Bit       Adders := 29    
-	   2 Input      8 Bit       Adders := 11    
+	   2 Input      8 Bit       Adders := 10    
 	   2 Input      4 Bit       Adders := 27    
 +---Registers : 
 	               64 Bit    Registers := 26    
 	               32 Bit    Registers := 13    
 	               17 Bit    Registers := 36    
-	               16 Bit    Registers := 59    
+	               16 Bit    Registers := 69    
 	               10 Bit    Registers := 10    
 	                9 Bit    Registers := 77    
 	                8 Bit    Registers := 539   
 	                4 Bit    Registers := 58    
 	                2 Bit    Registers := 13    
-	                1 Bit    Registers := 84    
+	                1 Bit    Registers := 83    
 +---Multipliers : 
 	                31x64  Multipliers := 13    
 +---RAMs : 
@@ -761,23 +757,24 @@ Detailed RTL Component Info :
 +---ROMs : 
 	                              ROMs := 10    
 +---Muxes : 
+	   2 Input     16 Bit        Muxes := 10    
+	   4 Input     16 Bit        Muxes := 10    
 	  11 Input     16 Bit        Muxes := 30    
 	   2 Input     10 Bit        Muxes := 5     
 	   2 Input      9 Bit        Muxes := 9     
 	   5 Input      9 Bit        Muxes := 3     
-	   2 Input      8 Bit        Muxes := 1024  
-	   4 Input      8 Bit        Muxes := 1     
-	   2 Input      4 Bit        Muxes := 25    
+	   2 Input      8 Bit        Muxes := 1023  
+	   2 Input      4 Bit        Muxes := 55    
 	   4 Input      4 Bit        Muxes := 13    
 	   5 Input      4 Bit        Muxes := 3     
 	   6 Input      4 Bit        Muxes := 3     
 	   2 Input      3 Bit        Muxes := 3     
 	   2 Input      2 Bit        Muxes := 3     
-	   2 Input      1 Bit        Muxes := 1663  
+	   2 Input      1 Bit        Muxes := 1703  
+	   4 Input      1 Bit        Muxes := 73    
+	   6 Input      1 Bit        Muxes := 15    
 	   5 Input      1 Bit        Muxes := 13    
 	   3 Input      1 Bit        Muxes := 1     
-	   4 Input      1 Bit        Muxes := 63    
-	   6 Input      1 Bit        Muxes := 15    
 	  12 Input      1 Bit        Muxes := 13    
 	  13 Input      1 Bit        Muxes := 143   
 	   7 Input      1 Bit        Muxes := 24    
@@ -791,10 +788,8 @@ Hierarchical RTL Component report
 Module accQuant 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 5     
+	                1 Bit    Registers := 4     
 +---Muxes : 
-	   2 Input      8 Bit        Muxes := 1     
-	   4 Input      8 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
 Module counterPositionRstlConv 
 Detailed RTL Component Info : 
@@ -805,6 +800,63 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 6     
+Module memory_rstl_max_1 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 508   
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1014  
+	   2 Input      1 Bit        Muxes := 1521  
+Module maxpooling__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+	   4 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 4     
+Module maxpooling__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+	   4 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 4     
+Module maxpooling 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+	   4 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 4     
+Module counterPositionRstlMax 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 3     
++---Registers : 
+	               10 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
 Module memory_rstl_conv_1 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -854,65 +906,6 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input     10 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 2     
-Module counterPositionRstlMax 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     10 Bit       Adders := 3     
-+---Registers : 
-	               10 Bit    Registers := 3     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   5 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 1     
-	   3 Input      1 Bit        Muxes := 1     
-Module maxpooling__1 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 3     
-	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 3     
-	   2 Input      4 Bit        Muxes := 4     
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 7     
-	   4 Input      1 Bit        Muxes := 1     
-	   6 Input      1 Bit        Muxes := 4     
-Module maxpooling__2 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 3     
-	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 3     
-	   2 Input      4 Bit        Muxes := 4     
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 7     
-	   4 Input      1 Bit        Muxes := 1     
-	   6 Input      1 Bit        Muxes := 4     
-Module maxpooling 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 3     
-	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 3     
-	   2 Input      4 Bit        Muxes := 4     
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 7     
-	   4 Input      1 Bit        Muxes := 1     
-	   6 Input      1 Bit        Muxes := 4     
-Module memory_rstl_max_1 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      8 Bit       Adders := 1     
-+---Registers : 
-	                8 Bit    Registers := 508   
-+---Muxes : 
-	   2 Input      8 Bit        Muxes := 1014  
-	   2 Input      1 Bit        Muxes := 1521  
 Module clock_divider_dens 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -928,6 +921,12 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 1     
 +---Muxes : 
 	   2 Input      1 Bit        Muxes := 3     
+Module memory_dens_0 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
 Module quantization__parameterized2__5 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -951,15 +950,173 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	               16 Bit    Registers := 2     
+	               16 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 6     
-Module memory_dens_7 
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 7     
+Module memory_dens_1 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module quantization__parameterized2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 2     
+	               32 Bit    Registers := 1     
+	                9 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Multipliers : 
+	                31x64  Multipliers := 1     
++---Muxes : 
+	  12 Input      1 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 11    
+	   2 Input      1 Bit        Muxes := 1     
+Module full_connected__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 7     
+Module memory_dens_2 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module quantization__parameterized2__4 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 2     
+	               32 Bit    Registers := 1     
+	                9 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Multipliers : 
+	                31x64  Multipliers := 1     
++---Muxes : 
+	  12 Input      1 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 11    
+	   2 Input      1 Bit        Muxes := 1     
+Module full_connected__parameterized1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 7     
+Module memory_dens_3 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module quantization__parameterized2__3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 2     
+	               32 Bit    Registers := 1     
+	                9 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Multipliers : 
+	                31x64  Multipliers := 1     
++---Muxes : 
+	  12 Input      1 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 11    
+	   2 Input      1 Bit        Muxes := 1     
+Module full_connected__parameterized2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 7     
+Module memory_dens_4 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module quantization__parameterized2__2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      9 Bit       Adders := 2     
++---Registers : 
+	               64 Bit    Registers := 2     
+	               32 Bit    Registers := 1     
+	                9 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Multipliers : 
+	                31x64  Multipliers := 1     
++---Muxes : 
+	  12 Input      1 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 11    
+	   2 Input      1 Bit        Muxes := 1     
+Module full_connected__parameterized3 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               16 Bit    Registers := 3     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 7     
+Module memory_dens_5 
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 1     
@@ -988,15 +1145,17 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	               16 Bit    Registers := 2     
+	               16 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 6     
-Module memory_dens_8 
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 7     
+Module memory_dens_6 
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 1     
@@ -1025,15 +1184,17 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	               16 Bit    Registers := 2     
+	               16 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 6     
-Module memory_dens_9 
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 7     
+Module memory_dens_7 
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 1     
@@ -1062,15 +1223,17 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	               16 Bit    Registers := 2     
+	               16 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 6     
-Module memory_dens_6 
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 7     
+Module memory_dens_8 
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 1     
@@ -1099,163 +1262,17 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	               16 Bit    Registers := 2     
+	               16 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 6     
-Module memory_dens_5 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 1     
-+---ROMs : 
-	                              ROMs := 1     
-Module quantization__parameterized2 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      9 Bit       Adders := 2     
-+---Registers : 
-	               64 Bit    Registers := 2     
-	               32 Bit    Registers := 1     
-	                9 Bit    Registers := 5     
-	                4 Bit    Registers := 2     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
-+---Multipliers : 
-	                31x64  Multipliers := 1     
-+---Muxes : 
-	  12 Input      1 Bit        Muxes := 1     
-	  13 Input      1 Bit        Muxes := 11    
-	   2 Input      1 Bit        Muxes := 1     
-Module full_connected__parameterized3 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     16 Bit       Adders := 1     
-	   2 Input      8 Bit       Adders := 1     
-+---Registers : 
-	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 6     
-Module memory_dens_4 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 1     
-+---ROMs : 
-	                              ROMs := 1     
-Module quantization__parameterized2__4 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      9 Bit       Adders := 2     
-+---Registers : 
-	               64 Bit    Registers := 2     
-	               32 Bit    Registers := 1     
-	                9 Bit    Registers := 5     
-	                4 Bit    Registers := 2     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
-+---Multipliers : 
-	                31x64  Multipliers := 1     
-+---Muxes : 
-	  12 Input      1 Bit        Muxes := 1     
-	  13 Input      1 Bit        Muxes := 11    
-	   2 Input      1 Bit        Muxes := 1     
-Module full_connected__parameterized2 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     16 Bit       Adders := 1     
-	   2 Input      8 Bit       Adders := 1     
-+---Registers : 
-	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 6     
-Module memory_dens_3 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 1     
-+---ROMs : 
-	                              ROMs := 1     
-Module quantization__parameterized2__3 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      9 Bit       Adders := 2     
-+---Registers : 
-	               64 Bit    Registers := 2     
-	               32 Bit    Registers := 1     
-	                9 Bit    Registers := 5     
-	                4 Bit    Registers := 2     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
-+---Multipliers : 
-	                31x64  Multipliers := 1     
-+---Muxes : 
-	  12 Input      1 Bit        Muxes := 1     
-	  13 Input      1 Bit        Muxes := 11    
-	   2 Input      1 Bit        Muxes := 1     
-Module full_connected__parameterized1 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     16 Bit       Adders := 1     
-	   2 Input      8 Bit       Adders := 1     
-+---Registers : 
-	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 6     
-Module memory_dens_2 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 1     
-+---ROMs : 
-	                              ROMs := 1     
-Module quantization__parameterized2__2 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input      9 Bit       Adders := 2     
-+---Registers : 
-	               64 Bit    Registers := 2     
-	               32 Bit    Registers := 1     
-	                9 Bit    Registers := 5     
-	                4 Bit    Registers := 2     
-	                2 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
-+---Multipliers : 
-	                31x64  Multipliers := 1     
-+---Muxes : 
-	  12 Input      1 Bit        Muxes := 1     
-	  13 Input      1 Bit        Muxes := 11    
-	   2 Input      1 Bit        Muxes := 1     
-Module full_connected__parameterized0 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     16 Bit       Adders := 1     
-	   2 Input      8 Bit       Adders := 1     
-+---Registers : 
-	               16 Bit    Registers := 2     
-	                4 Bit    Registers := 2     
-	                1 Bit    Registers := 1     
-+---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
-	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 6     
-Module memory_dens_1 
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 7     
+Module memory_dens_9 
 Detailed RTL Component Info : 
 +---Registers : 
 	                8 Bit    Registers := 1     
@@ -1284,20 +1301,16 @@ Detailed RTL Component Info :
 	   2 Input     16 Bit       Adders := 1     
 	   2 Input      8 Bit       Adders := 1     
 +---Registers : 
-	               16 Bit    Registers := 2     
+	               16 Bit    Registers := 3     
 	                4 Bit    Registers := 2     
 	                1 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input      4 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
+	   4 Input     16 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 4     
 	   4 Input      4 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 6     
-	   4 Input      1 Bit        Muxes := 6     
-Module memory_dens_0 
-Detailed RTL Component Info : 
-+---Registers : 
-	                8 Bit    Registers := 1     
-+---ROMs : 
-	                              ROMs := 1     
+	   2 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 7     
 Module quantization__parameterized1 
 Detailed RTL Component Info : 
 +---Adders : 
@@ -1511,38 +1524,39 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-DSP Report: Generating DSP save_data_1/p_img_3, operation Mode is: C+A*(B:0x1a).
-DSP Report: operator save_data_1/p_img_3 is absorbed into DSP save_data_1/p_img_3.
-DSP Report: operator save_data_1/p_img_00 is absorbed into DSP save_data_1/p_img_3.
-DSP Report: Generating DSP save_data_1/p_img_2, operation Mode is: C+A*(B:0x1a).
-DSP Report: operator save_data_1/p_img_2 is absorbed into DSP save_data_1/p_img_2.
-DSP Report: operator save_data_1/p_img_00 is absorbed into DSP save_data_1/p_img_2.
-DSP Report: Generating DSP save_data_1/p_img_1, operation Mode is: C+A*(B:0x1a).
-DSP Report: operator save_data_1/p_img_1 is absorbed into DSP save_data_1/p_img_1.
-DSP Report: operator save_data_1/p_img_00 is absorbed into DSP save_data_1/p_img_1.
-DSP Report: Generating DSP save_data_1/p_img_0, operation Mode is: C+A*(B:0x1a).
-DSP Report: operator save_data_1/p_img_0 is absorbed into DSP save_data_1/p_img_0.
-DSP Report: operator save_data_1/p_img_00 is absorbed into DSP save_data_1/p_img_0.
-INFO: [Synth 8-3971] The signal "accQuant/save_data_1/mem_rstl_conv1_reg" was recognized as a true dual port RAM template.
 DSP Report: Generating DSP save_data_2/p_img_3, operation Mode is: C+A*(B:0x1a).
 DSP Report: operator save_data_2/p_img_3 is absorbed into DSP save_data_2/p_img_3.
 DSP Report: operator save_data_2/p_img_20 is absorbed into DSP save_data_2/p_img_3.
 DSP Report: Generating DSP save_data_2/p_img_2, operation Mode is: C+A*(B:0x1a).
 DSP Report: operator save_data_2/p_img_2 is absorbed into DSP save_data_2/p_img_2.
 DSP Report: operator save_data_2/p_img_20 is absorbed into DSP save_data_2/p_img_2.
-INFO: [Synth 8-3971] The signal "accQuant/save_data_2/mem_rstl_conv2_reg" was recognized as a true dual port RAM template.
+DSP Report: Generating DSP save_data_1/p_img_1, operation Mode is: C+A*(B:0x1a).
+DSP Report: operator save_data_1/p_img_1 is absorbed into DSP save_data_1/p_img_1.
+DSP Report: operator save_data_1/p_img_00 is absorbed into DSP save_data_1/p_img_1.
+DSP Report: Generating DSP save_data_1/p_img_0, operation Mode is: C+A*(B:0x1a).
+DSP Report: operator save_data_1/p_img_0 is absorbed into DSP save_data_1/p_img_0.
+DSP Report: operator save_data_1/p_img_00 is absorbed into DSP save_data_1/p_img_0.
 INFO: [Synth 8-3971] The signal "accQuant/save_data_3/mem_rstl_conv3_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "accQuant/save_data_2/mem_rstl_conv2_reg" was recognized as a true dual port RAM template.
+DSP Report: Generating DSP save_data_1/p_img_3, operation Mode is: C+A*(B:0x1a).
+DSP Report: operator save_data_1/p_img_3 is absorbed into DSP save_data_1/p_img_3.
+DSP Report: operator save_data_1/p_img_00 is absorbed into DSP save_data_1/p_img_3.
+DSP Report: Generating DSP save_data_1/p_img_2, operation Mode is: C+A*(B:0x1a).
+DSP Report: operator save_data_1/p_img_2 is absorbed into DSP save_data_1/p_img_2.
+DSP Report: operator save_data_1/p_img_00 is absorbed into DSP save_data_1/p_img_2.
+INFO: [Synth 8-3971] The signal "accQuant/save_data_1/mem_rstl_conv1_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-4471] merging register 'rstl_sum_reg[15:0]' into 'rstl_sum_reg[15:0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:141]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result4_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:205]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/res1_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:185]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '64' to '18' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:150]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:144]
-DSP Report: Generating DSP rstl_sum_reg, operation Mode is: (P+(A2*B2)')'.
-DSP Report: register aux_max_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum_reg.
+DSP Report: Generating DSP rstl_sum0, operation Mode is: C'+(A2*B2)'.
+DSP Report: register aux_max_reg is absorbed into DSP rstl_sum0.
+DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum0.
 DSP Report: Generating DSP quant/result10, operation Mode is: (A:0x11db8)*B2.
 DSP Report: register quant/result10 is absorbed into DSP quant/result10.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result10.
@@ -1578,17 +1592,18 @@ DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
+INFO: [Synth 8-4471] merging register 'rstl_sum_reg[15:0]' into 'rstl_sum_reg[15:0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:141]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result4_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:205]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/res1_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:185]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '64' to '18' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:150]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:144]
-DSP Report: Generating DSP rstl_sum_reg, operation Mode is: (P+(A2*B2)')'.
-DSP Report: register aux_max_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum_reg.
+DSP Report: Generating DSP rstl_sum0, operation Mode is: C'+(A2*B2)'.
+DSP Report: register aux_max_reg is absorbed into DSP rstl_sum0.
+DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum0.
 DSP Report: Generating DSP quant/result10, operation Mode is: (A:0x11db8)*B2.
 DSP Report: register quant/result10 is absorbed into DSP quant/result10.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result10.
@@ -1624,17 +1639,18 @@ DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
+INFO: [Synth 8-4471] merging register 'rstl_sum_reg[15:0]' into 'rstl_sum_reg[15:0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:141]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result4_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:205]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/res1_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:185]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '64' to '18' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:150]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:144]
-DSP Report: Generating DSP rstl_sum_reg, operation Mode is: (P+(A2*B2)')'.
-DSP Report: register aux_max_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum_reg.
+DSP Report: Generating DSP rstl_sum0, operation Mode is: C'+(A2*B2)'.
+DSP Report: register aux_max_reg is absorbed into DSP rstl_sum0.
+DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum0.
 DSP Report: Generating DSP quant/result10, operation Mode is: (A:0x11db8)*B2.
 DSP Report: register quant/result10 is absorbed into DSP quant/result10.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result10.
@@ -1670,17 +1686,18 @@ DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
+INFO: [Synth 8-4471] merging register 'rstl_sum_reg[15:0]' into 'rstl_sum_reg[15:0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:141]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result4_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:205]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/res1_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:185]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '64' to '18' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:150]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:144]
-DSP Report: Generating DSP rstl_sum_reg, operation Mode is: (P+(A2*B2)')'.
-DSP Report: register aux_max_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum_reg.
+DSP Report: Generating DSP rstl_sum0, operation Mode is: C'+(A2*B2)'.
+DSP Report: register aux_max_reg is absorbed into DSP rstl_sum0.
+DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum0.
 DSP Report: Generating DSP quant/result10, operation Mode is: (A:0x11db8)*B2.
 DSP Report: register quant/result10 is absorbed into DSP quant/result10.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result10.
@@ -1716,17 +1733,18 @@ DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
+INFO: [Synth 8-4471] merging register 'rstl_sum_reg[15:0]' into 'rstl_sum_reg[15:0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:141]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result4_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:205]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/res1_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:185]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '64' to '18' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:150]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:144]
-DSP Report: Generating DSP rstl_sum_reg, operation Mode is: (P+(A2*B2)')'.
-DSP Report: register aux_max_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum_reg.
+DSP Report: Generating DSP rstl_sum0, operation Mode is: C'+(A2*B2)'.
+DSP Report: register aux_max_reg is absorbed into DSP rstl_sum0.
+DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum0.
 DSP Report: Generating DSP quant/result10, operation Mode is: (A:0x11db8)*B2.
 DSP Report: register quant/result10 is absorbed into DSP quant/result10.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result10.
@@ -1762,17 +1780,18 @@ DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
+INFO: [Synth 8-4471] merging register 'rstl_sum_reg[15:0]' into 'rstl_sum_reg[15:0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:141]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result4_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:205]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/res1_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:185]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '64' to '18' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:150]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:144]
-DSP Report: Generating DSP rstl_sum_reg, operation Mode is: (P+(A2*B2)')'.
-DSP Report: register aux_max_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum_reg.
+DSP Report: Generating DSP rstl_sum0, operation Mode is: C'+(A2*B2)'.
+DSP Report: register aux_max_reg is absorbed into DSP rstl_sum0.
+DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum0.
 DSP Report: Generating DSP quant/result10, operation Mode is: (A:0x11db8)*B2.
 DSP Report: register quant/result10 is absorbed into DSP quant/result10.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result10.
@@ -1808,17 +1827,18 @@ DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
+INFO: [Synth 8-4471] merging register 'rstl_sum_reg[15:0]' into 'rstl_sum_reg[15:0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:141]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result4_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:205]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/res1_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:185]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '64' to '18' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:150]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:144]
-DSP Report: Generating DSP rstl_sum_reg, operation Mode is: (P+(A2*B2)')'.
-DSP Report: register aux_max_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum_reg.
+DSP Report: Generating DSP rstl_sum0, operation Mode is: C'+(A2*B2)'.
+DSP Report: register aux_max_reg is absorbed into DSP rstl_sum0.
+DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum0.
 DSP Report: Generating DSP quant/result10, operation Mode is: (A:0x11db8)*B2.
 DSP Report: register quant/result10 is absorbed into DSP quant/result10.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result10.
@@ -1854,17 +1874,18 @@ DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
+INFO: [Synth 8-4471] merging register 'rstl_sum_reg[15:0]' into 'rstl_sum_reg[15:0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:141]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result4_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:205]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/res1_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:185]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '64' to '18' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:150]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:144]
-DSP Report: Generating DSP rstl_sum_reg, operation Mode is: (P+(A2*B2)')'.
-DSP Report: register aux_max_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum_reg.
+DSP Report: Generating DSP rstl_sum0, operation Mode is: C'+(A2*B2)'.
+DSP Report: register aux_max_reg is absorbed into DSP rstl_sum0.
+DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum0.
 DSP Report: Generating DSP quant/result10, operation Mode is: (A:0x11db8)*B2.
 DSP Report: register quant/result10 is absorbed into DSP quant/result10.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result10.
@@ -1900,17 +1921,18 @@ DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
+INFO: [Synth 8-4471] merging register 'rstl_sum_reg[15:0]' into 'rstl_sum_reg[15:0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:141]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result4_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:205]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/res1_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:185]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '64' to '18' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:150]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:144]
-DSP Report: Generating DSP rstl_sum_reg, operation Mode is: (P+(A2*B2)')'.
-DSP Report: register aux_max_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum_reg.
+DSP Report: Generating DSP rstl_sum0, operation Mode is: C'+(A2*B2)'.
+DSP Report: register aux_max_reg is absorbed into DSP rstl_sum0.
+DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum0.
 DSP Report: Generating DSP quant/result10, operation Mode is: (A:0x11db8)*B2.
 DSP Report: register quant/result10 is absorbed into DSP quant/result10.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result10.
@@ -1946,17 +1968,18 @@ DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: register quant/result1_reg is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result1_reg.
+INFO: [Synth 8-4471] merging register 'rstl_sum_reg[15:0]' into 'rstl_sum_reg[15:0]' [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/full_connected.v:141]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result4_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:205]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/res1_reg' and it is trimmed from '9' to '8' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:185]
 WARNING: [Synth 8-3936] Found unconnected internal register 'quant/result2_reg' and it is trimmed from '64' to '18' bits. [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:150]
 INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 8 [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/quantization.v:144]
-DSP Report: Generating DSP rstl_sum_reg, operation Mode is: (P+(A2*B2)')'.
-DSP Report: register aux_max_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum_reg.
-DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum_reg.
+DSP Report: Generating DSP rstl_sum0, operation Mode is: C'+(A2*B2)'.
+DSP Report: register aux_max_reg is absorbed into DSP rstl_sum0.
+DSP Report: register aux_weight_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_sum_reg is absorbed into DSP rstl_sum0.
+DSP Report: register rstl_mult_reg is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_mult0 is absorbed into DSP rstl_sum0.
+DSP Report: operator rstl_sum0 is absorbed into DSP rstl_sum0.
 DSP Report: Generating DSP quant/result10, operation Mode is: (A:0x11db8)*B2.
 DSP Report: register quant/result10 is absorbed into DSP quant/result10.
 DSP Report: operator quant/result10 is absorbed into DSP quant/result10.
@@ -2194,112 +2217,142 @@ WARNING: [Synth 8-3331] design accQuant has unconnected port radd_memory[3]
 WARNING: [Synth 8-3331] design accQuant has unconnected port radd_memory[2]
 WARNING: [Synth 8-3331] design accQuant has unconnected port radd_memory[1]
 WARNING: [Synth 8-3331] design accQuant has unconnected port radd_memory[0]
-INFO: [Synth 8-3971] The signal "accQuant/save_data_1/mem_rstl_conv1_reg" was recognized as a true dual port RAM template.
-INFO: [Synth 8-3971] The signal "accQuant/save_data_2/mem_rstl_conv2_reg" was recognized as a true dual port RAM template.
 INFO: [Synth 8-3971] The signal "accQuant/save_data_3/mem_rstl_conv3_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "accQuant/save_data_2/mem_rstl_conv2_reg" was recognized as a true dual port RAM template.
+INFO: [Synth 8-3971] The signal "accQuant/save_data_1/mem_rstl_conv1_reg" was recognized as a true dual port RAM template.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\maxpooling_3/present_state_reg[3] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\maxpooling_2/present_state_reg[3] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (\maxpooling_1/present_state_reg[3] )
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[0]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[1]' (FDE) to 'i_2/filter1/rdata8_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[2]' (FDE) to 'i_2/filter1/rdata8_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[3]' (FDE) to 'i_2/filter1/rdata8_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[4]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[5]' (FDE) to 'i_2/filter1/rdata8_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[6]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[7]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[8]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[9]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[10]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[11]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[12]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[13]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[14]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata0_reg[15]' (FDE) to 'i_2/filter1/rdata8_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[0]' (FDE) to 'i_2/filter1/rdata8_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[1]' (FDE) to 'i_2/filter1/rdata8_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[2]' (FDE) to 'i_2/filter1/rdata8_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[3]' (FDE) to 'i_2/filter1/rdata8_reg[5]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[4]' (FDE) to 'i_2/filter1/rdata8_reg[6]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[5]' (FDE) to 'i_2/filter1/rdata8_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[6]' (FDE) to 'i_2/filter1/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[7]' (FDE) to 'i_2/filter1/rdata8_reg[8]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[8]' (FDE) to 'i_2/filter1/rdata8_reg[9]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[9]' (FDE) to 'i_2/filter1/rdata8_reg[10]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[10]' (FDE) to 'i_2/filter1/rdata8_reg[11]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[11]' (FDE) to 'i_2/filter1/rdata8_reg[12]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[12]' (FDE) to 'i_2/filter1/rdata8_reg[13]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[13]' (FDE) to 'i_2/filter1/rdata8_reg[14]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[14]' (FDE) to 'i_2/filter1/rdata8_reg[15]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata8_reg[15]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[0]' (FDE) to 'i_2/filter1/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[1]' (FDE) to 'i_2/filter1/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[2]' (FDE) to 'i_2/filter1/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[3]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[4]' (FDE) to 'i_2/filter1/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[5]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[6]' (FDE) to 'i_2/filter1/rdata6_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[7]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[8]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[9]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[10]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[11]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[12]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[13]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[14]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata7_reg[15]' (FDE) to 'i_2/filter1/rdata6_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[0]' (FDE) to 'i_2/filter1/rdata6_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[1]' (FDE) to 'i_2/filter1/rdata6_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[2]' (FDE) to 'i_2/filter1/rdata6_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[3]' (FDE) to 'i_2/filter1/rdata6_reg[5]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[4]' (FDE) to 'i_2/filter1/rdata4_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[5]' (FDE) to 'i_2/filter1/rdata6_reg[6]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[6]' (FDE) to 'i_2/filter1/rdata6_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[7]' (FDE) to 'i_2/filter1/rdata6_reg[8]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[8]' (FDE) to 'i_2/filter1/rdata6_reg[9]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[9]' (FDE) to 'i_2/filter1/rdata6_reg[10]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[10]' (FDE) to 'i_2/filter1/rdata6_reg[11]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[11]' (FDE) to 'i_2/filter1/rdata6_reg[12]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[12]' (FDE) to 'i_2/filter1/rdata6_reg[13]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[13]' (FDE) to 'i_2/filter1/rdata6_reg[14]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[14]' (FDE) to 'i_2/filter1/rdata6_reg[15]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata6_reg[15]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[0]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[1]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[2]' (FDE) to 'i_2/filter1/rdata4_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[3]' (FDE) to 'i_2/filter1/rdata4_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[4]' (FDE) to 'i_2/filter1/rdata4_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[5]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[6]' (FDE) to 'i_2/filter1/rdata4_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[7]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[8]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[9]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[10]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[11]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[12]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[13]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[14]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata5_reg[15]' (FDE) to 'i_2/filter1/rdata4_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[0]' (FDE) to 'i_2/filter1/rdata4_reg[3]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[1]' (FDE) to 'i_2/filter1/rdata4_reg[2]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[2]' (FDE) to 'i_2/filter1/rdata4_reg[4]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[3]' (FDE) to 'i_2/filter1/rdata4_reg[5]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[4]' (FDE) to 'i_2/filter1/rdata2_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[5]' (FDE) to 'i_2/filter1/rdata4_reg[6]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[6]' (FDE) to 'i_2/filter1/rdata4_reg[7]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[7]' (FDE) to 'i_2/filter1/rdata4_reg[8]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[8]' (FDE) to 'i_2/filter1/rdata4_reg[9]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[9]' (FDE) to 'i_2/filter1/rdata4_reg[10]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[10]' (FDE) to 'i_2/filter1/rdata4_reg[11]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[11]' (FDE) to 'i_2/filter1/rdata4_reg[12]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[12]' (FDE) to 'i_2/filter1/rdata4_reg[13]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[13]' (FDE) to 'i_2/filter1/rdata4_reg[14]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[14]' (FDE) to 'i_2/filter1/rdata4_reg[15]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata4_reg[15]' (FDE) to 'i_2/filter1/rdata2_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata3_reg[0]' (FDE) to 'i_2/filter1/rdata2_reg[1]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata3_reg[1]' (FDE) to 'i_2/filter1/rdata2_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata3_reg[2]' (FDE) to 'i_2/filter1/rdata2_reg[0]'
-INFO: [Synth 8-3886] merging instance 'i_2/filter1/rdata3_reg[3]' (FDE) to 'i_2/filter1/rdata2_reg[1]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/thld1_reg[7]' (FDSE_1) to 'i_1/dense_9/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/thld1_reg[6]' (FDSE_1) to 'i_1/dense_9/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/thld1_reg[5]' (FDSE_1) to 'i_1/dense_9/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/thld1_reg[4]' (FDSE_1) to 'i_1/dense_9/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/thld1_reg[3]' (FDSE_1) to 'i_1/dense_9/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/thld1_reg[2]' (FDSE_1) to 'i_1/dense_9/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/thld1_reg[1]' (FDSE_1) to 'i_1/dense_9/quant/thld1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\dense_9/quant/thld1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_9/quant/thld1_reg[8] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/thld1_reg[7]' (FDSE_1) to 'i_1/dense_8/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/thld1_reg[6]' (FDSE_1) to 'i_1/dense_8/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/thld1_reg[5]' (FDSE_1) to 'i_1/dense_8/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/thld1_reg[4]' (FDSE_1) to 'i_1/dense_8/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/thld1_reg[3]' (FDSE_1) to 'i_1/dense_8/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/thld1_reg[2]' (FDSE_1) to 'i_1/dense_8/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/thld1_reg[1]' (FDSE_1) to 'i_1/dense_8/quant/thld1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\dense_8/quant/thld1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_8/quant/thld1_reg[8] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/thld1_reg[7]' (FDSE_1) to 'i_1/dense_7/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/thld1_reg[6]' (FDSE_1) to 'i_1/dense_7/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/thld1_reg[5]' (FDSE_1) to 'i_1/dense_7/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/thld1_reg[4]' (FDSE_1) to 'i_1/dense_7/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/thld1_reg[3]' (FDSE_1) to 'i_1/dense_7/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/thld1_reg[2]' (FDSE_1) to 'i_1/dense_7/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/thld1_reg[1]' (FDSE_1) to 'i_1/dense_7/quant/thld1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\dense_7/quant/thld1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_7/quant/thld1_reg[8] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_6/quant/thld1_reg[7]' (FDSE_1) to 'i_1/dense_6/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_6/quant/thld1_reg[6]' (FDSE_1) to 'i_1/dense_6/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_6/quant/thld1_reg[5]' (FDSE_1) to 'i_1/dense_6/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_6/quant/thld1_reg[4]' (FDSE_1) to 'i_1/dense_6/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_6/quant/thld1_reg[3]' (FDSE_1) to 'i_1/dense_6/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_6/quant/thld1_reg[2]' (FDSE_1) to 'i_1/dense_6/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_6/quant/thld1_reg[1]' (FDSE_1) to 'i_1/dense_6/quant/thld1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\dense_6/quant/thld1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_6/quant/thld1_reg[8] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_5/quant/thld1_reg[7]' (FDSE_1) to 'i_1/dense_5/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_5/quant/thld1_reg[6]' (FDSE_1) to 'i_1/dense_5/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_5/quant/thld1_reg[5]' (FDSE_1) to 'i_1/dense_5/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_5/quant/thld1_reg[4]' (FDSE_1) to 'i_1/dense_5/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_5/quant/thld1_reg[3]' (FDSE_1) to 'i_1/dense_5/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_5/quant/thld1_reg[2]' (FDSE_1) to 'i_1/dense_5/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_5/quant/thld1_reg[1]' (FDSE_1) to 'i_1/dense_5/quant/thld1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\dense_5/quant/thld1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_5/quant/thld1_reg[8] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_4/quant/thld1_reg[7]' (FDSE_1) to 'i_1/dense_4/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_4/quant/thld1_reg[6]' (FDSE_1) to 'i_1/dense_4/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_4/quant/thld1_reg[5]' (FDSE_1) to 'i_1/dense_4/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_4/quant/thld1_reg[4]' (FDSE_1) to 'i_1/dense_4/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_4/quant/thld1_reg[3]' (FDSE_1) to 'i_1/dense_4/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_4/quant/thld1_reg[2]' (FDSE_1) to 'i_1/dense_4/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_4/quant/thld1_reg[1]' (FDSE_1) to 'i_1/dense_4/quant/thld1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\dense_4/quant/thld1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_4/quant/thld1_reg[8] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_3/quant/thld1_reg[7]' (FDSE_1) to 'i_1/dense_3/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_3/quant/thld1_reg[6]' (FDSE_1) to 'i_1/dense_3/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_3/quant/thld1_reg[5]' (FDSE_1) to 'i_1/dense_3/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_3/quant/thld1_reg[4]' (FDSE_1) to 'i_1/dense_3/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_3/quant/thld1_reg[3]' (FDSE_1) to 'i_1/dense_3/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_3/quant/thld1_reg[2]' (FDSE_1) to 'i_1/dense_3/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_3/quant/thld1_reg[1]' (FDSE_1) to 'i_1/dense_3/quant/thld1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\dense_3/quant/thld1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_3/quant/thld1_reg[8] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_2/quant/thld1_reg[7]' (FDSE_1) to 'i_1/dense_2/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_2/quant/thld1_reg[6]' (FDSE_1) to 'i_1/dense_2/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_2/quant/thld1_reg[5]' (FDSE_1) to 'i_1/dense_2/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_2/quant/thld1_reg[4]' (FDSE_1) to 'i_1/dense_2/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_2/quant/thld1_reg[3]' (FDSE_1) to 'i_1/dense_2/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_2/quant/thld1_reg[2]' (FDSE_1) to 'i_1/dense_2/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_2/quant/thld1_reg[1]' (FDSE_1) to 'i_1/dense_2/quant/thld1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\dense_2/quant/thld1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_2/quant/thld1_reg[8] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_1/quant/thld1_reg[7]' (FDSE_1) to 'i_1/dense_1/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_1/quant/thld1_reg[6]' (FDSE_1) to 'i_1/dense_1/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_1/quant/thld1_reg[5]' (FDSE_1) to 'i_1/dense_1/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_1/quant/thld1_reg[4]' (FDSE_1) to 'i_1/dense_1/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_1/quant/thld1_reg[3]' (FDSE_1) to 'i_1/dense_1/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_1/quant/thld1_reg[2]' (FDSE_1) to 'i_1/dense_1/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_1/quant/thld1_reg[1]' (FDSE_1) to 'i_1/dense_1/quant/thld1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\dense_1/quant/thld1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_1/quant/thld1_reg[8] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_0/quant/thld1_reg[7]' (FDSE_1) to 'i_1/dense_0/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_0/quant/thld1_reg[6]' (FDSE_1) to 'i_1/dense_0/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_0/quant/thld1_reg[5]' (FDSE_1) to 'i_1/dense_0/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_0/quant/thld1_reg[4]' (FDSE_1) to 'i_1/dense_0/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_0/quant/thld1_reg[3]' (FDSE_1) to 'i_1/dense_0/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_0/quant/thld1_reg[2]' (FDSE_1) to 'i_1/dense_0/quant/thld1_reg[0]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_0/quant/thld1_reg[1]' (FDSE_1) to 'i_1/dense_0/quant/thld1_reg[0]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\dense_0/quant/thld1_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_0/quant/thld1_reg[8] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/present_state_reg[3]' (FDE) to 'i_1/dense_9/present_state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_9/present_state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/present_state_reg[3]' (FDE) to 'i_1/dense_8/present_state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_8/present_state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/present_state_reg[3]' (FDE) to 'i_1/dense_7/present_state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_7/present_state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_6/present_state_reg[3]' (FDE) to 'i_1/dense_6/present_state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_6/present_state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_5/present_state_reg[3]' (FDE) to 'i_1/dense_5/present_state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_5/present_state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_4/present_state_reg[3]' (FDE) to 'i_1/dense_4/present_state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_4/present_state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_3/present_state_reg[3]' (FDE) to 'i_1/dense_3/present_state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_3/present_state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_2/present_state_reg[3]' (FDE) to 'i_1/dense_2/present_state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_2/present_state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_1/present_state_reg[3]' (FDE) to 'i_1/dense_1/present_state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_1/present_state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_0/present_state_reg[3]' (FDE) to 'i_1/dense_0/present_state_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\dense_0/present_state_reg[2] )
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/threshold_reg[0]' (FDE_1) to 'i_1/dense_9/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/threshold_reg[1]' (FDE_1) to 'i_1/dense_9/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/threshold_reg[2]' (FDE_1) to 'i_1/dense_9/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/threshold_reg[3]' (FDE_1) to 'i_1/dense_9/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/threshold_reg[4]' (FDE_1) to 'i_1/dense_9/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/threshold_reg[5]' (FDE_1) to 'i_1/dense_9/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_9/quant/threshold_reg[6]' (FDE_1) to 'i_1/dense_9/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/threshold_reg[0]' (FDE_1) to 'i_1/dense_8/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/threshold_reg[1]' (FDE_1) to 'i_1/dense_8/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/threshold_reg[2]' (FDE_1) to 'i_1/dense_8/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/threshold_reg[3]' (FDE_1) to 'i_1/dense_8/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/threshold_reg[4]' (FDE_1) to 'i_1/dense_8/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/threshold_reg[5]' (FDE_1) to 'i_1/dense_8/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_8/quant/threshold_reg[6]' (FDE_1) to 'i_1/dense_8/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/threshold_reg[0]' (FDE_1) to 'i_1/dense_7/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/threshold_reg[1]' (FDE_1) to 'i_1/dense_7/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/threshold_reg[2]' (FDE_1) to 'i_1/dense_7/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/threshold_reg[3]' (FDE_1) to 'i_1/dense_7/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/threshold_reg[4]' (FDE_1) to 'i_1/dense_7/quant/threshold_reg[7]'
+INFO: [Synth 8-3886] merging instance 'i_1/dense_7/quant/threshold_reg[5]' (FDE_1) to 'i_1/dense_7/quant/threshold_reg[7]'
 INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (filter1/\bias_reg[9] )
 INFO: [Synth 8-3333] propagating constant 1 across sequential element (filter1/\bias_reg[15] )
@@ -2427,7 +2480,7 @@ WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[31]__1) is unused 
 WARNING: [Synth 8-3332] Sequential element (quant/result1_reg[30]__1) is unused and will be removed from module convolution__parameterized1.
 INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 2092.992 ; gain = 557.355 ; free physical = 169 ; free virtual = 2726
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 2384.078 ; gain = 823.926 ; free physical = 2744 ; free virtual = 5954
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2437,16 +2490,16 @@ ROM:
 +------------+----------------------+---------------+----------------+
 |Module Name | RTL Object           | Depth x Width | Implemented As | 
 +------------+----------------------+---------------+----------------+
+|accQuant    | mem_dens_0/rdata_reg | 512x8         | Block RAM      | 
+|accQuant    | mem_dens_1/rdata_reg | 512x8         | Block RAM      | 
+|accQuant    | mem_dens_2/rdata_reg | 512x8         | Block RAM      | 
+|accQuant    | mem_dens_3/rdata_reg | 512x8         | Block RAM      | 
+|accQuant    | mem_dens_4/rdata_reg | 512x8         | Block RAM      | 
+|accQuant    | mem_dens_5/rdata_reg | 512x8         | Block RAM      | 
+|accQuant    | mem_dens_6/rdata_reg | 512x8         | Block RAM      | 
 |accQuant    | mem_dens_7/rdata_reg | 512x8         | Block RAM      | 
 |accQuant    | mem_dens_8/rdata_reg | 512x8         | Block RAM      | 
 |accQuant    | mem_dens_9/rdata_reg | 512x8         | Block RAM      | 
-|accQuant    | mem_dens_6/rdata_reg | 512x8         | Block RAM      | 
-|accQuant    | mem_dens_5/rdata_reg | 512x8         | Block RAM      | 
-|accQuant    | mem_dens_4/rdata_reg | 512x8         | Block RAM      | 
-|accQuant    | mem_dens_3/rdata_reg | 512x8         | Block RAM      | 
-|accQuant    | mem_dens_2/rdata_reg | 512x8         | Block RAM      | 
-|accQuant    | mem_dens_1/rdata_reg | 512x8         | Block RAM      | 
-|accQuant    | mem_dens_0/rdata_reg | 512x8         | Block RAM      | 
 +------------+----------------------+---------------+----------------+
 
 
@@ -2467,13 +2520,13 @@ DSP: Preliminary Mapping	Report (see note below)
 +-------------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |Module Name        | DSP Mapping         | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
 +-------------------+---------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|memory_rstl_conv_1 | C+A*(B:0x1a)        | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|memory_rstl_conv_1 | C+A*(B:0x1a)        | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|memory_rstl_conv_1 | C+A*(B:0x1a)        | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|memory_rstl_conv_1 | C+A*(B:0x1a)        | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |memory_rstl_conv_2 | C+A*(B:0x1a)        | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
 |memory_rstl_conv_2 | C+A*(B:0x1a)        | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|full_connected     | (P+(A2*B2)')'       | 16     | 16     | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|memory_rstl_conv_1 | C+A*(B:0x1a)        | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|memory_rstl_conv_1 | C+A*(B:0x1a)        | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|memory_rstl_conv_1 | C+A*(B:0x1a)        | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|memory_rstl_conv_1 | C+A*(B:0x1a)        | 10     | 5      | 10     | -      | 10     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|full_connected     | C'+(A2*B2)'         | 16     | 16     | 16     | -      | 16     | 1    | 1    | 1    | -    | -     | 1    | 0    | 
 |full_connected     | (A:0x11db8)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |full_connected     | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
@@ -2482,7 +2535,7 @@ DSP: Preliminary Mapping	Report (see note below)
 |full_connected     | A2*(B:0x11db8)      | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | PCIN+A2*(B:0x11db8) | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|full_connected     | (P+(A2*B2)')'       | 16     | 16     | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|full_connected     | C'+(A2*B2)'         | 16     | 16     | 16     | -      | 16     | 1    | 1    | 1    | -    | -     | 1    | 0    | 
 |full_connected     | (A:0x11db8)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |full_connected     | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
@@ -2491,7 +2544,7 @@ DSP: Preliminary Mapping	Report (see note below)
 |full_connected     | A2*(B:0x11db8)      | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | PCIN+A2*(B:0x11db8) | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|full_connected     | (P+(A2*B2)')'       | 16     | 16     | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|full_connected     | C'+(A2*B2)'         | 16     | 16     | 16     | -      | 16     | 1    | 1    | 1    | -    | -     | 1    | 0    | 
 |full_connected     | (A:0x11db8)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |full_connected     | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
@@ -2500,7 +2553,7 @@ DSP: Preliminary Mapping	Report (see note below)
 |full_connected     | A2*(B:0x11db8)      | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | PCIN+A2*(B:0x11db8) | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|full_connected     | (P+(A2*B2)')'       | 16     | 16     | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|full_connected     | C'+(A2*B2)'         | 16     | 16     | 16     | -      | 16     | 1    | 1    | 1    | -    | -     | 1    | 0    | 
 |full_connected     | (A:0x11db8)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |full_connected     | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
@@ -2509,7 +2562,7 @@ DSP: Preliminary Mapping	Report (see note below)
 |full_connected     | A2*(B:0x11db8)      | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | PCIN+A2*(B:0x11db8) | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|full_connected     | (P+(A2*B2)')'       | 16     | 16     | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|full_connected     | C'+(A2*B2)'         | 16     | 16     | 16     | -      | 16     | 1    | 1    | 1    | -    | -     | 1    | 0    | 
 |full_connected     | (A:0x11db8)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |full_connected     | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
@@ -2518,7 +2571,7 @@ DSP: Preliminary Mapping	Report (see note below)
 |full_connected     | A2*(B:0x11db8)      | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | PCIN+A2*(B:0x11db8) | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|full_connected     | (P+(A2*B2)')'       | 16     | 16     | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|full_connected     | C'+(A2*B2)'         | 16     | 16     | 16     | -      | 16     | 1    | 1    | 1    | -    | -     | 1    | 0    | 
 |full_connected     | (A:0x11db8)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |full_connected     | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
@@ -2527,7 +2580,7 @@ DSP: Preliminary Mapping	Report (see note below)
 |full_connected     | A2*(B:0x11db8)      | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | PCIN+A2*(B:0x11db8) | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|full_connected     | (P+(A2*B2)')'       | 16     | 16     | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|full_connected     | C'+(A2*B2)'         | 16     | 16     | 16     | -      | 16     | 1    | 1    | 1    | -    | -     | 1    | 0    | 
 |full_connected     | (A:0x11db8)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |full_connected     | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
@@ -2536,7 +2589,7 @@ DSP: Preliminary Mapping	Report (see note below)
 |full_connected     | A2*(B:0x11db8)      | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | PCIN+A2*(B:0x11db8) | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|full_connected     | (P+(A2*B2)')'       | 16     | 16     | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|full_connected     | C'+(A2*B2)'         | 16     | 16     | 16     | -      | 16     | 1    | 1    | 1    | -    | -     | 1    | 0    | 
 |full_connected     | (A:0x11db8)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |full_connected     | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
@@ -2545,7 +2598,7 @@ DSP: Preliminary Mapping	Report (see note below)
 |full_connected     | A2*(B:0x11db8)      | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | PCIN+A2*(B:0x11db8) | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|full_connected     | (P+(A2*B2)')'       | 16     | 16     | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|full_connected     | C'+(A2*B2)'         | 16     | 16     | 16     | -      | 16     | 1    | 1    | 1    | -    | -     | 1    | 0    | 
 |full_connected     | (A:0x11db8)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |full_connected     | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
@@ -2554,7 +2607,7 @@ DSP: Preliminary Mapping	Report (see note below)
 |full_connected     | A2*(B:0x11db8)      | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A2*B     | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
 |full_connected     | PCIN+A2*(B:0x11db8) | 18     | 18     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 1    | 
-|full_connected     | (P+(A2*B2)')'       | 16     | 16     | -      | -      | 16     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|full_connected     | C'+(A2*B2)'         | 16     | 16     | 16     | -      | 16     | 1    | 1    | 1    | -    | -     | 1    | 0    | 
 |full_connected     | (A:0x11db8)*B2      | 18     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
 |full_connected     | (PCIN>>17)+A*B2     | 15     | 14     | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 1    | 
 |full_connected     | A2*B                | 18     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
@@ -2629,22 +2682,27 @@ Note: The table above is a preliminary report that shows the DSPs inferred at th
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP and Shift Register Reporting
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:145]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:97]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:97]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:145]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:97]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:97]
 
 Report RTL Partitions: 
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |accQuant__GB0 |           1|       624|
-|2     |accQuant__GB2 |           1|      7060|
+|1     |accQuant__GB0 |           1|     23157|
+|2     |accQuant__GB1 |           1|      3141|
+|3     |accQuant__GB2 |           1|      7067|
 +------+--------------+------------+----------+
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 2092.992 ; gain = 557.355 ; free physical = 169 ; free virtual = 2726
+Finished Timing Optimization : Time (s): cpu = 00:00:42 ; elapsed = 00:00:44 . Memory (MB): peak = 2384.078 ; gain = 823.926 ; free physical = 2744 ; free virtual = 5955
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -2668,14 +2726,19 @@ Report RTL Partitions:
 +------+--------------+------------+----------+
 |      |RTL Partition |Replication |Instances |
 +------+--------------+------------+----------+
-|1     |accQuant__GB0 |           1|       624|
-|2     |accQuant__GB2 |           1|      7060|
+|1     |accQuant__GB0 |           1|     23157|
+|2     |accQuant__GB1 |           1|      3141|
+|3     |accQuant__GB2 |           1|      7067|
 +------+--------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:145]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:97]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:97]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:145]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:97]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressConv.v:97]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressImg.v:122]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressImg.v:168]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressImg.v:122]
@@ -2688,11 +2751,30 @@ INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM bloc
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressImg.v:122]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressImg.v:122]
 INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.srcs/sources_1/imports/new/controlMemoryAddressImg.v:168]
-INFO: [Synth 8-7053] The timing for the instance save_data_1/mem_rstl_conv1_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7053] The timing for the instance save_data_2/mem_rstl_conv2_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7053] The timing for the instance save_data_3/mem_rstl_conv3_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance save_data_3/mem_rstl_conv3_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance save_data_3/mem_rstl_conv3_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance save_data_3/mem_rstl_conv3_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance save_data_2/mem_rstl_conv2_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance save_data_2/mem_rstl_conv2_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance save_data_2/mem_rstl_conv2_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance save_data_2/mem_rstl_conv2_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance save_data_1/mem_rstl_conv1_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance save_data_1/mem_rstl_conv1_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance save_data_1/mem_rstl_conv1_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance save_data_1/mem_rstl_conv1_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_dens_0/rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_dens_1/rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_dens_2/rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_dens_3/rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_dens_4/rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_dens_5/rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_dens_6/rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_dens_7/rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_dens_8/rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance mem_dens_9/rdata_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:33 . Memory (MB): peak = 2092.992 ; gain = 557.355 ; free physical = 170 ; free virtual = 2728
+Finished Technology Mapping : Time (s): cpu = 00:00:46 ; elapsed = 00:00:48 . Memory (MB): peak = 2384.078 ; gain = 823.926 ; free physical = 2750 ; free virtual = 5961
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2712,17 +2794,18 @@ Finished Flattening Before IO Insertion
 ---------------------------------------------------------------------------------
 Start Final Netlist Cleanup
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-6064] Net data_max[7] is driving 90 big block pins (URAM, BRAM and DSP loads). Created 9 replicas of its driver. 
 ---------------------------------------------------------------------------------
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2092.992 ; gain = 557.355 ; free physical = 168 ; free virtual = 2727
+Finished IO Insertion : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 2384.078 ; gain = 823.926 ; free physical = 2749 ; free virtual = 5959
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2092.992 ; gain = 557.355 ; free physical = 168 ; free virtual = 2727
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:50 ; elapsed = 00:00:51 . Memory (MB): peak = 2384.078 ; gain = 823.926 ; free physical = 2749 ; free virtual = 5960
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -2741,25 +2824,25 @@ Report Check Netlist:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2092.992 ; gain = 557.355 ; free physical = 168 ; free virtual = 2727
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 2384.078 ; gain = 823.926 ; free physical = 2749 ; free virtual = 5960
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2092.992 ; gain = 557.355 ; free physical = 168 ; free virtual = 2727
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 2384.078 ; gain = 823.926 ; free physical = 2749 ; free virtual = 5960
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2092.992 ; gain = 557.355 ; free physical = 168 ; free virtual = 2727
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 2384.078 ; gain = 823.926 ; free physical = 2749 ; free virtual = 5959
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2092.992 ; gain = 557.355 ; free physical = 168 ; free virtual = 2727
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 2384.078 ; gain = 823.926 ; free physical = 2749 ; free virtual = 5959
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -2775,83 +2858,118 @@ Report Cell Usage:
 +------+---------+------+
 |      |Cell     |Count |
 +------+---------+------+
-|1     |BUFG     |     3|
-|2     |CARRY4   |   144|
-|3     |DSP48E1  |    52|
-|4     |LUT1     |    48|
-|5     |LUT2     |    79|
-|6     |LUT3     |   495|
-|7     |LUT4     |   262|
-|8     |LUT5     |    90|
-|9     |LUT6     |   778|
-|10    |RAM64M   |   650|
-|11    |RAM64X1D |   130|
-|12    |RAMB18E1 |     3|
-|13    |FDCE     |    76|
-|14    |FDPE     |     3|
-|15    |FDRE     |   936|
-|16    |FDSE     |    25|
-|17    |IBUF     |    43|
-|18    |OBUF     |    28|
+|1     |BUFG     |     4|
+|2     |CARRY4   |   272|
+|3     |DSP48E1  |   117|
+|4     |LUT1     |   277|
+|5     |LUT2     |   438|
+|6     |LUT3     |  1188|
+|7     |LUT4     |   614|
+|8     |LUT5     |  4361|
+|9     |LUT6     |  3530|
+|10    |MUXF7    |   536|
+|11    |MUXF8    |   248|
+|12    |RAM64M   |   650|
+|13    |RAM64X1D |   130|
+|14    |RAMB18E1 |    22|
+|15    |FDCE     |   116|
+|16    |FDPE     |     3|
+|17    |FDRE     |  6199|
+|18    |FDSE     |    29|
+|19    |IBUF     |    45|
+|20    |OBUF     |    28|
 +------+---------+------+
 
 Report Instance Areas: 
-+------+-----------------------+-----------------------------+------+
-|      |Instance               |Module                       |Cells |
-+------+-----------------------+-----------------------------+------+
-|1     |top                    |                             |  3845|
-|2     |  clk_fourth           |clock_divider_dens           |    46|
-|3     |  clk_second           |clock_divider                |    47|
-|4     |  clk_third            |clock_divider_max            |    47|
-|5     |  conv1                |convolution                  |   567|
-|6     |    activation         |ReLu_1                       |    79|
-|7     |    quant              |quantization                 |   139|
-|8     |  conv2                |convolution__parameterized0  |   567|
-|9     |    activation         |ReLu_0                       |    79|
-|10    |    quant              |quantization__parameterized0 |   139|
-|11    |  conv3                |convolution__parameterized1  |   565|
-|12    |    activation         |ReLu                         |    79|
-|13    |    quant              |quantization__parameterized1 |   139|
-|14    |  image                |memory_image                 |  1659|
-|15    |  pos_mem_max          |counterPositionMemMax        |    34|
-|16    |  pos_memory_Max_count |counterPositionRstlMax       |    26|
-|17    |  pos_memory_conv      |counterPositionRstlConv      |    31|
-|18    |  positionConv         |controlMemoryAddressConv     |    72|
-|19    |    counter_i          |counter_row_max              |    30|
-|20    |    counter_j          |counter_col_max              |    42|
-|21    |  positionImage        |controlMemoryAddressImg      |    92|
-|22    |    counter_i          |counter_row                  |    46|
-|23    |    counter_j          |counter_col                  |    44|
-|24    |  save_data_1          |memory_rstl_conv_1           |    10|
-|25    |  save_data_2          |memory_rstl_conv_2           |     1|
-|26    |  save_data_3          |memory_rstl_conv_3           |     1|
-+------+-----------------------+-----------------------------+------+
++------+-----------------------+--------------------------------+------+
+|      |Instance               |Module                          |Cells |
++------+-----------------------+--------------------------------+------+
+|1     |top                    |                                | 18807|
+|2     |  clk_fourth           |clock_divider_dens              |    48|
+|3     |  clk_second           |clock_divider                   |    48|
+|4     |  clk_third            |clock_divider_max               |    47|
+|5     |  conv1                |convolution                     |   567|
+|6     |    activation         |ReLu_17                         |    79|
+|7     |    quant              |quantization                    |   139|
+|8     |  conv2                |convolution__parameterized0     |   567|
+|9     |    activation         |ReLu_16                         |    79|
+|10    |    quant              |quantization__parameterized0    |   139|
+|11    |  conv3                |convolution__parameterized1     |   565|
+|12    |    activation         |ReLu                            |    79|
+|13    |    quant              |quantization__parameterized1    |   139|
+|14    |  dense_0              |full_connected                  |   217|
+|15    |    quant              |quantization__parameterized2_15 |   156|
+|16    |  dense_1              |full_connected__parameterized0  |   204|
+|17    |    quant              |quantization__parameterized2_14 |   150|
+|18    |  dense_2              |full_connected__parameterized1  |   215|
+|19    |    quant              |quantization__parameterized2_13 |   153|
+|20    |  dense_3              |full_connected__parameterized2  |   210|
+|21    |    quant              |quantization__parameterized2_12 |   154|
+|22    |  dense_4              |full_connected__parameterized3  |   221|
+|23    |    quant              |quantization__parameterized2_11 |   160|
+|24    |  dense_5              |full_connected_0                |   212|
+|25    |    quant              |quantization__parameterized2_10 |   152|
+|26    |  dense_6              |full_connected_1                |   218|
+|27    |    quant              |quantization__parameterized2_9  |   158|
+|28    |  dense_7              |full_connected_2                |   211|
+|29    |    quant              |quantization__parameterized2_8  |   151|
+|30    |  dense_8              |full_connected_3                |   213|
+|31    |    quant              |quantization__parameterized2_7  |   153|
+|32    |  dense_9              |full_connected_4                |   221|
+|33    |    quant              |quantization__parameterized2    |   161|
+|34    |  image                |memory_image                    |  1659|
+|35    |  maxpooling_1         |maxpooling                      |   185|
+|36    |  maxpooling_2         |maxpooling_5                    |   183|
+|37    |  maxpooling_3         |maxpooling_6                    |   183|
+|38    |  mem_dens_0           |memory_dens_0                   |     1|
+|39    |  mem_dens_1           |memory_dens_1                   |     1|
+|40    |  mem_dens_2           |memory_dens_2                   |     1|
+|41    |  mem_dens_3           |memory_dens_3                   |     1|
+|42    |  mem_dens_4           |memory_dens_4                   |     1|
+|43    |  mem_dens_5           |memory_dens_5                   |     1|
+|44    |  mem_dens_6           |memory_dens_6                   |     1|
+|45    |  mem_dens_7           |memory_dens_7                   |     1|
+|46    |  mem_dens_8           |memory_dens_8                   |     1|
+|47    |  mem_dens_9           |memory_dens_9                   |     1|
+|48    |  pos_mem_max          |counterPositionMemMax           |    80|
+|49    |  pos_memory_Max_count |counterPositionRstlMax          |  6208|
+|50    |  pos_memory_conv      |counterPositionRstlConv         |    31|
+|51    |  positionConv         |controlMemoryAddressConv        |    92|
+|52    |    counter_i          |counter_row_max                 |    40|
+|53    |    counter_j          |counter_col_max                 |    52|
+|54    |  positionImage        |controlMemoryAddressImg         |    91|
+|55    |    counter_i          |counter_row                     |    46|
+|56    |    counter_j          |counter_col                     |    44|
+|57    |  save_data_1          |memory_rstl_conv_1              |    24|
+|58    |  save_data_2          |memory_rstl_conv_2              |    22|
+|59    |  save_data_3          |memory_rstl_conv_3              |    20|
+|60    |  save_max_1           |memory_rstl_max_1               |  5954|
++------+-----------------------+--------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2092.992 ; gain = 557.355 ; free physical = 168 ; free virtual = 2727
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 2384.078 ; gain = 823.926 ; free physical = 2749 ; free virtual = 5959
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 459 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2092.992 ; gain = 557.355 ; free physical = 170 ; free virtual = 2729
-Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 2093.000 ; gain = 557.355 ; free physical = 170 ; free virtual = 2729
+Synthesis finished with 0 errors, 0 critical warnings and 454 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 2384.078 ; gain = 823.926 ; free physical = 2749 ; free virtual = 5960
+Synthesis Optimization Complete : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 2384.086 ; gain = 823.926 ; free physical = 2749 ; free virtual = 5960
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.09 ; elapsed = 00:00:00.11 . Memory (MB): peak = 2093.000 ; gain = 0.000 ; free physical = 214 ; free virtual = 2797
-INFO: [Netlist 29-17] Analyzing 979 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2384.086 ; gain = 0.000 ; free physical = 2805 ; free virtual = 6021
+INFO: [Netlist 29-17] Analyzing 1975 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-138] Pushed 1 inverter(s) to 15 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2183.832 ; gain = 0.000 ; free physical = 137 ; free virtual = 2740
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 75 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2440.105 ; gain = 0.000 ; free physical = 2723 ; free virtual = 5954
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 780 instances were transformed.
   RAM64M => RAM64M (RAMD64E(x4)): 650 instances
   RAM64X1D => RAM64X1D (RAMD64E(x2)): 130 instances
 
 INFO: [Common 17-83] Releasing license: Synthesis
-346 Infos, 169 Warnings, 0 Critical Warnings and 0 Errors encountered.
+415 Infos, 164 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:46 . Memory (MB): peak = 2183.832 ; gain = 671.227 ; free physical = 274 ; free virtual = 2877
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2183.832 ; gain = 0.000 ; free physical = 274 ; free virtual = 2877
+synth_design: Time (s): cpu = 00:00:57 ; elapsed = 00:01:08 . Memory (MB): peak = 2440.105 ; gain = 902.984 ; free physical = 2867 ; free virtual = 6098
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2440.105 ; gain = 0.000 ; free physical = 2867 ; free virtual = 6098
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint '/home/javier/Documents/fpga_implementations_of_neural_networks/CNN/02_hardware/06_CNN_IP_core_z20/06_CNN_IP_core_z20.runs/synth_1/accQuant.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file accQuant_utilization_synth.rpt -pb accQuant_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00.25 ; elapsed = 00:00:07 . Memory (MB): peak = 2207.844 ; gain = 0.000 ; free physical = 238 ; free virtual = 2876
-INFO: [Common 17-206] Exiting Vivado at Wed Aug 25 15:57:37 2021...
+INFO: [Common 17-206] Exiting Vivado at Sat Aug 28 21:02:39 2021...

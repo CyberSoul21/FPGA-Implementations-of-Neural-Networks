@@ -12,14 +12,14 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="4040000001fs"></ZoomEndTime>
-      <Cursor1Time time="574680000fs"></Cursor1Time>
+      <ZoomEndTime time="5433357666fs"></ZoomEndTime>
+      <Cursor1Time time="2001000000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="195"></NameColumnWidth>
-      <ValueColumnWidth column_width="117"></ValueColumnWidth>
+      <ValueColumnWidth column_width="67"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="58" />
+   <WVObjectSize size="59" />
    <wvobject type="logic" fp_name="/accQuant_testbench/clk">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -141,6 +141,10 @@
       <obj_property name="ElementShortName">num_dens[7:0]</obj_property>
       <obj_property name="ObjectShortName">num_dens[7:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/accQuant_testbench/UUT/whatIsMajor/predict">
+      <obj_property name="ElementShortName">predict[3:0]</obj_property>
+      <obj_property name="ObjectShortName">predict[3:0]</obj_property>
    </wvobject>
    <wvobject fp_name="divider4090" type="divider">
       <obj_property name="label">Counters</obj_property>

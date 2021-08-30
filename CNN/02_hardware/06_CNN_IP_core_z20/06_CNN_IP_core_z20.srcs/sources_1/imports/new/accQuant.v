@@ -56,7 +56,8 @@ module accQuant
     //output [7:0]out
     output conv_ok,
     output max_ok,
-    output dens_ok
+    output dens_ok,
+    output [6:0] number_out
 
 
 );
@@ -271,6 +272,9 @@ module accQuant
     wire mem_full_image_wire;
     wire signed [dataWidthImg-1:0] rdata_image_w;
 
+     wire [3:0] result_max;
+     wire predict_ok;
+     wire [6:0] number;
 
     initial
     begin
@@ -952,7 +956,35 @@ module accQuant
         .quant_ok(quant_ok_9)        
      );         
 
+     predictMax whatIsMajor
+     (
+        .clk(clk),
+        .clk_div(clk_div_dens),
+        .en(dens_ok_reg),
+        .rst(rst),
+        .num_dens_0(num_dens_0),
+        .num_dens_1(num_dens_1),
+        .num_dens_2(num_dens_2),
+        .num_dens_3(num_dens_3),
+        .num_dens_4(num_dens_4),
+        .num_dens_5(num_dens_5),
+        .num_dens_6(num_dens_6),
+        .num_dens_7(num_dens_7),
+        .num_dens_8(num_dens_8),
+        .num_dens_9(num_dens_9),
+        .predict(result_max),
+        .predict_ok(predict_ok)        
+     ); 
+     
 
+     
+     display segment7(
+     .clk(clk),
+     .bcd(result_max),
+     .number(number)
+    );
+    
+    assign number_out = number;
 
 //CONTROL UNIT
 //*******************************************************************************************************
@@ -1018,7 +1050,6 @@ module accQuant
            max_ok_reg <= 0;
            dens_ok_reg <= 0;
            en_dense <= 0;
-           //num_dens_0 <=0;
        end
        else if(en)
        begin           
@@ -1040,32 +1071,9 @@ module accQuant
     end 
     
     
-//    always @(posedge clk)
-//    begin
-//       if(rst)
-//       begin
-//           max_ok_reg <= 0;
-//           dens_ok_reg <= 0;
-//           en_dense <= 0;
-//           //num_dens_0 <=0;
-//       end
-//       else if(en)
-//       begin           
-//           if ((pos_rstl_max3 == (numWeightRstlMax -1)) & clk_div_max)
-//           begin
-//               en_dense <= 1; 
-//               max_ok_reg <= 1;
-//               dens_ok_reg <= 0;
-//           end
-    
-//           if ((pos_memory_max == (numWeightRstlMax -1 + 1 + 1)))
-//           begin
-//               en_dense <= 0; 
-//               dens_ok_reg <= 1;
-//           end
-//        end                
+            
 
-//    end 
+
 //*******************************************************************************************************
 //*******************************************************************************************************
 //******************************************************************************************************* 
@@ -1087,7 +1095,6 @@ module accQuant
                           (sel == 4'd9) ? num_dens_9 :
                           (sel == 4'd10) ? pos_memory_max :0;
 
-//     assign data_memory = num_dens_0;
 
 
      
@@ -1096,7 +1103,6 @@ module accQuant
      assign dens_ok = dens_ok_reg;
      assign mem_full_image = mem_full_image_wire;
      
-     //assign data_memory = num_dens_0;//data_max;
      
 
 
